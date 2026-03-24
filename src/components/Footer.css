@@ -1,0 +1,134 @@
+.footer {
+  background-color: hsl(var(--secondary));
+  padding: var(--space-16) 0 var(--space-8);
+  font-size: 0.95rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-12);
+  margin-bottom: var(--space-12);
+}
+
+@media (min-width: 768px) {
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .footer-grid {
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  }
+}
+
+.footer-brand .logo {
+  margin-bottom: var(--space-6);
+  display: inline-flex;
+}
+
+.footer-desc {
+  color: hsl(var(--secondary-foreground));
+  margin-bottom: var(--space-6);
+  opacity: 0.8;
+  max-width: 400px;
+}
+
+.social-links {
+  display: flex;
+  gap: var(--space-4);
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(var(--primary), 0.1);
+  color: hsl(var(--primary));
+  transition: all 0.2s ease;
+}
+
+.social-link:hover {
+  background-color: hsl(var(--primary));
+  color: var(--primary-foreground);
+  transform: translateY(-2px);
+}
+
+.footer h3 {
+  font-size: 1.25rem;
+  margin-bottom: var(--space-6);
+  color: hsl(var(--secondary-foreground));
+}
+
+.footer-links ul {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.footer-links a {
+  color: hsl(var(--secondary-foreground));
+  opacity: 0.8;
+  transition: opacity 0.2s ease, color 0.2s ease;
+}
+
+.footer-links a:hover {
+  opacity: 1;
+  color: hsl(var(--primary));
+}
+
+.footer-contact ul {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.footer-contact li {
+  display: flex;
+  gap: var(--space-3);
+  color: hsl(var(--secondary-foreground));
+  opacity: 0.8;
+}
+
+.footer-contact .contact-icon {
+  flex-shrink: 0;
+  color: hsl(var(--primary));
+  margin-top: 2px;
+}
+
+.footer-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+  padding-top: var(--space-8);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  color: hsl(var(--secondary-foreground));
+  opacity: 0.8;
+  text-align: center;
+}
+
+.dark .footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@media (min-width: 768px) {
+  .footer-bottom {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+}
+
+.footer-legal {
+  display: flex;
+  gap: var(--space-6);
+}
+
+.footer-legal a:hover {
+  color: hsl(var(--primary));
+}

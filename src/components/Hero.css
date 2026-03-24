@@ -1,0 +1,542 @@
+/* ==========================================================
+   RH DENTAL CARE — WORLD-CLASS PREMIUM HERO v4
+   Ocean Blue · Deep Navy · Crisp White
+   Framer Motion Ready · No child's play.
+========================================================== */
+
+/* ── Scroll progress bar ── */
+.h-scroll-bar {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 2.5px;
+  background: linear-gradient(90deg, #0073e6, #60c8ff);
+  border-radius: left;
+  z-index: 9999;
+}
+
+/* ── Particles ── */
+.h-particles {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+.h-particle {
+  position: absolute;
+  width: 2px; height: 2px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 0 10px white;
+}
+
+/* ── Root section ── */
+.h-root {
+  position: relative;
+  height: 100dvh;
+  min-height: 850px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background: #030a16;
+  padding-top: var(--nav-height);
+}
+
+/* ── Background image ── */
+.h-bg {
+  position: absolute;
+  inset: -12%;
+  z-index: 0;
+  will-change: transform;
+}
+.h-bg-img {
+  object-fit: cover;
+  opacity: 0.42;
+  filter: saturate(0.6) brightness(0.85) blur(3px); /* Bokeh Effect for Premium Focus */
+}
+
+/* ── Overlays ── */
+.h-ov-dark {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    105deg,
+    rgba(4, 15, 30, 0.97) 0%,
+    rgba(4, 15, 30, 0.85) 40%,
+    rgba(4, 15, 30, 0.35) 72%,
+    rgba(4, 15, 30, 0.08) 100%
+  );
+}
+.h-ov-blue {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 70% 60% at 10% 5%, rgba(255, 255, 255, 0.08) 0%, transparent 80%),
+    radial-gradient(ellipse 65% 55% at 8% 15%, rgba(0,100,220,0.14) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 40% at 85% 80%, rgba(0,60,180,0.10) 0%, transparent 70%),
+    radial-gradient(ellipse 100% 30% at 50% 100%, rgba(255,255,255,0.06) 0%, transparent 80%); /* Ground Glow */
+}
+
+/* ── Main inner ── */
+.h-inner {
+  position: relative;
+  z-index: 10;
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 4rem; /* More Breathing Space */
+  align-items: center;
+  padding-bottom: 6rem;
+  padding-top: 2rem;
+}
+
+/* =========================================================
+   LEFT
+========================================================= */
+.h-left {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+/* Kicker */
+.h-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(160, 210, 255, 0.85);
+}
+.h-kicker-dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: #3b9eff;
+  box-shadow: 0 0 0 0 rgba(59,158,255,0.5);
+  animation: kdot 2s infinite;
+  flex-shrink: 0;
+}
+@keyframes kdot {
+  0%    { box-shadow: 0 0 0 0   rgba(59,158,255,0.5); }
+  70%   { box-shadow: 0 0 0 10px rgba(59,158,255,0); }
+  100%  { box-shadow: 0 0 0 0   rgba(59,158,255,0); }
+}
+
+/* Headline  */
+.h-headline {
+  font-family: var(--font-family-header);
+  font-size: clamp(3.2rem, 6.5vw, 6rem);
+  font-weight: 800;
+  line-height: 1.07;
+  letter-spacing: -0.04em;
+  color: #fff;
+  margin: 0;
+}
+.h-line-clip  { display: block; overflow: hidden; }
+.h-line-accent span {
+  background: linear-gradient(90deg, #3b9eff 0%, #a8d8ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Sub */
+.h-sub {
+  font-size: clamp(1.05rem, 1.8vw, 1.2rem);
+  line-height: 1.7;
+  color: rgba(255,255,255,0.68);
+  max-width: 500px;
+  margin: 0;
+}
+
+/* Feature pills */
+.h-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+.h-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 1.1rem;
+  border: 1px solid rgba(59,158,255,0.22);
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: rgba(180,225,255,0.9);
+  background: rgba(59,158,255,0.07);
+  backdrop-filter: blur(8px);
+}
+
+/* CTA row */
+.h-ctas {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.h-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  background: #0073e6;
+  color: #fff;
+  font-weight: 800;
+  font-size: 1.05rem;
+  padding: 1.1rem 1.25rem 1.1rem 2rem;
+  border-radius: 999px;
+  box-shadow: 0 15px 40px rgba(0,115,230,0.35);
+  transition: all 0.35s cubic-bezier(0.16,1,0.3,1);
+  letter-spacing: -0.01em;
+}
+.h-btn-primary:hover {
+  background: #0085ff;
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 20px 50px rgba(0,115,230,0.45);
+  color: #fff;
+}
+.h-btn-icon {
+  width: 42px; height: 42px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.18);
+  display: flex; align-items: center; justify-content: center;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+.h-btn-primary:hover .h-btn-icon { transform: rotate(45deg); }
+
+.h-btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: rgba(255,255,255,0.82);
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 1.1rem 1.75rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.18);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+.h-btn-ghost:hover {
+  color: #fff;
+  border-color: rgba(255,255,255,0.45);
+  background: rgba(255,255,255,0.05);
+  transform: translateY(-3px);
+}
+
+/* Stats */
+.h-stats {
+  display: flex;
+  gap: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255,255,255,0.09);
+}
+.h-stat { display: flex; flex-direction: column; gap: 0.2rem; }
+.h-stat-n {
+  font-family: var(--font-family-header);
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+.h-stat-l {
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: rgba(255,255,255,0.42);
+}
+
+/* =========================================================
+   RIGHT — DOCTOR PRESENCE
+========================================================= */
+.h-right {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.h-doc-wrap {
+  position: relative;
+  width: 100%;
+  height: calc(100dvh - var(--nav-height) - 5rem);
+  max-width: 480px;
+}
+
+/* Soft aura behind doctor */
+.h-doc-aura {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  height: 90%;
+  background: radial-gradient(ellipse 60% 80% at 50% 85%,
+    rgba(0, 130, 255, 0.12) 0%,
+    rgba(140, 210, 255, 0.05) 50%,
+    transparent 80%
+  );
+  filter: blur(40px);
+  z-index: 0;
+}
+
+/* Digital Grid Pattern behind doctor */
+.h-doc-grid-pattern {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 500px;
+  background-image: 
+    radial-gradient(circle at 1px 1px, rgba(59, 158, 255, 0.15) 1px, transparent 0);
+  background-size: 32px 32px;
+  border-radius: 50%;
+  mask-image: radial-gradient(circle, black 30%, transparent 70%);
+  -webkit-mask-image: radial-gradient(circle, black 30%, transparent 70%);
+  z-index: 0;
+  animation: grid-pulse 10s linear infinite;
+}
+
+@keyframes grid-pulse {
+  0% { transform: translate(-50%, -50%) rotate(0deg); opacity: 0.5; }
+  50% { opacity: 0.8; }
+  100% { transform: translate(-50%, -50%) rotate(360deg); opacity: 0.5; }
+}
+
+/* Enhanced Halo Glow */
+.h-doc-halo {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 380px;
+  height: 380px;
+  background: 
+    radial-gradient(circle, rgba(0, 115, 230, 0.22) 0%, transparent 60%),
+    radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, transparent 40%);
+  filter: blur(50px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* White gradient ground — blends feet into scene */
+.h-doc-aura::after {
+  content: '';
+  position: absolute;
+  bottom: -10%;
+  left: -10%;
+  right: -10%;
+  height: 40%;
+  background: linear-gradient(
+    to top,
+    rgba(255,255,255,0.06) 0%,
+    transparent 100%
+  );
+  border-radius: 50%;
+  filter: blur(20px);
+}
+
+/* Doctor image layer */
+.h-doc-img-box {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+.h-doc-img {
+  object-fit: contain;
+  object-position: bottom center;
+  filter: brightness(0.95) contrast(1.08) saturate(1.15) drop-shadow(0 20px 60px rgba(0, 5, 20, 0.6));
+}
+
+.h-doc-mist {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 35%;
+  background: linear-gradient(to top, #030a16 5%, transparent 100%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* ── Elegant Name Badge ── */
+/* ── Floating Specialist Chips ── */
+.h-float-chip {
+  position: absolute;
+  z-index: 25;
+  pointer-events: none;
+}
+
+.chip-glass {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.6rem 1rem;
+  background: rgba(4, 15, 30, 0.55);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+.chip-glass p {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #fff;
+  margin: 0;
+}
+
+.chip-icon-blue {
+  color: #3b9eff;
+  font-size: 1.1rem;
+  line-height: 1;
+  text-shadow: 0 0 10px rgba(59, 158, 255, 0.6);
+}
+
+.chip-upper {
+  top: 15%;
+  left: -15%;
+}
+
+.chip-lower {
+  top: 55%;
+  right: -12%;
+}
+
+/* Ambient Detail Icons */
+.h-detail-icon {
+  position: absolute;
+  z-index: 30;
+  pointer-events: none;
+  color: rgba(96, 184, 255, 0.6);
+  filter: drop-shadow(0 0 12px rgba(59, 158, 255, 0.4));
+}
+
+.icon-glow {
+  filter: drop-shadow(0 0 8px rgba(59, 158, 255, 0.5));
+}
+
+.d-icon-1 { top: 25%; right: -5%; opacity: 0.8; }
+.d-icon-2 { bottom: 15%; left: -10%; opacity: 0.6; }
+.d-icon-3 { top: 5%; left: 10%; opacity: 0.5; }
+
+.h-name-badge {
+  position: absolute;
+  bottom: 8%;
+  right: -5%;
+  z-index: 20;
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  background: rgba(2, 12, 24, 0.65); /* More Transparent for Premium Glass Look */
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 1.5rem;
+  box-shadow:
+    0 0 0 1px rgba(59,158,255,0.1) inset,
+    0 35px 70px rgba(0,0,0,0.6);
+  overflow: hidden;
+  min-width: 300px;
+}
+.badge-accent-bar {
+  width: 4px;
+  background: linear-gradient(180deg, #3b9eff 0%, #0040a0 100%);
+  flex-shrink: 0;
+}
+.badge-body {
+  padding: 1.1rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.badge-name {
+  font-family: var(--font-family-header);
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #fff;
+  margin: 0;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+}
+.badge-role {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #60b8ff;
+  margin: 0;
+  white-space: nowrap;
+}
+.badge-tags {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.badge-tags span {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: rgba(160,215,255,0.85);
+  background: rgba(59,158,255,0.12);
+  border: 1px solid rgba(59,158,255,0.2);
+  border-radius: 999px;
+  padding: 0.22rem 0.75rem;
+  letter-spacing: 0.04em;
+}
+
+/* ── Bottom Marquee ── */
+.h-marquee-wrap {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  overflow: hidden;
+  background: rgba(0,50,120,0.05);
+  backdrop-filter: blur(15px);
+  border-top: 1px solid rgba(255,255,255,0.05);
+  padding: 1.1rem 0;
+}
+.h-marquee {
+  display: flex;
+  gap: 6rem; /* More airy space */
+  white-space: nowrap;
+  animation: marq 45s linear infinite;
+}
+.h-marq-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.72rem; /* Thinner for luxury */
+  font-weight: 700;
+  letter-spacing: 0.25em; /* More spacing */
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+}
+.h-marq-dot {
+  width: 4px; height: 4px;
+  border-radius: 50%;
+  background: #3b9eff;
+  flex-shrink: 0;
+}
+@keyframes marq {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-33.333%); }
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .h-inner { grid-template-columns: 1fr; gap: 0; }
+  .h-right  { display: none; }
+  .h-inner  { align-items: flex-start; padding-top: 2rem; }
+}
