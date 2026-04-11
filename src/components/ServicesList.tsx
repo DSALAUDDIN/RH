@@ -51,11 +51,12 @@ export default function ServicesList({ limit = services.length }: { limit?: numb
   const displayedServices = services.slice(0, limit);
 
   return (
-    <section className="section services">
+    <section className="services">
       <div className="container">
         <div className="section-title">
-          <h2>Our Premium Services</h2>
-          <p>We combine advanced technology with artistic expertise to deliver exceptional dental care tailored to your unique needs.</p>
+          <div className="sl-title-tag"><Sparkles size={14} /> Our Premium Services</div>
+          <h2>Exceptional Dental Care</h2>
+          <p>We combine advanced technology with artistic expertise to deliver world-class dental treatments tailored to your unique needs.</p>
         </div>
 
         <motion.div 
@@ -66,9 +67,9 @@ export default function ServicesList({ limit = services.length }: { limit?: numb
           viewport={{ once: true, margin: "-100px" }}
         >
           {displayedServices.map((service) => (
-            <motion.div key={service.id} className="service-card glass" variants={itemVariants}>
+            <motion.div key={service.id} className="service-card" variants={itemVariants}>
               <div className="service-icon-wrapper">
-                <service.icon size={32} className="service-icon" />
+                <service.icon size={32} />
               </div>
               <h3 className="service-title">{service.title}</h3>
               <p className="service-desc">{service.description}</p>
@@ -81,8 +82,8 @@ export default function ServicesList({ limit = services.length }: { limit?: numb
 
         {limit < services.length && (
           <div className="services-action">
-            <Link href="/services" className="btn btn-outline">
-              View All Services
+            <Link href="/services" className="btn btn-primary" style={{ padding: '1.25rem 2.5rem', borderRadius: '100px', fontSize: '1rem', fontWeight: 800 }}>
+              View All Dental Services
             </Link>
           </div>
         )}

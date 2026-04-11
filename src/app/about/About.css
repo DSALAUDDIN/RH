@@ -1243,8 +1243,8 @@
 
 .ab-team-card-premium {
   flex-shrink: 0;
-  width: 320px;
-  height: 440px;
+  width: 460px;  /* Wide landscape card to match flyers */
+  height: 320px; /* Reduced height to eliminate empty space */
   perspective: 1000px;
   cursor: pointer;
 }
@@ -1255,28 +1255,27 @@
   height: 100%;
   border-radius: 1.5rem;
   overflow: hidden;
-  background: linear-gradient(145deg, #f8fafc 0%, #e2e8f0 100%);
+  background: linear-gradient(145deg, #ffffff 0%, #f1f5f9 100%);
   box-shadow: 0 10px 30px rgba(0,0,0,0.06);
   transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-  border: 1px solid rgba(255,255,255,0.6);
+  border: 1px solid rgba(255,255,255,1);
 }
 
 .ab-team-card-premium:hover .ab-team-card-inner {
-  transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 25px 45px rgba(14,165,233,0.15), 0 0 0 1px rgba(14,165,233,0.1);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 25px 45px rgba(14,165,233,0.12), 0 0 0 1px rgba(14,165,233,0.2);
 }
 
 .ab-team-card-inner img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  object-position: center bottom;
-  filter: drop-shadow(0 15px 25px rgba(0,0,0,0.15));
+  object-fit: contain; /* To show the full wide flyer without cutting */
+  object-position: center; /* Centered perfectly */
   transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .ab-team-card-premium:hover .ab-team-card-inner img {
-  transform: scale(1.08) translateY(-2%);
+  transform: scale(1.04);
 }
 
 .ab-team-placeholder {
@@ -1292,18 +1291,17 @@
   inset: 0;
   background: linear-gradient(
     180deg,
-    transparent 0%,
-    rgba(255,255,255,0.0) 40%,
-    rgba(255,255,255,0.85) 75%,
-    rgba(255,255,255,1) 100%
+    transparent 40%,
+    rgba(255,255,255,0.7) 75%,
+    rgba(255,255,255,0.95) 100%
   );
-  opacity: 0.9;
+  opacity: 0;
   transition: opacity 0.5s ease;
   pointer-events: none;
 }
 
 .ab-team-card-premium:hover .ab-team-card-overlay {
-  opacity: 1;
+  opacity: 1; /* Only show the white gradient on hover to keep flyers clean normally */
 }
 
 .ab-team-badge {
@@ -1328,10 +1326,10 @@
 }
 
 .ab-team-badge.lead {
-  background: rgba(168,85,247,0.1);
-  border: 1px solid rgba(168,85,247,0.2);
+  background: rgba(255,255,255,0.95);
+  border: 1px solid rgba(168,85,247,0.3);
   color: #9333ea;
-  box-shadow: 0 4px 15px rgba(168,85,247,0.1);
+  box-shadow: 0 4px 15px rgba(168,85,247,0.15);
 }
 
 .ab-team-info-panel {
@@ -1341,26 +1339,20 @@
   right: 0;
   padding: 2rem 1.5rem 1.5rem;
   z-index: 5;
-  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-  transform: translateY(1.5rem);
-}
-
-.ab-team-card-premium:hover .ab-team-info-panel {
-  transform: translateY(0);
+  pointer-events: none; /* Let clicks pass through if needed */
 }
 
 .ab-team-info-bg {
   position: absolute;
   inset: 0;
-  background: rgba(255,255,255,0.4);
+  background: rgba(255,255,255,0.6);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-top: 1px solid rgba(255,255,255,0.8);
   opacity: 0;
-  transition: opacity 0.5s ease;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
   border-radius: 1.5rem 1.5rem 0 0;
   transform: translateY(100%);
-  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .ab-team-card-premium:hover .ab-team-info-bg {
@@ -1371,6 +1363,14 @@
 .ab-team-info-content {
   position: relative;
   z-index: 2;
+  opacity: 0; /* Hide text completely until hover so the flyer remains visible */
+  transform: translateY(10px);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.05s;
+}
+
+.ab-team-card-premium:hover .ab-team-info-content {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .ab-team-name {
@@ -1399,7 +1399,7 @@
   color: #1e293b;
   opacity: 0;
   transform: translateY(8px);
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.1s;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.15s;
 }
 
 .ab-team-card-premium:hover .ab-team-action {

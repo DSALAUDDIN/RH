@@ -67,18 +67,30 @@ export default function Footer() {
             <h3>Contact Us</h3>
             <ul>
               <li>
-                <MapPin size={20} className="contact-icon" />
-                <span>123 Ocean View Drive, Suite 400<br/>Blue Bay, CA 90210</span>
+                <MapPin size={20} className="contact-icon" style={{ flexShrink: 0, marginTop: '4px' }} />
+                <span>House: 42, Road: 8, Block: C<br/>Banasree, Rampura<br/>Dhaka - 1219, Bangladesh</span>
               </li>
               <li>
-                <Phone size={20} className="contact-icon" />
-                <span><a href="tel:+1234567890">(123) 456-7890</a></span>
+                <Phone size={20} className="contact-icon" style={{ flexShrink: 0 }} />
+                <span><a href="tel:+8801775227902">01775-227902</a></span>
               </li>
               <li>
-                <Mail size={20} className="contact-icon" />
-                <span><a href="mailto:info@rhdentalclinic.com">info@rhdentalclinic.com</a></span>
+                <Mail size={20} className="contact-icon" style={{ flexShrink: 0 }} />
+                <span><a href="mailto:drhasan07012@gmail.com">drhasan07012@gmail.com</a></span>
               </li>
             </ul>
+            
+            <div style={{ marginTop: '1.5rem', height: '150px', borderRadius: '1rem', overflow: 'hidden', border: '1px solid rgba(0,0,0,0.08)', boxShadow: '0 4px 15px rgba(0,0,0,0.05)', position: 'relative' }}>
+              <iframe 
+                src="https://www.google.com/maps?q=RH+Dental+Care+and+Implant+Center&output=embed" 
+                width="100%" 
+                height="100%" 
+                style={{ border: 0 }} 
+                allowFullScreen={true} 
+                loading="lazy" 
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
           </div>
         </div>
 

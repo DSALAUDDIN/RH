@@ -9,131 +9,61 @@ export const metadata: Metadata = {
 export default function ReviewsPage() {
   return (
     <div style={{ paddingTop: 'var(--nav-height)' }}>
-      {/* Hero Banner */}
-      <div
-        style={{
-          background: 'linear-gradient(135deg, hsl(var(--blue-700)), hsl(var(--blue-500)))',
-          padding: '5rem 0 4rem',
-          textAlign: 'center',
-          position: 'relative',
-          overflow: 'hidden',
-        }}
-      >
-        <div
-          style={{
-            position: 'absolute', top: '-80px', left: '10%',
-            width: '400px', height: '400px', borderRadius: '50%',
-            background: 'rgba(255,255,255,0.06)', pointerEvents: 'none',
-          }}
-        />
-        <div
-          style={{
-            position: 'absolute', bottom: '-60px', right: '5%',
-            width: '280px', height: '280px', borderRadius: '50%',
-            background: 'rgba(255,255,255,0.08)', pointerEvents: 'none',
-          }}
-        />
-        <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-          <span
-            style={{
-              display: 'inline-block',
-              background: 'rgba(255,255,255,0.15)',
-              color: 'white',
-              borderRadius: '9999px',
-              padding: '0.35rem 1.25rem',
-              fontWeight: 700,
-              fontSize: '0.85rem',
-              letterSpacing: '0.08em',
-              textTransform: 'uppercase',
-              marginBottom: '1.25rem',
-            }}
-          >
-            Real Patient Stories
-          </span>
-          <h1 style={{ color: 'white', fontSize: 'clamp(2.5rem, 5vw, 3.5rem)', marginBottom: '1rem' }}>
-            Patient Reviews
-          </h1>
-          <p
-            style={{
-              color: 'rgba(255,255,255,0.88)',
-              fontSize: '1.2rem',
-              maxWidth: '680px',
-              margin: '0 auto',
-              lineHeight: 1.7,
-            }}
-          >
-            Over 5,000 patients have trusted us with their smiles. Here&apos;s what some of them have to say about the RH Dental experience.
-          </p>
-
-          {/* Aggregate rating display */}
-          <div
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '0.75rem',
-              marginTop: '2rem',
-              background: 'rgba(255,255,255,0.12)',
-              backdropFilter: 'blur(8px)',
-              border: '1px solid rgba(255,255,255,0.2)',
-              borderRadius: '9999px',
-              padding: '0.75rem 2rem',
-            }}
-          >
-            <span style={{ fontSize: '1.75rem', fontWeight: 800, color: '#fbbf24' }}>4.9</span>
-            <div style={{ display: 'flex', gap: '3px' }}>
-              {[...Array(5)].map((_, i) => (
-                <svg key={i} width="20" height="20" viewBox="0 0 24 24" fill="#fbbf24" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                </svg>
-              ))}
-            </div>
-            <span style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1rem' }}>Based on 500+ reviews</span>
-          </div>
-        </div>
-      </div>
-
-      {/* Testimonials Grid — full set */}
+      {/* Testimonials Core Section */}
       <Testimonials />
 
       {/* Leave a Review CTA */}
       <section
         style={{
           background: 'hsl(var(--background))',
-          padding: '5rem 0',
+          padding: '2rem 0 6rem',
           textAlign: 'center',
         }}
       >
         <div className="container">
           <div
-            className="glass"
             style={{
-              maxWidth: '700px',
+              maxWidth: '800px',
               margin: '0 auto',
-              padding: '4rem 3rem',
+              background: 'linear-gradient(145deg, #0f172a 0%, #1e293b 100%)',
+              padding: 'clamp(3rem, 5vw, 4rem)',
               borderRadius: '2rem',
-              border: '1px solid rgba(0,115,230,0.15)',
+              border: '1px solid rgba(255,255,255,0.1)',
+              boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
+              color: 'white',
             }}
           >
             <h2
               style={{
-                fontSize: '2rem',
+                fontSize: 'clamp(2rem, 4vw, 2.5rem)',
+                fontWeight: 800,
                 marginBottom: '1rem',
-                background: 'linear-gradient(135deg, hsl(var(--primary)), hsl(var(--blue-400)))',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
+                letterSpacing: '-0.02em'
               }}
             >
-              Share Your Experience
+              Share Your <span style={{ color: '#38bdf8' }}>Experience</span>
             </h2>
-            <p style={{ fontSize: '1.125rem', marginBottom: '2rem', color: 'hsl(var(--muted-foreground))' }}>
-              Had a great visit? We&apos;d love to hear your story. Your review helps others discover quality dental care.
+            <p style={{ fontSize: '1.1rem', marginBottom: '2.5rem', color: '#cbd5e1', lineHeight: '1.7', maxWidth: '600px', margin: '0 auto 2.5rem' }}>
+              Had a great visit? We&apos;d love to hear your story. Your review helps others discover quality dental care and helps us serve you better.
             </p>
             <a
-              href="/contact"
+              href="https://www.google.com/maps/place/RH+Dental+Care+and+Implant+Center/@23.7606927,90.4273875,17z/data=!4m16!1m7!3m6!1s0x3755b8754cadaa87:0x9db1359510cadcfd!2sRH+Dental+Care+and+Implant+Center!8m2!3d23.7606878!4d90.4299624!16s%2Fg%2F11b5pjywjt!3m7!1s0x3755b8754cadaa87:0x9db1359510cadcfd!8m2!3d23.7606878!4d90.4299624!9m1!1b1!16s%2Fg%2F11b5pjywjt?hl=en-US&entry=ttu&g_ep=EgoyMDI2MDQwOC4wIKXMDSoASAFQAw%3D%3D"
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn btn-primary"
-              style={{ padding: '1rem 2.5rem', fontSize: '1.125rem' }}
+              style={{ 
+                display: 'inline-block',
+                padding: '1rem 2.5rem', 
+                fontSize: '1.05rem',
+                fontWeight: 700,
+                borderRadius: '999px',
+                background: '#0ea5e9',
+                color: 'white',
+                border: 'none',
+                boxShadow: '0 10px 25px rgba(14, 165, 233, 0.4)'
+              }}
             >
-              Write a Review
+              Write a Review on Google
             </a>
           </div>
         </div>

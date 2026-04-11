@@ -3,19 +3,20 @@
 import { useRef, useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { motion, useInView } from 'framer-motion';
+import { motion, useInView, AnimatePresence } from 'framer-motion';
 import {
   ArrowUpRight, Phone, ShieldCheck, Star, Award, Clock, Heart,
   Microscope, Users, CheckCircle2, ChevronRight, Sparkles,
   CalendarCheck, Stethoscope, BadgeCheck, Smile, Activity,
   Zap, Eye, Layers, HeartPulse, Building2, FlaskConical,
-  ScanLine, MonitorDot, Wifi, User, Brain, GraduationCap,
+  ScanLine, MonitorDot, Wifi, User, Brain, GraduationCap, X, Play,
 } from 'lucide-react';
 import './About.css';
 import heroBg      from '../../assets/about_hero_light.png';
 import heroprofile from '../../assets/Hero/heroprofile.png';
 import drShimia    from '../../assets/dr_shimia.png';
 import clinicImg   from '../../assets/about_clinic.png';
+import Testimonials from '@/components/Testimonials';
 
 /* Doctor Images for Marquee */
 import doc1 from '../../assets/doctors/DENTAL LED SIZE 0.png';
@@ -127,17 +128,6 @@ const facilities = [
   { icon: <ShieldCheck size={22} />,title: 'Hospital-Grade Sterilization', desc: 'Strict hygiene and sterilization protocols maintained across the entire 3,500 sq.ft facility at all times.' },
 ];
 
-/* Real Google reviews + testimonial data */
-const realReviews = [
-  { name: 'Walid Mohammad', init: 'WM', role: 'Verified Google Review',  text: 'Commendable work and great care. The environment here is truly premium.' },
-  { name: 'Tanvir AHAMED',  init: 'TA', role: 'Verified Google Review',  text: 'One of the best doctors I have ever seen. The most modern dental clinic in Dhaka.' },
-  { name: 'Nafisa Islam',   init: 'NI', role: 'Verified Google Review',  text: 'The most painless dental experience I\'ve ever had. Highly recommended!' },
-  { name: 'Sarah Jenkins',  init: 'SJ', role: 'Patient since 2022',      text: 'The level of care at RH Dental is unprecedented. I felt absolutely zero pain. Dr. Hasan is not just a dentist, he\'s an artist!' },
-  { name: 'Michael Chen',   init: 'MC', role: 'Patient since 2021',      text: 'Finally, a dental clinic that doesn\'t feel like a hospital. My veneers look incredibly natural and the team is warm and professional.' },
-  { name: 'Emily Davis',    init: 'ED', role: 'Patient since 2023',      text: 'Best pediatric dentistry experience! My kids actually look forward to their appointments now.' },
-  { name: 'Robert Miller',  init: 'RM', role: 'Patient since 2022',      text: 'Incredible attention to detail. The 3D imaging they used to plan my implants was absolutely fascinating.' },
-];
-
 /* Why choose us */
 const whyCards = [
   { icon: <Users size={22} />,       title: 'Expert Multi-Specialty Team',         desc: 'Specialists in all dental disciplines — from implantology and orthodontics to cosmetic design and pediatric care.' },
@@ -173,6 +163,9 @@ const teamMembers = [
 
 /* ══ PAGE ══ */
 export default function AboutPage() {
+  const [selectedImage, setSelectedImage] = useState<any>(null);
+  const [isVideoOpen, setIsVideoOpen] = useState(false);
+
   return (
     <div>
 
@@ -424,12 +417,16 @@ export default function AboutPage() {
           <div className="ab-team-marquee-fade right"></div>
           <div className="ab-team-marquee">
             <div className="ab-team-track">
-              {[...teamMembers, ...teamMembers, ...teamMembers].map((m, i) => (
-                <div key={i} className="ab-team-card-premium">
+               {[...teamMembers, ...teamMembers, ...teamMembers].map((m, i) => (
+                <div 
+                  key={i} 
+                  className="ab-team-card-premium" 
+                  onClick={() => m.img && setSelectedImage(m.img)}
+                >
                   <div className="ab-team-card-inner">
                     {m.img ? (
                       <Image src={m.img} alt={m.name} fill
-                        style={{ objectFit: 'contain', objectPosition: 'center bottom' }} />
+                        style={{ objectFit: 'contain', objectPosition: 'center' }} />
                     ) : (
                       <div className="ab-team-placeholder">RH</div>
                     )}
@@ -448,7 +445,7 @@ export default function AboutPage() {
                         <div className="ab-team-name">{m.name}</div>
                         <div className="ab-team-role">{m.role}</div>
                         <div className="ab-team-action">
-                          <span className="ab-team-action-text">View Profile</span>
+                          <span className="ab-team-action-text">View Full Profile Flyer</span>
                           <ArrowUpRight size={14} />
                         </div>
                       </div>
@@ -562,37 +559,8 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ═══════════════════════ REVIEWS – light ═══════════════════════ */}
-      <section className="ab-section ab-section-light">
-        <div className="container">
-          <FadeIn>
-            <div style={{ textAlign: 'center', marginBottom: '0.5rem' }}>
-              <span className="ab-label ab-label-light"><Star size={12} /> Real Patient Reviews</span>
-              <h2 className="ab-section-title-light">Trusted by <span className="ab-blue-text">5,000+ Patients</span></h2>
-              <p style={{ fontSize: '1rem', color: '#475569', maxWidth: '480px', margin: '0 auto', lineHeight: 1.75 }}>
-                Real words from real patients — verified Google reviews and clinic testimonials.
-              </p>
-            </div>
-          </FadeIn>
-          <div className="ab-reviews-marquee">
-            <div className="ab-reviews-track">
-              {[...realReviews, ...realReviews].map((r, i) => (
-                <div key={i} className="ab-review-card">
-                  <div className="ab-review-stars">{[...Array(5)].map((_,j)=><Star key={j} size={14} fill="currentColor"/>)}</div>
-                  <p className="ab-review-text">&ldquo;{r.text}&rdquo;</p>
-                  <div className="ab-review-author">
-                    <div className="ab-review-avatar">{r.init}</div>
-                    <div>
-                      <div className="ab-review-name">{r.name}</div>
-                      <div className="ab-review-meta">{r.role}</div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* ═══════════════════════ REVIEWS – imported component ═══════════════════════ */}
+      <Testimonials />
 
       {/* ═══════════════════════ PROCESS – white ═══════════════════════ */}
       <section className="ab-section ab-section-white">
@@ -620,28 +588,54 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ═══════════════════════ CLINIC SHOWCASE ═══════════════════════ */}
-      <div style={{ position: 'relative', width: '100%', aspectRatio: '21/7', overflow: 'hidden' }}>
-        <Image src={clinicImg} alt="RH Dental Care premium clinic interior" fill sizes="100vw"
-          style={{ objectFit: 'cover', objectPosition: 'center 60%' }} />
+      {/* ═══════════════════════ CLINIC VIDEO TOUR ═══════════════════════ */}
+      <motion.div 
+        initial="rest"
+        whileHover="hover"
+        style={{ position: 'relative', width: '100%', aspectRatio: '21/8', overflow: 'hidden', cursor: 'pointer' }}
+        onClick={() => setIsVideoOpen(true)}
+      >
+        <motion.div
+          variants={{ rest: { scale: 1 }, hover: { scale: 1.05 } }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          style={{ position: 'absolute', inset: 0 }}
+        >
+          <Image src={clinicImg} alt="RH Dental Care clinic interior background" fill sizes="100vw"
+            style={{ objectFit: 'cover', objectPosition: 'center 60%' }} />
+        </motion.div>
         <div style={{
           position: 'absolute', inset: 0,
-          background: 'linear-gradient(to right, rgba(248,250,252,0.9) 0%, rgba(248,250,252,0.4) 55%, rgba(248,250,252,0.7) 100%)',
-          display: 'flex', alignItems: 'center',
+          background: 'linear-gradient(to right, rgba(15,23,42,0.85) 0%, rgba(15,23,42,0.6) 50%, rgba(15,23,42,0.85) 100%)',
+          display: 'flex', alignItems: 'center', justifyContent: 'center',
           padding: '0 max(1.5rem, calc((100vw - 1280px)/2))',
         }}>
-          <div style={{ maxWidth: '520px' }}>
-            <div className="ab-label" style={{ marginBottom: '1rem' }}><Sparkles size={14} /> Our State-of-the-Art Facility</div>
-            <h2 style={{ fontSize: 'clamp(1.8rem,3.5vw,3rem)', fontWeight: 900, color: '#0f172a', letterSpacing: '-0.04em', lineHeight: 1.08, marginBottom: '1rem' }}>
-              Designed for Your <span className="ab-shine-text">Comfort &amp; Care</span>
+          <div style={{ maxWidth: '600px', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
+            <motion.div 
+               variants={{
+                 rest: { scale: 1, boxShadow: '0 0 0 0 rgba(14,165,233,0)' },
+                 hover: { scale: 1.1, boxShadow: '0 0 0 14px rgba(255,255,255,0.05)' }
+               }}
+               style={{
+                 width: '80px', height: '80px', borderRadius: '50%',
+                 background: 'rgba(255,255,255,0.15)', border: '1px solid rgba(255,255,255,0.4)',
+                 backdropFilter: 'blur(8px)', display: 'flex', alignItems: 'center', justifyContent: 'center',
+                 marginBottom: '1.75rem', color: '#fff',
+               }}
+            >
+              <Play size={32} fill="currentColor" style={{ marginLeft: '4px' }} />
+            </motion.div>
+            <div className="ab-label" style={{ marginBottom: '1.25rem', background: 'rgba(255,255,255,0.1)', color: '#fff', borderColor: 'rgba(255,255,255,0.2)' }}>
+              <Building2 size={14} /> Full Clinic Virtual Tour
+            </div>
+            <h2 style={{ fontSize: 'clamp(2rem,4vw,3.2rem)', fontWeight: 900, color: '#fff', letterSpacing: '-0.04em', lineHeight: 1.1, marginBottom: '1.25rem' }}>
+              Take a Tour of <span className="ab-blue-text" style={{ background: 'linear-gradient(90deg, #38bdf8, #818cf8)', WebkitBackgroundClip: 'text' }}>Our Facility</span>
             </h2>
-            <p style={{ fontSize: '0.95rem', color: '#475569', lineHeight: 1.8, marginBottom: '1.75rem' }}>
-              From our calming reception to our precision-equipped treatment suites, every corner of our 3,500 sq.ft clinic is designed to make you feel safe, valued, and completely at ease.
+            <p style={{ fontSize: '1.05rem', color: '#cbd5e1', lineHeight: 1.7, marginBottom: '0' }}>
+              Experience our 3,500 sq.ft premium clinic from the comfort of your home. Explore our modern OT setups, digital technology, and inviting reception area.
             </p>
-            <Link href="/contact" className="ab-btn-primary">Book a Visit <ArrowUpRight size={18} /></Link>
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* ═══════════════════════ CTA – dark ═══════════════════════ */}
       <section className="ab-cta">
@@ -670,6 +664,141 @@ export default function AboutPage() {
           </FadeIn>
         </div>
       </section>
+
+      {/* ═══════════════════════ LIGHTBOX MODAL ═══════════════════════ */}
+      <AnimatePresence>
+        {selectedImage && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            style={{
+              position: 'fixed',
+              top: 0, left: 0, right: 0, bottom: 0,
+              backgroundColor: 'rgba(15, 23, 42, 0.92)',
+              backdropFilter: 'blur(15px)',
+              WebkitBackdropFilter: 'blur(15px)',
+              zIndex: 99999,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              padding: '2rem'
+            }}
+            onClick={() => setSelectedImage(null)}
+          >
+            {/* Close Button */}
+            <motion.button
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.8 }}
+              transition={{ delay: 0.1 }}
+              onClick={() => setSelectedImage(null)}
+              style={{
+                position: 'absolute', top: '2rem', right: '2rem',
+                background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)',
+                color: '#fff', width: '50px', height: '50px', borderRadius: '50%',
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                cursor: 'pointer', zIndex: 100000,
+                transition: 'all 0.3s ease'
+              }}
+              onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(255,255,255,0.25)'}
+              onMouseLeave={(e) => e.currentTarget.style.background = 'rgba(255,255,255,0.1)'}
+            >
+              <X size={26} strokeWidth={2.5} />
+            </motion.button>
+            
+            {/* Image Container */}
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0, y: 20 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.95, opacity: 0, y: 20 }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              style={{ position: 'relative', width: '100%', maxWidth: '1400px', height: '90vh' }}
+              onClick={(e) => e.stopPropagation()} // Prevent click to close when clicking the image
+            >
+              <Image 
+                src={selectedImage} 
+                alt="Full Profile" 
+                fill 
+                style={{ objectFit: 'contain', filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.4))' }} 
+                quality={100}
+              />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* ═══════════════════════ VIDEO LIGHTBOX MODAL ═══════════════════════ */}
+      <AnimatePresence>
+        {isVideoOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            style={{
+              position: 'fixed',
+              top: 0, left: 0, right: 0, bottom: 0,
+              backgroundColor: 'rgba(15, 23, 42, 0.95)',
+              backdropFilter: 'blur(15px)',
+              WebkitBackdropFilter: 'blur(15px)',
+              zIndex: 99999,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              padding: 'clamp(1rem, 5vw, 4rem)'
+            }}
+            onClick={() => setIsVideoOpen(false)}
+          >
+            {/* Close Button */}
+            <motion.button
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.8 }}
+              transition={{ delay: 0.1 }}
+              onClick={() => setIsVideoOpen(false)}
+              style={{
+                position: 'absolute', top: '2rem', right: '2rem',
+                background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)',
+                color: '#fff', width: '50px', height: '50px', borderRadius: '50%',
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                cursor: 'pointer', zIndex: 100000,
+                transition: 'all 0.3s ease'
+              }}
+              onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(255,255,255,0.25)'}
+              onMouseLeave={(e) => e.currentTarget.style.background = 'rgba(255,255,255,0.1)'}
+            >
+              <X size={26} strokeWidth={2.5} />
+            </motion.button>
+            
+            {/* Video Container */}
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0, y: 30 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.95, opacity: 0, y: 20 }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              style={{ 
+                position: 'relative', width: '100%', maxWidth: '1200px', aspectRatio: '16/9',
+                background: '#000', borderRadius: '1.5rem', overflow: 'hidden',
+                boxShadow: '0 20px 40px rgba(0,0,0,0.5)', border: '1px solid rgba(255,255,255,0.15)'
+              }}
+              onClick={(e) => e.stopPropagation()} 
+            >
+              {/* Replace the src with your actual clinic tour video URL */}
+              <iframe 
+                width="100%" 
+                height="100%" 
+                src="https://www.youtube.com/embed/ScMzIvxBSi4?autoplay=1&mute=1" 
+                title="RH Dental Clinic Tour Video" 
+                frameBorder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowFullScreen
+              ></iframe>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
     </div>
   );

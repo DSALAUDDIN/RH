@@ -113,7 +113,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 style={{ fontSize: '1.25rem', marginBottom: '0.5rem' }}>Our Location</h3>
-                    <p style={{ color: 'hsl(var(--muted-foreground))' }}>123 Ocean View Drive, Suite 400<br/>Blue Bay, CA 90210</p>
+                    <p style={{ color: 'hsl(var(--muted-foreground))', lineHeight: '1.6' }}>House: 42, Road: 8, Block: C<br/>Banasree, Rampura<br/>Dhaka - 1219, Bangladesh</p>
                   </div>
                 </li>
                 
@@ -123,8 +123,8 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 style={{ fontSize: '1.25rem', marginBottom: '0.5rem' }}>Phone</h3>
-                    <p style={{ color: 'hsl(var(--muted-foreground))' }}><a href="tel:+1234567890" style={{ color: 'inherit' }}>(123) 456-7890</a></p>
-                    <p style={{ color: 'hsl(var(--muted-foreground))', fontSize: '0.875rem', marginTop: '0.25rem' }}>24/7 Emergency Support Available</p>
+                    <p style={{ color: 'hsl(var(--muted-foreground))' }}><a href="tel:+8801775227902" style={{ color: 'inherit' }}>01775-227902</a></p>
+                    <p style={{ color: 'hsl(var(--muted-foreground))', fontSize: '0.875rem', marginTop: '0.25rem' }}>Call us for appointments</p>
                   </div>
                 </li>
                 
@@ -134,7 +134,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 style={{ fontSize: '1.25rem', marginBottom: '0.5rem' }}>Email</h3>
-                    <p style={{ color: 'hsl(var(--muted-foreground))' }}><a href="mailto:info@rhdentalclinic.com" style={{ color: 'inherit' }}>info@rhdentalclinic.com</a></p>
+                    <p style={{ color: 'hsl(var(--muted-foreground))' }}><a href="mailto:drhasan07012@gmail.com" style={{ color: 'inherit' }}>drhasan07012@gmail.com</a></p>
                   </div>
                 </li>
                 
@@ -152,10 +152,17 @@ export default function ContactPage() {
               </ul>
             </div>
             
-            {/* Map Placeholder */}
-            <div className="glass" style={{ height: '300px', borderRadius: '1.5rem', background: '#ccc', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden', position: 'relative' }}>
-               <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(45deg, hsl(var(--blue-200)), hsl(var(--blue-300)))', opacity: 0.8 }}></div>
-               <span style={{ position: 'relative', zIndex: 1, fontSize: '1.25rem', fontWeight: 'bold', color: 'hsl(var(--primary))' }}>Interactive Map Loading...</span>
+            {/* Interactive Location Map */}
+            <div className="glass" style={{ height: '300px', borderRadius: '1.5rem', overflow: 'hidden', position: 'relative', border: '1px solid hsl(var(--border))' }}>
+              <iframe 
+                src="https://www.google.com/maps?q=RH+Dental+Care+and+Implant+Center&output=embed" 
+                width="100%" 
+                height="100%" 
+                style={{ border: 0 }} 
+                allowFullScreen={true} 
+                loading="lazy" 
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
             </div>
           </div>
         </div>

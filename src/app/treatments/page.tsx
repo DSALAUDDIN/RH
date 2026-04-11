@@ -231,36 +231,16 @@ export default function TreatmentsPage() {
     : categories;
 
   return (
-    <div style={{ background: '#f8fafc', minHeight: '100vh', paddingTop: 'var(--nav-height, 80px)' }}>
-
+    <div className="treatments-modern">
       {/* ── Hero Banner ── */}
-      <div style={{
-        background: 'linear-gradient(135deg, #020617 0%, #0f172a 50%, #020617 100%)',
-        padding: '5rem 2rem 4rem',
-        position: 'relative',
-        overflow: 'hidden',
-      }}>
-        {/* Glow blobs */}
-        <div style={{
-          position: 'absolute', top: '-20%', left: '5%',
-          width: '400px', height: '400px',
-          background: 'radial-gradient(circle, rgba(14,165,233,0.15) 0%, transparent 70%)',
-          borderRadius: '50%', filter: 'blur(60px)',
-        }} />
-        <div style={{
-          position: 'absolute', bottom: '-20%', right: '5%',
-          width: '400px', height: '400px',
-          background: 'radial-gradient(circle, rgba(99,102,241,0.12) 0%, transparent 70%)',
-          borderRadius: '50%', filter: 'blur(60px)',
-        }} />
-
-        <div style={{ maxWidth: '1200px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
+      <section className="tr-hero">
+        <div className="tr-hero-content">
           <Link href="/specialties" style={{
             display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
-            color: 'rgba(255,255,255,0.5)', textDecoration: 'none',
-            fontSize: '0.875rem', fontWeight: 600, marginBottom: '2rem',
+            color: 'rgba(255,255,255,0.6)', textDecoration: 'none',
+            fontSize: '0.85rem', fontWeight: 600, marginBottom: '1.5rem',
             transition: 'color 0.3s ease',
-          }}>
+          }} onMouseEnter={(e) => e.currentTarget.style.color = '#fff'} onMouseLeave={(e) => e.currentTarget.style.color = 'rgba(255,255,255,0.6)'}>
             <ArrowLeft size={16} />
             Back to Specialties
           </Link>
@@ -270,95 +250,65 @@ export default function TreatmentsPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
           >
-            <div style={{
-              display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
-              background: 'rgba(14,165,233,0.15)',
-              border: '1px solid rgba(14,165,233,0.25)',
-              color: '#38bdf8', padding: '0.4rem 1rem',
-              borderRadius: '100px', fontSize: '0.78rem',
-              fontWeight: 800, textTransform: 'uppercase',
-              letterSpacing: '0.1em', marginBottom: '1.5rem',
-            }}>
-              <Star size={12} fill="currentColor" />
+            <div className="tr-badge">
+              <Star size={14} fill="currentColor" />
               Complete Treatment Menu
             </div>
 
-            <h1 style={{
-              fontSize: 'clamp(2.5rem, 5vw, 4rem)',
-              fontWeight: 900, color: '#fff',
-              marginBottom: '1.25rem', letterSpacing: '-0.04em',
-              lineHeight: 1.1,
-            }}>
-              All Treatments &<br />
-              <span style={{ color: '#38bdf8' }}>Services</span>
+            <h1 className="tr-hero-title">
+              Precision Care &<br />
+              <span style={{ color: '#38bdf8' }}>World-Class Solutions</span>
             </h1>
-            <p style={{
-              fontSize: '1.15rem', color: 'rgba(255,255,255,0.65)',
-              maxWidth: '600px', lineHeight: 1.8, marginBottom: '2.5rem',
-            }}>
-              Explore our full spectrum of 50+ dental procedures across 8 specialized departments. World-class care, transparent pricing.
+            <p className="tr-hero-desc">
+              Explore our full spectrum of 50+ cutting-edge dental procedures across 8 specialized departments. Agency-grade precision, absolute comfort, and transparent pricing.
             </p>
 
-            {/* Stats row */}
-            <div style={{ display: 'flex', gap: '2.5rem', flexWrap: 'wrap' }}>
-              {[
-                { num: '50+', label: 'Treatments' },
-                { num: '8', label: 'Departments' },
-                { num: '15+', label: 'Years Experience' },
-              ].map(({ num, label }) => (
-                <div key={label}>
-                  <div style={{ fontSize: '2rem', fontWeight: 900, color: '#38bdf8' }}>{num}</div>
-                  <div style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.5)', fontWeight: 600 }}>{label}</div>
-                </div>
-              ))}
+            <div className="tr-stats-row">
+              <div className="tr-stat">
+                <div className="tr-stat-num">50+</div>
+                <div className="tr-stat-label">Treatments</div>
+              </div>
+              <div className="tr-stat">
+                <div className="tr-stat-num">08</div>
+                <div className="tr-stat-label">Departments</div>
+              </div>
+              <div className="tr-stat">
+                <div className="tr-stat-num">15+</div>
+                <div className="tr-stat-label">Years Exp</div>
+              </div>
             </div>
           </motion.div>
         </div>
-      </div>
+      </section>
 
-      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '3rem 2rem 5rem' }}>
+      <div className="tr-container">
 
         {/* ── Search Bar ── */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          style={{
-            position: 'relative',
-            maxWidth: '600px',
-            margin: '0 auto 3rem',
-          }}
+          className="tr-search-container"
         >
-          <Search size={20} style={{
-            position: 'absolute', left: '1.25rem', top: '50%',
-            transform: 'translateY(-50%)', color: '#94a3b8',
+          <Search size={22} style={{
+            position: 'absolute', left: '1.5rem', top: '50%',
+            transform: 'translateY(-50%)', color: '#94a3b8', zIndex: 1
           }} />
           <input
             type="text"
-            placeholder="Search treatments (e.g. root canal, implant, whitening…)"
+            placeholder="Search our premium treatments (e.g. Implants, Whitening...)"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            style={{
-              width: '100%',
-              padding: '1rem 1rem 1rem 3.25rem',
-              borderRadius: '1rem',
-              border: '2px solid rgba(14,165,233,0.15)',
-              background: '#fff',
-              fontSize: '0.97rem',
-              color: '#0f172a',
-              outline: 'none',
-              boxShadow: '0 4px 20px rgba(0,0,0,0.06)',
-              boxSizing: 'border-box',
-            }}
+            className="tr-search-input"
           />
           {searchQuery && (
             <button
               onClick={() => setSearchQuery('')}
               style={{
-                position: 'absolute', right: '1rem', top: '50%',
+                position: 'absolute', right: '1.5rem', top: '50%',
                 transform: 'translateY(-50%)',
                 background: 'none', border: 'none', cursor: 'pointer',
-                color: '#94a3b8', fontSize: '1.2rem', lineHeight: 1,
+                color: '#94a3b8', fontSize: '1.5rem', lineHeight: 1, zIndex: 1
               }}
             >
               ×
@@ -366,91 +316,43 @@ export default function TreatmentsPage() {
           )}
         </motion.div>
 
-        {/* ── Signature Treatments ── */}
+        {/* ── Signature Treatments Bento ── */}
         {!searchQuery && (
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.15 }}
-            style={{ marginBottom: '4rem' }}
           >
-            <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
-              <span style={{
-                display: 'inline-flex', alignItems: 'center', gap: '0.4rem',
-                background: '#fef3c7', color: '#d97706',
-                padding: '0.35rem 1rem', borderRadius: '100px',
-                fontSize: '0.75rem', fontWeight: 800,
-                textTransform: 'uppercase', letterSpacing: '0.1em',
-                marginBottom: '0.75rem',
-              }}>
-                <Star size={12} fill="currentColor" />
-                Signature Treatments
-              </span>
-              <h2 style={{
-                fontSize: '1.75rem', fontWeight: 900, color: '#0f172a',
-                letterSpacing: '-0.03em',
-              }}>
-                Premium & Featured Services
+            <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+              <h2 style={{ fontSize: '2.25rem', fontWeight: 900, color: 'var(--foreground)', letterSpacing: '-0.03em' }}>
+                Signature Services
               </h2>
+              <p style={{ color: 'var(--muted-foreground)', fontSize: '1.1rem', marginTop: '0.5rem' }}>Our most requested and highly specialized procedures.</p>
             </div>
 
-            <div className="signature-grid">
+            <div className="tr-signature-grid">
               {signatureTreatments.map((st, i) => (
                 <motion.div
                   key={st.sn}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.1 }}
-                  whileHover={{ y: -4, boxShadow: `0 20px 50px ${st.color}20` }}
-                  style={{
-                    background: '#fff',
-                    borderRadius: '1.5rem',
-                    padding: '1.75rem',
-                    border: `2px solid ${st.color}15`,
-                    boxShadow: '0 8px 30px rgba(0,0,0,0.06)',
-                    transition: 'all 0.3s ease',
-                  }}
+                  className="tr-bento-card"
                 >
-                  <div style={{
-                    display: 'flex', alignItems: 'center',
-                    justifyContent: 'space-between', marginBottom: '1rem',
-                  }}>
-                    <span style={{
-                      fontSize: '2rem', fontWeight: 900,
-                      color: `${st.color}30`, letterSpacing: '-0.05em',
-                    }}>
-                      {st.sn}
-                    </span>
-                    <span style={{
-                      background: `${st.color}15`,
-                      color: st.color, padding: '0.3rem 0.75rem',
-                      borderRadius: '100px', fontSize: '0.8rem', fontWeight: 800,
-                    }}>
+                  <div className="tr-bento-header">
+                    <span className="tr-bento-sn">{st.sn}</span>
+                    <span className="tr-bento-price" style={{ background: `${st.color}15`, color: st.color }}>
                       {st.price}
                     </span>
                   </div>
-                  <h3 style={{
-                    fontSize: '1rem', fontWeight: 800, color: '#0f172a',
-                    marginBottom: '0.625rem', letterSpacing: '-0.02em',
-                    lineHeight: 1.4,
-                  }}>
-                    {st.name}
-                  </h3>
-                  <p style={{
-                    fontSize: '0.875rem', color: '#64748b',
-                    lineHeight: 1.7, marginBottom: '1rem',
-                  }}>
-                    {st.desc}
-                  </p>
-                  <div style={{
-                    display: 'flex', gap: '0.75rem', flexWrap: 'wrap',
-                    borderTop: `1px solid ${st.color}15`, paddingTop: '0.875rem',
-                  }}>
-                    <div style={{ fontSize: '0.78rem', color: '#94a3b8', fontWeight: 600 }}>
-                      ⏱ {st.duration}
+                  <h3>{st.name}</h3>
+                  <p>{st.desc}</p>
+                  <div className="tr-bento-meta">
+                    <div className="tr-bento-meta-item">
+                      <span style={{ marginRight: '0.5rem' }}>⏱</span>{st.duration}
                     </div>
-                    <div style={{ fontSize: '0.78rem', color: '#94a3b8', fontWeight: 600 }}>
-                      📅 {st.visits} Visit{st.visits !== '1' ? 's' : ''}
+                    <div className="tr-bento-meta-item">
+                      <span style={{ marginRight: '0.5rem' }}>📅</span>{st.visits} Visit{st.visits !== '1' ? 's' : ''}
                     </div>
                   </div>
                 </motion.div>
@@ -460,7 +362,13 @@ export default function TreatmentsPage() {
         )}
 
         {/* ── Category Accordions ── */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+        <div style={{ textAlign: 'center', marginBottom: '3rem', marginTop: searchQuery ? '0' : '4rem' }}>
+          <h2 style={{ fontSize: '2.25rem', fontWeight: 900, color: 'var(--foreground)', letterSpacing: '-0.03em' }}>
+            {searchQuery ? 'Search Results' : 'Explore All Departments'}
+          </h2>
+        </div>
+
+        <div className="tr-accordion-wrapper">
           {filteredCategories.map((cat, catIdx) => {
             const isOpen = searchQuery ? true : openCategory === cat.id;
             return (
@@ -468,146 +376,81 @@ export default function TreatmentsPage() {
                 key={cat.id}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: catIdx * 0.07 }}
+                transition={{ delay: catIdx * 0.05 }}
+                className="tr-category-card"
                 style={{
-                  background: '#fff',
-                  borderRadius: '1.5rem',
-                  overflow: 'hidden',
-                  border: `2px solid ${isOpen ? cat.color + '25' : 'rgba(0,0,0,0.06)'}`,
-                  boxShadow: isOpen ? `0 12px 40px ${cat.color}12` : '0 4px 16px rgba(0,0,0,0.05)',
-                  transition: 'all 0.35s ease',
+                  boxShadow: isOpen ? `0 15px 40px ${cat.color}15` : '0 4px 15px rgba(0,0,0,0.02)',
+                  borderColor: isOpen ? `${cat.color}30` : ''
                 }}
               >
-                {/* Category header */}
                 <button
-                  id={`cat-${cat.id}`}
+                  className="tr-category-btn"
                   onClick={() => !searchQuery && setOpenCategory(isOpen ? null : cat.id)}
-                  style={{
-                    width: '100%', padding: '1.5rem 2rem',
-                    background: 'none', border: 'none', cursor: searchQuery ? 'default' : 'pointer',
-                    display: 'flex', alignItems: 'center',
-                    justifyContent: 'space-between', gap: '1rem',
-                    textAlign: 'left',
-                  }}
+                  style={{ cursor: searchQuery ? 'default' : 'pointer' }}
                 >
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem' }}>
-                    {/* Icon */}
-                    <div style={{
-                      width: '48px', height: '48px', borderRadius: '1rem',
-                      background: cat.colorBg,
-                      display: 'flex', alignItems: 'center', justifyContent: 'center',
-                      color: '#fff', flexShrink: 0,
-                      boxShadow: `0 8px 20px ${cat.color}40`,
-                    }}>
+                  <div className="tr-cat-info">
+                    <div className="tr-cat-icon" style={{ background: cat.colorBg, boxShadow: `0 10px 20px ${cat.color}40` }}>
                       {cat.icon}
                     </div>
                     <div>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', flexWrap: 'wrap' }}>
-                        <h2 style={{
-                          fontSize: '1.15rem', fontWeight: 900, color: '#0f172a',
-                          margin: 0, letterSpacing: '-0.02em',
-                        }}>
-                          {cat.title}
-                        </h2>
-                        <span style={{
-                          background: cat.colorLight, color: cat.color,
-                          padding: '0.2rem 0.625rem', borderRadius: '100px',
-                          fontSize: '0.72rem', fontWeight: 700,
-                        }}>
-                          {cat.treatments.length} treatments
+                      <h2 className="tr-cat-title">{cat.title}</h2>
+                      <div className="tr-cat-meta">
+                        <span style={{ color: 'var(--muted-foreground)', fontSize: '0.95rem' }}>{cat.focus}</span>
+                        <span className="tr-cat-count" style={{ background: cat.colorLight, color: cat.color }}>
+                          {cat.treatments.length} Procedures
                         </span>
                       </div>
-                      <p style={{
-                        margin: 0, fontSize: '0.85rem', color: '#64748b',
-                        fontWeight: 500, marginTop: '0.2rem',
-                      }}>
-                        {cat.focus}
-                      </p>
                     </div>
                   </div>
                   {!searchQuery && (
                     <div style={{
-                      color: cat.color, flexShrink: 0,
-                      transition: 'transform 0.3s ease',
+                      color: cat.color,
+                      transition: 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
                       transform: isOpen ? 'rotate(180deg)' : 'none',
                     }}>
-                      <ChevronDown size={22} />
+                      <ChevronDown size={28} />
                     </div>
                   )}
                 </button>
 
-                {/* Treatments list */}
                 <AnimatePresence>
                   {isOpen && (
                     <motion.div
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: 'auto', opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
+                      transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
                       style={{ overflow: 'hidden' }}
                     >
-                      <div style={{
-                        padding: '0 2rem 2rem',
-                        display: 'grid',
-                        gap: '0.75rem',
-                      }}>
-                        <div style={{
-                          height: '1px',
-                          background: `linear-gradient(90deg, ${cat.color}30, transparent)`,
-                          marginBottom: '0.5rem',
-                        }} />
+                      <div className="tr-treatment-list">
+                        <div style={{ height: '1px', background: `linear-gradient(90deg, ${cat.color}30, transparent)`, marginBottom: '1.5rem' }} />
                         {cat.treatments.map((treatment, tIdx) => (
                           <motion.div
                             key={tIdx}
                             initial={{ opacity: 0, x: -10 }}
                             animate={{ opacity: 1, x: 0 }}
-                            transition={{ delay: tIdx * 0.04 }}
+                            transition={{ delay: tIdx * 0.03 }}
+                            className={`tr-treatment-item ${treatment.highlight ? 'highlight' : ''}`}
                             style={{
-                              display: 'flex', alignItems: 'flex-start',
-                              justifyContent: 'space-between', gap: '1rem',
-                              padding: '1rem 1.25rem',
-                              borderRadius: '1rem',
-                              background: treatment.highlight ? `${cat.color}08` : '#f8fafc',
-                              border: treatment.highlight ? `1.5px solid ${cat.color}20` : '1.5px solid rgba(0,0,0,0.05)',
-                              flexWrap: 'wrap',
+                              borderColor: treatment.highlight ? `${cat.color}30` : '',
+                              background: treatment.highlight ? `${cat.color}05` : ''
                             }}
                           >
-                            <div style={{ flex: 1, minWidth: '200px' }}>
-                              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
-                                <h3 style={{
-                                  margin: 0, fontSize: '0.97rem', fontWeight: 700,
-                                  color: '#0f172a', letterSpacing: '-0.01em',
-                                }}>
-                                  {treatment.name}
-                                </h3>
+                            <div style={{ flex: 1, paddingRight: '1rem' }}>
+                              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.5rem' }}>
+                                <h3 className="tr-treatment-name">{treatment.name}</h3>
                                 {treatment.highlight && (
-                                  <span style={{
-                                    background: cat.colorBg, color: '#fff',
-                                    padding: '0.15rem 0.5rem', borderRadius: '100px',
-                                    fontSize: '0.65rem', fontWeight: 800,
-                                    letterSpacing: '0.05em', whiteSpace: 'nowrap',
-                                  }}>
-                                    POPULAR
+                                  <span style={{ background: cat.colorBg, color: 'white', padding: '0.2rem 0.6rem', borderRadius: '999px', fontSize: '0.65rem', fontWeight: 800, letterSpacing: '0.05em' }}>
+                                    FEATURED
                                   </span>
                                 )}
                               </div>
                               {treatment.description && (
-                                <p style={{
-                                  margin: '0.25rem 0 0', fontSize: '0.85rem',
-                                  color: '#64748b', lineHeight: 1.6,
-                                }}>
-                                  {treatment.description}
-                                </p>
+                                <p className="tr-treatment-desc">{treatment.description}</p>
                               )}
                             </div>
                             {treatment.price && (
-                              <div style={{
-                                background: cat.colorLight, color: cat.color,
-                                padding: '0.4rem 0.875rem', borderRadius: '0.625rem',
-                                fontSize: '0.875rem', fontWeight: 800,
-                                whiteSpace: 'nowrap', flexShrink: 0,
-                                alignSelf: 'flex-start',
-                              }}>
+                              <div className="tr-treatment-price" style={{ background: cat.colorLight, color: cat.color }}>
                                 {treatment.price}
                               </div>
                             )}
@@ -621,7 +464,7 @@ export default function TreatmentsPage() {
             );
           })}
         </div>
-
+        
         {/* ── CTA Section ── */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -629,76 +472,31 @@ export default function TreatmentsPage() {
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
           style={{
-            marginTop: '4rem',
-            background: 'linear-gradient(135deg, #020617 0%, #0f172a 100%)',
+            marginTop: '6rem',
+            background: 'linear-gradient(135deg, #020617 0%, #0c4a6e 100%)',
             borderRadius: '2rem',
-            padding: '4rem 3rem',
+            padding: '5rem 3rem',
             textAlign: 'center',
             position: 'relative',
             overflow: 'hidden',
-            boxShadow: '0 30px 80px rgba(2,6,23,0.25)',
+            boxShadow: '0 30px 80px rgba(2,6,23,0.3)',
           }}
         >
-          <div style={{
-            position: 'absolute', top: '-20%', left: '10%',
-            width: '300px', height: '300px',
-            background: 'radial-gradient(circle, rgba(14,165,233,0.2) 0%, transparent 70%)',
-            borderRadius: '50%', filter: 'blur(50px)',
-          }} />
-          <div style={{
-            position: 'absolute', bottom: '-20%', right: '10%',
-            width: '300px', height: '300px',
-            background: 'radial-gradient(circle, rgba(99,102,241,0.15) 0%, transparent 70%)',
-            borderRadius: '50%', filter: 'blur(50px)',
-          }} />
-
           <div style={{ position: 'relative', zIndex: 1 }}>
-            <h2 style={{
-              fontSize: 'clamp(1.75rem, 3vw, 2.75rem)',
-              fontWeight: 900, color: '#fff',
-              marginBottom: '1rem', letterSpacing: '-0.03em',
-            }}>
-              Not Sure Which Treatment You Need?
+            <h2 style={{ fontSize: 'clamp(2rem, 3vw, 3rem)', fontWeight: 900, color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.02em' }}>
+              Secure Your Brilliant Smile Today
             </h2>
-            <p style={{
-              fontSize: '1.1rem', color: 'rgba(255,255,255,0.65)',
-              maxWidth: '520px', margin: '0 auto 2.5rem', lineHeight: 1.7,
-            }}>
-              Book a consultation and our specialists will create a personalized treatment plan tailored to your needs.
+            <p style={{ fontSize: '1.15rem', color: 'rgba(255,255,255,0.8)', maxWidth: '600px', margin: '0 auto 3rem', lineHeight: 1.6 }}>
+              Our elite specialists are ready to architect your personalized dental treatment plan. Experience dentistry at its highest level.
             </p>
-            <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-              <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }}>
-                <Link
-                  href="/contact"
-                  style={{
-                    display: 'inline-flex', alignItems: 'center', gap: '0.75rem',
-                    padding: '1.1rem 2.5rem',
-                    background: 'linear-gradient(135deg, #0ea5e9, #0284c7)',
-                    color: '#fff', borderRadius: '100px',
-                    fontWeight: 800, fontSize: '1rem', textDecoration: 'none',
-                    boxShadow: '0 12px 35px rgba(14,165,233,0.45)',
-                  }}
-                >
-                  <Calendar size={18} />
-                  Book Consultation
-                </Link>
-              </motion.div>
-              <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }}>
-                <a
-                  href="tel:+8801775227902"
-                  style={{
-                    display: 'inline-flex', alignItems: 'center', gap: '0.75rem',
-                    padding: '1.1rem 2.25rem',
-                    background: 'rgba(255,255,255,0.1)',
-                    border: '1.5px solid rgba(255,255,255,0.2)',
-                    color: '#fff', borderRadius: '100px',
-                    fontWeight: 700, fontSize: '1rem', textDecoration: 'none',
-                  }}
-                >
-                  <Phone size={18} />
-                  Call Us Now
-                </a>
-              </motion.div>
+            <div style={{ display: 'flex', gap: '1.5rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+              <Link
+                href="/contact"
+                className="btn btn-primary"
+                style={{ padding: '1.1rem 2.5rem', borderRadius: '100px', fontSize: '1.1rem', background: '#38bdf8', color: '#0f172a', fontWeight: 800, border: 'none', boxShadow: '0 10px 30px rgba(56, 189, 248, 0.4)' }}
+              >
+                Book Priority Consultation
+              </Link>
             </div>
           </div>
         </motion.div>
