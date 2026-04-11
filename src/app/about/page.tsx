@@ -610,16 +610,16 @@ export default function AboutPage() {
           style={{ objectFit: 'cover', objectPosition: 'center 60%' }} />
         <div style={{
           position: 'absolute', inset: 0,
-          background: 'linear-gradient(to right, rgba(2,6,23,0.9) 0%, rgba(2,6,23,0.4) 55%, rgba(2,6,23,0.7) 100%)',
+          background: 'linear-gradient(to right, rgba(248,250,252,0.9) 0%, rgba(248,250,252,0.4) 55%, rgba(248,250,252,0.7) 100%)',
           display: 'flex', alignItems: 'center',
           padding: '0 max(1.5rem, calc((100vw - 1280px)/2))',
         }}>
           <div style={{ maxWidth: '520px' }}>
             <div className="ab-label" style={{ marginBottom: '1rem' }}><Sparkles size={14} /> Our State-of-the-Art Facility</div>
-            <h2 style={{ fontSize: 'clamp(1.8rem,3.5vw,3rem)', fontWeight: 900, color: '#f8fafc', letterSpacing: '-0.04em', lineHeight: 1.08, marginBottom: '1rem' }}>
+            <h2 style={{ fontSize: 'clamp(1.8rem,3.5vw,3rem)', fontWeight: 900, color: '#0f172a', letterSpacing: '-0.04em', lineHeight: 1.08, marginBottom: '1rem' }}>
               Designed for Your <span className="ab-shine-text">Comfort &amp; Care</span>
             </h2>
-            <p style={{ fontSize: '0.95rem', color: '#94a3b8', lineHeight: 1.8, marginBottom: '1.75rem' }}>
+            <p style={{ fontSize: '0.95rem', color: '#475569', lineHeight: 1.8, marginBottom: '1.75rem' }}>
               From our calming reception to our precision-equipped treatment suites, every corner of our 3,500 sq.ft clinic is designed to make you feel safe, valued, and completely at ease.
             </p>
             <Link href="/contact" className="ab-btn-primary">Book a Visit <ArrowUpRight size={18} /></Link>
@@ -646,7 +646,7 @@ export default function AboutPage() {
                 <a href="tel:+8801234567890" className="ab-btn-glass"><Phone size={16} /> Call Now</a>
               </div>
               <div className="ab-cta-trust">
-                <div className="ab-cta-trust-item"><CheckCircle2 size={14} color="#4ade80" /> Pain-Free Guarantee</div>
+                <div className="ab-cta-trust-item"><CheckCircle2 size={14} color="#16a34a" /> Pain-Free Guarantee</div>
                 <div className="ab-cta-trust-item"><Award size={14} color="#38bdf8" /> BMDC Certified — Reg. 5169</div>
                 <div className="ab-cta-trust-item"><Users size={14} color="#818cf8" /> 5,000+ Happy Patients</div>
               </div>
