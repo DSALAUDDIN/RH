@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Stethoscope, Menu, X, Phone, CircleCheck } from 'lucide-react';
+import { Menu, X, Phone, ShieldPlus } from 'lucide-react';
 import './Navbar.css';
 
 export default function Navbar() {
@@ -25,17 +25,16 @@ export default function Navbar() {
     { name: 'About', path: '/about' },
     { name: 'Specialties', path: '/specialties' },
     { name: 'Treatments', path: '/treatments' },
-    { name: 'Blog', path: '/blog' },
     { name: 'Reviews', path: '/reviews' },
     { name: 'Contact', path: '/contact' },
   ];
 
   return (
-    <header className={`navbar ${isScrolled ? 'scrolled glass' : ''}`}>
-      <div className="container nav-container">
+    <header className={`navbar-wrapper ${isScrolled ? 'scrolled' : ''}`}>
+      <div className="navbar glass-modern">
         <Link href="/" className="logo">
-          <CircleCheck className="logo-icon accent-blue" size={28} />
-          <span className="logo-text">RH Dental Care</span>
+          <ShieldPlus className="logo-icon accent-blue" size={28} />
+          <span className="logo-text">RH Dental</span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -52,37 +51,41 @@ export default function Navbar() {
                     <motion.div 
                       layoutId="nav-indicator" 
                       className="nav-indicator"
-                      transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+                      transition={{ type: 'spring', stiffness: 400, damping: 30 }}
                     />
                   )}
                 </Link>
               </li>
             ))}
           </ul>
-          <a href="tel:+1234567890" className="btn btn-primary contact-btn">
-            <Phone size={18} />
-            Book Appointment
-          </a>
         </nav>
 
-        {/* Mobile Menu Toggle */}
-        <button 
-          className="mobile-toggle" 
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          aria-label="Toggle menu"
-        >
-          {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
-        </button>
+        <div className="nav-actions">
+          <Link href="/contact" className="btn-book">
+            <Phone size={16} />
+            <span>Book Now</span>
+          </Link>
+
+          {/* Mobile Menu Toggle */}
+          <button 
+            className="mobile-toggle" 
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Navigation */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div 
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            className="mobile-nav glass"
+            initial={{ opacity: 0, y: -20, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -20, scale: 0.95 }}
+            transition={{ duration: 0.2, ease: "easeOut" }}
+            className="mobile-nav glass-modern"
           >
             <ul className="mobile-nav-links">
               {navLinks.map((link) => (
@@ -97,9 +100,10 @@ export default function Navbar() {
                 </li>
               ))}
               <li>
-                <a href="tel:+1234567890" className="btn btn-primary mobile-contact-btn">
+                <Link href="/contact" className="btn-book mobile-book-btn" onClick={() => setMobileMenuOpen(false)}>
+                  <Phone size={18} />
                   Book Appointment
-                </a>
+                </Link>
               </li>
             </ul>
           </motion.div>

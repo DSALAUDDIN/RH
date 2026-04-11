@@ -1172,138 +1172,246 @@
 
 .ab-shimia-label { color: #9333ea; }
 
-/* ── TEAM PHOTO STRIP (MARQUEE) ── */
-.ab-team-strip-title {
-  text-align: center;
-  margin-bottom: 3.5rem;
+/* ── TEAM PREMIUM SHOWCASE ── */
+.ab-team-bg-glow {
+  position: absolute;
+  top: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: 600px;
+  background: radial-gradient(circle at top, rgba(14,165,233,0.04) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
 }
 
-.ab-team-marquee {
+.ab-team-header-premium {
+  text-align: center;
+  margin-bottom: 4rem;
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ab-team-subtitle {
+  font-size: 1.05rem;
+  color: #475569;
+  line-height: 1.7;
+  margin-top: 1.25rem;
+}
+
+.ab-team-marquee-container {
   overflow: hidden;
   position: relative;
   width: 100vw;
   margin-left: 50%;
   transform: translateX(-50%);
+  padding: 1rem 0 3rem;
+  z-index: 2;
 }
-.ab-team-marquee::before,
-.ab-team-marquee::after {
-  content: '';
+
+.ab-team-marquee-fade {
   position: absolute;
   top: 0; bottom: 0;
-  width: 150px;
-  z-index: 2;
+  width: 15vw;
+  z-index: 10;
   pointer-events: none;
 }
-.ab-team-marquee::before {
+.ab-team-marquee-fade.left {
   left: 0;
-  background: linear-gradient(to right, #ffffff, transparent);
+  background: linear-gradient(to right, #ffffff 10%, rgba(255,255,255,0) 100%);
 }
-.ab-team-marquee::after {
+.ab-team-marquee-fade.right {
   right: 0;
-  background: linear-gradient(to left, #ffffff, transparent);
+  background: linear-gradient(to left, #ffffff 10%, rgba(255,255,255,0) 100%);
 }
 
 .ab-team-track {
   display: flex;
-  gap: 1.5rem;
-  animation: abScrollTeam 50s linear infinite;
+  gap: 2rem;
+  animation: abScrollPremium 60s linear infinite;
   width: max-content;
-  padding: 1rem 0;
+  padding: 0 2rem;
 }
 .ab-team-track:hover {
   animation-play-state: paused;
 }
 
-@keyframes abScrollTeam {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+@keyframes abScrollPremium {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(calc(-33.333% - 0.66rem)); } /* because we cloned array 3 times */
 }
 
-.ab-team-photo-card {
+.ab-team-card-premium {
   flex-shrink: 0;
-  width: 300px;
+  width: 320px;
+  height: 440px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.ab-team-card-inner {
   position: relative;
+  width: 100%;
+  height: 100%;
   border-radius: 1.5rem;
   overflow: hidden;
-  aspect-ratio: 3/4;
-  background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
-  cursor: pointer;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  background: linear-gradient(145deg, #f8fafc 0%, #e2e8f0 100%);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid rgba(255,255,255,0.6);
 }
 
-.ab-team-photo-card img {
+.ab-team-card-premium:hover .ab-team-card-inner {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 25px 45px rgba(14,165,233,0.15), 0 0 0 1px rgba(14,165,233,0.1);
+}
+
+.ab-team-card-inner img {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  object-position: center;
-  transition: transform 0.7s cubic-bezier(0.16,1,0.3,1);
-  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.1));
-  background: radial-gradient(circle at center, #e2e8f0 0%, #f1f5f9 100%);
+  object-position: center bottom;
+  filter: drop-shadow(0 15px 25px rgba(0,0,0,0.15));
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.ab-team-photo-card:hover img {
-  transform: scale(1.06);
+.ab-team-card-premium:hover .ab-team-card-inner img {
+  transform: scale(1.08) translateY(-2%);
 }
 
-.ab-team-photo-overlay {
+.ab-team-placeholder {
+  width: 100%; height: 100%;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 4rem; font-weight: 900;
+  color: rgba(14,165,233,0.2);
+}
+
+.ab-team-card-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(
     180deg,
-    transparent 40%,
-    rgba(255,255,255,0.6) 70%,
-    rgba(255,255,255,0.95) 100%
+    transparent 0%,
+    rgba(255,255,255,0.0) 40%,
+    rgba(255,255,255,0.85) 75%,
+    rgba(255,255,255,1) 100%
   );
+  opacity: 0.9;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
 }
 
-.ab-team-photo-info {
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  padding: 1.5rem 1.25rem;
-  transform: translateY(4px);
-  transition: transform 0.4s ease;
+.ab-team-card-premium:hover .ab-team-card-overlay {
+  opacity: 1;
 }
-.ab-team-photo-card:hover .ab-team-photo-info {
+
+.ab-team-badge {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  padding: 0.35rem 0.8rem;
+  border-radius: 9999px;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: rgba(255,255,255,0.9);
+  border: 1px solid rgba(255,255,255,1);
+  color: #64748b;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  display: flex;
+  align-items: center;
+  transition: all 0.4s ease;
+  z-index: 5;
+}
+
+.ab-team-badge.lead {
+  background: rgba(168,85,247,0.1);
+  border: 1px solid rgba(168,85,247,0.2);
+  color: #9333ea;
+  box-shadow: 0 4px 15px rgba(168,85,247,0.1);
+}
+
+.ab-team-info-panel {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2rem 1.5rem 1.5rem;
+  z-index: 5;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(1.5rem);
+}
+
+.ab-team-card-premium:hover .ab-team-info-panel {
   transform: translateY(0);
 }
 
-.ab-team-photo-name {
-  font-size: 0.95rem;
-  font-weight: 800;
-  color: #0f172a;
-  letter-spacing: -0.02em;
-  margin-bottom: 0.2rem;
+.ab-team-info-bg {
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(255,255,255,0.8);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  border-radius: 1.5rem 1.5rem 0 0;
+  transform: translateY(100%);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.ab-team-photo-role {
-  font-size: 0.74rem;
-  font-weight: 600;
-  color: var(--blue-600);
-  text-transform: uppercase;
-  letter-spacing: 0.07em;
-  opacity: 0;
-  transform: translateY(6px);
-  transition: opacity 0.35s ease 0.05s, transform 0.35s ease 0.05s;
-}
-.ab-team-photo-card:hover .ab-team-photo-role {
+.ab-team-card-premium:hover .ab-team-info-bg {
   opacity: 1;
   transform: translateY(0);
 }
 
-.ab-team-photo-badge {
-  position: absolute;
-  top: 1rem; right: 1rem;
-  padding: 0.2rem 0.65rem;
-  border-radius: 9999px;
-  font-size: 0.65rem;
-  font-weight: 800;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  background: rgba(14,165,233,0.15);
-  border: 1px solid rgba(14,165,233,0.25);
-  color: var(--blue-600);
-  backdrop-filter: blur(8px);
+.ab-team-info-content {
+  position: relative;
+  z-index: 2;
 }
+
+.ab-team-name {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.25rem;
+}
+
+.ab-team-role {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--blue-600);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.ab-team-action {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #1e293b;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.1s;
+}
+
+.ab-team-card-premium:hover .ab-team-action {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ab-team-action-text {
+  border-bottom: 1px solid rgba(15,23,42,0.3);
+  padding-bottom: 1px;
+}
+
 
 /* ── RESPONSIVE ── */
 @media (max-width: 1024px) {

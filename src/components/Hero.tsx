@@ -13,8 +13,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowUpRight, Phone, ShieldCheck, Clock, Activity, Star, Sparkles, CheckCircle2, Award } from 'lucide-react';
 import './Hero.css';
-import heroprofile from '../assets/hero/heroprofile.png';
-import herobanner from '../assets/hero/herobanner.webp';
+import heroprofile from '../assets/Hero/heroprofile.png';
+import herobanner from '../assets/Hero/herobanner.webp';
 
 /* ─── Animated Counter ─── */
 function Counter({ to, suffix = '' }: { to: number; suffix?: string }) {

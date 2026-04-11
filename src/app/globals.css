@@ -221,3 +221,12 @@ p { margin-bottom: var(--space-4); color: hsl(var(--muted-foreground)); }
     max-width: 100%;
   }
 }
+
+/* Fix for standard pages to offset the new absolute floating navbar */
+.main-content {
+  padding-top: 100px; /* Adjusted to give space below the floating navbar */
+}
+/* except for the home page (Hero v5 handles its own padding) */
+body:has(.hero-v5) .main-content {
+  padding-top: 0;
+}

@@ -3,7 +3,7 @@
 import { useRef, useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { motion, useInView, Variants } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 import {
   ArrowUpRight, Phone, ShieldCheck, Star, Award, Clock, Heart,
   Microscope, Users, CheckCircle2, ChevronRight, Sparkles,
@@ -13,7 +13,7 @@ import {
 } from 'lucide-react';
 import './About.css';
 import heroBg      from '../../assets/about_hero_light.png';
-import heroprofile from '../../assets/hero/heroprofile.png';
+import heroprofile from '../../assets/Hero/heroprofile.png';
 import drShimia    from '../../assets/dr_shimia.png';
 import clinicImg   from '../../assets/about_clinic.png';
 
@@ -61,8 +61,8 @@ function FadeIn({ children, delay = 0, className }: { children: React.ReactNode;
   );
 }
 
-const stagger: Variants = { hidden: {}, show: { transition: { staggerChildren: 0.09 } } };
-const fadeUp: Variants  = { hidden: { opacity: 0, y: 36 }, show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] } } };
+const stagger: any = { hidden: {}, show: { transition: { staggerChildren: 0.09 } } };
+const fadeUp: any  = { hidden: { opacity: 0, y: 36 }, show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] } } };
 
 /* ══ REAL DATA ══ */
 const heroStats = [
@@ -203,7 +203,7 @@ export default function AboutPage() {
 
           <motion.h1 className="ab-hero-title"
             initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}>
+            transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] as any }}>
             Your Smile is{' '}
             <span className="ab-shine">Our Happiness.</span>
           </motion.h1>
@@ -397,50 +397,66 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ═══════════════════════ TEAM PHOTO STRIP ═══════════════════════ */}
-      <section className="ab-section ab-section-dark" style={{ overflow: 'hidden' }}>
-        <div className="container">
+      {/* ═══════════════════════ TEAM PHOTO SHOWCASE ═══════════════════════ */}
+      <section className="ab-section ab-section-white" style={{ position: 'relative', overflow: 'hidden', paddingBottom: '7rem' }}>
+        <div className="ab-team-bg-glow" />
+        <div className="container" style={{ position: 'relative', zIndex: 3 }}>
           <FadeIn>
-            <div className="ab-team-strip-title">
-              <span className="ab-label"><Users size={14} /> Meet the Full Team</span>
-              <h2 className="ab-section-title-dark">
-                A Team of <span className="ab-shine-text">Specialists</span>
+            <div className="ab-team-header-premium">
+              <motion.span 
+                className="ab-label ab-label-light"
+                whileHover={{ scale: 1.05 }}
+              >
+                <Users size={14} /> Meet the Specialists
+              </motion.span>
+              <h2 className="ab-section-title-light">
+                A Team of <span className="ab-blue-text">Specialists</span>
               </h2>
-              <p className="ab-body-dark" style={{ maxWidth: '500px', margin: '0 auto' }}>
-                Every clinician at RH Dental Care holds specialist qualifications and is dedicated to delivering outstanding, patient-centred outcomes.
+              <p className="ab-team-subtitle">
+                Every clinician at RH Dental Care holds specialist qualifications and is dedicated to delivering outstanding, patient-centred outcomes. We bring together diverse expertise to provide complete, world-class dental care.
               </p>
             </div>
           </FadeIn>
         </div>
 
-        <div className="ab-team-marquee">
-          <div className="ab-team-track">
-            {[...teamMembers, ...teamMembers].map((m, i) => (
-              <div key={i} className="ab-team-photo-card">
-                {m.img ? (
-                  <Image src={m.img} alt={m.name} fill
-                    style={{ objectFit: 'contain', objectPosition: 'center' }} />
-                ) : (
-                  <div style={{
-                    width: '100%', height: '100%',
-                    background: 'linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%)',
-                    display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    fontSize: '3.5rem', fontWeight: 900,
-                    color: 'rgba(14,165,233,0.4)',
-                  }}>
-                    RH
+        <div className="ab-team-marquee-container">
+          <div className="ab-team-marquee-fade left"></div>
+          <div className="ab-team-marquee-fade right"></div>
+          <div className="ab-team-marquee">
+            <div className="ab-team-track">
+              {[...teamMembers, ...teamMembers, ...teamMembers].map((m, i) => (
+                <div key={i} className="ab-team-card-premium">
+                  <div className="ab-team-card-inner">
+                    {m.img ? (
+                      <Image src={m.img} alt={m.name} fill
+                        style={{ objectFit: 'contain', objectPosition: 'center bottom' }} />
+                    ) : (
+                      <div className="ab-team-placeholder">RH</div>
+                    )}
+                    <div className="ab-team-card-overlay" />
+                    
+                    {/* Badge */}
+                    <div className={`ab-team-badge ${m.badge === 'Team Lead' ? 'lead' : ''}`}>
+                      {m.badge === 'Team Lead' && <Sparkles size={10} style={{marginRight: '4px'}} />}
+                      {m.badge}
+                    </div>
+
+                    {/* Info Panel */}
+                    <div className="ab-team-info-panel">
+                      <div className="ab-team-info-bg"></div>
+                      <div className="ab-team-info-content">
+                        <div className="ab-team-name">{m.name}</div>
+                        <div className="ab-team-role">{m.role}</div>
+                        <div className="ab-team-action">
+                          <span className="ab-team-action-text">View Profile</span>
+                          <ArrowUpRight size={14} />
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                )}
-                <div className="ab-team-photo-overlay" />
-                <span className="ab-team-photo-badge" style={
-                  m.badge === 'Team Lead' ? { background:'rgba(147,51,234,0.15)', border:'1px solid rgba(147,51,234,0.25)', color:'#9333ea' } : {}
-                }>{m.badge}</span>
-                <div className="ab-team-photo-info">
-                  <div className="ab-team-photo-name">{m.name}</div>
-                  <div className="ab-team-photo-role" style={m.badge === 'Team Lead' ? { color:'#9333ea' } : {}}>{m.role}</div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
