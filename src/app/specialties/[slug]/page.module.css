@@ -1,0 +1,57 @@
+/* Specialty Detail Page Styles */
+
+.heroSection {
+  position: relative;
+  height: 75vh;
+  min-height: 600px;
+  max-height: 800px;
+  overflow: hidden;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-bottom: 120px;
+}
+
+.processGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .heroSection {
+    height: 60vh;
+    min-height: 500px;
+  }
+
+  .statsGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 80px;
+  }
+
+  .processGrid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroSection {
+    height: 50vh;
+    min-height: 450px;
+  }
+}
+
+/* Print styles */
+@media print {
+  .heroSection {
+    height: auto;
+    page-break-inside: avoid;
+  }
+}
+

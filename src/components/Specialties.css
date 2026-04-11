@@ -1,124 +1,357 @@
+/* ===================================================
+   SPECIALTIES — PREMIUM DARK → WHITE GRADIENT
+   Seamlessly continues from the Hero (#020617)
+   =================================================== */
+
 .specialties-section {
   position: relative;
-  background-color: hsl(var(--blue-50));
+  background: linear-gradient(
+    180deg,
+    #020617 0%,        /* Exact hero match — seamless */
+    #030d1e 8%,        /* Deep dark navy */
+    #041828 18%,       /* Dark section — header lives here */
+    #052335 28%,       /* Deep navy — first cards appear */
+    #3a6680 40%,       /* Desaturated steel blue bridge */
+    #7aa0b8 48%,       /* Soft muted sky */
+    #adc5d4 56%,       /* Light gray-blue */
+    #cddae4 63%,       /* Pale blue-gray */
+    #e2edf5 72%,       /* Near pale */
+    #f0f7fb 80%,       /* Very near white */
+    #f7fbfd 88%,       /* Almost white */
+    #ffffff 100%       /* Pure white */
+  );
   overflow: hidden;
-  padding: var(--space-24) 0;
+  padding: 120px 0 160px 0;
+  margin-top: -2px;
 }
 
-.dark .specialties-section {
-  background-color: hsl(var(--blue-950));
+/* ---- Transition-zone glow ---- */
+.spec-glow {
+  position: absolute;
+  top: 34%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1000px;
+  height: 320px;
+  background: radial-gradient(
+    ellipse,
+    rgba(56, 189, 248, 0.10) 0%,
+    transparent 70%
+  );
+  filter: blur(70px);
+  pointer-events: none;
+  z-index: 0;
 }
 
-.subtitle {
-  display: block;
-  font-weight: 700;
-  color: hsl(var(--primary));
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-size: 0.875rem;
-  margin-bottom: var(--space-4);
-}
-
-.specialties-grid {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  gap: var(--space-8);
-  margin-top: var(--space-12);
-}
-
-@media (min-width: 768px) {
-  .specialties-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 1024px) {
-  .specialties-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-.specialty-card {
+/* ---- Inner container ---- */
+.specialties-inner {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 60px;
   position: relative;
-  padding: var(--space-10) var(--space-8);
-  border-radius: var(--radius-xl);
-  border: 1px solid rgba(0, 115, 230, 0.1);
-  background: rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(10px);
-  transition: all 0.4s ease;
+  z-index: 10;
+}
+
+/* ---- Section Header (on dark zone — white text) ---- */
+.section-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.section-header .tag {
+  color: #38bdf8;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.45em;
+  font-size: 0.65rem;
+  margin-bottom: 1.25rem;
+  display: block;
+}
+
+.section-header h2 {
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.05em;
+  line-height: 1.1;
+  margin-bottom: 1.25rem;
+  text-shadow: 0 2px 30px rgba(0, 0, 0, 0.2);
+}
+
+.section-header p {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 1.1rem;
+  max-width: 580px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* ---- Bento Grid ---- */
+.specialties-showcase {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 2rem;
+}
+
+/* ---- Base Card — frosted glass works on any gradient stop ---- */
+.premium-card {
+  position: relative;
+  border-radius: 2rem;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
   overflow: hidden;
+  transition: all 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid rgba(255, 255, 255, 0.55);
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  min-height: 280px;
-  justify-content: center;
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.04),
+    0 8px 20px -6px rgba(0, 0, 0, 0.10),
+    0 20px 40px -12px rgba(0, 0, 0, 0.10),
+    inset 0 1px 0 rgba(255, 255, 255, 0.75);
+  cursor: pointer;
 }
 
-.dark .specialty-card {
-  background: rgba(10, 25, 47, 0.4);
-  border-color: rgba(0, 115, 230, 0.2);
+/* ---- Featured: full-width horizontal ---- */
+.premium-card.featured {
+  grid-column: span 12;
+  flex-direction: row;
+  align-items: stretch;
+  min-height: 400px;
 }
 
-.spec-icon-box {
-  width: 64px;
-  height: 64px;
-  border-radius: var(--radius-lg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--blue-400)));
-  color: white;
-  margin-bottom: var(--space-6);
-  box-shadow: 0 10px 20px -5px rgba(0, 115, 230, 0.3);
-  z-index: 2;
-}
-
-.specialty-card h3 {
-  font-size: 1.5rem;
-  margin-bottom: var(--space-3);
-  color: hsl(var(--foreground));
-  z-index: 2;
-}
-
-.specialty-card p {
-  color: hsl(var(--muted-foreground));
-  line-height: 1.6;
-  z-index: 2;
-  margin-bottom: 0;
-}
-
-.card-bg-gradient {
+/* Accent line on featured card */
+.premium-card.featured::before {
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #0ea5e9, #38bdf8, #7dd3fc);
+  z-index: 20;
+}
+
+/* ---- Standard: 2-up grid ---- */
+.premium-card.standard {
+  grid-column: span 6;
+}
+
+/* ==========================================
+   IMAGE WRAPPERS — full-width cover, part of card
+   ========================================== */
+.card-img-wrapper {
+  position: relative;
   width: 100%;
+  height: 205px;          /* 180-220px sweet-spot */
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+/* Featured: 40% of card WIDTH — big enough to feel premium */
+.featured .card-img-wrapper {
+  width: 40%;
   height: 100%;
-  background: radial-gradient(circle at 70% 20%, rgba(0, 115, 230, 0.05), transparent 70%);
-  opacity: 0;
-  transition: opacity 0.4s ease;
+  flex-shrink: 0;
+}
+
+/* Image — cover fills the frame, zoom on hover via .card-img class */
+.card-img {
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  object-fit: cover !important;
+  padding: 0 !important;
+}
+
+/* Subtle vignette overlay — image feels "part of card", not a screenshot */
+.card-overlay {
+  display: block;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 55%,
+    rgba(0, 0, 0, 0.18) 100%
+  );
   z-index: 1;
+  pointer-events: none;
 }
 
-.specialty-card:hover .card-bg-gradient {
-  opacity: 1;
+/* ---- Card Body ---- */
+.card-body {
+  padding: 2.2rem 2.4rem 2.6rem 2.4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex-grow: 1;
 }
 
-.specialty-card::before {
+.featured .card-body {
+  padding: 3.2rem 3.6rem;
+  justify-content: center;   /* vertically center content in featured */
+}
+
+.standard .card-body {
+  padding: 2rem 2.2rem 2.4rem 2.2rem;
+}
+
+/* ---- Category label ---- */
+.card-tag {
+  font-size: 0.68rem !important;
+  color: #0ea5e9 !important;
+  font-weight: 800 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 0.75rem !important;
+  display: block !important;
+}
+
+/* ---- Card Title ---- */
+.premium-card h3 {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 0.85rem;
+  letter-spacing: -0.04em;
+  line-height: 1.2;
+}
+
+.standard h3 {
+  font-size: 1.3rem;
+}
+
+/* ---- Card Description ---- */
+.premium-card p {
+  color: #64748b;
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 1.8rem;
+  flex-grow: 1;
+}
+
+.standard p {
+  font-size: 0.9rem;
+  margin-bottom: 1.4rem;
+}
+
+/* ---- CTA link ---- */
+.view-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  color: #0ea5e9;
+  font-size: 0.88rem;
+  transition: all 0.3s ease;
+  margin-top: auto;
+}
+
+.view-link .arrow {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ---- Hover States ---- */
+.premium-card:hover {
+  background: rgba(255, 255, 255, 0.97);
+  transform: translateY(-6px);
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.06),
+    0 16px 32px -8px rgba(0, 0, 0, 0.12),
+    0 32px 64px -16px rgba(14, 165, 233, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  border-color: rgba(14, 165, 233, 0.25);
+}
+
+.premium-card:hover .card-img {
+  transform: scale(1.05) !important;
+}
+
+.premium-card:hover .view-link {
+  color: #0369a1;
+  gap: 0.85rem;
+}
+
+.premium-card:hover .arrow {
+  transform: translateX(6px);
+}
+
+/* ---- Shine sweep ---- */
+.premium-card::after {
   content: '';
   position: absolute;
-  left: 0;
-  bottom: 0;
-  height: 0;
-  width: 4px;
-  background-color: hsl(var(--primary));
-  transition: height 0.4s ease;
-  z-index: 3;
+  inset: 0;
+  left: -100%;
+  width: 50%;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255, 255, 255, 0.35),
+    transparent
+  );
+  transform: skewX(-20deg);
+  transition: 0.85s;
+  pointer-events: none;
+  z-index: 10;
 }
 
-.specialty-card:hover::before {
-  height: 100%;
+.premium-card:hover::after {
+  left: 150%;
 }
 
-.specialty-card:hover {
-  border-color: rgba(0, 115, 230, 0.4);
+/* ---- Section Footer ---- */
+.section-footer {
+  margin-top: 80px;
+  display: flex;
+  justify-content: center;
+}
+
+.explore-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.2rem 3rem;
+  border-radius: 100px;
+  background: #020617;
+  color: #fff;
+  font-weight: 800;
+  font-size: 1rem;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow:
+    0 20px 40px -10px rgba(2, 6, 23, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  cursor: pointer;
+  letter-spacing: 0.01em;
+}
+
+.explore-btn:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 28px 55px -12px rgba(2, 6, 23, 0.32);
+  background: #0a1628;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 1024px) {
+  .premium-card.standard { grid-column: span 12; }
+  .specialties-inner { padding: 0 40px; }
+}
+
+@media (max-width: 768px) {
+  .specialties-section { padding: 80px 0 100px 0; }
+  .specialties-inner { padding: 0 24px; }
+  .section-header { margin-bottom: 56px; }
+  .section-header h2 { font-size: 2.4rem; }
+  .section-header p { font-size: 1rem; }
+  .premium-card.featured {
+    flex-direction: column;
+    min-height: auto;
+  }
+  .featured .card-img-wrapper {
+    width: 100%;
+    height: 190px;
+  }
+  .premium-card h3 { font-size: 1.35rem; }
+  .card-body,
+  .featured .card-body { padding: 2rem; }
+  .section-footer { margin-top: 56px; }
 }

@@ -159,3 +159,20 @@
     display: none;
   }
 }
+
+/* Redesigning Navbar button to not compete with Hero CTA */
+.contact-btn, .mobile-contact-btn {
+  background-color: var(--blue-600) !important;
+  opacity: 0.8;
+  transform: scale(0.92);
+  font-size: 0.9rem !important;
+  padding: 0.6rem 1.3rem !important;
+  box-shadow: none !important;
+  transition: all 0.3s ease;
+}
+
+.contact-btn:hover, .mobile-contact-btn:hover {
+  opacity: 1;
+  transform: scale(1) translateY(-1px);
+  background-color: var(--blue-700) !important;
+}

@@ -174,3 +174,50 @@ p { margin-bottom: var(--space-4); color: hsl(var(--muted-foreground)); }
   background-color: var(--blue-50);
   transform: translateY(-2px);
 }
+
+/* Specialty Detail Page Responsive Styles */
+.detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+.flyer-container {
+  position: sticky;
+  top: calc(1rem + 56px);
+  height: fit-content;
+}
+
+@media (max-width: 1024px) {
+  .detail-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .flyer-container {
+    position: relative;
+    top: 0;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .detail-grid {
+    gap: 2rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .process-grid-responsive {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .flyer-container {
+    max-width: 100%;
+  }
+}

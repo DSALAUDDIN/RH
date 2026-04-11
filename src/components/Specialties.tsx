@@ -1,117 +1,173 @@
 'use client';
 
 import { motion, Variants } from 'framer-motion';
-import { 
-  Dna, 
-  Microscope, 
-  Radiation, 
-  Baby, 
-  ShieldCheck, 
-  Thermometer 
-} from 'lucide-react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { ArrowRight } from 'lucide-react';
 import './Specialties.css';
 
-const specialties = [
-  {
-    title: 'Oral Surgery',
-    desc: 'Expert surgical procedures including extractions and reconstructive surgery.',
-    icon: Microscope,
-  },
-  {
-    title: 'Periodontology',
-    desc: 'Advanced care for gums and supporting structures of the teeth.',
-    icon: Dna,
-  },
-  {
-    title: 'Endodontics',
-    desc: 'Precise root canal therapy to save your natural teeth.',
-    icon: Radiation,
-  },
-  {
-    title: 'Pediatric Dentistry',
-    desc: 'Gentle, specialized dental care for our youngest patients.',
-    icon: Baby,
-  },
-  {
-    title: 'Preventive Care',
-    desc: 'Regular check-ups and cleanings to prevent future issues.',
-    icon: ShieldCheck,
-  },
-  {
-    title: 'Diagnostic Imaging',
-    desc: 'State-of-the-art 3D imaging for accurate diagnosis and planning.',
-    icon: Thermometer,
-  },
+import imagingImg from '../assets/specialties/imaging.png';
+import bracesImg from '../assets/specialties/braces_clean.png';
+import zirconiaImg from '../assets/specialties/zirconia.png';
+import implantImg from '../assets/specialties/implant.png';
+import rootCanalImg from '../assets/specialties/rootcanal_clean.png';
+import gumCareImg from '../assets/specialties/gum_clean.png';
+import kidsCareImg from '../assets/specialties/kids_clean.png';
+
+const clinicsBanners = [
+	{
+		title: 'Precision 3D Dental Imaging',
+		desc: 'The future of dentistry is here. Experience ultra-accurate 360° diagnostics with 90% less radiation than traditional methods. Perfection starts with precision.',
+		image: imagingImg,
+		category: 'Elite Diagnostics',
+		featured: true,
+		slug: '3d-imaging',
+	},
+	{
+		title: 'Orthodontic Braces',
+		desc: 'Align your smile with modern ceramic and invisible solutions. Expert orthodontic care for all ages with lasting, beautiful results.',
+		image: bracesImg,
+		category: 'Orthodontics',
+		featured: false,
+		slug: 'braces',
+	},
+	{
+		title: 'Zirconia Restoration',
+		desc: 'The ultimate biocompatible material for natural-looking strength and flawless aesthetics. Experience the gold standard in dental crowns.',
+		image: zirconiaImg,
+		category: 'Prosthetics',
+		featured: false,
+		slug: 'zirconia',
+	},
+	{
+		title: 'Advanced Implantology',
+		desc: 'Permanent solutions for missing teeth with precision-guided implant surgery and high-end prosthetic integration.',
+		image: implantImg,
+		category: 'Surgical Care',
+		featured: false,
+		slug: 'implants',
+	},
+	{
+		title: 'Painless Root Canal',
+		desc: 'Elite endodontic therapy using the latest microscopic technology for a completely stress-free and effective treatment.',
+		image: rootCanalImg,
+		category: 'Endodontics',
+		featured: false,
+		slug: 'root-canal',
+	},
+	{
+		title: 'Healthy Gums, Healthy Smile',
+		desc: 'Advanced periodontal care to treat gum diseases and protect your oral health for the long term.',
+		image: gumCareImg,
+		category: 'Periodontics',
+		featured: false,
+		slug: 'gum-care',
+	},
+	{
+		title: 'Kids Dental Care',
+		desc: 'Making dental visits fun, friendly, and fear-free for your child in a safe environment.',
+		image: kidsCareImg,
+		category: 'Pedodontics',
+		featured: false,
+		slug: 'kids-care',
+	},
 ];
 
 const containerVariants: Variants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-    },
-  },
+	hidden: { opacity: 0 },
+	visible: {
+		opacity: 1,
+		transition: { staggerChildren: 0.15, delayChildren: 0.2 },
+	},
 };
 
 const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
+	hidden: { opacity: 0, y: 40, scale: 0.98 },
+	visible: {
+		opacity: 1,
+		y: 0,
+		scale: 1,
+		transition: { type: 'spring', stiffness: 70, damping: 15 },
+	},
 };
 
 export default function Specialties() {
-  return (
-    <section className="section specialties-section">
-      <div className="container">
-        <div className="section-title">
-          <motion.span 
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            className="subtitle"
-          >
-            Clinical Excellence
-          </motion.span>
-          <motion.h2
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-          >
-            Our Core Specialties
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-          >
-            Precision meets care. Our specialists use the latest medical breakthroughs to provide unparalleled clinical outcomes.
-          </motion.p>
-        </div>
+	return (
+		<section className="specialties-section">
+			{/* Soft glow at the dark→light transition zone */}
+			<div className="spec-glow" />
 
-        <motion.div 
-          className="specialties-grid"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-        >
-          {specialties.map((spec, index) => (
-            <motion.div 
-              key={spec.title} 
-              className="specialty-card glass-card"
-              variants={itemVariants}
-              whileHover={{ 
-                scale: 1.02,
-                boxShadow: "0 20px 40px rgba(0, 115, 230, 0.15)"
-              }}
-            >
-              <div className="spec-icon-box">
-                <spec.icon size={32} strokeWidth={1.5} />
-              </div>
-              <h3>{spec.title}</h3>
-              <p>{spec.desc}</p>
-              <div className="card-bg-gradient"></div>
-            </motion.div>
-          ))}
-        </motion.div>
-      </div>
-    </section>
-  );
+			<div className="specialties-inner">
+				{/* Header — sits in the dark zone, uses white text */}
+				<motion.div
+					className="section-header"
+					initial={{ opacity: 0, y: 60 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					viewport={{ once: true, margin: '-100px' }}
+					transition={{ duration: 1, ease: 'easeOut' }}
+				>
+					<span className="tag">Signature Experience</span>
+					<h2>Expert Care for Every Smile</h2>
+					<p>
+						We offer a full spectrum of world-class treatments – each tailored
+						to elevate your health, confidence, and natural beauty.
+					</p>
+				</motion.div>
+
+				{/* Bento grid */}
+				<motion.div
+					className="specialties-showcase"
+					variants={containerVariants}
+					initial="hidden"
+					whileInView="visible"
+					viewport={{ once: true, margin: '-50px' }}
+				>
+					{clinicsBanners.map((card) => (
+						<motion.div
+							key={card.title}
+							className={`premium-card ${card.featured ? 'featured' : 'standard'}`}
+							variants={itemVariants}
+						>
+							{/* Image — full-width cover, part of card, subtle overlay */}
+							<div className="card-img-wrapper">
+								<Image
+									src={card.image}
+									alt={card.title}
+									fill
+									sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 40vw"
+									className="card-img"
+									style={{ objectFit: 'cover' }}
+								/>
+								<div className="card-overlay" />
+							</div>
+
+						<div className="card-body">
+							<span className="card-tag">{card.category}</span>
+							<h3>{card.title}</h3>
+							<p>{card.desc}</p>
+							<Link href={`/specialties/${card.slug}`} className="view-link">
+								<span>View Treatment Detail</span>
+								<ArrowRight size={16} className="arrow" />
+							</Link>
+						</div>
+						</motion.div>
+					))}
+				</motion.div>
+
+				{/* Footer CTA — sits on the near-white zone */}
+				<motion.div
+				className="section-footer"
+				initial={{ opacity: 0, y: 30 }}
+				whileInView={{ opacity: 1, y: 0 }}
+				viewport={{ once: true }}
+				transition={{ delay: 0.5 }}
+			>
+				<Link href="/treatments" className="explore-btn" style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '0.75rem' }}>
+					Explore All Treatments
+					<ArrowRight size={20} />
+				</Link>
+			</motion.div>
+			</div>
+		</section>
+	);
 }
