@@ -3,7 +3,7 @@
 import { useRef, useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { motion, useInView } from 'framer-motion';
+import { motion, useInView, Variants } from 'framer-motion';
 import {
   ArrowUpRight, Phone, ShieldCheck, Star, Award, Clock, Heart,
   Microscope, Users, CheckCircle2, ChevronRight, Sparkles,
@@ -56,13 +56,13 @@ function FadeIn({ children, delay = 0, className }: { children: React.ReactNode;
     <motion.div ref={ref} className={className}
       initial={{ opacity: 0, y: 36 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.75, delay, ease: [0.16, 1, 0.3, 1] as any }}
+      transition={{ duration: 0.75, delay, ease: [0.16, 1, 0.3, 1] }}
     >{children}</motion.div>
   );
 }
 
-const stagger: any = { hidden: {}, show: { transition: { staggerChildren: 0.09 } } };
-const fadeUp: any  = { hidden: { opacity: 0, y: 36 }, show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] as any } } };
+const stagger: Variants = { hidden: {}, show: { transition: { staggerChildren: 0.09 } } };
+const fadeUp: Variants  = { hidden: { opacity: 0, y: 36 }, show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] } } };
 
 /* ══ REAL DATA ══ */
 const heroStats = [
@@ -203,7 +203,7 @@ export default function AboutPage() {
 
           <motion.h1 className="ab-hero-title"
             initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] as any }}>
+            transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}>
             Your Smile is{' '}
             <span className="ab-shine">Our Happiness.</span>
           </motion.h1>
