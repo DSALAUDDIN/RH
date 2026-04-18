@@ -132,3 +132,42 @@
 .footer-legal a:hover {
   color: hsl(var(--primary));
 }
+
+@media (max-width: 480px) {
+  .footer {
+    padding: var(--space-12) 0 var(--space-6);
+    font-size: 0.9rem;
+  }
+  .footer-grid {
+    gap: var(--space-8);
+    margin-bottom: var(--space-8);
+  }
+  .footer h3 {
+    font-size: 1.1rem;
+    margin-bottom: var(--space-4);
+  }
+  .footer-legal {
+    flex-wrap: wrap;
+    gap: var(--space-4);
+    justify-content: center;
+  }
+  .footer-bottom {
+    gap: var(--space-3);
+    padding-top: var(--space-6);
+    text-align: center;
+  }
+}
+
+@media (max-width: 360px) {
+  .footer {
+    padding: var(--space-10) 0 var(--space-4);
+    font-size: 0.85rem;
+  }
+  .social-link {
+    width: 36px;
+    height: 36px;
+  }
+  .footer-desc {
+    font-size: 0.875rem;
+  }
+}

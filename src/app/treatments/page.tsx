@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
-  ArrowLeft, Search, ChevronDown, ChevronUp, Phone, Calendar,
+  ArrowLeft, Search, ChevronDown,
   Activity, Scissors, Smile, Baby, Layers, Crown, Sparkles, Plus, Star
 } from 'lucide-react';
 import './treatments.css';

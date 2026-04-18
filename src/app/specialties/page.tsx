@@ -1,11 +1,36 @@
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
 import Specialties from '@/components/Specialties';
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Our Specialties | RH Dental Care',
-  description: 'Explore our world-class specialized treatments, from 3D imaging to precision orthodontics.',
+  title: 'Dental Specialties in Dhaka — Implants, Braces, Root Canal & More | RH Dental Care',
+  description:
+    'Explore world-class dental specialties at RH Dental Care, Dhaka\'s premier clinic. 3D imaging, dental implants, orthodontics, root canal, zirconia crowns, gum care, pediatric dentistry & aesthetic smile design. BMDC-certified specialists.',
+  keywords: [
+    'dental implants Dhaka Bangladesh',
+    'orthodontics braces Dhaka',
+    'clear aligners Dhaka',
+    'root canal treatment Dhaka',
+    'painless root canal Bangladesh',
+    'zirconia crown Dhaka',
+    'teeth whitening Dhaka',
+    'smile design Dhaka',
+    'cosmetic dentistry Bangladesh',
+    'gum disease treatment Dhaka',
+    'kids dentist Dhaka',
+    '3D dental imaging Dhaka',
+    'dental specialties Bangladesh',
+    'best dental treatments Dhaka',
+  ],
+  alternates: { canonical: '/specialties' },
+  openGraph: {
+    title: 'Dental Specialties — Implants, Braces, Root Canal, Aesthetics | RH Dental Care Dhaka',
+    description:
+      'All dental specialties under one roof in Dhaka. Implants, orthodontics, cosmetic smiles, root canal, and more — by BMDC-certified specialists at RH Dental Care.',
+    url: 'https://www.rhdentalcare.com/specialties',
+    images: [{ url: '/og-image.jpg', width: 1200, height: 630 }],
+  },
 };
 
 export default function SpecialtiesPage() {

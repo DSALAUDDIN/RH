@@ -107,10 +107,9 @@ export default function Specialties() {
 					transition={{ duration: 1, ease: 'easeOut' }}
 				>
 					<span className="tag">Signature Experience</span>
-					<h2>Expert Care for Every Smile</h2>
+					<h2>Top-Ranked Dental Clinic in Dhaka</h2>
 					<p>
-						We offer a full spectrum of world-class treatments – each tailored
-						to elevate your health, confidence, and natural beauty.
+						RH Dental Care provides world-class dental treatments in Bangladesh – including dental implants, braces, and painless root canals tailored to your smile.
 					</p>
 				</motion.div>
 
@@ -132,7 +131,7 @@ export default function Specialties() {
 							<div className="card-img-wrapper">
 								<Image
 									src={card.image}
-									alt={card.title}
+									alt={`${card.title} - Dental Treatment at RH Dental Care Dhaka`}
 									fill
 									sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 40vw"
 									className="card-img"

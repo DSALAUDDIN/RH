@@ -1,5 +1,7 @@
 import Link from 'next/link';
-import { CircleCheck, MapPin, Phone, Mail } from 'lucide-react';
+import Image from 'next/image';
+import { MapPin, Phone, Mail } from 'lucide-react';
+import logo from '../assets/rhlogo.jpeg';
 import './Footer.css';
 
 // SVG components for social icons
@@ -24,7 +26,13 @@ export default function Footer() {
           {/* Brand */}
           <div className="footer-brand">
             <Link href="/" className="logo">
-              <CircleCheck className="logo-icon accent-blue" size={28} />
+              <Image
+                src={logo}
+                alt="RH Dental Care logo"
+                width={44}
+                height={44}
+                style={{ borderRadius: '50%', objectFit: 'contain', background: '#fff' }}
+              />
               <span className="logo-text">RH Dental Care</span>
             </Link>
             <p className="footer-desc">
@@ -40,25 +48,25 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div className="footer-links">
-            <h3>Quick Links</h3>
+            <h3>Dental Services in Dhaka</h3>
             <ul>
               <li><Link href="/">Home</Link></li>
-              <li><Link href="/about">About Us</Link></li>
-              <li><Link href="/services">Our Services</Link></li>
-              <li><Link href="/contact">Contact</Link></li>
-              <li><Link href="/faq">FAQ</Link></li>
+              <li><Link href="/about">About Our Clinic</Link></li>
+              <li><Link href="/services">Dental Treatments</Link></li>
+              <li><Link href="/contact">Book Appointment</Link></li>
+              <li><Link href="/faq">Dental FAQ</Link></li>
             </ul>
           </div>
 
           {/* Services */}
           <div className="footer-links">
-            <h3>Our Services</h3>
+            <h3>Specialized Treatments</h3>
             <ul>
-              <li><Link href="/services#aesthetic">Aesthetic Dentistry</Link></li>
-              <li><Link href="/services#orthodontics">Orthodontics</Link></li>
-              <li><Link href="/services#implants">Dental Implants</Link></li>
+              <li><Link href="/services#implants">Dental Implants Dhaka</Link></li>
+              <li><Link href="/services#orthodontics">Braces & Aligners</Link></li>
+              <li><Link href="/services#root-canal">Painless Root Canal</Link></li>
+              <li><Link href="/services#aesthetic">Smile Design & Veneers</Link></li>
               <li><Link href="/services#whitening">Teeth Whitening</Link></li>
-              <li><Link href="/services#pediatric">Pediatric Dentistry</Link></li>
             </ul>
           </div>
 
@@ -95,7 +103,7 @@ export default function Footer() {
         </div>
 
         <div className="footer-bottom">
-          <p>&copy; {new Date().getFullYear()} RH Dental Clinic. All Rights Reserved.</p>
+          <p>&copy; {new Date().getFullYear()} RH Dental Clinic - Best Dentist in Dhaka, Bangladesh. All Rights Reserved.</p>
           <div className="footer-legal">
             <Link href="/privacy">Privacy Policy</Link>
             <Link href="/terms">Terms of Service</Link>

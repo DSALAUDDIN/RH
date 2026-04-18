@@ -3,19 +3,19 @@
 import { useRef, useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { motion, useInView, AnimatePresence } from 'framer-motion';
+import { motion, useInView, AnimatePresence, Variants } from 'framer-motion';
 import {
-  ArrowUpRight, Phone, ShieldCheck, Star, Award, Clock, Heart,
+  ArrowUpRight, Phone, ShieldCheck, Award, Heart,
   Microscope, Users, CheckCircle2, ChevronRight, Sparkles,
   CalendarCheck, Stethoscope, BadgeCheck, Smile, Activity,
   Zap, Eye, Layers, HeartPulse, Building2, FlaskConical,
   ScanLine, MonitorDot, Wifi, User, Brain, GraduationCap, X, Play,
 } from 'lucide-react';
 import './About.css';
-import heroBg      from '../../assets/about_hero_light.png';
+import heroBg from '../../assets/about_hero_light.png';
 import heroprofile from '../../assets/Hero/heroprofile.png';
-import drShimia    from '../../assets/dr_shimia.png';
-import clinicImg   from '../../assets/about_clinic.png';
+import drShimia from '../../assets/doctors/shimia.jpeg';
+// clinicImg removed — video plays instead
 import Testimonials from '@/components/Testimonials';
 
 /* Doctor Images for Marquee */
@@ -62,26 +62,26 @@ function FadeIn({ children, delay = 0, className }: { children: React.ReactNode;
   );
 }
 
-const stagger: any = { hidden: {}, show: { transition: { staggerChildren: 0.09 } } };
-const fadeUp: any  = { hidden: { opacity: 0, y: 36 }, show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] } } };
+const stagger: Variants = { hidden: {}, show: { transition: { staggerChildren: 0.09 } } };
+const fadeUp: Variants = { hidden: { opacity: 0, y: 36 }, show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] } } };
 
 /* ══ REAL DATA ══ */
 const heroStats = [
   { val: 5000, suf: '+', label: 'Happy Smiles' },
-  { val: 10,   suf: '+', label: 'Years Exp.' },
-  { val: 99,   suf: '%', label: 'Success Rate' },
+  { val: 10, suf: '+', label: 'Years Exp.' },
+  { val: 99, suf: '%', label: 'Success Rate' },
   { val: 3500, suf: 'sqft', label: 'Clinic Area' },
 ];
 
 const specialties = [
-  { icon: <Eye size={22} />,        name: '3D Imaging',   slug: '3d-imaging' },
-  { icon: <Activity size={22} />,   name: 'Orthodontics', slug: 'braces' },
-  { icon: <Layers size={22} />,     name: 'Zirconia',     slug: 'zirconia' },
-  { icon: <Stethoscope size={22} />,name: 'Implants',     slug: 'implants' },
-  { icon: <HeartPulse size={22} />, name: 'Root Canal',   slug: 'root-canal' },
-  { icon: <Heart size={22} />,      name: 'Gum Care',     slug: 'gum-care' },
-  { icon: <Smile size={22} />,      name: 'Kids Dental',  slug: 'kids-care' },
-  { icon: <Sparkles size={22} />,   name: 'Aesthetics',   slug: 'treatments' },
+  { icon: <Eye size={22} />, name: '3D Imaging', slug: '3d-imaging' },
+  { icon: <Activity size={22} />, name: 'Orthodontics', slug: 'braces' },
+  { icon: <Layers size={22} />, name: 'Zirconia', slug: 'zirconia' },
+  { icon: <Stethoscope size={22} />, name: 'Implants', slug: 'implants' },
+  { icon: <HeartPulse size={22} />, name: 'Root Canal', slug: 'root-canal' },
+  { icon: <Heart size={22} />, name: 'Gum Care', slug: 'gum-care' },
+  { icon: <Smile size={22} />, name: 'Kids Dental', slug: 'kids-care' },
+  { icon: <Sparkles size={22} />, name: 'Aesthetics', slug: 'treatments' },
 ];
 
 /* Real services from About text */
@@ -120,29 +120,29 @@ const services = [
 
 /* Real facilities */
 const facilities = [
-  { icon: <Building2 size={22} />,  title: 'Multiple Operating Rooms',    desc: 'Modern OT setup including a fully equipped General Anesthesia (GA) operating theatre for safe surgical procedures.' },
-  { icon: <ScanLine size={22} />,   title: 'State-of-the-Art Technology', desc: '3D scanners, intraoral cameras, endo microscopes, and full digital imaging for accurate diagnosis and treatment.' },
-  { icon: <FlaskConical size={22} />,title: 'In-House Dental Laboratory', desc: 'On-site lab gives complete control over prosthesis design — faster turnaround, superior aesthetics and precision fit.' },
-  { icon: <Wifi size={22} />,       title: 'Two Spacious Waiting Areas',  desc: 'Two comfortable waiting areas with WiFi, refreshments, and a calm, patient-friendly environment.' },
-  { icon: <MonitorDot size={22} />, title: 'Digital Workflow',             desc: 'End-to-end digital treatment planning from diagnosis to final restoration, ensuring accuracy and predictable outcomes.' },
-  { icon: <ShieldCheck size={22} />,title: 'Hospital-Grade Sterilization', desc: 'Strict hygiene and sterilization protocols maintained across the entire 3,500 sq.ft facility at all times.' },
+  { icon: <Building2 size={22} />, title: 'Multiple Operating Rooms', desc: 'Modern OT setup including a fully equipped General Anesthesia (GA) operating theatre for safe surgical procedures.' },
+  { icon: <ScanLine size={22} />, title: 'State-of-the-Art Technology', desc: '3D scanners, intraoral cameras, endo microscopes, and full digital imaging for accurate diagnosis and treatment.' },
+  { icon: <FlaskConical size={22} />, title: 'In-House Dental Laboratory', desc: 'On-site lab gives complete control over prosthesis design — faster turnaround, superior aesthetics and precision fit.' },
+  { icon: <Wifi size={22} />, title: 'Two Spacious Waiting Areas', desc: 'Two comfortable waiting areas with WiFi, refreshments, and a calm, patient-friendly environment.' },
+  { icon: <MonitorDot size={22} />, title: 'Digital Workflow', desc: 'End-to-end digital treatment planning from diagnosis to final restoration, ensuring accuracy and predictable outcomes.' },
+  { icon: <ShieldCheck size={22} />, title: 'Hospital-Grade Sterilization', desc: 'Strict hygiene and sterilization protocols maintained across the entire 3,500 sq.ft facility at all times.' },
 ];
 
 /* Why choose us */
 const whyCards = [
-  { icon: <Users size={22} />,       title: 'Expert Multi-Specialty Team',         desc: 'Specialists in all dental disciplines — from implantology and orthodontics to cosmetic design and pediatric care.' },
-  { icon: <Brain size={22} />,       title: 'Advanced Technology & Digital Workflow', desc: '3D scanners, digital imaging, and in-house lab for accurate diagnosis and seamless treatment execution.' },
-  { icon: <User size={22} />,        title: 'Customised Patient-Centered Care',    desc: 'Every treatment plan is tailored to each patient\'s unique anatomy, aesthetic goals, and oral health needs.' },
-  { icon: <Smile size={22} />,       title: 'Special Care for Children & SEN',     desc: 'Dedicated child-friendly approach and GA OT setup for patients who need extra comfort and care.' },
-  { icon: <Zap size={22} />,         title: 'Pain-Free Guarantee',                 desc: 'Latest anesthetic and sedation techniques ensure every procedure is comfortable — we guarantee it.' },
-  { icon: <CalendarCheck size={22} />,title: 'Proven Complex Case Success',        desc: 'Numerous full mouth rehabilitations and smile makeovers completed with outstanding, long-lasting results.' },
+  { icon: <Users size={22} />, title: 'Expert Multi-Specialty Team', desc: 'Specialists in all dental disciplines — from implantology and orthodontics to cosmetic design and pediatric care.' },
+  { icon: <Brain size={22} />, title: 'Advanced Technology & Digital Workflow', desc: '3D scanners, digital imaging, and in-house lab for accurate diagnosis and seamless treatment execution.' },
+  { icon: <User size={22} />, title: 'Customised Patient-Centered Care', desc: 'Every treatment plan is tailored to each patient\'s unique anatomy, aesthetic goals, and oral health needs.' },
+  { icon: <Smile size={22} />, title: 'Special Care for Children & SEN', desc: 'Dedicated child-friendly approach and GA OT setup for patients who need extra comfort and care.' },
+  { icon: <Zap size={22} />, title: 'Pain-Free Guarantee', desc: 'Latest anesthetic and sedation techniques ensure every procedure is comfortable — we guarantee it.' },
+  { icon: <CalendarCheck size={22} />, title: 'Proven Complex Case Success', desc: 'Numerous full mouth rehabilitations and smile makeovers completed with outstanding, long-lasting results.' },
 ];
 
 const process = [
   { n: '01', title: 'Free Consultation', desc: 'Thorough digital examination and 3D scan to fully understand your dental health.' },
-  { n: '02', title: 'Tailored Plan',     desc: 'Transparent treatment plan with zero hidden costs and a digital preview of results.' },
-  { n: '03', title: 'Expert Treatment',  desc: 'BMDC-certified specialists using cutting-edge technology for precise outcomes.' },
-  { n: '04', title: 'Aftercare',         desc: 'Continuous follow-up and personalised guidance to protect your investment long-term.' },
+  { n: '02', title: 'Tailored Plan', desc: 'Transparent treatment plan with zero hidden costs and a digital preview of results.' },
+  { n: '03', title: 'Expert Treatment', desc: 'BMDC-certified specialists using cutting-edge technology for precise outcomes.' },
+  { n: '04', title: 'Aftercare', desc: 'Continuous follow-up and personalised guidance to protect your investment long-term.' },
 ];
 
 /* Team photos — doctors with images and roles extracted from real flyers */
@@ -161,9 +161,87 @@ const teamMembers = [
   { name: 'Dr. Fariha Ferdous', role: 'Oral & Dental Surgeon', badge: 'Dental Surgeon', img: doc9 },
 ];
 
+/* ══ CLINIC VIDEO TOUR BANNER ══ */
+function VideoTourBanner({ onOpen }: { onOpen: () => void }) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(sectionRef, { amount: 0.25 });
+
+  useEffect(() => {
+    const v = videoRef.current;
+    if (!v) return;
+    if (isInView) {
+      v.play().catch(() => { });
+    } else {
+      v.pause();
+    }
+  }, [isInView]);
+
+  return (
+    <motion.div
+      ref={sectionRef}
+      initial="rest"
+      whileHover="hover"
+      style={{ position: 'relative', width: '100%', aspectRatio: '21/8', overflow: 'hidden', cursor: 'pointer', minHeight: '240px' }}
+      onClick={onOpen}
+    >
+      {/* Auto-playing muted background video */}
+      <video
+        ref={videoRef}
+        src="/aboutScreenVideo.mp4"
+        muted
+        loop
+        playsInline
+        style={{
+          position: 'absolute', inset: 0,
+          width: '100%', height: '100%',
+          objectFit: 'cover', objectPosition: 'center',
+        }}
+      />
+
+      {/* Cinematic dark overlay + copy */}
+      <div style={{
+        position: 'absolute', inset: 0,
+        background: 'linear-gradient(to right, rgba(15,23,42,0.85) 0%, rgba(15,23,42,0.55) 50%, rgba(15,23,42,0.85) 100%)',
+        display: 'flex', alignItems: 'center', justifyContent: 'center',
+        padding: '0 max(1.5rem, calc((100vw - 1280px)/2))',
+      }}>
+        <div style={{ maxWidth: '600px', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
+          <motion.div
+            variants={{
+              rest: { scale: 1, boxShadow: '0 0 0 0 rgba(14,165,233,0)' },
+              hover: { scale: 1.1, boxShadow: '0 0 0 14px rgba(255,255,255,0.05)' }
+            }}
+            style={{
+              width: '80px', height: '80px', borderRadius: '50%',
+              background: 'rgba(255,255,255,0.15)', border: '1px solid rgba(255,255,255,0.4)',
+              backdropFilter: 'blur(8px)', display: 'flex', alignItems: 'center', justifyContent: 'center',
+              marginBottom: '1.75rem', color: '#fff',
+            }}
+          >
+            <Play size={32} fill="currentColor" style={{ marginLeft: '4px' }} />
+          </motion.div>
+          <div className="ab-label" style={{ marginBottom: '1.25rem', background: 'rgba(255,255,255,0.1)', color: '#fff', borderColor: 'rgba(255,255,255,0.2)' }}>
+            <Building2 size={14} /> Full Clinic Virtual Tour
+          </div>
+          <h2 style={{ fontSize: 'clamp(2rem,4vw,3.2rem)', fontWeight: 900, color: '#fff', letterSpacing: '-0.04em', lineHeight: 1.1, marginBottom: '1.25rem' }}>
+            Take a Tour of{' '}
+            <span style={{ background: 'linear-gradient(90deg, #38bdf8, #818cf8)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
+              Our Facility
+            </span>
+          </h2>
+          <p style={{ fontSize: '1.05rem', color: '#cbd5e1', lineHeight: 1.7, marginBottom: 0 }}>
+            Experience our 3,500 sq.ft premium clinic from the comfort of your home. Explore our modern OT setups, digital technology, and inviting reception area.
+          </p>
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+
 /* ══ PAGE ══ */
 export default function AboutPage() {
-  const [selectedImage, setSelectedImage] = useState<any>(null);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [isVideoOpen, setIsVideoOpen] = useState(false);
 
   return (
@@ -196,7 +274,7 @@ export default function AboutPage() {
 
           <motion.h1 className="ab-hero-title"
             initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] as any }}>
+            transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}>
             Your Smile is{' '}
             <span className="ab-shine">Our Happiness.</span>
           </motion.h1>
@@ -278,18 +356,18 @@ export default function AboutPage() {
                   <span className="ab-shine-text">(Mehedi)</span>
                 </h2>
                 <p className="ab-body-dark">
-                  A distinguished Oral &amp; Dental Surgeon known for his precision, advanced clinical expertise, and commitment to excellence. With over <strong style={{color:'#0f172a'}}>10 years of clinical experience</strong>, Dr. Hasan combines professional expertise, modern technology, and patient-centred care to deliver lasting, functional, and aesthetically pleasing results.
+                  A distinguished Oral &amp; Dental Surgeon known for his precision, advanced clinical expertise, and commitment to excellence. With over <strong style={{ color: '#0f172a' }}>10 years of clinical experience</strong>, Dr. Hasan combines professional expertise, modern technology, and patient-centred care to deliver lasting, functional, and aesthetically pleasing results.
                 </p>
                 <p className="ab-body-dark">
-                  He has undergone advanced international training in Dental Implantology from <strong style={{color:'#0f172a'}}>China, Korea, and India</strong>, and completed specialised training in Minimally Invasive Cosmetic Dentistry (MICD) in Nepal. Since 2015, he also serves as <strong style={{color:'#0f172a'}}>Senior Lecturer at MH Samorita Medical College &amp; Hospital</strong>.
+                  He has undergone advanced international training in Dental Implantology from <strong style={{ color: '#0f172a' }}>China, Korea, and India</strong>, and completed specialised training in Minimally Invasive Cosmetic Dentistry (MICD) in Nepal. Since 2015, he also serves as <strong style={{ color: '#0f172a' }}>Senior Lecturer at MH Samorita Medical College &amp; Hospital</strong>.
                 </p>
 
                 <div className="ab-doc-values">
                   {[
-                    { icon: <GraduationCap size={16} />, title: 'BDS · MPH · PGT (OMS & Prosthodontics)',   desc: 'Sapporo Dental College (DU) • City University • BSM Medical University, Dhaka' },
-                    { icon: <ScanLine size={16} />,      title: 'Digital & 3D Guided Implantology',          desc: 'Pioneer in digital treatment planning and 3D-guided implant surgery for predictable outcomes.' },
-                    { icon: <FlaskConical size={16} />,  title: 'In-House Lab for Precision Prosthesis',     desc: 'Complete control over design, quality, and turnaround time for superior aesthetic & functional results.' },
-                    { icon: <Microscope size={16} />,    title: 'Full Mouth Rehabilitation Expertise',       desc: 'Numerous complex rehabilitation cases completed restoring both function and patient confidence.' },
+                    { icon: <GraduationCap size={16} />, title: 'BDS · MPH · PGT (OMS & Prosthodontics)', desc: 'Sapporo Dental College (DU) • City University • BSM Medical University, Dhaka' },
+                    { icon: <ScanLine size={16} />, title: 'Digital & 3D Guided Implantology', desc: 'Pioneer in digital treatment planning and 3D-guided implant surgery for predictable outcomes.' },
+                    { icon: <FlaskConical size={16} />, title: 'In-House Lab for Precision Prosthesis', desc: 'Complete control over design, quality, and turnaround time for superior aesthetic & functional results.' },
+                    { icon: <Microscope size={16} />, title: 'Full Mouth Rehabilitation Expertise', desc: 'Numerous complex rehabilitation cases completed restoring both function and patient confidence.' },
                   ].map((v, i) => (
                     <motion.div key={i} className="ab-doc-value-row"
                       initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }}
@@ -331,23 +409,23 @@ export default function AboutPage() {
                 <span className="ab-label ab-shimia-label"><BadgeCheck size={14} /> Senior Doctor &amp; Team Lead</span>
                 <h2 className="ab-section-title-dark">
                   Dr. Shimia{' '}
-                  <span style={{ background: 'linear-gradient(90deg,#9333ea,#818cf8)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>
+                  <span style={{ background: 'linear-gradient(90deg,#9333ea,#818cf8)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
                     Binte Taher
                   </span>
                 </h2>
                 <p className="ab-body-dark">
-                  A highly accomplished dental professional who combines clinical excellence with compassionate, patient-centred care. She completed her <strong style={{color:'#0f172a'}}>BDS from Pioneer Dental College</strong> — one of the most prestigious dental institutions in Bangladesh — and furthered her expertise through <strong style={{color:'#0f172a'}}>Postgraduate Training in Oral &amp; Maxillofacial Surgery at Dhaka Medical College</strong>.
+                  A highly accomplished dental professional who combines clinical excellence with compassionate, patient-centred care. She completed her <strong style={{ color: '#0f172a' }}>BDS from Pioneer Dental College</strong> — one of the most prestigious dental institutions in Bangladesh — and furthered her expertise through <strong style={{ color: '#0f172a' }}>Postgraduate Training in Oral &amp; Maxillofacial Surgery at Dhaka Medical College</strong>.
                 </p>
                 <p className="ab-body-dark">
-                  At RH Dental Care, Dr. Shimia plays a vital <strong style={{color:'#0f172a'}}>leadership role</strong>, guiding and managing the clinical team with professionalism and vision. She is especially dedicated to providing <strong style={{color:'#0f172a'}}>female-oriented dental care</strong> in a safe, respectful environment.
+                  At RH Dental Care, Dr. Shimia plays a vital <strong style={{ color: '#0f172a' }}>leadership role</strong>, guiding and managing the clinical team with professionalism and vision. She is especially dedicated to providing <strong style={{ color: '#0f172a' }}>female-oriented dental care</strong> in a safe, respectful environment.
                 </p>
 
                 <div className="ab-doc-values">
                   {[
-                    { icon: <Microscope size={16} />,  title: 'Microscopic Endodontics',      desc: 'Highly accurate, minimally invasive root canal treatments using advanced endo microscopes.' },
-                    { icon: <Sparkles size={16} />,    title: 'Aesthetic Dentistry',           desc: 'Creating natural, confident, and beautiful smiles with precision composite and ceramic restorations.' },
-                    { icon: <Stethoscope size={16} />, title: 'Exodontia — Complex Extractions',desc: 'Expert in routine and complex tooth extractions with maximum patient comfort, including surgical procedures.' },
-                    { icon: <GraduationCap size={16} />,title: 'Academic Contributor since 2015',desc: 'Senior Lecturer at MH Samorita Medical College & Hospital — mentoring the next generation of dentists.' },
+                    { icon: <Microscope size={16} />, title: 'Microscopic Endodontics', desc: 'Highly accurate, minimally invasive root canal treatments using advanced endo microscopes.' },
+                    { icon: <Sparkles size={16} />, title: 'Aesthetic Dentistry', desc: 'Creating natural, confident, and beautiful smiles with precision composite and ceramic restorations.' },
+                    { icon: <Stethoscope size={16} />, title: 'Exodontia — Complex Extractions', desc: 'Expert in routine and complex tooth extractions with maximum patient comfort, including surgical procedures.' },
+                    { icon: <GraduationCap size={16} />, title: 'Academic Contributor since 2015', desc: 'Senior Lecturer at MH Samorita Medical College & Hospital — mentoring the next generation of dentists.' },
                   ].map((v, i) => (
                     <motion.div key={i} className="ab-doc-value-row"
                       initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }}
@@ -378,7 +456,7 @@ export default function AboutPage() {
                     <div className="ab-doc-creds-row">
                       <span className="ab-cred-chip-alt">BDS — Pioneer Dental College</span>
                       <span className="ab-cred-chip-alt">PGT — OMS · Dhaka Medical College</span>
-                      <span className="ab-verified-pill" style={{ background:'rgba(147,51,234,0.1)', border:'1px solid rgba(147,51,234,0.2)', color:'#9333ea' }}>
+                      <span className="ab-verified-pill" style={{ background: 'rgba(147,51,234,0.1)', border: '1px solid rgba(147,51,234,0.2)', color: '#9333ea' }}>
                         <CheckCircle2 size={10} /> Team Lead
                       </span>
                     </div>
@@ -396,7 +474,7 @@ export default function AboutPage() {
         <div className="container" style={{ position: 'relative', zIndex: 3 }}>
           <FadeIn>
             <div className="ab-team-header-premium">
-              <motion.span 
+              <motion.span
                 className="ab-label ab-label-light"
                 whileHover={{ scale: 1.05 }}
               >
@@ -417,10 +495,10 @@ export default function AboutPage() {
           <div className="ab-team-marquee-fade right"></div>
           <div className="ab-team-marquee">
             <div className="ab-team-track">
-               {[...teamMembers, ...teamMembers, ...teamMembers].map((m, i) => (
-                <div 
-                  key={i} 
-                  className="ab-team-card-premium" 
+              {[...teamMembers, ...teamMembers, ...teamMembers].map((m, i) => (
+                <div
+                  key={i}
+                  className="ab-team-card-premium"
                   onClick={() => m.img && setSelectedImage(m.img)}
                 >
                   <div className="ab-team-card-inner">
@@ -431,10 +509,10 @@ export default function AboutPage() {
                       <div className="ab-team-placeholder">RH</div>
                     )}
                     <div className="ab-team-card-overlay" />
-                    
+
                     {/* Badge */}
                     <div className={`ab-team-badge ${m.badge === 'Team Lead' ? 'lead' : ''}`}>
-                      {m.badge === 'Team Lead' && <Sparkles size={10} style={{marginRight: '4px'}} />}
+                      {m.badge === 'Team Lead' && <Sparkles size={10} style={{ marginRight: '4px' }} />}
                       {m.badge}
                     </div>
 
@@ -469,9 +547,9 @@ export default function AboutPage() {
           </FadeIn>
           <motion.div className="ab-stats-bento" variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true, margin: '-60px' }}>
             {[
-              { val: 5000, suf: '+', label: 'Happy Patients',     icon: <Smile size={22} /> },
-              { val: 10,   suf: '+', label: 'Years Experience',   icon: <Award size={22} /> },
-              { val: 99,   suf: '%', label: 'Success Rate',       icon: <ShieldCheck size={22} /> },
+              { val: 5000, suf: '+', label: 'Happy Patients', icon: <Smile size={22} /> },
+              { val: 10, suf: '+', label: 'Years Experience', icon: <Award size={22} /> },
+              { val: 99, suf: '%', label: 'Success Rate', icon: <ShieldCheck size={22} /> },
               { val: 3500, suf: 'sqft', label: 'Clinic Facility', icon: <Building2 size={22} /> },
             ].map((s, i) => (
               <motion.div key={i} className="ab-stat-card" variants={fadeUp}>
@@ -549,7 +627,7 @@ export default function AboutPage() {
           <motion.div className="ab-why-grid-dark" variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true, margin: '-60px' }}>
             {whyCards.map((c, i) => (
               <motion.div key={i} className="ab-why-cell" variants={fadeUp}>
-                <span className="ab-why-cell-num">{String(i+1).padStart(2,'0')}</span>
+                <span className="ab-why-cell-num">{String(i + 1).padStart(2, '0')}</span>
                 <div className="ab-why-icon">{c.icon}</div>
                 <h3 className="ab-why-title">{c.title}</h3>
                 <p className="ab-why-desc">{c.desc}</p>
@@ -589,53 +667,7 @@ export default function AboutPage() {
       </section>
 
       {/* ═══════════════════════ CLINIC VIDEO TOUR ═══════════════════════ */}
-      <motion.div 
-        initial="rest"
-        whileHover="hover"
-        style={{ position: 'relative', width: '100%', aspectRatio: '21/8', overflow: 'hidden', cursor: 'pointer' }}
-        onClick={() => setIsVideoOpen(true)}
-      >
-        <motion.div
-          variants={{ rest: { scale: 1 }, hover: { scale: 1.05 } }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          style={{ position: 'absolute', inset: 0 }}
-        >
-          <Image src={clinicImg} alt="RH Dental Care clinic interior background" fill sizes="100vw"
-            style={{ objectFit: 'cover', objectPosition: 'center 60%' }} />
-        </motion.div>
-        <div style={{
-          position: 'absolute', inset: 0,
-          background: 'linear-gradient(to right, rgba(15,23,42,0.85) 0%, rgba(15,23,42,0.6) 50%, rgba(15,23,42,0.85) 100%)',
-          display: 'flex', alignItems: 'center', justifyContent: 'center',
-          padding: '0 max(1.5rem, calc((100vw - 1280px)/2))',
-        }}>
-          <div style={{ maxWidth: '600px', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
-            <motion.div 
-               variants={{
-                 rest: { scale: 1, boxShadow: '0 0 0 0 rgba(14,165,233,0)' },
-                 hover: { scale: 1.1, boxShadow: '0 0 0 14px rgba(255,255,255,0.05)' }
-               }}
-               style={{
-                 width: '80px', height: '80px', borderRadius: '50%',
-                 background: 'rgba(255,255,255,0.15)', border: '1px solid rgba(255,255,255,0.4)',
-                 backdropFilter: 'blur(8px)', display: 'flex', alignItems: 'center', justifyContent: 'center',
-                 marginBottom: '1.75rem', color: '#fff',
-               }}
-            >
-              <Play size={32} fill="currentColor" style={{ marginLeft: '4px' }} />
-            </motion.div>
-            <div className="ab-label" style={{ marginBottom: '1.25rem', background: 'rgba(255,255,255,0.1)', color: '#fff', borderColor: 'rgba(255,255,255,0.2)' }}>
-              <Building2 size={14} /> Full Clinic Virtual Tour
-            </div>
-            <h2 style={{ fontSize: 'clamp(2rem,4vw,3.2rem)', fontWeight: 900, color: '#fff', letterSpacing: '-0.04em', lineHeight: 1.1, marginBottom: '1.25rem' }}>
-              Take a Tour of <span className="ab-blue-text" style={{ background: 'linear-gradient(90deg, #38bdf8, #818cf8)', WebkitBackgroundClip: 'text' }}>Our Facility</span>
-            </h2>
-            <p style={{ fontSize: '1.05rem', color: '#cbd5e1', lineHeight: 1.7, marginBottom: '0' }}>
-              Experience our 3,500 sq.ft premium clinic from the comfort of your home. Explore our modern OT setups, digital technology, and inviting reception area.
-            </p>
-          </div>
-        </div>
-      </motion.div>
+      <VideoTourBanner onOpen={() => setIsVideoOpen(true)} />
 
       {/* ═══════════════════════ CTA – dark ═══════════════════════ */}
       <section className="ab-cta">
@@ -707,7 +739,7 @@ export default function AboutPage() {
             >
               <X size={26} strokeWidth={2.5} />
             </motion.button>
-            
+
             {/* Image Container */}
             <motion.div
               initial={{ scale: 0.9, opacity: 0, y: 20 }}
@@ -717,11 +749,11 @@ export default function AboutPage() {
               style={{ position: 'relative', width: '100%', maxWidth: '1400px', height: '90vh' }}
               onClick={(e) => e.stopPropagation()} // Prevent click to close when clicking the image
             >
-              <Image 
-                src={selectedImage} 
-                alt="Full Profile" 
-                fill 
-                style={{ objectFit: 'contain', filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.4))' }} 
+              <Image
+                src={selectedImage}
+                alt="Full Profile"
+                fill
+                style={{ objectFit: 'contain', filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.4))' }}
                 quality={100}
               />
             </motion.div>
@@ -771,30 +803,29 @@ export default function AboutPage() {
             >
               <X size={26} strokeWidth={2.5} />
             </motion.button>
-            
+
             {/* Video Container */}
             <motion.div
               initial={{ scale: 0.9, opacity: 0, y: 30 }}
               animate={{ scale: 1, opacity: 1, y: 0 }}
               exit={{ scale: 0.95, opacity: 0, y: 20 }}
               transition={{ type: "spring", damping: 25, stiffness: 300 }}
-              style={{ 
+              style={{
                 position: 'relative', width: '100%', maxWidth: '1200px', aspectRatio: '16/9',
                 background: '#000', borderRadius: '1.5rem', overflow: 'hidden',
                 boxShadow: '0 20px 40px rgba(0,0,0,0.5)', border: '1px solid rgba(255,255,255,0.15)'
               }}
-              onClick={(e) => e.stopPropagation()} 
+              onClick={(e) => e.stopPropagation()}
             >
-              {/* Replace the src with your actual clinic tour video URL */}
-              <iframe 
-                width="100%" 
-                height="100%" 
-                src="https://www.youtube.com/embed/ScMzIvxBSi4?autoplay=1&mute=1" 
-                title="RH Dental Clinic Tour Video" 
-                frameBorder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowFullScreen
-              ></iframe>
+              {/* Local clinic tour video */}
+              <video
+                src="/aboutScreen.mp4"
+                autoPlay
+                muted
+                controls
+                playsInline
+                style={{ width: '100%', height: '100%', objectFit: 'contain', background: '#000' }}
+              />
             </motion.div>
           </motion.div>
         )}

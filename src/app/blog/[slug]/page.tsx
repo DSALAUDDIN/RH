@@ -175,7 +175,7 @@ export default async function BlogPostPage({ params }: Props) {
   const color = post.categoryColor;
 
   return (
-    <div style={{ background: '#f8fafc', minHeight: '100vh', paddingTop: 'var(--nav-height, 80px)' }}>
+    <div style={{ background: '#f8fafc', minHeight: '100vh' }}>
       {/* Hero */}
       <div style={{
         background: 'linear-gradient(135deg, #020617 0%, #0f172a 60%, #020617 100%)',

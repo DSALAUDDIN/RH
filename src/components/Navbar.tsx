@@ -2,9 +2,11 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Phone, ShieldPlus } from 'lucide-react';
+import { Menu, X, Phone } from 'lucide-react';
+import logo from '../assets/rhlogo.jpeg';
 import './Navbar.css';
 
 export default function Navbar() {
@@ -25,6 +27,7 @@ export default function Navbar() {
     { name: 'About', path: '/about' },
     { name: 'Specialties', path: '/specialties' },
     { name: 'Treatments', path: '/treatments' },
+    { name: 'Blog', path: '/blog' },
     { name: 'Reviews', path: '/reviews' },
     { name: 'Contact', path: '/contact' },
   ];
@@ -33,7 +36,14 @@ export default function Navbar() {
     <header className={`navbar-wrapper ${isScrolled ? 'scrolled' : ''}`}>
       <div className="navbar glass-modern">
         <Link href="/" className="logo">
-          <ShieldPlus className="logo-icon accent-blue" size={28} />
+          <Image
+            src={logo}
+            alt="RH Dental Care logo"
+            width={36}
+            height={36}
+            style={{ borderRadius: '50%', objectFit: 'contain', background: '#fff' }}
+            priority
+          />
           <span className="logo-text">RH Dental</span>
         </Link>
 

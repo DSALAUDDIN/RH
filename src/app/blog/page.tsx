@@ -1,12 +1,32 @@
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { blogPosts, blogCategories } from '@/lib/blogData';
 import { BookOpen, Clock, ArrowRight, Star } from 'lucide-react';
 import './blog.css';
 
 export const metadata: Metadata = {
-  title: 'Patient Education Blog | RH Dental Care',
-  description: 'Read expert articles on all dental treatments — root canal, implants, braces, gum care, and much more. Comprehensive patient education from RH Dental Care.',
+  title: 'Dental Health Blog & Patient Guides | RH Dental Care Dhaka',
+  description:
+    '50+ expert articles on dental implants, root canal, braces, gum care, kids dentistry & smile design — written by specialist dentists at RH Dental Care, Dhaka, Bangladesh. Read before your appointment.',
+  keywords: [
+    'dental blog Bangladesh',
+    'dental health articles Dhaka',
+    'dental implant guide Bangladesh',
+    'root canal treatment guide',
+    'orthodontics guide Dhaka',
+    'teeth whitening tips Bangladesh',
+    'patient education dental Dhaka',
+    'dental care tips Bangladesh',
+    'dentist advice Dhaka',
+  ],
+  alternates: { canonical: '/blog' },
+  openGraph: {
+    title: 'Dental Health Blog | Treatment Guides & Patient Education — RH Dental Care',
+    description:
+      'Expert dental articles for patients in Dhaka and Bangladesh. Learn about implants, braces, root canal, cosmetic dentistry and more from BMDC-certified specialists.',
+    url: 'https://www.rhdentalcare.com/blog',
+    images: [{ url: '/og-image.jpg', width: 1200, height: 630 }],
+  },
 };
 
 const categoryColors: Record<string, string> = {
@@ -31,7 +51,7 @@ export default function BlogPage({
     : blogPosts.filter((p) => p.category === activeCategory);
 
   return (
-    <div style={{ background: '#f8fafc', minHeight: '100vh', paddingTop: 'var(--nav-height, 80px)' }}>
+    <div style={{ background: '#f8fafc', minHeight: '100vh' }}>
       {/* Hero */}
       <div style={{
         background: 'linear-gradient(135deg, #020617 0%, #0f172a 60%, #020617 100%)',

@@ -1436,12 +1436,112 @@
   .ab-spec-strip { grid-template-columns: repeat(2, 1fr); }
   .ab-stats-bento { grid-template-columns: repeat(2, 1fr); }
   .ab-services-grid { grid-template-columns: 1fr; }
+  .ab-section { padding: 4rem 0; }
+  .ab-hero-inner { padding: 4rem 0 3.5rem; }
+  .ab-hero-title { font-size: clamp(2.4rem, 8vw, 3.8rem); }
+  .ab-hero-subtitle { font-size: 1rem; }
+  .ab-hero-cta-row { gap: 0.875rem; }
+  .ab-cta { padding: 5rem 0; }
+  .ab-cta-title { font-size: clamp(1.9rem, 6vw, 3rem); }
+  .ab-team-card-premium { width: 360px; height: 260px; }
 }
 
 @media (max-width: 480px) {
+  .ab-hero-inner { padding: 3rem 0 2.5rem; }
+  .ab-hero-title { font-size: clamp(1.9rem, 9vw, 2.8rem); letter-spacing: -0.04em; }
+  .ab-hero-subtitle { font-size: 0.95rem; line-height: 1.65; margin-bottom: 2rem; }
+  .ab-hero-kicker { font-size: 0.65rem; }
+  .ab-breadcrumb { font-size: 0.65rem; }
+
+  .ab-hero-cta-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+    margin-bottom: 2.5rem;
+  }
+  .ab-btn-primary, .ab-btn-glass {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .ab-hero-stats {
+    width: 100%;
+  }
+  .ab-stat-item {
+    padding: 1rem 1.5rem;
+  }
+  .ab-stat-val { font-size: 1.75rem; }
+
+  .ab-trust-pill { margin-left: 0; margin-top: 0.75rem; }
+
+  .ab-section { padding: 3rem 0; }
+  .ab-cta { padding: 3.5rem 0; }
+  .ab-cta-title { font-size: clamp(1.7rem, 8vw, 2.5rem); }
+  .ab-cta-sub { font-size: 0.95rem; }
+
   .ab-spec-strip { grid-template-columns: repeat(2, 1fr); }
-  .ab-cta-btns { flex-direction: column; align-items: stretch; }
-  .ab-cta-trust { flex-direction: column; gap: 1rem; }
+  .ab-spec-item { padding: 1.5rem 0.75rem; gap: 0.5rem; }
+  .ab-spec-name { font-size: 0.75rem; }
+  .ab-spec-icon { width: 40px; height: 40px; }
+
+  .ab-stats-bento { gap: 1rem; }
+  .ab-stat-card { padding: 1.75rem 1.25rem; }
+  .ab-stat-card-number { font-size: clamp(1.75rem, 6vw, 2.4rem); }
+
+  .ab-why-grid-dark { margin-top: 2.5rem; }
+  .ab-why-cell { padding: 1.75rem 1.5rem; }
+  .ab-why-title { font-size: 0.95rem; }
+
+  .ab-process-row { gap: 1.25rem; margin-top: 2.5rem; }
+  .ab-process-num { width: 48px; height: 48px; font-size: 1rem; }
+  .ab-process-title { font-size: 0.9rem; }
+  .ab-process-desc { font-size: 0.8rem; }
+
+  .ab-services-grid { gap: 1rem; margin-top: 2.5rem; }
+  .ab-service-card { padding: 1.75rem 1.5rem; }
+  .ab-service-title { font-size: 0.95rem; }
+
+  .ab-facility-cell { padding: 1.5rem 1.25rem; gap: 1rem; }
+  .ab-facility-icon { width: 40px; height: 40px; }
+  .ab-facility-title { font-size: 0.875rem; }
+  .ab-facility-desc { font-size: 0.78rem; }
+
+  .ab-doc-ring { width: 120px; height: 120px; top: -10px; right: -10px; }
+  .ab-doc-ring-alt { width: 120px; height: 120px; top: -10px; left: -10px; }
+
+  .ab-review-card { width: 280px; }
+  .ab-review-text { font-size: 0.83rem; }
+
+  .ab-team-card-premium { width: 300px; height: 220px; }
+
+  .ab-section-title-dark,
+  .ab-section-title-light { font-size: clamp(1.75rem, 7vw, 2.5rem); }
+
+  .ab-cta-trust { flex-wrap: wrap; gap: 0.75rem; }
+}
+
+@media (max-width: 360px) {
+  .ab-hero-title { font-size: clamp(1.65rem, 10vw, 2.2rem); }
+  .ab-hero-subtitle { font-size: 0.9rem; }
+
+  .ab-stat-item { padding: 0.875rem 1.25rem; }
+  .ab-stat-val { font-size: 1.5rem; }
+
+  .ab-spec-strip { grid-template-columns: repeat(2, 1fr); }
+  .ab-spec-item { padding: 1.25rem 0.5rem; }
+  .ab-spec-name { font-size: 0.7rem; }
+
+  .ab-stat-card { padding: 1.5rem 1rem; }
+  .ab-why-cell { padding: 1.5rem 1.25rem; }
+
+  .ab-service-card { padding: 1.5rem 1.25rem; }
+  .ab-facility-cell { padding: 1.25rem 1rem; }
+
+  .ab-cta-title { font-size: clamp(1.5rem, 9vw, 2rem); }
+  .ab-team-card-premium { width: 260px; height: 190px; }
+
   .ab-process-row { grid-template-columns: 1fr; }
-  .ab-team-photos { grid-template-columns: repeat(2, 1fr); }
+  .ab-stats-bento { grid-template-columns: 1fr 1fr; }
+  .ab-cta-btns { flex-direction: column; align-items: stretch; }
+  .ab-cta-trust { flex-direction: column; gap: 0.75rem; }
 }

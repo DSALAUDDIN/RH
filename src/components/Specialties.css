@@ -355,3 +355,29 @@
   .featured .card-body { padding: 2rem; }
   .section-footer { margin-top: 56px; }
 }
+
+@media (max-width: 480px) {
+  .specialties-section { padding: 56px 0 72px 0; }
+  .specialties-inner { padding: 0 16px; }
+  .section-header { margin-bottom: 40px; }
+  .section-header h2 { font-size: clamp(1.6rem, 7vw, 2.4rem); }
+  .section-header p { font-size: 0.95rem; }
+  .specialties-showcase { gap: 1.25rem; }
+  .card-body,
+  .featured .card-body,
+  .standard .card-body { padding: 1.5rem; }
+  .premium-card h3 { font-size: 1.2rem; }
+  .premium-card p { font-size: 0.875rem; margin-bottom: 1.2rem; }
+  .featured .card-img-wrapper { height: 160px; }
+  .explore-btn { padding: 1rem 2rem; font-size: 0.9rem; }
+  .section-footer { margin-top: 40px; }
+}
+
+@media (max-width: 360px) {
+  .specialties-inner { padding: 0 12px; }
+  .specialties-showcase { gap: 1rem; }
+  .card-body,
+  .featured .card-body,
+  .standard .card-body { padding: 1.25rem; }
+  .section-header h2 { font-size: clamp(1.45rem, 8vw, 2rem); }
+}

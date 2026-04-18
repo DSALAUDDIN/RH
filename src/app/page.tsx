@@ -3,7 +3,6 @@ import ServicesList from '@/components/ServicesList';
 import Specialties from '@/components/Specialties';
 import Testimonials from '@/components/Testimonials';
 import VideoSection from '@/components/VideoSection';
-import ReelsGallery from '@/components/ReelsGallery';
 
 export default function Home() {
   return (
@@ -12,7 +11,6 @@ export default function Home() {
       <Specialties />
       <VideoSection />
       <ServicesList limit={4} />
-      <ReelsGallery />
       <Testimonials />
       
       {/* Call to Action Section */}

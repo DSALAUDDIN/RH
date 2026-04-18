@@ -173,3 +173,54 @@
   border-color: #0ea5e9;
   color: #0ea5e9;
 }
+
+@media (max-width: 768px) {
+  .tm-section {
+    padding: 4rem 0;
+  }
+  .tm-header {
+    margin-bottom: 2.5rem;
+    padding: 0 1rem;
+  }
+  .tm-subtitle {
+    font-size: 1rem;
+  }
+  .tm-grid {
+    gap: 1.25rem;
+    margin-bottom: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .tm-section {
+    padding: 3rem 0;
+  }
+  .tm-header {
+    margin-bottom: 2rem;
+  }
+  .tm-title {
+    font-size: clamp(1.6rem, 7vw, 2rem);
+  }
+  .tm-subtitle {
+    font-size: 0.95rem;
+  }
+  .tm-card {
+    padding: 1.5rem;
+    border-radius: 1.25rem;
+  }
+  .tm-content {
+    font-size: 0.95rem;
+  }
+  .tm-grid {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .tm-card {
+    padding: 1.25rem;
+  }
+  .tm-title {
+    font-size: clamp(1.4rem, 8vw, 1.8rem);
+  }
+}

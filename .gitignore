@@ -41,3 +41,11 @@ yarn-error.log*
 next-env.d.ts
 
 .vercel
+
+# large media files
+*.mp4
+*.mov
+*.avi
+*.mkv
+public/*.mp4
+src/assets/Video/*.mp4

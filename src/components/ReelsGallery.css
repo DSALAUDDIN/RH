@@ -123,3 +123,39 @@
 .section-title.text-center {
   margin-bottom: var(--space-12);
 }
+
+@media (max-width: 768px) {
+  .reels-gallery {
+    padding: var(--space-16) 0;
+  }
+  .reels-grid {
+    gap: var(--space-6);
+    margin-top: var(--space-8);
+  }
+}
+
+@media (max-width: 480px) {
+  .reels-gallery {
+    padding: var(--space-12) 0;
+  }
+  .reels-grid {
+    gap: var(--space-4);
+    margin-top: var(--space-6);
+  }
+  .reel-title {
+    font-size: 1rem;
+  }
+  .reel-overlay {
+    padding: var(--space-4);
+  }
+}
+
+@media (max-width: 360px) {
+  .reel-title {
+    font-size: 0.9rem;
+  }
+  .r-action {
+    width: 36px;
+    height: 36px;
+  }
+}

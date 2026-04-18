@@ -1,7 +1,7 @@
 'use client';
 
 import { motion, Variants } from 'framer-motion';
-import { Star, CheckCircle2 } from 'lucide-react';
+import { Star } from 'lucide-react';
 import './Testimonials.css';
 
 const GoogleLogo = () => (
@@ -105,7 +105,7 @@ export default function Testimonials() {
         <div className="tm-header">
            <span className="tm-tag">Authentic Google Reviews</span>
            <h2 className="tm-title">Why Our Patients <span className="tm-highlight">Love Us</span></h2>
-           <p className="tm-subtitle">Don't just take our word for it. Read the experiences of thousands of satisfied patients who trusted us with their smiles.</p>
+           <p className="tm-subtitle">Don&apos;t just take our word for it. Read the experiences of thousands of satisfied patients who trusted us with their smiles.</p>
         </div>
 
         <motion.div 

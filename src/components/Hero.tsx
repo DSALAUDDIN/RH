@@ -86,7 +86,6 @@ export default function Hero() {
   }, []);
 
   const { scrollYProgress } = useScroll({ target: containerRef, offset: ['start start', 'end start'] });
-  const bgY    = useTransform(scrollYProgress, [0, 1], ['0%', '30%']);
   const fadeOut = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
   const scaleOut = useTransform(scrollYProgress, [0, 0.5], [1, 0.95]);
 
@@ -101,16 +100,21 @@ export default function Hero() {
     { val: 99,   suf: '%', lab: 'Success Rate' },
   ];
 
-  const [particles, setParticles] = useState<{ left: string; top: string; duration: number; delay: number; size: number }[]>([]);
+  const [particles, setParticles] = useState<{ left: string; top: string; duration: number; delay: number; size: number; xOffset: number }[]>([]);
 
   useEffect(() => {
-    setParticles([...Array(20)].map(() => ({
-      left: `${Math.random() * 100}%`,
-      top: `${Math.random() * 100}%`,
-      duration: 5 + Math.random() * 8,
-      delay: Math.random() * 5,
-      size: Math.random() * 3 + 1,
-    })));
+    // Generate random particles on client side to avoid hydration mismatch
+    const frame = requestAnimationFrame(() => {
+      setParticles([...Array(20)].map(() => ({
+        left: `${Math.random() * 100}%`,
+        top: `${Math.random() * 100}%`,
+        duration: 5 + Math.random() * 8,
+        delay: Math.random() * 5,
+        size: Math.random() * 3 + 1,
+        xOffset: Math.random() * 50 - 25,
+      })));
+    });
+    return () => cancelAnimationFrame(frame);
   }, []);
 
   return (
@@ -138,7 +142,7 @@ export default function Hero() {
             animate={{ 
               y: [0, -150, 0],
               opacity: [0, 0.6, 0],
-              x: [0, Math.random() * 50 - 25, 0]
+              x: [0, p.xOffset, 0]
             }}
             transition={{ 
               duration: p.duration, 
@@ -305,7 +309,7 @@ export default function Hero() {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.8 }}
               >
-                <p className="review-text" style={{ fontSize: '0.75rem', fontWeight: 500, fontStyle: 'italic', marginBottom: '8px', lineHeight: 1.4, color: '#f1f5f9' }}>"{googleReviews[reviewIdx].text}"</p>
+                <p className="review-text" style={{ fontSize: '0.75rem', fontWeight: 500, fontStyle: 'italic', marginBottom: '8px', lineHeight: 1.4, color: '#f1f5f9' }}>&quot;{googleReviews[reviewIdx].text}&quot;</p>
                 <div className="review-author" style={{ fontSize: '0.65rem', fontWeight: 700, color: '#94a3b8', textAlign: 'right' }}>- {googleReviews[reviewIdx].name}</div>
               </motion.div>
             </motion.div>
