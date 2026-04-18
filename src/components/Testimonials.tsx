@@ -120,7 +120,7 @@ export default function Testimonials() {
               <div className="tm-card-header">
                 <div className="tm-avatar" style={{ backgroundColor: getAvatarColor(t.id) }}>{t.avatar}</div>
                 <div className="tm-author">
-                  <h4>{t.name}</h4>
+                  <p className="tm-author-name">{t.name}</p>
                   <span>{t.role}</span>
                 </div>
                 <div className="tm-google-icon"><GoogleLogo /></div>

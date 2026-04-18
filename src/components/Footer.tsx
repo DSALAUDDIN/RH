@@ -97,6 +97,7 @@ export default function Footer() {
                 allowFullScreen={true} 
                 loading="lazy" 
                 referrerPolicy="no-referrer-when-downgrade"
+                title="RH Dental Care and Implant Center location on Google Maps"
               ></iframe>
             </div>
           </div>

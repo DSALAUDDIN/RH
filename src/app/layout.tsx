@@ -1,10 +1,8 @@
 import type { Metadata } from 'next';
 import { Inter, Plus_Jakarta_Sans, Outfit } from 'next/font/google';
-import Script from 'next/script';
 import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import JsonLd from '@/components/JsonLd';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -24,7 +22,7 @@ const outfit = Outfit({
   variable: '--font-outfit',
 });
 
-const BASE_URL = 'https://www.rhdentalcare.com';
+const BASE_URL = 'https://rhdentalcare.com';
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
@@ -114,7 +112,7 @@ export const metadata: Metadata = {
       'Visit RH Dental Care — Dhaka\'s most trusted dental clinic. Advanced implants, orthodontics, smile design & painless root canal by BMDC-certified specialists. Book free consultation now.',
     images: [
       {
-        url: '/og-image.jpg',
+        url: '/rhlogo.jpeg',
         width: 1200,
         height: 630,
         alt: 'RH Dental Care — Best Dental Clinic in Dhaka, Bangladesh',
@@ -131,7 +129,7 @@ export const metadata: Metadata = {
     title: 'RH Dental Care | Best Dental Clinic Dhaka Bangladesh',
     description:
       'The #1 dental clinic in Dhaka. Expert implants, orthodontics, smile design & cosmetic dentistry by Dr. B.M. Rafiqul Hasan.',
-    images: ['/og-image.jpg'],
+    images: ['/rhlogo.jpeg'],
   },
 
   /* ── Robots ── */
@@ -156,12 +154,6 @@ export const metadata: Metadata = {
     ],
     apple: '/rhlogo.jpeg',
     shortcut: '/rhlogo.jpeg',
-  },
-
-  /* ── Verification (add your actual codes when ready) ── */
-  verification: {
-    google: 'ADD_YOUR_GOOGLE_SEARCH_CONSOLE_TOKEN',
-    // bing: 'ADD_YOUR_BING_WEBMASTER_TOKEN',
   },
 
   /* ── Geographic targeting ── */
@@ -197,8 +189,8 @@ const jsonLd = {
         width: 200,
         height: 200,
       },
-      image: `${BASE_URL}/og-image.jpg`,
-      telephone: '+8801XXXXXXXXX',
+      image: `${BASE_URL}/rhlogo.jpeg`,
+      telephone: '+8801775227902',
       email: 'info@rhdentalcare.com',
       address: {
         '@type': 'PostalAddress',
@@ -347,25 +339,20 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const jsonLdString = JSON.stringify(jsonLd).replace(/</g, '\\u003c');
+
   return (
     <html lang="en" className={`${inter.variable} ${jakarta.variable} ${outfit.variable}`} suppressHydrationWarning>
       <head>
-        {/* JSON-LD Structured Data */}
-        <Script
-          id="json-ld-main"
+        <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{ __html: jsonLdString }}
         />
-        {/* Preconnect for performance */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         {/* Language targeting */}
         <link rel="alternate" hrefLang="en" href={BASE_URL} />
         <link rel="alternate" hrefLang="x-default" href={BASE_URL} />
       </head>
       <body suppressHydrationWarning>
-        <JsonLd />
         <Navbar />
         <main className="main-content">
           {children}

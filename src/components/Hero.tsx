@@ -94,7 +94,10 @@ export default function Hero() {
   const bgSpringX  = useSpring(mouse.x * 0.15, { stiffness: 30, damping: 25 });
   const bgSpringY  = useSpring(mouse.y * 0.15, { stiffness: 30, damping: 25 });
 
-  const homeVideoUrl = "https://res.cloudinary.com/dlaqtwoa3/video/upload/v1776535718/homeScreen_tai4jm.mp4";
+  // NOTE: Video URL removed — Cloudinary source was returning ERR_CONNECTION_FAILED.
+  // Poster image (herobanner.webp) is shown as the static background instead.
+  // Replace the src below with a valid video URL when available.
+  const homeVideoUrl: string | null = null;
 
   const stats = [
     { val: 5000, suf: '+', lab: 'Happy Smiles' },
@@ -131,8 +134,10 @@ export default function Hero() {
           playsInline
           className="hero-bg-video"
           poster={herobanner.src}
+          aria-hidden="true"
         >
-          <source src={homeVideoUrl} type="video/mp4" />
+          {homeVideoUrl && <source src={homeVideoUrl} type="video/mp4" />}
+          <track kind="captions" srcLang="en" label="English" default />
         </video>
         <div className="hero-mesh-1" />
         <div className="hero-mesh-2" />

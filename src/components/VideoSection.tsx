@@ -142,8 +142,10 @@ export default function VideoSection() {
               muted
               loop
               playsInline
+              aria-label="RH Dental Care clinic tour video"
             >
-              <source src="https://res.cloudinary.com/dlaqtwoa3/video/upload/v1776535718/homeScreen_tai4jm.mp4" type="video/mp4" />
+              {/* Replace the src below with a valid video URL when available */}
+              {/* <source src="YOUR_VIDEO_URL_HERE" type="video/mp4" /> */}
             </video>
 
             {/* Big centre play button (shows when paused OR hovered) */}
@@ -162,6 +164,7 @@ export default function VideoSection() {
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.92 }}
                       onClick={togglePlay}
+                      aria-label="Play clinic tour video"
                     >
                       <Play size={40} fill="white" style={{ marginLeft: 4 }} />
                     </motion.button>
