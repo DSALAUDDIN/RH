@@ -94,6 +94,8 @@ export default function Hero() {
   const bgSpringX  = useSpring(mouse.x * 0.15, { stiffness: 30, damping: 25 });
   const bgSpringY  = useSpring(mouse.y * 0.15, { stiffness: 30, damping: 25 });
 
+  const homeVideoUrl = "https://res.cloudinary.com/dlaqtwoa3/video/upload/v1776535718/homeScreen_tai4jm.mp4";
+
   const stats = [
     { val: 5000, suf: '+', lab: 'Happy Smiles' },
     { val: 10,   suf: '+', lab: 'Years Exp.' },
@@ -122,12 +124,16 @@ export default function Hero() {
       
       {/* Dynamic Background */}
       <motion.div className="hero-bg-layer" style={{ x: bgSpringX, y: bgSpringY }}>
-        <Image
-          src={herobanner}
-          alt="RH Dental Care Interior"
-          fill priority
-          className="hero-bg-img"
-        />
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="hero-bg-video"
+          poster={herobanner.src}
+        >
+          <source src={homeVideoUrl} type="video/mp4" />
+        </video>
         <div className="hero-mesh-1" />
         <div className="hero-mesh-2" />
         <div className="hero-noise" />

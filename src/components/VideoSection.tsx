@@ -143,7 +143,7 @@ export default function VideoSection() {
               loop
               playsInline
             >
-              <source src="/aboutScreenVideo.mp4" type="video/mp4" />
+              <source src="https://res.cloudinary.com/dlaqtwoa3/video/upload/v1776535718/homeScreen_tai4jm.mp4" type="video/mp4" />
             </video>
 
             {/* Big centre play button (shows when paused OR hovered) */}

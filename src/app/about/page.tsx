@@ -2,7 +2,7 @@
 
 import { useRef, useEffect, useState } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import { motion, useInView, AnimatePresence, Variants } from 'framer-motion';
 import {
   ArrowUpRight, Phone, ShieldCheck, Award, Heart,
@@ -188,7 +188,7 @@ function VideoTourBanner({ onOpen }: { onOpen: () => void }) {
       {/* Auto-playing muted background video */}
       <video
         ref={videoRef}
-        src="/aboutScreenVideo.mp4"
+        src="https://res.cloudinary.com/dlaqtwoa3/video/upload/v1776535718/homeScreen_tai4jm.mp4"
         muted
         loop
         playsInline
@@ -241,7 +241,7 @@ function VideoTourBanner({ onOpen }: { onOpen: () => void }) {
 
 /* ══ PAGE ══ */
 export default function AboutPage() {
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [selectedImage, setSelectedImage] = useState<string | StaticImageData | null>(null);
   const [isVideoOpen, setIsVideoOpen] = useState(false);
 
   return (
@@ -819,7 +819,7 @@ export default function AboutPage() {
             >
               {/* Local clinic tour video */}
               <video
-                src="/aboutScreen.mp4"
+                src="https://res.cloudinary.com/dlaqtwoa3/video/upload/v1776535718/homeScreen_tai4jm.mp4"
                 autoPlay
                 muted
                 controls
