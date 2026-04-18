@@ -6,6 +6,8 @@ import { Play, Pause, Volume2, VolumeX, Maximize, Cpu, Heart } from 'lucide-reac
 import './VideoSection.css';
 
 export default function VideoSection() {
+  const clinicVideoUrl = 'https://res.cloudinary.com/dlaqtwoa3/video/upload/v1776535718/homeScreen_tai4jm.mp4';
+
   const videoRef = useRef<HTMLVideoElement>(null);
   const wrapperRef = useRef<HTMLDivElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -144,8 +146,7 @@ export default function VideoSection() {
               playsInline
               aria-label="RH Dental Care clinic tour video"
             >
-              {/* Replace the src below with a valid video URL when available */}
-              {/* <source src="YOUR_VIDEO_URL_HERE" type="video/mp4" /> */}
+              <source src={clinicVideoUrl} type="video/mp4" />
             </video>
 
             {/* Big centre play button (shows when paused OR hovered) */}

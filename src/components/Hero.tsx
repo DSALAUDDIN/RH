@@ -94,10 +94,8 @@ export default function Hero() {
   const bgSpringX  = useSpring(mouse.x * 0.15, { stiffness: 30, damping: 25 });
   const bgSpringY  = useSpring(mouse.y * 0.15, { stiffness: 30, damping: 25 });
 
-  // NOTE: Video URL removed — Cloudinary source was returning ERR_CONNECTION_FAILED.
-  // Poster image (herobanner.webp) is shown as the static background instead.
-  // Replace the src below with a valid video URL when available.
-  const homeVideoUrl: string | null = null;
+  // Keep home hero video in sync with the About screen tour video.
+  const homeVideoUrl = 'https://res.cloudinary.com/dlaqtwoa3/video/upload/v1776535718/homeScreen_tai4jm.mp4';
 
   const stats = [
     { val: 5000, suf: '+', lab: 'Happy Smiles' },
