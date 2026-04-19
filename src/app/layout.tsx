@@ -35,7 +35,7 @@ export const metadata: Metadata = {
 
   /* ── Description — primary ranking signal ── */
   description:
-    'RH Dental Care is the #1 dental clinic in Dhaka, Bangladesh. Expert oral & dental surgery, dental implants, orthodontics, root canal, cosmetic dentistry & smile design by BMDC-certified specialist Dr. B.M. Rafiqul Hasan (Mehedi). 5,000+ happy patients. Book a free consultation today.',
+    'RH Dental Care is the #1 dental clinic in Dhaka, Bangladesh. Expert oral & dental surgery, dental implants, orthodontics, root canal, cosmetic dentistry & smile design by BMDC-certified specialist Dr. B.M. Rafiqul Hasan (Mehedi). 13k+ happy patients. Book a free consultation today.',
 
   /* ── Exhaustive keyword set ── */
   keywords: [
@@ -273,7 +273,7 @@ const jsonLd = {
       honorificPrefix: 'Dr.',
       jobTitle: 'Chief Consultant Oral & Dental Surgeon',
       description:
-        'BMDC-registered (Reg. 5169) Chief Consultant & Founder of RH Dental Care. BDS from Sapporo Dental College, MPH from City University. Over 10 years of clinical experience in implantology, cosmetic dentistry and full-mouth rehabilitation.',
+        'BMDC-registered (Reg. 5169) Chief Consultant & Founder of RH Dental Care. BDS from Sapporo Dental College, MPH from City University. Over 12+ years of clinical experience in implantology, cosmetic dentistry and full-mouth rehabilitation.',
       worksFor: { '@id': `${BASE_URL}/#dentist` },
       url: `${BASE_URL}/about`,
       image: `${BASE_URL}/rhlogo.jpeg`,
@@ -302,7 +302,7 @@ const jsonLd = {
           name: 'Is RH Dental Care the best dental clinic in Dhaka?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'RH Dental Care is consistently rated as one of the top dental clinics in Dhaka, Bangladesh, with 5,000+ happy patients, a 99% success rate, and a team of BMDC-certified specialists.',
+            text: 'RH Dental Care is consistently rated as one of the top dental clinics in Dhaka, Bangladesh, with 13k+ happy patients, a 99% success rate, and a team of BMDC-certified specialists.',
           },
         },
         {
