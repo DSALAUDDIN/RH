@@ -121,7 +121,7 @@ export default function Specialties() {
 					whileInView="visible"
 					viewport={{ once: true, margin: '-50px' }}
 				>
-					{clinicsBanners.map((card) => (
+					{clinicsBanners.map((card, index) => (
 						<motion.div
 							key={card.title}
 							className={`premium-card ${card.featured ? 'featured' : 'standard'}`}
@@ -133,6 +133,7 @@ export default function Specialties() {
 									src={card.image}
 									alt={`${card.title} - Dental Treatment at RH Dental Care Dhaka`}
 									fill
+									priority={card.featured || index < 2}
 									sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 40vw"
 									className="card-img"
 									style={{ objectFit: 'cover' }}

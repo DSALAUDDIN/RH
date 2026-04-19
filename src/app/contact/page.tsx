@@ -7,13 +7,34 @@ import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 export default function ContactPage() {
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setTimeout(() => {
-      setSubmitted(true);
-      setFormData({ name: '', email: '', phone: '', message: '' });
-    }, 1000); // Simulate API call
+    setLoading(true);
+    setError('');
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        setSubmitted(true);
+        setFormData({ name: '', email: '', phone: '', message: '' });
+      } else {
+        setError(data.message || 'Something went wrong.');
+      }
+    } catch (err) {
+      setError('Failed to send message. Please check your connection.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -94,8 +115,20 @@ export default function ContactPage() {
                     style={{ width: '100%', padding: '0.75rem 1rem', borderRadius: '0.5rem', border: '1px solid hsl(var(--border))', outline: 'none', resize: 'vertical', background: 'hsl(var(--surface))', color: 'hsl(var(--foreground))', fontSize: '1rem' }}
                   ></textarea>
                 </div>
-                <button type="submit" className="btn btn-primary" style={{ marginTop: '0.75rem', width: '100%' }}>
-                  Send Message
+                
+                {error && (
+                  <div style={{ color: '#ef4444', fontSize: '0.9rem', padding: '0.5rem', background: 'rgba(239, 68, 68, 0.1)', borderRadius: '0.5rem', border: '1px solid rgba(239, 68, 68, 0.2)' }}>
+                    ⚠️ {error}
+                  </div>
+                )}
+
+                <button 
+                  type="submit" 
+                  className="btn btn-primary" 
+                  style={{ marginTop: '0.75rem', width: '100%', opacity: loading ? 0.7 : 1, cursor: loading ? 'not-allowed' : 'pointer' }}
+                  disabled={loading}
+                >
+                  {loading ? 'Sending Message...' : 'Send Message'}
                 </button>
               </form>
             )}

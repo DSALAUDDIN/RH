@@ -7,13 +7,14 @@ import {
   useSpring,
   useInView,
   Variants,
+  AnimatePresence,
 } from 'framer-motion';
-import { useRef, useEffect, useState } from 'react';
+import { useRef, useEffect, useState, useCallback } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowUpRight, Phone, ShieldCheck, Clock, Activity, Star, Sparkles, CheckCircle2, Award } from 'lucide-react';
+import { ArrowUpRight, Phone, ShieldCheck, Clock, Activity, Star, Sparkles, CheckCircle2, Award, ChevronLeft, ChevronRight, Stethoscope, GraduationCap } from 'lucide-react';
 import './Hero.css';
-import heroprofile from '../assets/Hero/heroprofile.png';
+import doctorsCouple from '../assets/Hero/DoctorsCouple.png';
 import herobanner from '../assets/Hero/herobanner.webp';
 
 /* ─── Animated Counter ─── */
@@ -36,36 +37,62 @@ function Counter({ to, suffix = '' }: { to: number; suffix?: string }) {
 }
 
 /* ─── Staggered Word Reveal ─── */
-const container: Variants = {
+const containerVariants: Variants = {
   hidden: {},
   show: { transition: { staggerChildren: 0.08 } },
 };
-const word: Variants = {
+const wordVariant: Variants = {
   hidden: { y: '120%', opacity: 0, rotateX: -20 },
   show: { y: '0%', opacity: 1, rotateX: 0, transition: { type: "spring", stiffness: 60, damping: 15 } },
 };
 
 function RevealText({ text, className }: { text: string; className?: string }) {
   return (
-    <motion.span className={className} variants={container} initial="hidden" animate="show" aria-label={text} style={{ perspective: "1000px" }}>
+    <motion.span className={className} variants={containerVariants} initial="hidden" animate="show" aria-label={text} style={{ perspective: "1000px" }}>
       {text.split(' ').map((w, i) => (
         <span key={i} style={{ display: 'inline-block', overflow: 'hidden', marginRight: '0.3em', paddingBottom: '0.1em' }}>
-          <motion.span style={{ display: 'inline-block', transformOrigin: "top left" }} variants={word}>{w}</motion.span>
+          <motion.span style={{ display: 'inline-block', transformOrigin: "top left" }} variants={wordVariant}>{w}</motion.span>
         </span>
       ))}
     </motion.span>
   );
 }
+
 const googleReviews = [
   { name: "Walid Mohammad", text: "Commendable work and great care. The environment here is truly premium." },
   { name: "Tanvir AHAMED", text: "One of the best doctors I have ever seen. The most modern dental clinic in Dhaka." },
   { name: "Nafisa Islam", text: "The most painless dental experience I've ever had. Highly recommended!" }
 ];
 
+/* ─── Doctor Data ─── */
+const doctors = [
+  {
+    name: "Dr. Shimia Binte Taher",
+    title: "Expert in Exodontia | Microscopic Endodontics & Aesthetic Dentistry",
+    role: "Senior Lecturer, MH Samorita Medical College & Hospital",
+    bmdc: "BMDC: 8496",
+    credentials: "BDS",
+    specialties: ["Microscopic Endodontics", "Aesthetic Dentistry", "Exodontia"],
+    highlight: "A Perfect Blend of Skill, Care & Leadership",
+    philosophy: "Dedicated to female-oriented dental care, ensuring a safe, respectful, and comfortable environment.",
+  },
+  {
+    name: "Dr. B.M. Rafiqul Hasan (Mehedi)",
+    title: "Chief Consultant | Oral & Dental Surgeon",
+    role: "Senior Lecturer, MH Samorita Medical College & Hospital",
+    bmdc: "BMDC: 5169",
+    credentials: "BDS, MPH, PGT",
+    specialties: ["Advanced Implantology", "Full Mouth Rehabilitation", "Digital & 3D Dentistry"],
+    highlight: "Pioneer in Digital Dentistry & Implant Surgery",
+    philosophy: "Internationally trained with in-house lab for precision prosthesis and superior outcomes.",
+  },
+];
+
 export default function Hero() {
   const containerRef = useRef<HTMLElement>(null);
   const [mouse, setMouse] = useState({ x: 0, y: 0 });
   const [reviewIdx, setReviewIdx] = useState(0);
+  const [activeDoc, setActiveDoc] = useState(0);
 
   useEffect(() => {
     const handler = (e: MouseEvent) => {
@@ -85,6 +112,22 @@ export default function Hero() {
     return () => clearInterval(t);
   }, []);
 
+  // Auto-cycle doctors every 8 seconds
+  useEffect(() => {
+    const t = setInterval(() => {
+      setActiveDoc(prev => (prev + 1) % doctors.length);
+    }, 8000);
+    return () => clearInterval(t);
+  }, []);
+
+  const nextDoc = useCallback(() => {
+    setActiveDoc(prev => (prev + 1) % doctors.length);
+  }, []);
+
+  const prevDoc = useCallback(() => {
+    setActiveDoc(prev => (prev - 1 + doctors.length) % doctors.length);
+  }, []);
+
   const { scrollYProgress } = useScroll({ target: containerRef, offset: ['start start', 'end start'] });
   const fadeOut = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
   const scaleOut = useTransform(scrollYProgress, [0, 0.5], [1, 0.95]);
@@ -98,8 +141,8 @@ export default function Hero() {
   const homeVideoUrl = 'https://res.cloudinary.com/dlaqtwoa3/video/upload/v1776535718/homeScreen_tai4jm.mp4';
 
   const stats = [
-    { val: 5000, suf: '+', lab: 'Happy Smiles' },
-    { val: 10,   suf: '+', lab: 'Years Exp.' },
+    { val: 13, suf: 'k+', lab: 'Happy Smiles' },
+    { val: 12, suf: '+', lab: 'Years Exp.' },
     { val: 99,   suf: '%', lab: 'Success Rate' },
   ];
 
@@ -120,8 +163,10 @@ export default function Hero() {
     return () => cancelAnimationFrame(frame);
   }, []);
 
+  const doc = doctors[activeDoc];
+
   return (
-    <section className="hero-v5" ref={containerRef}>
+    <section className="hero-v5" ref={containerRef} style={{ position: 'relative' }}>
       
       {/* Dynamic Background */}
       <motion.div className="hero-bg-layer" style={{ x: bgSpringX, y: bgSpringY }}>
@@ -179,7 +224,7 @@ export default function Hero() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <div className="kicker-dot"><div className="kicker-pulse" /></div>
-            <span className="kicker-text">World Class Dental Experience</span>
+            <span className="kicker-text">Meet Our Expert Doctors</span>
           </motion.div>
 
           <h1 className="hero-title">
@@ -201,7 +246,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.8 }}
           >
-            Experience dentistry redefined. From routine care to complex cosmetic transformations, we deliver painless precision in a premium environment.
+            Experience dentistry redefined by two leading experts. From microscopic endodontics to advanced implant surgery, we deliver painless precision in a premium environment.
           </motion.p>
 
           <motion.div
@@ -235,6 +280,11 @@ export default function Hero() {
             <div className="trust-item">
               <Award color="#38bdf8" size={18} />
               <span>BMDC Certified</span>
+            </div>
+            <div className="trust-sep" />
+            <div className="trust-item">
+              <GraduationCap color="#a78bfa" size={18} />
+              <span>Internationally Trained</span>
             </div>
           </motion.div>
 
@@ -274,75 +324,67 @@ export default function Hero() {
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
             >
               <Image
-                src={heroprofile}
-                alt="Dr. B.M Rafiqual Hasan"
+                src={doctorsCouple}
+                alt="Dr. Shimia Binte Taher & Dr. B.M. Rafiqul Hasan - RH Dental Care"
                 fill priority
+                sizes="(max-width: 768px) 100vw, 45vw"
                 className="doc-img"
               />
               <div className="doc-gradient-fade" />
             </motion.div>
 
-            {/* Orbiting Elements */}
+            {/* Aesthetic tags */}
             <motion.div 
               className="float-orb orb-top-left glass-pill"
-              animate={{ y: [0, -15, 0], x: [0, 10, 0] }}
+              animate={{ y: [0, -15, 0] }}
               transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
             >
               <Sparkles size={14} className="accent-icon" />
-              <span>Oral Surgeon</span>
+              <span>Aesthetic Mastery</span>
             </motion.div>
 
             <motion.div 
               className="float-orb orb-bottom-right glass-pill"
-              animate={{ y: [0, 15, 0], x: [0, -10, 0] }}
+              animate={{ y: [0, 15, 0] }}
               transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
             >
               <ShieldCheck size={14} className="accent-icon" />
-              <span>Implant Expert</span>
-            </motion.div>
-            
-            {/* Real Google Review Snippet */}
-            <motion.div 
-              className="float-review glass-card"
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 1.5, duration: 0.8 }}
-            >
-              <div className="review-stars">
-                {[...Array(5)].map((_,i) => <Star key={i} size={10} fill="#fbbf24" color="#fbbf24" />)}
-                <span className="review-score">5.0</span>
-              </div>
-              <motion.div
-                key={reviewIdx} /* forces re-animation on change */
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.8 }}
-              >
-                <p className="review-text" style={{ fontSize: '0.75rem', fontWeight: 500, fontStyle: 'italic', marginBottom: '8px', lineHeight: 1.4, color: '#f1f5f9' }}>&quot;{googleReviews[reviewIdx].text}&quot;</p>
-                <div className="review-author" style={{ fontSize: '0.65rem', fontWeight: 700, color: '#94a3b8', textAlign: 'right' }}>- {googleReviews[reviewIdx].name}</div>
-              </motion.div>
+              <span>Implant Experts</span>
             </motion.div>
 
-            {/* Premium Apple-style Name Card */}
+            {/* Dr. Shimia Card (Bottom Left) */}
             <motion.div
-              className="premium-name-card glass-panel"
-              initial={{ opacity: 0, y: 30, rotateX: 20 }}
-              animate={{ opacity: 1, y: 0, rotateX: 0 }}
-              transition={{ delay: 1.1, duration: 1, type: "spring", damping: 20 }}
-              style={{ perspective: "1000px" }}
+              className="premium-name-card card-shim"
+              initial={{ opacity: 0, x: -30, y: 10 }}
+              animate={{ opacity: 1, x: 0, y: 0 }}
+              transition={{ delay: 1.1, duration: 0.8, type: "spring", damping: 25 }}
             >
-              <div className="card-pinstripe" />
-              <div className="card-content">
-                <div className="card-header">
-                  <h3 className="doc-name">Dr. B.M Rafiqual Hasan</h3>
-                  <div className="verified-badge"><CheckCircle2 size={12}/> Verified</div>
-                </div>
-                <p className="doc-title">Chief Consultant – Oral & Dental Surgery</p>
-                <div className="doc-creds">
-                  <span>MPH, BDS, PGT</span>
-                  <span className="dot">•</span>
-                  <span>BMDC 5169</span>
-                </div>
+              <div className="card-header">
+                <h3 className="doc-name">Dr. Shimia Binte Taher</h3>
+              </div>
+              <p className="doc-title">Endodontics & Aesthetic Dentistry</p>
+              <div className="doc-creds-box">
+                <span className="verified-badge"><CheckCircle2 size={10}/> BDS</span>
+                <span className="dot">•</span>
+                <span>BMDC: 8496</span>
+              </div>
+            </motion.div>
+
+            {/* Dr. Hasan Card (Top Right) */}
+            <motion.div
+              className="premium-name-card card-hasan"
+              initial={{ opacity: 0, x: 30, y: -10 }}
+              animate={{ opacity: 1, x: 0, y: 0 }}
+              transition={{ delay: 1.3, duration: 0.8, type: "spring", damping: 25 }}
+            >
+              <div className="card-header">
+                <h3 className="doc-name">Dr. B.M Rafiqul Hasan</h3>
+              </div>
+              <p className="doc-title">Chief Consultant – Oral Surgery</p>
+              <div className="doc-creds-box">
+                <span className="verified-badge"><CheckCircle2 size={10}/> MPH, PGT, BDS</span>
+                <span className="dot">•</span>
+                <span>BMDC: 5169</span>
               </div>
             </motion.div>
 

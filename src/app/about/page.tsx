@@ -12,7 +12,7 @@ import {
   ScanLine, MonitorDot, Wifi, User, Brain, GraduationCap, X, Play,
 } from 'lucide-react';
 import './About.css';
-import heroBg from '../../assets/about_hero_light.png';
+import heroBg from '../../assets/Hero/DoctorsCouple.png';
 import heroprofile from '../../assets/Hero/heroprofile.png';
 import drShimia from '../../assets/doctors/shimia.jpeg';
 // clinicImg removed — video plays instead
@@ -67,8 +67,8 @@ const fadeUp: Variants = { hidden: { opacity: 0, y: 36 }, show: { opacity: 1, y:
 
 /* ══ REAL DATA ══ */
 const heroStats = [
-  { val: 5000, suf: '+', label: 'Happy Smiles' },
-  { val: 10, suf: '+', label: 'Years Exp.' },
+  { val: 13, suf: 'k+', label: 'Happy Smiles' },
+  { val: 12, suf: '+', label: 'Years Exp.' },
   { val: 99, suf: '%', label: 'Success Rate' },
   { val: 3500, suf: 'sqft', label: 'Clinic Area' },
 ];
@@ -182,7 +182,8 @@ function VideoTourBanner({ onOpen }: { onOpen: () => void }) {
       ref={sectionRef}
       initial="rest"
       whileHover="hover"
-      style={{ position: 'relative', width: '100%', aspectRatio: '21/8', overflow: 'hidden', cursor: 'pointer', minHeight: '240px' }}
+      className="ab-video-tour-banner"
+      style={{ position: 'relative', width: '100%', aspectRatio: '21/9', overflow: 'hidden', cursor: 'pointer', minHeight: '220px', maxHeight: '460px' }}
       onClick={onOpen}
     >
       {/* Auto-playing muted background video */}
@@ -204,33 +205,33 @@ function VideoTourBanner({ onOpen }: { onOpen: () => void }) {
         position: 'absolute', inset: 0,
         background: 'linear-gradient(to right, rgba(15,23,42,0.85) 0%, rgba(15,23,42,0.55) 50%, rgba(15,23,42,0.85) 100%)',
         display: 'flex', alignItems: 'center', justifyContent: 'center',
-        padding: '0 max(1.5rem, calc((100vw - 1280px)/2))',
+        padding: '1.5rem clamp(1rem, 5vw, 3rem)',
       }}>
-        <div style={{ maxWidth: '600px', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
+        <div style={{ maxWidth: '560px', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
           <motion.div
             variants={{
               rest: { scale: 1, boxShadow: '0 0 0 0 rgba(14,165,233,0)' },
               hover: { scale: 1.1, boxShadow: '0 0 0 14px rgba(255,255,255,0.05)' }
             }}
             style={{
-              width: '80px', height: '80px', borderRadius: '50%',
+              width: 'clamp(52px, 10vw, 80px)', height: 'clamp(52px, 10vw, 80px)', borderRadius: '50%',
               background: 'rgba(255,255,255,0.15)', border: '1px solid rgba(255,255,255,0.4)',
               backdropFilter: 'blur(8px)', display: 'flex', alignItems: 'center', justifyContent: 'center',
-              marginBottom: '1.75rem', color: '#fff',
+              marginBottom: 'clamp(1rem, 2vw, 1.75rem)', color: '#fff',
             }}
           >
-            <Play size={32} fill="currentColor" style={{ marginLeft: '4px' }} />
+            <Play size={24} fill="currentColor" style={{ marginLeft: '3px' }} />
           </motion.div>
-          <div className="ab-label" style={{ marginBottom: '1.25rem', background: 'rgba(255,255,255,0.1)', color: '#fff', borderColor: 'rgba(255,255,255,0.2)' }}>
+          <div className="ab-label" style={{ marginBottom: 'clamp(0.75rem, 1.5vw, 1.25rem)', background: 'rgba(255,255,255,0.1)', color: '#fff', borderColor: 'rgba(255,255,255,0.2)' }}>
             <Building2 size={14} /> Full Clinic Virtual Tour
           </div>
-          <h2 style={{ fontSize: 'clamp(2rem,4vw,3.2rem)', fontWeight: 900, color: '#fff', letterSpacing: '-0.04em', lineHeight: 1.1, marginBottom: '1.25rem' }}>
+          <h2 style={{ fontSize: 'clamp(1.4rem, 3.5vw, 3rem)', fontWeight: 900, color: '#fff', letterSpacing: '-0.04em', lineHeight: 1.1, marginBottom: 'clamp(0.75rem, 1.5vw, 1.25rem)' }}>
             Take a Tour of{' '}
             <span style={{ background: 'linear-gradient(90deg, #38bdf8, #818cf8)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
               Our Facility
             </span>
           </h2>
-          <p style={{ fontSize: '1.05rem', color: '#cbd5e1', lineHeight: 1.7, marginBottom: 0 }}>
+          <p style={{ fontSize: 'clamp(0.82rem, 1.2vw, 1.05rem)', color: '#cbd5e1', lineHeight: 1.65, marginBottom: 0 }}>
             Experience our 3,500 sq.ft premium clinic from the comfort of your home. Explore our modern OT setups, digital technology, and inviting reception area.
           </p>
         </div>
@@ -275,8 +276,8 @@ export default function AboutPage() {
           <motion.h1 className="ab-hero-title"
             initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}>
-            Your Smile is{' '}
-            <span className="ab-shine">Our Happiness.</span>
+            Meet Our{' '}
+            <span className="ab-shine">Experts.</span>
           </motion.h1>
 
           <motion.p className="ab-hero-tagline"
@@ -288,7 +289,7 @@ export default function AboutPage() {
           <motion.p className="ab-hero-subtitle"
             initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}>
-            At RH Dental Care, we are dedicated to transforming smiles and enhancing oral health — with world-class dental care, advanced technology, and a patient-first approach for patients of all ages, including children and patients with special needs.
+            At RH Dental Care, two exceptional doctors lead a team dedicated to transforming smiles and enhancing oral health — with world-class dental care, advanced technology, and a patient-first approach for patients of all ages, including children and patients with special needs.
           </motion.p>
 
           <motion.div className="ab-hero-cta-row"
@@ -301,7 +302,7 @@ export default function AboutPage() {
               <Phone size={16} /> Call Us Now
             </a>
             <span className="ab-trust-pill">
-              <CheckCircle2 size={14} /> BMDC Reg. 5169
+              <CheckCircle2 size={14} /> BMDC 5169 &amp; 8496
             </span>
           </motion.div>
 
@@ -356,18 +357,22 @@ export default function AboutPage() {
                   <span className="ab-shine-text">(Mehedi)</span>
                 </h2>
                 <p className="ab-body-dark">
-                  A distinguished Oral &amp; Dental Surgeon known for his precision, advanced clinical expertise, and commitment to excellence. With over <strong style={{ color: '#0f172a' }}>10 years of clinical experience</strong>, Dr. Hasan combines professional expertise, modern technology, and patient-centred care to deliver lasting, functional, and aesthetically pleasing results.
+                  A distinguished Oral &amp; Dental Surgeon known for his precision, advanced clinical expertise, and commitment to excellence in modern dentistry. With a strong academic background and extensive international training, he has established himself as a trusted name in <strong style={{ color: '#0f172a' }}>advanced dental implant surgery</strong> and <strong style={{ color: '#0f172a' }}>full mouth rehabilitation</strong>.
                 </p>
                 <p className="ab-body-dark">
-                  He has undergone advanced international training in Dental Implantology from <strong style={{ color: '#0f172a' }}>China, Korea, and India</strong>, and completed specialised training in Minimally Invasive Cosmetic Dentistry (MICD) in Nepal. Since 2015, he also serves as <strong style={{ color: '#0f172a' }}>Senior Lecturer at MH Samorita Medical College &amp; Hospital</strong>.
+                  Dr. Hasan has undergone advanced international training in Dental Implantology from <strong style={{ color: '#0f172a' }}>China, Korea, and India</strong>, equipping him with skills to manage complex implant cases with predictable, long-term success. He also completed specialised training in <strong style={{ color: '#0f172a' }}>Minimally Invasive Cosmetic Dentistry (MICD)</strong> in Nepal, Basic Orthodontics, and Advanced Implant Procedures &amp; Digital Workflow.
+                </p>
+                <p className="ab-body-dark">
+                  His practice is supported by a fully equipped <strong style={{ color: '#0f172a' }}>in-house dental laboratory</strong>, allowing complete control over prosthesis design, precision, and quality — ensuring enhanced accuracy, faster turnaround, and superior aesthetic outcomes. Since 2015, he also serves as <strong style={{ color: '#0f172a' }}>Senior Lecturer at MH Samorita Medical College &amp; Hospital</strong>.
                 </p>
 
                 <div className="ab-doc-values">
                   {[
                     { icon: <GraduationCap size={16} />, title: 'BDS · MPH · PGT (OMS & Prosthodontics)', desc: 'Sapporo Dental College (DU) • City University • BSM Medical University, Dhaka' },
-                    { icon: <ScanLine size={16} />, title: 'Digital & 3D Guided Implantology', desc: 'Pioneer in digital treatment planning and 3D-guided implant surgery for predictable outcomes.' },
+                    { icon: <ScanLine size={16} />, title: 'Digital & 3D Guided Implantology', desc: 'Pioneer in digital treatment planning and 3D-guided implant surgery for predictable, long-term outcomes.' },
                     { icon: <FlaskConical size={16} />, title: 'In-House Lab for Precision Prosthesis', desc: 'Complete control over design, quality, and turnaround time for superior aesthetic & functional results.' },
-                    { icon: <Microscope size={16} />, title: 'Full Mouth Rehabilitation Expertise', desc: 'Numerous complex rehabilitation cases completed restoring both function and patient confidence.' },
+                    { icon: <Microscope size={16} />, title: 'Full Mouth Rehabilitation Expertise', desc: 'Numerous complex rehabilitation cases completed with implants — restoring both function and patient confidence.' },
+                    { icon: <Stethoscope size={16} />, title: 'Immediate Implant Placement & Loading', desc: 'Single & multiple dental implants with complex bone management and aesthetic zone expertise.' },
                   ].map((v, i) => (
                     <motion.div key={i} className="ab-doc-value-row"
                       initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }}
@@ -406,7 +411,7 @@ export default function AboutPage() {
             {/* Content left */}
             <FadeIn>
               <div className="ab-doc-content">
-                <span className="ab-label ab-shimia-label"><BadgeCheck size={14} /> Senior Doctor &amp; Team Lead</span>
+                <span className="ab-label ab-shimia-label"><BadgeCheck size={14} /> Senior Doctor &amp; Team Lead · BMDC 8496</span>
                 <h2 className="ab-section-title-dark">
                   Dr. Shimia{' '}
                   <span style={{ background: 'linear-gradient(90deg,#9333ea,#818cf8)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
@@ -414,18 +419,22 @@ export default function AboutPage() {
                   </span>
                 </h2>
                 <p className="ab-body-dark">
-                  A highly accomplished dental professional who combines clinical excellence with compassionate, patient-centred care. She completed her <strong style={{ color: '#0f172a' }}>BDS from Pioneer Dental College</strong> — one of the most prestigious dental institutions in Bangladesh — and furthered her expertise through <strong style={{ color: '#0f172a' }}>Postgraduate Training in Oral &amp; Maxillofacial Surgery at Dhaka Medical College</strong>.
+                  A highly accomplished dental professional who combines clinical excellence with compassionate, patient-centred care. She completed her <strong style={{ color: '#0f172a' }}>Bachelor of Dental Surgery (BDS) from Pioneer Dental College</strong> — one of the most prestigious dental institutions in Bangladesh — and furthered her expertise through <strong style={{ color: '#0f172a' }}>Postgraduate Training in Oral &amp; Maxillofacial Surgery at Dhaka Medical College</strong>, where she gained extensive experience in managing complex surgical cases with precision and confidence.
                 </p>
                 <p className="ab-body-dark">
-                  At RH Dental Care, Dr. Shimia plays a vital <strong style={{ color: '#0f172a' }}>leadership role</strong>, guiding and managing the clinical team with professionalism and vision. She is especially dedicated to providing <strong style={{ color: '#0f172a' }}>female-oriented dental care</strong> in a safe, respectful environment.
+                  At RH Dental Care, Dr. Shimia plays a vital <strong style={{ color: '#0f172a' }}>leadership role</strong>, strongly guiding and managing her team of doctors with professionalism, confidence, and vision. She is especially dedicated to providing <strong style={{ color: '#0f172a' }}>female-oriented dental care</strong>, ensuring a safe, respectful, and comfortable environment tailored to the unique needs of women patients.
+                </p>
+                <p className="ab-body-dark">
+                  Renowned for her gentle approach and friendly demeanour, Dr. Shimia is deeply committed to patient comfort and trust. Her dedication, empathy, and attention to detail ensure that every patient receives personalised, ethical, and high-quality dental care.
                 </p>
 
                 <div className="ab-doc-values">
                   {[
-                    { icon: <Microscope size={16} />, title: 'Microscopic Endodontics', desc: 'Highly accurate, minimally invasive root canal treatments using advanced endo microscopes.' },
+                    { icon: <Microscope size={16} />, title: 'Microscopic Endodontics', desc: 'Delivering highly accurate and minimally invasive root canal treatments using advanced endo microscopes.' },
                     { icon: <Sparkles size={16} />, title: 'Aesthetic Dentistry', desc: 'Creating natural, confident, and beautiful smiles with precision composite and ceramic restorations.' },
-                    { icon: <Stethoscope size={16} />, title: 'Exodontia — Complex Extractions', desc: 'Expert in routine and complex tooth extractions with maximum patient comfort, including surgical procedures.' },
-                    { icon: <GraduationCap size={16} />, title: 'Academic Contributor since 2015', desc: 'Senior Lecturer at MH Samorita Medical College & Hospital — mentoring the next generation of dentists.' },
+                    { icon: <Stethoscope size={16} />, title: 'Exodontia — Complex Extractions', desc: 'Recognised expertise in both routine and complex tooth extractions with maximum patient comfort, including surgical procedures.' },
+                    { icon: <GraduationCap size={16} />, title: 'Academic Contributor since 2015', desc: 'Senior Lecturer at MH Samorita Medical College & Hospital — contributing to the development and mentorship of future dental professionals.' },
+                    { icon: <Heart size={16} />, title: 'Patient-Centred Philosophy', desc: 'Your Comfort. Your Confidence. Your Smile — committed to delivering excellence in every treatment.' },
                   ].map((v, i) => (
                     <motion.div key={i} className="ab-doc-value-row"
                       initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }}
@@ -452,10 +461,11 @@ export default function AboutPage() {
                   <div className="ab-doc-img-glow" />
                   <div className="ab-doc-info-card-alt">
                     <div className="ab-doc-name">Dr. Shimia Binte Taher</div>
-                    <div className="ab-doc-role" style={{ color: '#9333ea' }}>BDS · Microscopic Endodontics &amp; Aesthetic Dentistry</div>
+                    <div className="ab-doc-role" style={{ color: '#9333ea' }}>BDS · Exodontia · Microscopic Endodontics &amp; Aesthetic Dentistry</div>
                     <div className="ab-doc-creds-row">
                       <span className="ab-cred-chip-alt">BDS — Pioneer Dental College</span>
                       <span className="ab-cred-chip-alt">PGT — OMS · Dhaka Medical College</span>
+                      <span className="ab-cred-chip-alt">BMDC 8496</span>
                       <span className="ab-verified-pill" style={{ background: 'rgba(147,51,234,0.1)', border: '1px solid rgba(147,51,234,0.2)', color: '#9333ea' }}>
                         <CheckCircle2 size={10} /> Team Lead
                       </span>
@@ -504,6 +514,7 @@ export default function AboutPage() {
                   <div className="ab-team-card-inner">
                     {m.img ? (
                       <Image src={m.img} alt={m.name} fill
+                        sizes="(max-width: 768px) 360px, 460px"
                         style={{ objectFit: 'contain', objectPosition: 'center' }} />
                     ) : (
                       <div className="ab-team-placeholder">RH</div>
@@ -547,8 +558,8 @@ export default function AboutPage() {
           </FadeIn>
           <motion.div className="ab-stats-bento" variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true, margin: '-60px' }}>
             {[
-              { val: 5000, suf: '+', label: 'Happy Patients', icon: <Smile size={22} /> },
-              { val: 10, suf: '+', label: 'Years Experience', icon: <Award size={22} /> },
+              { val: 13, suf: 'k+', label: 'Happy Patients', icon: <Smile size={22} /> },
+              { val: 12, suf: '+', label: 'Years Experience', icon: <Award size={22} /> },
               { val: 99, suf: '%', label: 'Success Rate', icon: <ShieldCheck size={22} /> },
               { val: 3500, suf: 'sqft', label: 'Clinic Facility', icon: <Building2 size={22} /> },
             ].map((s, i) => (
@@ -690,7 +701,7 @@ export default function AboutPage() {
               <div className="ab-cta-trust">
                 <div className="ab-cta-trust-item"><CheckCircle2 size={14} color="#16a34a" /> Pain-Free Guarantee</div>
                 <div className="ab-cta-trust-item"><Award size={14} color="#38bdf8" /> BMDC Certified — Reg. 5169</div>
-                <div className="ab-cta-trust-item"><Users size={14} color="#818cf8" /> 5,000+ Happy Patients</div>
+                <div className="ab-cta-trust-item"><Users size={14} color="#818cf8" /> 13k+ Happy Patients</div>
               </div>
             </div>
           </FadeIn>
