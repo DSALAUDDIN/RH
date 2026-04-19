@@ -39,7 +39,7 @@ export default function Footer() {
               Experience premium dental care at RH Dental Care. We offer advanced aesthetic dentistry, oral surgery, and implants in a state-of-the-art facility.
             </p>
             <div className="social-links">
-              <a href="#" aria-label="Facebook" className="social-link"><Facebook size={20} /></a>
+              <a href="https://www.facebook.com/share/18YJPadCbX/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="social-link"><Facebook size={20} /></a>
               <a href="#" aria-label="Twitter" className="social-link"><Twitter size={20} /></a>
               <a href="#" aria-label="Instagram" className="social-link"><Instagram size={20} /></a>
               <a href="#" aria-label="LinkedIn" className="social-link"><Linkedin size={20} /></a>

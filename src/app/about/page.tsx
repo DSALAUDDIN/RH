@@ -29,7 +29,7 @@ import doc7 from '../../assets/doctors/DENTAL LED SIZE 998.png';
 import doc8 from '../../assets/doctors/DENTAL LED SIZE BBG_123159 - Copy.png';
 import doc9 from '../../assets/doctors/tyjdfytjfutyuju - Copy (2).jpeg';
 import doc10 from '../../assets/doctors/DENTAL LED SIZE 222.png';
-import doc11 from '../../assets/doctors/hjyhfyyyhujjgjhvk - Copy.jpeg';
+import doc11 from '../../assets/doctors/shimia_flyer.jpeg';
 
 /* ── Counter ── */
 function Counter({ to, suffix = '' }: { to: number; suffix?: string }) {

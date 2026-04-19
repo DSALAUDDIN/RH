@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'About Us — Chief Consultant Dr. B.M. Rafiqul Hasan | RH Dental Care Dhaka',
   description:
-    'Meet Dr. B.M. Rafiqul Hasan (Mehedi), Chief Consultant Oral & Dental Surgeon at RH Dental Care — Dhaka\'s #1 dental clinic. BMDC Reg. 5169. BDS, MPH, trained in implantology across China, Korea & India. 10+ years experience, 5,000+ happy patients.',
+    'Meet Dr. B.M. Rafiqul Hasan (Mehedi), Chief Consultant Oral & Dental Surgeon at RH Dental Care — Dhaka\'s #1 dental clinic. BMDC Reg. 5169. BDS, MPH, trained in implantology across China, Korea & India. 12+ years experience, 13k+ happy patients.',
   keywords: [
     'Dr BM Rafiqul Hasan Mehedi dentist Dhaka',
     'best oral surgeon Dhaka Bangladesh',
