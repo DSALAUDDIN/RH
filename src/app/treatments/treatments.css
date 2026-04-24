@@ -68,9 +68,17 @@
 .tr-stats-row {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   gap: clamp(2rem, 5vw, 4rem);
   border-top: 1px solid rgba(255,255,255,0.1);
   padding-top: 3rem;
+}
+
+.tr-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .tr-stat-num {
@@ -230,6 +238,15 @@
   gap: 1.5rem;
 }
 
+.tr-concern-btn {
+  /* Added to allow CSS overriding inline styles for dark mode */
+}
+
+.dark .tr-concern-btn {
+  background: #0f172a !important;
+  color: #f8fafc !important;
+}
+
 .tr-category-card {
   background: white;
   border-radius: 1.5rem;
@@ -300,6 +317,7 @@
   font-weight: 700;
   padding: 0.25rem 0.75rem;
   border-radius: 999px;
+  white-space: nowrap;
 }
 
 .tr-treatment-list {
@@ -367,9 +385,10 @@
     margin-bottom: 2rem;
   }
   .tr-stats-row {
-    gap: clamp(1.25rem, 4vw, 2.5rem);
-    flex-wrap: wrap;
-    justify-content: center;
+    gap: clamp(1.5rem, 4vw, 2.5rem);
+  }
+  .tr-stat {
+    flex: 0 0 calc(33.333% - 2rem);
   }
   .tr-container {
     padding: 3rem 1.5rem;
@@ -397,11 +416,15 @@
     padding-top: 2rem;
     border-top: 1px solid rgba(255,255,255,0.1);
   }
+  .tr-stat {
+    flex: 0 0 calc(33.333% - 1.5rem);
+  }
   .tr-stat-num {
     font-size: clamp(1.5rem, 6vw, 2rem);
   }
   .tr-stat-label {
-    font-size: 0.78rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.02em;
   }
   .tr-container {
     padding: 2rem 1rem;
@@ -423,6 +446,14 @@
     height: 48px;
     border-radius: 0.875rem;
     flex-shrink: 0;
+  }
+  .tr-cat-info {
+    gap: 1rem;
+  }
+  .tr-cat-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.6rem;
   }
   .tr-cat-title {
     font-size: 1.05rem;

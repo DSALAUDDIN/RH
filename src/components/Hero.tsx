@@ -90,20 +90,26 @@ const doctors = [
 
 export default function Hero() {
   const containerRef = useRef<HTMLElement>(null);
-  const [mouse, setMouse] = useState({ x: 0, y: 0 });
   const [reviewIdx, setReviewIdx] = useState(0);
   const [activeDoc, setActiveDoc] = useState(0);
 
+  const docSpringX = useSpring(0, { stiffness: 45, damping: 25 });
+  const docSpringY = useSpring(0, { stiffness: 45, damping: 25 });
+  const bgSpringX  = useSpring(0, { stiffness: 30, damping: 25 });
+  const bgSpringY  = useSpring(0, { stiffness: 30, damping: 25 });
+
   useEffect(() => {
     const handler = (e: MouseEvent) => {
-      setMouse({
-        x: (e.clientX / window.innerWidth - 0.5) * 24,
-        y: (e.clientY / window.innerHeight - 0.5) * 24,
-      });
+      const mx = (e.clientX / window.innerWidth - 0.5) * 24;
+      const my = (e.clientY / window.innerHeight - 0.5) * 24;
+      docSpringX.set(mx * 0.6);
+      docSpringY.set(my * 0.6);
+      bgSpringX.set(mx * 0.15);
+      bgSpringY.set(my * 0.15);
     };
     window.addEventListener('mousemove', handler);
     return () => window.removeEventListener('mousemove', handler);
-  }, []);
+  }, [docSpringX, docSpringY, bgSpringX, bgSpringY]);
 
   useEffect(() => {
     const t = setInterval(() => {
@@ -132,10 +138,7 @@ export default function Hero() {
   const fadeOut = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
   const scaleOut = useTransform(scrollYProgress, [0, 0.5], [1, 0.95]);
 
-  const docSpringX = useSpring(mouse.x * 0.6, { stiffness: 45, damping: 25 });
-  const docSpringY = useSpring(mouse.y * 0.6, { stiffness: 45, damping: 25 });
-  const bgSpringX  = useSpring(mouse.x * 0.15, { stiffness: 30, damping: 25 });
-  const bgSpringY  = useSpring(mouse.y * 0.15, { stiffness: 30, damping: 25 });
+
 
   // Keep home hero video in sync with the About screen tour video.
   const homeVideoUrl = 'https://res.cloudinary.com/dlaqtwoa3/video/upload/v1776535718/homeScreen_tai4jm.mp4';
@@ -212,7 +215,7 @@ export default function Hero() {
         ))}
       </div>
 
-      <motion.div className="container hero-inner" style={{ opacity: fadeOut, scale: scaleOut }}>
+      <motion.div className="container hero-inner">
         
         {/* ================= LEFT SECTION ================= */}
         <div className="hero-left">
@@ -268,8 +271,8 @@ export default function Hero() {
 
           <motion.div
             className="hero-trust-bar"
-            initial={{ opacity: 0, filter: "blur(10px)", y: 20 }}
-            animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1, duration: 1 }}
           >
             <div className="trust-item">
@@ -308,7 +311,6 @@ export default function Hero() {
         <div className="hero-right">
           <motion.div 
             className="hero-visual-wrap"
-            style={{ x: docSpringX, y: docSpringY }}
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.5, ease: "easeOut" }}

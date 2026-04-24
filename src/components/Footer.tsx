@@ -84,7 +84,7 @@ export default function Footer() {
               </li>
               <li>
                 <Mail size={20} className="contact-icon" style={{ flexShrink: 0 }} />
-                <span><a href="mailto:drhasan07012@gmail.com">drhasan07012@gmail.com</a></span>
+                <span><a href="mailto:drhasan0712@gmail.com">drhasan0712@gmail.com</a></span>
               </li>
             </ul>
             

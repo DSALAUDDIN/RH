@@ -11,7 +11,7 @@ import './detail.css';
 /* ── Import all banner images ── */
 import imagingBanner from '@/assets/specialties/3d-imaging.jpg';
 import bracesBanner from '@/assets/specialties/braces.jpg';
-import zirconiaBanner from '@/assets/specialties/zirconia.jpg';
+import zirconiaBanner from '@/assets/specialties/Zirconia.jpeg';
 import rootCanalBanner from '@/assets/specialties/root-canal.jpg';
 import gumCareBanner from '@/assets/specialties/gum-care.jpg';
 import kidsCareBanner from '@/assets/specialties/kids-care.jpg';
@@ -20,10 +20,11 @@ import implantImg from '@/assets/specialties/implant.png';
 /* ── Import flyer images (high-res promotional designs) ── */
 import imagingFlyer from '@/assets/specialties/imaging.png';
 import bracesFlyer from '@/assets/specialties/braces_clean.png';
-import zirconiaFlyer from '@/assets/specialties/zirconia.png';
+import zirconiaFlyer from '@/assets/specialties/Zirconia.jpeg';
 import rootCanalFlyer from '@/assets/specialties/rootcanal_clean.png';
 import gumCareFlyer from '@/assets/specialties/gum_clean.png';
 import kidsCareFlyer from '@/assets/specialties/kids_clean.png';
+import aestheticsFlyer from '@/assets/specialties/aesthetic.jpeg';
 
 interface SpecialtyDetail {
   title: string;
@@ -231,6 +232,33 @@ const specialtiesData: Record<string, SpecialtyDetail> = {
     warranty: 'Growing smile program',
     accentColor: '#f97316',
     accentLight: '#ffedd5',
+  },
+  'aesthetics': {
+    title: 'Aesthetic Dentistry & Smile Design',
+    category: 'Aesthetics',
+    tagline: 'Crafting your perfect, radiant smile',
+    bannerImg: aestheticsFlyer,
+    flyerImg: aestheticsFlyer,
+    flyerFileName: 'RH-Dental-Aesthetics.png',
+    description: 'Transform your smile with our premium aesthetic treatments. From porcelain veneers to professional teeth whitening and full smile makeovers, we blend art and science to create the perfect, natural-looking smile you have always desired.',
+    benefits: [
+      'Custom-designed smile transformations',
+      'Ultra-thin, natural-looking porcelain veneers',
+      'Professional, safe teeth whitening',
+      'Minimally invasive aesthetic procedures',
+      'Boosted self-confidence with a radiant smile',
+    ],
+    process: [
+      { step: 'Consultation', desc: 'Digital smile design and comprehensive evaluation' },
+      { step: 'Preparation', desc: 'Minimally invasive tooth preparation if needed' },
+      { step: 'Mockup', desc: 'Try-in your new smile before final placement' },
+      { step: 'Final Delivery', desc: 'Bonding of custom-crafted aesthetic restorations' },
+    ],
+    duration: '1-3 visits',
+    recovery: 'Immediate',
+    warranty: '5+ years guarantee on veneers',
+    accentColor: '#ec4899',
+    accentLight: '#fce7f3',
   },
 };
 

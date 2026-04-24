@@ -4,10 +4,75 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
-  ArrowLeft, Search, ChevronDown,
-  Activity, Scissors, Smile, Baby, Layers, Crown, Sparkles, Plus, Star
+  ArrowLeft, Search, ChevronDown, Star
 } from 'lucide-react';
 import './treatments.css';
+
+/* ────────────────────────────────────────────────
+   Custom Dental Icons
+──────────────────────────────────────────────── */
+const DentalPath = "M7 5C5 5 4 7 4 9C4 11 5 13 6 15L7 21C7 21 9 22 10 19L11 16C11.5 15 12.5 15 13 16L14 19C15 22 17 21 17 21L18 15C19 13 20 11 20 9C20 7 19 5 17 5C15 5 13.5 6.5 12 8C10.5 6.5 9 5 7 5Z";
+
+const PerioIcon = ({ size = 22 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d={DentalPath} />
+    <path d="M4.5 14c2 0 3-1.5 5-1.5s3 1.5 5 1.5 3-1.5 5-1.5" strokeOpacity="0.6" strokeDasharray="2 2" />
+  </svg>
+);
+
+const SurgeryIcon = ({ size = 22 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d={DentalPath} />
+    <path d="M16 4h4m-2-2v4" stroke="currentColor" strokeWidth="2.5" />
+  </svg>
+);
+
+const EndoIcon = ({ size = 22 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d={DentalPath} />
+    <path d="M9 11v6m6-6v6" strokeOpacity="0.5" />
+    <circle cx="12" cy="8" r="1" fill="currentColor" stroke="none" />
+  </svg>
+);
+
+const PediatricIcon = ({ size = 22 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d={DentalPath} />
+    <circle cx="10" cy="10" r="1" fill="currentColor" stroke="none" />
+    <circle cx="14" cy="10" r="1" fill="currentColor" stroke="none" />
+    <path d="M10.5 12.5a2 2 0 0 0 3 0" strokeOpacity="0.8" />
+  </svg>
+);
+
+const OrthoIcon = ({ size = 22 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d={DentalPath} />
+    <path d="M5 11h14" strokeOpacity="0.7" />
+    <rect x="8" y="9.5" width="2" height="3" fill="currentColor" stroke="none" />
+    <rect x="14" y="9.5" width="2" height="3" fill="currentColor" stroke="none" />
+  </svg>
+);
+
+const ProsthoIcon = ({ size = 22 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d={DentalPath} strokeOpacity="0.4" />
+    <path d="M7 9l2.5-4 2.5 2 2.5-2 2.5 4v3H7V9z" fill="currentColor" stroke="none" />
+  </svg>
+);
+
+const AestheticIcon = ({ size = 22 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d={DentalPath} />
+    <path d="M19 4l1 2 2 1-2 1-1 2-1-2-2-1 2-1 1-2z" fill="currentColor" stroke="none" />
+  </svg>
+);
+
+const AdditionalIcon = ({ size = 22 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d={DentalPath} />
+    <path d="M12 8v4m-2-2h4" />
+  </svg>
+);
 
 /* ────────────────────────────────────────────────
    Treatment Data — All 8 Categories
@@ -35,7 +100,7 @@ const categories: Category[] = [
     id: 'periodontology',
     title: 'Periodontology',
     focus: 'Diagnosis, prevention, and treatment of gum diseases',
-    icon: <Activity size={22} />,
+    icon: <PerioIcon size={26} />,
     color: '#0ea5e9',
     colorLight: '#e0f2fe',
     colorBg: 'linear-gradient(135deg, #0ea5e9, #0284c7)',
@@ -45,14 +110,14 @@ const categories: Category[] = [
       { name: 'Polishing', price: '৳1,000', description: 'Tooth surface polishing to smooth enamel, resist future plaque and improve appearance.' },
       { name: 'Periodontal Therapy with Laser (Deep Curettage)', price: '৳2,000', description: 'Laser-assisted therapy for precise, minimally invasive treatment of gum disease with faster healing.', highlight: true },
       { name: 'Perio Flap Surgery', price: '৳15,000', description: 'Surgical treatment for advanced periodontitis. Lifts gums to access and clean deep pockets and bone.' },
-      { name: 'Bone Graft', price: '৳10,000', description: 'Rebuilds jawbone to support teeth and implants after disease-related bone loss.' },
+      { name: 'Bone Graft', price: '৳25,000', description: 'Rebuilds jawbone to support teeth and implants after disease-related bone loss.' },
     ],
   },
   {
     id: 'oral-surgery',
     title: 'Oral & Maxillofacial Surgery',
     focus: 'Surgical management of oral diseases, trauma, and reconstruction',
-    icon: <Scissors size={22} />,
+    icon: <SurgeryIcon size={26} />,
     color: '#ef4444',
     colorLight: '#fee2e2',
     colorBg: 'linear-gradient(135deg, #ef4444, #dc2626)',
@@ -60,9 +125,9 @@ const categories: Category[] = [
       { name: 'Tooth Extraction (Surgical)', price: '৳4,000 – 8,000', description: 'Surgical removal of impacted, fractured, or severely decayed teeth under local anesthesia.' },
       { name: 'Minor OT (Oral Surgery)', price: '৳10,000 – 15,000', description: 'Minor surgical procedures including frenectomy, biopsies, abscess removal and alveoloplasty.' },
       { name: 'Major Oral Surgery', price: '৳70,000', description: 'Complex interventions for severe dental and facial issues by oral & maxillofacial surgeons.', highlight: true },
-      { name: 'Operculectomy', description: 'Removal of soft tissue covering a partially erupted tooth to relieve pain and prevent infection.' },
-      { name: 'Apicoectomy', description: 'Root-end surgery to remove the tip of a tooth root and infected tissue when root canal fails.' },
-      { name: 'Cyst Removal', price: '৳10,000', description: 'Surgical removal of fluid-filled dental cysts from around teeth or jawbone.' },
+      { name: 'Operculectomy', price: '৳3,000', description: 'Removal of soft tissue covering a partially erupted tooth to relieve pain and prevent infection.' },
+      { name: 'Apicoectomy', price: '৳20,000', description: 'Root-end surgery to remove the tip of a tooth root and infected tissue when root canal fails.' },
+      { name: 'Cyst Removal', price: '৳20,000', description: 'Surgical removal of fluid-filled dental cysts from around teeth or jawbone.' },
       { name: 'Orthognathic Surgery', price: '৳400,000', description: 'Corrective jaw surgery to fix severe misalignments, improving bite, breathing, and facial aesthetics.', highlight: true },
       { name: 'Dental Implant (SA-SOI)', price: '৳70,000 – 80,000', description: 'Surgically placed titanium posts to permanently replace missing teeth with natural-looking crowns.', highlight: true },
     ],
@@ -71,7 +136,7 @@ const categories: Category[] = [
     id: 'conservative',
     title: 'Conservative Dentistry & Endodontics',
     focus: 'Preservation and restoration of natural teeth',
-    icon: <Smile size={22} />,
+    icon: <EndoIcon size={26} />,
     color: '#6366f1',
     colorLight: '#ede9fe',
     colorBg: 'linear-gradient(135deg, #6366f1, #4f46e5)',
@@ -92,13 +157,13 @@ const categories: Category[] = [
     id: 'pediatric',
     title: 'Pediatric Dentistry',
     focus: 'Comprehensive dental care for children',
-    icon: <Baby size={22} />,
+    icon: <PediatricIcon size={26} />,
     color: '#f97316',
     colorLight: '#ffedd5',
     colorBg: 'linear-gradient(135deg, #f97316, #ea580c)',
     treatments: [
       { name: 'Tooth Extraction (Child)', price: '৳400+', description: 'Gentle extraction of severely decayed, stubborn baby teeth or orthodontic preparation under local anesthesia.' },
-      { name: 'Deciduous Filling', description: 'Composite or glass ionomer fillings to restore cavities in baby teeth and protect dental development.' },
+      { name: 'Deciduous Filling', price: '৳1,000', description: 'Composite or glass ionomer fillings to restore cavities in baby teeth and protect dental development.' },
       { name: 'Pulpectomy / Pulpotomy', price: '৳3,000', description: 'Root canal-equivalent treatment for infected baby teeth — saving the tooth to maintain space for permanent teeth.', highlight: true },
     ],
   },
@@ -106,13 +171,13 @@ const categories: Category[] = [
     id: 'orthodontics',
     title: 'Orthodontics & Dentofacial Orthopedics',
     focus: 'Alignment of teeth and correction of jaw irregularities',
-    icon: <Layers size={22} />,
+    icon: <OrthoIcon size={26} />,
     color: '#8b5cf6',
     colorLight: '#f3e8ff',
     colorBg: 'linear-gradient(135deg, #8b5cf6, #7c3aed)',
     treatments: [
       { name: 'Orthodontic Braces', price: '৳80,000 – 1,20,000', description: 'Traditional or ceramic brackets and wires to straighten teeth. Custom-planned using 3D imaging.', highlight: true },
-      { name: 'Orthodontic Aligner', price: '৳25,000 – 30,000', description: 'Clear, removable custom trays for discreet teeth straightening — no brackets or wires.', highlight: true },
+      { name: 'Orthodontic Aligner', price: '৳2,50,000 – 3,50,000', description: 'Clear, removable custom trays for discreet teeth straightening — no brackets or wires.', highlight: true },
       { name: 'Removable Orthodontics', description: 'Removable appliances for mild to moderate alignment issues. Comfortable and easy to maintain.' },
       { name: 'Night Guard', price: '৳4,000', description: 'Custom-fitted dental appliance to protect teeth from bruxism (grinding) and TMJ disorders during sleep.' },
     ],
@@ -121,7 +186,7 @@ const categories: Category[] = [
     id: 'prosthodontics',
     title: 'Prosthodontics',
     focus: 'Restoration and replacement of missing teeth',
-    icon: <Crown size={22} />,
+    icon: <ProsthoIcon size={26} />,
     color: '#f59e0b',
     colorLight: '#fef3c7',
     colorBg: 'linear-gradient(135deg, #f59e0b, #d97706)',
@@ -134,7 +199,7 @@ const categories: Category[] = [
       { name: 'Partial Denture Per Unit', price: '৳6,000', description: 'Removable prosthesis replacing one or a few missing teeth, attached to remaining natural teeth.' },
       { name: 'Flexible Denture (Partial)', price: '৳20,000', description: 'Thermoplastic nylon-based partial denture — lightweight, comfortable and mercury-free.' },
       { name: 'Fiber Bridge (Per Unit)', price: '৳25,000', description: 'Minimally invasive fiber-reinforced composite bridge for single front tooth replacement without surgery.' },
-      { name: 'Full Mouth Rehabilitation (Per Jaw)', price: '৳3,00,000', description: 'Comprehensive full-arch restoration for severely worn, damaged or missing teeth using crowns, implants and more.', highlight: true },
+      { name: 'Full Mouth Rehabilitation (Per Jaw)', price: '৳4,00,000 – 6,00,000', description: 'Comprehensive full-arch restoration for severely worn, damaged or missing teeth using crowns, implants and more.', highlight: true },
       { name: 'Smile Designing with Composite', price: '৳60,000', description: 'Complete smile makeover using tooth-colored composite resin for veneers and reshaping.' },
       { name: 'Crown (Resin)', price: '৳12,000', description: 'Tooth-colored resin crown offering aesthetics and strength, especially for anterior teeth.' },
       { name: 'Partial Denture (More Than 3 Units)', price: '৳15,000', description: 'Removable partial denture replacing multiple missing teeth across more than 3 units.' },
@@ -144,7 +209,7 @@ const categories: Category[] = [
     id: 'aesthetic',
     title: 'Aesthetic Dentistry',
     focus: 'Improving the appearance of teeth and smile',
-    icon: <Sparkles size={22} />,
+    icon: <AestheticIcon size={26} />,
     color: '#ec4899',
     colorLight: '#fce7f3',
     colorBg: 'linear-gradient(135deg, #ec4899, #db2777)',
@@ -163,7 +228,7 @@ const categories: Category[] = [
     id: 'additional',
     title: 'Additional Treatments',
     focus: 'Cross-Departmental Focus',
-    icon: <Plus size={22} />,
+    icon: <AdditionalIcon size={26} />,
     color: '#10b981',
     colorLight: '#d1fae5',
     colorBg: 'linear-gradient(135deg, #10b981, #059669)',
@@ -220,6 +285,19 @@ export default function TreatmentsPage() {
   const [openCategory, setOpenCategory] = useState<string | null>('periodontology');
   const [searchQuery, setSearchQuery] = useState('');
 
+  const patientConcerns = [
+    { label: "I have a Toothache", icon: "😖", query: "root canal", color: "#ef4444" },
+    { label: "I want a Brighter Smile", icon: "✨", query: "whitening", color: "#ec4899" },
+    { label: "Replacing Missing Teeth", icon: "🦷", query: "implant", color: "#f59e0b" },
+    { label: "My Gums are Bleeding", icon: "🩸", query: "scaling", color: "#0ea5e9" },
+    { label: "Checkup for my Child", icon: "👶", query: "child", color: "#f97316" },
+    { label: "Straightening Teeth", icon: "📐", query: "braces", color: "#8b5cf6" },
+    { label: "Broken or Chipped Tooth", icon: "💥", query: "crown", color: "#6366f1" },
+    { label: "Wisdom Tooth Pain", icon: "😩", query: "extraction", color: "#dc2626" },
+    { label: "Jaw Pain or Clicking", icon: "🤕", query: "tmj", color: "#14b8a6" },
+    { label: "I Think I Have a Cavity", icon: "🕳️", query: "filling", color: "#64748b" },
+  ];
+
   const filteredCategories = searchQuery
     ? categories.map((cat) => ({
         ...cat,
@@ -256,14 +334,26 @@ export default function TreatmentsPage() {
             </div>
 
             <h1 className="tr-hero-title">
-              Precision Care &<br />
-              <span style={{ color: '#38bdf8' }}>World-Class Solutions</span>
+              Your Journey to a<br />
+              <span style={{ color: '#38bdf8' }}>Confident Smile</span>
             </h1>
             <p className="tr-hero-desc">
-              Explore our full spectrum of 50+ cutting-edge dental procedures across 8 specialized departments. Agency-grade precision, absolute comfort, and transparent pricing.
+              Whether you are in pain, looking to restore missing teeth, or simply want a brighter smile, our compassionate experts are here to help. Explore our 50+ specialized treatments below.
             </p>
 
             <div className="tr-stats-row">
+              <div className="tr-stat">
+                <div className="tr-stat-num">12+</div>
+                <div className="tr-stat-label">Years Exp</div>
+              </div>
+              <div className="tr-stat">
+                <div className="tr-stat-num">15+</div>
+                <div className="tr-stat-label">Doctors</div>
+              </div>
+              <div className="tr-stat">
+                <div className="tr-stat-num">10+</div>
+                <div className="tr-stat-label">Staffs</div>
+              </div>
               <div className="tr-stat">
                 <div className="tr-stat-num">50+</div>
                 <div className="tr-stat-label">Treatments</div>
@@ -271,10 +361,6 @@ export default function TreatmentsPage() {
               <div className="tr-stat">
                 <div className="tr-stat-num">08</div>
                 <div className="tr-stat-label">Departments</div>
-              </div>
-              <div className="tr-stat">
-                <div className="tr-stat-num">15+</div>
-                <div className="tr-stat-label">Years Exp</div>
               </div>
             </div>
           </motion.div>
@@ -314,6 +400,50 @@ export default function TreatmentsPage() {
               ×
             </button>
           )}
+        </motion.div>
+
+        {/* ── Patient Concerns Quick Filters ── */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.12 }}
+          style={{ marginBottom: '4rem' }}
+        >
+          <div style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
+            <p style={{ color: 'var(--muted-foreground)', fontWeight: 700, fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
+              What Brings You Here Today?
+            </p>
+          </div>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem', justifyContent: 'center', maxWidth: '850px', margin: '0 auto' }}>
+            {patientConcerns.map(concern => (
+              <button
+                key={concern.label}
+                onClick={() => setSearchQuery(concern.query)}
+                className="tr-concern-btn"
+                style={{
+                  display: 'flex', alignItems: 'center', gap: '0.5rem',
+                  background: 'white', border: `1px solid ${concern.color}30`,
+                  padding: '0.75rem 1.25rem', borderRadius: '999px',
+                  fontSize: '0.95rem', fontWeight: 600, color: 'var(--foreground)',
+                  cursor: 'pointer', transition: 'all 0.3s ease',
+                  boxShadow: '0 4px 10px rgba(0,0,0,0.02)',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-2px)';
+                  e.currentTarget.style.boxShadow = `0 10px 25px ${concern.color}25`;
+                  e.currentTarget.style.borderColor = concern.color;
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.boxShadow = '0 4px 10px rgba(0,0,0,0.02)';
+                  e.currentTarget.style.borderColor = `${concern.color}30`;
+                }}
+              >
+                <span style={{ fontSize: '1.2rem' }}>{concern.icon}</span>
+                {concern.label}
+              </button>
+            ))}
+          </div>
         </motion.div>
 
         {/* ── Signature Treatments Bento ── */}

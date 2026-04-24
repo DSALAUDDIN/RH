@@ -81,7 +81,7 @@ const specialties = [
   { icon: <HeartPulse size={22} />, name: 'Root Canal', slug: 'root-canal' },
   { icon: <Heart size={22} />, name: 'Gum Care', slug: 'gum-care' },
   { icon: <Smile size={22} />, name: 'Kids Dental', slug: 'kids-care' },
-  { icon: <Sparkles size={22} />, name: 'Aesthetics', slug: 'treatments' },
+  { icon: <Sparkles size={22} />, name: 'Aesthetics', slug: 'aesthetics' },
 ];
 
 /* Real services from About text */

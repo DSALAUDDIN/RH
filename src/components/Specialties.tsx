@@ -13,6 +13,7 @@ import implantImg from '../assets/specialties/implant.png';
 import rootCanalImg from '../assets/specialties/rootcanal_clean.png';
 import gumCareImg from '../assets/specialties/gum_clean.png';
 import kidsCareImg from '../assets/specialties/kids_clean.png';
+import aestheticsImg from '../assets/specialties/aesthetic.jpeg';
 
 const clinicsBanners = [
 	{
@@ -70,6 +71,14 @@ const clinicsBanners = [
 		category: 'Pedodontics',
 		featured: false,
 		slug: 'kids-care',
+	},
+	{
+		title: 'Aesthetic Dentistry',
+		desc: 'Transform your smile with premium veneers, smile designing, and professional whitening.',
+		image: aestheticsImg,
+		category: 'Aesthetics',
+		featured: true,
+		slug: 'aesthetics',
 	},
 ];
 

@@ -167,7 +167,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 style={{ fontSize: 'clamp(1rem, 3vw, 1.25rem)', marginBottom: '0.5rem' }}>Email</h3>
-                    <p style={{ color: 'hsl(var(--muted-foreground))', fontSize: 'clamp(0.875rem, 2vw, 1rem)', wordBreak: 'break-all' }}><a href="mailto:drhasan07012@gmail.com" style={{ color: 'inherit' }}>drhasan07012@gmail.com</a></p>
+                    <p style={{ color: 'hsl(var(--muted-foreground))', fontSize: 'clamp(0.875rem, 2vw, 1rem)', wordBreak: 'break-all' }}><a href="mailto:drhasan0712@gmail.com" style={{ color: 'inherit' }}>drhasan0712@gmail.com</a></p>
                   </div>
                 </li>
                 
