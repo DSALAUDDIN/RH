@@ -1,0 +1,883 @@
+/* ═══════════════════════════════════════════════════
+   Implants Page — Unified Premium Light Design
+   Flow: Dark Hero → All White/Light Content → Dark CTA
+   ═══════════════════════════════════════════════════ */
+
+/* ── Hero Section ── */
+.imp-hero {
+  position: relative;
+  min-height: 92vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #020617;
+}
+
+.imp-hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.imp-hero-bg img {
+  object-fit: cover;
+  object-position: center;
+}
+
+.imp-hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(180deg, rgba(2,6,23,0.7) 0%, rgba(2,6,23,0.5) 40%, rgba(2,6,23,0.85) 100%),
+    linear-gradient(135deg, rgba(14,165,233,0.15) 0%, transparent 50%);
+}
+
+.imp-hero-content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  max-width: 860px;
+  padding: 2rem 1.5rem;
+}
+
+.imp-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(14, 165, 233, 0.15);
+  border: 1px solid rgba(14, 165, 233, 0.3);
+  color: #38bdf8;
+  padding: 0.5rem 1.25rem;
+  border-radius: 100px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 2rem;
+}
+
+.imp-hero-title {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  margin-bottom: 1.5rem;
+}
+
+.imp-hero-title span {
+  background: linear-gradient(135deg, #38bdf8, #818cf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.imp-hero-subtitle {
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  color: rgba(203, 213, 225, 0.9);
+  line-height: 1.8;
+  max-width: 640px;
+  margin: 0 auto 2.5rem;
+}
+
+.imp-hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.imp-hero-stat {
+  text-align: center;
+}
+
+.imp-hero-stat-val {
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: #38bdf8;
+  line-height: 1;
+  display: block;
+}
+
+.imp-hero-stat-label {
+  font-size: 0.78rem;
+  color: rgba(148, 163, 184, 0.8);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: 0.4rem;
+  display: block;
+}
+
+.imp-hero-cta-row {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 3rem;
+}
+
+/* ── Scroll Indicator ── */
+.imp-scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: rgba(148, 163, 184, 0.5);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 600;
+}
+
+.imp-scroll-line {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(180deg, rgba(56, 189, 248, 0.5), transparent);
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.3; height: 30px; }
+  50% { opacity: 1; height: 40px; }
+}
+
+/* ══════════════════════════════════════════
+   UNIFIED LIGHT SECTION SYSTEM
+   All content sections use the same light palette
+   ══════════════════════════════════════════ */
+.imp-section {
+  padding: 6rem 0;
+  position: relative;
+}
+
+.imp-section-white {
+  background: #fff;
+}
+
+.imp-section-light {
+  background: #f8fafc;
+}
+
+.imp-section-alt {
+  background: linear-gradient(180deg, #f1f5f9 0%, #fff 100%);
+}
+
+.imp-section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+/* ── Labels — all light-theme ── */
+.imp-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.4rem 1rem;
+  border-radius: 100px;
+  margin-bottom: 1.25rem;
+  background: rgba(14, 165, 233, 0.08);
+  border: 1px solid rgba(14, 165, 233, 0.15);
+  color: #0284c7;
+}
+
+/* ── Titles — all light-theme ── */
+.imp-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 900;
+  color: #0f172a;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.imp-title .imp-accent {
+  color: #0284c7;
+}
+
+.imp-subtitle {
+  font-size: 1.05rem;
+  color: #64748b;
+  max-width: 600px;
+  margin: 1rem auto 0;
+  line-height: 1.75;
+}
+
+/* ── Subtle section divider ── */
+.imp-divider {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #0ea5e9, #0ea5e940);
+  border-radius: 100px;
+  margin: 0 auto 1.5rem;
+}
+
+/* ── What is Implant ── */
+.imp-what-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.imp-what-img {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4/3;
+  border-radius: 2rem;
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.imp-what-img img {
+  object-fit: cover;
+}
+
+.imp-what-content h2 {
+  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+  font-weight: 900;
+  color: #0f172a;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.03em;
+}
+
+.imp-what-content p {
+  font-size: 1.05rem;
+  color: #475569;
+  line-height: 1.85;
+  margin-bottom: 1.5rem;
+}
+
+.imp-anatomy-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.imp-anatomy-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.25rem;
+  background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+  border-radius: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease;
+}
+
+.imp-anatomy-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+.imp-anatomy-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #fff;
+  font-weight: 900;
+  font-size: 0.85rem;
+}
+
+.imp-anatomy-title {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 0.25rem;
+}
+
+.imp-anatomy-desc {
+  font-size: 0.88rem;
+  color: #64748b;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ── Implant Types ── */
+.imp-types-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.imp-type-card {
+  background: #fff;
+  border-radius: 1.5rem;
+  padding: 2rem;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+.imp-type-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.1);
+  border-color: rgba(14, 165, 233, 0.2);
+}
+
+.imp-type-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  border-radius: 2px 2px 0 0;
+}
+
+.imp-type-card.card-1::before { background: linear-gradient(90deg, #0ea5e9, #38bdf8); }
+.imp-type-card.card-2::before { background: linear-gradient(90deg, #6366f1, #818cf8); }
+.imp-type-card.card-3::before { background: linear-gradient(90deg, #f59e0b, #fbbf24); }
+
+.imp-type-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.imp-type-title {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 0.75rem;
+}
+
+.imp-type-desc {
+  font-size: 0.92rem;
+  color: #64748b;
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
+}
+
+.imp-type-features {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.imp-type-feature {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.85rem;
+  color: #475569;
+  font-weight: 500;
+}
+
+.imp-type-price {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: #0f172a;
+}
+
+.imp-type-price span {
+  font-size: 0.78rem;
+  color: #94a3b8;
+  font-weight: 500;
+  display: block;
+  margin-top: 0.2rem;
+}
+
+/* ── Process Timeline — Light Theme ── */
+.imp-process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  position: relative;
+}
+
+.imp-process-grid::before {
+  content: '';
+  position: absolute;
+  top: 40px;
+  left: 10%;
+  right: 10%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(14, 165, 233, 0.2), transparent);
+  z-index: 0;
+}
+
+.imp-process-card {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.imp-process-num {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #0284c7;
+  background: rgba(14, 165, 233, 0.06);
+  border: 2px solid rgba(14, 165, 233, 0.15);
+  position: relative;
+}
+
+.imp-process-num::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 1px dashed rgba(14, 165, 233, 0.1);
+}
+
+.imp-process-title {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 0.5rem;
+}
+
+.imp-process-desc {
+  font-size: 0.88rem;
+  color: #64748b;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.imp-process-duration {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.75rem;
+  font-size: 0.75rem;
+  color: #0284c7;
+  font-weight: 700;
+  background: rgba(14, 165, 233, 0.06);
+  padding: 0.3rem 0.75rem;
+  border-radius: 100px;
+}
+
+/* ── Benefits Grid — Light Theme ── */
+.imp-benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.imp-benefit-card {
+  padding: 2rem;
+  border-radius: 1.5rem;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+}
+
+.imp-benefit-card:hover {
+  border-color: rgba(14, 165, 233, 0.15);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+}
+
+.imp-benefit-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  background: rgba(14, 165, 233, 0.08);
+  color: #0284c7;
+}
+
+.imp-benefit-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 0.5rem;
+}
+
+.imp-benefit-desc {
+  font-size: 0.88rem;
+  color: #64748b;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ── Before/After Gallery ── */
+.imp-gallery-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.imp-gallery-img {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/10;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.08);
+  border: 2px solid rgba(0, 0, 0, 0.04);
+}
+
+.imp-gallery-img img {
+  object-fit: cover;
+}
+
+.imp-gallery-content h2 {
+  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+  font-weight: 900;
+  color: #0f172a;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.03em;
+}
+
+.imp-gallery-content p {
+  font-size: 1.05rem;
+  color: #475569;
+  line-height: 1.85;
+  margin-bottom: 1.5rem;
+}
+
+.imp-gallery-checks {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.imp-gallery-check {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+  color: #334155;
+  font-weight: 600;
+}
+
+.imp-gallery-check svg {
+  color: #10b981;
+  flex-shrink: 0;
+}
+
+/* ── FAQ — Light Theme ── */
+.imp-faq-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.imp-faq-card {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 1.25rem;
+  padding: 1.75rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+}
+
+.imp-faq-card:hover {
+  border-color: rgba(14, 165, 233, 0.15);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.06);
+  transform: translateY(-2px);
+}
+
+.imp-faq-q {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+}
+
+.imp-faq-q svg {
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+  color: #0284c7;
+}
+
+.imp-faq-a {
+  font-size: 0.88rem;
+  color: #64748b;
+  line-height: 1.75;
+  margin: 0;
+  padding-left: 1.75rem;
+}
+
+/* ── Facility Section ── */
+.imp-facility-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.imp-facility-img {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4/3;
+  border-radius: 2rem;
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.imp-facility-img img {
+  object-fit: cover;
+}
+
+.imp-facility-features {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.imp-facility-feature {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.imp-facility-feature-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: rgba(14, 165, 233, 0.08);
+  color: #0284c7;
+}
+
+.imp-facility-feature-title {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 0.25rem;
+}
+
+.imp-facility-feature-desc {
+  font-size: 0.88rem;
+  color: #64748b;
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ── CTA Section — Only dark section after hero ── */
+.imp-cta {
+  padding: 8rem 0;
+  background: linear-gradient(135deg, #020617 0%, #0c4a6e 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.imp-cta-orb {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.15), transparent 70%);
+  top: -100px;
+  right: -100px;
+  pointer-events: none;
+}
+
+.imp-cta-inner {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.imp-cta-title {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 900;
+  color: #fff;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.03em;
+}
+
+.imp-cta-sub {
+  font-size: 1.1rem;
+  color: rgba(203, 213, 225, 0.8);
+  max-width: 550px;
+  margin: 0 auto 3rem;
+  line-height: 1.7;
+}
+
+.imp-cta-btns {
+  display: flex;
+  justify-content: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+/* ── Shared Button Styles ── */
+.imp-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 1.1rem 2.5rem;
+  background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+  color: #fff;
+  font-weight: 800;
+  font-size: 1.05rem;
+  border-radius: 100px;
+  text-decoration: none;
+  box-shadow: 0 10px 30px rgba(14, 165, 233, 0.35);
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.imp-btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(14, 165, 233, 0.45);
+}
+
+.imp-btn-glass {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1.1rem 2rem;
+  background: rgba(255, 255, 255, 0.08);
+  color: #f8fafc;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 100px;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: all 0.3s ease;
+}
+
+.imp-btn-glass:hover {
+  background: rgba(255, 255, 255, 0.12);
+  transform: translateY(-2px);
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .imp-what-grid,
+  .imp-gallery-grid,
+  .imp-facility-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .imp-types-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .imp-process-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+  }
+
+  .imp-process-grid::before {
+    display: none;
+  }
+
+  .imp-benefits-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .imp-faq-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .imp-hero {
+    min-height: 80vh;
+  }
+
+  .imp-section {
+    padding: 4rem 0;
+  }
+
+  .imp-types-grid,
+  .imp-benefits-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .imp-process-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .imp-hero-stats {
+    gap: 1.5rem;
+  }
+
+  .imp-hero-stat-val {
+    font-size: 1.8rem;
+  }
+
+  .imp-cta {
+    padding: 5rem 0;
+  }
+
+  .imp-section-header {
+    margin-bottom: 3rem;
+  }
+
+  .imp-gallery-grid {
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .imp-hero {
+    min-height: 75vh;
+  }
+
+  .imp-hero-content {
+    padding: 1.5rem 1rem;
+  }
+
+  .imp-hero-stats {
+    gap: 1rem;
+  }
+
+  .imp-hero-cta-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .imp-cta-btns {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .imp-scroll-indicator {
+    display: none;
+  }
+}

@@ -3,6 +3,7 @@ import ServicesList from '@/components/ServicesList';
 import Specialties from '@/components/Specialties';
 import Testimonials from '@/components/Testimonials';
 import VideoSection from '@/components/VideoSection';
+import ClinicGallery from '@/components/ClinicGallery';
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
       <Hero />
       <Specialties />
       <VideoSection />
+      <ClinicGallery />
       <ServicesList limit={4} />
       <Testimonials />
       

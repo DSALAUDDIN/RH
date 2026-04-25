@@ -105,11 +105,25 @@
 }
 
 .team-card-image-wrap img {
+  object-fit: cover;
+  object-position: center;
   transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.team-card:hover .team-card-image-wrap img {
-  transform: scale(1.04);
+/* Specialized zoom for flyer-based images to hide text */
+.team-card-image-wrap img.flyer-img {
+  object-fit: cover !important;
+  object-position: 85% 15% !important;
+  transform: scale(1.6);
+  transform-origin: 85% 20%;
+}
+
+.team-card:hover .team-card-image-wrap img:not(.flyer-img) {
+  transform: scale(1.05);
+}
+
+.team-card:hover .team-card-image-wrap img.flyer-img {
+  transform: scale(1.65);
 }
 
 .team-card-overlay {
@@ -266,6 +280,19 @@
   overflow: hidden;
 }
 
+.lightbox-image-section img {
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.4s ease;
+}
+
+.lightbox-image-section img.flyer-img {
+  object-fit: cover !important;
+  object-position: 85% 15% !important;
+  transform: scale(1.55);
+  transform-origin: 85% 20%;
+}
+
 .lightbox-image-overlay {
   position: absolute;
   inset: 0;
@@ -273,10 +300,15 @@
   z-index: 1;
 }
 
-/* Expanded flyer mode — shows full poster */
 .lightbox-image-section.flyer-mode {
   flex: 0 0 55%;
   background: #020617;
+}
+
+.lightbox-image-section.flyer-mode img {
+  transform: scale(1) !important;
+  object-fit: contain !important;
+  object-position: center !important;
 }
 
 /* Toggle pill button, bottom-left of image panel */

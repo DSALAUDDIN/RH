@@ -9,27 +9,28 @@ import {
   Microscope, Users, CheckCircle2, ChevronRight, Sparkles,
   CalendarCheck, Stethoscope, BadgeCheck, Smile, Activity,
   Zap, Eye, Layers, HeartPulse, Building2, FlaskConical,
-  ScanLine, MonitorDot, Wifi, User, Brain, GraduationCap, X, Play,
+  ScanLine, MonitorDot, Wifi, User, Brain, GraduationCap, X, Play, MessageCircle,
 } from 'lucide-react';
 import './About.css';
 import heroBg from '../../assets/Hero/DoctorsCouple.png';
-import heroprofile from '../../assets/Hero/heroprofile.png';
-import drShimia from '../../assets/doctors/shimia.jpeg';
-// clinicImg removed — video plays instead
-import Testimonials from '@/components/Testimonials';
 
-/* Doctor Images for Marquee */
-import doc1 from '../../assets/doctors/DENTAL LED SIZE 0.png';
-import doc2 from '../../assets/doctors/DENTAL LED SIZE 43_122614 2.png';
-import doc3 from '../../assets/doctors/DENTAL LED SIZE C.png';
-import doc4 from '../../assets/doctors/DENTAL LED SIZE R5.png';
-import doc5 from '../../assets/doctors/DENTAL LED SIZE NEWW.png';
-import doc6 from '../../assets/doctors/DENTAL LED SIZE_123551 (1) 2.png';
-import doc7 from '../../assets/doctors/DENTAL LED SIZE 998.png';
-import doc8 from '../../assets/doctors/DENTAL LED SIZE BBG_123159 - Copy.png';
-import doc9 from '../../assets/doctors/tyjdfytjfutyuju - Copy (2).jpeg';
-import doc10 from '../../assets/doctors/DENTAL LED SIZE 222.png';
-import doc11 from '../../assets/doctors/shimia_flyer.jpeg';
+import Testimonials from '@/components/Testimonials';
+import EvolutionTimeline from '@/components/EvolutionTimeline';
+import FamilyTrustSection from '@/components/FamilyTrustSection';
+
+import imgMehedi from '../../assets/Doctor_List/Mehedi.jpeg';
+import imgMehediClean from '../../assets/doctors/mehedi_clean.jpeg';
+import imgShimia from '../../assets/Doctor_List/shimia_flyer.jpeg';
+import imgShimiaClean from '../../assets/doctors/shimia_clean.jpeg';
+import imgAfzal from '../../assets/Doctor_List/Afzal.jpeg';
+import imgTamima from '../../assets/Doctor_List/Tamima.jpeg';
+import imgTamanna from '../../assets/Doctor_List/Tamanna.jpeg';
+import imgHreedy from '../../assets/Doctor_List/Hreedy.jpeg';
+import imgNabil from '../../assets/Doctor_List/Nabil.jpeg';
+import imgUmaya from '../../assets/Doctor_List/Umaya.jpeg';
+import imgPanna from '../../assets/Doctor_List/Panna.jpeg';
+import imgBarsha from '../../assets/Doctor_List/Barsha.jpeg';
+import imgFariha from '../../assets/Doctor_List/Fariha.jpeg';
 
 /* ── Counter ── */
 function Counter({ to, suffix = '' }: { to: number; suffix?: string }) {
@@ -147,18 +148,17 @@ const process = [
 
 /* Team photos — doctors with images and roles extracted from real flyers */
 const teamMembers = [
-  { name: 'Dr. B.M. Rafiqul Hasan', role: 'Chief Consultant & Surgeon', badge: 'Oral Surgery', img: heroprofile },
-  { name: 'Dr. Shimia Binte Taher', role: 'Microscopic Endodontics & Aesthetics', badge: 'Team Lead', img: doc11 },
-  { name: 'Dr. Afzal Chowdhury', role: 'Oral & Dental Surgeon', badge: 'Oral Surgery', img: doc1 },
-  { name: 'Dr. Mahaesa Tamima', role: 'Senior Oral & Dental Surgeon', badge: 'Endodontics', img: doc2 },
-  { name: 'Dr. B.M. Rafiqul Hasan', role: 'Chief Consultant (Mehedi)', badge: 'Implantology', img: doc3 },
-  { name: 'Dr. Asma Binte Faiz Tamanna', role: 'Oral & Dental Surgeon', badge: 'Dental Surgeon', img: doc4 },
-  { name: 'Dr. Monisha Haque Hreedy', role: 'Oral & Dental Surgeon', badge: 'Dental Surgeon', img: doc5 },
-  { name: 'Dr. Nishat Tamanna Alam', role: 'Senior Oral & Dental Surgeon', badge: 'Dental Surgeon', img: doc6 },
-  { name: 'Dr. Umaya Khanam', role: 'Oral & Dental Surgeon', badge: 'Dental Surgeon', img: doc7 },
-  { name: 'Dr. Mansura Panna', role: 'Senior Oral & Dental Surgeon', badge: 'Endodontics', img: doc8 },
-  { name: 'Dr. Jeamima Tabassum Barsha', role: 'Oral & Dental Surgeon', badge: 'Aligner & Orthodontics', img: doc10 },
-  { name: 'Dr. Fariha Ferdous', role: 'Oral & Dental Surgeon', badge: 'Dental Surgeon', img: doc9 },
+  { name: 'Dr. B. M. Rafiqul Hasan Mehedi', role: 'Chief Consultant & Surgeon', badge: 'Oral Surgery', img: imgMehedi, cleanImg: imgMehediClean, isFlyer: true },
+  { name: 'Dr. Shimia Binte Taher', role: 'Microscopic Endodontics & Aesthetics', badge: 'Team Lead', img: imgShimia, cleanImg: imgShimiaClean, isFlyer: true },
+  { name: 'Dr. Afzal Chowdhury', role: 'Oral & Dental Surgeon', badge: 'Oral Surgery', img: imgAfzal, isFlyer: true },
+  { name: 'Dr. Mahaesa Tamima', role: 'Senior Oral & Dental Surgeon', badge: 'Endodontics', img: imgTamima, isFlyer: true },
+  { name: 'Dr. Asma Binte Faiz Tamanna', role: 'Oral & Dental Surgeon', badge: 'Dental Surgeon', img: imgTamanna, isFlyer: true },
+  { name: 'Dr. Monisha Haque Hreedy', role: 'Oral & Dental Surgeon', badge: 'Dental Surgeon', img: imgHreedy, isFlyer: true },
+  { name: 'Dr. Nabil', role: 'Oral & Dental Surgeon', badge: 'Dental Surgeon', img: imgNabil, isFlyer: true },
+  { name: 'Dr. Umaya Khanam', role: 'Oral & Dental Surgeon', badge: 'Dental Surgeon', img: imgUmaya, isFlyer: true },
+  { name: 'Dr. Mansura Panna', role: 'Senior Oral & Dental Surgeon', badge: 'Endodontics', img: imgPanna, isFlyer: true },
+  { name: 'Dr. Jeamima Tabassum Barsha', role: 'Oral & Dental Surgeon', badge: 'Aligner & Orthodontics', img: imgBarsha, isFlyer: true },
+  { name: 'Dr. Fariha Ferdous', role: 'Oral & Dental Surgeon', badge: 'Dental Surgeon', img: imgFariha, isFlyer: true },
 ];
 
 /* ══ CLINIC VIDEO TOUR BANNER ══ */
@@ -298,8 +298,11 @@ export default function AboutPage() {
             <Link href="/contact" className="ab-btn-primary">
               Book Free Consultation <ArrowUpRight size={18} />
             </Link>
-            <a href="tel:+8801234567890" className="ab-btn-glass">
+            <a href="tel:+8801775227902" className="ab-btn-glass">
               <Phone size={16} /> Call Us Now
+            </a>
+            <a href="https://wa.me/8801775227902" target="_blank" rel="noopener noreferrer" className="ab-btn-glass" style={{ color: '#25D366' }}>
+              <MessageCircle size={16} /> WhatsApp
             </a>
             <span className="ab-trust-pill">
               <CheckCircle2 size={14} /> BMDC 5169 &amp; 8496
@@ -330,12 +333,12 @@ export default function AboutPage() {
               <div className="ab-doc-visual">
                 <div className="ab-doc-ring" />
                 <div className="ab-doc-img-frame">
-                  <Image src={heroprofile} alt="Dr. B.M. Rafiqul Hasan Mehedi"
+                  <Image src={imgMehediClean} alt="Dr. B. M. Rafiqul Hasan Mehedi"
                     fill sizes="(max-width:768px) 100vw, 50vw"
                     style={{ objectFit: 'cover', objectPosition: 'top center' }} />
                   <div className="ab-doc-img-glow" />
                   <div className="ab-doc-info-card">
-                    <div className="ab-doc-name">Dr. B.M. Rafiqul Hasan (Mehedi)</div>
+                    <div className="ab-doc-name">Dr. B. M. Rafiqul Hasan Mehedi</div>
                     <div className="ab-doc-role">Chief Consultant Oral &amp; Dental Surgeon</div>
                     <div className="ab-doc-creds-row">
                       <span className="ab-cred-chip">BDS — Sapporo Dental College</span>
@@ -353,8 +356,7 @@ export default function AboutPage() {
               <div className="ab-doc-content">
                 <span className="ab-label"><Award size={14} /> Chief Consultant &amp; Founder</span>
                 <h2 className="ab-section-title-dark">
-                  Dr. B.M. Rafiqul Hasan{' '}
-                  <span className="ab-shine-text">(Mehedi)</span>
+                  Dr. B. M. Rafiqul Hasan Mehedi
                 </h2>
                 <p className="ab-body-dark">
                   A distinguished Oral &amp; Dental Surgeon known for his precision, advanced clinical expertise, and commitment to excellence in modern dentistry. With a strong academic background and extensive international training, he has established himself as a trusted name in <strong style={{ color: '#0f172a' }}>advanced dental implant surgery</strong> and <strong style={{ color: '#0f172a' }}>full mouth rehabilitation</strong>.
@@ -455,7 +457,7 @@ export default function AboutPage() {
               <div className="ab-doc-visual">
                 <div className="ab-doc-ring-alt" />
                 <div className="ab-doc-img-frame">
-                  <Image src={drShimia} alt="Dr. Shimia Binte Taher"
+                  <Image src={imgShimiaClean} alt="Dr. Shimia Binte Taher"
                     fill sizes="(max-width:768px) 100vw, 50vw"
                     style={{ objectFit: 'cover', objectPosition: 'top center' }} />
                   <div className="ab-doc-img-glow" />
@@ -515,7 +517,8 @@ export default function AboutPage() {
                     {m.img ? (
                       <Image src={m.img} alt={m.name} fill
                         sizes="(max-width: 768px) 360px, 460px"
-                        style={{ objectFit: 'contain', objectPosition: 'center' }} />
+                        className={m.isFlyer ? 'flyer-img' : ''}
+                        style={{ objectFit: 'cover', objectPosition: 'center' }} />
                     ) : (
                       <div className="ab-team-placeholder">RH</div>
                     )}
@@ -597,6 +600,12 @@ export default function AboutPage() {
           </motion.div>
         </div>
       </section>
+
+      {/* ═══════════════════════ EVOLUTION TIMELINE ═══════════════════════ */}
+      <EvolutionTimeline />
+
+      {/* ═══════════════════════ FAMILY TRUST SECTION ═══════════════════════ */}
+      <FamilyTrustSection />
 
       {/* ═══════════════════════ FACILITIES – dark ═══════════════════════ */}
       <section className="ab-section ab-section-dark">
@@ -696,7 +705,8 @@ export default function AboutPage() {
               </p>
               <div className="ab-cta-btns">
                 <Link href="/contact" className="ab-btn-primary">Book Free Consultation <ArrowUpRight size={18} /></Link>
-                <a href="tel:+8801234567890" className="ab-btn-glass"><Phone size={16} /> Call Now</a>
+                <a href="tel:+8801775227902" className="ab-btn-glass"><Phone size={16} /> Call Now</a>
+                <a href="https://wa.me/8801775227902" target="_blank" rel="noopener noreferrer" className="ab-btn-glass" style={{ color: '#25D366' }}><MessageCircle size={16} /> WhatsApp</a>
               </div>
               <div className="ab-cta-trust">
                 <div className="ab-cta-trust-item"><CheckCircle2 size={14} color="#16a34a" /> Pain-Free Guarantee</div>

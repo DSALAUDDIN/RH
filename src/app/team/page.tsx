@@ -7,30 +7,34 @@ import { Sparkles, ArrowUpRight, X, Users, Award, ShieldCheck, Briefcase, Downlo
 import './team.css';
 
 /* ── Asset Imports ── */
-import heroprofile from '../../assets/Hero/heroprofile.png';
-import doc1 from '../../assets/doctors/DENTAL LED SIZE 0.png';
-import doc2 from '../../assets/doctors/DENTAL LED SIZE 43_122614 2.png';
-import doc4 from '../../assets/doctors/DENTAL LED SIZE R5.png';
-import doc5 from '../../assets/doctors/DENTAL LED SIZE NEWW.png';
-import doc6 from '../../assets/doctors/DENTAL LED SIZE_123551 (1) 2.png';
-import doc7 from '../../assets/doctors/DENTAL LED SIZE 998.png';
-import doc8 from '../../assets/doctors/DENTAL LED SIZE BBG_123159 - Copy.png';
-import doc9 from '../../assets/doctors/tyjdfytjfutyuju - Copy (2).jpeg';
-import doc10 from '../../assets/doctors/DENTAL LED SIZE 222.png';
-import doc11 from '../../assets/doctors/shimia_flyer.jpeg';
+import imgMehedi from '../../assets/Doctor_List/Mehedi.jpeg';
+import imgMehediClean from '../../assets/doctors/mehedi_clean.jpeg';
+import imgShimia from '../../assets/Doctor_List/shimia_flyer.jpeg';
+import imgShimiaClean from '../../assets/doctors/shimia_clean.jpeg';
+import imgAfzal from '../../assets/Doctor_List/Afzal.jpeg';
+import imgTamima from '../../assets/Doctor_List/Tamima.jpeg';
+import imgTamanna from '../../assets/Doctor_List/Tamanna.jpeg';
+import imgHreedy from '../../assets/Doctor_List/Hreedy.jpeg';
+import imgNabil from '../../assets/Doctor_List/Nabil.jpeg';
+import imgUmaya from '../../assets/Doctor_List/Umaya.jpeg';
+import imgPanna from '../../assets/Doctor_List/Panna.jpeg';
+import imgBarsha from '../../assets/Doctor_List/Barsha.jpeg';
+import imgFariha from '../../assets/Doctor_List/Fariha.jpeg';
 
 /* ── Team Data ── */
 const teamMembers = [
   {
-    name: 'Dr. B.M. Rafiqul Hasan',
+    name: 'Dr. B. M. Rafiqul Hasan Mehedi',
     designation: 'Managing Director & Chief Consultant',
     role: 'Oral & Maxillofacial Surgeon',
     badge: 'Managing Director',
     imgPosition: 'center 5%',
-    img: heroprofile,
+    img: imgMehedi,
+    cleanImg: imgMehediClean,
+    isFlyer: true,
     credentials: ['BDS — Sapporo Dental College (DU)', 'MPH — City University', 'PGT (OMS & Prosthodontics) — BSM Medical University', 'Advanced Implantology Training: China, Korea & India', 'MICD Training — Nepal'],
     bmdc: '5169',
-    bio: 'Founder and Managing Director of RH Dental Care. A pioneer in digital treatment planning and 3D-guided implant surgery with 12+ years of experience in complex full mouth rehabilitation. Since 2015, also serving as Senior Lecturer at MH Samorita Medical College & Hospital.',
+    bio: 'Founder and Managing Director of RH Dental Care. A pioneer in digital treatment planning and 3D-guided implant surgery with 12+ years of experience in complex full mouth rehabilitation. Since 2014, he has been serving as a Senior Lecturer at Saphena Women’s Dental College and MH Samorita Medical College & Hospital, contributing to the development of future dental professionals. He is also currently practicing as a Senior Oral & Dental Surgeon at Labaid Dental Clinic, Gulshan, further extending his commitment to high-quality patient care.',
   },
   {
     name: 'Dr. Shimia Binte Taher',
@@ -38,7 +42,9 @@ const teamMembers = [
     role: 'Microscopic Endodontics & Aesthetic Dentistry',
     badge: 'Team Lead',
     imgPosition: '72% 15%',
-    img: doc11,
+    img: imgShimia,
+    cleanImg: imgShimiaClean,
+    isFlyer: true,
     credentials: ['BDS — Pioneer Dental College', 'PGT (Oral & Maxillofacial Surgery) — Dhaka Medical College'],
     bmdc: '8496',
     bio: 'A highly accomplished dental professional who combines clinical excellence with compassionate care. She leads the team with professionalism and is especially dedicated to female-oriented dental care, ensuring a respectful and comfortable environment for all patients.',
@@ -49,7 +55,8 @@ const teamMembers = [
     role: 'Oral & Dental Surgeon',
     badge: 'Oral Surgery',
     imgPosition: '72% 15%',
-    img: doc1,
+    img: imgAfzal,
+    isFlyer: true,
     credentials: ['BDS', 'PGT (Oral Surgery)'],
     bmdc: 'Registered',
     bio: 'Dedicated Oral & Dental Surgeon specialising in complex tooth extractions and minor oral surgical procedures. Committed to providing safe, pain-free surgical experiences.',
@@ -60,7 +67,8 @@ const teamMembers = [
     role: 'Senior Oral & Dental Surgeon',
     badge: 'Endodontics',
     imgPosition: '72% 15%',
-    img: doc2,
+    img: imgTamima,
+    isFlyer: true,
     credentials: ['BDS', 'PGT (Conservative Dentistry & Endodontics)'],
     bmdc: 'Registered',
     bio: 'Senior surgeon with extensive experience in preserving natural teeth through advanced endodontic therapy and modern restorative techniques.',
@@ -71,7 +79,8 @@ const teamMembers = [
     role: 'Oral & Dental Surgeon',
     badge: 'Dental Surgeon',
     imgPosition: '72% 15%',
-    img: doc4,
+    img: imgTamanna,
+    isFlyer: true,
     credentials: ['BDS', 'PGT (General Dentistry)'],
     bmdc: 'Registered',
     bio: 'A meticulous dental surgeon focused on comprehensive general dentistry, preventive care, and delivering high-quality aesthetic restorations.',
@@ -82,18 +91,20 @@ const teamMembers = [
     role: 'Oral & Dental Surgeon',
     badge: 'Dental Surgeon',
     imgPosition: '72% 15%',
-    img: doc5,
+    img: imgHreedy,
+    isFlyer: true,
     credentials: ['BDS', 'PGT (General Dentistry)'],
     bmdc: 'Registered',
     bio: 'Passionate about patient education and preventive dentistry. Provides comprehensive oral care ensuring every patient leaves with a healthy, confident smile.',
   },
   {
-    name: 'Dr. Nishat Tamanna Alam',
-    designation: 'Senior Consultant — General Dentistry',
-    role: 'Senior Oral & Dental Surgeon',
+    name: 'Dr. Nabil',
+    designation: 'Consultant — General Dentistry',
+    role: 'Oral & Dental Surgeon',
     badge: 'Dental Surgeon',
     imgPosition: '72% 15%',
-    img: doc6,
+    img: imgNabil,
+    isFlyer: true,
     credentials: ['BDS', 'PGT (General Dentistry)'],
     bmdc: 'Registered',
     bio: 'A highly experienced senior practitioner dedicated to holistic dental care, managing everything from routine diagnostics to complex restorative procedures.',
@@ -104,7 +115,8 @@ const teamMembers = [
     role: 'Oral & Dental Surgeon',
     badge: 'Dental Surgeon',
     imgPosition: '72% 15%',
-    img: doc7,
+    img: imgUmaya,
+    isFlyer: true,
     credentials: ['BDS', 'PGT (General Dentistry)'],
     bmdc: 'Registered',
     bio: 'Committed to delivering gentle and precise dental care. Specialises in routine dental treatments and ensuring a comfortable environment for anxious patients.',
@@ -115,7 +127,8 @@ const teamMembers = [
     role: 'Senior Oral & Dental Surgeon',
     badge: 'Endodontics',
     imgPosition: '72% 15%',
-    img: doc8,
+    img: imgPanna,
+    isFlyer: true,
     credentials: ['BDS', 'PGT (Endodontics)'],
     bmdc: 'Registered',
     bio: 'Expert in advanced root canal therapies. Dedicated to saving infected or damaged teeth using the latest endodontic technologies and pain-management protocols.',
@@ -126,7 +139,8 @@ const teamMembers = [
     role: 'Oral & Dental Surgeon',
     badge: 'Aligner & Orthodontics',
     imgPosition: '72% 15%',
-    img: doc10,
+    img: imgBarsha,
+    isFlyer: true,
     credentials: ['BDS', 'PGT (Orthodontics & Dentofacial Orthopedics)'],
     bmdc: 'Registered',
     bio: 'Specialist in modern orthodontic solutions including clear aligners and traditional braces. Passionate about aligning teeth to achieve functional and perfectly straight smiles.',
@@ -137,7 +151,8 @@ const teamMembers = [
     role: 'Oral & Dental Surgeon',
     badge: 'Dental Surgeon',
     imgPosition: '72% 15%',
-    img: doc9,
+    img: imgFariha,
+    isFlyer: true,
     credentials: ['BDS', 'PGT (General Dentistry)'],
     bmdc: 'Registered',
     bio: 'A dedicated professional focusing on family dentistry, scaling, polishing, and composite restorations to maintain optimal oral hygiene for all age groups.',
@@ -202,6 +217,7 @@ export default function TeamPage() {
                     fill
                     quality={90}
                     sizes="(max-width: 600px) 90vw, (max-width: 1024px) 45vw, 30vw"
+                    className={m.isFlyer ? 'flyer-img' : ''}
                     style={{ objectFit: 'cover', objectPosition: m.imgPosition }}
                   />
                 )}
@@ -258,13 +274,14 @@ export default function TeamPage() {
               <div className={`lightbox-image-section ${showFlyer ? 'flyer-mode' : ''}`}>
                 {selectedMember.img && (
                   <Image
-                    src={selectedMember.img}
+                    src={showFlyer ? selectedMember.img : (selectedMember.cleanImg || selectedMember.img)}
                     alt={selectedMember.name}
                     fill
                     quality={95}
+                    className={(selectedMember.isFlyer && !showFlyer && !selectedMember.cleanImg) ? 'flyer-img' : ''}
                     style={{
                       objectFit: showFlyer ? 'contain' : 'cover',
-                      objectPosition: showFlyer ? 'center' : selectedMember.imgPosition,
+                      objectPosition: showFlyer ? 'center' : (selectedMember.cleanImg ? 'center' : selectedMember.imgPosition),
                       background: showFlyer ? '#020617' : 'transparent',
                     }}
                   />

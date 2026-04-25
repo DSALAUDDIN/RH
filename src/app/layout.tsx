@@ -36,7 +36,7 @@ export const metadata: Metadata = {
 
   /* ── Description — primary ranking signal ── */
   description:
-    'RH Dental Care is the #1 dental clinic in Dhaka, Bangladesh. Expert oral & dental surgery, dental implants, orthodontics, root canal, cosmetic dentistry & smile design by BMDC-certified specialist Dr. B.M. Rafiqul Hasan (Mehedi). 13k+ happy patients. Book a free consultation today.',
+    'RH Dental Care is the #1 dental clinic in Dhaka, Bangladesh. Expert oral & dental surgery, dental implants, orthodontics, root canal, cosmetic dentistry & smile design by BMDC-certified specialist Dr. B. M. Rafiqul Hasan Mehedi. 13k+ happy patients. Book a free consultation today.',
 
   /* ── Exhaustive keyword set ── */
   keywords: [
@@ -44,8 +44,8 @@ export const metadata: Metadata = {
     'RH Dental Care',
     'RH Dental Care Dhaka',
     'RH Dental Clinic Bangladesh',
-    'Dr Rafiqul Hasan Mehedi',
-    'Dr BM Rafiqul Hasan dentist',
+    'Dr. B. M. Rafiqul Hasan Mehedi',
+    'Dr. B. M. Rafiqul Hasan Mehedi dentist',
     // Local intent — Dhaka
     'best dental clinic in Dhaka',
     'top dental clinic Dhaka Bangladesh',

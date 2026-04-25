@@ -12,9 +12,8 @@ import {
 import { useRef, useEffect, useState, useCallback } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowUpRight, Phone, ShieldCheck, Clock, Activity, Star, Sparkles, CheckCircle2, Award, ChevronLeft, ChevronRight, Stethoscope, GraduationCap } from 'lucide-react';
+import { ArrowUpRight, Phone, ShieldCheck, Clock, Activity, Star, Sparkles, CheckCircle2, Award, ChevronLeft, ChevronRight, Stethoscope, GraduationCap, MessageCircle } from 'lucide-react';
 import './Hero.css';
-import doctorsCouple from '../assets/Hero/DoctorsCouple.png';
 import herobanner from '../assets/Hero/herobanner.webp';
 
 /* ─── Animated Counter ─── */
@@ -263,9 +262,13 @@ export default function Hero() {
               <ArrowUpRight className="btn-icon" size={20} />
             </Link>
             
-            <a href="tel:+8801234567890" className="btn-glass">
+            <a href="tel:+8801775227902" className="btn-glass">
               <Phone size={18} className="btn-icon-glass" />
-              Free Consultation
+              Call Now
+            </a>
+            <a href="https://wa.me/8801775227902" target="_blank" rel="noopener noreferrer" className="btn-glass" style={{ color: '#25D366' }}>
+              <MessageCircle size={18} className="btn-icon-glass" />
+              WhatsApp
             </a>
           </motion.div>
 
@@ -307,87 +310,109 @@ export default function Hero() {
 
         </div>
 
-        {/* ================= RIGHT SECTION ================= */}
+        {/* ================= RIGHT SECTION - DOCTOR PROFILES ================= */}
         <div className="hero-right">
           <motion.div 
-            className="hero-visual-wrap"
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1.5, ease: "easeOut" }}
+            className="hero-doctors-panel"
+            initial={{ opacity: 0, x: 40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
           >
-            
-            {/* Elegant glowing rings behind doctor */}
+            {/* Decorative glowing rings */}
             <div className="hero-glow-ring ring-1" />
             <div className="hero-glow-ring ring-2" />
 
-            <motion.div 
-              className="doc-img-container"
-              animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-            >
-              <Image
-                src={doctorsCouple}
-                alt="Dr. Shimia Binte Taher & Dr. B.M. Rafiqul Hasan - RH Dental Care"
-                fill priority
-                sizes="(max-width: 768px) 100vw, 45vw"
-                className="doc-img"
-              />
-              <div className="doc-gradient-fade" />
-            </motion.div>
-
-            {/* Aesthetic tags */}
-            <motion.div 
-              className="float-orb orb-top-left glass-pill"
-              animate={{ y: [0, -15, 0] }}
-              transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
-            >
-              <Sparkles size={14} className="accent-icon" />
-              <span>Aesthetic Mastery</span>
-            </motion.div>
-
-            <motion.div 
-              className="float-orb orb-bottom-right glass-pill"
-              animate={{ y: [0, 15, 0] }}
-              transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
-            >
-              <ShieldCheck size={14} className="accent-icon" />
-              <span>Implant Experts</span>
-            </motion.div>
-
-            {/* Dr. Shimia Card (Bottom Left) */}
+            {/* Panel Label */}
             <motion.div
-              className="premium-name-card card-shim"
-              initial={{ opacity: 0, x: -30, y: 10 }}
-              animate={{ opacity: 1, x: 0, y: 0 }}
-              transition={{ delay: 1.1, duration: 0.8, type: "spring", damping: 25 }}
+              className="doctors-panel-label"
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6, duration: 0.6 }}
             >
-              <div className="card-header">
-                <h3 className="doc-name">Dr. Shimia Binte Taher</h3>
-              </div>
-              <p className="doc-title">Endodontics & Aesthetic Dentistry</p>
-              <div className="doc-creds-box">
-                <span className="verified-badge"><CheckCircle2 size={10}/> BDS</span>
-                <span className="dot">•</span>
-                <span>BMDC: 8496</span>
+              <Stethoscope size={13} className="accent-icon" />
+              <span>Meet Our Expert Doctors</span>
+            </motion.div>
+
+            {/* Dr. Hasan Card */}
+            <motion.div
+              className="hero-doc-card"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.8, duration: 0.8, type: "spring", damping: 22 }}
+              whileHover={{ y: -4, transition: { duration: 0.3 } }}
+            >
+              <div className="hero-doc-card-accent hasan-accent" />
+              <div className="hero-doc-card-inner">
+                <div className="hero-doc-avatar hasan-avatar">
+                  <span>RH</span>
+                </div>
+                <div className="hero-doc-info">
+                  <div className="hero-doc-name-row">
+                    <h3 className="hero-doc-fullname">Dr. B. M. Rafiqul Hasan Mehedi</h3>
+                    <span className="hero-doc-verified"><CheckCircle2 size={14}/></span>
+                  </div>
+                  <p className="hero-doc-specialty">Chief Consultant — Oral Surgery</p>
+                  <div className="hero-doc-credentials">
+                    <span className="hero-doc-badge"><GraduationCap size={11}/> BDS, MPH, PGT</span>
+                    <span className="hero-doc-bmdc">BMDC 5169</span>
+                  </div>
+                  <div className="hero-doc-tags">
+                    <span>Implantology</span>
+                    <span>3D Dentistry</span>
+                    <span>Full Mouth Rehab</span>
+                  </div>
+                </div>
               </div>
             </motion.div>
 
-            {/* Dr. Hasan Card (Top Right) */}
+            {/* Divider */}
+            <div className="hero-docs-divider">
+              <div className="divider-line" />
+              <div className="divider-icon"><Sparkles size={12} className="accent-icon" /></div>
+              <div className="divider-line" />
+            </div>
+
+            {/* Dr. Shimia Card */}
             <motion.div
-              className="premium-name-card card-hasan"
-              initial={{ opacity: 0, x: 30, y: -10 }}
-              animate={{ opacity: 1, x: 0, y: 0 }}
-              transition={{ delay: 1.3, duration: 0.8, type: "spring", damping: 25 }}
+              className="hero-doc-card"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.0, duration: 0.8, type: "spring", damping: 22 }}
+              whileHover={{ y: -4, transition: { duration: 0.3 } }}
             >
-              <div className="card-header">
-                <h3 className="doc-name">Dr. B.M Rafiqul Hasan</h3>
+              <div className="hero-doc-card-accent shimia-accent" />
+              <div className="hero-doc-card-inner">
+                <div className="hero-doc-avatar shimia-avatar">
+                  <span>ST</span>
+                </div>
+                <div className="hero-doc-info">
+                  <div className="hero-doc-name-row">
+                    <h3 className="hero-doc-fullname">Dr. Shimia Binte Taher</h3>
+                    <span className="hero-doc-verified"><CheckCircle2 size={14}/></span>
+                  </div>
+                  <p className="hero-doc-specialty">Endodontics & Aesthetic Dentistry</p>
+                  <div className="hero-doc-credentials">
+                    <span className="hero-doc-badge"><GraduationCap size={11}/> BDS</span>
+                    <span className="hero-doc-bmdc">BMDC 8496</span>
+                  </div>
+                  <div className="hero-doc-tags">
+                    <span>Microscopic Endodontics</span>
+                    <span>Veneers</span>
+                    <span>Exodontia</span>
+                  </div>
+                </div>
               </div>
-              <p className="doc-title">Chief Consultant – Oral Surgery</p>
-              <div className="doc-creds-box">
-                <span className="verified-badge"><CheckCircle2 size={10}/> MPH, PGT, BDS</span>
-                <span className="dot">•</span>
-                <span>BMDC: 5169</span>
-              </div>
+            </motion.div>
+
+            {/* Bottom floating pill */}
+            <motion.div
+              className="hero-panel-footer-pill"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1.4, duration: 0.6 }}
+            >
+              <ShieldCheck size={13} className="accent-icon" />
+              <span>Both BMDC Certified · 12+ Years Combined Experience</span>
             </motion.div>
 
           </motion.div>

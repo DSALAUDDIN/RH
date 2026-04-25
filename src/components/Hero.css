@@ -336,18 +336,232 @@
   position: relative;
   height: 100%;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
   padding-bottom: 2rem;
 }
-.hero-visual-wrap {
+
+/* ─── New Doctor Profile Panel ─── */
+.hero-doctors-panel {
   position: relative;
   width: 100%;
-  max-width: 650px;
-  height: 600px; /* Fixed height to ensure image has room to grow */
+  max-width: 480px;
   display: flex;
-  align-items: flex-end;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: 1rem;
+  z-index: 10;
+}
+
+/* Decorative rings for panel */
+.hero-doctors-panel .hero-glow-ring {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+.doctors-panel-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  align-self: center;
+  padding: 0.4rem 1.2rem;
+  background: rgba(14, 165, 233, 0.08);
+  border: 1px solid rgba(14, 165, 233, 0.2);
+  border-radius: 100px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: #7dd3fc;
+  margin-bottom: 0.5rem;
+}
+
+/* Individual Doctor Card */
+.hero-doc-card {
+  position: relative;
+  background: rgba(10, 16, 35, 0.7);
+  backdrop-filter: blur(24px) saturate(160%);
+  -webkit-backdrop-filter: blur(24px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 1.5rem;
+  overflow: hidden;
+  cursor: default;
+  box-shadow:
+    0 20px 60px -15px rgba(0, 0, 0, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.hero-doc-card:hover {
+  border-color: rgba(56, 189, 248, 0.2);
+  box-shadow:
+    0 30px 70px -15px rgba(0, 0, 0, 0.7),
+    0 0 0 1px rgba(56, 189, 248, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+/* Colored top accent line */
+.hero-doc-card-accent {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  border-radius: 3px 3px 0 0;
+}
+.shimia-accent {
+  background: linear-gradient(90deg, #c084fc, #e879f9, #a855f7);
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.4);
+}
+.hasan-accent {
+  background: linear-gradient(90deg, #38bdf8, #0ea5e9, #0284c7);
+  box-shadow: 0 0 20px rgba(14, 165, 233, 0.4);
+}
+
+.hero-doc-card-inner {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  padding: 1.5rem;
+}
+
+/* Avatar Circle with initials */
+.hero-doc-avatar {
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
   justify-content: center;
+  font-size: 1rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: 0.03em;
+  border: 2px solid rgba(255, 255, 255, 0.12);
+}
+.shimia-avatar {
+  background: linear-gradient(135deg, #7c3aed, #a855f7, #c084fc);
+  box-shadow: 0 8px 20px -5px rgba(168, 85, 247, 0.5);
+}
+.hasan-avatar {
+  background: linear-gradient(135deg, #0369a1, #0ea5e9, #38bdf8);
+  box-shadow: 0 8px 20px -5px rgba(14, 165, 233, 0.5);
+}
+
+.hero-doc-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.hero-doc-name-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.hero-doc-fullname {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #f8fafc;
+  margin: 0;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+}
+
+.hero-doc-verified {
+  color: #38bdf8;
+  display: flex;
+  align-items: center;
+  filter: drop-shadow(0 0 6px rgba(56, 189, 248, 0.6));
+}
+
+.hero-doc-specialty {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  margin: 0;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.hero-doc-credentials {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.hero-doc-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.2rem 0.6rem;
+  background: rgba(14, 165, 233, 0.1);
+  border: 1px solid rgba(14, 165, 233, 0.2);
+  border-radius: 100px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #7dd3fc;
+}
+
+.hero-doc-bmdc {
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: #64748b;
+  letter-spacing: 0.03em;
+}
+
+.hero-doc-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.2rem;
+}
+.hero-doc-tags span {
+  font-size: 0.62rem;
+  font-weight: 600;
+  padding: 0.18rem 0.55rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 100px;
+  color: #cbd5e1;
+  letter-spacing: 0.02em;
+}
+
+/* Divider between cards */
+.hero-docs-divider {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0 0.5rem;
+}
+.divider-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(255,255,255,0.08), transparent);
+}
+.divider-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Footer pill */
+.hero-panel-footer-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  align-self: center;
+  padding: 0.5rem 1.2rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 100px;
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: #64748b;
+  margin-top: 0.25rem;
+  letter-spacing: 0.02em;
 }
 
 /* Glowing Orbital Rings */
@@ -379,35 +593,6 @@
 @keyframes spin { 100% { transform: translate(-50%, -50%) rotate(360deg); } }
 @keyframes spin-reverse { 100% { transform: translate(-50%, -50%) rotate(-360deg); } }
 
-/* Doctor Image - Loud and Proud */
-.doc-img-container {
-  position: absolute;
-  bottom: -1rem; /* ground them perfectly */
-  right: -10%; /* Expand space on the right */
-  width: 145%; /* Much wider so they have massive real-estate to grow */
-  height: 135%; /* Taller to prevent top-clipping */ 
-  z-index: 10;
-  pointer-events: none; 
-}
-.doc-img {
-  object-fit: contain;
-  object-position: bottom center; 
-  transform: scale(1.4); /* Extremely Loud and Focal */
-  transform-origin: bottom center; 
-  filter: 
-    drop-shadow(0 20px 50px rgba(0, 0, 0, 0.6))
-    drop-shadow(0 0 90px rgba(56, 189, 248, 0.25)); /* Premium back glow */
-}
-.doc-gradient-fade {
-  position: absolute;
-  bottom: -2rem; 
-  left: -20%;
-  width: 140%;
-  height: 20%;
-  background: linear-gradient(to top, rgba(2,6,23,1) 0%, transparent 100%);
-  z-index: 15;
-  pointer-events: none;
-}
 
 /* Floating Elements (Orbs/Pills) */
 .glass-pill {
@@ -440,80 +625,14 @@
 .orb-top-left { top: 5%; left: 0%; z-index: 20; } /* Tucked up high, safe from headlines */
 .orb-bottom-right { bottom: 10%; right: -5%; z-index: 20; } /* safely below Dr. Hasan's card */
 
-/* Float Review (Hidden in this version to simplify look) */
-.float-review {
-  display: none;
-}
-
-/* Minimalist Floating Specs Cards */
-.premium-name-card {
-  position: absolute;
-  width: 220px; /* Ultra sleek watch-style widget width */
-  background: rgba(10, 15, 28, 0.65);
-  backdrop-filter: blur(25px) saturate(150%);
-  -webkit-backdrop-filter: blur(25px) saturate(150%);
-  border-radius: 1rem;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 1rem; /* tighter padding */
-  display: flex;
-  flex-direction: column;
-  gap: 0.35rem; /* tighter gaps */
-  z-index: 30;
-  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.8);
-}
-
-.card-shim {
-  bottom: 15%;
-  left: -20%; /* Safely tucked next to her expanded scale */
-}
-
-.card-hasan {
-  top: 40%;
-  right: -25%; 
-}
-
-.card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 0.5rem;
-}
-.doc-name {
-  font-size: 0.95rem; /* Smaller, cleaner widget size */
-  font-weight: 800;
-  color: #fff;
-  margin: 0;
-  letter-spacing: -0.02em;
-  line-height: 1.1;
-}
-.verified-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.25rem;
-  color: #38bdf8;
-  font-size: 0.65rem;
-  font-weight: 700;
-  white-space: nowrap;
-}
-.doc-title {
-  font-size: 0.75rem;
-  color: #e2e8f0;
-  font-weight: 500;
-  line-height: 1.25;
-  margin: 0;
-}
-.doc-creds-box {
-  display: flex;
-  align-items: center;
-  gap: 0.35rem;
-  margin-top: 0.15rem;
-  font-size: 0.65rem;
-  color: #94a3b8;
-  font-weight: 500;
-}
-.doc-creds-box .dot {
-  color: rgba(255,255,255,0.2);
-}
+/* ─── Legacy small cards (kept for backward compat, hidden on panel view) ─── */
+.premium-name-card { display: none; }
+.card-shim { display: none; }
+.card-hasan { display: none; }
+.doc-img-container { display: none; }
+.doc-img { display: none; }
+.doc-gradient-fade { display: none; }
+.float-orb { display: none; }
 
 
 
@@ -596,50 +715,15 @@
     min-height: auto;
     padding-bottom: 0;
   }
-  .hero-visual-wrap {
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    gap: 0.8rem;
-    padding-bottom: 1rem;
-    align-items: center;
+  .hero-doctors-panel {
+    max-width: 100%;
+    padding: 0;
   }
-  .premium-name-card {
-    position: relative;
-    top: auto;
-    bottom: auto;
-    left: auto;
-    right: auto;
-    transform: none;
-    width: 90%;
-    max-width: 360px;
-    margin: 0;
+  .doctors-panel-label {
+    align-self: center;
   }
-  .card-shim {
-    bottom: auto; left: auto;
-  }
-  .card-hasan {
-    top: auto; right: auto;
-  }
-  .orb-bottom-right {
-    bottom: 40%;
-    right: 2%;
-  }
-  .orb-top-left {
-    top: 5%;
-    left: 2%;
-  }
-  .doc-img-container {
-    position: relative;
-    right: 0;
-    bottom: auto;
-    width: 100%;
-    height: 380px;
-    margin-bottom: -2rem;
-  }
-  .doc-img {
-    transform: scale(1.15);
+  .hero-doc-card-inner {
+    padding: 1.25rem;
   }
 
   .hero-trust-bar {
