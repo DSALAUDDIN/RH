@@ -156,7 +156,7 @@ const teamMembers = [
   { name: 'Dr. Monisha Haque Hreedy', role: 'Oral & Dental Surgeon', badge: 'Dental Surgeon', img: imgHreedy, isFlyer: true },
   { name: 'Dr. Nabil', role: 'Oral & Dental Surgeon', badge: 'Dental Surgeon', img: imgNabil, isFlyer: true },
   { name: 'Dr. Umaya Khanam', role: 'Oral & Dental Surgeon', badge: 'Dental Surgeon', img: imgUmaya, isFlyer: true },
-  { name: 'Dr. Mansura Panna', role: 'Senior Oral & Dental Surgeon', badge: 'Endodontics', img: imgPanna, isFlyer: true },
+  { name: 'Dr. Mansura Panna', role: 'Senior Oral & Dental Surgeon', badge: 'OMFS', img: imgPanna, isFlyer: true },
   { name: 'Dr. Jeamima Tabassum Barsha', role: 'Oral & Dental Surgeon', badge: 'Aligner & Orthodontics', img: imgBarsha, isFlyer: true },
   { name: 'Dr. Fariha Ferdous', role: 'Oral & Dental Surgeon', badge: 'Dental Surgeon', img: imgFariha, isFlyer: true },
 ];

@@ -98,7 +98,7 @@ const teamMembers = [
     bio: 'Passionate about patient education and preventive dentistry. Provides comprehensive oral care ensuring every patient leaves with a healthy, confident smile.',
   },
   {
-    name: 'Dr. Nabil',
+    name: 'Dr. Nabil Rahman',
     designation: 'Consultant — General Dentistry',
     role: 'Oral & Dental Surgeon',
     badge: 'Dental Surgeon',
@@ -123,15 +123,15 @@ const teamMembers = [
   },
   {
     name: 'Dr. Mansura Panna',
-    designation: 'Senior Consultant — Endodontics',
+    designation: 'Senior Consultant — Oral & Maxillofacial Surgery',
     role: 'Senior Oral & Dental Surgeon',
-    badge: 'Endodontics',
+    badge: 'OMFS',
     imgPosition: '72% 15%',
     img: imgPanna,
     isFlyer: true,
-    credentials: ['BDS', 'PGT (Endodontics)'],
+    credentials: ['BDS', 'PGT (OMFS)'],
     bmdc: 'Registered',
-    bio: 'Expert in advanced root canal therapies. Dedicated to saving infected or damaged teeth using the latest endodontic technologies and pain-management protocols.',
+    bio: 'Specialist in Oral & Maxillofacial Surgery with expertise in complex surgical extractions, jaw surgeries, and trauma management. Committed to delivering safe, precise surgical outcomes using the latest techniques.',
   },
   {
     name: 'Dr. Jeamima Tabassum Barsha',

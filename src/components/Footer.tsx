@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { MapPin, Phone, Mail } from 'lucide-react';
+import { MapPin, Phone, Mail, MessageCircle } from 'lucide-react';
 import logo from '../assets/rhlogo.jpeg';
 import './Footer.css';
 
@@ -81,6 +81,10 @@ export default function Footer() {
               <li>
                 <Phone size={20} className="contact-icon" style={{ flexShrink: 0 }} />
                 <span><a href="tel:+8801775227902">01775-227902</a></span>
+              </li>
+              <li>
+                <MessageCircle size={20} className="contact-icon" style={{ flexShrink: 0, color: '#25D366' }} />
+                <span><a href="https://wa.me/8801775227902" target="_blank" rel="noopener noreferrer">WhatsApp</a></span>
               </li>
               <li>
                 <Mail size={20} className="contact-icon" style={{ flexShrink: 0 }} />

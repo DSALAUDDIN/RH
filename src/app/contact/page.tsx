@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, Phone, Mail, Clock } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, MessageCircle } from 'lucide-react';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', message: '' });
@@ -158,6 +158,17 @@ export default function ContactPage() {
                     <h3 style={{ fontSize: 'clamp(1rem, 3vw, 1.25rem)', marginBottom: '0.5rem' }}>Phone</h3>
                     <p style={{ color: 'hsl(var(--muted-foreground))', fontSize: 'clamp(0.875rem, 2vw, 1rem)' }}><a href="tel:+8801775227902" style={{ color: 'inherit' }}>01775-227902</a></p>
                     <p style={{ color: 'hsl(var(--muted-foreground))', fontSize: '0.875rem', marginTop: '0.25rem' }}>Call us for appointments</p>
+                  </div>
+                </li>
+                
+                <li style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
+                  <div style={{ background: 'rgba(37, 211, 102, 0.1)', padding: '0.875rem', borderRadius: '50%', color: '#25D366', flexShrink: 0 }}>
+                    <MessageCircle size={22} />
+                  </div>
+                  <div>
+                    <h3 style={{ fontSize: 'clamp(1rem, 3vw, 1.25rem)', marginBottom: '0.5rem' }}>WhatsApp</h3>
+                    <p style={{ color: 'hsl(var(--muted-foreground))', fontSize: 'clamp(0.875rem, 2vw, 1rem)' }}><a href="https://wa.me/8801775227902" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit' }}>01775-227902</a></p>
+                    <p style={{ color: 'hsl(var(--muted-foreground))', fontSize: '0.875rem', marginTop: '0.25rem' }}>Chat with us</p>
                   </div>
                 </li>
                 
