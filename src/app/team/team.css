@@ -70,9 +70,11 @@
 
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
   padding-top: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 /* ── Card ── */
@@ -94,36 +96,23 @@
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(56, 189, 248, 0.08);
 }
 
-/* Portrait area — shows only the face, not the flyer text */
+/* Portrait area — full image visible */
 .team-card-image-wrap {
   width: 100%;
-  /* Square crop intentionally clips the lower text portion of flyers */
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 16 / 9;
   position: relative;
   background: #020617;
   overflow: hidden;
 }
 
 .team-card-image-wrap img {
-  object-fit: cover;
+  object-fit: cover; /* Since flyers are 16:9, cover will work nicely without letterboxing */
   object-position: center;
   transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Specialized zoom for flyer-based images to hide text */
-.team-card-image-wrap img.flyer-img {
-  object-fit: cover !important;
-  object-position: 85% 15% !important;
-  transform: scale(1.6);
-  transform-origin: 85% 20%;
-}
-
-.team-card:hover .team-card-image-wrap img:not(.flyer-img) {
-  transform: scale(1.05);
-}
-
-.team-card:hover .team-card-image-wrap img.flyer-img {
-  transform: scale(1.65);
+.team-card:hover .team-card-image-wrap img {
+  transform: scale(1.04);
 }
 
 .team-card-overlay {
@@ -525,8 +514,9 @@
 
 @media (max-width: 640px) {
   .team-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.875rem;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    max-width: 420px;
   }
 
   .team-card-image-wrap {
@@ -534,19 +524,19 @@
   }
 
   .team-card-content {
-    padding: 0.75rem 0.875rem 0.875rem;
+    padding: 1rem 1.25rem 1.25rem;
   }
 
   .team-name {
-    font-size: 0.85rem;
+    font-size: 1rem;
   }
 
   .team-role {
-    font-size: 0.75rem;
+    font-size: 0.82rem;
   }
 
   .team-action {
-    font-size: 0.75rem;
+    font-size: 0.78rem;
     padding-top: 0.5rem;
   }
 

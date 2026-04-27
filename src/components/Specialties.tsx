@@ -6,13 +6,13 @@ import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import './Specialties.css';
 
-import imagingImg from '../assets/specialties/imaging.png';
-import bracesImg from '../assets/specialties/braces_clean.png';
-import zirconiaImg from '../assets/specialties/zirconia.png';
+import imagingImg from '../assets/specialties/3d-imaging.jpg';
+import bracesImg from '../assets/specialties/braces.jpg';
+import zirconiaImg from '../assets/specialties/Zirconia.jpeg';
 import implantImg from '../assets/specialties/implant.png';
-import rootCanalImg from '../assets/specialties/rootcanal_clean.png';
-import gumCareImg from '../assets/specialties/gum_clean.png';
-import kidsCareImg from '../assets/specialties/kids_clean.png';
+import rootCanalImg from '../assets/specialties/root-canal.jpg';
+import gumCareImg from '../assets/specialties/gum-care.jpg';
+import kidsCareImg from '../assets/specialties/kids-care.jpg';
 import aestheticsImg from '../assets/specialties/aesthetic.jpeg';
 
 const clinicsBanners = [

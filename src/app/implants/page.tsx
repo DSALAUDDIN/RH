@@ -8,7 +8,7 @@ import {
   ArrowUpRight, Phone, ShieldCheck, Award, CheckCircle2,
   Sparkles, Clock, Stethoscope, Zap, Heart,
   ScanLine, Building2, FlaskConical, MessageCircle,
-  ChevronRight, HelpCircle,
+  ChevronRight, HelpCircle, Globe, User, Play, Pause, Volume2, VolumeX, Maximize
 } from 'lucide-react';
 import './implants.css';
 
@@ -16,6 +16,7 @@ import heroImg from '@/assets/implants/implant_hero.png';
 import typesImg from '@/assets/implants/implant_types.png';
 import beforeAfterImg from '@/assets/implants/implant_before_after.png';
 import facilityImg from '@/assets/implants/implant_facility.png';
+import labImg from '@/assets/implants/implant_lab.jpg';
 
 /* ── Counter ── */
 function Counter({ to, suffix = '' }: { to: number; suffix?: string }) {
@@ -48,87 +49,79 @@ function FadeIn({ children, delay = 0, className }: { children: React.ReactNode;
   );
 }
 
+/* ── Video Player ── */
+function ImplantVideo() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [muted, setMuted] = useState(true);
+  const [paused, setPaused] = useState(false);
+  const inView = useInView(videoRef, { once: false, margin: '-100px' });
+
+  useEffect(() => {
+    if (!videoRef.current) return;
+    if (inView && !paused) { videoRef.current.play().catch(() => {}); }
+    else { videoRef.current.pause(); }
+  }, [inView, paused]);
+
+  return (
+    <div className="imp-video-wrapper">
+      <video
+        ref={videoRef}
+        className="imp-video"
+        loop
+        muted={muted}
+        playsInline
+        autoPlay
+        preload="auto"
+      >
+        <source src="/implantVideo.mp4" type="video/mp4" />
+      </video>
+      <div className="imp-video-controls">
+        <button onClick={() => { setPaused(!paused); if (videoRef.current) { paused ? videoRef.current.play() : videoRef.current.pause(); } }}>
+          {paused ? <Play size={18} /> : <Pause size={18} />}
+        </button>
+        <button onClick={() => setMuted(!muted)}>
+          {muted ? <VolumeX size={18} /> : <Volume2 size={18} />}
+        </button>
+        <button onClick={() => videoRef.current?.requestFullscreen()}>
+          <Maximize size={18} />
+        </button>
+      </div>
+    </div>
+  );
+}
+
 const stagger: Variants = { hidden: {}, show: { transition: { staggerChildren: 0.09 } } };
 const fadeUp: Variants = { hidden: { opacity: 0, y: 36 }, show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] } } };
 
-/* ══ IMPLANT DATA ══ */
 const heroStats = [
   { val: 98, suf: '%', label: 'Success Rate' },
   { val: 12, suf: '+', label: 'Years Exp.' },
-  { val: 3500, suf: '+', label: 'Implants Done' },
+  { val: 1000, suf: '+', label: 'Implants Done' },
   { val: 5, suf: '', label: 'Countries Trained' },
 ];
 
-const implantTypes = [
-  {
-    title: 'Single Tooth Implant',
-    desc: 'Replace a single missing tooth with a titanium post and custom-crafted porcelain crown that blends seamlessly with your natural teeth.',
-    icon: '🦷',
-    features: ['Natural appearance', 'Preserves adjacent teeth', 'Permanent solution', 'Easy maintenance'],
-    price: '৳70,000 – 80,000',
-    priceNote: 'Includes implant + abutment + crown',
-    cardClass: 'card-1',
-    color: '#0ea5e9',
-    bg: '#e0f2fe',
-  },
-  {
-    title: 'Implant-Supported Bridge',
-    desc: 'Replace multiple missing teeth with an implant-supported bridge — no removable dentures needed. Sturdy, comfortable, and long-lasting.',
-    icon: '🌉',
-    features: ['Replace 3+ teeth', 'No bone loss', 'Fixed & stable', 'No adhesives needed'],
-    price: 'Starting ৳1,50,000',
-    priceNote: 'Varies based on number of units',
-    cardClass: 'card-2',
-    color: '#6366f1',
-    bg: '#ede9fe',
-  },
-  {
-    title: 'Full Mouth Rehabilitation',
-    desc: 'Complete restoration of all teeth using strategic implant placement. Transform your entire smile and restore full chewing function.',
-    icon: '✨',
-    features: ['Full arch restoration', 'Digital planning', 'Same-day options', 'Lifetime investment'],
-    price: '৳4,00,000 – 6,00,000',
-    priceNote: 'Per jaw – includes all implants & prosthesis',
-    cardClass: 'card-3',
-    color: '#f59e0b',
-    bg: '#fef3c7',
-  },
-];
-
-const processSteps = [
-  {
-    num: '01',
-    title: '3D Planning & Assessment',
-    desc: 'Digital CT scan for precise 3D mapping of your jawbone. Complete oral health assessment and customised treatment plan.',
-    duration: 'Day 1',
-  },
-  {
-    num: '02',
-    title: 'Implant Surgery',
-    desc: 'Minimally invasive titanium post insertion under local anesthesia. Guided surgery for maximum precision and comfort.',
-    duration: '1-2 Hours',
-  },
-  {
-    num: '03',
-    title: 'Osseointegration',
-    desc: 'Healing period where the implant fuses with your jawbone. Regular check-ups to monitor progress.',
-    duration: '3-6 Months',
-  },
-  {
-    num: '04',
-    title: 'Crown Placement',
-    desc: 'Custom-designed porcelain or zirconia crown is fabricated and permanently attached for a natural, beautiful finish.',
-    duration: 'Final Visit',
-  },
+const techFeatures = [
+  { icon: <ScanLine size={22} />, title: '3D Imaging & CBCT', desc: 'Cone Beam CT for detailed bone assessment and precise diagnosis — zero guesswork, total clarity.', color: '#0ea5e9', bg: '#e0f2fe' },
+  { icon: <Stethoscope size={22} />, title: 'Digital Implant Planning', desc: 'Predictable, customized treatment planned digitally before any surgery begins.', color: '#6366f1', bg: '#ede9fe' },
+  { icon: <Zap size={22} />, title: 'Guided Implant Surgery', desc: 'Minimally invasive, highly accurate placement using 3D-printed surgical guides.', color: '#f59e0b', bg: '#fef3c7' },
+  { icon: <FlaskConical size={22} />, title: 'Custom Abutments & Prosthetics', desc: 'Optimal fit, strength, and natural aesthetics with precision-crafted components.', color: '#10b981', bg: '#d1fae5' },
+  { icon: <Building2 size={22} />, title: 'Digital Workflow', desc: 'End-to-end digital treatment from diagnosis to final restoration for efficiency and precision.', color: '#ef4444', bg: '#fee2e2' },
+  { icon: <Award size={22} />, title: 'International Training', desc: 'Dr. Hasan trained in implantology in China, Korea & India — bringing global expertise.', color: '#8b5cf6', bg: '#ede9fe' },
 ];
 
 const benefits = [
-  { icon: <ShieldCheck size={22} />, title: 'Lifetime Durability', desc: 'Dental implants can last a lifetime with proper care — no need for repeated replacements like dentures.' },
-  { icon: <Heart size={22} />, title: 'Natural Feel & Function', desc: 'Implants feel, look, and function exactly like your natural teeth. Eat, smile, and speak with confidence.' },
-  { icon: <Zap size={22} />, title: 'Prevents Bone Loss', desc: 'Unlike bridges or dentures, implants stimulate the jawbone, preventing bone deterioration and facial changes.' },
-  { icon: <Sparkles size={22} />, title: 'Perfect Aesthetics', desc: 'Custom-crafted crowns match the exact shade, shape, and translucency of your surrounding natural teeth.' },
-  { icon: <ScanLine size={22} />, title: '3D Guided Precision', desc: 'Advanced CT scanning and digital planning ensure perfect implant positioning for optimal results.' },
-  { icon: <Award size={22} />, title: 'International Training', desc: 'Dr. Hasan trained in implantology in China, Korea, and India — bringing global expertise to your treatment.' },
+  'Long-term durability and strength',
+  'Natural look and feel',
+  'Preservation of bone and facial structure',
+  'Improved chewing function and speech',
+  'Enhanced confidence and comfort',
+];
+
+const personalizedCare = [
+  'Comprehensive clinical and radiographic evaluation',
+  'Customized treatment planning',
+  'Minimally invasive surgical protocols',
+  'Precision-crafted final restorations',
 ];
 
 const faqs = [
@@ -140,13 +133,6 @@ const faqs = [
   { q: 'How much does a dental implant cost?', a: 'Single implants start at ৳70,000-80,000 (including implant, abutment, and crown). Full mouth rehabilitation ranges from ৳4,00,000-6,00,000 per jaw.' },
 ];
 
-const facilityFeatures = [
-  { icon: <ScanLine size={20} />, title: '3D CBCT Scanner', desc: 'Precise cone beam computed tomography for accurate jawbone mapping and implant planning.' },
-  { icon: <Building2 size={20} />, title: 'Dedicated Implant OT', desc: 'Fully equipped operating theatre with hospital-grade sterilization for safe surgical procedures.' },
-  { icon: <FlaskConical size={20} />, title: 'In-House Dental Lab', desc: 'On-site laboratory for same-day prosthesis fabrication — faster turnaround and superior fit.' },
-  { icon: <Stethoscope size={20} />, title: 'Digital Workflow', desc: 'End-to-end digital treatment from diagnosis to final restoration using intraoral scanners and 3D printers.' },
-];
-
 /* ══ PAGE ══ */
 export default function ImplantsPage() {
   return (
@@ -155,55 +141,36 @@ export default function ImplantsPage() {
       {/* ═══════════════════════ HERO ═══════════════════════ */}
       <section className="imp-hero">
         <div className="imp-hero-bg">
-          <Image src={heroImg} alt="Dental Implant Surgery" fill priority quality={90} />
+          <Image src={heroImg} alt="Dental Implant Surgery at RH Dental Care" fill priority quality={90} />
         </div>
         <div className="imp-hero-overlay" />
 
         <div className="imp-hero-content">
-          <motion.div
-            initial={{ opacity: 0, y: -14 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
+          <motion.div initial={{ opacity: 0, y: -14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
             <Link href="/" style={{ color: 'rgba(255,255,255,0.5)', textDecoration: 'none', fontSize: '0.85rem', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '0.4rem', marginBottom: '1rem' }}>
               Home <ChevronRight size={12} /> <span style={{ color: 'rgba(255,255,255,0.8)' }}>Implants</span>
             </Link>
           </motion.div>
 
-          <motion.div
-            className="imp-badge"
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-          >
-            <Sparkles size={14} />
-            Advanced Implantology
+          <motion.div className="imp-badge" initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5, delay: 0.1 }}>
+            <Sparkles size={14} /> Advanced Implantology
           </motion.div>
 
-          <motion.h1
-            className="imp-hero-title"
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
+          <motion.h1 className="imp-hero-title"
+            initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           >
             Dental <span>Implants</span>
           </motion.h1>
 
-          <motion.p
-            className="imp-hero-subtitle"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+          <motion.p className="imp-hero-subtitle"
+            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Permanent, natural-feeling tooth replacement by Dr. B. M. Rafiqul Hasan Mehedi — trained in advanced implantology in China, Korea & India. 3D-guided precision surgery for predictable, lifetime results.
+            Precision, Technology &amp; Trusted Excellence. Permanent, natural-feeling tooth replacement by Dr. B.M. Rafiqul Hasan Mehedi — delivering implant dentistry at an international standard.
           </motion.p>
 
-          <motion.div
-            className="imp-hero-stats"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-          >
+          <motion.div className="imp-hero-stats" initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.6 }}>
             {heroStats.map((s, i) => (
               <div key={i} className="imp-hero-stat">
                 <span className="imp-hero-stat-val"><Counter to={s.val} suffix={s.suf} /></span>
@@ -212,28 +179,16 @@ export default function ImplantsPage() {
             ))}
           </motion.div>
 
-          <motion.div
-            className="imp-hero-cta-row"
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-          >
-            <Link href="/contact" className="imp-btn-primary">
-              Book Free Implant Consultation <ArrowUpRight size={18} />
-            </Link>
-            <a href="tel:+8801775227902" className="imp-btn-glass">
-              <Phone size={16} /> Call Now
-            </a>
+          <motion.div className="imp-hero-cta-row" initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.8 }}>
+            <Link href="/contact" className="imp-btn-primary">Book Free Consultation <ArrowUpRight size={18} /></Link>
+            <a href="tel:+8801775227902" className="imp-btn-glass"><Phone size={16} /> Call Now</a>
+            <a href="https://wa.me/8801775227902" target="_blank" rel="noopener noreferrer" className="imp-btn-glass" style={{ color: '#25D366' }}><MessageCircle size={16} /> WhatsApp</a>
           </motion.div>
         </div>
-
-        <div className="imp-scroll-indicator">
-          <span>Scroll</span>
-          <div className="imp-scroll-line" />
-        </div>
+        <div className="imp-scroll-indicator"><span>Scroll</span><div className="imp-scroll-line" /></div>
       </section>
 
-      {/* ═══════════════════════ WHAT IS AN IMPLANT ═══════════════════════ */}
+      {/* ═══════════════════════ PROVEN EXCELLENCE ═══════════════════════ */}
       <section className="imp-section imp-section-white">
         <div className="container">
           <div className="imp-what-grid">
@@ -242,36 +197,34 @@ export default function ImplantsPage() {
                 <Image src={typesImg} alt="Dental implant anatomy" fill sizes="(max-width:1024px) 100vw, 50vw" />
               </div>
             </FadeIn>
-
             <FadeIn delay={0.15}>
               <div className="imp-what-content">
-                <span className="imp-label"><Stethoscope size={14} /> Understanding Implants</span>
-                <h2>What is a <span style={{ color: '#0284c7' }}>Dental Implant?</span></h2>
-                <p>
-                  A dental implant is a small titanium post that is surgically placed into the jawbone beneath the gum line. It acts as an artificial tooth root, providing a strong, stable foundation for a replacement crown that looks and feels exactly like a natural tooth.
-                </p>
-
+                <span className="imp-label"><Award size={14} /> Proven Clinical Excellence</span>
+                <h2>A Confident Smile <span style={{ color: '#0284c7' }}>Redefined</span></h2>
+                <p>A confident smile is not just about aesthetics—it reflects health, confidence, and quality of life. At RH Dental Care, we combine extensive clinical experience, cutting-edge technology, and refined patient care to deliver implant dentistry at an international standard.</p>
+                <p>With over a <strong>thousand successful implant cases</strong>, we deliver consistent, high-quality outcomes—even in complex situations such as full-mouth rehabilitation and compromised bone conditions.</p>
                 <div className="imp-anatomy-list">
-                  {[
-                    { num: '1', title: 'Titanium Post (Fixture)', desc: 'Biocompatible titanium screw placed into the jawbone — fuses with bone through osseointegration.', bg: 'linear-gradient(135deg, #0ea5e9, #0284c7)' },
-                    { num: '2', title: 'Abutment (Connector)', desc: 'Custom connector piece that attaches to the implant post and supports the final crown.', bg: 'linear-gradient(135deg, #6366f1, #4f46e5)' },
-                    { num: '3', title: 'Crown (Prosthesis)', desc: 'A custom-crafted porcelain or zirconia crown designed to match your natural teeth perfectly.', bg: 'linear-gradient(135deg, #f59e0b, #d97706)' },
-                  ].map((item, i) => (
-                    <motion.div
-                      key={i}
-                      className="imp-anatomy-item"
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: i * 0.1 }}
-                    >
-                      <div className="imp-anatomy-icon" style={{ background: item.bg }}>{item.num}</div>
-                      <div>
-                        <div className="imp-anatomy-title">{item.title}</div>
-                        <p className="imp-anatomy-desc">{item.desc}</p>
-                      </div>
-                    </motion.div>
-                  ))}
+                  <motion.div className="imp-anatomy-item" initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0 }}>
+                    <div className="imp-anatomy-icon" style={{ background: 'linear-gradient(135deg, #0ea5e9, #0284c7)' }}>1</div>
+                    <div>
+                      <div className="imp-anatomy-title">Titanium Post (Fixture)</div>
+                      <p className="imp-anatomy-desc">Biocompatible titanium screw placed into the jawbone — fuses naturally through osseointegration.</p>
+                    </div>
+                  </motion.div>
+                  <motion.div className="imp-anatomy-item" initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>
+                    <div className="imp-anatomy-icon" style={{ background: 'linear-gradient(135deg, #6366f1, #4f46e5)' }}>2</div>
+                    <div>
+                      <div className="imp-anatomy-title">Abutment (Connector)</div>
+                      <p className="imp-anatomy-desc">Custom connector piece that attaches to the implant post and supports the final crown.</p>
+                    </div>
+                  </motion.div>
+                  <motion.div className="imp-anatomy-item" initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}>
+                    <div className="imp-anatomy-icon" style={{ background: 'linear-gradient(135deg, #f59e0b, #d97706)' }}>3</div>
+                    <div>
+                      <div className="imp-anatomy-title">Crown (Prosthesis)</div>
+                      <p className="imp-anatomy-desc">Custom-crafted porcelain or zirconia crown designed to match your natural teeth perfectly.</p>
+                    </div>
+                  </motion.div>
                 </div>
               </div>
             </FadeIn>
@@ -279,120 +232,102 @@ export default function ImplantsPage() {
         </div>
       </section>
 
-      {/* ═══════════════════════ IMPLANT TYPES ═══════════════════════ */}
+      {/* ═══════════════════════ DR. HASAN — CLINICIAN ═══════════════════════ */}
       <section className="imp-section imp-section-alt">
         <div className="container">
-          <FadeIn>
-            <div className="imp-section-header">
-              <span className="imp-label"><Sparkles size={14} /> Treatment Options</span>
-              <h2 className="imp-title">Choose Your <span className="imp-accent">Implant Solution</span></h2>
-              <p className="imp-subtitle">From single tooth replacement to complete full-mouth rehabilitation — we offer the right implant solution for every case.</p>
-            </div>
-          </FadeIn>
-
-          <motion.div className="imp-types-grid" variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true, margin: '-60px' }}>
-            {implantTypes.map((t, i) => (
-              <motion.div key={i} className={`imp-type-card ${t.cardClass}`} variants={fadeUp}>
-                <div className="imp-type-icon" style={{ background: t.bg, color: t.color }}>{t.icon}</div>
-                <div className="imp-type-title">{t.title}</div>
-                <p className="imp-type-desc">{t.desc}</p>
-                <div className="imp-type-features">
-                  {t.features.map((f, j) => (
-                    <div key={j} className="imp-type-feature">
-                      <CheckCircle2 size={14} color={t.color} />
-                      {f}
-                    </div>
+          <div className="imp-what-grid" style={{ gridTemplateColumns: '1fr 1fr' }}>
+            <FadeIn>
+              <div className="imp-what-content">
+                <span className="imp-label"><Stethoscope size={14} /> Led by an Expert</span>
+                <h2>Distinguished <span style={{ color: '#0284c7' }}>Implant Clinician</span></h2>
+                <p>Implant treatments are led by <strong>Dr. B.M. Rafiqul Hasan (Mehedi)</strong>, an experienced Oral &amp; Dental Surgeon with advanced international training in implantology.</p>
+                <p>Known for his precision, aesthetic sense, and ability to manage complex implant cases, he is widely regarded as one of the leading implant practitioners in Bangladesh. His work reflects a careful balance of scientific accuracy and artistic excellence.</p>
+                <div className="imp-gallery-checks">
+                  {['Internationally trained in China, Korea & India', 'Over 1,000 successful implant cases', 'Expert in full-mouth rehabilitation', 'Precision-guided surgical techniques', 'Results that are functional and naturally beautiful'].map((t, i) => (
+                    <div key={i} className="imp-gallery-check"><CheckCircle2 size={16} />{t}</div>
                   ))}
                 </div>
-                <div className="imp-type-price">
-                  {t.price}
-                  <span>{t.priceNote}</span>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
+              </div>
+            </FadeIn>
+            <FadeIn delay={0.15}>
+              <div className="imp-what-img">
+                <Image src={labImg} alt="RH Dental Care Implant Lab" fill sizes="(max-width:1024px) 100vw, 50vw" style={{ objectPosition: 'center' }} />
+              </div>
+            </FadeIn>
+          </div>
         </div>
       </section>
 
-      {/* ═══════════════════════ PROCESS ═══════════════════════ */}
-      <section className="imp-section imp-section-white">
-        <div className="container">
-          <FadeIn>
-            <div className="imp-section-header">
-              <span className="imp-label"><Clock size={14} /> Treatment Journey</span>
-              <h2 className="imp-title">The Implant <span className="imp-accent">Process</span></h2>
-              <p className="imp-subtitle">A step-by-step guide to your dental implant journey at RH Dental Care.</p>
-            </div>
-          </FadeIn>
-
-          <motion.div className="imp-process-grid" variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true, margin: '-60px' }}>
-            {processSteps.map((step, i) => (
-              <motion.div key={i} className="imp-process-card" variants={fadeUp}>
-                <div className="imp-process-num">{step.num}</div>
-                <div className="imp-process-title">{step.title}</div>
-                <p className="imp-process-desc">{step.desc}</p>
-                <span className="imp-process-duration">
-                  <Clock size={12} />
-                  {step.duration}
-                </span>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* ═══════════════════════ BENEFITS ═══════════════════════ */}
+      {/* ═══════════════════════ TECHNOLOGY ═══════════════════════ */}
       <section className="imp-section imp-section-light">
         <div className="container">
           <FadeIn>
             <div className="imp-section-header">
-              <span className="imp-label"><Heart size={14} /> Why Choose Implants</span>
-              <h2 className="imp-title">Benefits of <span className="imp-accent">Dental Implants</span></h2>
-              <p className="imp-subtitle">Why dental implants are the gold standard for tooth replacement worldwide.</p>
+              <span className="imp-label"><Zap size={14} /> Technology-Driven</span>
+              <h2 className="imp-title">Advanced Technology for <span className="imp-accent">Superior Results</span></h2>
+              <p className="imp-subtitle">Implant dentistry driven by modern technology to enhance accuracy, safety, and outcomes — meeting and exceeding global standards.</p>
             </div>
           </FadeIn>
-
-          <motion.div className="imp-benefits-grid" variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true, margin: '-60px' }}>
-            {benefits.map((b, i) => (
-              <motion.div key={i} className="imp-benefit-card" variants={fadeUp}>
-                <div className="imp-benefit-icon">{b.icon}</div>
-                <div className="imp-benefit-title">{b.title}</div>
-                <p className="imp-benefit-desc">{b.desc}</p>
+          <motion.div className="imp-types-grid" variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true, margin: '-60px' }}>
+            {techFeatures.map((t, i) => (
+              <motion.div key={i} className="imp-type-card" style={{ borderTop: `4px solid ${t.color}` }} variants={fadeUp}>
+                <div className="imp-type-icon" style={{ background: t.bg, color: t.color }}>{t.icon}</div>
+                <div className="imp-type-title">{t.title}</div>
+                <p className="imp-type-desc">{t.desc}</p>
               </motion.div>
             ))}
           </motion.div>
         </div>
       </section>
 
-      {/* ═══════════════════════ BEFORE / AFTER ═══════════════════════ */}
-      <section className="imp-section imp-section-white">
+      {/* ═══════════════════════ VIDEO SECTION — HIGHLIGHTED ═══════════════════════ */}
+      <section className="imp-video-section">
+        <div className="imp-video-orb imp-video-orb-1" />
+        <div className="imp-video-orb imp-video-orb-2" />
+        <div className="container">
+          <FadeIn>
+            <div className="imp-section-header" style={{ color: '#fff' }}>
+              <span className="imp-label" style={{ background: 'rgba(14,165,233,0.15)', borderColor: 'rgba(14,165,233,0.3)', color: '#38bdf8' }}><Play size={14} /> Experience Our Clinic</span>
+              <h2 className="imp-title" style={{ color: '#f1f5f9' }}>See Where <span style={{ background: 'linear-gradient(135deg, #38bdf8, #818cf8)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>Precision Happens</span></h2>
+              <p className="imp-subtitle" style={{ color: 'rgba(203,213,225,0.8)' }}>Take a virtual tour of our world-class implant facility — purpose-built for advanced surgery with hospital-grade sterilization and digital workflow.</p>
+            </div>
+          </FadeIn>
+          <FadeIn delay={0.15}>
+            <ImplantVideo />
+          </FadeIn>
+          <FadeIn delay={0.25}>
+            <div className="imp-video-badges">
+              {[
+                { icon: <ShieldCheck size={16} />, text: 'Hospital-Grade Sterilization' },
+                { icon: <Award size={16} />, text: '3D-Guided Surgery Suite' },
+                { icon: <Zap size={16} />, text: 'Digital Implant Workflow' },
+              ].map((b, i) => (
+                <div key={i} className="imp-video-badge-item">
+                  {b.icon} <span>{b.text}</span>
+                </div>
+              ))}
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* ═══════════════════════ GOLD STANDARD ═══════════════════════ */}
+      <section className="imp-section imp-section-alt">
         <div className="container">
           <div className="imp-gallery-grid">
             <FadeIn>
               <div className="imp-gallery-img">
-                <Image src={beforeAfterImg} alt="Dental implant results" fill sizes="(max-width:1024px) 100vw, 50vw" />
+                <Image src={beforeAfterImg} alt="Implant smile transformations" fill sizes="(max-width:1024px) 100vw, 50vw" />
               </div>
             </FadeIn>
-
             <FadeIn delay={0.15}>
               <div className="imp-gallery-content">
-                <span className="imp-label"><Award size={14} /> Proven Results</span>
-                <h2>Smile Transformations with <span style={{ color: '#0284c7' }}>Implants</span></h2>
-                <p>
-                  Our patients regain full confidence with dental implants that are virtually indistinguishable from natural teeth. Every case is planned with 3D precision and executed with meticulous care.
-                </p>
+                <span className="imp-label"><Heart size={14} /> The Gold Standard</span>
+                <h2>Complete Restoration of <span style={{ color: '#0284c7' }}>Oral Harmony</span></h2>
+                <p>A dental implant is a biocompatible titanium fixture placed into the jawbone, where it integrates naturally to form a stable foundation. Dental implants are not just a replacement—they are a complete restoration.</p>
                 <div className="imp-gallery-checks">
-                  {[
-                    'Natural-looking porcelain & zirconia crowns',
-                    'Custom shade-matching for seamless results',
-                    '3D-guided placement for perfect positioning',
-                    'Same-day implant & temporary tooth options',
-                    'Proven long-term success with regular follow-ups',
-                  ].map((text, i) => (
-                    <div key={i} className="imp-gallery-check">
-                      <CheckCircle2 size={16} />
-                      {text}
-                    </div>
+                  {benefits.map((text, i) => (
+                    <div key={i} className="imp-gallery-check"><CheckCircle2 size={16} />{text}</div>
                   ))}
                 </div>
               </div>
@@ -401,44 +336,43 @@ export default function ImplantsPage() {
         </div>
       </section>
 
-      {/* ═══════════════════════ FACILITY ═══════════════════════ */}
-      <section className="imp-section imp-section-light">
+      {/* ═══════════════════════ PERSONALIZED CARE ═══════════════════════ */}
+      <section className="imp-section imp-section-white">
         <div className="container">
-          <div className="imp-facility-grid">
-            <FadeIn delay={0.1}>
-              <div>
-                <span className="imp-label"><Building2 size={14} /> Our Facility</span>
-                <h2 style={{ fontSize: 'clamp(1.8rem, 3.5vw, 2.5rem)', fontWeight: 900, color: '#0f172a', marginBottom: '1.5rem', letterSpacing: '-0.03em' }}>
-                  World-Class <span style={{ color: '#0284c7' }}>Implant Centre</span>
-                </h2>
-                <p style={{ fontSize: '1.05rem', color: '#475569', lineHeight: 1.85, marginBottom: '2rem' }}>
-                  Our 3,500 sq.ft facility is purpose-built for advanced implant surgery, housing dedicated operating rooms, a 3D scanner, in-house lab, and full digital workflow.
-                </p>
-
-                <div className="imp-facility-features">
-                  {facilityFeatures.map((f, i) => (
-                    <motion.div
-                      key={i}
-                      className="imp-facility-feature"
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: i * 0.08 }}
-                    >
-                      <div className="imp-facility-feature-icon">{f.icon}</div>
-                      <div>
-                        <div className="imp-facility-feature-title">{f.title}</div>
-                        <p className="imp-facility-feature-desc">{f.desc}</p>
-                      </div>
-                    </motion.div>
+          <div className="imp-what-grid" style={{ gridTemplateColumns: '1fr 1fr' }}>
+            <FadeIn>
+              <div className="imp-what-content">
+                <span className="imp-label"><ShieldCheck size={14} /> Personalized Care</span>
+                <h2>No Two Smiles <span style={{ color: '#0284c7' }}>Treated the Same</span></h2>
+                <p>Every treatment is tailored based on individual needs, ensuring optimal results. Each smile is designed with care, detail, and long-term vision.</p>
+                <div className="imp-gallery-checks">
+                  {personalizedCare.map((t, i) => (
+                    <div key={i} className="imp-gallery-check"><CheckCircle2 size={16} />{t}</div>
                   ))}
                 </div>
               </div>
             </FadeIn>
-
-            <FadeIn delay={0.2}>
-              <div className="imp-facility-img">
-                <Image src={facilityImg} alt="RH Dental Care implant facility" fill sizes="(max-width:1024px) 100vw, 50vw" />
+            <FadeIn delay={0.15}>
+              <div className="imp-what-content">
+                <span className="imp-label"><Globe size={14} /> Local & International</span>
+                <h2>Seamless <span style={{ color: '#0284c7' }}>Patient Experience</span></h2>
+                <p>We provide a seamless experience for both local and international patients — convenience without compromising clinical excellence.</p>
+                <div className="imp-anatomy-list">
+                  <div className="imp-anatomy-item">
+                    <div className="imp-anatomy-icon" style={{ background: 'linear-gradient(135deg, #10b981, #059669)' }}><User size={18} /></div>
+                    <div>
+                      <div className="imp-anatomy-title">Local Patients</div>
+                      <p className="imp-anatomy-desc">Continuous care and easy follow-up with your dedicated treatment team.</p>
+                    </div>
+                  </div>
+                  <div className="imp-anatomy-item">
+                    <div className="imp-anatomy-icon" style={{ background: 'linear-gradient(135deg, #0ea5e9, #0284c7)' }}><Globe size={18} /></div>
+                    <div>
+                      <div className="imp-anatomy-title">International Patients</div>
+                      <p className="imp-anatomy-desc">Online consultation, transparent timelines, efficient scheduling & remote follow-up.</p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </FadeIn>
           </div>
@@ -446,7 +380,7 @@ export default function ImplantsPage() {
       </section>
 
       {/* ═══════════════════════ FAQ ═══════════════════════ */}
-      <section className="imp-section imp-section-alt">
+      <section className="imp-section imp-section-light">
         <div className="container">
           <FadeIn>
             <div className="imp-section-header">
@@ -455,14 +389,10 @@ export default function ImplantsPage() {
               <p className="imp-subtitle">Answers to the most frequently asked questions about dental implants.</p>
             </div>
           </FadeIn>
-
           <motion.div className="imp-faq-grid" variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true, margin: '-60px' }}>
             {faqs.map((faq, i) => (
               <motion.div key={i} className="imp-faq-card" variants={fadeUp}>
-                <div className="imp-faq-q">
-                  <HelpCircle size={16} />
-                  {faq.q}
-                </div>
+                <div className="imp-faq-q"><HelpCircle size={16} />{faq.q}</div>
                 <p className="imp-faq-a">{faq.a}</p>
               </motion.div>
             ))}
@@ -473,43 +403,25 @@ export default function ImplantsPage() {
       {/* ═══════════════════════ CTA ═══════════════════════ */}
       <section className="imp-cta">
         <div className="imp-cta-orb" />
+        <div className="imp-cta-orb" style={{ top: 'auto', bottom: -120, left: -80, right: 'auto', background: 'radial-gradient(circle, rgba(129,140,248,0.1), transparent 70%)' }} />
         <div className="container">
           <FadeIn>
             <div className="imp-cta-inner">
-              <div className="imp-badge" style={{ margin: '0 auto 1.5rem' }}>
-                <Sparkles size={14} />
-                Start Your Implant Journey
-              </div>
+              <div className="imp-badge" style={{ margin: '0 auto 1.5rem' }}><Sparkles size={14} /> Start Your Implant Journey</div>
               <h2 className="imp-cta-title">
                 Ready to Restore Your{' '}
-                <span style={{ background: 'linear-gradient(135deg, #38bdf8, #818cf8)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
-                  Perfect Smile?
-                </span>
+                <span style={{ background: 'linear-gradient(135deg, #38bdf8, #818cf8)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>Perfect Smile?</span>
               </h2>
-              <p className="imp-cta-sub">
-                Book a free implant consultation with Dr. B. M. Rafiqul Hasan Mehedi. Get a 3D scan, personalised treatment plan, and transparent pricing — all with zero obligation.
-              </p>
+              <p className="imp-cta-sub">Take the first step toward restoring your smile with confidence. Contact us today for a personalized consultation and discover how advanced implant dentistry can redefine your life.</p>
               <div className="imp-cta-btns">
-                <Link href="/contact" className="imp-btn-primary">
-                  Book Free Consultation <ArrowUpRight size={18} />
-                </Link>
-                <a href="tel:+8801775227902" className="imp-btn-glass">
-                  <Phone size={16} /> Call Now
-                </a>
-                <a href="https://wa.me/8801775227902" target="_blank" rel="noopener noreferrer" className="imp-btn-glass" style={{ color: '#25D366' }}>
-                  <MessageCircle size={16} /> WhatsApp
-                </a>
+                <Link href="/contact" className="imp-btn-primary">Book Free Consultation <ArrowUpRight size={18} /></Link>
+                <a href="tel:+8801775227902" className="imp-btn-glass"><Phone size={16} /> Call Now</a>
+                <a href="https://wa.me/8801775227902" target="_blank" rel="noopener noreferrer" className="imp-btn-glass" style={{ color: '#25D366' }}><MessageCircle size={16} /> WhatsApp</a>
               </div>
               <div style={{ marginTop: '2.5rem', display: 'flex', gap: '2rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'rgba(255,255,255,0.6)', fontSize: '0.85rem', fontWeight: 600 }}>
-                  <CheckCircle2 size={14} color="#16a34a" /> Pain-Free Guarantee
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'rgba(255,255,255,0.6)', fontSize: '0.85rem', fontWeight: 600 }}>
-                  <Award size={14} color="#38bdf8" /> BMDC 5169
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'rgba(255,255,255,0.6)', fontSize: '0.85rem', fontWeight: 600 }}>
-                  <ShieldCheck size={14} color="#818cf8" /> 98% Success Rate
-                </div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'rgba(255,255,255,0.6)', fontSize: '0.85rem', fontWeight: 600 }}><CheckCircle2 size={14} color="#16a34a" /> Pain-Free Guarantee</div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'rgba(255,255,255,0.6)', fontSize: '0.85rem', fontWeight: 600 }}><Award size={14} color="#38bdf8" /> BMDC 5169</div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'rgba(255,255,255,0.6)', fontSize: '0.85rem', fontWeight: 600 }}><ShieldCheck size={14} color="#818cf8" /> 98% Success Rate</div>
               </div>
             </div>
           </FadeIn>

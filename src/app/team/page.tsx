@@ -7,10 +7,10 @@ import { Sparkles, ArrowUpRight, X, Users, Award, ShieldCheck, Briefcase, Downlo
 import './team.css';
 
 /* ── Asset Imports ── */
-import imgMehedi from '../../assets/Doctor_List/Mehedi.jpeg';
-import imgMehediClean from '../../assets/doctors/mehedi_clean.jpeg';
-import imgShimia from '../../assets/Doctor_List/shimia_flyer.jpeg';
-import imgShimiaClean from '../../assets/doctors/shimia_clean.jpeg';
+import imgMehediFlyer from '../../assets/Doctor_List/Mehedi.jpeg';
+import imgMehedi from '../../assets/doctors/mehedi_clean.jpeg';
+import imgShimiaFlyer from '../../assets/Doctor_List/shimia_flyer.jpeg';
+import imgShimia from '../../assets/doctors/shimia_clean.jpeg';
 import imgAfzal from '../../assets/Doctor_List/Afzal.jpeg';
 import imgTamima from '../../assets/Doctor_List/Tamima.jpeg';
 import imgTamanna from '../../assets/Doctor_List/Tamanna.jpeg';
@@ -28,83 +28,74 @@ const teamMembers = [
     designation: 'Managing Director & Chief Consultant',
     role: 'Oral & Maxillofacial Surgeon',
     badge: 'Managing Director',
-    imgPosition: 'center 5%',
     img: imgMehedi,
-    cleanImg: imgMehediClean,
-    isFlyer: true,
+    flyerImg: imgMehediFlyer,
     credentials: ['BDS — Sapporo Dental College (DU)', 'MPH — City University', 'PGT (OMS & Prosthodontics) — BSM Medical University', 'Advanced Implantology Training: China, Korea & India', 'MICD Training — Nepal'],
     bmdc: '5169',
-    bio: 'Founder and Managing Director of RH Dental Care. A pioneer in digital treatment planning and 3D-guided implant surgery with 12+ years of experience in complex full mouth rehabilitation. Since 2014, he has been serving as a Senior Lecturer at Saphena Women’s Dental College and MH Samorita Medical College & Hospital, contributing to the development of future dental professionals. He is also currently practicing as a Senior Oral & Dental Surgeon at Labaid Dental Clinic, Gulshan, further extending his commitment to high-quality patient care.',
+    bio: 'Founder and Managing Director of RH Dental Care. A pioneer in digital treatment planning and 3D-guided implant surgery with 12+ years of experience in complex full mouth rehabilitation. Since 2014, he has been serving as a Senior Lecturer at Saphena Women\'s Dental College and MH Samorita Medical College & Hospital, contributing to the development of future dental professionals. He is also currently practicing as a Senior Oral & Dental Surgeon at Labaid Dental Clinic, Gulshan, further extending his commitment to high-quality patient care.',
   },
   {
     name: 'Dr. Shimia Binte Taher',
     designation: 'Team Lead & Senior Doctor',
     role: 'Microscopic Endodontics & Aesthetic Dentistry',
     badge: 'Team Lead',
-    imgPosition: '72% 15%',
     img: imgShimia,
-    cleanImg: imgShimiaClean,
-    isFlyer: true,
+    flyerImg: imgShimiaFlyer,
     credentials: ['BDS — Pioneer Dental College', 'PGT (Oral & Maxillofacial Surgery) — Dhaka Medical College'],
     bmdc: '8496',
-    bio: 'A highly accomplished dental professional who combines clinical excellence with compassionate care. She leads the team with professionalism and is especially dedicated to female-oriented dental care, ensuring a respectful and comfortable environment for all patients.',
+    bio: 'Dr. Shimia Binte Taher is a highly experienced Senior Consultant Oral & Dental Surgeon with advanced clinical expertise and strong academic involvement in dental education. She is known for her precise treatment planning, calm clinical approach, and ability to manage complex and critical dental cases with confidence.\n\nWith a special focus on endodontics, prosthodontics, minor oral surgical procedures, cosmetic dental treatments, and advanced case management, she delivers comprehensive care tailored to both functional and aesthetic needs. Her experience as a senior lecturer at MH Samorita Medical College & Dental Unit further reflects her dedication to academic excellence and evidence-based dentistry.\n\nShe is committed to providing safe, high-quality, and patient-centered dental care, ensuring comfort and trust throughout every stage of treatment.',
   },
   {
     name: 'Dr. Afzal Chowdhury',
     designation: 'Consultant — Oral Surgery',
     role: 'Oral & Dental Surgeon',
     badge: 'Oral Surgery',
-    imgPosition: '72% 15%',
     img: imgAfzal,
-    isFlyer: true,
+    flyerImg: imgAfzal,
     credentials: ['BDS', 'PGT (Oral Surgery)'],
     bmdc: 'Registered',
-    bio: 'Dedicated Oral & Dental Surgeon specialising in complex tooth extractions and minor oral surgical procedures. Committed to providing safe, pain-free surgical experiences.',
+    bio: 'Dr. Afzal Chowdhury is a promising and dedicated Oral & Dental Surgeon known for his smart clinical approach and patient-focused care. He is committed to delivering high-quality dental treatment with precision and attention to detail.\n\nHis key areas of expertise include endodontic treatment (root canal therapy), cosmetic dental build-up, and restorative dentistry, focusing on both function and aesthetics to restore natural smiles effectively.\n\nWith a caring attitude and modern clinical mindset, he ensures comfortable treatment experiences while maintaining high standards of dental care.',
   },
   {
     name: 'Dr. Mahaesa Tamima',
     designation: 'Senior Consultant — Endodontics',
     role: 'Senior Oral & Dental Surgeon',
     badge: 'Endodontics',
-    imgPosition: '72% 15%',
     img: imgTamima,
-    isFlyer: true,
+    flyerImg: imgTamima,
     credentials: ['BDS', 'PGT (Conservative Dentistry & Endodontics)'],
     bmdc: 'Registered',
-    bio: 'Senior surgeon with extensive experience in preserving natural teeth through advanced endodontic therapy and modern restorative techniques.',
+    bio: 'Dr. Mahaesa Tamima is an experienced and highly skilled Oral & Dental Surgeon with advanced training in endodontics. She is known for her strong clinical judgment, precision in diagnosis, and commitment to delivering high-quality dental care.\n\nHer areas of expertise include advanced and basic endodontic treatments (root canal therapy) and pediatric dentistry, where she provides gentle and effective care tailored to children’s needs.\n\nWith a calm, compassionate, and patient-friendly approach, she ensures a comfortable treatment experience even in complex cases. Her sharp clinical knowledge and dedication make her a trusted practitioner for both adult and pediatric patients.',
   },
   {
-    name: 'Dr. Asma Binte Faiz Tamanna',
+    name: 'Dr. Nishat Tamanna Alam',
     designation: 'Consultant — General Dentistry',
     role: 'Oral & Dental Surgeon',
     badge: 'Dental Surgeon',
-    imgPosition: '72% 15%',
     img: imgTamanna,
-    isFlyer: true,
+    flyerImg: imgTamanna,
     credentials: ['BDS', 'PGT (General Dentistry)'],
     bmdc: 'Registered',
-    bio: 'A meticulous dental surgeon focused on comprehensive general dentistry, preventive care, and delivering high-quality aesthetic restorations.',
+    bio: 'Dr. Nishat Tamanna Alam is a dedicated and compassionate dental professional known for her patient-centered approach and gentle clinical care. With a strong academic background and hands-on clinical experience, she ensures that every patient receives safe, comfortable, and effective treatment.\n\nShe has particular expertise in both surgical and non-surgical tooth extractions, along with basic endodontic procedures and pediatric dental management. Her ability to handle young patients with care and patience makes her especially trusted among families.\n\nBeyond her clinical skills, Dr. Nishat plays an important leadership role within the team, contributing to coordinated, high-quality patient care. Her calm demeanor, attention to detail, and commitment to patient comfort make her a valued and reliable clinician.',
   },
   {
     name: 'Dr. Monisha Haque Hreedy',
     designation: 'Consultant — General Dentistry',
     role: 'Oral & Dental Surgeon',
     badge: 'Dental Surgeon',
-    imgPosition: '72% 15%',
     img: imgHreedy,
-    isFlyer: true,
+    flyerImg: imgHreedy,
     credentials: ['BDS', 'PGT (General Dentistry)'],
     bmdc: 'Registered',
-    bio: 'Passionate about patient education and preventive dentistry. Provides comprehensive oral care ensuring every patient leaves with a healthy, confident smile.',
+    bio: 'Dr. Monisha Haque Hreedy is a skilled and dedicated dental surgeon committed to delivering high-quality, patient-focused dental care. With a strong academic foundation from Dhaka University and clinical experience in modern dental practice, she ensures precise and comfortable treatment for every patient.\n\nHer key areas of expertise include endodontic treatment (root canal therapy), restorative dentistry, and periodontal (gum) treatment. She is particularly focused on preserving natural teeth through minimally invasive and evidence-based approaches.\n\nKnown for her gentle behavior and attention to detail, she maintains a calm and reassuring environment for patients, ensuring a smooth and comfortable treatment experience.',
   },
   {
     name: 'Dr. Nabil Rahman',
     designation: 'Consultant — General Dentistry',
     role: 'Oral & Dental Surgeon',
     badge: 'Dental Surgeon',
-    imgPosition: '72% 15%',
     img: imgNabil,
-    isFlyer: true,
+    flyerImg: imgNabil,
     credentials: ['BDS', 'PGT (General Dentistry)'],
     bmdc: 'Registered',
     bio: 'A highly experienced senior practitioner dedicated to holistic dental care, managing everything from routine diagnostics to complex restorative procedures.',
@@ -114,58 +105,52 @@ const teamMembers = [
     designation: 'Consultant — General Dentistry',
     role: 'Oral & Dental Surgeon',
     badge: 'Dental Surgeon',
-    imgPosition: '72% 15%',
     img: imgUmaya,
-    isFlyer: true,
+    flyerImg: imgUmaya,
     credentials: ['BDS', 'PGT (General Dentistry)'],
     bmdc: 'Registered',
-    bio: 'Committed to delivering gentle and precise dental care. Specialises in routine dental treatments and ensuring a comfortable environment for anxious patients.',
+    bio: 'Dr. Umaya Khanam is a dedicated and compassionate Oral & Dental Surgeon committed to providing comfortable and patient-friendly dental care. She is known for her positive approach and caring behavior, helping patients feel at ease throughout their treatment journey.\n\nHer clinical expertise includes basic endodontic treatment (root canal therapy) and periodontal (gum) management, focusing on preserving oral health through conservative and effective treatment methods.\n\nWith a friendly attitude and strong commitment to patient care, she ensures a supportive and reassuring environment for individuals of all ages.',
   },
   {
     name: 'Dr. Mansura Panna',
     designation: 'Senior Consultant — Oral & Maxillofacial Surgery',
     role: 'Senior Oral & Dental Surgeon',
     badge: 'OMFS',
-    imgPosition: '72% 15%',
     img: imgPanna,
-    isFlyer: true,
+    flyerImg: imgPanna,
     credentials: ['BDS', 'PGT (OMFS)'],
     bmdc: 'Registered',
-    bio: 'Specialist in Oral & Maxillofacial Surgery with expertise in complex surgical extractions, jaw surgeries, and trauma management. Committed to delivering safe, precise surgical outcomes using the latest techniques.',
+    bio: 'Dr. Mansura Panna is a highly skilled Senior Oral & Dental Surgeon dedicated to delivering precise and patient-focused dental care. With strong academic training and clinical experience, she is committed to maintaining high standards in modern dentistry.\n\nHer areas of expertise include endodontic treatment (root canal therapy) and dental surgical procedures, with a focus on accurate diagnosis, effective treatment planning, and long-term oral health outcomes.\n\nKnown for her calm clinical approach and attention to detail, she ensures comfortable and reliable treatment experiences for her patients.',
   },
   {
     name: 'Dr. Jeamima Tabassum Barsha',
     designation: 'Consultant — Orthodontics',
     role: 'Oral & Dental Surgeon',
     badge: 'Aligner & Orthodontics',
-    imgPosition: '72% 15%',
     img: imgBarsha,
-    isFlyer: true,
+    flyerImg: imgBarsha,
     credentials: ['BDS', 'PGT (Orthodontics & Dentofacial Orthopedics)'],
     bmdc: 'Registered',
-    bio: 'Specialist in modern orthodontic solutions including clear aligners and traditional braces. Passionate about aligning teeth to achieve functional and perfectly straight smiles.',
+    bio: 'Dr. Jeamima Tabassum Barsha is a skilled Oral & Dental Surgeon with a focused interest in modern orthodontic and digital dental solutions. She is committed to delivering precise, patient-friendly care using contemporary techniques.\n\nHer key areas of expertise include clear aligner therapy, orthodontic treatment, and 3D intraoral scanning, enabling highly accurate diagnosis and digitally guided treatment planning for improved outcomes.\n\nWith a detail-oriented and modern clinical approach, she emphasizes comfort, aesthetics, and long-term functional stability in every treatment plan.',
   },
   {
     name: 'Dr. Fariha Ferdous',
     designation: 'Consultant — General Dentistry',
     role: 'Oral & Dental Surgeon',
     badge: 'Dental Surgeon',
-    imgPosition: '72% 15%',
     img: imgFariha,
-    isFlyer: true,
+    flyerImg: imgFariha,
     credentials: ['BDS', 'PGT (General Dentistry)'],
     bmdc: 'Registered',
-    bio: 'A dedicated professional focusing on family dentistry, scaling, polishing, and composite restorations to maintain optimal oral hygiene for all age groups.',
+    bio: 'Dr. Fariha Ferdous is a skilled and dedicated Oral & Dental Surgeon with strong clinical experience in managing complex dental cases with patience and precision. She is particularly known for her ability to handle anxious, critical, and uncooperative patients with care and confidence.\n\nHer areas of expertise include advanced endodontic treatment (root canal therapy), surgical tooth extraction, and non-surgical extraction procedures, with a strong focus on patient comfort and effective pain management.\n\nWith a calm clinical approach and strong commitment to quality care, she ensures safe, smooth, and reliable treatment outcomes for her patients.',
   },
 ];
 
 export default function TeamPage() {
   const [selectedMember, setSelectedMember] = useState<typeof teamMembers[0] | null>(null);
-  const [showFlyer, setShowFlyer] = useState(false);
 
   const handleSelectMember = (m: typeof teamMembers[0]) => {
     setSelectedMember(m);
-    setShowFlyer(false); // always start in portrait mode
   };
 
   return (
@@ -210,15 +195,14 @@ export default function TeamPage() {
                   {m.badge === 'Managing Director' && <Briefcase size={12} />}
                   {m.badge}
                 </div>
-                {m.img && (
+                {m.flyerImg && (
                   <Image
-                    src={m.img}
+                    src={m.flyerImg}
                     alt={m.name}
                     fill
                     quality={90}
-                    sizes="(max-width: 600px) 90vw, (max-width: 1024px) 45vw, 30vw"
-                    className={m.isFlyer ? 'flyer-img' : ''}
-                    style={{ objectFit: 'cover', objectPosition: m.imgPosition }}
+                    sizes="(max-width: 640px) 90vw, 50vw"
+                    style={{ objectFit: 'cover', objectPosition: 'center' }}
                   />
                 )}
                 <div className="team-card-overlay" />
@@ -256,7 +240,7 @@ export default function TeamPage() {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.8 }}
               transition={{ delay: 0.1 }}
-              onClick={() => { setSelectedMember(null); setShowFlyer(false); }}
+              onClick={() => { setSelectedMember(null); }}
               className="lightbox-close"
             >
               <X size={22} strokeWidth={2.5} />
@@ -270,30 +254,21 @@ export default function TeamPage() {
               className="lightbox-content-box"
               onClick={(e) => e.stopPropagation()}
             >
-              {/* Left: Portrait / Full Flyer */}
-              <div className={`lightbox-image-section ${showFlyer ? 'flyer-mode' : ''}`}>
-                {selectedMember.img && (
+              {/* Left: Full Flyer Area */}
+              <div className="lightbox-image-section flyer-mode">
+                {selectedMember.flyerImg && (
                   <Image
-                    src={showFlyer ? selectedMember.img : (selectedMember.cleanImg || selectedMember.img)}
+                    src={selectedMember.flyerImg}
                     alt={selectedMember.name}
                     fill
                     quality={95}
-                    className={(selectedMember.isFlyer && !showFlyer && !selectedMember.cleanImg) ? 'flyer-img' : ''}
                     style={{
-                      objectFit: showFlyer ? 'contain' : 'cover',
-                      objectPosition: showFlyer ? 'center' : (selectedMember.cleanImg ? 'center' : selectedMember.imgPosition),
-                      background: showFlyer ? '#020617' : 'transparent',
+                      objectFit: 'contain',
+                      objectPosition: 'center',
+                      background: '#020617',
                     }}
                   />
                 )}
-                {!showFlyer && <div className="lightbox-image-overlay" />}
-                {/* Toggle button */}
-                <button
-                  className="flyer-toggle-btn"
-                  onClick={(e) => { e.stopPropagation(); setShowFlyer(v => !v); }}
-                >
-                  {showFlyer ? '← Portrait' : '📄 Full Flyer'}
-                </button>
               </div>
 
               {/* Right: Details */}
@@ -342,7 +317,7 @@ export default function TeamPage() {
                     📅 Book Appointment
                   </a>
                   <a
-                    href={typeof selectedMember.img === 'string' ? selectedMember.img : selectedMember.img.src}
+                    href={((selectedMember.flyerImg || selectedMember.img) as any).src || (selectedMember.flyerImg || selectedMember.img)}
                     download={`${selectedMember.name.replace(/\s+/g, '_')}_Flyer.jpg`}
                     className="lightbox-download-btn"
                     onClick={(e) => e.stopPropagation()}

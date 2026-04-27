@@ -1,0 +1,673 @@
+/* ═══════════════════════════════════════════════════
+   Orthodontics Page — Ultra Premium Design System
+   Glassmorphism · Animated Gradients · Micro-Interactions
+   ═══════════════════════════════════════════════════ */
+
+/* ── Keyframes ── */
+@keyframes orthoFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+@keyframes orthoGlow {
+  0%, 100% { box-shadow: 0 0 20px rgba(99,102,241,0.15); }
+  50% { box-shadow: 0 0 40px rgba(99,102,241,0.25); }
+}
+@keyframes orthoShine {
+  0% { left: -100%; }
+  100% { left: 200%; }
+}
+@keyframes orthoPulse {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.05); }
+}
+@keyframes orthoGradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ── Hero ── */
+.ortho-hero { background: #020617; }
+.ortho-overlay {
+  background:
+    linear-gradient(180deg, rgba(2,6,23,0.6) 0%, rgba(2,6,23,0.35) 40%, rgba(2,6,23,0.9) 100%),
+    radial-gradient(ellipse at 30% 20%, rgba(99,102,241,0.2) 0%, transparent 60%),
+    radial-gradient(ellipse at 70% 80%, rgba(139,92,246,0.1) 0%, transparent 50%);
+}
+
+.ortho-badge {
+  background: rgba(99,102,241,0.12) !important;
+  border-color: rgba(99,102,241,0.25) !important;
+  color: #a5b4fc !important;
+  animation: orthoPulse 3s ease-in-out infinite;
+}
+
+/* Breadcrumb */
+.ortho-breadcrumb {
+  color: rgba(255,255,255,0.45);
+  text-decoration: none;
+  font-size: 0.82rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 1.2rem;
+  transition: color 0.3s ease;
+}
+.ortho-breadcrumb:hover { color: rgba(255,255,255,0.7); }
+.ortho-breadcrumb span { color: rgba(255,255,255,0.65); }
+.ortho-breadcrumb-active { color: #a5b4fc !important; }
+
+/* ── Hero Stat Pills — Glassmorphic ── */
+.ortho-hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: 2.5rem 0;
+}
+.ortho-stat-pill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 1.25rem;
+  padding: 1rem 1.6rem;
+  backdrop-filter: blur(16px);
+  min-width: 100px;
+  transition: all 0.4s cubic-bezier(0.16,1,0.3,1);
+  position: relative;
+  overflow: hidden;
+}
+.ortho-stat-pill::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(99,102,241,0.08) 0%, transparent 50%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.ortho-stat-pill:hover::before { opacity: 1; }
+.ortho-stat-pill:hover {
+  background: rgba(99,102,241,0.08);
+  border-color: rgba(99,102,241,0.25);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(99,102,241,0.15);
+}
+.ortho-stat-val {
+  font-size: 1.75rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, #a5b4fc, #c4b5fd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+  position: relative;
+  z-index: 1;
+}
+.ortho-stat-label {
+  font-size: 0.68rem;
+  color: rgba(148,163,184,0.75);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-top: 0.4rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* ═══════════════════════ PHILOSOPHY STRIP ═══════════════════════ */
+.ortho-philosophy {
+  background: linear-gradient(135deg, #eef2ff 0%, #f5f3ff 50%, #fdf4ff 100%);
+  border-bottom: 1px solid rgba(99,102,241,0.06);
+  padding: 3.5rem 0;
+  position: relative;
+  overflow: hidden;
+}
+.ortho-philosophy::before {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(99,102,241,0.06), transparent 70%);
+  top: -100px;
+  right: -50px;
+  pointer-events: none;
+}
+.ortho-philosophy-inner {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.75rem;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  position: relative;
+}
+.ortho-philosophy-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  color: #fff;
+  flex-shrink: 0;
+  box-shadow: 0 8px 24px rgba(99,102,241,0.3);
+  animation: orthoFloat 6s ease-in-out infinite;
+}
+.ortho-philosophy-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #1e1b4b;
+  margin-bottom: 0.6rem;
+  letter-spacing: -0.01em;
+}
+.ortho-philosophy-text {
+  font-size: 0.95rem;
+  color: #4b5563;
+  line-height: 1.85;
+  margin: 0;
+}
+
+/* ═══════════════════════ SPLIT OPTION CARDS ═══════════════════════ */
+.ortho-split-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 0.5rem;
+}
+
+.ortho-option-card {
+  border-radius: 2rem;
+  padding: 2.5rem;
+  border: 1.5px solid transparent;
+  transition: all 0.5s cubic-bezier(0.16,1,0.3,1);
+  position: relative;
+  overflow: hidden;
+}
+/* Shine sweep on hover */
+.ortho-option-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent);
+  transition: none;
+  pointer-events: none;
+}
+.ortho-option-card:hover::after {
+  animation: orthoShine 0.8s ease-out forwards;
+}
+.ortho-option-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 32px 80px rgba(0,0,0,0.12);
+}
+
+/* Braces card */
+.ortho-braces-card {
+  background: linear-gradient(155deg, #f0f9ff 0%, #ffffff 60%, #e0f2fe 100%);
+  border-color: rgba(14,165,233,0.12);
+  box-shadow: 0 8px 32px rgba(14,165,233,0.06);
+}
+.ortho-braces-card:hover {
+  border-color: rgba(14,165,233,0.3);
+  box-shadow: 0 32px 80px rgba(14,165,233,0.1);
+}
+
+/* Aligner card */
+.ortho-aligner-card {
+  background: linear-gradient(155deg, #faf5ff 0%, #ffffff 60%, #ede9fe 100%);
+  border-color: rgba(99,102,241,0.12);
+  box-shadow: 0 8px 32px rgba(99,102,241,0.06);
+}
+.ortho-aligner-card:hover {
+  border-color: rgba(99,102,241,0.3);
+  box-shadow: 0 32px 80px rgba(99,102,241,0.1);
+}
+
+/* Card Header */
+.ortho-card-header {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+.ortho-card-icon {
+  width: 68px;
+  height: 68px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.9rem;
+  flex-shrink: 0;
+  transition: transform 0.4s cubic-bezier(0.16,1,0.3,1);
+  position: relative;
+}
+.ortho-option-card:hover .ortho-card-icon { transform: scale(1.1) rotate(3deg); }
+
+.ortho-braces-icon {
+  background: linear-gradient(135deg, #e0f2fe, #bae6fd);
+  box-shadow: 0 6px 20px rgba(14,165,233,0.12);
+}
+.ortho-aligner-icon {
+  background: linear-gradient(135deg, #ede9fe, #ddd6fe);
+  box-shadow: 0 6px 20px rgba(99,102,241,0.12);
+}
+
+/* Card Tags */
+.ortho-card-tag {
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 0.3rem 0.9rem;
+  border-radius: 100px;
+  display: inline-block;
+  margin-bottom: 0.35rem;
+}
+.ortho-braces-tag { background: rgba(14,165,233,0.08); color: #0284c7; }
+.ortho-aligner-tag { background: rgba(99,102,241,0.08); color: #4f46e5; }
+
+.ortho-card-title {
+  font-size: 1.45rem;
+  font-weight: 900;
+  color: #0f172a;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.ortho-card-desc {
+  font-size: 0.93rem;
+  color: #475569;
+  line-height: 1.85;
+  margin-bottom: 1.75rem;
+}
+
+/* Advantage List */
+.ortho-advantages-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-bottom: 1.75rem;
+}
+.ortho-advantage-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.87rem;
+  color: #334155;
+  font-weight: 600;
+  padding: 0.35rem 0;
+  transition: transform 0.3s ease;
+}
+.ortho-advantage-item:hover { transform: translateX(4px); }
+
+.ortho-advantage-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.ortho-advantage-item:hover .ortho-advantage-icon { transform: scale(1.1); }
+
+.ortho-braces-adv-icon {
+  background: rgba(14,165,233,0.08);
+  color: #0284c7;
+}
+.ortho-braces-adv-icon:hover { box-shadow: 0 4px 12px rgba(14,165,233,0.15); }
+.ortho-aligner-adv-icon {
+  background: rgba(99,102,241,0.08);
+  color: #4f46e5;
+}
+.ortho-aligner-adv-icon:hover { box-shadow: 0 4px 12px rgba(99,102,241,0.15); }
+
+/* Best-For Box */
+.ortho-card-best-for {
+  background: linear-gradient(135deg, rgba(0,0,0,0.025), rgba(0,0,0,0.015));
+  border: 1px solid rgba(0,0,0,0.04);
+  border-radius: 1rem;
+  padding: 1.15rem 1.35rem;
+  margin-bottom: 1.5rem;
+}
+.ortho-best-label {
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #94a3b8;
+  display: block;
+  margin-bottom: 0.35rem;
+}
+.ortho-card-best-for p {
+  font-size: 0.87rem;
+  color: #475569;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Card CTAs */
+.ortho-card-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 800;
+  padding: 0.9rem 1.85rem;
+  border-radius: 100px;
+  text-decoration: none;
+  transition: all 0.35s cubic-bezier(0.16,1,0.3,1);
+  position: relative;
+  overflow: hidden;
+}
+.ortho-card-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(255,255,255,0.2), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.ortho-card-cta:hover::before { opacity: 1; }
+
+.ortho-braces-cta {
+  background: linear-gradient(135deg, #0ea5e9, #0284c7);
+  color: #fff;
+  box-shadow: 0 8px 28px rgba(14,165,233,0.3);
+}
+.ortho-braces-cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 40px rgba(14,165,233,0.4);
+}
+
+.ortho-aligner-cta {
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  color: #fff;
+  box-shadow: 0 8px 28px rgba(99,102,241,0.3);
+}
+.ortho-aligner-cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 40px rgba(99,102,241,0.4);
+}
+
+/* ── Image Badge ── */
+.ortho-img-badge {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(16px);
+  border-radius: 100px;
+  padding: 0.55rem 1.3rem;
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: #4f46e5;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.12);
+  z-index: 2;
+  border: 1px solid rgba(99,102,241,0.1);
+  animation: orthoPulse 4s ease-in-out infinite;
+}
+
+/* ═══════════════════════ WHY RH DENTAL ═══════════════════════ */
+.ortho-why-section {
+  background: linear-gradient(180deg, #f8faff 0%, #fff 50%, #faf8ff 100%);
+  position: relative;
+  overflow: hidden;
+}
+.ortho-why-section::before {
+  content: '';
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(99,102,241,0.04), transparent 70%);
+  bottom: -200px;
+  left: -100px;
+  pointer-events: none;
+}
+
+.ortho-why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+}
+.ortho-why-card {
+  background: #fff;
+  border-radius: 1.5rem;
+  padding: 2.25rem;
+  border: 1px solid rgba(0,0,0,0.04);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.02);
+  transition: all 0.45s cubic-bezier(0.16,1,0.3,1);
+  position: relative;
+  overflow: hidden;
+}
+.ortho-why-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, rgba(99,102,241,0.2), transparent);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.ortho-why-card:hover::after { opacity: 1; }
+.ortho-why-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 60px rgba(0,0,0,0.08);
+  border-color: rgba(99,102,241,0.1);
+}
+
+.ortho-why-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  transition: all 0.4s cubic-bezier(0.16,1,0.3,1);
+}
+.ortho-why-card:hover .ortho-why-icon {
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.ortho-why-title {
+  font-size: 1.08rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 0.6rem;
+  letter-spacing: -0.01em;
+}
+.ortho-why-desc {
+  font-size: 0.87rem;
+  color: #64748b;
+  line-height: 1.75;
+  margin: 0;
+}
+
+/* ═══════════════════════ FAQ ACCORDION ═══════════════════════ */
+.ortho-faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.ortho-faq-item {
+  background: #fff;
+  border: 1.5px solid rgba(0,0,0,0.06);
+  border-radius: 1.25rem;
+  overflow: hidden;
+  transition: all 0.35s cubic-bezier(0.16,1,0.3,1);
+}
+.ortho-faq-item:hover {
+  border-color: rgba(99,102,241,0.12);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.03);
+}
+.ortho-faq-item.open {
+  border-color: rgba(99,102,241,0.25);
+  box-shadow: 0 12px 36px rgba(99,102,241,0.08);
+  background: linear-gradient(180deg, #faf8ff, #fff);
+}
+
+.ortho-faq-q {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-size: 0.97rem;
+  font-weight: 700;
+  color: #0f172a;
+  font-family: inherit;
+  transition: color 0.3s ease;
+}
+.ortho-faq-q:hover { color: #4f46e5; }
+
+.ortho-faq-icon {
+  flex-shrink: 0;
+  color: #94a3b8;
+  transition: all 0.35s cubic-bezier(0.16,1,0.3,1);
+}
+.ortho-faq-item.open .ortho-faq-icon {
+  transform: rotate(180deg);
+  color: #6366f1;
+}
+
+.ortho-faq-a { padding: 0 1.5rem 1.35rem; }
+.ortho-faq-a p {
+  font-size: 0.9rem;
+  color: #64748b;
+  line-height: 1.85;
+  margin: 0;
+}
+
+/* ═══════════════════════ PORTRAIT VIDEO SECTION ═══════════════════════ */
+@keyframes orthoVidOrb {
+  0%, 100% { transform: translate(0,0) scale(1); }
+  50% { transform: translate(-20px, 15px) scale(1.08); }
+}
+@keyframes orthoVidGlow {
+  0%, 100% { box-shadow: 0 0 30px rgba(99,102,241,0.12), 0 24px 60px rgba(0,0,0,0.3); }
+  50% { box-shadow: 0 0 50px rgba(99,102,241,0.2), 0 24px 60px rgba(0,0,0,0.4); }
+}
+
+.ortho-video-section {
+  padding: 7rem 0;
+  background: linear-gradient(135deg, #020617 0%, #1e1b4b 50%, #020617 100%);
+  position: relative;
+  overflow: hidden;
+}
+.ortho-vid-orb {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+.ortho-vid-orb-1 {
+  width: 450px; height: 450px;
+  background: radial-gradient(circle, rgba(99,102,241,0.1), transparent 70%);
+  top: -160px; right: -80px;
+  animation: orthoVidOrb 12s ease-in-out infinite;
+}
+.ortho-vid-orb-2 {
+  width: 350px; height: 350px;
+  background: radial-gradient(circle, rgba(129,140,248,0.06), transparent 70%);
+  bottom: -120px; left: -60px;
+  animation: orthoVidOrb 15s ease-in-out infinite reverse;
+}
+
+.ortho-video-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 380px;
+  margin: 0 auto;
+  border-radius: 1.75rem;
+  overflow: hidden;
+  background: #000;
+  aspect-ratio: 9/16;
+  border: 1.5px solid rgba(99,102,241,0.15);
+  animation: orthoVidGlow 5s ease-in-out infinite;
+}
+.ortho-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.ortho-video-controls {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.65rem 1rem;
+  background: linear-gradient(180deg, transparent, rgba(0,0,0,0.6));
+  z-index: 3;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.ortho-video-wrapper:hover .ortho-video-controls { opacity: 1; }
+.ortho-video-controls button {
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: #fff;
+  border-radius: 50%;
+  width: 36px; height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  backdrop-filter: blur(8px);
+}
+.ortho-video-controls button:hover {
+  background: rgba(255,255,255,0.2);
+  transform: scale(1.08);
+}
+
+/* ═══════════════════════ RESPONSIVE ═══════════════════════ */
+@media (max-width: 1024px) {
+  .ortho-split-grid { grid-template-columns: 1fr; }
+  .ortho-why-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 768px) {
+  .ortho-philosophy-inner { flex-direction: column; align-items: center; text-align: center; }
+  .ortho-why-grid { grid-template-columns: 1fr; }
+  .ortho-hero-stats { gap: 0.6rem; }
+  .ortho-stat-pill { min-width: 78px; padding: 0.75rem 1.1rem; }
+  .ortho-stat-val { font-size: 1.4rem; }
+  .ortho-option-card { padding: 2rem; }
+  .ortho-card-title { font-size: 1.25rem; }
+  .ortho-video-wrapper { max-width: 300px; }
+  .ortho-video-controls { opacity: 1; }
+  .ortho-video-section { padding: 5rem 0; }
+}
+@media (max-width: 480px) {
+  .ortho-stat-pill { min-width: 68px; padding: 0.6rem 0.8rem; }
+  .ortho-stat-val { font-size: 1.2rem; }
+  .ortho-card-header { gap: 1rem; }
+  .ortho-card-icon { width: 56px; height: 56px; font-size: 1.5rem; }
+  .ortho-video-wrapper { max-width: 260px; }
+}
