@@ -73,7 +73,7 @@ function ImplantVideo() {
         autoPlay
         preload="auto"
       >
-        <source src="/implantVideo.mp4" type="video/mp4" />
+        <source src="https://res.cloudinary.com/dxrcufs8f/video/upload/v1777313555/implantVideo_bzruai.mp4" type="video/mp4" />
       </video>
       <div className="imp-video-controls">
         <button onClick={() => { setPaused(!paused); if (videoRef.current) { paused ? videoRef.current.play() : videoRef.current.pause(); } }}>

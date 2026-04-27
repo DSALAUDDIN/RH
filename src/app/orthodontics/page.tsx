@@ -56,8 +56,7 @@ function OrthoVideo() {
   return (
     <div className="ortho-video-wrapper">
       <video ref={videoRef} className="ortho-video" loop muted={muted} playsInline autoPlay preload="auto">
-        {/* Drop your orthodontics video into public/ as ortho_video.mp4 */}
-        <source src="/ortho_video.mp4" type="video/mp4" />
+        <source src="https://res.cloudinary.com/dxrcufs8f/video/upload/v1777313544/ortho_video_tj8vbu.mp4" type="video/mp4" />
       </video>
       <div className="ortho-video-controls">
         <button onClick={() => { setPaused(!paused); if (videoRef.current) { paused ? videoRef.current.play() : videoRef.current.pause(); } }}>

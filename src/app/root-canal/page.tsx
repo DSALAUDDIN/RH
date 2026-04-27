@@ -55,7 +55,7 @@ function RCVideo() {
   return (
     <div className="rc-video-wrapper">
       <video ref={videoRef} className="rc-video" loop muted={muted} playsInline autoPlay preload="auto">
-        <source src="/rootcanal_video.mp4" type="video/mp4" />
+        <source src="https://res.cloudinary.com/dxrcufs8f/video/upload/v1777313544/rootcanal_video_yuqzk8.mp4" type="video/mp4" />
       </video>
       <div className="rc-video-controls">
         <button onClick={() => { setPaused(!paused); if (videoRef.current) { paused ? videoRef.current.play() : videoRef.current.pause(); } }}>
