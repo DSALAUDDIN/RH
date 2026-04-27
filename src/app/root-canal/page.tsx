@@ -15,7 +15,7 @@ import '../implants/implants.css';
 import './root-canal.css';
 
 import heroImg from '@/assets/implants/implant-hero.jpg';
-import contentImg from '@/assets/specialties/root-canal-flyer.jpg';
+import contentImg from '@/assets/specialties/microscope-loupes.png';
 
 function FadeIn({ children, delay = 0, className }: { children: React.ReactNode; delay?: number; className?: string }) {
   const ref = useRef(null);
@@ -335,6 +335,32 @@ export default function RootCanalPage() {
               </div>
             </FadeIn>
           </div>
+        </div>
+      </section>
+
+      {/* ═══════════════ TECHNOLOGY FLYER ═══════════════ */}
+      <section className="imp-section" style={{ background: '#f8fafc', padding: '0 0 6rem 0' }}>
+        <div className="container">
+          <FadeIn>
+            <div style={{
+              position: 'relative',
+              width: '100%',
+              maxWidth: '1200px',
+              aspectRatio: '16/10',
+              margin: '0 auto',
+              borderRadius: '1.5rem',
+              overflow: 'hidden',
+              boxShadow: '0 25px 60px rgba(0,0,0,0.08)',
+              border: '2px solid rgba(16,185,129,0.1)'
+            }}>
+              <Image 
+                src={require('@/assets/specialties/root-canal-flyer.jpg').default} 
+                alt="Precision Root Canal Technology" 
+                fill 
+                style={{ objectFit: 'contain', background: '#fff' }} 
+              />
+            </div>
+          </FadeIn>
         </div>
       </section>
 

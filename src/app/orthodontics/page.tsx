@@ -16,6 +16,7 @@ import './orthodontics.css';
 
 import heroImg from '@/assets/implants/implant-hero.jpg';
 import bracesFlyer from '@/assets/specialties/braces_clean.png';
+import clinicActionImg from '@/assets/implants/clinic-action.jpg';
 
 function FadeIn({ children, delay = 0, className }: { children: React.ReactNode; delay?: number; className?: string }) {
   const ref = useRef(null);
@@ -223,10 +224,36 @@ export default function OrthodonticsPage() {
             </FadeIn>
             <FadeIn delay={0.15}>
               <div className="imp-what-img">
-                <Image src={bracesFlyer} alt="Orthodontic treatment options" fill sizes="(max-width:1024px) 100vw, 50vw" />
+                <Image src={clinicActionImg} alt="Orthodontic treatment options" fill sizes="(max-width:1024px) 100vw, 50vw" style={{ objectFit: 'cover' }} />
               </div>
             </FadeIn>
           </div>
+        </div>
+      </section>
+
+      {/* ═══════════════ FLYER SECTION ═══════════════ */}
+      <section className="imp-section" style={{ background: '#f8fafc', padding: '0 0 6rem 0' }}>
+        <div className="container">
+          <FadeIn>
+            <div style={{
+              position: 'relative',
+              width: '100%',
+              maxWidth: '1200px',
+              aspectRatio: '16/10',
+              margin: '0 auto',
+              borderRadius: '1.5rem',
+              overflow: 'hidden',
+              boxShadow: '0 25px 60px rgba(0,0,0,0.08)',
+              border: '2px solid rgba(99,102,241,0.1)'
+            }}>
+              <Image 
+                src={bracesFlyer} 
+                alt="Orthodontic Braces Flyer" 
+                fill 
+                style={{ objectFit: 'contain', background: '#fff' }} 
+              />
+            </div>
+          </FadeIn>
         </div>
       </section>
 
