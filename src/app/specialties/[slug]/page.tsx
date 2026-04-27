@@ -33,6 +33,7 @@ interface SpecialtyDetail {
   bannerImg: StaticImageData;
   flyerImg: StaticImageData;
   flyerFileName: string;
+  videoUrl?: string;
   description: string;
   benefits: string[];
   process: { step: string; desc: string }[];
@@ -78,6 +79,7 @@ const specialtiesData: Record<string, SpecialtyDetail> = {
     bannerImg: bracesBanner,
     flyerImg: bracesBanner,
     flyerFileName: 'RH-Dental-Orthodontics.png',
+    videoUrl: 'https://res.cloudinary.com/dxrcufs8f/video/upload/v1777313544/ortho_video_tj8vbu.mp4',
     description: 'Achieve the perfectly aligned smile you have always dreamed of. We offer both traditional precision braces and modern, nearly invisible clear aligners tailored to your lifestyle, delivering beautiful results with maximum comfort.',
     benefits: [
       'Corrects crooked teeth and bite issues',
@@ -132,6 +134,7 @@ const specialtiesData: Record<string, SpecialtyDetail> = {
     bannerImg: implantImg,
     flyerImg: implantImg,
     flyerFileName: 'RH-Dental-Implants.png',
+    videoUrl: 'https://res.cloudinary.com/dxrcufs8f/video/upload/v1777313555/implantVideo_bzruai.mp4',
     description: 'Restore your smile permanently with precision-guided dental implants. Our advanced surgical techniques and premium materials ensure successful integration, giving you teeth that look, feel, and function naturally.',
     benefits: [
       'Permanent tooth replacement solution',
@@ -159,6 +162,7 @@ const specialtiesData: Record<string, SpecialtyDetail> = {
     bannerImg: rootCanalBanner,
     flyerImg: rootCanalBanner,
     flyerFileName: 'RH-Dental-RootCanal.png',
+    videoUrl: 'https://res.cloudinary.com/dxrcufs8f/video/upload/v1777313544/rootcanal_video_yuqzk8.mp4',
     description: 'Save your natural tooth with our advanced endodontic care. Using dental microscopes and modern techniques, we make root canal therapy completely comfortable while preserving your tooth for decades to come.',
     benefits: [
       'Completely painless with advanced anesthesia',
@@ -1057,7 +1061,45 @@ export default function SpecialtyDetailPage() {
             </div>
           </motion.div>
 
-          {/* ── CTA Section ── */}
+        {/* ── Highlighted Video Section (if available) ── */}
+        {specialty.videoUrl && (
+          <div style={{
+            marginBottom: '6rem',
+          }}>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+              style={{
+                borderRadius: '1.5rem',
+                overflow: 'hidden',
+                boxShadow: '0 30px 70px rgba(0,0,0,0.15)',
+                border: `2px solid ${specialty.accentLight}`,
+                background: '#000',
+                position: 'relative',
+                aspectRatio: '16/9',
+              }}
+            >
+              <video
+                src={specialty.videoUrl}
+                autoPlay
+                loop
+                muted
+                playsInline
+                controls
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                  display: 'block',
+                }}
+              />
+            </motion.div>
+          </div>
+        )}
+
+        {/* ── CTA Section ── */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}

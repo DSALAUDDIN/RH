@@ -14,7 +14,7 @@ import {
 import '../implants/implants.css';
 import './orthodontics.css';
 
-import heroImg from '@/assets/specialties/braces.jpg';
+import heroImg from '@/assets/implants/implant-hero.jpg';
 import bracesFlyer from '@/assets/specialties/braces_clean.png';
 
 function FadeIn({ children, delay = 0, className }: { children: React.ReactNode; delay?: number; className?: string }) {

@@ -365,7 +365,10 @@ export default function AboutPage() {
                   Dr. Hasan has undergone advanced international training in Dental Implantology from <strong style={{ color: '#0f172a' }}>China, Korea, and India</strong>, equipping him with skills to manage complex implant cases with predictable, long-term success. He also completed specialised training in <strong style={{ color: '#0f172a' }}>Minimally Invasive Cosmetic Dentistry (MICD)</strong> in Nepal, Basic Orthodontics, and Advanced Implant Procedures &amp; Digital Workflow.
                 </p>
                 <p className="ab-body-dark">
-                  His practice is supported by a fully equipped <strong style={{ color: '#0f172a' }}>in-house dental laboratory</strong>, allowing complete control over prosthesis design, precision, and quality — ensuring enhanced accuracy, faster turnaround, and superior aesthetic outcomes. Since 2015, he also serves as <strong style={{ color: '#0f172a' }}>Senior Lecturer at MH Samorita Medical College &amp; Hospital</strong>.
+                  His practice is supported by a fully equipped <strong style={{ color: '#0f172a' }}>in-house dental laboratory</strong>, allowing complete control over prosthesis design, precision, and quality — ensuring enhanced accuracy, faster turnaround, and superior aesthetic outcomes. 
+                </p>
+                <p className="ab-body-dark">
+                  Since 2014, he has been serving as a <strong style={{ color: '#0f172a' }}>Senior Lecturer at Saphena Women’s Dental College and MH Samorita Medical College &amp; Hospital</strong>, contributing to the development of future dental professionals. He is also currently practicing as a <strong style={{ color: '#0f172a' }}>Senior Oral &amp; Dental Surgeon at Labaid Dental Clinic, Gulshan</strong>, further extending his commitment to high-quality patient care.
                 </p>
 
                 <div className="ab-doc-values">

@@ -12,7 +12,7 @@ import {
 } from 'lucide-react';
 import './implants.css';
 
-import heroImg from '@/assets/implants/implant_hero.png';
+import heroImg from '@/assets/implants/implant-hero.jpg';
 import typesImg from '@/assets/implants/implant_types.png';
 import beforeAfterImg from '@/assets/implants/implant_before_after.png';
 import facilityImg from '@/assets/implants/implant_facility.png';

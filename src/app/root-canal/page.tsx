@@ -14,8 +14,8 @@ import {
 import '../implants/implants.css';
 import './root-canal.css';
 
-import heroImg from '@/assets/specialties/root-canal.jpg';
-import contentImg from '@/assets/specialties/rootcanal_clean.png';
+import heroImg from '@/assets/implants/implant-hero.jpg';
+import contentImg from '@/assets/specialties/root-canal-flyer.jpg';
 
 function FadeIn({ children, delay = 0, className }: { children: React.ReactNode; delay?: number; className?: string }) {
   const ref = useRef(null);
