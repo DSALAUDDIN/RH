@@ -133,8 +133,8 @@ export default function Navbar() {
         </nav>
 
         <div className="nav-actions">
-          <Link href="/contact" className="btn-book">
-            <Phone size={16} />
+          <Link href="/contact" className="btn-book" aria-label="Book Now">
+            <Phone size={16} aria-hidden="true" />
             <span>Book Now</span>
           </Link>
 

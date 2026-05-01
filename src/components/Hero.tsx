@@ -153,7 +153,7 @@ export default function Hero() {
   useEffect(() => {
     // Generate random particles on client side to avoid hydration mismatch
     const frame = requestAnimationFrame(() => {
-      setParticles([...Array(20)].map(() => ({
+      setParticles([...Array(10)].map(() => ({
         left: `${Math.random() * 100}%`,
         top: `${Math.random() * 100}%`,
         duration: 5 + Math.random() * 8,
@@ -232,21 +232,16 @@ export default function Hero() {
           <h1 className="hero-title">
             <RevealText text="Your Smile is" />
             <br />
-            <motion.span 
-              className="text-gradient-accent"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4, duration: 1, ease: [0.16, 1, 0.3, 1] }}
-            >
+            <span className="text-gradient-accent" style={{ opacity: 1, transform: 'none' }}>
               Our Happiness.
-            </motion.span>
+            </span>
           </h1>
 
           <motion.p
             className="hero-desc"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6, duration: 0.8 }}
+            transition={{ delay: 0.15, duration: 0.6 }}
           >
             Experience dentistry redefined by two leading experts. From microscopic endodontics to advanced implant surgery, we deliver painless precision in a premium environment.
           </motion.p>
@@ -255,7 +250,7 @@ export default function Hero() {
             className="hero-actions"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8, duration: 0.8 }}
+            transition={{ delay: 0.2, duration: 0.6 }}
           >
             <Link href="/contact" className="btn-premium">
               Book Appointment
@@ -276,7 +271,7 @@ export default function Hero() {
             className="hero-trust-bar"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1, duration: 1 }}
+            transition={{ delay: 0.3, duration: 0.6 }}
           >
             <div className="trust-item">
               <CheckCircle2 color="#4ade80" size={18} />
@@ -298,7 +293,7 @@ export default function Hero() {
             className="hero-stats-glass"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.2, duration: 1 }}
+            transition={{ delay: 0.4, duration: 0.6 }}
           >
             {stats.map((s, i) => (
               <div key={i} className="stat-group">
@@ -316,7 +311,7 @@ export default function Hero() {
             className="hero-doctors-panel"
             initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
+            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
           >
             {/* Decorative glowing rings */}
             <div className="hero-glow-ring ring-1" />
@@ -327,7 +322,7 @@ export default function Hero() {
               className="doctors-panel-label"
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6, duration: 0.6 }}
+              transition={{ delay: 0.2, duration: 0.5 }}
             >
               <Stethoscope size={13} className="accent-icon" />
               <span>Meet Our Expert Doctors</span>
@@ -338,7 +333,7 @@ export default function Hero() {
               className="hero-doc-card"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.8, duration: 0.8, type: "spring", damping: 22 }}
+              transition={{ delay: 0.3, duration: 0.6, type: "spring", damping: 22 }}
               whileHover={{ y: -4, transition: { duration: 0.3 } }}
             >
               <div className="hero-doc-card-accent hasan-accent" />
@@ -348,7 +343,7 @@ export default function Hero() {
                 </div>
                 <div className="hero-doc-info">
                   <div className="hero-doc-name-row">
-                    <h3 className="hero-doc-fullname">Dr. B. M. Rafiqul Hasan Mehedi</h3>
+                    <p className="hero-doc-fullname">Dr. B. M. Rafiqul Hasan Mehedi</p>
                     <span className="hero-doc-verified"><CheckCircle2 size={14}/></span>
                   </div>
                   <p className="hero-doc-specialty">Chief Consultant — Oral Surgery</p>
@@ -377,7 +372,7 @@ export default function Hero() {
               className="hero-doc-card"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.0, duration: 0.8, type: "spring", damping: 22 }}
+              transition={{ delay: 0.4, duration: 0.6, type: "spring", damping: 22 }}
               whileHover={{ y: -4, transition: { duration: 0.3 } }}
             >
               <div className="hero-doc-card-accent shimia-accent" />
@@ -387,7 +382,7 @@ export default function Hero() {
                 </div>
                 <div className="hero-doc-info">
                   <div className="hero-doc-name-row">
-                    <h3 className="hero-doc-fullname">Dr. Shimia Binte Taher</h3>
+                    <p className="hero-doc-fullname">Dr. Shimia Binte Taher</p>
                     <span className="hero-doc-verified"><CheckCircle2 size={14}/></span>
                   </div>
                   <p className="hero-doc-specialty">Endodontics & Aesthetic Dentistry</p>
@@ -409,7 +404,7 @@ export default function Hero() {
               className="hero-panel-footer-pill"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 1.4, duration: 0.6 }}
+              transition={{ delay: 0.5, duration: 0.5 }}
             >
               <ShieldCheck size={13} className="accent-icon" />
               <span>Both BMDC Certified · 12+ Years Combined Experience</span>

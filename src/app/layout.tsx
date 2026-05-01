@@ -4,6 +4,7 @@ import Script from 'next/script';
 import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import AudioPlayer from '@/components/AudioPlayer';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -413,6 +414,12 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${jakarta.variable} ${outfit.variable}`} suppressHydrationWarning>
       <head>
+        {/* Preconnect to external origins for faster resource loading */}
+        <link rel="preconnect" href="https://res.cloudinary.com" />
+        <link rel="dns-prefetch" href="https://res.cloudinary.com" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+
         {/* Google Analytics 4 */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-XZPKR17DNF"
@@ -436,6 +443,7 @@ export default function RootLayout({
       </head>
       <body suppressHydrationWarning>
         <Navbar />
+        <AudioPlayer />
         <main className="main-content">
           {children}
         </main>

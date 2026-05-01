@@ -14,8 +14,10 @@ import {
 import '../implants/implants.css';
 import './root-canal.css';
 
-import heroImg from '@/assets/implants/implant-hero.jpg';
+import heroImg from '@/assets/rootcanal/root-cover.jpeg';
 import contentImg from '@/assets/specialties/microscope-loupes.png';
+import otImg from '@/assets/rootcanal/root-ot.jpeg';
+import newImg from '@/assets/rootcanal/img.png';
 
 function FadeIn({ children, delay = 0, className }: { children: React.ReactNode; delay?: number; className?: string }) {
   const ref = useRef(null);
@@ -191,6 +193,31 @@ export default function RootCanalPage() {
         </div>
       </section>
 
+      {/* ═══════════════ EXCELLENCE IN ENDODONTICS (NEW IMAGE) ═══════════════ */}
+      <section className="imp-section" style={{ background: '#f8fafc' }}>
+        <div className="container">
+          <div className="imp-what-grid" style={{ gridTemplateColumns: '1fr 1fr' }}>
+            <FadeIn>
+              <div className="imp-what-content">
+                <span className="imp-label"><Award size={14} /> Uncompromised Quality</span>
+                <h2>Excellence in <span style={{ color: '#0ea5e9' }}>Endodontics</span></h2>
+                <p>We are committed to providing root canal therapies that are not just pain-free, but meticulously precise. By leveraging advanced materials and continuous training, we ensure that every treated tooth is preserved for the longest possible time.</p>
+                <div className="imp-gallery-checks">
+                  {['Biocompatible Materials', 'Minimally Invasive Techniques', 'Focus on Tooth Preservation'].map((t, i) => (
+                    <div key={i} className="imp-gallery-check"><CheckCircle2 size={16} />{t}</div>
+                  ))}
+                </div>
+              </div>
+            </FadeIn>
+            <FadeIn delay={0.15}>
+              <div className="imp-what-img">
+                <Image src={newImg} alt="Endodontic Excellence" fill sizes="(max-width:1024px) 100vw, 50vw" style={{ objectFit: 'cover' }} />
+              </div>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
+
       {/* ═══════════════ TECHNOLOGY — 3 CATEGORIES ═══════════════ */}
       <section className="imp-section rc-tech-section">
         <div className="container">
@@ -267,6 +294,31 @@ export default function RootCanalPage() {
         </div>
       </section>
 
+      {/* ═══════════════ CLINICAL ENVIRONMENT (OT IMAGE) ═══════════════ */}
+      <section className="imp-section imp-section-alt">
+        <div className="container">
+          <div className="imp-what-grid" style={{ gridTemplateColumns: '1fr 1fr' }}>
+            <FadeIn>
+              <div className="imp-what-content">
+                <span className="imp-label"><ShieldCheck size={14} /> State-of-the-Art Care</span>
+                <h2>Premium Clinical <span style={{ color: '#059669' }}>Environment</span></h2>
+                <p>Experience root canal treatment in a modern, fully-equipped clinical setting designed for maximum precision, sterility, and patient comfort.</p>
+                <div className="imp-gallery-checks">
+                  {['Advanced Sterilization Protocols', 'Ergonomic Patient Seating', 'Integrated Digital Workflow', 'Calm & Relaxing Atmosphere', 'Dedicated Micro-Endodontics Setup'].map((t, i) => (
+                    <div key={i} className="imp-gallery-check"><CheckCircle2 size={16} />{t}</div>
+                  ))}
+                </div>
+              </div>
+            </FadeIn>
+            <FadeIn delay={0.15}>
+              <div className="imp-what-img">
+                <Image src={otImg} alt="Root Canal Clinical Facility" fill sizes="(max-width:1024px) 100vw, 50vw" style={{ objectFit: 'cover' }} />
+              </div>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
+
       {/* ═══════════════ VIDEO — PORTRAIT ═══════════════ */}
       <section className="rc-video-section">
         <div className="rc-vid-orb rc-vid-orb-1" />
@@ -304,7 +356,7 @@ export default function RootCanalPage() {
           <div className="imp-what-grid">
             <FadeIn>
               <div className="imp-what-img">
-                <Image src={contentImg} alt="Root canal restoration" fill sizes="(max-width:1024px) 100vw, 50vw" />
+                <Image src={contentImg} alt="Root canal restoration" fill sizes="(max-width:1024px) 100vw, 50vw" style={{ objectFit: 'cover' }} />
                 <div className="rc-img-badge"><Microscope size={14} /> Microscope-Guided</div>
               </div>
             </FadeIn>

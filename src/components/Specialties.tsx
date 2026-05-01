@@ -142,8 +142,9 @@ export default function Specialties() {
 									src={card.image}
 									alt={`${card.title} - Dental Treatment at RH Dental Care Dhaka`}
 									fill
-									priority={card.featured || index < 2}
-									sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 40vw"
+									loading={card.featured || index < 2 ? 'eager' : 'lazy'}
+									priority={card.featured && index === 0}
+									sizes={card.featured ? '(max-width: 768px) 100vw, 40vw' : '(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw'}
 									className="card-img"
 									style={{ objectFit: 'cover' }}
 								/>
@@ -155,7 +156,7 @@ export default function Specialties() {
 							<h3>{card.title}</h3>
 							<p>{card.desc}</p>
 							<Link href={`/specialties/${card.slug}`} className="view-link">
-								<span>View Treatment Detail</span>
+								<span>View {card.title} Details</span>
 								<ArrowRight size={16} className="arrow" />
 							</Link>
 						</div>

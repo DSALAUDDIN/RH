@@ -49,13 +49,14 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: #f8fafc;
+  color: #ffffff;
   font-family: var(--font-family-header, sans-serif);
   font-weight: 800;
   font-size: 1.35rem;
   letter-spacing: -0.02em;
   transition: transform 0.3s ease;
   text-decoration: none;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 .logo:hover { transform: scale(1.02); }
 .logo-icon {
