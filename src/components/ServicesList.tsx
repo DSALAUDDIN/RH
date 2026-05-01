@@ -74,7 +74,7 @@ export default function ServicesList({ limit = services.length }: { limit?: numb
               <h3 className="service-title">{service.title}</h3>
               <p className="service-desc">{service.description}</p>
               <Link href={`/services#${service.id}`} className="service-link">
-                Learn more <ArrowRight size={16} />
+                Learn more about {service.title} <ArrowRight size={16} />
               </Link>
             </motion.div>
           ))}
