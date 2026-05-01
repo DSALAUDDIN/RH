@@ -27,9 +27,15 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Dental Specialties — Implants, Braces, Root Canal, Aesthetics | RH Dental Care Dhaka',
     description:
-      'All dental specialties under one roof in Dhaka. Implants, orthodontics, cosmetic smiles, root canal, and more — by BMDC-certified specialists at RH Dental Care.',
+      'All dental specialties under one roof in Dhaka — implants, orthodontics, root canal & cosmetic dentistry by BMDC-certified specialists at RH Dental Care.',
     url: 'https://www.rhdentalcare.com/specialties',
-    images: [{ url: '/og-image.jpg', width: 1200, height: 630 }],
+    images: [{ url: '/rhlogo.jpeg', width: 1200, height: 630, alt: 'Dental Specialties — RH Dental Care Dhaka' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Dental Specialties Dhaka | RH Dental Care',
+    description: 'Implants, orthodontics, root canal, cosmetic dentistry & more by BMDC-certified specialists in Dhaka.',
+    images: ['/rhlogo.jpeg'],
   },
 };
 

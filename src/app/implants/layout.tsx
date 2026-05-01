@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 
+const BASE_URL = 'https://www.rhdentalcare.com';
+
 export const metadata: Metadata = {
   title: 'Dental Implants in Dhaka — Permanent Tooth Replacement | RH Dental Care',
   description:
@@ -29,15 +31,59 @@ export const metadata: Metadata = {
     title: 'Dental Implants — Permanent Tooth Replacement | RH Dental Care Dhaka',
     description:
       'Premium dental implants with 98% success rate. 3D-guided precision surgery by internationally trained specialists. Single implants from ৳70,000. Book free consultation now.',
-    url: 'https://www.rhdentalcare.com/implants',
-    images: [{ url: '/rhlogo.jpeg', width: 1200, height: 630 }],
+    url: `${BASE_URL}/implants`,
+    images: [{ url: '/rhlogo.jpeg', width: 1200, height: 630, alt: 'Dental Implants Dhaka — RH Dental Care' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Dental Implants Dhaka | RH Dental Care',
+    description: '98% success rate dental implants in Dhaka. 3D-guided surgery by BMDC-certified specialists. Book free consultation.',
+    images: ['/rhlogo.jpeg'],
   },
 };
 
-export default function ImplantsLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  return <>{children}</>;
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'MedicalProcedure',
+      name: 'Dental Implant Surgery',
+      description:
+        'Permanent tooth replacement using titanium dental implants at RH Dental Care, Dhaka. Computer-guided 3D surgery with 98% success rate.',
+      procedureType: 'https://schema.org/SurgicalProcedure',
+      bodyLocation: 'Jaw / Oral Cavity',
+      preparation: 'CBCT 3D scan and treatment planning',
+      followup: '3–6 months osseointegration, then crown placement',
+      howPerformed: '3D-guided minimally invasive titanium implant placement under local anaesthesia',
+      performer: {
+        '@type': 'Physician',
+        name: 'Dr. B.M. Rafiqul Hasan (Mehedi)',
+        '@id': `${BASE_URL}/#dr-hasan`,
+      },
+      availableService: {
+        '@type': 'MedicalClinic',
+        name: 'RH Dental Care',
+        '@id': `${BASE_URL}/#dentist`,
+      },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: BASE_URL },
+        { '@type': 'ListItem', position: 2, name: 'Dental Implants', item: `${BASE_URL}/implants` },
+      ],
+    },
+  ],
+};
+
+export default function ImplantsLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c') }}
+      />
+      {children}
+    </>
+  );
 }

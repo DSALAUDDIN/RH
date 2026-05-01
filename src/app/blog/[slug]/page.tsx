@@ -13,13 +13,45 @@ export async function generateStaticParams() {
   return blogPosts.map((p) => ({ slug: p.slug }));
 }
 
+const BASE_URL = 'https://www.rhdentalcare.com';
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const post = getBlogPost(slug);
   if (!post) return { title: 'Not Found' };
+
+  const url = `${BASE_URL}/blog/${slug}`;
+  const ogImage = { url: '/rhlogo.jpeg', width: 1200, height: 630, alt: post.title };
+
   return {
-    title: `${post.title} | RH Dental Care`,
+    title: `${post.title} | RH Dental Care Blog`,
     description: post.summary,
+    keywords: [
+      post.category,
+      'dental health tips',
+      'dentist Dhaka',
+      'dental blog Bangladesh',
+      'RH Dental Care blog',
+      'oral health advice Bangladesh',
+    ],
+    alternates: { canonical: `/blog/${slug}` },
+    authors: [{ name: 'Dr. B.M. Rafiqul Hasan (Mehedi)', url: `${BASE_URL}/about` }],
+    openGraph: {
+      type: 'article',
+      title: post.title,
+      description: post.summary,
+      url,
+      siteName: 'RH Dental Care',
+      images: [ogImage],
+      authors: ['Dr. B.M. Rafiqul Hasan (Mehedi)'],
+      tags: [post.category, 'Dental Care', 'Dhaka', 'Bangladesh'],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.summary,
+      images: ['/rhlogo.jpeg'],
+    },
   };
 }
 
@@ -174,8 +206,48 @@ export default async function BlogPostPage({ params }: Props) {
   const related = getRelatedPosts(post.relatedSlugs ?? []);
   const color = post.categoryColor;
 
+  const articleJsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'BlogPosting',
+        headline: post.title,
+        description: post.summary,
+        author: {
+          '@type': 'Physician',
+          name: 'Dr. B.M. Rafiqul Hasan (Mehedi)',
+          '@id': `${BASE_URL}/#dr-hasan`,
+          url: `${BASE_URL}/about`,
+        },
+        publisher: {
+          '@type': 'Organization',
+          name: 'RH Dental Care',
+          '@id': `${BASE_URL}/#dentist`,
+          logo: { '@type': 'ImageObject', url: `${BASE_URL}/rhlogo.jpeg` },
+        },
+        url: `${BASE_URL}/blog/${slug}`,
+        image: `${BASE_URL}/rhlogo.jpeg`,
+        articleSection: post.category,
+        inLanguage: 'en-US',
+        isPartOf: { '@id': `${BASE_URL}/#website` },
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: BASE_URL },
+          { '@type': 'ListItem', position: 2, name: 'Blog', item: `${BASE_URL}/blog` },
+          { '@type': 'ListItem', position: 3, name: post.title, item: `${BASE_URL}/blog/${slug}` },
+        ],
+      },
+    ],
+  };
+
   return (
     <div style={{ background: '#f8fafc', minHeight: '100vh' }}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd).replace(/</g, '\\u003c') }}
+      />
       {/* Hero */}
       <div style={{
         background: 'linear-gradient(135deg, #020617 0%, #0f172a 60%, #020617 100%)',

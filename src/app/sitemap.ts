@@ -1,36 +1,52 @@
 import { MetadataRoute } from 'next';
 import { blogPosts } from '@/lib/blogData';
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://www.rhdentalcare.com';
+const BASE_URL = 'https://www.rhdentalcare.com';
 
-  // In a real app, you might fetch blog slugs and service slugs here
-  // For now, I'll include the main static routes
-  
-  // Dynamically include all blog posts
-  const blogRoutes = blogPosts.map((post) => ({
-    url: `${baseUrl}/blog/${post.slug}`,
-    lastModified: new Date(),
+export default function sitemap(): MetadataRoute.Sitemap {
+  const now = new Date();
+
+  /* ── Static high-priority pages ── */
+  const staticRoutes: MetadataRoute.Sitemap = [
+    { url: BASE_URL,                          lastModified: now, changeFrequency: 'weekly',  priority: 1.0 },
+    { url: `${BASE_URL}/about`,               lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${BASE_URL}/team`,                lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${BASE_URL}/implants`,            lastModified: now, changeFrequency: 'weekly',  priority: 0.95 },
+    { url: `${BASE_URL}/orthodontics`,        lastModified: now, changeFrequency: 'weekly',  priority: 0.9 },
+    { url: `${BASE_URL}/root-canal`,          lastModified: now, changeFrequency: 'weekly',  priority: 0.9 },
+    { url: `${BASE_URL}/services`,            lastModified: now, changeFrequency: 'weekly',  priority: 0.85 },
+    { url: `${BASE_URL}/specialties`,         lastModified: now, changeFrequency: 'weekly',  priority: 0.85 },
+    { url: `${BASE_URL}/treatments`,          lastModified: now, changeFrequency: 'weekly',  priority: 0.85 },
+    { url: `${BASE_URL}/contact`,             lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE_URL}/reviews`,             lastModified: now, changeFrequency: 'weekly',  priority: 0.75 },
+    { url: `${BASE_URL}/blog`,                lastModified: now, changeFrequency: 'daily',   priority: 0.8 },
+  ];
+
+  /* ── Specialty detail pages ── */
+  const specialtySlugs = [
+    '3d-imaging',
+    'braces',
+    'zirconia',
+    'root-canal',
+    'gum-care',
+    'kids-care',
+    'implants',
+    'aesthetics',
+  ];
+  const specialtyRoutes: MetadataRoute.Sitemap = specialtySlugs.map((slug) => ({
+    url: `${BASE_URL}/specialties/${slug}`,
+    lastModified: now,
+    changeFrequency: 'monthly' as const,
+    priority: 0.8,
+  }));
+
+  /* ── Blog post pages ── */
+  const blogRoutes: MetadataRoute.Sitemap = blogPosts.map((post) => ({
+    url: `${BASE_URL}/blog/${post.slug}`,
+    lastModified: now,
     changeFrequency: 'monthly' as const,
     priority: 0.7,
   }));
 
-  const routes = [
-    '',
-    '/about',
-    '/services',
-    '/implants',
-    '/contact',
-    '/blog',
-    '/faq',
-    '/privacy',
-    '/terms',
-  ].map((route) => ({
-    url: `${baseUrl}${route}`,
-    lastModified: new Date(),
-    changeFrequency: 'weekly' as const,
-    priority: route === '' ? 1 : 0.8,
-  }));
-
-  return [...routes, ...blogRoutes];
+  return [...staticRoutes, ...specialtyRoutes, ...blogRoutes];
 }

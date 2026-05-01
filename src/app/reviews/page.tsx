@@ -1,14 +1,70 @@
 import { Metadata } from 'next';
 import Testimonials from '@/components/Testimonials';
 
+const BASE_URL = 'https://www.rhdentalcare.com';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: BASE_URL },
+        { '@type': 'ListItem', position: 2, name: 'Patient Reviews', item: `${BASE_URL}/reviews` },
+      ],
+    },
+    {
+      '@type': 'MedicalClinic',
+      '@id': `${BASE_URL}/#dentist`,
+      aggregateRating: {
+        '@type': 'AggregateRating',
+        ratingValue: '5.0',
+        reviewCount: '200',
+        bestRating: '5',
+        worstRating: '1',
+      },
+    },
+  ],
+};
+
 export const metadata: Metadata = {
-  title: 'Patient Reviews',
-  description: 'Read what real patients say about their experience at RH Dental Clinic — honest reviews and 5-star stories from our growing family of happy smiles.',
+  title: 'Patient Reviews & Testimonials — 5-Star Dental Care in Dhaka | RH Dental Care',
+  description:
+    '13,000+ happy patients at RH Dental Care, Dhaka. Read 5-star reviews for dental implants, orthodontics, root canal & cosmetic dentistry by BMDC-certified specialists.',
+  keywords: [
+    'RH Dental Care reviews',
+    'dental clinic reviews Dhaka',
+    'best dentist reviews Bangladesh',
+    'dental implant reviews Dhaka',
+    'orthodontics reviews Bangladesh',
+    'patient testimonials dental Dhaka',
+    '5 star dental clinic Dhaka',
+    'dentist reviews Bangladesh',
+    'RH Dental Care testimonials',
+  ],
+  alternates: { canonical: '/reviews' },
+  openGraph: {
+    title: 'Patient Reviews — 5-Star Dental Care | RH Dental Care Dhaka',
+    description:
+      '13,000+ happy patients rate RH Dental Care as Dhaka\'s #1 dental clinic. Read honest reviews for implants, orthodontics, root canal & cosmetic dentistry.',
+    url: 'https://www.rhdentalcare.com/reviews',
+    images: [{ url: '/rhlogo.jpeg', width: 1200, height: 630, alt: 'RH Dental Care Patient Reviews' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Patient Reviews | RH Dental Care Dhaka',
+    description: '5-star reviews from 13,000+ happy patients at RH Dental Care — Dhaka\'s best dental clinic.',
+    images: ['/rhlogo.jpeg'],
+  },
 };
 
 export default function ReviewsPage() {
   return (
     <div style={{ paddingTop: 'var(--nav-height)' }}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c') }}
+      />
       {/* Testimonials Core Section */}
       <Testimonials />
 

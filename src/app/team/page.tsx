@@ -27,7 +27,7 @@ const teamMembers = [
     name: 'Dr. B. M. Rafiqul Hasan (Mehedi)',
     designation: 'Chief Consultant Oral & Dental Surgeon',
     role: 'Best Dental Implant Specialist in Dhaka',
-    badge: 'Managing Director',
+    badge: 'Chief Consultant',
     img: imgMehedi,
     flyerImg: imgMehediFlyer,
     credentials: ['BDS — Sapporo Dental College (DU)', 'MPH — City University', 'PGT (OMS & Prosthodontics) — BSM Medical University, Dhaka'],
@@ -263,9 +263,9 @@ export default function TeamPage() {
             >
               {/* Portrait — clipped to face area to hide flyer text */}
               <div className="team-card-image-wrap">
-                <div className={`team-role-badge ${m.badge === 'Team Lead' ? 'lead' : m.badge === 'Managing Director' ? 'director' : ''}`}>
+                <div className={`team-role-badge ${m.badge === 'Team Lead' ? 'lead' : m.badge === 'Chief Consultant' ? 'director' : ''}`}>
                   {m.badge === 'Team Lead' && <Sparkles size={12} />}
-                  {m.badge === 'Managing Director' && <Briefcase size={12} />}
+                  {m.badge === 'Chief Consultant' && <Award size={12} />}
                   {m.badge}
                 </div>
                 {m.flyerImg && (

@@ -7,7 +7,7 @@ import './blog.css';
 export const metadata: Metadata = {
   title: 'Dental Health Blog & Patient Guides | RH Dental Care Dhaka',
   description:
-    '50+ expert articles on dental implants, root canal, braces, gum care, kids dentistry & smile design — written by specialist dentists at RH Dental Care, Dhaka, Bangladesh. Read before your appointment.',
+    'Expert dental articles on implants, root canal, braces, gum care & smile design by BMDC-certified dentists at RH Dental Care, Dhaka. Read before your appointment.',
   keywords: [
     'dental blog Bangladesh',
     'dental health articles Dhaka',
@@ -23,9 +23,15 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Dental Health Blog | Treatment Guides & Patient Education — RH Dental Care',
     description:
-      'Expert dental articles for patients in Dhaka and Bangladesh. Learn about implants, braces, root canal, cosmetic dentistry and more from BMDC-certified specialists.',
+      'Expert dental articles for patients in Dhaka and Bangladesh. Learn about implants, braces, root canal & cosmetic dentistry from BMDC-certified specialists.',
     url: 'https://www.rhdentalcare.com/blog',
-    images: [{ url: '/og-image.jpg', width: 1200, height: 630 }],
+    images: [{ url: '/rhlogo.jpeg', width: 1200, height: 630, alt: 'RH Dental Care Dental Health Blog — Dhaka' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Dental Health Blog | RH Dental Care Dhaka',
+    description: 'Expert dental articles on implants, braces, root canal & more by BMDC-certified specialists in Dhaka.',
+    images: ['/rhlogo.jpeg'],
   },
 };
 

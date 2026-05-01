@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Inter, Plus_Jakarta_Sans, Outfit } from 'next/font/google';
 import Script from 'next/script';
 import './globals.css';
@@ -23,7 +23,7 @@ const outfit = Outfit({
   variable: '--font-outfit',
 });
 
-const BASE_URL = 'https://rhdentalcare.com';
+const BASE_URL = 'https://www.rhdentalcare.com';
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
@@ -159,16 +159,35 @@ export const metadata: Metadata = {
 
   /* ── Geographic targeting ── */
   other: {
-    'geo.region': 'BD-13',        // Dhaka Division
+    'geo.region': 'BD-13',
     'geo.placename': 'Dhaka, Bangladesh',
-    'geo.position': '23.8103;90.4125',
-    'ICBM': '23.8103, 90.4125',
+    'geo.position': '23.7634;90.4321',
+    'ICBM': '23.7634, 90.4321',
     'language': 'en',
     'revisit-after': '7 days',
     'rating': 'general',
     'HandheldFriendly': 'True',
     'MobileOptimized': '320',
   },
+
+  /* ── Verification ── */
+  verification: {
+    google: '45b388b56fe88bf2',
+  },
+
+  /* ── Manifest ── */
+  manifest: '/manifest.json',
+};
+
+/* ── Viewport (separate export as required by Next.js 14+) ── */
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#0ea5e9' },
+    { media: '(prefers-color-scheme: dark)', color: '#0284c7' },
+  ],
 };
 
 /* ── JSON-LD Structured Data ── */
@@ -195,16 +214,16 @@ const jsonLd = {
       email: 'info@rhdentalcare.com',
       address: {
         '@type': 'PostalAddress',
-        streetAddress: 'Dhaka',
+        streetAddress: 'House: 42, Road: 8, Block: C, Banasree, Rampura',
         addressLocality: 'Dhaka',
         addressRegion: 'Dhaka Division',
-        postalCode: '1000',
+        postalCode: '1219',
         addressCountry: 'BD',
       },
       geo: {
         '@type': 'GeoCoordinates',
-        latitude: 23.8103,
-        longitude: 90.4125,
+        latitude: 23.7634,
+        longitude: 90.4321,
       },
       openingHoursSpecification: [
         {
@@ -224,9 +243,18 @@ const jsonLd = {
       currenciesAccepted: 'BDT',
       paymentAccepted: 'Cash, Card',
       hasMap: 'https://maps.google.com/?q=RH+Dental+Care+Dhaka',
+      numberOfEmployees: { '@type': 'QuantitativeValue', value: 15 },
+      foundingDate: '2015',
+      areaServed: [
+        { '@type': 'City', name: 'Dhaka' },
+        { '@type': 'Country', name: 'Bangladesh' },
+      ],
       sameAs: [
         'https://www.facebook.com/rhdentalcare',
         'https://www.instagram.com/rhdentalcare',
+        'https://www.linkedin.com/company/rhdentalcare',
+        'https://www.youtube.com/@rhdentalcare',
+        'https://g.page/rhdentalcare',
       ],
       aggregateRating: {
         '@type': 'AggregateRating',
@@ -286,7 +314,7 @@ const jsonLd = {
       knowsAbout: ['Dental Implants', 'Orthodontics', 'Root Canal', 'Cosmetic Dentistry', 'Oral Surgery'],
     },
 
-    /* FAQ — rich results */
+    /* FAQ — rich results (10 high-value questions for Google FAQ snippets) */
     {
       '@type': 'FAQPage',
       mainEntity: [
@@ -295,7 +323,7 @@ const jsonLd = {
           name: 'Where is RH Dental Care located?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'RH Dental Care is located in Dhaka, Bangladesh. Please visit our contact page or call us for the exact address and directions.',
+            text: 'RH Dental Care is located at House 42, Road 8, Block C, Banasree, Rampura, Dhaka 1219, Bangladesh. You can also visit www.rhdentalcare.com/contact for directions.',
           },
         },
         {
@@ -303,7 +331,7 @@ const jsonLd = {
           name: 'Is RH Dental Care the best dental clinic in Dhaka?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'RH Dental Care is consistently rated as one of the top dental clinics in Dhaka, Bangladesh, with 13k+ happy patients, a 99% success rate, and a team of BMDC-certified specialists.',
+            text: 'RH Dental Care is consistently rated as one of the top dental clinics in Dhaka, Bangladesh, with 13,000+ happy patients, a 5-star rating, and a team of BMDC-certified specialists led by Dr. B.M. Rafiqul Hasan.',
           },
         },
         {
@@ -311,7 +339,7 @@ const jsonLd = {
           name: 'What dental treatments are available at RH Dental Care?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'We offer dental implants, orthodontics (braces & clear aligners), root canal treatment, cosmetic/smile design, teeth whitening, veneers, gum care, pediatric dentistry, full-mouth rehabilitation, and more.',
+            text: 'RH Dental Care offers dental implants (single, multiple, All-on-4/6), orthodontics (braces & clear aligners), painless root canal, cosmetic dentistry & smile design, teeth whitening, zirconia crowns, veneers, gum care, pediatric dentistry, and full-mouth rehabilitation.',
           },
         },
         {
@@ -319,7 +347,7 @@ const jsonLd = {
           name: 'How do I book an appointment at RH Dental Care?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'You can book an appointment by visiting our Contact page at rhdentalcare.com/contact or calling us directly. We offer free initial consultations.',
+            text: 'You can book a free consultation by visiting www.rhdentalcare.com/contact, calling +8801775227902, or messaging via WhatsApp. We are open Saturday to Thursday 9am–9pm and Friday 2pm–9pm.',
           },
         },
         {
@@ -327,7 +355,47 @@ const jsonLd = {
           name: 'Does RH Dental Care offer painless dental treatment?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Yes. RH Dental Care guarantees pain-free treatment using the latest anaesthetic techniques and sedation protocols. We are known for our gentle, patient-friendly approach.',
+            text: 'Yes. RH Dental Care uses the latest anaesthetic techniques, rotary endodontics, and sedation protocols to ensure a comfortable, pain-free experience for every patient.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'What is the cost of dental implants in Dhaka at RH Dental Care?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Dental implant prices at RH Dental Care start from approximately ৳70,000 for a single implant. Exact pricing depends on the case complexity. We offer free consultations to provide a personalized treatment plan.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Is Dr. B.M. Rafiqul Hasan BMDC registered?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Yes. Dr. B.M. Rafiqul Hasan (Mehedi) is a fully BMDC-registered Oral & Dental Surgeon with Registration No. 5169. He holds a BDS from Sapporo Dental College (DU) and an MPH from City University, with advanced international training in implantology from China, Korea, and India.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Does RH Dental Care accept international patients?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Yes. RH Dental Care welcomes international and medical-tourism patients seeking affordable, high-quality dental treatment in Bangladesh. We offer digital workflows, pre-arrival treatment planning, and fast-track appointments.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'What technology does RH Dental Care use?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'RH Dental Care is equipped with 3D CBCT imaging, digital smile design (DSD), computer-guided implant surgery, intraoral scanning, laser dentistry, microscope-guided root canal, and an in-house dental lab for same-day restorations.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'How long does orthodontic treatment take at RH Dental Care?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Orthodontic treatment duration varies by case. Traditional braces typically take 18–36 months, while clear aligners can take 12–24 months for most cases. Our specialists create a personalized timeline during your free consultation.',
           },
         },
       ],
