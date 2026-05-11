@@ -24,9 +24,22 @@
   --muted: var(--blue-50);
   --muted-foreground: var(--blue-700);
 
-  /* Typography */
-  --font-family-base: var(--font-jakarta), system-ui, -apple-system, sans-serif;
-  --font-family-header: var(--font-outfit), system-ui, sans-serif;
+  /* Typography — Premium Font Stack */
+  --font-family-base: var(--font-body), 'Geist', system-ui, -apple-system, sans-serif;
+  --font-family-header: var(--font-display), 'Bricolage Grotesque', system-ui, sans-serif;
+  --font-family-ui: var(--font-inter), system-ui, sans-serif;
+
+  /* Font sizes — fluid type scale */
+  --text-xs: clamp(0.72rem, 1.5vw, 0.8rem);
+  --text-sm: clamp(0.85rem, 1.8vw, 0.95rem);
+  --text-base: clamp(0.95rem, 2vw, 1.05rem);
+  --text-lg: clamp(1.05rem, 2.2vw, 1.2rem);
+  --text-xl: clamp(1.2rem, 2.5vw, 1.4rem);
+  --text-2xl: clamp(1.4rem, 3vw, 1.75rem);
+  --text-3xl: clamp(1.75rem, 4vw, 2.25rem);
+  --text-4xl: clamp(2.25rem, 5vw, 3rem);
+  --text-5xl: clamp(2.75rem, 6vw, 4rem);
+  --text-6xl: clamp(3.25rem, 7vw, 5rem);
   
   /* System Values */
   --radius-sm: 0.25rem;
@@ -75,6 +88,18 @@ body {
   background-color: hsl(var(--background));
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+::selection {
+  background: rgba(14, 165, 233, 0.18);
+  color: #0369a1;
 }
 
 body {
@@ -104,13 +129,23 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.1;
   margin-bottom: var(--space-4);
   color: hsl(var(--foreground));
-  letter-spacing: -0.03em;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
 }
 
-h1 { font-size: clamp(2.8rem, 5vw, 4.5rem); }
-h2 { font-size: clamp(2.2rem, 4vw, 3.5rem); }
-h3 { font-size: clamp(1.6rem, 3vw, 2.5rem); }
-p { margin-bottom: var(--space-4); color: hsl(var(--muted-foreground)); }
+h1 { font-size: var(--text-5xl); font-weight: 900; letter-spacing: -0.04em; }
+h2 { font-size: var(--text-4xl); font-weight: 800; }
+h3 { font-size: var(--text-3xl); font-weight: 700; }
+h4 { font-size: var(--text-2xl); font-weight: 700; }
+h5 { font-size: var(--text-xl);  font-weight: 600; }
+h6 { font-size: var(--text-lg);  font-weight: 600; }
+
+p {
+  margin-bottom: var(--space-4);
+  color: hsl(var(--muted-foreground));
+  font-size: var(--text-base);
+  line-height: 1.8;
+}
 
 /* Utility Classes */
 .container {

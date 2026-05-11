@@ -1,27 +1,31 @@
 import type { Metadata, Viewport } from 'next';
-import { Inter, Plus_Jakarta_Sans, Outfit } from 'next/font/google';
+import { Inter, Bricolage_Grotesque, Geist } from 'next/font/google';
 import Script from 'next/script';
 import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import AudioPlayer from '@/components/AudioPlayer';
 
+/* Display / headings — bold surgical aesthetic */
+const bricolage = Bricolage_Grotesque({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700', '800'],
+  variable: '--font-display',
+  display: 'swap',
+});
+
+/* Body — clean, highly legible */
+const geist = Geist({
+  subsets: ['latin'],
+  variable: '--font-body',
+  display: 'swap',
+});
+
+/* Utility / UI numbers */
 const inter = Inter({
   subsets: ['latin'],
-  display: 'swap',
   variable: '--font-inter',
-});
-
-const jakarta = Plus_Jakarta_Sans({
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700', '800'],
-  variable: '--font-jakarta',
-});
-
-const outfit = Outfit({
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700', '800'],
-  variable: '--font-outfit',
+  display: 'swap',
 });
 
 const BASE_URL = 'https://www.rhdentalcare.com';
@@ -69,9 +73,16 @@ export const metadata: Metadata = {
     'smile design Dhaka',
     'veneers Dhaka',
     'zirconia crown Dhaka',
+    'zirconia veneers Dhaka',
+    'indirect zirconia veneers Bangladesh',
+    'smile makeover Dhaka',
+    'digital smile design Dhaka',
+    'CAD CAM dentistry Dhaka',
     'gum treatment Dhaka',
     'kids dentist Dhaka',
     'pediatric dentist Dhaka',
+    'special needs dentistry Bangladesh',
+    'dental treatment under general anesthesia Dhaka',
     'wisdom tooth removal Dhaka',
     'full mouth rehabilitation Dhaka',
     'cosmetic dentistry Bangladesh',
@@ -273,6 +284,9 @@ const jsonLd = {
         'Periodontics',
         'Pediatric Dentistry',
         'Prosthodontics',
+        'Digital Dentistry',
+        'Smile Design',
+        'Zirconia Veneers',
       ],
     },
 
@@ -412,7 +426,7 @@ export default function RootLayout({
   const jsonLdString = JSON.stringify(jsonLd).replace(/</g, '\\u003c');
 
   return (
-    <html lang="en" className={`${inter.variable} ${jakarta.variable} ${outfit.variable}`} suppressHydrationWarning>
+    <html lang="en" className={`${bricolage.variable} ${geist.variable} ${inter.variable}`} suppressHydrationWarning>
       <head>
         {/* Preconnect to external origins for faster resource loading */}
         <link rel="preconnect" href="https://res.cloudinary.com" />
