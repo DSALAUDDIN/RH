@@ -189,7 +189,7 @@ function VideoTourBanner({ onOpen }: { onOpen: () => void }) {
       {/* Auto-playing muted background video */}
       <video
         ref={videoRef}
-        src="https://res.cloudinary.com/dlaqtwoa3/video/upload/v1776535718/homeScreen_tai4jm.mp4"
+        src="https://res.cloudinary.com/dxrcufs8f/video/upload/v1778516898/Untitled_design_1_1_whreqj.mp4"
         muted
         loop
         playsInline
@@ -843,7 +843,7 @@ export default function AboutPage() {
             >
               {/* Local clinic tour video */}
               <video
-                src="https://res.cloudinary.com/dlaqtwoa3/video/upload/v1776535718/homeScreen_tai4jm.mp4"
+                src="https://res.cloudinary.com/dxrcufs8f/video/upload/v1778516898/Untitled_design_1_1_whreqj.mp4"
                 autoPlay
                 muted
                 controls

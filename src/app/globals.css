@@ -266,13 +266,16 @@ p { margin-bottom: var(--space-4); color: hsl(var(--muted-foreground)); }
 .main-content {
   padding-top: 72px;
 }
-/* except for the home page (Hero v5 handles its own padding) */
-body:has(.hero-v5) .main-content {
+/* except for the home page and other hero sections that handle their own padding */
+body:has(.hero-v5, .ab-hero, .team-hero, .imp-hero, .srv-hero, .tr-hero) .main-content {
   padding-top: 0;
 }
 
 @media (max-width: 480px) {
   .main-content {
     padding-top: 60px;
+  }
+  body:has(.hero-v5, .ab-hero, .team-hero, .imp-hero, .srv-hero, .tr-hero) .main-content {
+    padding-top: 0;
   }
 }

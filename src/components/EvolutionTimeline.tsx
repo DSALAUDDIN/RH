@@ -78,7 +78,7 @@ const timelineData: TimelineItemData[] = [
     title: 'Clinical Upgrade',
     subtitle: 'Elevating standards',
     desc: 'A significant milestone in upgrading our clinical infrastructure. We brought in new-generation dental chairs and improved our sterilization protocols to meet international standards.',
-    images: [img19a, img19b, img19c],
+    images: [img21a, img21b, img21c],
     icon: <Rocket size={20} />,
     color: '#0ea5e9'
   },
@@ -87,7 +87,7 @@ const timelineData: TimelineItemData[] = [
     title: 'Post-Pandemic Resilience',
     subtitle: 'Safety-first dentistry',
     desc: 'Adapting to the new normal, we transformed our clinic with hospital-grade sterilization protocols and specialized air filtration, ensuring an absolutely safe environment for every patient.',
-    images: [img21a, img21b, img21c],
+    images: [img19a, img19b, img19c],
     icon: <CheckCircle size={20} />,
     color: '#10b981'
   },

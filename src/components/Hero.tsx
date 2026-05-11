@@ -140,7 +140,7 @@ export default function Hero() {
 
 
   // Keep home hero video in sync with the About screen tour video.
-  const homeVideoUrl = 'https://res.cloudinary.com/dlaqtwoa3/video/upload/v1776535718/homeScreen_tai4jm.mp4';
+  const homeVideoUrl = 'https://res.cloudinary.com/dxrcufs8f/video/upload/v1778516898/Untitled_design_1_1_whreqj.mp4';
 
   const stats = [
     { val: 13, suf: 'k+', lab: 'Happy Smiles' },
