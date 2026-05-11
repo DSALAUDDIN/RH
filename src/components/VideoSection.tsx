@@ -6,7 +6,7 @@ import { Play, Pause, Volume2, VolumeX, Maximize, Cpu, Heart } from 'lucide-reac
 import './VideoSection.css';
 
 export default function VideoSection() {
-  const clinicVideoUrl = 'https://res.cloudinary.com/dlaqtwoa3/video/upload/v1776535718/homeScreen_tai4jm.mp4';
+  const clinicVideoUrl = 'https://res.cloudinary.com/dxrcufs8f/video/upload/v1778516898/Untitled_design_1_1_whreqj.mp4';
 
   const videoRef = useRef<HTMLVideoElement>(null);
   const wrapperRef = useRef<HTMLDivElement>(null);

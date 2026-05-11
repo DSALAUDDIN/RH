@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { motion, useInView, Variants } from 'framer-motion';
 import {
   ArrowUpRight, Phone, ShieldCheck, Award, CheckCircle2,
-  Sparkles, Clock, Stethoscope, Zap, Heart,
+  Sparkles, Clock, Stethoscope, Zap, Heart, Smile, Target, Activity,
   ScanLine, Building2, FlaskConical, MessageCircle,
   ChevronRight, HelpCircle, Globe, User, Play, Pause, Volume2, VolumeX, Maximize
 } from 'lucide-react';
@@ -130,7 +130,7 @@ const faqs = [
   { q: 'Am I a good candidate for implants?', a: 'Most adults with good general health are candidates. Adequate jawbone density is needed, but bone grafting can address bone loss. A consultation will confirm your eligibility.' },
   { q: 'What is the success rate?', a: 'Dental implants have a 98% success rate at RH Dental Care. Dr. Hasan\'s advanced training and 3D-guided techniques ensure predictable, long-term outcomes.' },
   { q: 'Can I get teeth in one day?', a: 'Yes! We offer immediate loading implants where you receive a temporary prosthesis on the same day as surgery. The permanent crown is placed after osseointegration.' },
-  { q: 'How much does a dental implant cost?', a: 'Single implants start at ৳70,000-80,000 (including implant, abutment, and crown). Full mouth rehabilitation ranges from ৳4,00,000-6,00,000 per jaw.' },
+  { q: 'How much does a dental implant cost?', a: 'We offer three specialized packages: Osstem SA (৳45,000), Osstem SOI (৳60,000), and Nobel Biocare (৳80,000). Prices include the implant fixture, surgical placement, and final prosthesis.' },
 ];
 
 /* ══ PAGE ══ */
@@ -235,7 +235,7 @@ export default function ImplantsPage() {
       {/* ═══════════════════════ DR. HASAN — CLINICIAN ═══════════════════════ */}
       <section className="imp-section imp-section-alt">
         <div className="container">
-          <div className="imp-what-grid" style={{ gridTemplateColumns: '1fr 1fr' }}>
+          <div className="imp-what-grid">
             <FadeIn>
               <div className="imp-what-content">
                 <span className="imp-label"><Stethoscope size={14} /> Led by an Expert</span>
@@ -277,6 +277,148 @@ export default function ImplantsPage() {
               </motion.div>
             ))}
           </motion.div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════ CUSTOMIZED ABUTMENTS ═══════════════════════ */}
+      <section className="imp-section imp-section-white">
+        <div className="container">
+          <div className="imp-what-grid" style={{ alignItems: 'center' }}>
+            <FadeIn>
+              <div className="imp-what-content">
+                <span className="imp-label"><ScanLine size={14} /> The Digital Edge</span>
+                <h2>Customized Abutments <span style={{ color: '#6366f1' }}>via Digital Scanning</span></h2>
+                <p>At RH Dental Care, we are proud to provide advanced dental implant solutions using digital intraoral scanning and customized implant abutments. Modern digital dentistry allows us to create more precise, comfortable, and natural-looking implant restorations for our patients.</p>
+                <p>Unlike traditional stock abutments, a customized implant abutment is specially designed according to each patient&apos;s individual gum shape, implant position, bite, and smile line. Using digital scanning technology, we capture highly accurate 3D images without the discomfort of conventional impression materials.</p>
+                
+                <div style={{ background: '#f8fafc', padding: '1.5rem', borderRadius: '1.25rem', borderLeft: '4px solid #6366f1', marginTop: '1.5rem' }}>
+                  <p style={{ margin: 0, fontSize: '0.9rem', color: '#475569', fontStyle: 'italic' }}>
+                    &ldquo;Digital scanning ensures a better-fitting and more aesthetic implant-supported crown compared to traditional methods.&rdquo;
+                  </p>
+                </div>
+              </div>
+            </FadeIn>
+
+            <FadeIn delay={0.2}>
+              <div className="imp-types-grid" style={{ gap: '1rem' }}>
+                {[
+                  { icon: <Smile size={18} />, title: 'Better Aesthetics', desc: 'Matches the natural contour of gums and teeth for a lifelike smile.', color: '#6366f1' },
+                  { icon: <Target size={18} />, title: 'Precision Fit', desc: 'Digital scanning ensures highly accurate 3D measurements.', color: '#0ea5e9' },
+                  { icon: <Activity size={18} />, title: 'Bite & Function', desc: 'Distributes forces evenly, improving comfort during chewing.', color: '#10b981' },
+                  { icon: <Heart size={18} />, title: 'Gum Support', desc: 'Supports healthy tissue and creates a natural emergence profile.', color: '#ef4444' },
+                  { icon: <Zap size={18} />, title: 'Patient Comfort', desc: 'Faster, cleaner, and more comfortable than traditional impressions.', color: '#f59e0b' },
+                  { icon: <ShieldCheck size={18} />, title: 'Long-Term Stability', desc: 'Precise planning contributes to improved durability and success.', color: '#8b5cf6' }
+                ].map((item, i) => (
+                  <div key={i} style={{ 
+                    background: '#fff', 
+                    padding: '1.25rem', 
+                    borderRadius: '1.1rem', 
+                    border: '1px solid rgba(0,0,0,0.05)',
+                    boxShadow: '0 4px 20px rgba(0,0,0,0.02)'
+                  }}>
+                    <div style={{ color: item.color, marginBottom: '0.6rem' }}>{item.icon}</div>
+                    <div style={{ fontSize: '0.9rem', fontWeight: 800, color: '#1e293b', marginBottom: '0.25rem' }}>{item.title}</div>
+                    <p style={{ fontSize: '0.75rem', color: '#64748b', margin: 0, lineHeight: 1.5 }}>{item.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════ TREATMENT PACKAGES ═══════════════════════ */}
+      <section className="imp-section imp-section-white" id="pricing">
+        <div className="container">
+          <FadeIn>
+            <div className="imp-section-header">
+              <span className="imp-label"><Sparkles size={14} /> Investment in Your Smile</span>
+              <h2 className="imp-title">Specialized <span className="imp-accent">Implant Packages</span></h2>
+              <p className="imp-subtitle">Transparent pricing for world-class implant systems. Choose the package that best fits your clinical needs and healing timeline.</p>
+            </div>
+          </FadeIn>
+          
+          <div className="imp-types-grid">
+            {[
+              {
+                id: 'sa',
+                name: 'Osstem SA Package',
+                price: '৳45,000',
+                tag: 'Best Value',
+                color: '#10b981',
+                bg: '#d1fae5',
+                desc: 'A reliable, cost-effective traditional solution. Recognized internationally for proven clinical success and longevity.',
+                features: ['Osstem SA Implant Fixture', 'High Global Success Rate', 'Requires Proper Healing Time', 'Fixture, Abutment & Crown', 'WARRANTY INCLUDED']
+              },
+              {
+                id: 'soi',
+                name: 'Osstem SOI Package',
+                price: '৳60,000',
+                tag: 'Faster Healing',
+                color: '#6366f1',
+                bg: '#ede9fe',
+                desc: 'Advanced SOI surface for rapid osseointegration. Ideal for patients wanting their prosthesis completed in ~15 days.',
+                features: ['Osstem SOI Premium Surface', 'High Bone-to-Implant Contact', 'Prosthesis in ~15 Days*', 'Fixture, Abutment & Crown', 'WARRANTY INCLUDED']
+              },
+              {
+                id: 'nobel',
+                name: 'Nobel Biocare Package',
+                price: '৳80,000',
+                tag: 'Global Premium',
+                color: '#0ea5e9',
+                bg: '#e0f2fe',
+                desc: 'Elite precision from the world’s most renowned brand. Preferred by international patients for advanced technology.',
+                features: ['Nobel Biocare Global Brand', 'Elite Precision Engineering', 'Advanced Global Technology', 'Fixture, Abutment & Crown', 'NO WARRANTY (As per policy)']
+              }
+            ].map((pkg, i) => (
+              <FadeIn key={pkg.id} delay={i * 0.1}>
+                <div className={`imp-type-card card-${i+1}`} style={{ borderTop: `6px solid ${pkg.color}` }}>
+                  <div className="imp-type-tag" style={{ background: pkg.bg, color: pkg.color }}>{pkg.tag}</div>
+                  <h3 className="imp-type-title" style={{ marginTop: '0.5rem' }}>{pkg.name}</h3>
+                  <p className="imp-type-desc" style={{ minHeight: '4.5rem' }}>{pkg.desc}</p>
+                  
+                  <div className="imp-type-price">
+                    {pkg.price}
+                    <span>Full Treatment Cost</span>
+                  </div>
+
+                  <div className="imp-type-features" style={{ marginTop: '1.5rem' }}>
+                    {pkg.features.map((f, j) => (
+                      <div key={j} className="imp-type-feature">
+                        <CheckCircle2 size={14} style={{ color: pkg.color }} /> {f}
+                      </div>
+                    ))}
+                  </div>
+
+                  <Link href="/contact" className="imp-btn-primary" style={{ width: '100%', justifyContent: 'center', marginTop: '2rem', background: pkg.color, boxShadow: 'none', padding: '0.9rem' }}>
+                    Choose This Plan
+                  </Link>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+
+          {/* ── Payment Options ── */}
+          <FadeIn delay={0.3}>
+            <div className="imp-payment-note">
+              <div className="imp-payment-icon"><MessageCircle size={24} /></div>
+              <div className="imp-payment-body">
+                <h4>Flexible Payment Structure</h4>
+                <p>To make premium care accessible, we split the cost into two phases:</p>
+                <div className="imp-payment-steps">
+                  <div className="imp-payment-step">
+                    <strong>60% Phase One</strong>
+                    <span>Paid during the initial surgical placement of the implant fixture.</span>
+                  </div>
+                  <div className="imp-payment-step-arrow"><ChevronRight size={20} /></div>
+                  <div className="imp-payment-step">
+                    <strong>40% Phase Two</strong>
+                    <span>Paid upon completion and placement of your final custom crown.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </FadeIn>
         </div>
       </section>
 
@@ -339,7 +481,7 @@ export default function ImplantsPage() {
       {/* ═══════════════════════ PERSONALIZED CARE ═══════════════════════ */}
       <section className="imp-section imp-section-white">
         <div className="container">
-          <div className="imp-what-grid" style={{ gridTemplateColumns: '1fr 1fr' }}>
+          <div className="imp-what-grid">
             <FadeIn>
               <div className="imp-what-content">
                 <span className="imp-label"><ShieldCheck size={14} /> Personalized Care</span>

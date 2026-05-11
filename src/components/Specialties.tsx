@@ -6,14 +6,14 @@ import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import './Specialties.css';
 
-import imagingImg from '../assets/specialties/3d-imaging.jpg';
-import bracesImg from '../assets/specialties/braces.jpg';
-import zirconiaImg from '../assets/specialties/Zirconia.jpeg';
-import implantImg from '../assets/specialties/implant.png';
-import rootCanalImg from '../assets/specialties/root-canal.jpg';
-import gumCareImg from '../assets/specialties/gum-care.jpg';
+import imagingImg from '../assets/specialties/3d-imaging_new.png';
+import bracesImg from '../assets/specialties/braces_new.png';
+import zirconiaImg from '../assets/specialties/zirconia_new.png';
+import implantImg from '../assets/specialties/implant_new.png';
+import rootCanalImg from '../assets/specialties/root-canal_new.png';
+import gumCareImg from '../assets/specialties/gum-care_new.png';
 import kidsCareImg from '../assets/specialties/kids-care.jpg';
-import aestheticsImg from '../assets/specialties/aesthetic.jpeg';
+import aestheticsImg from '../assets/specialties/aesthetic_new.png';
 
 const clinicsBanners = [
 	{
@@ -73,12 +73,12 @@ const clinicsBanners = [
 		slug: 'kids-care',
 	},
 	{
-		title: 'Aesthetic Dentistry',
-		desc: 'Transform your smile with premium veneers, smile designing, and professional whitening.',
+		title: 'Zirconia Veneers',
+		desc: 'Achieve a naturally beautiful, long-lasting, and confident smile with ultra-thin premium zirconia veneers.',
 		image: aestheticsImg,
 		category: 'Aesthetics',
 		featured: true,
-		slug: 'aesthetics',
+		slug: '/zirconia-veneers',
 	},
 ];
 
@@ -155,7 +155,7 @@ export default function Specialties() {
 							<span className="card-tag">{card.category}</span>
 							<h3>{card.title}</h3>
 							<p>{card.desc}</p>
-							<Link href={`/specialties/${card.slug}`} className="view-link">
+							<Link href={card.slug.startsWith('/') ? card.slug : `/${card.slug}`} className="view-link">
 								<span>View {card.title} Details</span>
 								<ArrowRight size={16} className="arrow" />
 							</Link>

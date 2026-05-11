@@ -1,0 +1,44 @@
+/* ═══════════════════════════════════════════════════
+   Zirconia Crown — Emerald accent overrides only
+   All structural styles come from implants.css
+   ═══════════════════════════════════════════════════ */
+
+/* Hero accent tones — green instead of blue */
+.zircon-hero .imp-hero-overlay {
+  background:
+    linear-gradient(180deg, rgba(2,6,23,0.7) 0%, rgba(2,6,23,0.5) 40%, rgba(2,6,23,0.85) 100%),
+    linear-gradient(135deg, rgba(16,185,129,0.15) 0%, transparent 50%);
+}
+
+.zircon-badge {
+  background: rgba(16,185,129,0.15) !important;
+  border-color: rgba(16,185,129,0.3) !important;
+  color: #6ee7b7 !important;
+}
+
+/* Hero title gradient — green */
+.zircon-hero .imp-hero-title span {
+  background: linear-gradient(135deg, #34d399, #6ee7b7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* imp-what-img badge override */
+.imp-what-img-badge {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  backdrop-filter: blur(16px);
+  border-radius: 100px;
+  padding: 0.55rem 1.3rem;
+  font-size: 0.8rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.12);
+  z-index: 2;
+  border: 1px solid;
+  background: rgba(255,255,255,0.92);
+}

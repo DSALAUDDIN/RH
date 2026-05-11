@@ -15,7 +15,8 @@ import '../implants/implants.css';
 import './orthodontics.css';
 
 import heroImg from '@/assets/ortho/ortho-hero.jpg';
-import bracesFlyer from '@/assets/specialties/braces_clean.png';
+import invisalignFlyer from '@/assets/ortho/invisalign_flyer.png';
+import bracesProgress from '@/assets/ortho/braces_progress.png';
 import clinicActionImg from '@/assets/ortho/ortho-lab.jpg';
 
 function FadeIn({ children, delay = 0, className }: { children: React.ReactNode; delay?: number; className?: string }) {
@@ -137,16 +138,17 @@ export default function OrthodonticsPage() {
         </div>
       </section>
 
-      {/* ═══════════════ BRACES vs ALIGNERS ═══════════════ */}
+      {/* ═══════════════ ORTHODONTIC PACKAGES ═══════════════ */}
       <section className="imp-section imp-section-white">
         <div className="container">
           <FadeIn>
             <div className="imp-section-header">
-              <span className="imp-label"><Heart size={14} /> Two Paths, One Goal</span>
-              <h2 className="imp-title">Choose Your <span className="imp-accent" style={{ background: 'linear-gradient(135deg, #6366f1, #0ea5e9)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>Path to Confidence</span></h2>
-              <p className="imp-subtitle">Rather than comparing them as competitors, we see them as complementary tools — each with its own strengths, designed to suit different needs and lifestyles.</p>
+              <span className="imp-label"><Award size={14} /> Investment in Your Future</span>
+              <h2 className="imp-title">Treatment <span className="imp-accent" style={{ background: 'linear-gradient(135deg, #6366f1, #0ea5e9)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>Packages</span></h2>
+              <p className="imp-subtitle">Transparent pricing tailored to your unique clinical needs and lifestyle preferences.</p>
             </div>
           </FadeIn>
+
           <div className="ortho-split-grid">
             {/* Braces Card */}
             <FadeIn delay={0.1}>
@@ -154,24 +156,36 @@ export default function OrthodonticsPage() {
                 <div className="ortho-card-header">
                   <div className="ortho-card-icon ortho-braces-icon">🦷</div>
                   <div>
-                    <div className="ortho-card-tag ortho-braces-tag">Braces</div>
-                    <h3 className="ortho-card-title">Timeless Precision &amp; Full Control</h3>
+                    <div className="ortho-card-tag ortho-braces-tag">Orthodontic Braces</div>
+                    <div style={{ fontSize: '0.8rem', color: '#64748b', fontWeight: 600 }}>Effective · Reliable · Transformative</div>
                   </div>
                 </div>
-                <p className="ortho-card-desc">Braces have evolved significantly with modern materials. Today&apos;s systems are more comfortable, more aesthetic, and more efficient than ever. They remain the gold standard when precision and full control are essential.</p>
+                
+                <div style={{ background: 'rgba(255,255,255,0.6)', border: '1px dashed rgba(14,165,233,0.3)', borderRadius: '1rem', padding: '1.25rem', marginBottom: '1.5rem', textAlign: 'center' }}>
+                  <span style={{ fontSize: '0.7rem', fontWeight: 800, textTransform: 'uppercase', color: '#94a3b8', display: 'block', marginBottom: '0.2rem' }}>Price Range</span>
+                  <div style={{ fontSize: '1.8rem', fontWeight: 900, color: '#0f172a' }}>৳80,000 – 120,000</div>
+                </div>
+
                 <div className="ortho-advantages-list">
-                  {['Ideal for complex and comprehensive corrections', 'Continuous, controlled force for precise movement', 'Highly effective for bite issues and severe crowding', 'Consistent results regardless of compliance', 'Smaller, smoother brackets for improved comfort', 'Ceramic options for a more aesthetic look'].map((t, i) => (
-                    <div key={i} className="ortho-advantage-item">
-                      <div className="ortho-advantage-icon ortho-braces-adv-icon"><CheckCircle2 size={15} /></div>
-                      <span>{t}</span>
+                  {[
+                    { t: 'Effective for all types of misalignment', d: 'Ideal for simple to complex cases' },
+                    { t: 'Durable & long-lasting results', d: 'Provides strong and stable movement' },
+                    { t: 'Cost-effective option', d: 'More affordable compared to aligners' },
+                    { t: 'No discipline required', d: 'Works 24/7 once placed' },
+                    { t: 'Improves oral health', d: 'Easier cleaning and long-term function' },
+                    { t: 'Custom treatment', d: 'Tailored to your unique dental needs' }
+                  ].map((item, i) => (
+                    <div key={i} className="ortho-advantage-item" style={{ alignItems: 'flex-start' }}>
+                      <div className="ortho-advantage-icon ortho-braces-adv-icon" style={{ marginTop: '0.2rem' }}><CheckCircle2 size={14} /></div>
+                      <div>
+                        <div style={{ fontSize: '0.9rem', fontWeight: 700, color: '#1e293b' }}>{item.t}</div>
+                        <div style={{ fontSize: '0.8rem', color: '#64748b', fontWeight: 500 }}>{item.d}</div>
+                      </div>
                     </div>
                   ))}
                 </div>
-                <div className="ortho-card-best-for">
-                  <span className="ortho-best-label">Best For</span>
-                  <p>Complex cases, severe crowding, bite corrections, and patients wanting proven, hands-off treatment.</p>
-                </div>
-                <Link href="/contact" className="ortho-card-cta ortho-braces-cta">Book Braces Consultation <ArrowUpRight size={16} /></Link>
+                
+                <Link href="/contact" className="ortho-card-cta ortho-braces-cta" style={{ width: '100%', justifyContent: 'center' }}>Book Braces Consultation <ArrowUpRight size={16} /></Link>
               </div>
             </FadeIn>
 
@@ -182,23 +196,35 @@ export default function OrthodonticsPage() {
                   <div className="ortho-card-icon ortho-aligner-icon">✨</div>
                   <div>
                     <div className="ortho-card-tag ortho-aligner-tag">Clear Aligners</div>
-                    <h3 className="ortho-card-title">Discreet Innovation &amp; Everyday Comfort</h3>
+                    <div style={{ fontSize: '0.8rem', color: '#64748b', fontWeight: 600 }}>Clear · Comfortable · Confident</div>
                   </div>
                 </div>
-                <p className="ortho-card-desc">Clear aligners represent the modern evolution of orthodontics — designed for patients who want effective treatment without compromising their appearance or routine. Using advanced 3D scanning and simulation, each aligner is custom-crafted.</p>
+
+                <div style={{ background: 'rgba(255,255,255,0.6)', border: '1px dashed rgba(99,102,241,0.3)', borderRadius: '1rem', padding: '1.25rem', marginBottom: '1.5rem', textAlign: 'center' }}>
+                  <span style={{ fontSize: '0.7rem', fontWeight: 800, textTransform: 'uppercase', color: '#94a3b8', display: 'block', marginBottom: '0.2rem' }}>Price Range</span>
+                  <div style={{ fontSize: '1.8rem', fontWeight: 900, color: '#0f172a' }}>৳200,000 – 350,000</div>
+                </div>
+
                 <div className="ortho-advantages-list">
-                  {['Virtually invisible — professional & social confidence', 'Removable — no food or hygiene restrictions', 'Comfort-focused — smooth, wire-free design', 'Digitally engineered step-by-step precision', 'Custom-crafted with advanced 3D scanning', 'Ideal for mild to moderate cases'].map((t, i) => (
-                    <div key={i} className="ortho-advantage-item">
-                      <div className="ortho-advantage-icon ortho-aligner-adv-icon"><CheckCircle2 size={15} /></div>
-                      <span>{t}</span>
+                  {[
+                    { t: 'Virtually invisible', d: 'Clear and discreet for a confident smile' },
+                    { t: 'Removable & comfortable', d: 'Easy to eat, brush and floss' },
+                    { t: 'Advanced digital planning', d: 'Precision planning for predictable results' },
+                    { t: 'Fewer dental visits', d: 'Convenient and time-saving' },
+                    { t: 'Smooth & gentle movement', d: 'More comfort throughout the treatment' },
+                    { t: 'Ideal for adults & professionals', d: 'Aesthetic solution for modern lifestyle' }
+                  ].map((item, i) => (
+                    <div key={i} className="ortho-advantage-item" style={{ alignItems: 'flex-start' }}>
+                      <div className="ortho-advantage-icon ortho-aligner-adv-icon" style={{ marginTop: '0.2rem' }}><CheckCircle2 size={14} /></div>
+                      <div>
+                        <div style={{ fontSize: '0.9rem', fontWeight: 700, color: '#1e293b' }}>{item.t}</div>
+                        <div style={{ fontSize: '0.8rem', color: '#64748b', fontWeight: 500 }}>{item.d}</div>
+                      </div>
                     </div>
                   ))}
                 </div>
-                <div className="ortho-card-best-for">
-                  <span className="ortho-best-label">Best For</span>
-                  <p>Mild to moderate cases, professionals, and patients who value flexibility, aesthetics, and lifestyle freedom.</p>
-                </div>
-                <Link href="/contact" className="ortho-card-cta ortho-aligner-cta">Book Aligner Consultation <ArrowUpRight size={16} /></Link>
+
+                <Link href="/contact" className="ortho-card-cta ortho-aligner-cta" style={{ width: '100%', justifyContent: 'center' }}>Book Aligner Consultation <ArrowUpRight size={16} /></Link>
               </div>
             </FadeIn>
           </div>
@@ -208,7 +234,7 @@ export default function OrthodonticsPage() {
       {/* ═══════════════ APPRECIATING BOTH ═══════════════ */}
       <section className="imp-section imp-section-alt">
         <div className="container">
-          <div className="imp-what-grid" style={{ gridTemplateColumns: '1fr 1fr' }}>
+          <div className="imp-what-grid">
             <FadeIn>
               <div className="imp-what-content">
                 <span className="imp-label"><Star size={14} /> Appreciating Both</span>
@@ -230,29 +256,168 @@ export default function OrthodonticsPage() {
         </div>
       </section>
 
-      {/* ═══════════════ FLYER SECTION ═══════════════ */}
-      <section className="imp-section" style={{ background: '#f8fafc', padding: '0 0 6rem 0' }}>
+
+      {/* ═══════════════ INVISALIGN — SPLIT LAYOUT ═══════════════ */}
+      <section className="imp-section imp-section-white">
         <div className="container">
           <FadeIn>
-            <div style={{
-              position: 'relative',
-              width: '100%',
-              maxWidth: '1200px',
-              aspectRatio: '16/10',
-              margin: '0 auto',
-              borderRadius: '1.5rem',
-              overflow: 'hidden',
-              boxShadow: '0 25px 60px rgba(0,0,0,0.08)',
-              border: '2px solid rgba(99,102,241,0.1)'
-            }}>
-              <Image 
-                src={bracesFlyer} 
-                alt="Orthodontic Braces Flyer" 
-                fill 
-                style={{ objectFit: 'contain', background: '#fff' }} 
-              />
+            <div className="imp-section-header">
+              <span className="imp-label"><Sparkles size={14} /> The Future of Orthodontics</span>
+              <h2 className="imp-title">How Does <span className="imp-accent" style={{ background: 'linear-gradient(135deg, #0ea5e9, #38bdf8)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>Invisalign</span> Work?</h2>
+              <p className="imp-subtitle">Move forward in life with a newer, better smile — make traditional braces a thing of the past.</p>
             </div>
           </FadeIn>
+
+          <div className="ortho-invisalign-split">
+            {/* Left — image inside a styled frame */}
+            <FadeIn delay={0.1}>
+              <div className="ortho-invisalign-img-frame">
+                <div className="ortho-invisalign-img-glow" />
+                <Image
+                  src={invisalignFlyer}
+                  alt="Invisalign Treatment Guide by RH Dental Care"
+                  style={{ width: '100%', height: 'auto', display: 'block', borderRadius: '1.25rem', position: 'relative', zIndex: 1 }}
+                  quality={100}
+                />
+              </div>
+            </FadeIn>
+
+            {/* Right — steps */}
+            <FadeIn delay={0.2}>
+              <div className="ortho-invisalign-steps">
+                <p className="ortho-invisalign-tagline">
+                  &ldquo;Your smile is our happiness&rdquo;
+                </p>
+
+                {[
+                  {
+                    num: '01',
+                    color: '#0ea5e9',
+                    bg: '#e0f2fe',
+                    title: 'Treat',
+                    desc: 'Your journey begins with a scan or physical impression of your teeth. Your orthodontist will develop a complete plan — carefully planning your best smile from start to finish.',
+                  },
+                  {
+                    num: '02',
+                    color: '#6366f1',
+                    bg: '#ede9fe',
+                    title: 'Trays',
+                    desc: 'You receive a series of custom-made clear aligners or trays, worn 20–22 hours a day. They are removable, so your daily life stays completely uninterrupted.',
+                  },
+                  {
+                    num: '03',
+                    color: '#10b981',
+                    bg: '#d1fae5',
+                    title: 'Transform',
+                    desc: 'As you progress through your trays, teeth move gradually through expertly designed movements — transforming not just your smile, but your life.',
+                  },
+                ].map((step, i) => (
+                  <motion.div
+                    key={i}
+                    className="ortho-step-card"
+                    initial={{ opacity: 0, x: 24 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: 0.15 * i, ease: [0.16, 1, 0.3, 1] }}
+                  >
+                    <div className="ortho-step-num" style={{ background: step.bg, color: step.color }}>
+                      {step.num}
+                    </div>
+                    <div className="ortho-step-body">
+                      <div className="ortho-step-title" style={{ color: step.color }}>{step.title}</div>
+                      <p className="ortho-step-desc">{step.desc}</p>
+                    </div>
+                  </motion.div>
+                ))}
+
+                <Link href="/contact" className="imp-btn-primary" style={{ background: 'linear-gradient(135deg, #0ea5e9, #38bdf8)', marginTop: '1.5rem', display: 'inline-flex' }}>
+                  Book Invisalign Consultation <ArrowUpRight size={18} />
+                </Link>
+              </div>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════ BRACES PROGRESS — SPLIT LAYOUT ═══════════════ */}
+      <section className="imp-section imp-section-light">
+        <div className="container">
+          <FadeIn>
+            <div className="imp-section-header">
+              <span className="imp-label"><Layers size={14} /> The Braces Journey</span>
+              <h2 className="imp-title">Stages of <span className="imp-accent" style={{ background: 'linear-gradient(135deg, #6366f1, #4f46e5)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>Transformation</span></h2>
+              <p className="imp-subtitle">A step-by-step look at how modern braces gradually align your teeth for a perfect, healthy smile.</p>
+            </div>
+          </FadeIn>
+
+          <div className="imp-what-grid ortho-invisalign-split" style={{ alignItems: 'center' }}>
+            {/* Left — steps/content */}
+            <FadeIn delay={0.1}>
+              <div className="ortho-invisalign-steps">
+                <p className="ortho-invisalign-tagline" style={{ color: '#6366f1' }}>
+                  &ldquo;Precision at every stage&rdquo;
+                </p>
+
+                {[
+                  {
+                    num: '01',
+                    color: '#6366f1',
+                    bg: '#ede9fe',
+                    title: 'Initial Bonding',
+                    desc: 'High-precision brackets are bonded to your teeth, and the first architectural wire is placed to begin the alignment process.',
+                  },
+                  {
+                    num: '02',
+                    color: '#0ea5e9',
+                    bg: '#e0f2fe',
+                    title: 'Leveling & Space Closure',
+                    desc: 'Advanced mechanics like power chains or elastic loops are used to close gaps and align the arches with surgical precision.',
+                  },
+                  {
+                    num: '03',
+                    color: '#10b981',
+                    bg: '#d1fae5',
+                    title: 'Final Reveal',
+                    desc: 'After the teeth have reached their ideal positions, the braces are removed to reveal a perfectly balanced, healthy smile.',
+                  },
+                ].map((step, i) => (
+                  <motion.div
+                    key={i}
+                    className="ortho-step-card"
+                    initial={{ opacity: 0, x: -24 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: 0.15 * i, ease: [0.16, 1, 0.3, 1] }}
+                  >
+                    <div className="ortho-step-num" style={{ background: step.bg, color: step.color }}>
+                      {step.num}
+                    </div>
+                    <div className="ortho-step-body">
+                      <div className="ortho-step-title" style={{ color: step.color }}>{step.title}</div>
+                      <p className="ortho-step-desc">{step.desc}</p>
+                    </div>
+                  </motion.div>
+                ))}
+
+                <Link href="/contact" className="imp-btn-primary" style={{ background: 'linear-gradient(135deg, #6366f1, #4f46e5)', marginTop: '1.5rem', display: 'inline-flex' }}>
+                  Start Your Journey <ArrowUpRight size={18} />
+                </Link>
+              </div>
+            </FadeIn>
+
+            {/* Right — the progress image */}
+            <FadeIn delay={0.2}>
+              <div className="ortho-invisalign-img-frame" style={{ border: '2px solid rgba(99,102,241,0.1)' }}>
+                <div className="ortho-invisalign-img-glow" style={{ background: 'radial-gradient(circle, rgba(99,102,241,0.15), transparent 70%)' }} />
+                <Image
+                  src={bracesProgress}
+                  alt="Braces Treatment Progress — Before and After at RH Dental Care"
+                  style={{ width: '100%', height: 'auto', display: 'block', borderRadius: '1.25rem', position: 'relative', zIndex: 1 }}
+                  quality={100}
+                />
+              </div>
+            </FadeIn>
+          </div>
         </div>
       </section>
 
@@ -325,7 +490,7 @@ export default function OrthodonticsPage() {
               <h2 className="imp-title">Regardless of Method, the <span className="imp-accent" style={{ background: 'linear-gradient(135deg, #6366f1, #4f46e5)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>Goal Is the Same</span></h2>
             </div>
           </FadeIn>
-          <motion.div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem', maxWidth: 900, margin: '0 auto' }} variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true }}>
+          <motion.div className="imp-types-grid" style={{ gap: '1.5rem', maxWidth: 900, margin: '0 auto' }} variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true }}>
             {[
               { icon: <Smile size={28} />, title: 'A Balanced, Natural Smile', desc: 'Perfectly aligned teeth that look and feel completely natural.', bg: '#ede9fe', color: '#6366f1' },
               { icon: <Zap size={28} />, title: 'Improved Function & Health', desc: 'Better chewing, easier cleaning, and long-term oral health benefits.', bg: '#e0f2fe', color: '#0ea5e9' },

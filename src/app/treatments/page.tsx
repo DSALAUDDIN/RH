@@ -82,6 +82,7 @@ interface Treatment {
   price?: string;
   description?: string;
   highlight?: boolean;
+  path?: string;
 }
 
 interface Category {
@@ -129,7 +130,7 @@ const categories: Category[] = [
       { name: 'Apicoectomy', price: '৳20,000', description: 'Root-end surgery to remove the tip of a tooth root and infected tissue when root canal fails.' },
       { name: 'Cyst Removal', price: '৳20,000', description: 'Surgical removal of fluid-filled dental cysts from around teeth or jawbone.' },
       { name: 'Orthognathic Surgery', price: '৳400,000', description: 'Corrective jaw surgery to fix severe misalignments, improving bite, breathing, and facial aesthetics.', highlight: true },
-      { name: 'Dental Implant (SA-SOI)', price: '৳70,000 – 80,000', description: 'Surgically placed titanium posts to permanently replace missing teeth with natural-looking crowns.', highlight: true },
+      { name: 'Dental Implant (Osstem/Nobel)', price: '৳45,000 – 80,000', description: 'Advanced permanent tooth replacement. Packages available for Osstem SA, SOI, and Nobel Biocare.', highlight: true },
     ],
   },
   {
@@ -141,7 +142,8 @@ const categories: Category[] = [
     colorLight: '#ede9fe',
     colorBg: 'linear-gradient(135deg, #6366f1, #4f46e5)',
     treatments: [
-      { name: 'RCT / RE-RCT', price: '৳5,000 – 7,000', description: 'Root canal treatment to remove infected pulp, clean canals and seal the tooth to save it from extraction.', highlight: true },
+      { name: 'RCT + Crown Packages', price: '৳13,000 – 20,000', description: 'Complete root canal therapy including crown (PFM, Premium PFM, or Zirconia options).', highlight: true },
+      { name: 'RCT / RE-RCT (Only Treatment)', price: '৳5,000 – 7,000', description: 'Root canal treatment to remove infected pulp and seal canals. Crown placed separately.' },
       { name: 'Single Visit RCT with Resin Crown Prosthesis', price: '৳30,000', description: 'Complete root canal therapy + resin crown placed in one efficient appointment using advanced technology.', highlight: true },
       { name: 'Dental Fillings / Restoration', price: '৳2,500 – 3,000', description: 'Composite or glass ionomer filling to restore cavities and damaged tooth structure.' },
       { name: 'RCT Tooth (Build-Up)', price: '৳2,000', description: 'Rebuilds the internal structure of a tooth after RCT to prepare it for crown placement.' },
@@ -165,6 +167,7 @@ const categories: Category[] = [
       { name: 'Tooth Extraction (Child)', price: '৳400+', description: 'Gentle extraction of severely decayed, stubborn baby teeth or orthodontic preparation under local anesthesia.' },
       { name: 'Deciduous Filling', price: '৳1,000', description: 'Composite or glass ionomer fillings to restore cavities in baby teeth and protect dental development.' },
       { name: 'Pulpectomy / Pulpotomy', price: '৳3,000', description: 'Root canal-equivalent treatment for infected baby teeth — saving the tooth to maintain space for permanent teeth.', highlight: true },
+      { name: 'Special Child Program (GA)', description: 'Comprehensive dental management under General Anesthesia for special healthcare needs children. Multiple procedures in one safe session.', highlight: true, path: '/special-child' },
     ],
   },
   {
@@ -176,8 +179,8 @@ const categories: Category[] = [
     colorLight: '#f3e8ff',
     colorBg: 'linear-gradient(135deg, #8b5cf6, #7c3aed)',
     treatments: [
-      { name: 'Orthodontic Braces', price: '৳80,000 – 1,20,000', description: 'Traditional or ceramic brackets and wires to straighten teeth. Custom-planned using 3D imaging.', highlight: true },
-      { name: 'Orthodontic Aligner', price: '৳2,50,000 – 3,50,000', description: 'Clear, removable custom trays for discreet teeth straightening — no brackets or wires.', highlight: true },
+      { name: 'Orthodontic Braces', price: '৳80,000 – 120,000', description: 'Effective, reliable, and transformative teeth alignment. Ideal for simple to complex cases.', highlight: true },
+      { name: 'Orthodontic Aligner', price: '৳200,000 – 350,000', description: 'Virtually invisible and removable clear aligners. Discreet innovation and everyday comfort.', highlight: true },
       { name: 'Removable Orthodontics', description: 'Removable appliances for mild to moderate alignment issues. Comfortable and easy to maintain.' },
       { name: 'Night Guard', price: '৳4,000', description: 'Custom-fitted dental appliance to protect teeth from bruxism (grinding) and TMJ disorders during sleep.' },
     ],
@@ -193,7 +196,7 @@ const categories: Category[] = [
     treatments: [
       { name: 'Re-insertion of Dislodged Crown', price: '৳1,500', description: 'Re-cementing a crown that has fallen off or become loose back onto the prepared tooth.' },
       { name: 'Crown (Porcelain / Metal)', price: '৳6,000 – 8,000', description: 'Ceramic or metal dental cap to fully cover and restore a damaged, decayed or root-canal-treated tooth.' },
-      { name: 'Zirconium Crown', price: '৳20,000', description: 'Premium ultra-strong, natural-looking ceramic crown. Biocompatible and stain-resistant.', highlight: true },
+      { name: 'Zirconium Crown', price: '৳20,000', description: 'Premium ultra-strong, natural-looking ceramic crown. Biocompatible and stain-resistant.', highlight: true, path: '/zirconia-crown' },
       { name: 'Gold Crown', price: '৳1,50,000', description: 'Pure gold alloy crown offering exceptional longevity and durability for posterior teeth.', highlight: true },
       { name: 'Complete Denture (per jaw)', price: '৳30,000', description: 'Full removable denture replacing all teeth in one jaw, restoring appearance and chewing function.' },
       { name: 'Partial Denture Per Unit', price: '৳6,000', description: 'Removable prosthesis replacing one or a few missing teeth, attached to remaining natural teeth.' },
@@ -249,7 +252,7 @@ const signatureTreatments = [
     desc: 'Combines laser-assisted root canal therapy with intraoral scanner and 3D printer-fabricated resin crown — all in one day.',
     duration: '1 Day (3–4 hrs)',
     visits: '1',
-    price: '৳30,000',
+    price: '৳13,000 – 20,000',
     color: '#6366f1',
   },
   {
@@ -258,11 +261,20 @@ const signatureTreatments = [
     desc: 'Same-day implant placement and prosthesis attachment. Minimizes treatment time, restores function and aesthetics quickly.',
     duration: '1 Day (7–21 hrs)',
     visits: '3+',
-    price: '৳70,000 – 80,000',
+    price: '৳45,000 – 80,000',
     color: '#0ea5e9',
   },
   {
     sn: '03',
+    name: 'Clear Aligner (Invisible Braces) Transformation',
+    desc: 'Discreet, removable clear aligners designed using advanced digital planning for a confident, wire-free smile transformation.',
+    duration: '12–24 Months',
+    visits: '10–20',
+    price: '৳200,000 – 350,000',
+    color: '#8b5cf6',
+  },
+  {
+    sn: '04',
     name: 'Laser Teeth Whitening',
     desc: 'Advanced laser-activated whitening gel removes deep stains. Safe, non-invasive, and delivers dramatic results in just 1 hour.',
     duration: '1 Hour',
@@ -271,7 +283,7 @@ const signatureTreatments = [
     color: '#f59e0b',
   },
   {
-    sn: '04',
+    sn: '05',
     name: 'Use of PRF in Different Grafts',
     desc: 'Platelet-Rich Fibrin is applied in bone grafts, sinus lifts, and periodontal treatments to accelerate healing and tissue regeneration.',
     duration: '—',
@@ -566,24 +578,36 @@ export default function TreatmentsPage() {
                               background: treatment.highlight ? `${cat.color}05` : ''
                             }}
                           >
-                            <div style={{ flex: 1, paddingRight: '1rem' }}>
-                              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.5rem' }}>
-                                <h3 className="tr-treatment-name">{treatment.name}</h3>
-                                {treatment.highlight && (
-                                  <span style={{ background: cat.colorBg, color: 'white', padding: '0.2rem 0.6rem', borderRadius: '999px', fontSize: '0.65rem', fontWeight: 800, letterSpacing: '0.05em' }}>
-                                    FEATURED
-                                  </span>
+                            <Link 
+                              href={treatment.path || '/contact'}
+                              style={{ 
+                                display: 'contents', 
+                                textDecoration: 'none', 
+                                color: 'inherit',
+                                pointerEvents: treatment.path ? 'auto' : 'none' 
+                              }}
+                            >
+                              <div style={{ flex: 1, paddingRight: '1rem' }}>
+                                <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.5rem' }}>
+                                  <h3 className="tr-treatment-name" style={{ color: treatment.path ? cat.color : 'inherit' }}>
+                                    {treatment.name} {treatment.path && <ArrowUpRight size={14} style={{ verticalAlign: 'middle', marginLeft: '2px' }} />}
+                                  </h3>
+                                  {treatment.highlight && (
+                                    <span style={{ background: cat.colorBg, color: 'white', padding: '0.2rem 0.6rem', borderRadius: '999px', fontSize: '0.65rem', fontWeight: 800, letterSpacing: '0.05em' }}>
+                                      FEATURED
+                                    </span>
+                                  )}
+                                </div>
+                                {treatment.description && (
+                                  <p className="tr-treatment-desc">{treatment.description}</p>
                                 )}
                               </div>
-                              {treatment.description && (
-                                <p className="tr-treatment-desc">{treatment.description}</p>
+                              {treatment.price && (
+                                <div className="tr-treatment-price" style={{ background: cat.colorLight, color: cat.color }}>
+                                  {treatment.price}
+                                </div>
                               )}
-                            </div>
-                            {treatment.price && (
-                              <div className="tr-treatment-price" style={{ background: cat.colorLight, color: cat.color }}>
-                                {treatment.price}
-                              </div>
-                            )}
+                            </Link>
                           </motion.div>
                         ))}
                       </div>

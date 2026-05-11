@@ -1,0 +1,63 @@
+/* ─── Dental Surgery Page — Red accent overrides only ───
+   All structural styles come from implants.css
+   ────────────────────────────────────────────────── */
+
+.ds-hero .imp-hero-overlay {
+  background:
+    linear-gradient(180deg, rgba(2,6,23,0.75) 0%, rgba(2,6,23,0.5) 40%, rgba(2,6,23,0.9) 100%),
+    linear-gradient(135deg, rgba(239,68,68,0.18) 0%, transparent 55%);
+}
+
+.ds-badge {
+  background: rgba(239,68,68,0.15) !important;
+  border-color: rgba(239,68,68,0.3) !important;
+  color: #fca5a5 !important;
+}
+
+.ds-hero .imp-hero-title span {
+  background: linear-gradient(135deg, #f87171, #fca5a5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.ds-label {
+  background: rgba(239,68,68,0.08) !important;
+  border-color: rgba(239,68,68,0.2) !important;
+  color: #dc2626 !important;
+}
+
+/* Reuse image badge from special-child */
+.imp-what-img-badge {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(16px);
+  border-radius: 100px;
+  padding: 0.55rem 1.3rem;
+  font-size: 0.8rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.12);
+  z-index: 2;
+  border: 1px solid;
+}
+
+.ds-img-badge {
+  color: #ef4444;
+  border-color: rgba(239,68,68,0.2);
+}
+
+/* Why-Us grid responsive */
+@media (max-width: 1024px) {
+  .ds-why-grid { grid-template-columns: repeat(3, 1fr) !important; }
+}
+@media (max-width: 768px) {
+  .ds-why-grid { grid-template-columns: 1fr 1fr !important; }
+}
+@media (max-width: 480px) {
+  .ds-why-grid { grid-template-columns: 1fr !important; }
+}

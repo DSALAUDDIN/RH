@@ -1140,3 +1140,120 @@
   .imp-video-badge-item { font-size: 0.75rem; padding: 0.5rem 1rem; }
   .imp-video-section { padding: 5rem 0; }
 }
+
+/* ═══════════════════════════════════════
+   Implant Packages & Payment Note
+   ═══════════════════════════════════════ */
+.imp-type-tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.35rem 0.85rem;
+  border-radius: 100px;
+  margin-bottom: 0.75rem;
+}
+
+/* Payment Note Styling */
+.imp-payment-note {
+  margin-top: 5rem;
+  background: #f8fafc;
+  border: 1.5px solid rgba(14, 165, 233, 0.1);
+  border-radius: 2rem;
+  padding: 3rem;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.imp-payment-note::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(14, 165, 233, 0.03), transparent 70%);
+  z-index: 0;
+}
+
+.imp-payment-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 1.25rem;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0284c7;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.imp-payment-body {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+}
+
+.imp-payment-body h4 {
+  font-size: 1.3rem;
+  font-weight: 900;
+  color: #0f172a;
+  margin-bottom: 0.5rem;
+}
+
+.imp-payment-body p {
+  color: #64748b;
+  font-size: 0.95rem;
+  margin-bottom: 2rem;
+}
+
+.imp-payment-steps {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.imp-payment-step {
+  flex: 1;
+}
+
+.imp-payment-step strong {
+  display: block;
+  font-size: 1rem;
+  color: #0284c7;
+  font-weight: 800;
+  margin-bottom: 0.4rem;
+}
+
+.imp-payment-step span {
+  font-size: 0.88rem;
+  color: #475569;
+  line-height: 1.6;
+}
+
+.imp-payment-step-arrow {
+  color: #cbd5e1;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .imp-payment-note {
+    flex-direction: column;
+    padding: 2rem;
+    text-align: center;
+  }
+  .imp-payment-steps {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .imp-payment-step-arrow {
+    transform: rotate(90deg);
+  }
+}

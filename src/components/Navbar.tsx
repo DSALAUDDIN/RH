@@ -36,6 +36,11 @@ export default function Navbar() {
         { name: 'Implants', path: '/implants', icon: '🦷', desc: 'Permanent tooth replacement' },
         { name: 'Orthodontics', path: '/orthodontics', icon: '✨', desc: 'Braces & clear aligners' },
         { name: 'Root Canal', path: '/root-canal', icon: '🔬', desc: 'Single-visit precision care' },
+        { name: 'Zirconia Crown', path: '/zirconia-crown', icon: '👑', desc: 'Premium smile restoration' },
+        { name: 'Zirconia Veneers', path: '/zirconia-veneers', icon: '💎', desc: 'Flawless smile transformation' },
+        { name: 'Special Child Program', path: '/special-child', icon: '💚', desc: 'GA-based specialized care' },
+        { name: 'Dental Surgery', path: '/dental-surgery', icon: '🔴', desc: 'Advanced oral surgical care' },
+        { name: 'Digital Dentistry', path: '/digital-dentistry', icon: '🔵', desc: '3D scanning & CAD/CAM' },
         { name: 'View All Specialties', path: '/specialties', icon: '→', desc: '' },
       ]
     },

@@ -11,6 +11,7 @@ import imgMehediFlyer from '../../assets/Doctor_List/Mehedi.jpeg';
 import imgMehedi from '../../assets/doctors/mehedi_clean.jpeg';
 import imgShimiaFlyer from '../../assets/Doctor_List/shimia_flyer.jpeg';
 import imgShimia from '../../assets/doctors/shimia_clean.jpeg';
+import imgDrShaheen from '../../assets/doctors/dr_shaheen.png';
 import imgAfzal from '../../assets/Doctor_List/Afzal.jpeg';
 import imgTamima from '../../assets/Doctor_List/Tamima.jpeg';
 import imgTamanna from '../../assets/Doctor_List/Tamanna.jpeg';
@@ -20,14 +21,15 @@ import imgUmaya from '../../assets/Doctor_List/Umaya.jpeg';
 import imgPanna from '../../assets/Doctor_List/Panna.jpeg';
 import imgBarsha from '../../assets/Doctor_List/Barsha.jpeg';
 import imgFariha from '../../assets/Doctor_List/Fariha.jpeg';
+import imgAsma from '../../assets/Doctor_List/Asma.png';
 
 /* ── Team Data ── */
 const teamMembers = [
   {
     name: 'Dr. B. M. Rafiqul Hasan (Mehedi)',
-    designation: 'Chief Consultant Oral & Dental Surgeon',
+    designation: 'CHIEF CONSULTANT ORAL & DENTAL SURGEON',
     role: 'Best Dental Implant Specialist in Dhaka',
-    badge: 'Chief Consultant',
+    badge: 'Managing Director',
     img: imgMehedi,
     flyerImg: imgMehediFlyer,
     credentials: ['BDS — Sapporo Dental College (DU)', 'MPH — City University', 'PGT (OMS & Prosthodontics) — BSM Medical University, Dhaka'],
@@ -78,7 +80,7 @@ const teamMembers = [
         <h4 style={{ marginTop: '1.25rem', marginBottom: '0.5rem', color: '#0f172a' }}>Professional Positions</h4>
         <ul style={{ listStyleType: 'disc', paddingLeft: '1.25rem', marginBottom: '1rem', color: '#475569' }}>
           <li>Chief Consultant – RH Dental Care, Dhaka</li>
-          <li>Senior Lecturer (since 2014) – Saphena Women’s Dental College and MH Samorita Medical College & Hospital</li>
+          <li>Senior Lecturer (since 2014) – Saphena Women's Dental College and MH Samorita Medical College & Hospital</li>
           <li>Senior Oral & Dental Surgeon – Labaid Dental Clinic, Gulshan</li>
         </ul>
 
@@ -119,6 +121,27 @@ const teamMembers = [
     bio: 'Dr. Shimia Binte Taher is a highly experienced Senior Consultant Oral & Dental Surgeon with advanced clinical expertise and strong academic involvement in dental education. She is known for her precise treatment planning, calm clinical approach, and ability to manage complex and critical dental cases with confidence.\n\nWith a special focus on endodontics, prosthodontics, minor oral surgical procedures, cosmetic dental treatments, and advanced case management, she delivers comprehensive care tailored to both functional and aesthetic needs. Her experience as a senior lecturer at MH Samorita Medical College & Dental Unit further reflects her dedication to academic excellence and evidence-based dentistry.\n\nShe is committed to providing safe, high-quality, and patient-centered dental care, ensuring comfort and trust throughout every stage of treatment.',
   },
   {
+    name: 'Prof. Dr. Md. Shahidul Islam Shaheen',
+    designation: 'Clinical Advisor & On-Call Specialist',
+    role: 'Prosthodontist & Implantologist',
+    badge: 'Clinical Advisor',
+    img: imgDrShaheen,
+    flyerImg: imgDrShaheen,
+    credentials: ['BDS', 'MS', 'FDS RCPS (Glasgow)', 'PhD Fellow (Oral Cancer)', 'Trained in Dental Implantology (Korea, India, Dubai)'],
+    bmdc: 'Registered',
+    bio: (
+      <>
+        <p>Prof. Dr. Md. Shahidul Islam Shaheen is a renowned dental academician, prosthodontic specialist, and oral surgery expert with extensive experience in advanced clinical dentistry, dental education, and complex treatment management. He is highly respected for his contribution to modern prosthodontics, implant dentistry, oral rehabilitation, and advanced restorative dentistry.</p>
+        <p>He holds prestigious qualifications including BDS, MS, and FDS RCPS (Glasgow), along with advanced international training in Dental Implantology, oral surgery and Micro & digital dentistry from Korea, India & Dubai. He is currently doing PhD on Oral cancer.</p>
+        <p>Over the years, he has developed exceptional expertise in full mouth rehabilitation, implant-supported prosthesis, esthetic prosthodontics, complex oral surgery, maxillofacial rehabilitation, and multidisciplinary restorative treatment planning.</p>
+        <p>He is also serving as a Senior Consultant at Pacific Dental Clinic, Uttara, Dhaka where he is actively involved in advanced prosthodontic care, implant rehabilitation, and comprehensive patient management using modern dental technologies and evidence-based treatment approaches.</p>
+        <h4 style={{ marginTop: '1.25rem', marginBottom: '0.5rem', color: '#0f172a' }}>Role at RH Dental Care</h4>
+        <p>At RH Dental Care, Prof. Dr. Shahidul Islam Shaheen is associated as an On-Call Doctor and Clinical Advisor. He primarily deals with critical and complex surgical cases, advanced oral rehabilitation procedures, and specialized treatment planning for challenging dental conditions. His expert guidance plays a vital role in managing complicated implant, prosthodontic, and oral surgical cases at RH Dental Care.</p>
+        <p>Through his vast clinical experience and academic excellence, he continuously supports the institution in delivering high-quality, modern, and patient-centered dental care. Known for his precision, professionalism, and dedication to excellence, Prof. Dr. Shahidul Islam Shaheen continues to inspire students, dentists, and healthcare professionals through his leadership, teaching, and advanced clinical practice.</p>
+      </>
+    ),
+  },
+  {
     name: 'Dr. Afzal Chowdhury',
     designation: 'Consultant — Oral Surgery',
     role: 'Oral & Dental Surgeon',
@@ -138,7 +161,7 @@ const teamMembers = [
     flyerImg: imgTamima,
     credentials: ['BDS', 'PGT (Conservative Dentistry & Endodontics)'],
     bmdc: 'Registered',
-    bio: 'Dr. Mahaesa Tamima is an experienced and highly skilled Oral & Dental Surgeon with advanced training in endodontics. She is known for her strong clinical judgment, precision in diagnosis, and commitment to delivering high-quality dental care.\n\nHer areas of expertise include advanced and basic endodontic treatments (root canal therapy) and pediatric dentistry, where she provides gentle and effective care tailored to children’s needs.\n\nWith a calm, compassionate, and patient-friendly approach, she ensures a comfortable treatment experience even in complex cases. Her sharp clinical knowledge and dedication make her a trusted practitioner for both adult and pediatric patients.',
+    bio: 'Dr. Mahaesa Tamima is an experienced and highly skilled Oral & Dental Surgeon with advanced training in endodontics. She is known for her strong clinical judgment, precision in diagnosis, and commitment to delivering high-quality dental care.\n\nHer areas of expertise include advanced and basic endodontic treatments (root canal therapy) and pediatric dentistry, where she provides gentle and effective care tailored to children\'s needs.\n\nWith a calm, compassionate, and patient-friendly approach, she ensures a comfortable treatment experience even in complex cases. Her sharp clinical knowledge and dedication make her a trusted practitioner for both adult and pediatric patients.',
   },
   {
     name: 'Dr. Nishat Tamanna Alam',
@@ -215,7 +238,18 @@ const teamMembers = [
     flyerImg: imgFariha,
     credentials: ['BDS', 'PGT (General Dentistry)'],
     bmdc: 'Registered',
-    bio: 'Dr. Fariha Ferdous is a skilled and dedicated Oral & Dental Surgeon with strong clinical experience in managing complex dental cases with patience and precision. She is particularly known for her ability to handle anxious, critical, and uncooperative patients with care and confidence.\n\nHer areas of expertise include advanced endodontic treatment (root canal therapy), surgical tooth extraction, and non-surgical extraction procedures, with a strong focus on patient comfort and effective pain management.\n\nWith a calm clinical approach and strong commitment to quality care, she ensures safe, smooth, and reliable treatment outcomes for her patients.',
+    bio: 'Dr. Fariha Ferdous is a skilled and dedicated Oral & Dental Surgeon with strong clinical experience in managing complex dental cases with patience and precision. She is particularly known for her ability to handle anxious, critical, and uncooperative patients with care and confidence.\n\n\nHer areas of expertise include advanced endodontic treatment (root canal therapy), surgical tooth extraction, and non-surgical extraction procedures, with a strong focus on patient comfort and effective pain management.\n\nWith a calm clinical approach and strong commitment to quality care, she ensures safe, smooth, and reliable treatment outcomes for her patients.',
+  },
+  {
+    name: 'Dr. Asma Binte Faiz Tamanna',
+    designation: 'Consultant — Aesthetic & Endodontic Dentistry',
+    role: 'Oral & Dental Surgeon',
+    badge: 'Aesthetic Dentistry',
+    img: imgAsma,
+    flyerImg: imgAsma,
+    credentials: ['BDS(DU)', 'BMDC: 15752'],
+    bmdc: '15752',
+    bio: 'Dr. Asma Binte Faiz Tamanna is a dedicated and enthusiastic Oral & Dental Surgeon known for her fresh approach and positive attitude toward patient care. She is committed to providing comfortable, modern, and aesthetically focused dental treatment.\n\nHer areas of expertise include aesthetic dentistry and endodontic treatment (root canal therapy), with a strong focus on achieving natural-looking, functional, and long-lasting results.\n\nWith a friendly and cheerful personality, she creates a reassuring environment for patients, ensuring a pleasant and stress-free treatment experience.',
   },
 ];
 
@@ -263,9 +297,9 @@ export default function TeamPage() {
             >
               {/* Portrait — clipped to face area to hide flyer text */}
               <div className="team-card-image-wrap">
-                <div className={`team-role-badge ${m.badge === 'Team Lead' ? 'lead' : m.badge === 'Chief Consultant' ? 'director' : ''}`}>
+                <div className={`team-role-badge ${m.badge === 'Team Lead' ? 'lead' : (m.badge === 'Chief Consultant' || m.badge === 'Managing Director') ? 'director' : ''}`}>
                   {m.badge === 'Team Lead' && <Sparkles size={12} />}
-                  {m.badge === 'Chief Consultant' && <Award size={12} />}
+                  {(m.badge === 'Chief Consultant' || m.badge === 'Managing Director') && <Award size={12} />}
                   {m.badge}
                 </div>
                 {m.flyerImg && (

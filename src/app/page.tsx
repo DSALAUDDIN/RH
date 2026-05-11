@@ -4,6 +4,7 @@ import Specialties from '@/components/Specialties';
 import Testimonials from '@/components/Testimonials';
 import VideoSection from '@/components/VideoSection';
 import ClinicGallery from '@/components/ClinicGallery';
+import PromoModal from '@/components/PromoModal';
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <Specialties />
       <VideoSection />
       <ClinicGallery />
+      <PromoModal />
       <ServicesList limit={4} />
       <Testimonials />
       
