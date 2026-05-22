@@ -154,9 +154,9 @@ export default function DentalTourism() {
           <div className="container hero-stats-inner">
             <div className="stat"><div className="stat-num" data-count="13000" data-suffix="+">0</div><div className="stat-lab">Happy patients</div></div>
             <div className="stat"><div className="stat-num" data-count="12" data-suffix="+">0</div><div className="stat-lab">Years of practice</div></div>
-            <div className="stat"><div className="stat-num"><span data-count="50" data-suffix="">0</span><span className="unit">%</span></div><div className="stat-lab">Avg. savings vs UK/US</div></div>
-            <div className="stat"><div className="stat-num">5.0<span className="unit">★</span></div><div className="stat-lab">Google rating</div></div>
-            <div className="stat"><div className="stat-num"><span data-count="3500">0</span><span className="unit">ft²</span></div><div className="stat-lab">Premium clinic</div></div>
+            <div className="stat"><div className="stat-num"><span data-count="82" data-suffix="">0</span><span className="unit">%</span></div><div className="stat-lab">Avg. savings vs UK/US</div></div>
+            <div className="stat"><div className="stat-num">4.9<span className="unit">★</span></div><div className="stat-lab">Google rating</div></div>
+            <div className="stat"><div className="stat-num"><span data-count="500">0</span><span className="unit">+</span></div><div className="stat-lab">5-star reviews</div></div>
           </div>
         </div>
 
@@ -231,9 +231,11 @@ export default function DentalTourism() {
               EU = Germany &amp; France average. Personalised quote provided after a free
               WhatsApp consultation.
             </p>
-            <a href="#contact" className="tm-btn tm-btn-secondary">
+            <a href="#contact" className="tm-btn tm-btn-primary magnetic" data-cursor="Quote">
               Get my free quote
-              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2.2"><path d="M5 12h14M13 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round"/></svg>
+              <span className="arrow" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2.2"><path d="M5 12h14M13 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round"/></svg>
+              </span>
             </a>
           </div>
         </div>
@@ -1319,72 +1321,114 @@ export default function DentalTourism() {
         </div>
       </section>
 
-      {/* ─────────────────────────── BANGLADESH IN REAL LIFE ─────────────────────────── */}
-      <section className="footage" id="footage">
+      {/* ─────────────────────────── BANGLADESH IN REAL LIFE (DA VINCI) ─────────────────────────── */}
+      <section className="footage dv-section" id="footage">
+        <div className="dv-bg-lines"></div>
         <div className="container">
-          <div className="chapter" data-reveal>
+          <div className="chapter dv-chapter" data-reveal>
             <span className="ch-num">CHAPTER 03 · INTERLUDE</span>
             <span className="ch-line"></span>
             <span className="ch-title">Bangladesh, in real life</span>
           </div>
 
-          <div className="ft-head">
+          <div className="ft-head dv-head">
             <h2 className="display" data-reveal>
               Photographs<br />
               <em>of a country</em><br />
               you'll quietly fall for.
             </h2>
             <p className="lead" data-reveal>
-              Drop in your own footage — clinic shots, team photos, Bangladesh imagery —
-              and watch the page come alive. Each slot is sized for a specific shot;
-              captions tell you what we'd put there.
+              Embark on a dental journey that extends far beyond the clinic doors. Experience
+              warm Bengali hospitality, breathtaking natural wonders, and rich heritage sites,
+              all while receiving international-standard clinical care at RH Dental Care.
             </p>
           </div>
 
-          {/* Bento mosaic of image slots */}
-          <div className="ft-mosaic" data-reveal>
-            <div className="ft-tile ft-hero">
-              <img src="/assets/tourism/coxs_bazar.png" id="ft-coxs" alt="Coxs Bazar" style={{width: '100%', height: '100%', objectFit: 'cover', borderRadius: '14px'}} />
-              <span className="ft-cap"><b>01 · Cox's Bazar</b> · Sunset over 120 km of beach</span>
-            </div>
+          <div className="dv-grid" data-reveal>
+            {/* FIG 01 */}
+            <figure className="dv-figure dv-pos-1">
+              <div className="dv-frame">
+                <div className="dv-matting">
+                  <img src="/assets/tourism/coxs_bazar.png" id="ft-coxs" alt="Coxs Bazar" />
+                </div>
+              </div>
+              <figcaption className="dv-caption">
+                <span className="dv-fig-num">FIG. 01</span>
+                <span className="dv-fig-title">COX'S BAZAR</span>
+                <span className="dv-fig-desc">Sunset over 120 km of golden sandy beach.</span>
+              </figcaption>
+            </figure>
 
-            <div className="ft-tile ft-tall">
-              <img src="/assets/tourism/sundarbans.png" id="ft-sundarbans" alt="Sundarbans" style={{width: '100%', height: '100%', objectFit: 'cover', borderRadius: '14px'}} />
-              <span className="ft-cap"><b>02 · Sundarbans</b> · UNESCO mangrove</span>
-            </div>
+            {/* FIG 02 */}
+            <figure className="dv-figure dv-pos-2">
+              <div className="dv-frame">
+                <div className="dv-matting">
+                  <img src="/assets/tourism/sundarbans.png" id="ft-sundarbans" alt="Sundarbans" />
+                </div>
+              </div>
+              <figcaption className="dv-caption">
+                <span className="dv-fig-num">FIG. 02</span>
+                <span className="dv-fig-title">SUNDARBANS</span>
+                <span className="dv-fig-desc">The world's largest UNESCO mangrove forest.</span>
+              </figcaption>
+            </figure>
 
-            <div className="ft-tile ft-wide">
-              <img src="/assets/tourism/old_dhaka.png" id="ft-dhaka" alt="Dhaka" style={{width: '100%', height: '100%', objectFit: 'cover', borderRadius: '14px'}} />
-              <span className="ft-cap"><b>03 · Dhaka skyline</b> · Buriganga at dusk</span>
-            </div>
+            {/* FIG 03 */}
+            <figure className="dv-figure dv-pos-3">
+              <div className="dv-frame">
+                <div className="dv-matting">
+                  <img src="/assets/tourism/old_dhaka.png" id="ft-dhaka" alt="Dhaka" />
+                </div>
+              </div>
+              <figcaption className="dv-caption">
+                <span className="dv-fig-num">FIG. 03</span>
+                <span className="dv-fig-title">HISTORIC LALBAGH FORT</span>
+                <span className="dv-fig-desc">Moghal architecture in Old Dhaka.</span>
+              </figcaption>
+            </figure>
 
-            <div className="ft-tile">
-              <img src="/assets/tourism/rickshaw.png" id="ft-rickshaw" alt="Rickshaw art" style={{width: '100%', height: '100%', objectFit: 'cover', borderRadius: '14px'}} />
-              <span className="ft-cap"><b>04 · Rickshaw art</b> · Old Dhaka</span>
-            </div>
+            {/* FIG 04 */}
+            <figure className="dv-figure dv-pos-4">
+              <div className="dv-frame">
+                <div className="dv-matting">
+                  <img src="/assets/tourism/rickshaw.png" id="ft-rickshaw" alt="Rickshaw art" />
+                </div>
+              </div>
+              <figcaption className="dv-caption">
+                <span className="dv-fig-num">FIG. 04</span>
+                <span className="dv-fig-title">RICKSHAW PAINTING</span>
+                <span className="dv-fig-desc">UNESCO intangible heritage art.</span>
+              </figcaption>
+            </figure>
 
-            <div className="ft-tile">
-              <img src="/assets/tourism/srimangal.png" id="ft-tea" alt="Tea estates" style={{width: '100%', height: '100%', objectFit: 'cover', borderRadius: '14px'}} />
-              <span className="ft-cap"><b>05 · Srimangal</b> · Tea-estate morning</span>
-            </div>
+            {/* FIG 05 */}
+            <figure className="dv-figure dv-pos-5">
+              <div className="dv-frame">
+                <div className="dv-matting">
+                  <img src="/assets/tourism/srimangal.png" id="ft-tea" alt="Tea estates" />
+                </div>
+              </div>
+              <figcaption className="dv-caption">
+                <span className="dv-fig-num">FIG. 05</span>
+                <span className="dv-fig-title">SRIMANGAL</span>
+                <span className="dv-fig-desc">Lush green rolling tea estates.</span>
+              </figcaption>
+            </figure>
 
-            <div className="ft-tile ft-tall">
-              <img src="/assets/tourism/food.png" id="ft-food" alt="Food" style={{width: '100%', height: '100%', objectFit: 'cover', borderRadius: '14px'}} />
-              <span className="ft-cap"><b>06 · The food</b> · Hilsa, kacchi, seven-layer tea</span>
-            </div>
-
-            <div className="ft-tile ft-wide">
-              <img src="/assets/tourism/clinic_reception.png" id="ft-clinic" alt="Clinic reception" style={{width: '100%', height: '100%', objectFit: 'cover', borderRadius: '14px'}} />
-              <span className="ft-cap"><b>07 · The clinic</b> · 3,500 sq.ft, Banasree, Dhaka</span>
-            </div>
-
-            <div className="ft-tile">
-              <img src="/assets/tourism/jamdani.png" id="ft-jamdani" alt="Jamdani" style={{width: '100%', height: '100%', objectFit: 'cover', borderRadius: '14px'}} />
-              <span className="ft-cap"><b>08 · Jamdani</b> · UNESCO heritage weave</span>
-            </div>
+            {/* FIG 06 */}
+            <figure className="dv-figure dv-pos-6">
+              <div className="dv-frame">
+                <div className="dv-matting">
+                  <img src="/assets/tourism/food.png" id="ft-food" alt="Food" />
+                </div>
+              </div>
+              <figcaption className="dv-caption">
+                <span className="dv-fig-num">FIG. 06</span>
+                <span className="dv-fig-title">CULINARY LEGACY</span>
+                <span className="dv-fig-desc">Rich traditional Kacchi & local delicacies.</span>
+              </figcaption>
+            </figure>
           </div>
-
-
         </div>
       </section>
 
@@ -1483,9 +1527,12 @@ export default function DentalTourism() {
           </div>
 
           <div className="reviews-foot">
-            <a href="#" className="tm-btn tm-btn-secondary">
+            <a href="https://g.page/r/CRH-dental" target="_blank" rel="noopener noreferrer" className="tm-btn tm-btn-secondary magnetic">
               <span className="g-badge">G</span>
               Read all 500+ Google reviews
+              <span className="arrow" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2.2"><path d="M5 12h14M13 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round"/></svg>
+              </span>
             </a>
           </div>
         </div>
@@ -1804,16 +1851,53 @@ function initDentalTourism() {
 
   /* ── Parallax + Ken Burns ── */
   if (!prefersReducedMotion) {
+    // 1. Hero background deep scrub (parallax only, no scale to prevent conflict)
     gsap.timeline({
       scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true }
-    }).fromTo('.hero-bg-img', { scale: 1.0, yPercent: 0 }, {
-      scale: 1.12, yPercent: 18, ease: 'none'
+    }).fromTo('.hero-bg-img', { yPercent: 0 }, {
+      yPercent: 25, ease: 'none'
     });
-    gsap.to('.hero-bg-img', { scale: 1.06, duration: 14, ease: 'sine.inOut', yoyo: true, repeat: -1 });
+    // 2. Hero content opposing scrub (creates deep 3D separation)
     gsap.timeline({
-      scrollTrigger: { trigger: '.hero', start: 'top top', end: '60% top', scrub: true }
-    }).to('.tm-title, .tm-sub, .tm-actions', {
-      y: -40, opacity: 0.5, ease: 'none'
+      scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true }
+    }).to('.hero-content', {
+      yPercent: -15, opacity: 0, ease: 'none'
+    });
+    // 3. Gentle ambient breathing for the hero image (Scale only!)
+    gsap.to('.hero-bg-img', { scale: 1.05, duration: 18, ease: 'sine.inOut', yoyo: true, repeat: -1 });
+
+    // 4. Parallax on all reason art containers
+    document.querySelectorAll<HTMLElement>('.reason-art').forEach((el) => {
+      gsap.fromTo(el,
+        { y: 40 },
+        {
+          y: -40,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: el,
+            start: 'top bottom',
+            end: 'bottom top',
+            scrub: true
+          }
+        }
+      );
+    });
+    
+    // 5. Parallax on doctor portraits
+    document.querySelectorAll<HTMLElement>('.doctor-slot').forEach((el) => {
+      gsap.fromTo(el,
+        { y: 15, scale: 1.02 },
+        {
+          y: -15, scale: 1.0,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: el.closest('.doctor-card') || el,
+            start: 'top bottom',
+            end: 'bottom top',
+            scrub: true
+          }
+        }
+      );
     });
   }
 
