@@ -98,7 +98,7 @@ export default function Footer() {
               </li>
               <li>
                 <Clock size={16} className="contact-icon" />
-                <span>Sat–Thu: 8am–7pm &nbsp;|&nbsp; Fri: Closed</span>
+                <span>3:00 PM – 10:00 PM &nbsp;|&nbsp; Thursday: Closed</span>
               </li>
             </ul>
 
@@ -118,7 +118,11 @@ export default function Footer() {
 
         {/* ── Bottom bar ── */}
         <div className="footer-bottom">
-          <p>© {new Date().getFullYear()} RH Dental Care & Implant Center — Banasree, Dhaka. All Rights Reserved.</p>
+          <p>
+            © {new Date().getFullYear()} RH Dental Care & Implant Center — Banasree, Dhaka. All Rights Reserved.
+            <span style={{ margin: '0 8px', opacity: 0.5 }}>|</span>
+            Powered by <a href="https://www.zitra.org" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'underline' }}>www.zitra.org</a>
+          </p>
           <div className="footer-legal">
             <Link href="/privacy">Privacy Policy</Link>
             <Link href="/terms">Terms of Service</Link>

@@ -240,16 +240,10 @@ const jsonLd = {
       openingHoursSpecification: [
         {
           '@type': 'OpeningHoursSpecification',
-          dayOfWeek: ['Saturday', 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday'],
-          opens: '09:00',
-          closes: '21:00',
-        },
-        {
-          '@type': 'OpeningHoursSpecification',
-          dayOfWeek: ['Friday'],
-          opens: '14:00',
-          closes: '21:00',
-        },
+          dayOfWeek: ['Saturday', 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Friday'],
+          opens: '15:00',
+          closes: '22:00',
+        }
       ],
       priceRange: '৳৳',
       currenciesAccepted: 'BDT',
@@ -362,7 +356,7 @@ const jsonLd = {
           name: 'How do I book an appointment at RH Dental Care?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'You can book a free consultation by visiting www.rhdentalcare.com/contact, calling +8801775227902, or messaging via WhatsApp. We are open Saturday to Thursday 9am–9pm and Friday 2pm–9pm.',
+            text: 'You can book a free consultation by visiting www.rhdentalcare.com/contact, calling +8801775227902, or messaging via WhatsApp. We are open from 3pm to 10pm every day, and closed on Thursdays.',
           },
         },
         {

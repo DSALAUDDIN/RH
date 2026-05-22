@@ -79,7 +79,7 @@ export default function ContactPage() {
                     required
                     value={formData.name}
                     onChange={(e) => setFormData({...formData, name: e.target.value})}
-                    style={{ width: '100%', padding: '0.75rem 1rem', borderRadius: '0.5rem', border: '1px solid hsl(var(--border))', outline: 'none', background: 'hsl(var(--surface))', color: 'hsl(var(--foreground))', fontSize: '1rem' }}
+                    style={{ width: '100%', padding: '0.75rem 1rem', borderRadius: '0.5rem', border: '1px solid var(--blue-200)', outline: 'none', background: '#ffffff', color: 'var(--foreground)', fontSize: '1rem', boxShadow: '0 1px 2px rgba(0,0,0,0.05)' }}
                   />
                 </div>
                 <div>
@@ -90,7 +90,7 @@ export default function ContactPage() {
                     required
                     value={formData.email}
                     onChange={(e) => setFormData({...formData, email: e.target.value})}
-                    style={{ width: '100%', padding: '0.75rem 1rem', borderRadius: '0.5rem', border: '1px solid hsl(var(--border))', outline: 'none', background: 'hsl(var(--surface))', color: 'hsl(var(--foreground))', fontSize: '1rem' }}
+                    style={{ width: '100%', padding: '0.75rem 1rem', borderRadius: '0.5rem', border: '1px solid var(--blue-200)', outline: 'none', background: '#ffffff', color: 'var(--foreground)', fontSize: '1rem', boxShadow: '0 1px 2px rgba(0,0,0,0.05)' }}
                   />
                 </div>
                 <div>
@@ -101,7 +101,7 @@ export default function ContactPage() {
                     required
                     value={formData.phone}
                     onChange={(e) => setFormData({...formData, phone: e.target.value})}
-                    style={{ width: '100%', padding: '0.75rem 1rem', borderRadius: '0.5rem', border: '1px solid hsl(var(--border))', outline: 'none', background: 'hsl(var(--surface))', color: 'hsl(var(--foreground))', fontSize: '1rem' }}
+                    style={{ width: '100%', padding: '0.75rem 1rem', borderRadius: '0.5rem', border: '1px solid var(--blue-200)', outline: 'none', background: '#ffffff', color: 'var(--foreground)', fontSize: '1rem', boxShadow: '0 1px 2px rgba(0,0,0,0.05)' }}
                   />
                 </div>
                 <div>
@@ -112,7 +112,7 @@ export default function ContactPage() {
                     required
                     value={formData.message}
                     onChange={(e) => setFormData({...formData, message: e.target.value})}
-                    style={{ width: '100%', padding: '0.75rem 1rem', borderRadius: '0.5rem', border: '1px solid hsl(var(--border))', outline: 'none', resize: 'vertical', background: 'hsl(var(--surface))', color: 'hsl(var(--foreground))', fontSize: '1rem' }}
+                    style={{ width: '100%', padding: '0.75rem 1rem', borderRadius: '0.5rem', border: '1px solid var(--blue-200)', outline: 'none', resize: 'vertical', background: '#ffffff', color: 'var(--foreground)', fontSize: '1rem', boxShadow: '0 1px 2px rgba(0,0,0,0.05)' }}
                   ></textarea>
                 </div>
                 
@@ -188,9 +188,8 @@ export default function ContactPage() {
                   </div>
                   <div style={{ flex: 1, minWidth: 0 }}>
                     <h3 style={{ fontSize: 'clamp(1rem, 3vw, 1.25rem)', marginBottom: '0.5rem' }}>Working Hours</h3>
-                    <p style={{ color: 'hsl(var(--muted-foreground))', display: 'flex', justifyContent: 'space-between', marginBottom: '0.25rem', gap: '0.5rem', fontSize: 'clamp(0.85rem, 2vw, 1rem)' }}><span>Mon - Fri</span> <span>8:00 AM - 7:00 PM</span></p>
-                    <p style={{ color: 'hsl(var(--muted-foreground))', display: 'flex', justifyContent: 'space-between', marginBottom: '0.25rem', gap: '0.5rem', fontSize: 'clamp(0.85rem, 2vw, 1rem)' }}><span>Saturday</span> <span>9:00 AM - 4:00 PM</span></p>
-                    <p style={{ color: 'hsl(var(--muted-foreground))', display: 'flex', justifyContent: 'space-between', gap: '0.5rem', fontSize: 'clamp(0.85rem, 2vw, 1rem)' }}><span>Sunday</span> <span>Closed</span></p>
+                    <p style={{ color: 'hsl(var(--muted-foreground))', display: 'flex', justifyContent: 'space-between', marginBottom: '0.25rem', gap: '0.5rem', fontSize: 'clamp(0.85rem, 2vw, 1rem)' }}><span>Friday – Wednesday</span> <span>3:00 PM – 10:00 PM</span></p>
+                    <p style={{ color: 'hsl(var(--muted-foreground))', display: 'flex', justifyContent: 'space-between', gap: '0.5rem', fontSize: 'clamp(0.85rem, 2vw, 1rem)' }}><span>Thursday</span> <span>Closed</span></p>
                   </div>
                 </li>
               </ul>

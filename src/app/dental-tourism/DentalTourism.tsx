@@ -31,7 +31,42 @@ import { MotionPathPlugin } from 'gsap/MotionPathPlugin';
 /* eslint-disable @next/next/no-img-element */
 
 export default function DentalTourism() {
+  const [formData, setFormData] = useState({ name: '', country: '', phone: '', treatment: '', message: '' });
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
   const [formSubmitted, setFormSubmitted] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    setError('');
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: formData.name,
+          email: `${formData.phone.replace(/[^0-9]/g, '')}@whatsapp.com`,
+          phone: formData.phone,
+          message: `[Dental Tourism Request]\nCountry: ${formData.country}\nTreatment: ${formData.treatment}\n\n${formData.message}`
+        }),
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        setFormSubmitted(true);
+        setFormData({ name: '', country: '', phone: '', treatment: '', message: '' });
+      } else {
+        setError(data.message || 'Something went wrong.');
+      }
+    } catch (err) {
+      setError('Failed to send request. Please check your connection.');
+    } finally {
+      setLoading(false);
+    }
+  };
 
   useEffect(() => {
     let ctx: ReturnType<typeof gsap.context>;
@@ -1703,7 +1738,13 @@ export default function DentalTourism() {
                   <div className="cm-icon">
                     <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 .5C5.6.5.4 5.6.4 12c0 2 .5 4 1.5 5.7L0 24l6.5-1.8c1.7.9 3.6 1.4 5.5 1.4 6.4 0 11.6-5.1 11.6-11.5C23.6 5.6 18.4.5 12 .5zm6.7 16.4c-.3.8-1.6 1.5-2.3 1.6-.6.1-1.3.1-2.1-.1-.5-.1-1.1-.3-1.9-.7-3.3-1.4-5.5-4.8-5.7-5-.2-.2-1.4-1.8-1.4-3.5s.9-2.5 1.2-2.8c.3-.3.7-.4 1-.4h.7c.2 0 .5 0 .8.6.3.7 1 2.4 1.1 2.5.1.2.1.4 0 .6-.1.2-.2.4-.4.6-.2.2-.4.4-.5.5-.2.2-.4.4-.2.7.2.4.9 1.5 2 2.4 1.4 1.2 2.5 1.6 2.9 1.8.4.2.6.1.8-.1.2-.3.9-1.1 1.1-1.4.2-.4.5-.3.8-.2.3.1 2 1 2.3 1.1.3.2.6.2.6.4.2.1.2.8-.1 1.6z"/></svg>
                   </div>
-                  <div><b>WhatsApp</b><span>+880 1775-227902</span></div>
+                  <div><b>WhatsApp</b><span><a href="https://wa.me/8801775227902" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>+880 1775-227902</a></span></div>
+                </div>
+                <div className="cm-row">
+                  <div className="cm-icon">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.7"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                  </div>
+                  <div><b>Email</b><span><a href="mailto:drhasan0712@gmail.com" style={{ color: 'inherit', textDecoration: 'none' }}>drhasan0712@gmail.com</a></span></div>
                 </div>
                 <div className="cm-row">
                   <div className="cm-icon">
@@ -1715,12 +1756,12 @@ export default function DentalTourism() {
                   <div className="cm-icon">
                     <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.7"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
                   </div>
-                  <div><b>Hours</b><span>Sat — Thu · 8:00 – 21:00 · Fri by appt.</span></div>
+                  <div><b>Hours</b><span>3:00 PM – 10:00 PM (Closed Thursdays)</span></div>
                 </div>
               </div>
             </div>
 
-            <form className="contact-form" onSubmit={(e) => { e.preventDefault(); setFormSubmitted(true); }}>
+            <form className="contact-form" onSubmit={handleSubmit}>
               <div className="form-head">
                 <span>FORM 01</span>
                 <span>Free consultation request</span>
@@ -1728,38 +1769,40 @@ export default function DentalTourism() {
 
               <div className="field">
                 <label>01 · Full name</label>
-                <input type="text" placeholder="Your full name" required />
+                <input type="text" placeholder="Your full name" required value={formData.name} onChange={e => setFormData({...formData, name: e.target.value})} />
               </div>
               <div className="field-row">
                 <div className="field">
                   <label>02 · Country</label>
-                  <input type="text" placeholder="United Kingdom" required />
+                  <input type="text" placeholder="United Kingdom" required value={formData.country} onChange={e => setFormData({...formData, country: e.target.value})} />
                 </div>
                 <div className="field">
                   <label>03 · WhatsApp</label>
-                  <input type="tel" placeholder="+44 7… " required />
+                  <input type="tel" placeholder="+44 7… " required value={formData.phone} onChange={e => setFormData({...formData, phone: e.target.value})} />
                 </div>
               </div>
               <div className="field">
                 <label>04 · Treatment of interest</label>
-                <select required defaultValue="">
+                <select required value={formData.treatment} onChange={e => setFormData({...formData, treatment: e.target.value})}>
                   <option value="" disabled>Select a treatment…</option>
-                  <option>Dental implants</option>
-                  <option>Full mouth rehabilitation</option>
-                  <option>Smile makeover</option>
-                  <option>Zirconia crowns & veneers</option>
-                  <option>Orthodontics & aligners</option>
-                  <option>Root canal</option>
-                  <option>Not sure — please advise</option>
+                  <option value="Dental implants">Dental implants</option>
+                  <option value="Full mouth rehabilitation">Full mouth rehabilitation</option>
+                  <option value="Smile makeover">Smile makeover</option>
+                  <option value="Zirconia crowns & veneers">Zirconia crowns & veneers</option>
+                  <option value="Orthodontics & aligners">Orthodontics & aligners</option>
+                  <option value="Root canal">Root canal</option>
+                  <option value="Not sure — please advise">Not sure — please advise</option>
                 </select>
               </div>
               <div className="field">
                 <label>05 · Tell us briefly</label>
-                    <textarea rows={3} placeholder="Pain, broken tooth, cosmetic concern, current dental records you can share…"></textarea>
+                <textarea rows={3} placeholder="Pain, broken tooth, cosmetic concern, current dental records you can share…" required value={formData.message} onChange={e => setFormData({...formData, message: e.target.value})}></textarea>
               </div>
 
-              <button type="submit" className="tm-btn tm-btn-primary block magnetic" data-cursor="Send">
-                Send my request
+              {error && <div style={{ color: '#ef4444', marginBottom: '1rem', fontSize: '0.9rem' }}>{error}</div>}
+
+              <button type="submit" className="tm-btn tm-btn-primary block magnetic" data-cursor="Send" disabled={loading} style={{ opacity: loading ? 0.7 : 1 }}>
+                {loading ? 'Sending...' : 'Send my request'}
                 <span className="arrow" aria-hidden="true">
                   <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2.2"><path d="M5 12h14M13 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round"/></svg>
                 </span>
