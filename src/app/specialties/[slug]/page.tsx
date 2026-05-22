@@ -16,6 +16,7 @@ import rootCanalBanner from '@/assets/specialties/root-canal.jpg';
 import gumCareBanner from '@/assets/specialties/gum-care.jpg';
 import kidsCareBanner from '@/assets/specialties/kids-care.jpg';
 import implantImg from '@/assets/specialties/implant.png';
+import dentalTourismBanner from '@/assets/specialties/dental_tourism.png';
 
 /* ── Import flyer images (high-res promotional designs) ── */
 import imagingFlyer from '@/assets/specialties/imaging.png';
@@ -263,6 +264,34 @@ const specialtiesData: Record<string, SpecialtyDetail> = {
     warranty: '5+ years guarantee on veneers',
     accentColor: '#ec4899',
     accentLight: '#fce7f3',
+  },
+  'dental-tourism': {
+    title: 'RH Dental Tourism',
+    category: 'Global Travel Care',
+    tagline: 'World-Class Dental Care & Beautiful Bangladesh',
+    bannerImg: dentalTourismBanner,
+    flyerImg: dentalTourismBanner,
+    flyerFileName: 'RH-Dental-Tourism.png',
+    description: 'Combine premium specialized dental care with a relaxing travel experience in Bangladesh. Save up to 70% compared to USA, UK & Australia. We provide complete travel assistance including airport pickups, 5-star lodging coordination, private local transit, and beautiful guided tours.',
+    benefits: [
+      'Save up to 70% on premium implants & cosmetic care',
+      'Identical global materials and diagnostic standards',
+      'Fully managed visa, airport, and lodging coordination',
+      'Guided sightseeing tours of beautiful Bangladesh',
+      'BMDC-certified internationally-trained surgeons',
+    ],
+    process: [
+      { step: 'Consultation', desc: 'Free virtual plan based on X-rays/photos' },
+      { step: 'Travel Prep', desc: 'Visa coordination & schedule selection' },
+      { step: 'Arrival & Care', desc: 'Private VIP airport pickup & treatment start' },
+      { step: 'Explore & Tour', desc: 'Beautiful guided excursions around recovery' },
+      { step: 'Return', desc: 'Comprehensive checkup & departure with global warranty' },
+    ],
+    duration: 'Bespoke Schedules',
+    recovery: 'Varies by treatment',
+    warranty: 'Digital records & warranty package',
+    accentColor: '#14b8a6',
+    accentLight: '#ccfbf1',
   },
 };
 

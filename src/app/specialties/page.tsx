@@ -41,7 +41,7 @@ export const metadata: Metadata = {
 
 export default function SpecialtiesPage() {
   return (
-    <div style={{ background: '#020617', minHeight: '100vh' }}>
+    <div className="sp-root" style={{ background: '#020617', minHeight: '100vh' }}>
       {/* ── Minimal Breadcrumb / Top Bar ── */}
       <div style={{ 
         paddingTop: 'calc(var(--nav-height, 80px) + 20px)',

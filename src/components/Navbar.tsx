@@ -41,6 +41,7 @@ export default function Navbar() {
         { name: 'Special Child Program', path: '/special-child', icon: '💚', desc: 'GA-based specialized care' },
         { name: 'Dental Surgery', path: '/dental-surgery', icon: '🔴', desc: 'Advanced oral surgical care' },
         { name: 'Digital Dentistry', path: '/digital-dentistry', icon: '🔵', desc: '3D scanning & CAD/CAM' },
+        { name: 'RH Dental Tourism', path: '/dental-tourism', icon: '✈️', desc: 'World-class care & travel' },
         { name: 'View All Specialties', path: '/specialties', icon: '→', desc: '' },
       ]
     },

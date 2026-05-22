@@ -302,7 +302,7 @@ p {
   padding-top: 72px;
 }
 /* except for the home page and other hero sections that handle their own padding */
-body:has(.hero-v5, .ab-hero, .team-hero, .imp-hero, .srv-hero, .tr-hero) .main-content {
+body:has(.hero-v5, .ab-hero, .team-hero, .imp-hero, .srv-hero, .tr-hero, .rh-tourism-root, .sp-root) .main-content {
   padding-top: 0;
 }
 
@@ -310,7 +310,7 @@ body:has(.hero-v5, .ab-hero, .team-hero, .imp-hero, .srv-hero, .tr-hero) .main-c
   .main-content {
     padding-top: 60px;
   }
-  body:has(.hero-v5, .ab-hero, .team-hero, .imp-hero, .srv-hero, .tr-hero) .main-content {
+  body:has(.hero-v5, .ab-hero, .team-hero, .imp-hero, .srv-hero, .tr-hero, .rh-tourism-root, .sp-root) .main-content {
     padding-top: 0;
   }
 }

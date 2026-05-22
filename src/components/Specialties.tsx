@@ -14,6 +14,7 @@ import rootCanalImg from '../assets/specialties/root-canal_new.png';
 import gumCareImg from '../assets/specialties/gum-care_new.png';
 import kidsCareImg from '../assets/specialties/kids-care.jpg';
 import aestheticsImg from '../assets/specialties/aesthetic_new.png';
+import dentalTourismImg from '../assets/specialties/dental_tourism.png';
 
 const clinicsBanners = [
 	{
@@ -79,6 +80,14 @@ const clinicsBanners = [
 		category: 'Aesthetics',
 		featured: true,
 		slug: '/zirconia-veneers',
+	},
+	{
+		title: 'RH Dental Tourism',
+		desc: 'Combine world-class specialized dental care with a relaxing vacation in Bangladesh. VIP airport pickup, 5-star lodging, and custom sightseeing support.',
+		image: dentalTourismImg,
+		category: 'Global Travel Care',
+		featured: true,
+		slug: '/dental-tourism',
 	},
 ];
 

@@ -20,6 +20,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/contact`,             lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/reviews`,             lastModified: now, changeFrequency: 'weekly',  priority: 0.75 },
     { url: `${BASE_URL}/blog`,                lastModified: now, changeFrequency: 'daily',   priority: 0.8 },
+    { url: `${BASE_URL}/dental-tourism`,      lastModified: now, changeFrequency: 'weekly',  priority: 0.9 },
   ];
 
   /* ── Specialty detail pages ── */
@@ -32,6 +33,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'kids-care',
     'implants',
     'aesthetics',
+    'dental-tourism',
   ];
   const specialtyRoutes: MetadataRoute.Sitemap = specialtySlugs.map((slug) => ({
     url: `${BASE_URL}/specialties/${slug}`,
