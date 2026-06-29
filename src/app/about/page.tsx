@@ -140,7 +140,7 @@ const whyCards = [
 
 const process = [
   { n: '01', title: 'Free Consultation', desc: 'Thorough digital examination and 3D scan to fully understand your dental health.' },
-  { n: '02', title: 'Tailored Plan',     desc: 'Transparent treatment plan with zero hidden costs and a digital preview of results.' },
+  { n: '02', title: 'Tailored Plan',     desc: 'Transparent treatment plan with a digital preview of results.' },
   { n: '03', title: 'Expert Treatment',  desc: 'BMDC-certified specialists using cutting-edge technology for precise outcomes.' },
   { n: '04', title: 'Aftercare',         desc: 'Continuous follow-up and personalised guidance to protect your investment long-term.' },
 ];

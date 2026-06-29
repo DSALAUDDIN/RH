@@ -566,7 +566,7 @@ export const blogPosts: BlogPost[] = [
     sections: [
       { type: 'paragraph', content: 'Braces are orthodontic appliances used to correct misaligned teeth and jaws. They gradually shift your teeth into a more desirable position through continuous, gentle pressure.' },
       { type: 'heading', content: 'Types of Braces' },
-      { type: 'numbered', items: ['Metal Braces: Traditional type, most commonly used. Durable, effective for all types of dental issues, cost-effective. More noticeable.', 'Ceramic Braces: Use clear or tooth-colored brackets, making them less noticeable. Can be more fragile than metal braces.', 'Lingual Braces: Placed on the back of the teeth, making them virtually invisible from the front. More difficult to clean.', 'Clear Aligners (Invisalign): Clear plastic trays that gradually shift teeth. Removable for easier cleaning and eating. Nearly invisible.'] },
+      { type: 'numbered', items: ['Metal Braces: Traditional type, most commonly used. Durable, effective for all types of dental issues. More noticeable.', 'Ceramic Braces: Use clear or tooth-colored brackets, making them less noticeable. Can be more fragile than metal braces.', 'Lingual Braces: Placed on the back of the teeth, making them virtually invisible from the front. More difficult to clean.', 'Clear Aligners (Invisalign): Clear plastic trays that gradually shift teeth. Removable for easier cleaning and eating. Nearly invisible.'] },
       { type: 'heading', content: 'Why Should You Get Braces?' },
       { type: 'list', items: ['Crooked or Misaligned Teeth: Straighten teeth in their ideal positions.', 'Overbite: Upper teeth overlap too much with the lower teeth.', 'Underbite: Lower teeth extend beyond the upper teeth.', 'Crossbite: Some upper teeth fall inside the lower teeth.', 'Gaps: Excess space between teeth.', 'Open Bite: Front teeth don\'t meet when you bite down.'] },
       { type: 'heading', content: 'How Do Braces Work?' },
@@ -657,7 +657,7 @@ export const blogPosts: BlogPost[] = [
         rows: [
           ['Porcelain', 'Excellent', 'Moderate', 'Moderate', 'Front teeth, cosmetic restoration'],
           ['Metal (Gold)', 'Poor (metal color)', 'Very High', 'Long-Lasting', 'Back teeth where strength is needed'],
-          ['Resin/Composite', 'Good', 'Low', 'Moderate', 'Temporary or cost-effective option'],
+          ['Resin/Composite', 'Good', 'Low', 'Moderate', 'Temporary restoration option'],
           ['Zirconium', 'Excellent', 'Very High', 'Long-Lasting', 'Front & back teeth — strength and appearance'],
         ],
       },
@@ -706,7 +706,7 @@ export const blogPosts: BlogPost[] = [
       { type: 'heading', content: 'Benefits of Gold Crowns' },
       { type: 'numbered', items: ['Exceptional Durability: Gold is highly resistant to wear and tear — ideal for teeth that experience heavy biting and chewing forces, such as molars.', 'Long-Lasting Performance: With proper oral care, gold crowns can last 20 years or more.', 'Biocompatibility: Gold is unlikely to cause allergic reactions or irritation to the gums.', 'Minimal Wear on Opposing Teeth: Gold causes less wear on opposing teeth compared to porcelain or resin.', 'Custom Fit: Gold\'s malleability allows for precisely custom-designed crowns, minimizing gaps.', 'Resistant to Staining and Corrosion: Gold is not prone to staining, tarnishing, or corroding.'] },
       { type: 'heading', content: 'Disadvantages of Gold Crowns' },
-      { type: 'list', items: ['Aesthetic Concerns: Gold is highly visible and not cosmetically ideal for front teeth.', 'Cost: Gold crowns can be more expensive due to the material cost.', 'Heat Conductivity: Gold conducts temperature, which may cause sensitivity in some patients.'] },
+      { type: 'list', items: ['Aesthetic Concerns: Gold is highly visible and not cosmetically ideal for front teeth.', 'Heat Conductivity: Gold conducts temperature, which may cause sensitivity in some patients.'] },
       { type: 'heading', content: 'When Are Gold Crowns Recommended?' },
       { type: 'list', items: ['Back teeth (molars and premolars) where strength is a priority and aesthetics are less important.', 'Patients who need extreme durability.', 'Patients with metal allergies to other metals (gold is generally well-tolerated).', 'When maximum longevity is required.'] },
       { type: 'tip', content: 'Gold crowns are an excellent investment for teeth requiring significant functional strength. Consult your dentist to determine if gold is the right crown material for your situation.' },
@@ -854,7 +854,6 @@ export const blogPosts: BlogPost[] = [
         headers: ['Feature', 'Fiber Bridge', 'Traditional Bridge', 'Dental Implant'],
         rows: [
           ['Invasiveness', 'Minimal', 'Moderate (grinds adjacent teeth)', 'High (surgical procedure)'],
-          ['Cost', 'Affordable', 'Moderate', 'High'],
           ['Procedure Time', 'Single visit', '2-3 visits', 'Several months'],
           ['Durability', 'Moderate', 'High', 'Very High'],
           ['Aesthetics', 'Excellent', 'Good', 'Excellent'],
