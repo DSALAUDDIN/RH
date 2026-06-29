@@ -11,19 +11,21 @@ import './detail.css';
 /* ── Import all banner images ── */
 import imagingBanner from '@/assets/specialties/3d-imaging.jpg';
 import bracesBanner from '@/assets/specialties/braces.jpg';
-import zirconiaBanner from '@/assets/specialties/zirconia.jpg';
+import zirconiaBanner from '@/assets/specialties/Zirconia.jpeg';
 import rootCanalBanner from '@/assets/specialties/root-canal.jpg';
 import gumCareBanner from '@/assets/specialties/gum-care.jpg';
 import kidsCareBanner from '@/assets/specialties/kids-care.jpg';
 import implantImg from '@/assets/specialties/implant.png';
+import dentalTourismBanner from '@/assets/specialties/dental_tourism.png';
 
 /* ── Import flyer images (high-res promotional designs) ── */
 import imagingFlyer from '@/assets/specialties/imaging.png';
 import bracesFlyer from '@/assets/specialties/braces_clean.png';
-import zirconiaFlyer from '@/assets/specialties/zirconia.png';
+import zirconiaFlyer from '@/assets/specialties/Zirconia.jpeg';
 import rootCanalFlyer from '@/assets/specialties/rootcanal_clean.png';
 import gumCareFlyer from '@/assets/specialties/gum_clean.png';
 import kidsCareFlyer from '@/assets/specialties/kids_clean.png';
+import aestheticsFlyer from '@/assets/specialties/aesthetic.jpeg';
 
 interface SpecialtyDetail {
   title: string;
@@ -32,6 +34,7 @@ interface SpecialtyDetail {
   bannerImg: StaticImageData;
   flyerImg: StaticImageData;
   flyerFileName: string;
+  videoUrl?: string;
   description: string;
   benefits: string[];
   process: { step: string; desc: string }[];
@@ -48,7 +51,7 @@ const specialtiesData: Record<string, SpecialtyDetail> = {
     category: 'Elite Diagnostics',
     tagline: 'Ultra-accurate 360° diagnostics with 90% less radiation',
     bannerImg: imagingBanner,
-    flyerImg: imagingFlyer,
+    flyerImg: imagingBanner,
     flyerFileName: 'RH-Dental-3D-Imaging.png',
     description: 'Our state-of-the-art 3D imaging technology provides unparalleled diagnostic accuracy. With cone beam CT scanning, we can visualize your entire oral structure in stunning detail, enabling precise treatment planning and exceptional outcomes.',
     benefits: [
@@ -71,30 +74,31 @@ const specialtiesData: Record<string, SpecialtyDetail> = {
     accentLight: '#e0f2fe',
   },
   'braces': {
-    title: 'Advanced Orthodontic Braces',
+    title: 'Orthodontics & Clear Aligners',
     category: 'Orthodontics',
-    tagline: 'Modern ceramic and invisible solutions for perfect alignment',
+    tagline: 'Straighten your smile invisibly',
     bannerImg: bracesBanner,
-    flyerImg: bracesFlyer,
-    flyerFileName: 'RH-Dental-Braces.png',
-    description: 'Transform your smile with our cutting-edge orthodontic solutions. From traditional metal braces to ceramic and invisible aligners, we offer personalized treatment plans that fit your lifestyle and deliver stunning results.',
+    flyerImg: bracesBanner,
+    flyerFileName: 'RH-Dental-Orthodontics.png',
+    videoUrl: 'https://res.cloudinary.com/dxrcufs8f/video/upload/v1777313544/ortho_video_tj8vbu.mp4',
+    description: 'Achieve the perfectly aligned smile you have always dreamed of. We offer both traditional precision braces and modern, nearly invisible clear aligners tailored to your lifestyle, delivering beautiful results with maximum comfort.',
     benefits: [
-      'Multiple options: metal, ceramic, or clear aligners',
-      'Custom treatment plans using 3D imaging',
-      'Regular monitoring and adjustments',
-      'Comfortable modern brackets and wires',
-      'Beautiful, long-lasting results',
+      'Corrects crooked teeth and bite issues',
+      'Improves overall facial aesthetics',
+      'Invisible aligner options available',
+      'Easier to clean and maintain oral hygiene',
+      'Boosts long-term confidence',
     ],
     process: [
-      { step: 'Consultation', desc: '3D scan and personalized assessment' },
-      { step: 'Custom Planning', desc: 'Digital smile preview and timeline' },
-      { step: 'Placement', desc: 'Gentle, precise bracket application' },
-      { step: 'Regular Visits', desc: 'Progress tracking every 4-6 weeks' },
+      { step: 'Consultation', desc: 'Digital scan and smile assessment' },
+      { step: 'Planning', desc: '3D preview of your future smile' },
+      { step: 'Fitting', desc: 'Braces application or first aligner fitting' },
+      { step: 'Adjustment', desc: 'Regular check-ups to track progress' },
     ],
-    duration: '12-24 months',
-    recovery: '2-3 days adjustment',
-    warranty: 'Lifetime retention guarantee',
-    accentColor: '#6366f1',
+    duration: '6-18 months',
+    recovery: 'Immediate',
+    warranty: 'Retainer guarantee',
+    accentColor: '#8b5cf6',
     accentLight: '#ede9fe',
   },
   'zirconia': {
@@ -102,7 +106,7 @@ const specialtiesData: Record<string, SpecialtyDetail> = {
     category: 'Prosthetics',
     tagline: 'The gold standard in flawless dental crowns',
     bannerImg: zirconiaBanner,
-    flyerImg: zirconiaFlyer,
+    flyerImg: zirconiaBanner,
     flyerFileName: 'RH-Dental-Zirconia.png',
     description: 'Experience the pinnacle of dental restoration with biocompatible zirconia crowns. These ultra-strong, natural-looking restorations combine exceptional durability with aesthetic perfection, giving you confidence that lasts.',
     benefits: [
@@ -131,6 +135,7 @@ const specialtiesData: Record<string, SpecialtyDetail> = {
     bannerImg: implantImg,
     flyerImg: implantImg,
     flyerFileName: 'RH-Dental-Implants.png',
+    videoUrl: 'https://res.cloudinary.com/dxrcufs8f/video/upload/v1777313555/implantVideo_bzruai.mp4',
     description: 'Restore your smile permanently with precision-guided dental implants. Our advanced surgical techniques and premium materials ensure successful integration, giving you teeth that look, feel, and function naturally.',
     benefits: [
       'Permanent tooth replacement solution',
@@ -156,8 +161,9 @@ const specialtiesData: Record<string, SpecialtyDetail> = {
     category: 'Endodontics',
     tagline: 'Stress-free treatment using microscopic technology',
     bannerImg: rootCanalBanner,
-    flyerImg: rootCanalFlyer,
+    flyerImg: rootCanalBanner,
     flyerFileName: 'RH-Dental-RootCanal.png',
+    videoUrl: 'https://res.cloudinary.com/dxrcufs8f/video/upload/v1777313544/rootcanal_video_yuqzk8.mp4',
     description: 'Save your natural tooth with our advanced endodontic care. Using dental microscopes and modern techniques, we make root canal therapy completely comfortable while preserving your tooth for decades to come.',
     benefits: [
       'Completely painless with advanced anesthesia',
@@ -183,7 +189,7 @@ const specialtiesData: Record<string, SpecialtyDetail> = {
     category: 'Periodontics',
     tagline: 'Healthy gums for a healthy smile',
     bannerImg: gumCareBanner,
-    flyerImg: gumCareFlyer,
+    flyerImg: gumCareBanner,
     flyerFileName: 'RH-Dental-GumCare.png',
     description: 'Protect your oral health with expert periodontal treatment. From deep cleaning to advanced gum therapy, we treat gum disease at every stage, ensuring your smile stays healthy and beautiful for life.',
     benefits: [
@@ -210,7 +216,7 @@ const specialtiesData: Record<string, SpecialtyDetail> = {
     category: 'Pedodontics',
     tagline: 'Fun, friendly, and fear-free dental care',
     bannerImg: kidsCareBanner,
-    flyerImg: kidsCareFlyer,
+    flyerImg: kidsCareBanner,
     flyerFileName: 'RH-Dental-KidsCare.png',
     description: 'Give your child a lifetime of healthy smiles. Our gentle, experienced team creates a positive dental experience that makes kids excited about oral health while providing expert preventive and restorative care.',
     benefits: [
@@ -231,6 +237,61 @@ const specialtiesData: Record<string, SpecialtyDetail> = {
     warranty: 'Growing smile program',
     accentColor: '#f97316',
     accentLight: '#ffedd5',
+  },
+  'aesthetics': {
+    title: 'Aesthetic Dentistry & Smile Design',
+    category: 'Aesthetics',
+    tagline: 'Crafting your perfect, radiant smile',
+    bannerImg: aestheticsFlyer,
+    flyerImg: aestheticsFlyer,
+    flyerFileName: 'RH-Dental-Aesthetics.png',
+    description: 'Transform your smile with our premium aesthetic treatments. From porcelain veneers to professional teeth whitening and full smile makeovers, we blend art and science to create the perfect, natural-looking smile you have always desired.',
+    benefits: [
+      'Custom-designed smile transformations',
+      'Ultra-thin, natural-looking porcelain veneers',
+      'Professional, safe teeth whitening',
+      'Minimally invasive aesthetic procedures',
+      'Boosted self-confidence with a radiant smile',
+    ],
+    process: [
+      { step: 'Consultation', desc: 'Digital smile design and comprehensive evaluation' },
+      { step: 'Preparation', desc: 'Minimally invasive tooth preparation if needed' },
+      { step: 'Mockup', desc: 'Try-in your new smile before final placement' },
+      { step: 'Final Delivery', desc: 'Bonding of custom-crafted aesthetic restorations' },
+    ],
+    duration: '1-3 visits',
+    recovery: 'Immediate',
+    warranty: '5+ years guarantee on veneers',
+    accentColor: '#ec4899',
+    accentLight: '#fce7f3',
+  },
+  'dental-tourism': {
+    title: 'RH Dental Tourism',
+    category: 'Global Travel Care',
+    tagline: 'World-Class Dental Care & Beautiful Bangladesh',
+    bannerImg: dentalTourismBanner,
+    flyerImg: dentalTourismBanner,
+    flyerFileName: 'RH-Dental-Tourism.png',
+    description: 'Combine premium specialized dental care with a relaxing travel experience in Bangladesh. Save up to 70% compared to USA, UK & Australia. We provide complete travel assistance including airport pickups, 5-star lodging coordination, private local transit, and beautiful guided tours.',
+    benefits: [
+      'Save up to 70% on premium implants & cosmetic care',
+      'Identical global materials and diagnostic standards',
+      'Fully managed visa, airport, and lodging coordination',
+      'Guided sightseeing tours of beautiful Bangladesh',
+      'BMDC-certified internationally-trained surgeons',
+    ],
+    process: [
+      { step: 'Consultation', desc: 'Free virtual plan based on X-rays/photos' },
+      { step: 'Travel Prep', desc: 'Visa coordination & schedule selection' },
+      { step: 'Arrival & Care', desc: 'Private VIP airport pickup & treatment start' },
+      { step: 'Explore & Tour', desc: 'Beautiful guided excursions around recovery' },
+      { step: 'Return', desc: 'Comprehensive checkup & departure with global warranty' },
+    ],
+    duration: 'Bespoke Schedules',
+    recovery: 'Varies by treatment',
+    warranty: 'Digital records & warranty package',
+    accentColor: '#14b8a6',
+    accentLight: '#ccfbf1',
   },
 };
 
@@ -571,15 +632,15 @@ export default function SpecialtyDetailPage() {
                 <motion.div
                   whileHover={{ scale: 1.01 }}
                   transition={{ duration: 0.3 }}
+                  className="interactive-banner"
                   onClick={() => setLightboxOpen(true)}
                   style={{
                     position: 'relative',
                     width: '100%',
-                    aspectRatio: '3/4',
-                    borderRadius: '1.5rem',
+                    aspectRatio: '16/9',
+                    borderRadius: '1.25rem',
                     overflow: 'hidden',
-                    cursor: 'pointer',
-                    boxShadow: '0 10px 40px rgba(0,0,0,0.12)',
+                    cursor: 'zoom-in',
                   }}
                 >
                   <Image
@@ -589,15 +650,9 @@ export default function SpecialtyDetailPage() {
                     priority
                     style={{ objectFit: 'cover' }}
                   />
-
-                  {/* Hover overlay with icons */}
-                  <div className="flyer-hover-overlay">
-                    <div className="flyer-hover-content">
-                      <div className="flyer-icon-btn">
-                        <Eye size={22} />
-                      </div>
-                      <p className="flyer-hover-text">View & Download Flyer</p>
-                    </div>
+                  <div className="banner-overlay">
+                    <ZoomIn size={32} className="zoom-icon" />
+                    <span>View Flyer</span>
                   </div>
                 </motion.div>
 
@@ -1035,7 +1090,45 @@ export default function SpecialtyDetailPage() {
             </div>
           </motion.div>
 
-          {/* ── CTA Section ── */}
+        {/* ── Highlighted Video Section (if available) ── */}
+        {specialty.videoUrl && (
+          <div style={{
+            marginBottom: '6rem',
+          }}>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+              style={{
+                borderRadius: '1.5rem',
+                overflow: 'hidden',
+                boxShadow: '0 30px 70px rgba(0,0,0,0.15)',
+                border: `2px solid ${specialty.accentLight}`,
+                background: '#000',
+                position: 'relative',
+                aspectRatio: '16/9',
+              }}
+            >
+              <video
+                src={specialty.videoUrl}
+                autoPlay
+                loop
+                muted
+                playsInline
+                controls
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                  display: 'block',
+                }}
+              />
+            </motion.div>
+          </div>
+        )}
+
+        {/* ── CTA Section ── */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}

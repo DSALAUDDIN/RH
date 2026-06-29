@@ -1,0 +1,390 @@
+/* ================================================================
+   EVOLUTION TIMELINE — ABOUT PAGE
+   ================================================================ */
+
+.et-section {
+  padding: 6rem 0;
+  background: #f8fafc;
+  position: relative;
+  overflow: hidden;
+}
+
+.et-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ── Header ── */
+.et-header {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.et-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 1.2rem;
+  border-radius: 100px;
+  background: rgba(14, 165, 233, 0.1);
+  color: #0284c7;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+  border: 1px solid rgba(14, 165, 233, 0.2);
+}
+
+.et-title {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.04em;
+  margin: 0 0 1rem;
+  line-height: 1.1;
+}
+
+.et-highlight {
+  background: linear-gradient(135deg, #0ea5e9, #6366f1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.et-subtitle {
+  font-size: 1.05rem;
+  color: #475569;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* ── Timeline Wrapper ── */
+.et-timeline-wrapper {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Background Cinematic Orbs */
+.et-bg-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.5;
+}
+.et-orb-1 {
+  top: 10%;
+  left: -10%;
+  width: 500px;
+  height: 500px;
+  background: rgba(14, 165, 233, 0.2);
+}
+.et-orb-2 {
+  bottom: 20%;
+  right: -10%;
+  width: 600px;
+  height: 600px;
+  background: rgba(139, 92, 246, 0.15);
+}
+
+/* The vertical base line */
+.et-line-base {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  background: rgba(14, 165, 233, 0.1);
+  border-radius: 4px;
+  z-index: 1;
+}
+
+/* The animated glowing scroll progress line */
+.et-line-progress {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  background: linear-gradient(to bottom, #0ea5e9, #8b5cf6, #10b981);
+  box-shadow: 0 0 15px rgba(14, 165, 233, 0.5);
+  border-radius: 4px;
+  z-index: 2;
+}
+
+/* ── Timeline Item ── */
+.et-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6rem;
+  position: relative;
+  width: 100%;
+}
+
+.et-item:last-child {
+  margin-bottom: 0;
+}
+
+/* Marker */
+.et-marker {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  background: #fff;
+  border: 3px solid;
+  border-radius: 50%;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.et-marker-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Layout Sides */
+.et-content {
+  width: 45%;
+  position: relative;
+  z-index: 3;
+}
+
+.et-visual {
+  width: 45%;
+  position: relative;
+  z-index: 3;
+}
+
+/* Alternating directions */
+.et-item-left {
+  flex-direction: row;
+}
+
+.et-item-right {
+  flex-direction: row-reverse;
+}
+
+/* ── Content Card ── */
+.et-card {
+  background: #ffffff;
+  padding: 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px -10px rgba(0,0,0,0.06);
+  border: 1px solid rgba(0,0,0,0.04);
+}
+
+.et-card-year {
+  font-size: 2.5rem;
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+
+.et-card-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 0.25rem;
+  letter-spacing: -0.02em;
+}
+
+.et-card-subtitle {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1.25rem;
+}
+
+.et-card-desc {
+  font-size: 1rem;
+  color: #475569;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ── Image Side (Cluster) ── */
+.et-image-cluster {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+}
+
+.et-cluster-main {
+  position: relative;
+  flex: 2;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px -10px rgba(0,0,0,0.15);
+}
+
+.et-cluster-side {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 10px;
+}
+
+.et-cluster-sub {
+  position: relative;
+  flex: 1;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px -5px rgba(0,0,0,0.1);
+}
+
+.et-img {
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.et-image-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.et-cluster-main, .et-cluster-sub {
+  cursor: pointer;
+}
+
+.et-cluster-main:hover .et-img, 
+.et-cluster-sub:hover .et-img {
+  transform: scale(1.05);
+}
+
+/* ================================================================
+   LIGHTBOX
+   ================================================================ */
+.et-lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(8px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.et-lightbox-close {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: white;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.et-lightbox-close:hover {
+  background: white;
+  color: #0f172a;
+  transform: scale(1.1);
+}
+
+.et-lightbox-content {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+}
+
+.et-lightbox-img {
+  object-fit: contain;
+}
+
+/* ================================================================
+   RESPONSIVE
+   ================================================================ */
+@media (max-width: 900px) {
+  .et-line-base, .et-line-progress {
+    left: 30px;
+    transform: translateX(-50%);
+  }
+  
+  .et-item {
+    flex-direction: column !important;
+    align-items: flex-start;
+    padding-left: 80px;
+    margin-bottom: 4rem;
+  }
+  
+  .et-marker {
+    left: 30px;
+    top: 0;
+    transform: translate(-50%, 0);
+  }
+  
+  .et-content,
+  .et-visual {
+    width: 100%;
+  }
+  
+  .et-visual {
+    margin-top: 2rem;
+  }
+  
+  .et-card {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 540px) {
+  .et-section { padding: 4rem 0; }
+  .et-header { margin-bottom: 3rem; }
+  .et-title { font-size: 1.8rem; }
+  
+  .et-item {
+    padding-left: 60px;
+  }
+  
+  .et-line-base, .et-line-progress {
+    left: 20px;
+  }
+  
+  .et-marker {
+    left: 20px;
+    width: 40px;
+    height: 40px;
+  }
+  
+  .et-card {
+    padding: 1.5rem;
+  }
+  
+  .et-card-year {
+    font-size: 2rem;
+  }
+}

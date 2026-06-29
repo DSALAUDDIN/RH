@@ -5,8 +5,50 @@ import { Sparkles, ArrowLeft, CheckCircle2, ShieldCheck, Star } from 'lucide-rea
 import './services.css';
 
 export const metadata: Metadata = {
-  title: 'Our Services | RH Dental Clinic',
-  description: 'Comprehensive dental services including aesthetic dentistry, orthodontics, implants, whitening, and pediatric care.',
+  title: 'Dental Services in Dhaka — Implants, Braces, Root Canal & More | RH Dental Care',
+  description:
+    'Explore all dental services at RH Dental Care, Dhaka — dental implants, orthodontics (braces & aligners), painless root canal, cosmetic smile design, teeth whitening, zirconia crowns, gum care, pediatric dentistry & full-mouth rehabilitation. BMDC-certified specialists.',
+  keywords: [
+    'dental services Dhaka',
+    'dental implants Dhaka',
+    'orthodontics braces Dhaka',
+    'clear aligners Bangladesh',
+    'root canal treatment Dhaka',
+    'teeth whitening Dhaka',
+    'smile design Dhaka',
+    'zirconia crown Dhaka',
+    'gum treatment Dhaka',
+    'pediatric dentistry Dhaka',
+    'cosmetic dentistry Bangladesh',
+    'full mouth rehabilitation Dhaka',
+    'dental clinic services Bangladesh',
+    'RH Dental Care services',
+  ],
+  alternates: { canonical: '/services' },
+  openGraph: {
+    title: 'Dental Services — Implants, Braces, Root Canal & More | RH Dental Care Dhaka',
+    description:
+      'Comprehensive dental care under one roof in Dhaka. Advanced implants, orthodontics, cosmetic dentistry & painless treatments by BMDC-certified specialists.',
+    url: 'https://www.rhdentalcare.com/services',
+    images: [{ url: '/rhlogo.jpeg', width: 1200, height: 630, alt: 'RH Dental Care Services Dhaka' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Dental Services | RH Dental Care Dhaka',
+    description: 'All dental services at RH Dental Care — implants, orthodontics, root canal, cosmetic care & more.',
+    images: ['/rhlogo.jpeg'],
+  },
+};
+
+const BASE_URL = 'https://www.rhdentalcare.com';
+
+const servicesBreadcrumb = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: BASE_URL },
+    { '@type': 'ListItem', position: 2, name: 'Services', item: `${BASE_URL}/services` },
+  ],
 };
 
 const detailedServices = [
@@ -43,6 +85,10 @@ const detailedServices = [
 export default function ServicesPage() {
   return (
     <div className="srv-page-bg">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesBreadcrumb).replace(/</g, '\\u003c') }}
+      />
       {/* ── Dark Hero Section ── */}
       <section className="srv-hero">
         <div className="srv-hero-content">

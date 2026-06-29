@@ -1,16 +1,47 @@
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
 import Specialties from '@/components/Specialties';
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Our Specialties | RH Dental Care',
-  description: 'Explore our world-class specialized treatments, from 3D imaging to precision orthodontics.',
+  title: 'Dental Specialties in Dhaka — Implants, Braces, Root Canal & More | RH Dental Care',
+  description:
+    'Explore world-class dental specialties at RH Dental Care, Dhaka\'s premier clinic. 3D imaging, dental implants, orthodontics, root canal, zirconia crowns, gum care, pediatric dentistry & aesthetic smile design. BMDC-certified specialists.',
+  keywords: [
+    'dental implants Dhaka Bangladesh',
+    'orthodontics braces Dhaka',
+    'clear aligners Dhaka',
+    'root canal treatment Dhaka',
+    'painless root canal Bangladesh',
+    'zirconia crown Dhaka',
+    'teeth whitening Dhaka',
+    'smile design Dhaka',
+    'cosmetic dentistry Bangladesh',
+    'gum disease treatment Dhaka',
+    'kids dentist Dhaka',
+    '3D dental imaging Dhaka',
+    'dental specialties Bangladesh',
+    'best dental treatments Dhaka',
+  ],
+  alternates: { canonical: '/specialties' },
+  openGraph: {
+    title: 'Dental Specialties — Implants, Braces, Root Canal, Aesthetics | RH Dental Care Dhaka',
+    description:
+      'All dental specialties under one roof in Dhaka — implants, orthodontics, root canal & cosmetic dentistry by BMDC-certified specialists at RH Dental Care.',
+    url: 'https://www.rhdentalcare.com/specialties',
+    images: [{ url: '/rhlogo.jpeg', width: 1200, height: 630, alt: 'Dental Specialties — RH Dental Care Dhaka' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Dental Specialties Dhaka | RH Dental Care',
+    description: 'Implants, orthodontics, root canal, cosmetic dentistry & more by BMDC-certified specialists in Dhaka.',
+    images: ['/rhlogo.jpeg'],
+  },
 };
 
 export default function SpecialtiesPage() {
   return (
-    <div style={{ background: '#020617', minHeight: '100vh' }}>
+    <div className="sp-root" style={{ background: '#020617', minHeight: '100vh' }}>
       {/* ── Minimal Breadcrumb / Top Bar ── */}
       <div style={{ 
         paddingTop: 'calc(var(--nav-height, 80px) + 20px)',

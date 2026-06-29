@@ -55,8 +55,8 @@ export default function ServicesList({ limit = services.length }: { limit?: numb
       <div className="container">
         <div className="section-title">
           <div className="sl-title-tag"><Sparkles size={14} /> Our Premium Services</div>
-          <h2>Exceptional Dental Care</h2>
-          <p>We combine advanced technology with artistic expertise to deliver world-class dental treatments tailored to your unique needs.</p>
+          <h2>Exceptional Dental Treatments in Dhaka</h2>
+          <p>We combine advanced technology with artistic expertise to deliver world-class dental implants, orthodontics, and cosmetic dentistry in Bangladesh.</p>
         </div>
 
         <motion.div 
@@ -74,7 +74,7 @@ export default function ServicesList({ limit = services.length }: { limit?: numb
               <h3 className="service-title">{service.title}</h3>
               <p className="service-desc">{service.description}</p>
               <Link href={`/services#${service.id}`} className="service-link">
-                Learn more <ArrowRight size={16} />
+                Learn more about {service.title} <ArrowRight size={16} />
               </Link>
             </motion.div>
           ))}

@@ -6,13 +6,15 @@ import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import './Specialties.css';
 
-import imagingImg from '../assets/specialties/imaging.png';
-import bracesImg from '../assets/specialties/braces_clean.png';
-import zirconiaImg from '../assets/specialties/zirconia.png';
-import implantImg from '../assets/specialties/implant.png';
-import rootCanalImg from '../assets/specialties/rootcanal_clean.png';
-import gumCareImg from '../assets/specialties/gum_clean.png';
-import kidsCareImg from '../assets/specialties/kids_clean.png';
+import imagingImg from '../assets/specialties/3d-imaging_new.png';
+import bracesImg from '../assets/specialties/braces_new.png';
+import zirconiaImg from '../assets/specialties/zirconia_new.png';
+import implantImg from '../assets/specialties/implant_new.png';
+import rootCanalImg from '../assets/specialties/root-canal_new.png';
+import gumCareImg from '../assets/specialties/gum-care_new.png';
+import kidsCareImg from '../assets/specialties/kids-care.jpg';
+import aestheticsImg from '../assets/specialties/aesthetic_new.png';
+import dentalTourismImg from '../assets/specialties/dental_tourism.png';
 
 const clinicsBanners = [
 	{
@@ -71,6 +73,22 @@ const clinicsBanners = [
 		featured: false,
 		slug: 'kids-care',
 	},
+	{
+		title: 'Zirconia Veneers',
+		desc: 'Achieve a naturally beautiful, long-lasting, and confident smile with ultra-thin premium zirconia veneers.',
+		image: aestheticsImg,
+		category: 'Aesthetics',
+		featured: true,
+		slug: '/zirconia-veneers',
+	},
+	{
+		title: 'RH Dental Tourism',
+		desc: 'Combine world-class specialized dental care with a relaxing vacation in Bangladesh. VIP airport pickup, 5-star lodging, and custom sightseeing support.',
+		image: dentalTourismImg,
+		category: 'Global Travel Care',
+		featured: true,
+		slug: '/dental-tourism',
+	},
 ];
 
 const containerVariants: Variants = {
@@ -107,10 +125,9 @@ export default function Specialties() {
 					transition={{ duration: 1, ease: 'easeOut' }}
 				>
 					<span className="tag">Signature Experience</span>
-					<h2>Expert Care for Every Smile</h2>
+					<h2>Top-Ranked Dental Clinic in Dhaka</h2>
 					<p>
-						We offer a full spectrum of world-class treatments – each tailored
-						to elevate your health, confidence, and natural beauty.
+						RH Dental Care provides world-class dental treatments in Bangladesh – including dental implants, braces, and painless root canals tailored to your smile.
 					</p>
 				</motion.div>
 
@@ -122,7 +139,7 @@ export default function Specialties() {
 					whileInView="visible"
 					viewport={{ once: true, margin: '-50px' }}
 				>
-					{clinicsBanners.map((card) => (
+					{clinicsBanners.map((card, index) => (
 						<motion.div
 							key={card.title}
 							className={`premium-card ${card.featured ? 'featured' : 'standard'}`}
@@ -132,9 +149,11 @@ export default function Specialties() {
 							<div className="card-img-wrapper">
 								<Image
 									src={card.image}
-									alt={card.title}
+									alt={`${card.title} - Dental Treatment at RH Dental Care Dhaka`}
 									fill
-									sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 40vw"
+									loading={card.featured || index < 2 ? 'eager' : 'lazy'}
+									priority={card.featured && index === 0}
+									sizes={card.featured ? '(max-width: 768px) 100vw, 40vw' : '(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw'}
 									className="card-img"
 									style={{ objectFit: 'cover' }}
 								/>
@@ -145,8 +164,8 @@ export default function Specialties() {
 							<span className="card-tag">{card.category}</span>
 							<h3>{card.title}</h3>
 							<p>{card.desc}</p>
-							<Link href={`/specialties/${card.slug}`} className="view-link">
-								<span>View Treatment Detail</span>
+							<Link href={card.slug.startsWith('/') ? card.slug : `/${card.slug}`} className="view-link">
+								<span>View {card.title} Details</span>
 								<ArrowRight size={16} className="arrow" />
 							</Link>
 						</div>

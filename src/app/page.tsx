@@ -3,7 +3,8 @@ import ServicesList from '@/components/ServicesList';
 import Specialties from '@/components/Specialties';
 import Testimonials from '@/components/Testimonials';
 import VideoSection from '@/components/VideoSection';
-import ReelsGallery from '@/components/ReelsGallery';
+import ClinicGallery from '@/components/ClinicGallery';
+import PromoModal from '@/components/PromoModal';
 
 export default function Home() {
   return (
@@ -11,8 +12,9 @@ export default function Home() {
       <Hero />
       <Specialties />
       <VideoSection />
+      <ClinicGallery />
+      <PromoModal />
       <ServicesList limit={4} />
-      <ReelsGallery />
       <Testimonials />
       
       {/* Call to Action Section */}

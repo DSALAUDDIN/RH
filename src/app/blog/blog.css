@@ -67,3 +67,25 @@
 .blog-table-row:hover {
   background: #f1f5f9 !important;
 }
+
+@media (max-width: 480px) {
+  .blog-card {
+    padding: 1.5rem;
+    border-radius: 1.25rem;
+  }
+  .blog-card-title {
+    font-size: 1rem;
+  }
+  .blog-grid {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .blog-card {
+    padding: 1.25rem;
+  }
+  .blog-card-title {
+    font-size: 0.95rem;
+  }
+}
