@@ -321,6 +321,9 @@ export default function TeamPage() {
                 <div className="team-designation">{m.designation}</div>
                 <h3 className="team-name">{m.name}</h3>
                 <p className="team-role">{m.role}</p>
+                <p style={{ fontSize: '0.8rem', color: '#64748b', marginTop: '4px', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                  <ShieldCheck size={12} /> BMDC: {m.bmdc}
+                </p>
                 <div className="team-action">
                   <span>View Full Profile</span>
                   <ArrowUpRight size={16} />

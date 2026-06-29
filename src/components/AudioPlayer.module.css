@@ -1,7 +1,7 @@
 .audioToggle {
   position: fixed;
   bottom: 24px;
-  right: 24px;
+  left: 24px;
   z-index: 9999;
   width: 48px;
   height: 48px;
@@ -34,7 +34,7 @@
 @media (max-width: 768px) {
   .audioToggle {
     bottom: 16px;
-    right: 16px;
+    left: 16px;
     width: 44px;
     height: 44px;
   }

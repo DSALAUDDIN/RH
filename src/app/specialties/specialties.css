@@ -1,0 +1,49 @@
+.specialty-card-link {
+  text-decoration: none;
+  display: block;
+}
+
+.specialty-card {
+  background: #fff;
+  border-radius: 1.5rem;
+  padding: 2.5rem;
+  height: 100%;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.specialty-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  border-color: var(--hover-color);
+}
+
+.sp-arrow {
+  transition: all 0.3s ease;
+}
+
+.specialty-card:hover .sp-arrow {
+  transform: translateX(5px);
+  color: var(--hover-color) !important;
+}
+
+.sp-book-btn {
+  display: inline-block;
+  padding: 1.2rem 3rem;
+  border-radius: 100px;
+  background: #0ea5e9;
+  color: #fff;
+  font-weight: 800;
+  text-decoration: none;
+  box-shadow: 0 10px 30px rgba(14, 165, 233, 0.3);
+  transition: transform 0.2s;
+}
+
+.sp-book-btn:hover {
+  transform: translateY(-2px);
+}

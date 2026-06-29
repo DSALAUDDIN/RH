@@ -27,7 +27,15 @@ export default function Navbar() {
 
   const navLinks = [
     { name: 'Home', path: '/' },
-    { name: 'About', path: '/about' },
+    { 
+      name: 'About', 
+      path: '/about',
+      dropdown: [
+        { name: 'About Us', path: '/about', icon: '🏥', desc: 'Our history & mission' },
+        { name: 'Banani Branch', path: '/banani', icon: '🌟', desc: 'Premium Care at Banani' },
+        { name: 'Banasree Branch', path: '/contact', icon: '📍', desc: 'Our Main Branch' }
+      ]
+    },
     { name: 'Our Team', path: '/team' },
     { 
       name: 'Specialties', 
@@ -38,7 +46,7 @@ export default function Navbar() {
         { name: 'Root Canal', path: '/root-canal', icon: '🔬', desc: 'Single-visit precision care' },
         { name: 'Zirconia Crown', path: '/zirconia-crown', icon: '👑', desc: 'Premium smile restoration' },
         { name: 'Zirconia Veneers', path: '/zirconia-veneers', icon: '💎', desc: 'Flawless smile transformation' },
-        { name: 'Special Child Program', path: '/special-child', icon: '💚', desc: 'GA-based specialized care' },
+        { name: 'Kids Care (Pediatric)', path: '/kids-care', icon: '🧸', desc: 'Painless care for your little ones' },
         { name: 'Dental Surgery', path: '/dental-surgery', icon: '🔴', desc: 'Advanced oral surgical care' },
         { name: 'Digital Dentistry', path: '/digital-dentistry', icon: '🔵', desc: '3D scanning & CAD/CAM' },
         { name: 'RH Dental Tourism', path: '/dental-tourism', icon: '✈️', desc: 'World-class care & travel' },
@@ -70,7 +78,8 @@ export default function Navbar() {
         <nav className="desktop-nav">
           <ul className="nav-links">
             {navLinks.map((link) => {
-              const isActive = pathname === link.path || (link.dropdown && link.dropdown.some(sub => pathname === sub.path) && link.name === 'Specialties');
+              const isDropdownActive = link.dropdown && link.dropdown.some(sub => pathname === sub.path);
+              const isActive = pathname === link.path || (isDropdownActive && link.name === 'Specialties') || (isDropdownActive && link.name === 'About');
               return (
                 <li 
                   key={link.name} 
@@ -167,7 +176,8 @@ export default function Navbar() {
           >
             <ul className="mobile-nav-links">
               {navLinks.map((link) => {
-                const isActive = pathname === link.path || (link.dropdown && link.dropdown.some(sub => pathname === sub.path) && link.name === 'Specialties');
+                const isDropdownActive = link.dropdown && link.dropdown.some(sub => pathname === sub.path);
+                const isActive = pathname === link.path || (isDropdownActive && link.name === 'Specialties') || (isDropdownActive && link.name === 'About');
                 return (
                   <li key={link.name} className={link.dropdown ? 'mobile-has-dropdown' : ''}>
                     <div className="mobile-link-wrapper">

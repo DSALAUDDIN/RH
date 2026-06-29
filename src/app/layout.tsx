@@ -2,9 +2,7 @@ import type { Metadata, Viewport } from 'next';
 import { Inter, Bricolage_Grotesque, Geist } from 'next/font/google';
 import Script from 'next/script';
 import './globals.css';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
-import AudioPlayer from '@/components/AudioPlayer';
+import LayoutWrapper from '@/components/LayoutWrapper';
 
 /* Display / headings — bold surgical aesthetic */
 const bricolage = Bricolage_Grotesque({
@@ -450,12 +448,9 @@ export default function RootLayout({
         <link rel="alternate" hrefLang="x-default" href={BASE_URL} />
       </head>
       <body suppressHydrationWarning>
-        <Navbar />
-        <AudioPlayer />
-        <main className="main-content">
+        <LayoutWrapper>
           {children}
-        </main>
-        <Footer />
+        </LayoutWrapper>
       </body>
     </html>
   );

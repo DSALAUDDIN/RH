@@ -1,215 +1,196 @@
-'use client';
+import type { Metadata } from 'next';
+import { MapPin, Phone, Mail, Clock, MessageCircle, Navigation, ShieldCheck, CreditCard, Sparkles } from 'lucide-react';
+import Link from 'next/link';
 
-import { useState } from 'react';
-import { motion } from 'framer-motion';
-import { MapPin, Phone, Mail, Clock, MessageCircle } from 'lucide-react';
+export const metadata: Metadata = {
+  title: 'Contact RH Dental Care | Banasree & Banani Branches',
+  description: 'Book your appointment at RH Dental Care. Visit our Rampura (Banasree) or Banani branch for world-class, painless dentistry in Dhaka.',
+};
 
 export default function ContactPage() {
-  const [formData, setFormData] = useState({ name: '', email: '', phone: '', message: '' });
-  const [submitted, setSubmitted] = useState(false);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState('');
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setLoading(true);
-    setError('');
-
-    try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
-      });
-
-      const data = await res.json();
-
-      if (data.success) {
-        setSubmitted(true);
-        setFormData({ name: '', email: '', phone: '', message: '' });
-      } else {
-        setError(data.message || 'Something went wrong.');
-      }
-    } catch (err) {
-      setError('Failed to send message. Please check your connection.');
-    } finally {
-      setLoading(false);
-    }
-  };
-
   return (
-    <div style={{ paddingTop: 'clamp(5rem, 12vw, 8rem)', paddingBottom: 'clamp(2rem, 6vw, 4rem)' }}>
-      <div className="container">
-        <div className="section-title text-center" style={{ textAlign: 'center', marginBottom: 'clamp(2rem, 5vw, 4rem)' }}>
-          <h1 style={{ color: 'hsl(var(--primary))', fontSize: 'clamp(2rem, 7vw, 4rem)' }}>Contact Us</h1>
-          <p style={{ maxWidth: '800px', margin: '0 auto', fontSize: 'clamp(1rem, 2.5vw, 1.25rem)' }}>
-            Ready to book your appointment or have questions? Get in touch with our friendly team.
+    <div className="contact-root" style={{ background: '#f8fafc', minHeight: '100vh', color: '#0f172a' }}>
+      
+      {/* ── Hero Section ── */}
+      <section style={{ 
+        padding: 'clamp(6rem, 12vw, 10rem) 2rem 4rem', 
+        background: 'linear-gradient(to bottom, #020617, #0f172a)',
+        color: '#fff',
+        textAlign: 'center',
+        position: 'relative'
+      }}>
+        <div className="container" style={{ position: 'relative', zIndex: 1 }}>
+          <div style={{ 
+            display: 'inline-flex', alignItems: 'center', gap: '8px', 
+            background: 'rgba(14, 165, 233, 0.1)', border: '1px solid rgba(14, 165, 233, 0.2)',
+            padding: '8px 16px', borderRadius: '50px', color: '#38bdf8',
+            fontWeight: 700, fontSize: '0.875rem', marginBottom: '1.5rem'
+          }}>
+            <Sparkles size={16} />
+            <span>Two Premium Locations in Dhaka</span>
+          </div>
+          
+          <h1 style={{ 
+            fontSize: 'clamp(2.5rem, 6vw, 4rem)', 
+            fontWeight: 900, 
+            lineHeight: 1.1, 
+            marginBottom: '1.5rem',
+            letterSpacing: '-0.03em'
+          }}>
+            Ready for a <span style={{ color: '#0ea5e9' }}>Brighter Smile?</span>
+          </h1>
+          
+          <p style={{ 
+            fontSize: 'clamp(1.1rem, 2vw, 1.25rem)', 
+            color: '#94a3b8', 
+            maxWidth: '700px', 
+            margin: '0 auto',
+            lineHeight: 1.7
+          }}>
+            Choose your preferred branch and schedule a consultation today. Experience painless, world-class dentistry designed around your comfort.
           </p>
         </div>
+      </section>
 
-        <div className="contact-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: 'clamp(1.5rem, 4vw, 4rem)' }}>
-          {/* Contact Form */}
-          <div className="glass" style={{ padding: 'clamp(1.5rem, 4vw, 3rem)', borderRadius: '1.5rem' }}>
-            <h2 style={{ marginBottom: 'clamp(1.25rem, 3vw, 2rem)', fontSize: 'clamp(1.4rem, 4vw, 2rem)' }}>Send a Message</h2>
+      {/* ── Branches Grid ── */}
+      <section style={{ padding: '6rem 0', background: '#f8fafc' }}>
+        <div className="container">
+          <div style={{ 
+            display: 'grid', 
+            gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', 
+            gap: '2.5rem',
+            maxWidth: '1000px',
+            margin: '0 auto'
+          }}>
             
-            {submitted ? (
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                style={{ padding: '2rem', backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#10b981', borderRadius: '1rem', textAlign: 'center' }}
-              >
-                <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>✅</div>
-                <h3 style={{ marginBottom: '0.5rem' }}>Message Sent Successfully</h3>
-                <p>Our team will contact you within 24 hours.</p>
-                <button 
-                  onClick={() => setSubmitted(false)}
-                  className="btn btn-outline"
-                  style={{ marginTop: '1.5rem' }}
-                >
-                  Send Another
-                </button>
-              </motion.div>
-            ) : (
-              <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
-                <div>
-                  <label htmlFor="name" style={{ display: 'block', marginBottom: '0.5rem', fontWeight: '500' }}>Full Name</label>
-                  <input 
-                    type="text" 
-                    id="name" 
-                    required
-                    value={formData.name}
-                    onChange={(e) => setFormData({...formData, name: e.target.value})}
-                    style={{ width: '100%', padding: '0.75rem 1rem', borderRadius: '0.5rem', border: '1px solid var(--blue-200)', outline: 'none', background: '#ffffff', color: 'var(--foreground)', fontSize: '1rem', boxShadow: '0 1px 2px rgba(0,0,0,0.05)' }}
-                  />
-                </div>
-                <div>
-                  <label htmlFor="email" style={{ display: 'block', marginBottom: '0.5rem', fontWeight: '500' }}>Email Address</label>
-                  <input 
-                    type="email" 
-                    id="email" 
-                    required
-                    value={formData.email}
-                    onChange={(e) => setFormData({...formData, email: e.target.value})}
-                    style={{ width: '100%', padding: '0.75rem 1rem', borderRadius: '0.5rem', border: '1px solid var(--blue-200)', outline: 'none', background: '#ffffff', color: 'var(--foreground)', fontSize: '1rem', boxShadow: '0 1px 2px rgba(0,0,0,0.05)' }}
-                  />
-                </div>
-                <div>
-                  <label htmlFor="phone" style={{ display: 'block', marginBottom: '0.5rem', fontWeight: '500' }}>Phone Number</label>
-                  <input 
-                    type="tel" 
-                    id="phone" 
-                    required
-                    value={formData.phone}
-                    onChange={(e) => setFormData({...formData, phone: e.target.value})}
-                    style={{ width: '100%', padding: '0.75rem 1rem', borderRadius: '0.5rem', border: '1px solid var(--blue-200)', outline: 'none', background: '#ffffff', color: 'var(--foreground)', fontSize: '1rem', boxShadow: '0 1px 2px rgba(0,0,0,0.05)' }}
-                  />
-                </div>
-                <div>
-                  <label htmlFor="message" style={{ display: 'block', marginBottom: '0.5rem', fontWeight: '500' }}>How can we help?</label>
-                  <textarea 
-                    id="message" 
-                    rows={4}
-                    required
-                    value={formData.message}
-                    onChange={(e) => setFormData({...formData, message: e.target.value})}
-                    style={{ width: '100%', padding: '0.75rem 1rem', borderRadius: '0.5rem', border: '1px solid var(--blue-200)', outline: 'none', resize: 'vertical', background: '#ffffff', color: 'var(--foreground)', fontSize: '1rem', boxShadow: '0 1px 2px rgba(0,0,0,0.05)' }}
-                  ></textarea>
-                </div>
-                
-                {error && (
-                  <div style={{ color: '#ef4444', fontSize: '0.9rem', padding: '0.5rem', background: 'rgba(239, 68, 68, 0.1)', borderRadius: '0.5rem', border: '1px solid rgba(239, 68, 68, 0.2)' }}>
-                    ⚠️ {error}
-                  </div>
-                )}
-
-                <button 
-                  type="submit" 
-                  className="btn btn-primary" 
-                  style={{ marginTop: '0.75rem', width: '100%', opacity: loading ? 0.7 : 1, cursor: loading ? 'not-allowed' : 'pointer' }}
-                  disabled={loading}
-                >
-                  {loading ? 'Sending Message...' : 'Send Message'}
-                </button>
-              </form>
-            )}
-          </div>
-
-          {/* Contact Information */}
-          <div>
-            <div className="glass" style={{ padding: 'clamp(1.5rem, 4vw, 3rem)', borderRadius: '1.5rem', marginBottom: '1.5rem' }}>
-              <h2 style={{ marginBottom: 'clamp(1.25rem, 3vw, 2rem)', fontSize: 'clamp(1.4rem, 4vw, 2rem)' }}>Clinic Information</h2>
+            {/* Rampura Branch Card */}
+            <div style={{
+              background: '#fff',
+              borderRadius: '24px',
+              padding: '3rem 2.5rem',
+              border: '1px solid #e2e8f0',
+              boxShadow: '0 10px 30px rgba(0, 0, 0, 0.05)',
+              position: 'relative',
+              overflow: 'hidden'
+            }}>
+              <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '6px', background: '#0ea5e9' }} />
               
-              <ul style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-                <li style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
-                  <div style={{ background: 'rgba(var(--primary), 0.1)', padding: '0.875rem', borderRadius: '50%', color: 'hsl(var(--primary))', flexShrink: 0 }}>
-                    <MapPin size={22} />
-                  </div>
-                  <div>
-                    <h3 style={{ fontSize: 'clamp(1rem, 3vw, 1.25rem)', marginBottom: '0.5rem' }}>Our Location</h3>
-                    <p style={{ color: 'hsl(var(--muted-foreground))', lineHeight: '1.6', fontSize: 'clamp(0.875rem, 2vw, 1rem)' }}>House: 42, Road: 8, Block: C<br/>Banasree, Rampura<br/>Dhaka - 1219, Bangladesh</p>
-                  </div>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '2rem' }}>
+                <h2 style={{ fontSize: '1.8rem', fontWeight: 800, color: '#0f172a', letterSpacing: '-0.02em' }}>Rampura Branch</h2>
+                <div style={{ background: '#f1f5f9', padding: '6px 12px', borderRadius: '50px', fontSize: '0.8rem', fontWeight: 700, color: '#64748b' }}>Main Center</div>
+              </div>
+
+              <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 2rem 0', display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <MapPin size={20} color="#0ea5e9" style={{ flexShrink: 0, marginTop: '2px' }} />
+                  <span style={{ color: '#475569', lineHeight: 1.6, fontWeight: 500 }}>
+                    House 42, Road 8, Block C<br/>
+                    Banasree, Rampura, Dhaka-1219
+                  </span>
                 </li>
-                
-                <li style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
-                  <div style={{ background: 'rgba(var(--primary), 0.1)', padding: '0.875rem', borderRadius: '50%', color: 'hsl(var(--primary))', flexShrink: 0 }}>
-                    <Phone size={22} />
-                  </div>
-                  <div>
-                    <h3 style={{ fontSize: 'clamp(1rem, 3vw, 1.25rem)', marginBottom: '0.5rem' }}>Phone</h3>
-                    <p style={{ color: 'hsl(var(--muted-foreground))', fontSize: 'clamp(0.875rem, 2vw, 1rem)' }}><a href="tel:+8801775227902" style={{ color: 'inherit' }}>01775-227902</a></p>
-                    <p style={{ color: 'hsl(var(--muted-foreground))', fontSize: '0.875rem', marginTop: '0.25rem' }}>Call us for appointments</p>
-                  </div>
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
+                  <Phone size={20} color="#0ea5e9" style={{ flexShrink: 0 }} />
+                  <a href="tel:+8801775227902" style={{ color: '#0f172a', fontWeight: 700, fontSize: '1.1rem', textDecoration: 'none' }}>+880 1775-227902</a>
                 </li>
-                
-                <li style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
-                  <div style={{ background: 'rgba(37, 211, 102, 0.1)', padding: '0.875rem', borderRadius: '50%', color: '#25D366', flexShrink: 0 }}>
-                    <MessageCircle size={22} />
-                  </div>
-                  <div>
-                    <h3 style={{ fontSize: 'clamp(1rem, 3vw, 1.25rem)', marginBottom: '0.5rem' }}>WhatsApp</h3>
-                    <p style={{ color: 'hsl(var(--muted-foreground))', fontSize: 'clamp(0.875rem, 2vw, 1rem)' }}><a href="https://wa.me/8801775227902" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit' }}>01775-227902</a></p>
-                    <p style={{ color: 'hsl(var(--muted-foreground))', fontSize: '0.875rem', marginTop: '0.25rem' }}>Chat with us</p>
-                  </div>
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
+                  <MessageCircle size={20} color="#25D366" style={{ flexShrink: 0 }} />
+                  <a href="https://wa.me/8801775227902" target="_blank" rel="noopener noreferrer" style={{ color: '#25D366', fontWeight: 700, fontSize: '1.1rem', textDecoration: 'none' }}>WhatsApp Us</a>
                 </li>
-                
-                <li style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
-                  <div style={{ background: 'rgba(var(--primary), 0.1)', padding: '0.875rem', borderRadius: '50%', color: 'hsl(var(--primary))', flexShrink: 0 }}>
-                    <Mail size={22} />
-                  </div>
-                  <div>
-                    <h3 style={{ fontSize: 'clamp(1rem, 3vw, 1.25rem)', marginBottom: '0.5rem' }}>Email</h3>
-                    <p style={{ color: 'hsl(var(--muted-foreground))', fontSize: 'clamp(0.875rem, 2vw, 1rem)', wordBreak: 'break-all' }}><a href="mailto:drhasan0712@gmail.com" style={{ color: 'inherit' }}>drhasan0712@gmail.com</a></p>
-                  </div>
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
+                  <Mail size={20} color="#64748b" style={{ flexShrink: 0 }} />
+                  <a href="mailto:drhasan0712@gmail.com" style={{ color: '#475569', fontWeight: 500, textDecoration: 'none' }}>drhasan0712@gmail.com</a>
                 </li>
-                
-                <li style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
-                  <div style={{ background: 'rgba(var(--primary), 0.1)', padding: '0.875rem', borderRadius: '50%', color: 'hsl(var(--primary))', flexShrink: 0 }}>
-                    <Clock size={22} />
-                  </div>
-                  <div style={{ flex: 1, minWidth: 0 }}>
-                    <h3 style={{ fontSize: 'clamp(1rem, 3vw, 1.25rem)', marginBottom: '0.5rem' }}>Working Hours</h3>
-                    <p style={{ color: 'hsl(var(--muted-foreground))', display: 'flex', justifyContent: 'space-between', marginBottom: '0.25rem', gap: '0.5rem', fontSize: 'clamp(0.85rem, 2vw, 1rem)' }}><span>Friday – Wednesday</span> <span>3:00 PM – 10:00 PM</span></p>
-                    <p style={{ color: 'hsl(var(--muted-foreground))', display: 'flex', justifyContent: 'space-between', gap: '0.5rem', fontSize: 'clamp(0.85rem, 2vw, 1rem)' }}><span>Thursday</span> <span>Closed</span></p>
-                  </div>
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
+                  <Clock size={20} color="#64748b" style={{ flexShrink: 0 }} />
+                  <span style={{ color: '#475569', fontWeight: 500 }}>3:00 PM – 10:00 PM (Thu: Closed)</span>
                 </li>
               </ul>
+
+              <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+                <a href="tel:+8801775227902" style={{ flex: 1, textAlign: 'center', background: '#0f172a', color: '#fff', padding: '12px 24px', borderRadius: '50px', fontWeight: 700, textDecoration: 'none' }}>Call Now</a>
+                <a href="https://maps.app.goo.gl/r5jG8oRxykZQZ4p56" target="_blank" rel="noopener noreferrer" style={{ flex: 1, textAlign: 'center', background: '#f1f5f9', color: '#0f172a', padding: '12px 24px', borderRadius: '50px', fontWeight: 700, textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px' }}>
+                  <Navigation size={16} /> Get Directions
+                </a>
+              </div>
+            </div>
+
+            {/* Banani Branch Card */}
+            <div style={{
+              background: '#fff',
+              borderRadius: '24px',
+              padding: '3rem 2.5rem',
+              border: '1px solid #e2e8f0',
+              boxShadow: '0 10px 30px rgba(0, 0, 0, 0.05)',
+              position: 'relative',
+              overflow: 'hidden'
+            }}>
+              <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '6px', background: '#8b5cf6' }} />
+              
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '2rem' }}>
+                <h2 style={{ fontSize: '1.8rem', fontWeight: 800, color: '#0f172a', letterSpacing: '-0.02em' }}>Banani Branch</h2>
+                <div style={{ background: '#f5f3ff', padding: '6px 12px', borderRadius: '50px', fontSize: '0.8rem', fontWeight: 700, color: '#8b5cf6' }}>Premium Center</div>
+              </div>
+
+              <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 2rem 0', display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <MapPin size={20} color="#8b5cf6" style={{ flexShrink: 0, marginTop: '2px' }} />
+                  <span style={{ color: '#475569', lineHeight: 1.6, fontWeight: 500 }}>
+                    Level 7 (B&B Empire)<br/>
+                    Plot 116, Road 11, Block E<br/>
+                    Banani, Dhaka-1213
+                  </span>
+                </li>
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
+                  <Phone size={20} color="#8b5cf6" style={{ flexShrink: 0 }} />
+                  <a href="tel:+8801721367622" style={{ color: '#0f172a', fontWeight: 700, fontSize: '1.1rem', textDecoration: 'none' }}>+880 1721-367622</a>
+                </li>
+                <li style={{ display: 'flex', gap: '12px', alignItems: 'center', opacity: 0.5 }}>
+                  <Clock size={20} color="#64748b" style={{ flexShrink: 0 }} />
+                  <span style={{ color: '#475569', fontWeight: 500 }}>By Appointment Only</span>
+                </li>
+              </ul>
+
+              <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginTop: 'auto' }}>
+                <a href="tel:+8801721367622" style={{ flex: 1, textAlign: 'center', background: '#0f172a', color: '#fff', padding: '12px 24px', borderRadius: '50px', fontWeight: 700, textDecoration: 'none' }}>Call Now</a>
+                <Link href="/banani" style={{ flex: 1, textAlign: 'center', background: '#f5f3ff', color: '#8b5cf6', padding: '12px 24px', borderRadius: '50px', fontWeight: 700, textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px' }}>
+                  Explore Branch
+                </Link>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* ── Trust & Reassurance Strip ── */}
+      <section style={{ padding: '4rem 0', background: '#0f172a', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
+        <div className="container">
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '2rem', justifyContent: 'center', alignItems: 'center' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '12px', color: '#cbd5e1' }}>
+              <div style={{ width: '48px', height: '48px', borderRadius: '50%', background: 'rgba(255,255,255,0.05)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <ShieldCheck size={24} color="#4ade80" />
+              </div>
+              <div>
+                <h4 style={{ color: '#fff', fontWeight: 700, fontSize: '1.1rem', marginBottom: '2px' }}>Painless Guarantee</h4>
+                <p style={{ fontSize: '0.9rem' }}>Advanced techniques for zero discomfort.</p>
+              </div>
             </div>
             
-            {/* Interactive Location Map */}
-            <div className="glass" style={{ height: 'clamp(220px, 40vw, 300px)', borderRadius: '1.5rem', overflow: 'hidden', position: 'relative', border: '1px solid hsl(var(--border))' }}>
-              <iframe 
-                src="https://www.google.com/maps?q=RH+Dental+Care+and+Implant+Center&output=embed" 
-                width="100%" 
-                height="100%" 
-                style={{ border: 0 }} 
-                allowFullScreen={true} 
-                loading="lazy" 
-                referrerPolicy="no-referrer-when-downgrade"
-              ></iframe>
+            <div style={{ width: '1px', height: '40px', background: 'rgba(255,255,255,0.1)' }} className="hidden-mobile" />
+
+            <div style={{ display: 'flex', alignItems: 'center', gap: '12px', color: '#cbd5e1' }}>
+              <div style={{ width: '48px', height: '48px', borderRadius: '50%', background: 'rgba(255,255,255,0.05)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <CreditCard size={24} color="#fcd34d" />
+              </div>
+              <div>
+                <h4 style={{ color: '#fff', fontWeight: 700, fontSize: '1.1rem', marginBottom: '2px' }}>Transparent Pricing</h4>
+                <p style={{ fontSize: '0.9rem' }}>0% EMI available. No hidden costs.</p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
+
     </div>
   );
 }

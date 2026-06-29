@@ -4,19 +4,84 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
-  ArrowLeft, Search, ChevronDown, ChevronUp, Phone, Calendar,
-  Activity, Scissors, Smile, Baby, Layers, Crown, Sparkles, Plus, Star,
-  ShieldCheck, Award, Heart, Clock, CheckCircle2, TrendingUp, Users
+  ArrowLeft, Search, ChevronDown, Star, ArrowUpRight, Clock, Calendar, CheckCircle2
 } from 'lucide-react';
 import './treatments.css';
+
+/* ────────────────────────────────────────────────
+   Custom Dental Icons
+──────────────────────────────────────────────── */
+const DentalPath = "M7 5C5 5 4 7 4 9C4 11 5 13 6 15L7 21C7 21 9 22 10 19L11 16C11.5 15 12.5 15 13 16L14 19C15 22 17 21 17 21L18 15C19 13 20 11 20 9C20 7 19 5 17 5C15 5 13.5 6.5 12 8C10.5 6.5 9 5 7 5Z";
+
+const PerioIcon = ({ size = 22 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d={DentalPath} />
+    <path d="M4.5 14c2 0 3-1.5 5-1.5s3 1.5 5 1.5 3-1.5 5-1.5" strokeOpacity="0.6" strokeDasharray="2 2" />
+  </svg>
+);
+
+const SurgeryIcon = ({ size = 22 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d={DentalPath} />
+    <path d="M16 4h4m-2-2v4" stroke="currentColor" strokeWidth="2.5" />
+  </svg>
+);
+
+const EndoIcon = ({ size = 22 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d={DentalPath} />
+    <path d="M9 11v6m6-6v6" strokeOpacity="0.5" />
+    <circle cx="12" cy="8" r="1" fill="currentColor" stroke="none" />
+  </svg>
+);
+
+const PediatricIcon = ({ size = 22 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d={DentalPath} />
+    <circle cx="10" cy="10" r="1" fill="currentColor" stroke="none" />
+    <circle cx="14" cy="10" r="1" fill="currentColor" stroke="none" />
+    <path d="M10.5 12.5a2 2 0 0 0 3 0" strokeOpacity="0.8" />
+  </svg>
+);
+
+const OrthoIcon = ({ size = 22 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d={DentalPath} />
+    <path d="M5 11h14" strokeOpacity="0.7" />
+    <rect x="8" y="9.5" width="2" height="3" fill="currentColor" stroke="none" />
+    <rect x="14" y="9.5" width="2" height="3" fill="currentColor" stroke="none" />
+  </svg>
+);
+
+const ProsthoIcon = ({ size = 22 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d={DentalPath} strokeOpacity="0.4" />
+    <path d="M7 9l2.5-4 2.5 2 2.5-2 2.5 4v3H7V9z" fill="currentColor" stroke="none" />
+  </svg>
+);
+
+const AestheticIcon = ({ size = 22 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d={DentalPath} />
+    <path d="M19 4l1 2 2 1-2 1-1 2-1-2-2-1 2-1 1-2z" fill="currentColor" stroke="none" />
+  </svg>
+);
+
+const AdditionalIcon = ({ size = 22 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d={DentalPath} />
+    <path d="M12 8v4m-2-2h4" />
+  </svg>
+);
 
 /* ────────────────────────────────────────────────
    Treatment Data — All 8 Categories
 ──────────────────────────────────────────────── */
 interface Treatment {
   name: string;
-  description?: string;
+    description?: string;
   highlight?: boolean;
+  path?: string;
 }
 
 interface Category {
@@ -35,7 +100,7 @@ const categories: Category[] = [
     id: 'periodontology',
     title: 'Periodontology',
     focus: 'Diagnosis, prevention, and treatment of gum diseases',
-    icon: <Activity size={22} />,
+    icon: <PerioIcon size={26} />,
     color: '#0ea5e9',
     colorLight: '#e0f2fe',
     colorBg: 'linear-gradient(135deg, #0ea5e9, #0284c7)',
@@ -52,7 +117,7 @@ const categories: Category[] = [
     id: 'oral-surgery',
     title: 'Oral & Maxillofacial Surgery',
     focus: 'Surgical management of oral diseases, trauma, and reconstruction',
-    icon: <Scissors size={22} />,
+    icon: <SurgeryIcon size={26} />,
     color: '#ef4444',
     colorLight: '#fee2e2',
     colorBg: 'linear-gradient(135deg, #ef4444, #dc2626)',
@@ -64,19 +129,20 @@ const categories: Category[] = [
       { name: 'Apicoectomy', description: 'Root-end surgery to remove the tip of a tooth root and infected tissue when root canal fails.' },
       { name: 'Cyst Removal', description: 'Surgical removal of fluid-filled dental cysts from around teeth or jawbone.' },
       { name: 'Orthognathic Surgery', description: 'Corrective jaw surgery to fix severe misalignments, improving bite, breathing, and facial aesthetics.', highlight: true },
-      { name: 'Dental Implant (SA-SOI)', description: 'Surgically placed titanium posts to permanently replace missing teeth with natural-looking crowns.', highlight: true },
+      { name: 'Dental Implant (Osstem/Nobel)', description: 'Advanced permanent tooth replacement. Packages available for Osstem SA, SOI, and Nobel Biocare.', highlight: true },
     ],
   },
   {
     id: 'conservative',
     title: 'Conservative Dentistry & Endodontics',
     focus: 'Preservation and restoration of natural teeth',
-    icon: <Smile size={22} />,
+    icon: <EndoIcon size={26} />,
     color: '#6366f1',
     colorLight: '#ede9fe',
     colorBg: 'linear-gradient(135deg, #6366f1, #4f46e5)',
     treatments: [
-      { name: 'RCT / RE-RCT', description: 'Root canal treatment to remove infected pulp, clean canals and seal the tooth to save it from extraction.', highlight: true },
+      { name: 'RCT + Crown Packages', description: 'Complete root canal therapy including crown (PFM, Premium PFM, or Zirconia options).', highlight: true },
+      { name: 'RCT / RE-RCT (Only Treatment)', description: 'Root canal treatment to remove infected pulp and seal canals. Crown placed separately.' },
       { name: 'Single Visit RCT with Resin Crown Prosthesis', description: 'Complete root canal therapy + resin crown placed in one efficient appointment using advanced technology.', highlight: true },
       { name: 'Dental Fillings / Restoration', description: 'Composite or glass ionomer filling to restore cavities and damaged tooth structure.' },
       { name: 'RCT Tooth (Build-Up)', description: 'Rebuilds the internal structure of a tooth after RCT to prepare it for crown placement.' },
@@ -92,7 +158,7 @@ const categories: Category[] = [
     id: 'pediatric',
     title: 'Pediatric Dentistry',
     focus: 'Comprehensive dental care for children',
-    icon: <Baby size={22} />,
+    icon: <PediatricIcon size={26} />,
     color: '#f97316',
     colorLight: '#ffedd5',
     colorBg: 'linear-gradient(135deg, #f97316, #ea580c)',
@@ -100,19 +166,20 @@ const categories: Category[] = [
       { name: 'Tooth Extraction (Child)', description: 'Gentle extraction of severely decayed, stubborn baby teeth or orthodontic preparation under local anesthesia.' },
       { name: 'Deciduous Filling', description: 'Composite or glass ionomer fillings to restore cavities in baby teeth and protect dental development.' },
       { name: 'Pulpectomy / Pulpotomy', description: 'Root canal-equivalent treatment for infected baby teeth — saving the tooth to maintain space for permanent teeth.', highlight: true },
+      { name: 'Special Child Program (GA)', description: 'Comprehensive dental management under General Anesthesia for special healthcare needs children. Multiple procedures in one safe session.', highlight: true, path: '/special-child' },
     ],
   },
   {
     id: 'orthodontics',
     title: 'Orthodontics & Dentofacial Orthopedics',
     focus: 'Alignment of teeth and correction of jaw irregularities',
-    icon: <Layers size={22} />,
+    icon: <OrthoIcon size={26} />,
     color: '#8b5cf6',
     colorLight: '#f3e8ff',
     colorBg: 'linear-gradient(135deg, #8b5cf6, #7c3aed)',
     treatments: [
-      { name: 'Orthodontic Braces', description: 'Traditional or ceramic brackets and wires to straighten teeth. Custom-planned using 3D imaging.', highlight: true },
-      { name: 'Orthodontic Aligner', description: 'Clear, removable custom trays for discreet teeth straightening — no brackets or wires.', highlight: true },
+      { name: 'Orthodontic Braces', description: 'Effective, reliable, and transformative teeth alignment. Ideal for simple to complex cases.', highlight: true },
+      { name: 'Orthodontic Aligner', description: 'Virtually invisible and removable clear aligners. Discreet innovation and everyday comfort.', highlight: true },
       { name: 'Removable Orthodontics', description: 'Removable appliances for mild to moderate alignment issues. Comfortable and easy to maintain.' },
       { name: 'Night Guard', description: 'Custom-fitted dental appliance to protect teeth from bruxism (grinding) and TMJ disorders during sleep.' },
     ],
@@ -121,14 +188,14 @@ const categories: Category[] = [
     id: 'prosthodontics',
     title: 'Prosthodontics',
     focus: 'Restoration and replacement of missing teeth',
-    icon: <Crown size={22} />,
+    icon: <ProsthoIcon size={26} />,
     color: '#f59e0b',
     colorLight: '#fef3c7',
     colorBg: 'linear-gradient(135deg, #f59e0b, #d97706)',
     treatments: [
       { name: 'Re-insertion of Dislodged Crown', description: 'Re-cementing a crown that has fallen off or become loose back onto the prepared tooth.' },
       { name: 'Crown (Porcelain / Metal)', description: 'Ceramic or metal dental cap to fully cover and restore a damaged, decayed or root-canal-treated tooth.' },
-      { name: 'Zirconium Crown', description: 'Premium ultra-strong, natural-looking ceramic crown. Biocompatible and stain-resistant.', highlight: true },
+      { name: 'Zirconium Crown', description: 'Premium ultra-strong, natural-looking ceramic crown. Biocompatible and stain-resistant.', highlight: true, path: '/zirconia-crown' },
       { name: 'Gold Crown', description: 'Pure gold alloy crown offering exceptional longevity and durability for posterior teeth.', highlight: true },
       { name: 'Complete Denture (per jaw)', description: 'Full removable denture replacing all teeth in one jaw, restoring appearance and chewing function.' },
       { name: 'Partial Denture Per Unit', description: 'Removable prosthesis replacing one or a few missing teeth, attached to remaining natural teeth.' },
@@ -144,7 +211,7 @@ const categories: Category[] = [
     id: 'aesthetic',
     title: 'Aesthetic Dentistry',
     focus: 'Improving the appearance of teeth and smile',
-    icon: <Sparkles size={22} />,
+    icon: <AestheticIcon size={26} />,
     color: '#ec4899',
     colorLight: '#fce7f3',
     colorBg: 'linear-gradient(135deg, #ec4899, #db2777)',
@@ -163,7 +230,7 @@ const categories: Category[] = [
     id: 'additional',
     title: 'Additional Treatments',
     focus: 'Cross-Departmental Focus',
-    icon: <Plus size={22} />,
+    icon: <AdditionalIcon size={26} />,
     color: '#10b981',
     colorLight: '#d1fae5',
     colorBg: 'linear-gradient(135deg, #10b981, #059669)',
@@ -196,6 +263,14 @@ const signatureTreatments = [
   },
   {
     sn: '03',
+    name: 'Clear Aligner (Invisible Braces) Transformation',
+    desc: 'Discreet, removable clear aligners designed using advanced digital planning for a confident, wire-free smile transformation.',
+    duration: '12–24 Months',
+    visits: '10–20',
+    color: '#8b5cf6',
+  },
+  {
+    sn: '04',
     name: 'Laser Teeth Whitening',
     desc: 'Advanced laser-activated whitening gel removes deep stains. Safe, non-invasive, and delivers dramatic results in just 1 hour.',
     duration: '1 Hour',
@@ -203,7 +278,7 @@ const signatureTreatments = [
     color: '#f59e0b',
   },
   {
-    sn: '04',
+    sn: '05',
     name: 'Use of PRF in Different Grafts',
     desc: 'Platelet-Rich Fibrin is applied in bone grafts, sinus lifts, and periodontal treatments to accelerate healing and tissue regeneration.',
     duration: '—',
@@ -215,6 +290,19 @@ const signatureTreatments = [
 export default function TreatmentsPage() {
   const [openCategory, setOpenCategory] = useState<string | null>('periodontology');
   const [searchQuery, setSearchQuery] = useState('');
+
+  const patientConcerns = [
+    { label: "I have a Toothache", icon: "😖", query: "root canal", color: "#ef4444" },
+    { label: "I want a Brighter Smile", icon: "✨", query: "whitening", color: "#ec4899" },
+    { label: "Replacing Missing Teeth", icon: "🦷", query: "implant", color: "#f59e0b" },
+    { label: "My Gums are Bleeding", icon: "🩸", query: "scaling", color: "#0ea5e9" },
+    { label: "Checkup for my Child", icon: "👶", query: "child", color: "#f97316" },
+    { label: "Straightening Teeth", icon: "📐", query: "braces", color: "#8b5cf6" },
+    { label: "Broken or Chipped Tooth", icon: "💥", query: "crown", color: "#6366f1" },
+    { label: "Wisdom Tooth Pain", icon: "😩", query: "extraction", color: "#dc2626" },
+    { label: "Jaw Pain or Clicking", icon: "🤕", query: "tmj", color: "#14b8a6" },
+    { label: "I Think I Have a Cavity", icon: "🕳️", query: "filling", color: "#64748b" },
+  ];
 
   const filteredCategories = searchQuery
     ? categories.map((cat) => ({
@@ -228,10 +316,15 @@ export default function TreatmentsPage() {
 
   return (
     <div className="treatments-modern">
-      {/* ── HERO: Emotion & Value Anchoring ── */}
+      {/* ── Hero Banner (Neuromarketing: Authority & Visual Impact) ── */}
       <section className="tr-hero">
         <div className="tr-hero-content">
-          <Link href="/specialties" className="tr-back-link" onMouseEnter={(e) => e.currentTarget.style.color = '#fff'} onMouseLeave={(e) => e.currentTarget.style.color = 'rgba(255,255,255,0.6)'}>
+          <Link href="/specialties" style={{
+            display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
+            color: 'rgba(255,255,255,0.6)', textDecoration: 'none',
+            fontSize: '0.85rem', fontWeight: 600, marginBottom: '2rem',
+            transition: 'color 0.3s ease',
+          }} onMouseEnter={(e) => e.currentTarget.style.color = '#fff'} onMouseLeave={(e) => e.currentTarget.style.color = 'rgba(255,255,255,0.6)'}>
             <ArrowLeft size={16} />
             Back to Specialties
           </Link>
@@ -243,39 +336,34 @@ export default function TreatmentsPage() {
           >
             <div className="tr-badge pulse-glow">
               <Star size={14} fill="currentColor" />
-              World-Class Dental Excellence
+              Complete Treatment Menu
             </div>
 
             <h1 className="tr-hero-title">
-              Your Confidence, <br />
-              <span className="text-gradient">Architected to Perfection.</span>
+              Your Journey to a<br />
+              <span className="text-gradient">Confident Smile</span>
             </h1>
             <p className="tr-hero-desc">
-              Discover life-changing dental care. We combine agency-grade precision, advanced technology, and absolute comfort to deliver the smile you deserve.
+              Whether you are in pain, looking to restore missing teeth, or simply want a brighter smile, our compassionate experts are here to help. Explore our specialized treatments below.
             </p>
 
-            {/* Social Proof & Authority Indicators */}
-            <div className="tr-trust-row">
-              <div className="tr-trust-item">
-                <Users className="tr-trust-icon" size={24} />
-                <div className="tr-trust-text">
-                  <strong>Thousands of</strong>
-                  <span>Happy Patients</span>
-                </div>
+            {/* Social Proof (Neuromarketing: Trust) */}
+            <div className="tr-stats-row">
+              <div className="tr-stat">
+                <div className="tr-stat-num">12+</div>
+                <div className="tr-stat-label">Years Exp</div>
               </div>
-              <div className="tr-trust-item">
-                <TrendingUp className="tr-trust-icon" size={24} />
-                <div className="tr-trust-text">
-                  <strong>99.8%</strong>
-                  <span>Success Rate</span>
-                </div>
+              <div className="tr-stat">
+                <div className="tr-stat-num">15+</div>
+                <div className="tr-stat-label">Doctors</div>
               </div>
-              <div className="tr-trust-item">
-                <ShieldCheck className="tr-trust-icon" size={24} />
-                <div className="tr-trust-text">
-                  <strong>Lifetime</strong>
-                  <span>Care Commitment</span>
-                </div>
+              <div className="tr-stat">
+                <div className="tr-stat-num">10+</div>
+                <div className="tr-stat-label">Staffs</div>
+              </div>
+              <div className="tr-stat">
+                <div className="tr-stat-num">50+</div>
+                <div className="tr-stat-label">Treatments</div>
               </div>
             </div>
           </motion.div>
@@ -284,7 +372,7 @@ export default function TreatmentsPage() {
 
       <div className="tr-container">
 
-        {/* ── Search Bar: Cognitive Ease ── */}
+        {/* ── Search Bar (Cognitive Ease) ── */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -309,7 +397,51 @@ export default function TreatmentsPage() {
           )}
         </motion.div>
 
-        {/* ── Signature Treatments Bento (Authority & Contrast) ── */}
+        {/* ── Patient Concerns Quick Filters (Empathy & Relevance) ── */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.12 }}
+          style={{ marginBottom: '4rem' }}
+        >
+          <div style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
+            <p style={{ color: '#94a3b8', fontWeight: 700, fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
+              What Brings You Here Today?
+            </p>
+          </div>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem', justifyContent: 'center', maxWidth: '850px', margin: '0 auto' }}>
+            {patientConcerns.map(concern => (
+              <button
+                key={concern.label}
+                onClick={() => setSearchQuery(concern.query)}
+                className="tr-concern-btn"
+                style={{
+                  display: 'flex', alignItems: 'center', gap: '0.5rem',
+                  background: 'rgba(255, 255, 255, 0.03)', border: `1px solid rgba(255, 255, 255, 0.1)`,
+                  padding: '0.75rem 1.25rem', borderRadius: '999px',
+                  fontSize: '0.95rem', fontWeight: 600, color: '#f8fafc',
+                  cursor: 'pointer', transition: 'all 0.3s ease',
+                  boxShadow: '0 4px 10px rgba(0,0,0,0.2)',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-2px)';
+                  e.currentTarget.style.borderColor = concern.color;
+                  e.currentTarget.style.background = `rgba(255, 255, 255, 0.08)`;
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.borderColor = `rgba(255, 255, 255, 0.1)`;
+                  e.currentTarget.style.background = `rgba(255, 255, 255, 0.03)`;
+                }}
+              >
+                <span style={{ fontSize: '1.2rem' }}>{concern.icon}</span>
+                {concern.label}
+              </button>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* ── Signature Treatments Bento (Premium Value Anchoring) ── */}
         {!searchQuery && (
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -317,8 +449,8 @@ export default function TreatmentsPage() {
             transition={{ duration: 0.5, delay: 0.15 }}
           >
             <div className="tr-section-header">
-              <h2>Signature Transformations</h2>
-              <p>Our most exclusive and highly requested life-changing procedures.</p>
+              <h2>Signature Services</h2>
+              <p>Our most requested and highly specialized procedures.</p>
             </div>
 
             <div className="tr-signature-grid">
@@ -326,15 +458,12 @@ export default function TreatmentsPage() {
                 <motion.div
                   key={st.sn}
                   initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-50px" }}
+                  animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.1 }}
-                  className="tr-bento-card glass-panel"
+                  className="tr-bento-card"
                 >
-                  <div className="tr-bento-glow" style={{ background: st.color }}></div>
                   <div className="tr-bento-header">
                     <span className="tr-bento-sn">{st.sn}</span>
-                    <Award size={28} color={st.color} style={{ opacity: 0.8 }} />
                   </div>
                   <h3>{st.name}</h3>
                   <p>{st.desc}</p>
@@ -352,10 +481,9 @@ export default function TreatmentsPage() {
           </motion.div>
         )}
 
-        {/* ── Category Accordions (Organized Exploration) ── */}
-        <div className="tr-section-header" style={{ marginTop: searchQuery ? '0' : '5rem' }}>
-          <h2>{searchQuery ? 'Search Results' : 'Comprehensive Care Menu'}</h2>
-          {!searchQuery && <p>Explore our 8 specialized departments offering world-class solutions.</p>}
+        {/* ── Category Accordions (Cognitive Ease) ── */}
+        <div className="tr-section-header" style={{ marginTop: searchQuery ? '0' : '4rem' }}>
+          <h2>{searchQuery ? 'Search Results' : 'Explore All Departments'}</h2>
         </div>
 
         <div className="tr-accordion-wrapper">
@@ -365,15 +493,10 @@ export default function TreatmentsPage() {
               <motion.div
                 key={cat.id}
                 initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: catIdx * 0.05 }}
                 className={`tr-category-card ${isOpen ? 'is-open' : ''}`}
-                style={{
-                  '--cat-color': cat.color,
-                  '--cat-color-light': cat.colorLight,
-                  '--cat-color-bg': cat.colorBg,
-                } as React.CSSProperties}
+                style={{ '--cat-color': cat.color, '--cat-color-light': cat.colorLight, '--cat-color-bg': cat.colorBg } as React.CSSProperties}
               >
                 <button
                   className="tr-category-btn"
@@ -417,28 +540,30 @@ export default function TreatmentsPage() {
                             key={tIdx}
                             initial={{ opacity: 0, x: -10 }}
                             animate={{ opacity: 1, x: 0 }}
-                            transition={{ delay: tIdx * 0.02 }}
+                            transition={{ delay: tIdx * 0.03 }}
                             className={`tr-treatment-item ${treatment.highlight ? 'highlight' : ''}`}
                           >
                             <div className="tr-treatment-content">
                               <div className="tr-treatment-head">
                                 <h3 className="tr-treatment-name">
-                                  {treatment.highlight && <CheckCircle2 size={16} className="tr-highlight-icon" />}
                                   {treatment.name}
                                 </h3>
                                 {treatment.highlight && (
-                                  <span className="tr-badge-featured">
-                                    PREMIUM
-                                  </span>
+                                  <span className="tr-badge-featured">FEATURED</span>
                                 )}
                               </div>
                               {treatment.description && (
                                 <p className="tr-treatment-desc">{treatment.description}</p>
                               )}
                             </div>
+                            
                             <div className="tr-treatment-action">
-                              <Link href="/contact" className="tr-inquire-btn">
-                                Inquire <ArrowLeft size={14} style={{ transform: 'rotate(135deg)' }} />
+                              <Link 
+                                href={treatment.path || '/contact'}
+                                className="tr-inquire-btn"
+                              >
+                                {treatment.path ? 'Learn More' : 'Inquire Now'}
+                                <ArrowUpRight size={16} />
                               </Link>
                             </div>
                           </motion.div>
@@ -452,32 +577,30 @@ export default function TreatmentsPage() {
           })}
         </div>
         
-        {/* ── CTA Section: Scarcity & Urgency (FOMO) ── */}
+        {/* ── CTA Section (Neuromarketing: Scarcity & Action) ── */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="tr-cta-section glass-panel"
+          className="tr-cta-section"
         >
+          <div className="tr-cta-bg-fx"></div>
           <div className="tr-cta-content">
-            <div className="tr-cta-badge">Limited Availability</div>
-            <h2>
-              Ready for Your Transformation?
-            </h2>
+            <div className="tr-cta-badge">Limited Slots Available Today</div>
+            <h2>Secure Your Brilliant Smile Today</h2>
             <p>
-              Due to high demand for our elite specialists, we have limited priority consultation slots remaining for this week. Secure your spot now and take the first step towards your perfect smile.
+              Our elite specialists are ready to architect your personalized dental treatment plan. Experience dentistry at its highest level.
             </p>
             <div className="tr-cta-actions">
               <Link href="/contact" className="tr-btn-primary">
-                Secure Priority Consultation <ArrowLeft size={18} style={{ transform: 'rotate(135deg)', marginLeft: '0.5rem' }} />
+                Book Priority Consultation
               </Link>
               <div className="tr-cta-note">
-                <Clock size={14} /> Only 3 priority slots left this week
+                <CheckCircle2 size={16} /> Instant Confirmation • No Wait Time
               </div>
             </div>
           </div>
-          <div className="tr-cta-bg-fx"></div>
         </motion.div>
 
       </div>

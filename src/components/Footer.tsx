@@ -76,42 +76,40 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* ── Contact + Map ── */}
+          {/* ── Contact Details ── */}
           <div className="footer-contact">
-            <h3>Contact Us</h3>
-            <ul>
-              <li>
-                <MapPin size={16} className="contact-icon" />
-                <span>House 42, Road 8, Block C<br />Banasree, Rampura<br />Dhaka - 1219, Bangladesh</span>
-              </li>
-              <li>
-                <Phone size={16} className="contact-icon" />
-                <span><a href="tel:+8801775227902">01775-227902</a></span>
-              </li>
-              <li>
-                <MessageCircle size={16} className="contact-icon" style={{ color: '#25D366' }} />
-                <span><a href="https://wa.me/8801775227902" target="_blank" rel="noopener noreferrer">WhatsApp Us</a></span>
-              </li>
+            <h3>Our Locations</h3>
+            
+            <div style={{ marginBottom: '1.5rem' }}>
+              <h4 style={{ fontSize: '1rem', color: '#0ea5e9', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '6px' }}>
+                <MapPin size={16} /> Rampura Branch
+              </h4>
+              <ul style={{ paddingLeft: '1.5rem', listStyle: 'none' }}>
+                <li style={{ marginBottom: '6px' }}>House 42, Road 8, Block C, Banasree</li>
+                <li style={{ marginBottom: '6px' }}><Phone size={14} style={{ display: 'inline', marginRight: '4px' }} /> <a href="tel:+8801775227902">01775-227902</a></li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 style={{ fontSize: '1rem', color: '#0ea5e9', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '6px' }}>
+                <MapPin size={16} /> Banani Branch
+              </h4>
+              <ul style={{ paddingLeft: '1.5rem', listStyle: 'none' }}>
+                <li style={{ marginBottom: '6px' }}>Level 7 (B&B Empire), Plot 116, Road 11</li>
+                <li style={{ marginBottom: '6px' }}><Phone size={14} style={{ display: 'inline', marginRight: '4px' }} /> <a href="tel:+8801721367622">01721-367622</a></li>
+              </ul>
+            </div>
+
+            <ul style={{ marginTop: '1.5rem' }}>
               <li>
                 <Mail size={16} className="contact-icon" />
                 <span><a href="mailto:drhasan0712@gmail.com">drhasan0712@gmail.com</a></span>
               </li>
               <li>
                 <Clock size={16} className="contact-icon" />
-                <span>3:00 PM – 10:00 PM &nbsp;|&nbsp; Thursday: Closed</span>
+                <span>3:00 PM – 10:00 PM (Thu: Closed)</span>
               </li>
             </ul>
-
-            {/* Fixed Google Maps embed */}
-            <div className="footer-map-wrap">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.1836565707977!2d90.43294!3d23.7476!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b8b0a0b0b0b1%3A0x1!2sRH+Dental+Care+and+Implant+Center%2C+House+42%2C+Road+8%2C+Block+C%2C+Banasree%2C+Rampura%2C+Dhaka+1219!5e0!3m2!1sen!2sbd!4v1700000000000"
-                allowFullScreen={true}
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="RH Dental Care location on Google Maps"
-              ></iframe>
-            </div>
           </div>
 
         </div>

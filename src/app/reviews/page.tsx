@@ -1,5 +1,7 @@
 import { Metadata } from 'next';
 import Testimonials from '@/components/Testimonials';
+import { prisma } from '@/lib/prisma';
+import VideoGallery from '@/components/VideoGallery';
 
 const BASE_URL = 'https://www.rhdentalcare.com';
 
@@ -58,13 +60,20 @@ export const metadata: Metadata = {
   },
 };
 
-export default function ReviewsPage() {
+export default async function ReviewsPage() {
+  const videoReviews = await prisma.review.findMany({
+    orderBy: { createdAt: 'desc' }
+  });
+
   return (
-    <div style={{ paddingTop: 'var(--nav-height)' }}>
+    <div className="reviews-root">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c') }}
       />
+      {/* Video Reviews Section */}
+      <VideoGallery videos={videoReviews} />
+
       {/* Testimonials Core Section */}
       <Testimonials />
 

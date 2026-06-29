@@ -210,6 +210,11 @@ p {
   transform: translateY(-2px);
 }
 
+.btn-cta-hover:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 15px 40px rgba(14, 165, 233, 0.4) !important;
+}
+
 /* Specialty Detail Page Responsive Styles */
 .detail-grid {
   display: grid;
@@ -302,7 +307,7 @@ p {
   padding-top: 72px;
 }
 /* except for the home page and other hero sections that handle their own padding */
-body:has(.hero-v5, .ab-hero, .team-hero, .imp-hero, .srv-hero, .tr-hero, .rh-tourism-root, .sp-root) .main-content {
+body:has(.hero-v5, .ab-hero, .team-hero, .imp-hero, .srv-hero, .tr-hero, .rh-tourism-root, .sp-root, .reviews-root, .banani-branch-page, .doctor-page, .kids-care-root) .main-content {
   padding-top: 0;
 }
 
@@ -310,7 +315,7 @@ body:has(.hero-v5, .ab-hero, .team-hero, .imp-hero, .srv-hero, .tr-hero, .rh-tou
   .main-content {
     padding-top: 60px;
   }
-  body:has(.hero-v5, .ab-hero, .team-hero, .imp-hero, .srv-hero, .tr-hero, .rh-tourism-root, .sp-root) .main-content {
+  body:has(.hero-v5, .ab-hero, .team-hero, .imp-hero, .srv-hero, .tr-hero, .rh-tourism-root, .sp-root, .reviews-root, .banani-branch-page, .doctor-page, .kids-care-root) .main-content {
     padding-top: 0;
   }
 }
