@@ -19,17 +19,16 @@ import clinicImg   from '../../assets/about_clinic.png';
 import Testimonials from '@/components/Testimonials';
 
 /* Doctor Images for Marquee */
-import doc1 from '../../assets/doctors/DENTAL LED SIZE 0.png';
-import doc2 from '../../assets/doctors/DENTAL LED SIZE 43_122614 2.png';
-import doc3 from '../../assets/doctors/DENTAL LED SIZE C.png';
-import doc4 from '../../assets/doctors/DENTAL LED SIZE R5.png';
-import doc5 from '../../assets/doctors/DENTAL LED SIZE NEWW.png';
-import doc6 from '../../assets/doctors/DENTAL LED SIZE_123551 (1) 2.png';
-import doc7 from '../../assets/doctors/DENTAL LED SIZE 998.png';
-import doc8 from '../../assets/doctors/DENTAL LED SIZE BBG_123159 - Copy.png';
-import doc9 from '../../assets/doctors/tyjdfytjfutyuju - Copy (2).jpeg';
-import doc10 from '../../assets/doctors/DENTAL LED SIZE 222.png';
-import doc11 from '../../assets/doctors/hjyhfyyyhujjgjhvk - Copy.jpeg';
+import docAfzal from '../../assets/doctors/Afzal.jpeg';
+import docTamima from '../../assets/doctors/Tamima.jpeg';
+import docMehedi from '../../assets/doctors/Mehedi.jpeg';
+import docTamanna from '../../assets/doctors/Tamanna.jpeg';
+import docHreedy from '../../assets/doctors/Hreedy.jpeg';
+import docUmaya from '../../assets/doctors/Umaya.jpeg';
+import docPanna from '../../assets/doctors/Panna.jpeg';
+import docFariha from '../../assets/doctors/Fariha.jpeg';
+import docBarsha from '../../assets/doctors/Barsha.jpeg';
+import docShimia from '../../assets/doctors/shimia.jpeg';
 
 /* ── Counter ── */
 function Counter({ to, suffix = '' }: { to: number; suffix?: string }) {
@@ -148,17 +147,17 @@ const process = [
 /* Team photos — doctors with images and roles extracted from real flyers */
 const teamMembers = [
   { name: 'Dr. B.M. Rafiqul Hasan', role: 'Chief Consultant & Surgeon', badge: 'Oral Surgery', img: heroprofile },
-  { name: 'Dr. Shimia Binte Taher', role: 'Microscopic Endodontics & Aesthetics', badge: 'Team Lead', img: doc11 },
-  { name: 'Dr. Afzal Chowdhury', role: 'Oral & Dental Surgeon', badge: 'Oral Surgery', img: doc1 },
-  { name: 'Dr. Mahaesa Tamima', role: 'Senior Oral & Dental Surgeon', badge: 'Endodontics', img: doc2 },
-  { name: 'Dr. B.M. Rafiqul Hasan', role: 'Chief Consultant (Mehedi)', badge: 'Implantology', img: doc3 },
-  { name: 'Dr. Asma Binte Faiz Tamanna', role: 'Oral & Dental Surgeon', badge: 'Dental Surgeon', img: doc4 },
-  { name: 'Dr. Monisha Haque Hreedy', role: 'Oral & Dental Surgeon', badge: 'Dental Surgeon', img: doc5 },
-  { name: 'Dr. Nishat Tamanna Alam', role: 'Senior Oral & Dental Surgeon', badge: 'Dental Surgeon', img: doc6 },
-  { name: 'Dr. Umaya Khanam', role: 'Oral & Dental Surgeon', badge: 'Dental Surgeon', img: doc7 },
-  { name: 'Dr. Mansura Panna', role: 'Senior Oral & Dental Surgeon', badge: 'Endodontics', img: doc8 },
-  { name: 'Dr. Jeamima Tabassum Barsha', role: 'Oral & Dental Surgeon', badge: 'Aligner & Orthodontics', img: doc10 },
-  { name: 'Dr. Fariha Ferdous', role: 'Oral & Dental Surgeon', badge: 'Dental Surgeon', img: doc9 },
+  { name: 'Dr. Shimia Binte Taher', role: 'Microscopic Endodontics & Aesthetics', badge: 'Team Lead', img: docShimia },
+  { name: 'Dr. Afzal Chowdhury', role: 'Oral & Dental Surgeon', badge: 'Oral Surgery', img: docAfzal },
+  { name: 'Dr. Mahaesa Tamima', role: 'Senior Oral & Dental Surgeon', badge: 'Endodontics', img: docTamima },
+  { name: 'Dr. B.M. Rafiqul Hasan', role: 'Chief Consultant (Mehedi)', badge: 'Implantology', img: docMehedi },
+  { name: 'Dr. Asma Binte Faiz Tamanna', role: 'Oral & Dental Surgeon', badge: 'Dental Surgeon', img: docTamanna },
+  { name: 'Dr. Monisha Haque Hreedy', role: 'Oral & Dental Surgeon', badge: 'Dental Surgeon', img: docHreedy },
+  { name: 'Dr. Nishat Tamanna Alam', role: 'Senior Oral & Dental Surgeon', badge: 'Dental Surgeon', img: null },
+  { name: 'Dr. Umaya Khanam', role: 'Oral & Dental Surgeon', badge: 'Dental Surgeon', img: docUmaya },
+  { name: 'Dr. Mansura Panna', role: 'Senior Oral & Dental Surgeon', badge: 'Endodontics', img: docPanna },
+  { name: 'Dr. Jeamima Tabassum Barsha', role: 'Oral & Dental Surgeon', badge: 'Aligner & Orthodontics', img: docBarsha },
+  { name: 'Dr. Fariha Ferdous', role: 'Oral & Dental Surgeon', badge: 'Dental Surgeon', img: docFariha },
 ];
 
 /* ══ PAGE ══ */
