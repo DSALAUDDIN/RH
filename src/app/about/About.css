@@ -66,12 +66,18 @@
 .ab-hero-inner {
   position: relative;
   z-index: 10;
-  padding: 6rem 0 5rem;
+  padding-top: 8rem;
+  padding-bottom: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .ab-breadcrumb {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
   font-size: 0.72rem;
   font-weight: 700;
@@ -89,6 +95,7 @@
 .ab-hero-kicker {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.6rem;
   padding: 0.4rem 1rem;
   background: rgba(14,165,233,0.08);
@@ -116,13 +123,14 @@
 }
 
 .ab-hero-title {
-  font-size: clamp(3rem, 6.5vw, 6rem);
+  font-size: clamp(2.5rem, 5.5vw, 5rem);
   font-weight: 900;
   color: #0f172a;
-  letter-spacing: -0.045em;
-  line-height: 1.0;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
   margin-bottom: 1.75rem;
   max-width: 900px;
+  text-wrap: balance;
 }
 
 .ab-hero-title .ab-shine {
@@ -139,16 +147,17 @@
 }
 
 .ab-hero-subtitle {
-  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  font-size: clamp(1rem, 1.5vw, 1.15rem);
   color: #475569;
-  max-width: 560px;
-  line-height: 1.75;
-  margin-bottom: 3rem;
+  max-width: 700px;
+  line-height: 1.8;
+  margin: 0 auto 3rem auto;
 }
 
 .ab-hero-cta-row {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 1.25rem;
   flex-wrap: wrap;
   margin-bottom: 4rem;
@@ -263,16 +272,19 @@
 
 /* ── SECTION BASE ── */
 .ab-section {
-  padding: 6rem 0;
+  padding: 8rem 0;
+}
+.ab-section .container {
+  padding: 0 clamp(1.5rem, 5vw, 4rem);
 }
 .ab-section-dark {
-  background: #ffffff; /* Changed to white */
+  background: #ffffff;
 }
 .ab-section-mid {
-  background: #f8fafc; /* Changed to light gray */
+  background: #f8fafc;
 }
 .ab-section-light {
-  background: #f1f5f9; /* Changed to slightly darker gray */
+  background: #f1f5f9;
 }
 .ab-section-white {
   background: #ffffff;
@@ -352,8 +364,8 @@
 /* ── DOCTOR FEATURE SECTION ── */
 .ab-doc-grid {
   display: grid;
-  grid-template-columns: 0.85fr 1.15fr;
-  gap: 5rem;
+  grid-template-columns: 1fr 1.05fr;
+  gap: 6rem;
   align-items: center;
 }
 
@@ -1130,8 +1142,8 @@
 /* ── SECOND DOCTOR — reversed grid ── */
 .ab-doc-grid-alt {
   display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: 5rem;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 6rem;
   align-items: center;
 }
 

@@ -18,17 +18,20 @@ import drShimia    from '../../assets/dr_shimia.png';
 import clinicImg   from '../../assets/about_clinic.png';
 import Testimonials from '@/components/Testimonials';
 
-/* Doctor Images for Marquee */
-import docAfzal from '../../assets/doctors/Afzal.jpeg';
-import docTamima from '../../assets/doctors/Tamima.jpeg';
-import docMehedi from '../../assets/doctors/Mehedi.jpeg';
-import docTamanna from '../../assets/doctors/Tamanna.jpeg';
-import docHreedy from '../../assets/doctors/Hreedy.jpeg';
-import docUmaya from '../../assets/doctors/Umaya.jpeg';
-import docPanna from '../../assets/doctors/Panna.jpeg';
-import docFariha from '../../assets/doctors/Fariha.jpeg';
-import docBarsha from '../../assets/doctors/Barsha.jpeg';
-import docShimia from '../../assets/doctors/shimia.jpeg';
+/* Doctor Images for Marquee (synced from team page) */
+import imgMehediFlyer from '../../assets/Doctor_List/Mehedi.jpeg';
+import imgShimiaFlyer from '../../assets/Doctor_List/shimia_flyer.jpeg';
+import imgDrShaheen from '../../assets/doctors/dr_shaheen.png';
+import imgAfzal from '../../assets/Doctor_List/Afzal.jpeg';
+import imgTamima from '../../assets/Doctor_List/Tamima.jpeg';
+import imgTamanna from '../../assets/Doctor_List/Tamanna.jpeg';
+import imgHreedy from '../../assets/Doctor_List/Hreedy.jpeg';
+import imgNabil from '../../assets/Doctor_List/Nabil.jpeg';
+import imgUmaya from '../../assets/Doctor_List/Umaya.jpeg';
+import imgPanna from '../../assets/Doctor_List/Panna.jpeg';
+import imgBarsha from '../../assets/Doctor_List/Barsha.jpeg';
+import imgFariha from '../../assets/Doctor_List/Fariha.jpeg';
+import imgAsma from '../../assets/Doctor_List/Asma.png';
 
 /* ── Counter ── */
 function Counter({ to, suffix = '' }: { to: number; suffix?: string }) {
@@ -67,9 +70,9 @@ const fadeUp: any  = { hidden: { opacity: 0, y: 36 }, show: { opacity: 1, y: 0, 
 /* ══ REAL DATA ══ */
 const heroStats = [
   { val: 5000, suf: '+', label: 'Happy Smiles' },
-  { val: 10,   suf: '+', label: 'Years Exp.' },
-  { val: 99,   suf: '%', label: 'Success Rate' },
-  { val: 3500, suf: 'sqft', label: 'Clinic Area' },
+  { val: 12,   suf: '+', label: 'Years Exp.' },
+  { val: 2,    suf: '',  label: 'Premium Branches' },
+  { val: 5000, suf: '+ sqft', label: 'Total Area' },
 ];
 
 const specialties = [
@@ -119,12 +122,12 @@ const services = [
 
 /* Real facilities */
 const facilities = [
-  { icon: <Building2 size={22} />,  title: 'Multiple Operating Rooms',    desc: 'Modern OT setup including a fully equipped General Anesthesia (GA) operating theatre for safe surgical procedures.' },
+  { icon: <Building2 size={22} />,  title: 'Two Premium Locations',       desc: 'State-of-the-art clinics located in Banani and Banasree (Rampura) for your convenience.' },
   { icon: <ScanLine size={22} />,   title: 'State-of-the-Art Technology', desc: '3D scanners, intraoral cameras, endo microscopes, and full digital imaging for accurate diagnosis and treatment.' },
   { icon: <FlaskConical size={22} />,title: 'In-House Dental Laboratory', desc: 'On-site lab gives complete control over prosthesis design — faster turnaround, superior aesthetics and precision fit.' },
-  { icon: <Wifi size={22} />,       title: 'Two Spacious Waiting Areas',  desc: 'Two comfortable waiting areas with WiFi, refreshments, and a calm, patient-friendly environment.' },
+  { icon: <Wifi size={22} />,       title: 'Spacious Waiting Areas',      desc: 'Comfortable waiting areas with WiFi, refreshments, and a calm, patient-friendly environment.' },
   { icon: <MonitorDot size={22} />, title: 'Digital Workflow',             desc: 'End-to-end digital treatment planning from diagnosis to final restoration, ensuring accuracy and predictable outcomes.' },
-  { icon: <ShieldCheck size={22} />,title: 'Hospital-Grade Sterilization', desc: 'Strict hygiene and sterilization protocols maintained across the entire 3,500 sq.ft facility at all times.' },
+  { icon: <ShieldCheck size={22} />,title: 'Hospital-Grade Sterilization', desc: 'Strict hygiene and sterilization protocols maintained across over 5,000 sq.ft of clinical space.' },
 ];
 
 /* Why choose us */
@@ -144,20 +147,21 @@ const process = [
   { n: '04', title: 'Aftercare',         desc: 'Continuous follow-up and personalised guidance to protect your investment long-term.' },
 ];
 
-/* Team photos — doctors with images and roles extracted from real flyers */
+/* Team photos — exact match with team page flyers */
 const teamMembers = [
-  { name: 'Dr. B.M. Rafiqul Hasan', role: 'Chief Consultant & Surgeon', badge: 'Oral Surgery', img: heroprofile },
-  { name: 'Dr. Shimia Binte Taher', role: 'Microscopic Endodontics & Aesthetics', badge: 'Team Lead', img: docShimia },
-  { name: 'Dr. Afzal Chowdhury', role: 'Oral & Dental Surgeon', badge: 'Oral Surgery', img: docAfzal },
-  { name: 'Dr. Mahaesa Tamima', role: 'Senior Oral & Dental Surgeon', badge: 'Endodontics', img: docTamima },
-  { name: 'Dr. B.M. Rafiqul Hasan', role: 'Chief Consultant (Mehedi)', badge: 'Implantology', img: docMehedi },
-  { name: 'Dr. Asma Binte Faiz Tamanna', role: 'Oral & Dental Surgeon', badge: 'Dental Surgeon', img: docTamanna },
-  { name: 'Dr. Monisha Haque Hreedy', role: 'Oral & Dental Surgeon', badge: 'Dental Surgeon', img: docHreedy },
-  { name: 'Dr. Nishat Tamanna Alam', role: 'Senior Oral & Dental Surgeon', badge: 'Dental Surgeon', img: null },
-  { name: 'Dr. Umaya Khanam', role: 'Oral & Dental Surgeon', badge: 'Dental Surgeon', img: docUmaya },
-  { name: 'Dr. Mansura Panna', role: 'Senior Oral & Dental Surgeon', badge: 'Endodontics', img: docPanna },
-  { name: 'Dr. Jeamima Tabassum Barsha', role: 'Oral & Dental Surgeon', badge: 'Aligner & Orthodontics', img: docBarsha },
-  { name: 'Dr. Fariha Ferdous', role: 'Oral & Dental Surgeon', badge: 'Dental Surgeon', img: docFariha },
+  { name: 'Dr. B. M. Rafiqul Hasan', role: 'Team Lead (Banasree & Banani)', badge: 'Managing Director', img: imgMehediFlyer },
+  { name: 'Dr. Shimia Binte Taher', role: 'Team Lead (Banani) & Senior Doctor', badge: 'Team Lead (Banani)', img: imgShimiaFlyer },
+  { name: 'Prof. Dr. Md. Shahidul Islam', role: 'Clinical Advisor', badge: 'Clinical Advisor', img: imgDrShaheen },
+  { name: 'Dr. Afzal Chowdhury', role: 'Consultant — Oral Surgery', badge: 'Oral Surgery', img: imgAfzal },
+  { name: 'Dr. Mahaesa Tamima', role: 'Senior Consultant', badge: 'Endodontics', img: imgTamima },
+  { name: 'Dr. Nishat Tamanna Alam', role: 'Senior Ortho Dental Surgeon', badge: 'Orthodontics', img: imgTamanna },
+  { name: 'Dr. Monisha Haque Hreedy', role: 'Consultant', badge: 'Dental Surgeon', img: imgHreedy },
+  { name: 'Dr. Nabil Rahman', role: 'Ortho Dentist', badge: 'Orthodontics', img: imgNabil },
+  { name: 'Dr. Umaya Khanam', role: 'Consultant', badge: 'Dental Surgeon', img: imgUmaya },
+  { name: 'Dr. Mansura Panna', role: 'Senior Dental Surgeon', badge: 'Dental Surgeon', img: imgPanna },
+  { name: 'Dr. Jeamima Tabassum Barsha', role: 'Consultant — Orthodontics', badge: 'Aligner & Orthodontics', img: imgBarsha },
+  { name: 'Dr. Fariha Ferdous', role: 'Consultant', badge: 'Dental Surgeon', img: imgFariha },
+  { name: 'Dr. Asma Binte Faiz Tamanna', role: 'Consultant', badge: 'Aesthetic Dentistry', img: imgAsma },
 ];
 
 /* ══ PAGE ══ */
@@ -277,7 +281,7 @@ export default function AboutPage() {
                   <span className="ab-shine-text">(Mehedi)</span>
                 </h2>
                 <p className="ab-body-dark">
-                  A distinguished Oral &amp; Dental Surgeon known for his precision, advanced clinical expertise, and commitment to excellence. With over <strong style={{color:'#0f172a'}}>10 years of clinical experience</strong>, Dr. Hasan combines professional expertise, modern technology, and patient-centred care to deliver lasting, functional, and aesthetically pleasing results.
+                  A distinguished Oral &amp; Dental Surgeon known for his precision, advanced clinical expertise, and commitment to excellence. With over <strong style={{color:'#0f172a'}}>12 years of clinical experience</strong>, Dr. Hasan combines professional expertise, modern technology, and patient-centred care to deliver lasting, functional, and aesthetically pleasing results.
                 </p>
                 <p className="ab-body-dark">
                   He has undergone advanced international training in Dental Implantology from <strong style={{color:'#0f172a'}}>China, Korea, and India</strong>, and completed specialised training in Minimally Invasive Cosmetic Dentistry (MICD) in Nepal. Since 2015, he also serves as <strong style={{color:'#0f172a'}}>Senior Lecturer at MH Samorita Medical College &amp; Hospital</strong>.
@@ -367,7 +371,7 @@ export default function AboutPage() {
               <div className="ab-doc-visual">
                 <div className="ab-doc-ring-alt" />
                 <div className="ab-doc-img-frame">
-                  <Image src={drShimia} alt="Dr. Shimia Binte Taher"
+                  <Image src={require('../../assets/doctors/shimia.jpeg')} alt="Dr. Shimia Binte Taher"
                     fill sizes="(max-width:768px) 100vw, 50vw"
                     style={{ objectFit: 'cover', objectPosition: 'top center' }} />
                   <div className="ab-doc-img-glow" />
@@ -469,9 +473,9 @@ export default function AboutPage() {
           <motion.div className="ab-stats-bento" variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true, margin: '-60px' }}>
             {[
               { val: 5000, suf: '+', label: 'Happy Patients',     icon: <Smile size={22} /> },
-              { val: 10,   suf: '+', label: 'Years Experience',   icon: <Award size={22} /> },
-              { val: 99,   suf: '%', label: 'Success Rate',       icon: <ShieldCheck size={22} /> },
-              { val: 3500, suf: 'sqft', label: 'Clinic Facility', icon: <Building2 size={22} /> },
+              { val: 12,   suf: '+', label: 'Years Experience',   icon: <Award size={22} /> },
+              { val: 2,    suf: '',  label: 'Premium Branches',   icon: <Building2 size={22} /> },
+              { val: 5000, suf: '+', label: 'Total sq.ft Area',   icon: <ScanLine size={22} /> },
             ].map((s, i) => (
               <motion.div key={i} className="ab-stat-card" variants={fadeUp}>
                 <div className="ab-stat-card-icon">{s.icon}</div>
@@ -512,12 +516,12 @@ export default function AboutPage() {
       <section className="ab-section ab-section-dark">
         <div className="container">
           <FadeIn>
-            <span className="ab-label"><Building2 size={14} /> Our Facility</span>
+            <span className="ab-label"><Building2 size={14} /> Our Facilities</span>
             <h2 className="ab-section-title-dark">
-              3,500 sq.ft of <span className="ab-shine-text">Clinical Excellence</span>
+              5,000+ sq.ft across <span className="ab-shine-text">Two Branches</span>
             </h2>
             <p className="ab-body-dark" style={{ maxWidth: '560px' }}>
-              Our clinic is purpose-designed for comfort, safety, and efficiency — housing everything needed for world-class dental care in one premium space.
+              With two state-of-the-art locations in Banani and Banasree, our clinics are purpose-designed for comfort, safety, and efficiency — housing everything needed for world-class dental care.
             </p>
           </FadeIn>
 
@@ -627,10 +631,10 @@ export default function AboutPage() {
               <Building2 size={14} /> Full Clinic Virtual Tour
             </div>
             <h2 style={{ fontSize: 'clamp(2rem,4vw,3.2rem)', fontWeight: 900, color: '#fff', letterSpacing: '-0.04em', lineHeight: 1.1, marginBottom: '1.25rem' }}>
-              Take a Tour of <span className="ab-blue-text" style={{ background: 'linear-gradient(90deg, #38bdf8, #818cf8)', WebkitBackgroundClip: 'text' }}>Our Facility</span>
+              Take a Tour of <span className="ab-blue-text" style={{ background: 'linear-gradient(90deg, #38bdf8, #818cf8)', WebkitBackgroundClip: 'text' }}>Our Clinics</span>
             </h2>
             <p style={{ fontSize: '1.05rem', color: '#cbd5e1', lineHeight: 1.7, marginBottom: '0' }}>
-              Experience our 3,500 sq.ft premium clinic from the comfort of your home. Explore our modern OT setups, digital technology, and inviting reception area.
+              Experience our 5,000+ sq.ft of premium clinical space from the comfort of your home. Explore our modern OT setups across both branches, digital technology, and inviting reception areas.
             </p>
           </div>
         </div>

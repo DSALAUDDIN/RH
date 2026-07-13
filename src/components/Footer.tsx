@@ -50,68 +50,124 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* ── Quick Links ── */}
+          {/* ── Links & Specialties ── */}
           <div className="footer-links">
             <h3>Quick Links</h3>
-            <ul>
+            <ul style={{ marginBottom: '2.5rem' }}>
               <li><Link href="/">Home</Link></li>
               <li><Link href="/about">About Our Clinic</Link></li>
-              <li><Link href="/our-team">Our Team</Link></li>
               <li><Link href="/treatments">Treatments & Pricing</Link></li>
-              <li><Link href="/blog">Dental Blog</Link></li>
               <li><Link href="/contact">Book Appointment</Link></li>
             </ul>
-          </div>
 
-          {/* ── Specialties ── */}
-          <div className="footer-links">
             <h3>Specialties</h3>
             <ul>
               <li><Link href="/implants">Dental Implants</Link></li>
               <li><Link href="/braces">Braces & Aligners</Link></li>
               <li><Link href="/root-canal">Root Canal</Link></li>
-              <li><Link href="/zirconia-crown">Zirconia Crowns</Link></li>
-              <li><Link href="/zirconia-veneers">Zirconia Veneers</Link></li>
               <li><Link href="/digital-dentistry">Digital Dentistry</Link></li>
             </ul>
           </div>
 
-          {/* ── Contact Details ── */}
-          <div className="footer-contact">
-            <h3>Our Locations</h3>
-            
-            <div style={{ marginBottom: '1.5rem' }}>
-              <h4 style={{ fontSize: '1rem', color: '#0ea5e9', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '6px' }}>
-                <MapPin size={16} /> Rampura Branch
-              </h4>
-              <ul style={{ paddingLeft: '1.5rem', listStyle: 'none' }}>
-                <li style={{ marginBottom: '6px' }}>House 42, Road 8, Block C, Banasree</li>
-                <li style={{ marginBottom: '6px' }}><Phone size={14} style={{ display: 'inline', marginRight: '4px' }} /> <a href="tel:+8801775227902">01775-227902</a></li>
+          {/* ── Rampura Branch Card ── */}
+          <div className="location-card">
+            <div className="location-map-wrap">
+              <iframe
+                title="Rampura Branch Map"
+                src="https://maps.google.com/maps?q=RH%20Dental%20Care,%20House%2042,%20Road%208,%20Block%20C,%20Banasree,%20Dhaka&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                allowFullScreen={false}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+            <div className="location-content">
+              <h4><MapPin size={18} /> Rampura Branch</h4>
+              <ul>
+                <li>
+                  <MapPin size={16} className="contact-icon" style={{ marginTop: '2px' }} />
+                  <span>House 42, Road 8, Block C<br/>Banasree, Dhaka</span>
+                </li>
+                <li>
+                  <Phone size={16} className="contact-icon" /> 
+                  <a href="tel:+8801775227902" style={{ fontWeight: 600, color: '#e2e8f0' }}>01775-227902</a>
+                </li>
+                <li>
+                  <Clock size={16} className="contact-icon" />
+                  <span>3:00 PM – 10:00 PM (Thu: Closed)</span>
+                </li>
               </ul>
             </div>
-
-            <div>
-              <h4 style={{ fontSize: '1rem', color: '#0ea5e9', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '6px' }}>
-                <MapPin size={16} /> Banani Branch
-              </h4>
-              <ul style={{ paddingLeft: '1.5rem', listStyle: 'none' }}>
-                <li style={{ marginBottom: '6px' }}>Level 7 (B&B Empire), Plot 116, Road 11</li>
-                <li style={{ marginBottom: '6px' }}><Phone size={14} style={{ display: 'inline', marginRight: '4px' }} /> <a href="tel:+8801721367622">01721-367622</a></li>
-              </ul>
-            </div>
-
-            <ul style={{ marginTop: '1.5rem' }}>
-              <li>
-                <Mail size={16} className="contact-icon" />
-                <span><a href="mailto:drhasan0712@gmail.com">drhasan0712@gmail.com</a></span>
-              </li>
-              <li>
-                <Clock size={16} className="contact-icon" />
-                <span>3:00 PM – 10:00 PM (Thu: Closed)</span>
-              </li>
-            </ul>
           </div>
 
+          {/* ── Banani Branch Card ── */}
+          <div className="location-card">
+            <div className="location-map-wrap">
+              <iframe
+                title="Banani Branch Map"
+                src="https://maps.google.com/maps?q=Plot%20116,%20Road%2011,%20Banani,%20Dhaka&t=&z=14&ie=UTF8&iwloc=&output=embed"
+                allowFullScreen={false}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+            <div className="location-content">
+              <h4><MapPin size={18} /> Banani Branch</h4>
+              <ul>
+                <li>
+                  <MapPin size={16} className="contact-icon" style={{ marginTop: '2px' }} />
+                  <span>Level 7 (B&B Empire)<br/>Plot 116, Road 11, Banani</span>
+                </li>
+                <li>
+                  <Phone size={16} className="contact-icon" /> 
+                  <a href="tel:+8801721367622" style={{ fontWeight: 600, color: '#e2e8f0' }}>01721-367622</a>
+                </li>
+                <li>
+                  <Mail size={16} className="contact-icon" />
+                  <span><a href="mailto:drhasan0712@gmail.com">drhasan0712@gmail.com</a></span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+
+        {/* ── Payment Methods ── */}
+        <div className="footer-payments">
+          <div className="footer-payments-inner">
+            <h3>We Accept</h3>
+            <div className="payment-icons">
+              {/* Visa */}
+              <div className="pay-badge" style={{ backgroundColor: '#fff', border: '1px solid #e2e8f0' }}>
+                <span style={{ color: '#1434CB', fontStyle: 'italic', fontWeight: 900, fontSize: '18px', letterSpacing: '-0.5px' }}>VISA</span>
+              </div>
+              {/* Mastercard */}
+              <div className="pay-badge" style={{ backgroundColor: '#fff', border: '1px solid #e2e8f0', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <div style={{ width: '18px', height: '18px', borderRadius: '50%', backgroundColor: '#EB001B', position: 'relative', zIndex: 1 }}></div>
+                <div style={{ width: '18px', height: '18px', borderRadius: '50%', backgroundColor: '#F79E1B', marginLeft: '-8px', position: 'relative', zIndex: 0 }}></div>
+              </div>
+              {/* Amex */}
+              <div className="pay-badge" style={{ backgroundColor: '#006FCF' }}>
+                <span style={{ color: '#fff', fontWeight: 700, fontSize: '11px', textTransform: 'uppercase', lineHeight: 1.1, textAlign: 'center', letterSpacing: '0.5px' }}>AMEX</span>
+              </div>
+              {/* Nexus */}
+              <div className="pay-badge" style={{ backgroundColor: '#fff', border: '1px solid #e2e8f0' }}>
+                <span style={{ color: '#005BBB', fontWeight: 800, fontSize: '15px', fontStyle: 'italic' }}>Nexus</span>
+              </div>
+              {/* bKash */}
+              <div className="pay-badge" style={{ backgroundColor: '#DF146E' }}>
+                <span style={{ color: '#fff', fontWeight: 700, fontSize: '16px' }}>bKash</span>
+              </div>
+              {/* NPSB */}
+              <div className="pay-badge" style={{ backgroundColor: '#fff', border: '1px solid #e2e8f0' }}>
+                <span style={{ color: '#008C44', fontWeight: 900, fontSize: '15px' }}>NPSB</span>
+              </div>
+              {/* Google Pay */}
+              <div className="pay-badge" style={{ backgroundColor: '#fff', border: '1px solid #e2e8f0', gap: '4px' }}>
+                <span style={{ color: '#4285F4', fontWeight: 700, fontSize: '16px' }}>G</span>
+                <span style={{ color: '#5F6368', fontWeight: 500, fontSize: '16px' }}>Pay</span>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* ── Bottom bar ── */}

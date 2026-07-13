@@ -46,12 +46,9 @@ export default function Home() {
                 Claim Your Consultation Now
               </a>
               
-              <div style={{ display: 'flex', gap: '2rem', color: '#cbd5e1', fontSize: '0.9rem', fontWeight: 600 }}>
+              <div style={{ display: 'flex', gap: '2rem', color: '#cbd5e1', fontSize: '0.9rem', fontWeight: 600, justifyContent: 'center' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
                   <ShieldCheck size={18} color="#4ade80" /> Painless Guarantee
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                  <CreditCard size={18} color="#fcd34d" /> 0% EMI Available
                 </div>
               </div>
             </div>
