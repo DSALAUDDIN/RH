@@ -1,0 +1,76 @@
+.tr { background: var(--rh-paper); }
+.tr[data-branch='banani'] { --rh-accent: var(--rh-brass); }
+.tr[data-branch='banasree'] { --rh-accent: var(--rh-sage-deep); }
+
+.tr-title {
+  font-family: var(--rh-font-display);
+  font-size: var(--rh-step-3);
+  font-weight: 400;
+  color: var(--rh-ink);
+  margin: 0 0 var(--rh-4);
+}
+.tr-intro {
+  color: var(--rh-ink-soft);
+  max-width: var(--rh-measure);
+  margin: 0 0 var(--rh-8);
+  line-height: var(--rh-lead);
+}
+
+.tr-grid {
+  list-style: none; margin: 0; padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: var(--rh-4);
+}
+
+.tr-card { display: flex; flex-direction: column; }
+
+.tr-portrait {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  background: var(--rh-surface-sunk);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+.tr-portrait img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+
+/* No photograph → an initial, not a stock portrait. */
+.tr-initials {
+  font-family: var(--rh-font-display);
+  font-size: 2.4rem;
+  color: var(--rh-accent);
+  opacity: 0.5;
+  letter-spacing: 0.02em;
+}
+
+.tr-body { padding: var(--rh-4); display: grid; gap: 3px; }
+
+.tr-name {
+  font-family: var(--rh-font-display);
+  font-size: var(--rh-step-1);
+  font-weight: 500;
+  margin: 0;
+  line-height: 1.25;
+  color: var(--rh-ink);
+}
+.tr-name a { color: inherit; }
+.tr-name a:hover { color: var(--rh-accent); text-decoration: underline; text-underline-offset: 0.2em; }
+
+.tr-role { font-size: var(--rh-step--1); color: var(--rh-accent); font-weight: 600; margin: 0; }
+.tr-quals { font-size: var(--rh-step--1); color: var(--rh-ink-soft); margin: 0; line-height: 1.5; }
+.tr-bmdc { font-size: var(--rh-step--1); color: var(--rh-ink-soft); margin: 0; font-variant-numeric: tabular-nums; }
+.tr-focus { font-size: var(--rh-step--1); color: var(--rh-ink); margin: 2px 0 0; }
+
+.tr-hours {
+  font-size: var(--rh-step--1);
+  color: var(--rh-ink-soft);
+  margin: var(--rh-2) 0 0;
+  padding-top: var(--rh-2);
+  border-top: 1px solid var(--rh-hairline);
+  line-height: 1.45;
+}
+
+@media (max-width: 520px) {
+  .tr-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+}
