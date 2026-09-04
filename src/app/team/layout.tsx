@@ -5,7 +5,7 @@ import { breadcrumbSchema } from '@/lib/schema';
 
 export const metadata: Metadata = pageMeta({
   title: 'The Clinical Team',
-  description: 'The dentists and specialists at RH Dental Care, Dhaka. The same clinicians see patients at both the Banani suite and the Banasree hospital.',
+  description: 'The clinicians at RH Dental Care, Dhaka \u2014 who works at Banani, who works at Banasree, on which days, with BMDC registration numbers.',
   path: '/team',
 });
 

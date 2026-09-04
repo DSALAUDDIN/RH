@@ -6,6 +6,7 @@ import { breadcrumbSchema } from '@/lib/schema';
 import { pageMeta } from '@/lib/metadata';
 import JsonLd from '@/components/JsonLd';
 import FAQ from '@/components/FAQ';
+import TeamRoster from '@/components/TeamRoster';
 import ReviewBadge from '@/components/ReviewBadge';
 import BranchCTA from '@/components/branch/BranchCTA';
 import banasreeFaq from './faq';
@@ -219,6 +220,8 @@ export default function BanasreePage() {
           </p>
         </div>
       </section>
+
+      <TeamRoster branch="banasree" intro='The full team is on site through the afternoon and evening session, so a plan that crosses disciplines does not become a series of referrals.' />
 
       {/* ── 5. Parity ────────────────────────────────────────────────────── */}
       <section className="bs-parity rh-section" aria-labelledby="bs-parity-t">

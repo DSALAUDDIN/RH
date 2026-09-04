@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 import { BRANCHES, isBranchId, BranchId } from '@/lib/branches';
-import { prisma } from '@/lib/prisma';
+import { appointmentModel } from '@/lib/prisma-models';
 import { nextRef, toPrismaBranch } from '@/lib/ref-server';
 
 export const runtime = 'nodejs';
@@ -123,8 +123,10 @@ export async function POST(req: Request) {
     ref = emailModeRef(branch);
   } else {
     try {
+      const appointments = appointmentModel();
+      if (!appointments) throw new Error('Appointment model is not in the generated Prisma client');
       ref = await nextRef(branch);
-      await prisma.appointment.create({
+      await appointments.create({
         data: {
           ref,
           branch: toPrismaBranch(branch),

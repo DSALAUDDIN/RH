@@ -37,7 +37,7 @@ export const bananiFaq: FaqItem[] = [
   },
   {
     q: 'What are the Banani branch opening hours?',
-    a: 'TODO(client): confirm the Banani opening days and hours. The site previously carried two different sets and neither was sourced, so nothing is published here until you confirm. Appointments are arranged by phone or WhatsApp in the meantime.',
+    a: `Banani runs two sessions: a morning from 9:00 am to 2:00 pm and an evening from 4:30 pm to 10:00 pm. Which clinician you see depends on which session you book — the team list on this page shows who sits when.\n\nBanani is appointment-only either way, so call ${BRANCHES.banani.phoneDisplay} or send a WhatsApp message and someone will confirm a time. TODO(client): confirm which days the suite opens.`,
   },
   {
     q: 'Do the same doctors work at both branches?',

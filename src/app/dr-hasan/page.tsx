@@ -11,8 +11,8 @@ export const metadata: Metadata = pageMeta({
   title: 'Dr. B.M. Rafiqul Hasan — Oral & Dental Surgeon',
   description: 'Chief Consultant Oral and Dental Surgeon at RH Dental Care, Dhaka. Implantology planned from 3D CBCT, full-mouth rehabilitation and oral surgery.',
   path: '/dr-hasan',
-  image: d.image,
-  imageAlt: d.imageAlt,
+  image: d.image ?? undefined,
+  imageAlt: d.imageAlt ?? undefined,
 });
 
 export default function Page() {
@@ -21,15 +21,15 @@ export default function Page() {
       <JsonLd
         nodes={[
           physicianSchema({
-            slug: d.slug,
+            slug: d.slug ?? 'dr-hasan',
             name: d.fullName,
-            jobTitle: d.role,
-            description: d.bio[0] ?? d.role,
-            image: d.image,
+            jobTitle: d.role ?? 'Dental Surgeon',
+            description: d.bio[0] ?? d.role ?? 'Dental surgeon at RH Dental Care.',
+            image: d.image ?? undefined,
             // Only confirmed credentials reach the schema. See src/lib/doctors.ts.
             credentials: [...d.qualifications, ...(d.bmdc ? [`BMDC Reg. ${d.bmdc}`] : [])],
             knowsAbout: d.procedures.length ? d.procedures : undefined,
-            worksAt: d.worksAt,
+            worksAt: d.postings.map((p) => p.branch),
           }),
           breadcrumbSchema([
             { name: 'RH Dental Care', path: '/' },

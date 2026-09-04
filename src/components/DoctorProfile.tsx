@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { BRANCHES } from '@/lib/branches';
-import type { Doctor } from '@/lib/doctors';
+import type { Clinician } from '@/lib/doctors';
 import BranchCTA from '@/components/branch/BranchCTA';
 import './DoctorProfile.css';
 
@@ -11,7 +11,7 @@ import './DoctorProfile.css';
  * heading over filler. Anything unconfirmed shows as an explicit TODO(client)
  * note so it is visible in review rather than quietly absent.
  */
-export default function DoctorProfile({ doctor: d }: { doctor: Doctor }) {
+export default function DoctorProfile({ doctor: d }: { doctor: Clinician }) {
   const todos: string[] = [];
   if (!d.bmdc) todos.push('BMDC registration number');
   if (!d.appointments.length) todos.push('academic or hospital appointments');
@@ -23,7 +23,7 @@ export default function DoctorProfile({ doctor: d }: { doctor: Doctor }) {
         <div className="dp-hero-text">
           <p className="dp-kicker">RH Dental Care</p>
           <h1 className="dp-name">{d.name}</h1>
-          <p className="dp-role">{d.role}</p>
+          {d.role && <p className="dp-role">{d.role}</p>}
 
           {d.bmdc && <p className="dp-bmdc">BMDC registration {d.bmdc}</p>}
 
@@ -44,8 +44,8 @@ export default function DoctorProfile({ doctor: d }: { doctor: Doctor }) {
 
         <div className="dp-portrait">
           <Image
-            src={d.image}
-            alt={d.imageAlt}
+            src={d.image ?? '/rhlogo.jpeg'}
+            alt={d.imageAlt ?? d.name}
             width={720}
             height={900}
             priority
@@ -109,7 +109,7 @@ export default function DoctorProfile({ doctor: d }: { doctor: Doctor }) {
         <div className="rh-container">
           <h2 id="dp-where" className="dp-h2">Where {d.name.split(' ').slice(0, 2).join(' ')} sees patients</h2>
           <div className="dp-branches">
-            {d.worksAt.map((id) => {
+            {d.postings.map(({ branch: id }) => {
               const b = BRANCHES[id];
               return (
                 <div key={id} className="rh-panel dp-branch" data-branch={id}>

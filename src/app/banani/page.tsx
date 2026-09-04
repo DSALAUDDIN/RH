@@ -6,6 +6,7 @@ import { breadcrumbSchema } from '@/lib/schema';
 import { pageMeta } from '@/lib/metadata';
 import JsonLd from '@/components/JsonLd';
 import FAQ from '@/components/FAQ';
+import TeamRoster from '@/components/TeamRoster';
 import ReviewBadge from '@/components/ReviewBadge';
 import BranchCTA from '@/components/branch/BranchCTA';
 import bananiFaq from './faq';
@@ -142,6 +143,8 @@ export default function BananiPage() {
           ))}
         </div>
       </section>
+
+      <TeamRoster branch="banani" intro='Banani runs a morning and an evening session. Who you see depends on the time you book, so the list below is worth a look before you choose a slot.' />
 
       {/* ── 4. Same care at both branches. Stated, not implied. ──────────── */}
       <section className="bn-parity rh-section" aria-labelledby="bn-parity-t">

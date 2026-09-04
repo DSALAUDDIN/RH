@@ -1,6 +1,7 @@
 // src/app/banasree/faq.ts — answer-first, same rules as banani/faq.ts.
 
 import type { FaqItem } from '@/lib/schema';
+import { BRANCHES } from '@/lib/branches';
 
 export const banasreeFaq: FaqItem[] = [
   {
@@ -25,11 +26,11 @@ export const banasreeFaq: FaqItem[] = [
   },
   {
     q: 'What are the Banasree opening hours?',
-    a: 'TODO(client): confirm the opening days and hours. The site previously carried three inconsistent versions, so nothing is published here until you confirm one.',
+    a: 'Saturday to Wednesday and Friday, 3:30 pm to 10:00 pm. Thursday is closed.\n\nBooking ahead is faster than walking in, and it gives you a reference number reception can find.',
   },
   {
     q: 'Where is the Banasree branch?',
-    a: 'RH Dental Care Banasree is at House 42, Road 8, Block C, Banasree, Dhaka 1219. TODO(client): confirm parking and the nearest landmark for directions.',
+    a: `RH Dental Care Banasree is at ${BRANCHES.banasree.address}. TODO(client): confirm parking and the nearest landmark for directions.`,
   },
   {
     q: 'Is treatment at Banasree a lower standard than at Banani?',

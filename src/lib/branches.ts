@@ -104,12 +104,23 @@ export const BRANCHES: Record<BranchId, Branch> = {
     geo: { lat: 23.7937, lng: 90.4066 },
     geoVerified: false,
 
-    // TODO(client): the repo held two conflicting sets of hours for Banani
-    // (Sa–Th 10:00–20:00 in this file; Sa–Th 15:00–22:00 in layout.tsx).
-    // Neither is sourced. Confirm, then fill `hours` and set hoursVerified: true.
+    /* Two sessions, from the clinician roster: Dr. Hasan and Dr. Mim 9:00 am –
+       2:00 pm, Dr. Shimia and Dr. Nusrat 4:30 pm – 10:00 pm. So the suite runs a
+       morning and an evening session with a break between them — not one
+       continuous 9-to-10 day, which is what publishing a single range would
+       have implied.
+
+       WHICH DAYS was never stated. Only Dr. Mim's days are known (Sat, Mon,
+       Wed). So the times are shown on the page, but `hours` stays empty and
+       hoursVerified stays false: schema.org openingHoursSpecification requires
+       days, and a guessed day is exactly how a patient arrives at a locked door.
+
+       TODO(client): give me the days Banani opens and I will set hoursVerified
+       to true, which puts the hours into the JSON-LD and the Google listing. */
     hours: undefined,
     hoursVerified: false,
-    hoursDisplay: null,
+    hoursDisplay:
+      'Morning 9:00 am – 2:00 pm · Evening 4:30 pm – 10:00 pm, by appointment',
 
     mapEmbed:
       'https://maps.google.com/maps?q=B%26B%20Empire%2C%20Plot%20116%2C%20Road%2011%2C%20Banani%2C%20Dhaka&t=&z=16&ie=UTF8&iwloc=&output=embed',
@@ -199,8 +210,10 @@ export const BRANCHES: Record<BranchId, Branch> = {
     // in the brief and is unconfirmed. Omitted rather than published.
     email: undefined,
 
-    address: 'House 42, Road 8, Block C, Banasree, Dhaka 1219',
-    streetAddress: 'House 42, Road 8, Block C, Banasree',
+    // The clinician flyers print '1st floor … Rampura', which the repo's
+    // address did not carry. TODO(client): confirm both details.
+    address: '1st floor, House 42, Road 8, Block C, Banasree, Rampura, Dhaka 1219',
+    streetAddress: '1st floor, House 42, Road 8, Block C, Banasree, Rampura',
     addressLocality: 'Dhaka',
     postalCode: '1219',
 
@@ -209,12 +222,23 @@ export const BRANCHES: Record<BranchId, Branch> = {
     geo: { lat: 23.7634, lng: 90.4321 },
     geoVerified: false,
 
-    // TODO(client): the site's FAQ said 3:00 PM – 10:00 PM with Thursday closed,
-    // while the schema listed Friday open and Thursday closed and this file said
-    // Sa–We. Confirm, then fill `hours` and set hoursVerified: true.
-    hours: undefined,
-    hoursVerified: false,
-    hoursDisplay: null,
+    /* Corroborated by two independent sources, so it is published and goes into
+       the JSON-LD:
+         (a) every clinician flyer in src/assets/doctors/ shows an afternoon and
+             evening session, and NOT ONE of them lists Thursday;
+         (b) the old site's FAQ said "open 3:00 PM to 10:00 PM, Thu closed".
+       3:30 pm is the earliest start printed on any flyer.
+       TODO(client): if reception opens before the clinical session starts, tell
+       me and I will publish the reception hours as well. */
+    hours: [
+      {
+        days: ['Saturday', 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Friday'],
+        opens: '15:30',
+        closes: '22:00',
+      },
+    ],
+    hoursVerified: true,
+    hoursDisplay: 'Saturday to Wednesday and Friday, 3:30 pm – 10:00 pm · Thursday closed',
 
     mapEmbed:
       'https://maps.google.com/maps?q=RH%20Dental%20Care%2C%20House%2042%2C%20Road%208%2C%20Block%20C%2C%20Banasree%2C%20Dhaka&t=&z=16&ie=UTF8&iwloc=&output=embed',
