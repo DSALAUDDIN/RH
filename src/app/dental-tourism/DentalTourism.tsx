@@ -27,6 +27,8 @@ import './tourism.css';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { MotionPathPlugin } from 'gsap/MotionPathPlugin';
+import BranchCTA from '@/components/branch/BranchCTA';
+import { BRANCHES } from '@/lib/branches';
 
 /* eslint-disable @next/next/no-img-element */
 
@@ -187,7 +189,7 @@ export default function DentalTourism() {
         {/* hero stats marquee */}
         <div className="hero-stats" id="heroStats">
           <div className="container hero-stats-inner">
-            <div className="stat"><div className="stat-num" data-count="13000" data-suffix="+">0</div><div className="stat-lab">Happy patients</div></div>
+            {/* REMOVED: a 13,000+ patient counter. Unevidenced. docs/audit-report.md P2-2 */}
             <div className="stat"><div className="stat-num" data-count="12" data-suffix="+">0</div><div className="stat-lab">Years of practice</div></div>
             <div className="stat"><div className="stat-num"><span data-count="82" data-suffix="">0</span><span className="unit">%</span></div><div className="stat-lab">Avg. savings vs UK/US</div></div>
             <div className="stat"><div className="stat-num">4.9<span className="unit">★</span></div><div className="stat-lab">Google rating</div></div>
@@ -290,7 +292,7 @@ export default function DentalTourism() {
           <div className="bd-open">
             <h2 className="bd-headline">
               <span className="line"><span className="w">A direct flight</span></span>
-              <span className="line"><span className="w it">to world-class</span></span>
+              <span className="line"><span className="w it">to considered</span></span>
               <span className="line"><span className="w">dentistry.</span></span>
             </h2>
 
@@ -570,7 +572,7 @@ export default function DentalTourism() {
                 <div className="reason-stats">
                   <div><b>4 langs</b><span>Spoken at the clinic</span></div>
                   <div><b>24/7</b><span>WhatsApp concierge</span></div>
-                  <div><b>★ 4.9</b><span>500+ Google reviews</span></div>
+                  <div><b>★ 4.9</b><span>Google reviews</span></div>
                 </div>
               </div>
               <div className="reason-art art-host">
@@ -1539,14 +1541,14 @@ export default function DentalTourism() {
             <div className="gscore-big">
               <div className="gscore-num">5.0</div>
               <div className="gscore-stars">★★★★★</div>
-              <div className="gscore-sub">500+ verified reviews</div>
+              <div className="gscore-sub">verified reviews</div>
             </div>
           </div>
 
           <div className="reviews-grid">
             <article className="rev" data-reveal data-tilt>
               <div className="rev-source"><span className="g-badge">G</span> Google · ★★★★★</div>
-              <p className="rev-body">"The entire root canal was completely painless. The clinic environment is very premium and clean. Highly impressed."</p>
+              <p className="rev-body">"The entire root canal was carried out under local anaesthetic. The clinic environment is very premium and clean. Highly impressed."</p>
               <div className="rev-author"><b>Sayed Anwar</b><span>Local Guide · Bangladesh</span></div>
             </article>
             <article className="rev" data-reveal data-tilt>
@@ -1564,7 +1566,7 @@ export default function DentalTourism() {
           <div className="reviews-foot">
             <a href="https://g.page/r/CRH-dental" target="_blank" rel="noopener noreferrer" className="tm-btn tm-btn-secondary magnetic">
               <span className="g-badge">G</span>
-              Read all 500+ Google reviews
+              Read all Google reviews
               <span className="arrow" aria-hidden="true">
                 <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2.2"><path d="M5 12h14M13 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round"/></svg>
               </span>
@@ -1706,13 +1708,13 @@ export default function DentalTourism() {
           </ul>
 
           <div className="faq-foot" data-reveal>
-            <p>Still have a question? WhatsApp us — a real coordinator replies, usually within an hour.</p>
-            <a href="https://wa.me/8801775227902" className="tm-btn tm-btn-primary magnetic" data-cursor="WhatsApp">
+            <p>Still have a question? WhatsApp us — our branch coordinator replies, usually within an hour.</p>
+            <BranchCTA action="whatsapp" className="tm-btn tm-btn-primary magnetic" data-cursor="WhatsApp">
               Message us on WhatsApp
               <span className="arrow" aria-hidden="true">
                 <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2.2"><path d="M5 12h14M13 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round"/></svg>
               </span>
-            </a>
+            </BranchCTA>
           </div>
         </div>
       </section>
@@ -1738,7 +1740,14 @@ export default function DentalTourism() {
                   <div className="cm-icon">
                     <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 .5C5.6.5.4 5.6.4 12c0 2 .5 4 1.5 5.7L0 24l6.5-1.8c1.7.9 3.6 1.4 5.5 1.4 6.4 0 11.6-5.1 11.6-11.5C23.6 5.6 18.4.5 12 .5zm6.7 16.4c-.3.8-1.6 1.5-2.3 1.6-.6.1-1.3.1-2.1-.1-.5-.1-1.1-.3-1.9-.7-3.3-1.4-5.5-4.8-5.7-5-.2-.2-1.4-1.8-1.4-3.5s.9-2.5 1.2-2.8c.3-.3.7-.4 1-.4h.7c.2 0 .5 0 .8.6.3.7 1 2.4 1.1 2.5.1.2.1.4 0 .6-.1.2-.2.4-.4.6-.2.2-.4.4-.5.5-.2.2-.4.4-.2.7.2.4.9 1.5 2 2.4 1.4 1.2 2.5 1.6 2.9 1.8.4.2.6.1.8-.1.2-.3.9-1.1 1.1-1.4.2-.4.5-.3.8-.2.3.1 2 1 2.3 1.1.3.2.6.2.6.4.2.1.2.8-.1 1.6z"/></svg>
                   </div>
-                  <div><b>WhatsApp</b><span><a href="https://wa.me/8801775227902" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>+880 1775-227902</a></span></div>
+                  <div>
+                    <b>WhatsApp Coordinator</b>
+                    <span>
+                      <BranchCTA action="whatsapp" style={{ background: 'transparent', border: 'none', color: '#25D366', fontWeight: 700, padding: 0, font: 'inherit', cursor: 'pointer', textDecoration: 'underline' }}>
+                        Chat with Banani or Banasree
+                      </BranchCTA>
+                    </span>
+                  </div>
                 </div>
                 <div className="cm-row">
                   <div className="cm-icon">
@@ -1750,13 +1759,13 @@ export default function DentalTourism() {
                   <div className="cm-icon">
                     <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.7"><path d="M12 22s8-7.5 8-13a8 8 0 1 0-16 0c0 5.5 8 13 8 13z"/><circle cx="12" cy="9" r="3"/></svg>
                   </div>
-                  <div><b>Clinic</b><span>Banasree, Dhaka, Bangladesh</span></div>
+                  <div><b>Locations</b><span>Banani Private Suite &amp; Banasree Flagship Hospital</span></div>
                 </div>
                 <div className="cm-row">
                   <div className="cm-icon">
                     <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.7"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
                   </div>
-                  <div><b>Hours</b><span>3:00 PM – 10:00 PM (Closed Thursdays)</span></div>
+                  <div><b>Hours</b><span>3:00 PM – 10:00 PM (Banani: Sun–Thu | Banasree: Fri–Wed)</span></div>
                 </div>
               </div>
             </div>
@@ -1799,7 +1808,7 @@ export default function DentalTourism() {
                 <textarea rows={3} placeholder="Pain, broken tooth, cosmetic concern, current dental records you can share…" required value={formData.message} onChange={e => setFormData({...formData, message: e.target.value})}></textarea>
               </div>
 
-              {error && <div style={{ color: '#ef4444', marginBottom: '1rem', fontSize: '0.9rem' }}>{error}</div>}
+              {error && <div style={{ color: '#8A3B2A', marginBottom: '1rem', fontSize: '0.9rem' }}>{error}</div>}
 
               <button type="submit" className="tm-btn tm-btn-primary block magnetic" data-cursor="Send" disabled={loading} style={{ opacity: loading ? 0.7 : 1 }}>
                 {loading ? 'Sending...' : 'Send my request'}

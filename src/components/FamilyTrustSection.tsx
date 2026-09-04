@@ -33,8 +33,9 @@ export default function FamilyTrustSection() {
               
               <div className="fts-stats">
                 <div className="fts-stat-item">
-                  <div className="fts-stat-num">13k+</div>
-                  <div className="fts-stat-label">Happy Patients</div>
+                  {/* REMOVED: a "13k+ Happy Patients" tile. Unevidenced. */}
+                  <div className="fts-stat-num">2</div>
+                  <div className="fts-stat-label">Branches in Dhaka</div>
                 </div>
                 <div className="fts-divider"></div>
                 <div className="fts-stat-item">

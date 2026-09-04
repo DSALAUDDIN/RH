@@ -60,8 +60,8 @@ function renderSection(section: BlogSection, idx: number, accentColor: string) {
     case 'heading':
       return (
         <h2 key={idx} style={{
-          fontSize: '1.75rem', fontWeight: 900, color: '#0f172a',
-          marginTop: '3.5rem', marginBottom: '1.5rem', letterSpacing: '-0.04em',
+          fontSize: '1.75rem', fontWeight: 600, color: '#2B2A1C',
+          marginTop: '3.5rem', marginBottom: '1.5rem', letterSpacing: '-0.02em',
           lineHeight: 1.3,
           display: 'flex', alignItems: 'center', gap: '0.8rem',
         }}>
@@ -73,7 +73,7 @@ function renderSection(section: BlogSection, idx: number, accentColor: string) {
     case 'subheading':
       return (
         <h3 key={idx} style={{
-          fontSize: '1.15rem', fontWeight: 800, color: '#1e293b',
+          fontSize: '1.15rem', fontWeight: 600, color: '#2B2A1C',
           marginTop: '1.75rem', marginBottom: '0.75rem', letterSpacing: '-0.02em',
         }}>
           {section.content}
@@ -83,7 +83,7 @@ function renderSection(section: BlogSection, idx: number, accentColor: string) {
     case 'paragraph':
       return (
         <p key={idx} style={{
-          fontSize: '1.125rem', color: '#334155', lineHeight: 1.85,
+          fontSize: '1.125rem', color: '#45432F', lineHeight: 1.85,
           marginBottom: '1.5rem', fontWeight: 400
         }}>
           {section.content}
@@ -103,7 +103,7 @@ function renderSection(section: BlogSection, idx: number, accentColor: string) {
               border: `1px solid color-mix(in srgb, ${accentColor} 12%, transparent)`,
             }}>
               <CheckCircle2 size={20} color={accentColor} style={{ flexShrink: 0, marginTop: '0.1rem' }} />
-              <span style={{ fontSize: '1.05rem', color: '#334155', lineHeight: 1.7 }}>{item}</span>
+              <span style={{ fontSize: '1.05rem', color: '#45432F', lineHeight: 1.7 }}>{item}</span>
             </li>
           ))}
         </ul>
@@ -116,7 +116,7 @@ function renderSection(section: BlogSection, idx: number, accentColor: string) {
             <li key={i} style={{
               display: 'flex', gap: '1.25rem', alignItems: 'flex-start',
               padding: '1.25rem 1.5rem',
-              background: '#f8fafc',
+              background: '#F7F5EE',
               borderRadius: '1.25rem',
               border: '1px solid rgba(0,0,0,0.04)',
               boxShadow: '0 2px 10px rgba(0,0,0,0.02)'
@@ -125,14 +125,14 @@ function renderSection(section: BlogSection, idx: number, accentColor: string) {
                 width: '32px', height: '32px',
                 borderRadius: '50%',
                 background: `linear-gradient(135deg, ${accentColor}, color-mix(in srgb, ${accentColor} 80%, black))`,
-                color: '#fff',
+                color: 'var(--rh-ink)',
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
-                fontSize: '0.9rem', fontWeight: 800, flexShrink: 0,
+                fontSize: '0.9rem', fontWeight: 600, flexShrink: 0,
                 boxShadow: `0 4px 12px color-mix(in srgb, ${accentColor} 30%, transparent)`
               }}>
                 {i + 1}
               </span>
-              <span style={{ fontSize: '1.05rem', color: '#334155', lineHeight: 1.7, paddingTop: '0.15rem' }}>{item}</span>
+              <span style={{ fontSize: '1.05rem', color: '#45432F', lineHeight: 1.7, paddingTop: '0.15rem' }}>{item}</span>
             </li>
           ))}
         </ol>
@@ -142,7 +142,7 @@ function renderSection(section: BlogSection, idx: number, accentColor: string) {
       return (
         <div key={idx} style={{ marginBottom: '2rem', overflowX: 'auto', borderRadius: '1rem', border: '1px solid rgba(0,0,0,0.04)', padding: '1rem' }}>
           {section.heading && (
-            <h3 style={{ fontSize: '1.25rem', fontWeight: 800, color: '#0f172a', marginBottom: '1rem', paddingLeft: '0.25rem' }}>
+            <h3 style={{ fontSize: '1.25rem', fontWeight: 600, color: '#2B2A1C', marginBottom: '1rem', paddingLeft: '0.25rem' }}>
               {section.heading}
             </h3>
           )}
@@ -152,7 +152,7 @@ function renderSection(section: BlogSection, idx: number, accentColor: string) {
                 {section.headers?.map((h, i) => (
                   <th key={i} style={{
                     padding: '1rem 1.25rem', textAlign: 'left',
-                    fontWeight: 800, color: '#0f172a',
+                    fontWeight: 600, color: '#2B2A1C',
                     borderBottom: `2px solid color-mix(in srgb, ${accentColor} 20%, transparent)`,
                   }}>{h}</th>
                 ))}
@@ -160,10 +160,10 @@ function renderSection(section: BlogSection, idx: number, accentColor: string) {
             </thead>
             <tbody>
               {section.rows?.map((row, ri) => (
-                <tr key={ri} className="blog-table-row" style={{ background: ri % 2 === 0 ? '#fff' : '#f8fafc' }}>
+                <tr key={ri} className="blog-table-row" style={{ background: ri % 2 === 0 ? '#fff' : '#F7F5EE' }}>
                   {row.map((cell, ci) => (
                     <td key={ci} style={{
-                      padding: '1rem 1.25rem', color: '#334155',
+                      padding: '1rem 1.25rem', color: '#45432F',
                       borderBottom: '1px solid rgba(0,0,0,0.05)',
                     }}>{cell}</td>
                   ))}
@@ -187,7 +187,7 @@ function renderSection(section: BlogSection, idx: number, accentColor: string) {
           boxShadow: '0 4px 15px rgba(0,0,0,0.02)'
         }}>
           <AlertCircle size={26} color={accentColor} style={{ flexShrink: 0, marginTop: '0.1rem' }} />
-          <p style={{ fontSize: '1.1rem', color: '#1e293b', lineHeight: 1.8, margin: 0, fontWeight: 500 }}>
+          <p style={{ fontSize: '1.1rem', color: '#2B2A1C', lineHeight: 1.8, margin: 0, fontWeight: 500 }}>
             {section.content}
           </p>
         </div>
@@ -243,14 +243,14 @@ export default async function BlogPostPage({ params }: Props) {
   };
 
   return (
-    <div style={{ background: '#f8fafc', minHeight: '100vh' }}>
+    <div style={{ background: '#F7F5EE', minHeight: '100vh' }}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd).replace(/</g, '\\u003c') }}
       />
       {/* Hero */}
       <div style={{
-        background: 'linear-gradient(135deg, #020617 0%, #0f172a 60%, #020617 100%)',
+        background: 'linear-gradient(135deg, #1F1E14 0%, #2B2A1C 60%, #1F1E14 100%)',
         padding: '5rem 2rem 8rem',
         position: 'relative',
         overflow: 'hidden',
@@ -265,7 +265,7 @@ export default async function BlogPostPage({ params }: Props) {
         <div style={{ maxWidth: '900px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
           <Link href="/blog" style={{
             display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
-            color: 'rgba(255,255,255,0.5)', textDecoration: 'none',
+            color: 'var(--rh-ink-soft)', textDecoration: 'none',
             fontSize: '0.875rem', fontWeight: 600, marginBottom: '2rem',
           }}>
             <ArrowLeft size={16} />
@@ -277,7 +277,7 @@ export default async function BlogPostPage({ params }: Props) {
               background: `color-mix(in srgb, ${color} 15%, transparent)`,
               border: `1px solid color-mix(in srgb, ${color} 30%, transparent)`,
               color: color, padding: '0.4rem 1.25rem',
-              borderRadius: '100px', fontSize: '0.85rem', fontWeight: 800,
+              borderRadius: '4px', fontSize: '0.85rem', fontWeight: 600,
               textTransform: 'uppercase', letterSpacing: '0.12em',
             }}>
               {post.category}
@@ -286,14 +286,14 @@ export default async function BlogPostPage({ params }: Props) {
 
           <h1 style={{
             fontSize: 'clamp(2.5rem, 5vw, 4rem)',
-            fontWeight: 900, color: '#fff',
-            marginBottom: '1rem', letterSpacing: '-0.05em', lineHeight: 1.1,
+            fontWeight: 600, color: 'var(--rh-ink)',
+            marginBottom: '1rem', letterSpacing: '-0.02em', lineHeight: 1.1,
           }}>
             {post.title}
           </h1>
 
           <p style={{
-            fontSize: '1.2rem', color: 'rgba(255,255,255,0.6)',
+            fontSize: '1.2rem', color: 'var(--rh-ink-soft)',
             fontWeight: 500, marginBottom: '1.5rem', lineHeight: 1.6,
           }}>
             {post.subtitle}
@@ -302,14 +302,14 @@ export default async function BlogPostPage({ params }: Props) {
           <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', flexWrap: 'wrap' }}>
             <span style={{
               display: 'flex', alignItems: 'center', gap: '0.4rem',
-              color: 'rgba(255,255,255,0.5)', fontSize: '0.875rem', fontWeight: 600,
+              color: 'var(--rh-ink-soft)', fontSize: '0.875rem', fontWeight: 600,
             }}>
               <Clock size={14} />
               {post.readTime}
             </span>
             <span style={{
               display: 'flex', alignItems: 'center', gap: '0.4rem',
-              color: 'rgba(255,255,255,0.5)', fontSize: '0.875rem', fontWeight: 600,
+              color: 'var(--rh-ink-soft)', fontSize: '0.875rem', fontWeight: 600,
             }}>
               <BookOpen size={14} />
               RH Dental Care
@@ -332,12 +332,12 @@ export default async function BlogPostPage({ params }: Props) {
         }}>
           <div style={{
             display: 'flex', alignItems: 'center', gap: '0.5rem',
-            fontSize: '0.8rem', fontWeight: 800, color: color,
+            fontSize: '0.8rem', fontWeight: 600, color: color,
             textTransform: 'uppercase', letterSpacing: '0.15em', marginBottom: '1rem',
           }}>
             <Sparkles size={14} /> Summary
           </div>
-          <p style={{ margin: 0, fontSize: '1.15rem', color: '#1e293b', lineHeight: 1.8, fontWeight: 500 }}>
+          <p style={{ margin: 0, fontSize: '1.15rem', color: '#2B2A1C', lineHeight: 1.8, fontWeight: 500 }}>
             {post.summary}
           </p>
         </div>
@@ -359,7 +359,7 @@ export default async function BlogPostPage({ params }: Props) {
         {related.length > 0 && (
           <div style={{ marginTop: '4rem' }}>
             <h2 style={{
-              fontSize: '1.5rem', fontWeight: 900, color: '#0f172a',
+              fontSize: '1.5rem', fontWeight: 600, color: '#2B2A1C',
               marginBottom: '1.5rem', letterSpacing: '-0.03em',
             }}>
               Related Articles
@@ -384,19 +384,19 @@ export default async function BlogPostPage({ params }: Props) {
                       background: `${rPost.categoryColor}15`,
                       color: rPost.categoryColor,
                       padding: '0.25rem 0.625rem',
-                      borderRadius: '100px',
-                      fontSize: '0.7rem', fontWeight: 800,
+                      borderRadius: '4px',
+                      fontSize: '0.7rem', fontWeight: 600,
                       display: 'inline-block', marginBottom: '0.75rem',
                     }}>
                       {rPost.category}
                     </span>
                     <h3 style={{
-                      fontSize: '1rem', fontWeight: 800, color: '#0f172a',
+                      fontSize: '1rem', fontWeight: 600, color: '#2B2A1C',
                       marginBottom: '0.5rem', lineHeight: 1.35,
                     }}>
                       {rPost.title}
                     </h3>
-                    <p style={{ fontSize: '0.85rem', color: '#64748b', lineHeight: 1.6, marginBottom: '1rem' }}>
+                    <p style={{ fontSize: '0.85rem', color: '#6E6B57', lineHeight: 1.6, marginBottom: '1rem' }}>
                       {rPost.summary.slice(0, 90)}…
                     </p>
                     <div style={{
@@ -415,17 +415,17 @@ export default async function BlogPostPage({ params }: Props) {
         {/* CTA */}
         <div style={{
           marginTop: '4rem',
-          background: 'linear-gradient(135deg, #020617, #0f172a)',
+          background: 'linear-gradient(135deg, #1F1E14, #2B2A1C)',
           borderRadius: '2rem', padding: '3rem 2rem', textAlign: 'center',
-          boxShadow: '0 30px 70px rgba(2,6,23,0.2)',
+          boxShadow: '0 30px 70px rgba(247, 245, 238, 0.32)',
         }}>
           <h2 style={{
-            fontSize: '1.75rem', fontWeight: 900, color: '#fff',
+            fontSize: '1.75rem', fontWeight: 600, color: 'var(--rh-ink)',
             marginBottom: '0.875rem', letterSpacing: '-0.03em',
           }}>
             Ready to Schedule Treatment?
           </h2>
-          <p style={{ color: 'rgba(255,255,255,0.6)', marginBottom: '2rem', fontSize: '1rem' }}>
+          <p style={{ color: 'var(--rh-ink-soft)', marginBottom: '2rem', fontSize: '1rem' }}>
             Our specialists are here to guide you through every step of your dental journey.
           </p>
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
@@ -433,8 +433,8 @@ export default async function BlogPostPage({ params }: Props) {
               display: 'inline-flex', alignItems: 'center', gap: '0.6rem',
               padding: '0.9rem 2rem',
               background: `linear-gradient(135deg, ${color}, ${color}cc)`,
-              color: '#fff', borderRadius: '100px',
-              fontWeight: 800, fontSize: '0.95rem', textDecoration: 'none',
+              color: 'var(--rh-ink)', borderRadius: '4px',
+              fontWeight: 600, fontSize: '0.95rem', textDecoration: 'none',
               boxShadow: `0 12px 30px ${color}45`,
             }}>
               Book Consultation
@@ -444,7 +444,7 @@ export default async function BlogPostPage({ params }: Props) {
               padding: '0.9rem 2rem',
               background: 'rgba(255,255,255,0.1)',
               border: '1.5px solid rgba(255,255,255,0.2)',
-              color: '#fff', borderRadius: '100px',
+              color: 'var(--rh-ink)', borderRadius: '4px',
               fontWeight: 700, fontSize: '0.95rem', textDecoration: 'none',
             }}>
               More Articles

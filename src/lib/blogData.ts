@@ -26,7 +26,7 @@ export const blogPosts: BlogPost[] = [
     title: 'Deep Curettage',
     subtitle: 'Diagnosis, Prevention, and Treatment of Gum Diseases',
     category: 'Periodontology',
-    categoryColor: '#0ea5e9',
+    categoryColor: '#9C7C38',
     readTime: '6 min read',
     summary: 'Deep curettage (periodontal scaling and root planing) is a non-surgical procedure to treat gum disease by cleaning pockets around the teeth.',
     sections: [
@@ -59,7 +59,7 @@ export const blogPosts: BlogPost[] = [
     title: 'Dental Scaling',
     subtitle: 'A Comprehensive Guide to Professional Dental Cleaning',
     category: 'Periodontology',
-    categoryColor: '#0ea5e9',
+    categoryColor: '#9C7C38',
     readTime: '5 min read',
     summary: 'Dental scaling is a professional cleaning procedure that removes plaque, tartar, and stains from teeth — a cornerstone of preventive dental care.',
     sections: [
@@ -87,7 +87,7 @@ export const blogPosts: BlogPost[] = [
     title: 'Periodontal Therapy with Laser',
     subtitle: 'Deep Curettage Redefined with Advanced Laser Technology',
     category: 'Periodontology',
-    categoryColor: '#0ea5e9',
+    categoryColor: '#9C7C38',
     readTime: '6 min read',
     summary: 'Laser-assisted periodontal therapy is a minimally invasive, highly precise treatment for gum disease that promotes faster healing and reduced discomfort.',
     sections: [
@@ -111,7 +111,7 @@ export const blogPosts: BlogPost[] = [
     title: 'Perio Flap Surgery',
     subtitle: 'A Modern Approach to Advanced Gum Treatment',
     category: 'Periodontology',
-    categoryColor: '#0ea5e9',
+    categoryColor: '#9C7C38',
     readTime: '6 min read',
     summary: 'Perio flap surgery is a specialized procedure for severe periodontal disease, lifting the gums to allow thorough deep cleaning and repair of the underlying bone.',
     sections: [
@@ -135,7 +135,7 @@ export const blogPosts: BlogPost[] = [
     title: 'Bone Graft',
     subtitle: 'Rebuilding Jawbone to Support Teeth and Implants',
     category: 'Periodontology',
-    categoryColor: '#0ea5e9',
+    categoryColor: '#9C7C38',
     readTime: '5 min read',
     summary: 'Dental bone grafting rebuilds jawbone lost to gum disease or tooth loss, providing the foundation needed for dental implants and stabilizing surrounding teeth.',
     sections: [
@@ -159,7 +159,7 @@ export const blogPosts: BlogPost[] = [
     title: 'Surgical Tooth Extraction',
     subtitle: 'What You Need to Know Before, During & After',
     category: 'Oral & Maxillofacial Surgery',
-    categoryColor: '#ef4444',
+    categoryColor: '#8A3B2A',
     readTime: '6 min read',
     summary: 'Surgical tooth extraction is a more complex procedure than a simple extraction — used for impacted, fractured, or severely decayed teeth that require incision for removal.',
     sections: [
@@ -179,7 +179,7 @@ export const blogPosts: BlogPost[] = [
     title: 'Minor OT (Oral Surgery)',
     subtitle: 'A Key Component of Modern Dental Care',
     category: 'Oral & Maxillofacial Surgery',
-    categoryColor: '#ef4444',
+    categoryColor: '#8A3B2A',
     readTime: '5 min read',
     summary: 'Minor oral surgery encompasses a range of quick, minimally invasive procedures — from frenectomies and biopsies to cyst removal and tooth exposure for orthodontic treatment.',
     sections: [
@@ -200,7 +200,7 @@ export const blogPosts: BlogPost[] = [
     title: 'Major Oral Surgery',
     subtitle: 'Comprehensive Guide to Advanced Dental Care',
     category: 'Oral & Maxillofacial Surgery',
-    categoryColor: '#ef4444',
+    categoryColor: '#8A3B2A',
     readTime: '7 min read',
     summary: 'Major oral surgery addresses severe dental and maxillofacial concerns — including jaw surgery, bone grafting, facial trauma repair, and oral cancer surgery — performed by specialist surgeons.',
     sections: [
@@ -220,7 +220,7 @@ export const blogPosts: BlogPost[] = [
     title: 'Operculectomy',
     subtitle: 'A Simple Solution to Impacted Teeth Issues',
     category: 'Oral & Maxillofacial Surgery',
-    categoryColor: '#ef4444',
+    categoryColor: '#8A3B2A',
     readTime: '4 min read',
     summary: 'Operculectomy is a minor surgical procedure to remove the gum flap (operculum) covering a partially erupted tooth — relieving pain, swelling, and recurring infections.',
     sections: [
@@ -240,7 +240,7 @@ export const blogPosts: BlogPost[] = [
     title: 'Apicoectomy',
     subtitle: 'A Specialized Solution for Persistent Dental Infections',
     category: 'Oral & Maxillofacial Surgery',
-    categoryColor: '#ef4444',
+    categoryColor: '#8A3B2A',
     readTime: '5 min read',
     summary: 'An apicoectomy (root-end surgery) removes the tip of a tooth\'s root along with surrounding infected tissue when root canal treatment alone has not resolved the infection.',
     sections: [
@@ -262,7 +262,7 @@ export const blogPosts: BlogPost[] = [
     title: 'Cyst Removal',
     subtitle: 'Restoring Oral Health by Removing Dental Cysts',
     category: 'Oral & Maxillofacial Surgery',
-    categoryColor: '#ef4444',
+    categoryColor: '#8A3B2A',
     readTime: '5 min read',
     summary: 'Dental cysts are fluid-filled sacs that can form around teeth or in the jawbone. Surgical removal prevents bone loss, tooth displacement, and serious infections.',
     sections: [
@@ -284,7 +284,7 @@ export const blogPosts: BlogPost[] = [
     title: 'Orthognathic Surgery',
     subtitle: 'Transforming Smiles and Improving Jaw Function',
     category: 'Oral & Maxillofacial Surgery',
-    categoryColor: '#ef4444',
+    categoryColor: '#8A3B2A',
     readTime: '7 min read',
     summary: 'Orthognathic surgery (corrective jaw surgery) repositions the upper or lower jaw to correct severe misalignments, improving bite function, breathing, facial symmetry, and speech.',
     sections: [
@@ -304,7 +304,7 @@ export const blogPosts: BlogPost[] = [
     title: 'Dental Implants',
     subtitle: 'A Modern Solution for Missing Teeth',
     category: 'Oral & Maxillofacial Surgery',
-    categoryColor: '#ef4444',
+    categoryColor: '#8A3B2A',
     readTime: '7 min read',
     summary: 'Dental implants are titanium posts surgically placed in the jawbone to permanently replace missing teeth — the gold standard for tooth replacement, offering natural feel and lifetime durability.',
     sections: [
@@ -328,7 +328,7 @@ export const blogPosts: BlogPost[] = [
     title: 'Root Canal Treatment (RCT) & Re-RCT',
     subtitle: 'Saving Teeth, Restoring Smiles',
     category: 'Conservative Dentistry & Endodontics',
-    categoryColor: '#6366f1',
+    categoryColor: '#9C7C38',
     readTime: '7 min read',
     summary: 'Root canal treatment removes infected pulp from inside the tooth, cleans the canals, and seals them — saving teeth that would otherwise need extraction. Re-RCT addresses previously treated teeth that become re-infected.',
     sections: [
@@ -352,7 +352,7 @@ export const blogPosts: BlogPost[] = [
     title: 'Single Visit RCT with Resin Crown',
     subtitle: 'Complete Root Canal & Crown in One Appointment',
     category: 'Conservative Dentistry & Endodontics',
-    categoryColor: '#6366f1',
+    categoryColor: '#9C7C38',
     readTime: '5 min read',
     summary: 'Single Visit RCT combines complete root canal therapy with an immediate resin crown in just one appointment — ideal for patients who want efficient, high-quality care without multiple visits.',
     sections: [
@@ -374,7 +374,7 @@ export const blogPosts: BlogPost[] = [
     title: 'RCT Tooth Build-Up',
     subtitle: 'Restoring Strength and Structure After Root Canal Treatment',
     category: 'Conservative Dentistry & Endodontics',
-    categoryColor: '#6366f1',
+    categoryColor: '#9C7C38',
     readTime: '4 min read',
     summary: 'RCT tooth build-up reconstructs the internal structure of a root-canal-treated tooth using composite or glass ionomer materials, providing the strong core needed to support a crown.',
     sections: [
@@ -395,7 +395,7 @@ export const blogPosts: BlogPost[] = [
     title: 'Pulp Capping with Diode Laser',
     subtitle: 'A Modern Approach to Preserve Tooth Vitality',
     category: 'Conservative Dentistry & Endodontics',
-    categoryColor: '#6366f1',
+    categoryColor: '#9C7C38',
     readTime: '5 min read',
     summary: 'Pulp capping with a diode laser protects the tooth\'s pulp from exposure or infection using laser sterilization and biocompatible capping materials — avoiding root canal treatment when possible.',
     sections: [
@@ -417,7 +417,7 @@ export const blogPosts: BlogPost[] = [
     title: 'Inlay & Onlay',
     subtitle: 'Precision Restorations for a Healthy Smile',
     category: 'Conservative Dentistry & Endodontics',
-    categoryColor: '#6366f1',
+    categoryColor: '#9C7C38',
     readTime: '5 min read',
     summary: 'Dental inlays and onlays are custom-made restorations that fit within or over the cusps of a damaged tooth — stronger than fillings, more conservative than full crowns.',
     sections: [
@@ -438,7 +438,7 @@ export const blogPosts: BlogPost[] = [
     title: 'Dental Fillings & Restoration',
     subtitle: 'Treating Cavities and Restoring Damaged Tooth Structure',
     category: 'Conservative Dentistry & Endodontics',
-    categoryColor: '#6366f1',
+    categoryColor: '#9C7C38',
     readTime: '4 min read',
     summary: 'Dental fillings restore teeth damaged by cavities or minor fractures. Modern composite resin fillings are tooth-colored, durable, and bond directly to the tooth for a natural result.',
     sections: [
@@ -458,7 +458,7 @@ export const blogPosts: BlogPost[] = [
     title: 'Core Build-Up with Lab Post',
     subtitle: 'Restoring Severely Damaged Teeth',
     category: 'Conservative Dentistry & Endodontics',
-    categoryColor: '#6366f1',
+    categoryColor: '#9C7C38',
     readTime: '5 min read',
     summary: 'Core build-up with a custom lab post reinforces a severely compromised tooth after root canal treatment, creating the strong internal foundation needed to support a long-lasting crown.',
     sections: [
@@ -560,7 +560,7 @@ export const blogPosts: BlogPost[] = [
     title: 'Orthodontic Braces',
     subtitle: 'A Comprehensive Guide to Straightening Your Smile',
     category: 'Orthodontics',
-    categoryColor: '#8b5cf6',
+    categoryColor: '#9C7C38',
     readTime: '7 min read',
     summary: 'Braces are orthodontic appliances that use brackets and wires to gradually shift misaligned teeth into their correct positions — effective for a wide range of bite and alignment issues.',
     sections: [
@@ -582,7 +582,7 @@ export const blogPosts: BlogPost[] = [
     title: 'Orthodontic Aligners',
     subtitle: 'A Modern Solution for Straighter Teeth',
     category: 'Orthodontics',
-    categoryColor: '#8b5cf6',
+    categoryColor: '#9C7C38',
     readTime: '4 min read',
     summary: 'Clear orthodontic aligners are custom-made, removable trays that gradually shift teeth into alignment — a discreet, comfortable, and convenient alternative to traditional braces.',
     sections: [
@@ -601,7 +601,7 @@ export const blogPosts: BlogPost[] = [
     title: 'Removable Orthodontics',
     subtitle: 'A Smarter Way to Straighten Your Smile',
     category: 'Orthodontics',
-    categoryColor: '#8b5cf6',
+    categoryColor: '#9C7C38',
     readTime: '5 min read',
     summary: 'Removable orthodontic appliances — including clear aligners, retainers, and functional appliances — offer a flexible and comfortable alternative that fits seamlessly into your lifestyle.',
     sections: [
@@ -621,7 +621,7 @@ export const blogPosts: BlogPost[] = [
     title: 'Night Guard',
     subtitle: 'Protecting Your Smile While You Sleep',
     category: 'Orthodontics',
-    categoryColor: '#8b5cf6',
+    categoryColor: '#9C7C38',
     readTime: '5 min read',
     summary: 'A custom-fitted night guard is a dental appliance worn during sleep to protect teeth from the damaging effects of bruxism (grinding/clenching) — preventing wear, jaw pain, and headaches.',
     sections: [
@@ -644,7 +644,7 @@ export const blogPosts: BlogPost[] = [
     title: 'Dental Crowns (Porcelain, Metal & Resin)',
     subtitle: 'Everything You Need to Know',
     category: 'Prosthodontics',
-    categoryColor: '#f59e0b',
+    categoryColor: '#CDAE51',
     readTime: '7 min read',
     summary: 'Dental crowns are custom-made caps that cover a damaged tooth to restore its shape, size, strength, and appearance. Available in porcelain, metal, and resin materials to suit different needs.',
     sections: [
@@ -678,7 +678,7 @@ export const blogPosts: BlogPost[] = [
     title: 'Zirconia Crown',
     subtitle: 'The Durable and Aesthetic Crown Solution',
     category: 'Prosthodontics',
-    categoryColor: '#f59e0b',
+    categoryColor: '#CDAE51',
     readTime: '6 min read',
     summary: 'Zirconia crowns combine exceptional strength with natural-looking aesthetics. As one of the toughest materials in dentistry, they are highly biocompatible, stain-resistant, and long-lasting.',
     sections: [
@@ -698,7 +698,7 @@ export const blogPosts: BlogPost[] = [
     title: 'Gold Crown',
     subtitle: 'Timeless Durability and Strength',
     category: 'Prosthodontics',
-    categoryColor: '#f59e0b',
+    categoryColor: '#CDAE51',
     readTime: '5 min read',
     summary: 'Gold crowns are among the most durable and long-lasting dental restorations available. Made from a gold alloy, they are biocompatible, resistant to wear, and ideal for back teeth requiring maximum strength.',
     sections: [
@@ -720,7 +720,7 @@ export const blogPosts: BlogPost[] = [
     title: 'Tooth Whitening & Bleaching',
     subtitle: 'Professional Laser Teeth Whitening Guide',
     category: 'Aesthetic Dentistry',
-    categoryColor: '#ec4899',
+    categoryColor: '#9C7C38',
     readTime: '4 min read',
     summary: 'Professional laser teeth whitening removes deep stains and discoloration in a single office visit — delivering dramatically brighter results than over-the-counter options, safely and effectively.',
     sections: [
@@ -741,7 +741,7 @@ export const blogPosts: BlogPost[] = [
     title: 'Smile Designing',
     subtitle: 'The Art and Science of Your Perfect Smile',
     category: 'Aesthetic Dentistry',
-    categoryColor: '#ec4899',
+    categoryColor: '#9C7C38',
     readTime: '5 min read',
     summary: 'Smile designing is a comprehensive cosmetic dental treatment that combines multiple procedures to create a naturally perfect, camera-ready smile tailored to your facial proportions.',
     sections: [
@@ -759,7 +759,7 @@ export const blogPosts: BlogPost[] = [
     title: 'Anterior Build-Up (Direct Veneer)',
     subtitle: 'Single-Visit Composite Smile Makeover',
     category: 'Aesthetic Dentistry',
-    categoryColor: '#ec4899',
+    categoryColor: '#9C7C38',
     readTime: '4 min read',
     summary: 'Direct veneers are composite resin applied to front teeth in a single appointment to improve shape, color, and size — a fast, affordable, and minimally invasive smile makeover.',
     sections: [
@@ -778,7 +778,7 @@ export const blogPosts: BlogPost[] = [
     title: 'Anterior Build-Up (Indirect/Porcelain Veneer)',
     subtitle: 'Custom Lab-Crafted Porcelain Veneers',
     category: 'Aesthetic Dentistry',
-    categoryColor: '#ec4899',
+    categoryColor: '#9C7C38',
     readTime: '4 min read',
     summary: 'Indirect porcelain veneers are custom-crafted in a dental lab for precise aesthetics and long-lasting results — the gold standard for smile makeovers.',
     sections: [
@@ -799,7 +799,7 @@ export const blogPosts: BlogPost[] = [
     title: 'Grinding of Sharp Teeth (Bruxism)',
     subtitle: 'Causes, Symptoms, Diagnosis & Treatment',
     category: 'Cross-Departmental',
-    categoryColor: '#10b981',
+    categoryColor: '#55684F',
     readTime: '5 min read',
     summary: 'Bruxism is the unconscious grinding or clenching of teeth, often during sleep. Left untreated, it causes significant enamel wear, jaw pain, and headaches — but is very treatable with night guards and stress management.',
     sections: [
@@ -819,7 +819,7 @@ export const blogPosts: BlogPost[] = [
     title: 'Fracture Management of Tooth',
     subtitle: 'Diagnosing and Treating Dental Fractures',
     category: 'Cross-Departmental',
-    categoryColor: '#10b981',
+    categoryColor: '#55684F',
     readTime: '6 min read',
     summary: 'Fracture management in dentistry addresses broken or cracked teeth through a range of approaches — from simple polishing for craze lines to root canal treatment and zirconia crowns for complex fractures.',
     sections: [
@@ -839,7 +839,7 @@ export const blogPosts: BlogPost[] = [
     title: 'Fiber Bridge (Single Front Tooth Replacement)',
     subtitle: 'A Minimally Invasive Solution for Missing Front Teeth',
     category: 'Prosthodontics',
-    categoryColor: '#f59e0b',
+    categoryColor: '#CDAE51',
     readTime: '5 min read',
     summary: 'A fiber bridge uses a high-strength fiber ribbon embedded in composite resin to replace a single missing front tooth in a single visit — minimally invasive, affordable, and natural-looking.',
     sections: [

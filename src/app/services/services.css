@@ -1,6 +1,6 @@
 .srv-hero {
   position: relative;
-  background: linear-gradient(180deg, #020617 0%, #0f172a 100%);
+  background: linear-gradient(180deg, var(--rh-paper) 0%, var(--rh-surface-sunk) 100%);
   padding: calc(var(--nav-height, 80px) + 4rem) 2rem 6rem;
   overflow: hidden;
   text-align: center;
@@ -18,7 +18,7 @@
   transform: translateX(-50%);
   width: 1000px;
   height: 1000px;
-  background: radial-gradient(circle, rgba(14, 165, 233, 0.12) 0%, transparent 60%);
+  background: radial-gradient(circle, rgba(156, 124, 56, 0.12) 0%, transparent 60%);
   z-index: 0;
   pointer-events: none;
 }
@@ -32,16 +32,16 @@
 
 .srv-title {
   font-size: clamp(3rem, 6vw, 5.5rem);
-  font-weight: 900;
-  color: white;
+  font-weight: 600;
+  color: var(--rh-ink);
   margin-bottom: 1.5rem;
   line-height: 1.05;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.02em;
 }
 
 .srv-subtitle {
   font-size: clamp(1.1rem, 2vw, 1.25rem);
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--rh-ink-soft);
   max-width: 600px;
   margin: 0 auto 3rem;
   line-height: 1.6;
@@ -51,15 +51,15 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: rgba(14, 165, 233, 0.1);
-  border: 1px solid rgba(14, 165, 233, 0.2);
-  color: #38bdf8;
+  background: rgba(156, 124, 56, 0.1);
+  border: 1px solid rgba(156, 124, 56, 0.2);
+  color: var(--rh-brass);
   padding: 0.5rem 1.25rem;
   border-radius: 999px;
   font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 0.1em;
-  text-transform: uppercase;
+  text-transform: none;
   margin-bottom: 2rem;
   backdrop-filter: blur(8px);
 }
@@ -90,7 +90,7 @@
   background: white;
   border-radius: 2rem;
   border: 1px solid rgba(0, 0, 0, 0.05);
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.02);
+  box-shadow: var(--rh-glow-md);
   overflow: hidden;
   transition: all 0.4s ease;
 }
@@ -105,13 +105,13 @@
 }
 
 .dark .srv-detail-card {
-  background: #0f172a;
-  border-color: rgba(255, 255, 255, 0.05);
+  background: var(--rh-paper);
+  border-color: var(--rh-ink-soft);
 }
 
 .srv-dc-visual {
   flex: 1;
-  background: linear-gradient(135deg, rgba(14, 165, 233, 0.05) 0%, rgba(14, 165, 233, 0.15) 100%);
+  background: linear-gradient(135deg, rgba(156, 124, 56, 0.05) 0%, rgba(156, 124, 56, 0.15) 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -120,7 +120,7 @@
 }
 
 .dark .srv-dc-visual {
-  background: linear-gradient(135deg, rgba(14, 165, 233, 0.1) 0%, rgba(14, 165, 233, 0.02) 100%);
+  background: linear-gradient(135deg, rgba(156, 124, 56, 0.1) 0%, rgba(156, 124, 56, 0.02) 100%);
 }
 
 .srv-dc-icon {
@@ -131,19 +131,19 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #0ea5e9;
-  box-shadow: 0 20px 40px rgba(14, 165, 233, 0.15);
+  color: var(--rh-brass);
+  box-shadow: 0 20px 40px rgba(156, 124, 56, 0.15);
   transform: rotate(-5deg);
   transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .dark .srv-dc-icon {
-  background: #1e293b;
+  background: var(--rh-paper);
 }
 
 .srv-detail-card:hover .srv-dc-icon {
   transform: rotate(0deg) scale(1.1);
-  box-shadow: 0 30px 60px rgba(14, 165, 233, 0.25);
+  box-shadow: 0 30px 60px rgba(156, 124, 56, 0.25);
 }
 
 .srv-dc-content {
@@ -156,7 +156,7 @@
 
 .srv-dc-title {
   font-size: 2.25rem;
-  font-weight: 900;
+  font-weight: 600;
   color: var(--foreground);
   margin-bottom: 1.25rem;
   letter-spacing: -0.02em;
@@ -194,7 +194,7 @@
 }
 
 .srv-dc-list-item svg {
-  color: #0ea5e9;
+  color: var(--rh-brass);
   flex-shrink: 0;
   margin-top: 0.15rem;
 }

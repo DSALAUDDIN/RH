@@ -2,12 +2,15 @@ import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 import { jwtVerify } from 'jose';
 import { cookies } from 'next/headers';
+import { getAuthSecret } from '@/lib/auth-secret';
 
-const SECRET_KEY = new TextEncoder().encode(
-  process.env.JWT_SECRET || 'fallback_secret_key_for_dev'
-);
 
 export async function GET() {
+  const secret = getAuthSecret();
+  if (!secret) {
+    return NextResponse.json({ success: false, message: 'Not configured.' }, { status: 503 });
+  }
+
   try {
     const reviews = await prisma.review.findMany({
       orderBy: { createdAt: 'desc' },
@@ -19,12 +22,17 @@ export async function GET() {
 }
 
 export async function POST(req: Request) {
+  const secret = getAuthSecret();
+  if (!secret) {
+    return NextResponse.json({ success: false, message: 'Not configured.' }, { status: 503 });
+  }
+
   try {
     // 1. Verify Admin token
     const cookieStore = await cookies();
     const token = cookieStore.get('admin_token')?.value;
     if (!token) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
-    await jwtVerify(token, SECRET_KEY);
+    await jwtVerify(token, secret);
 
     // 2. Parse request
     const { patient, rating, videoUrl } = await req.json();

@@ -20,3 +20,43 @@ model Admin {
   username String @unique
   password String // Hashed
 }
+
+enum Branch {
+  BANANI
+  BANASREE
+}
+
+model Appointment {
+  id          String    @id @default(cuid())
+  /// Authoritative reference, e.g. RH-BNN-2609-0042. Issued server-side by
+  /// nextRef() from RefCounter — never by the client-side makeRef().
+  ref         String    @unique
+  /// Required. A submission with no branch is rejected at the API, never inferred.
+  branch      Branch
+  patientName String
+  phone       String
+  email       String?
+  treatment   String
+  message     String?
+  /// Set for 'slots' bookings (Banasree). Null for 'callback' (Banani).
+  scheduledAt DateTime?
+  /// PENDING | CONFIRMED | CANCELLED | COMPLETED
+  status      String    @default("PENDING")
+  /// 'slots' or 'callback' — how this request was taken.
+  mode        String    @default("callback")
+  source      String?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  @@index([branch, createdAt])
+  @@index([status])
+}
+
+
+/// Per-branch sequence behind the authoritative booking reference.
+/// key is the branch code: "BNN" or "BSR".
+model RefCounter {
+  key       String   @id
+  value     Int      @default(0)
+  updatedAt DateTime @updatedAt
+}

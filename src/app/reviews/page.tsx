@@ -2,75 +2,71 @@ import { Metadata } from 'next';
 import Testimonials from '@/components/Testimonials';
 import { prisma } from '@/lib/prisma';
 import VideoGallery from '@/components/VideoGallery';
+import { pageMeta } from '@/lib/metadata';
 
-const BASE_URL = 'https://www.rhdentalcare.com';
+export const metadata: Metadata = pageMeta({
+  title: 'Patient Reviews',
+  description: 'What patients say about RH Dental Care. Ratings shown here come from the live Google listing for each branch, or are not shown at all.',
+  path: '/reviews',
+});
 
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@graph': [
-    {
-      '@type': 'BreadcrumbList',
-      itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Home', item: BASE_URL },
-        { '@type': 'ListItem', position: 2, name: 'Patient Reviews', item: `${BASE_URL}/reviews` },
-      ],
-    },
-    {
-      '@type': 'MedicalClinic',
-      '@id': `${BASE_URL}/#dentist`,
-      aggregateRating: {
-        '@type': 'AggregateRating',
-        ratingValue: '5.0',
-        reviewCount: '200',
-        bestRating: '5',
-        worstRating: '1',
-      },
-    },
-  ],
-};
+import JsonLd from '@/components/JsonLd';
+import ReviewBadge from '@/components/ReviewBadge';
+import { breadcrumbSchema } from '@/lib/schema';
+import { BRANCH_LIST } from '@/lib/branches';
 
-export const metadata: Metadata = {
-  title: 'Patient Reviews & Testimonials — 5-Star Dental Care in Dhaka | RH Dental Care',
-  description:
-    '13,000+ happy patients at RH Dental Care, Dhaka. Read 5-star reviews for dental implants, orthodontics, root canal & cosmetic dentistry by BMDC-certified specialists.',
-  keywords: [
-    'RH Dental Care reviews',
-    'dental clinic reviews Dhaka',
-    'best dentist reviews Bangladesh',
-    'dental implant reviews Dhaka',
-    'orthodontics reviews Bangladesh',
-    'patient testimonials dental Dhaka',
-    '5 star dental clinic Dhaka',
-    'dentist reviews Bangladesh',
-    'RH Dental Care testimonials',
-  ],
-  alternates: { canonical: '/reviews' },
-  openGraph: {
-    title: 'Patient Reviews — 5-Star Dental Care | RH Dental Care Dhaka',
-    description:
-      '13,000+ happy patients rate RH Dental Care as Dhaka\'s #1 dental clinic. Read honest reviews for implants, orthodontics, root canal & cosmetic dentistry.',
-    url: 'https://www.rhdentalcare.com/reviews',
-    images: [{ url: '/rhlogo.jpeg', width: 1200, height: 630, alt: 'RH Dental Care Patient Reviews' }],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Patient Reviews | RH Dental Care Dhaka',
-    description: '5-star reviews from 13,000+ happy patients at RH Dental Care — Dhaka\'s best dental clinic.',
-    images: ['/rhlogo.jpeg'],
-  },
-};
+/* REMOVED: a hardcoded aggregateRating of 5.0 from 200 reviews, on a
+   MedicalClinic node with an @id that did not match any entity elsewhere in the
+   graph. It came from no API and matched neither branch's live listing.
+   Marking up a rating that does not exist violates Google's structured data
+   policy and can cost the site every rich result it would otherwise earn.
+   See docs/audit-report.md P0-3.
+
+   A rating may only ever be emitted from a live Places response — see
+   aggregateRatingFrom() in src/lib/reviews.ts, which returns null when there is
+   nothing real to publish. */
 
 export default async function ReviewsPage() {
-  const videoReviews = await prisma.review.findMany({
-    orderBy: { createdAt: 'desc' }
-  });
+  /* Best-effort. A database that is unreachable, or a Review table that has not
+     been migrated, must not take the whole page down — the rest of this page is
+     static content that is still worth serving. */
+  let videoReviews: Awaited<ReturnType<typeof prisma.review.findMany>> = [];
+  try {
+    videoReviews = await prisma.review.findMany({ orderBy: { createdAt: 'desc' } });
+  } catch (err) {
+    console.error('[reviews] could not load video reviews:', err);
+  }
 
   return (
     <div className="reviews-root">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c') }}
+      <JsonLd
+        nodes={[
+          breadcrumbSchema([
+            { name: 'RH Dental Care', path: '/' },
+            { name: 'Patient reviews', path: '/reviews' },
+          ]),
+        ]}
       />
+
+      {/* Live ratings, per branch. Each renders only if its Google listing
+          actually returns one — otherwise nothing appears here. */}
+      <section className="rh-section rh-scope">
+        <div className="rh-container">
+          <h1 style={{ fontFamily: 'var(--rh-font-display)', fontWeight: 400, marginBottom: 'var(--rh-4)' }}>
+            What patients say
+          </h1>
+          <p style={{ color: 'var(--rh-ink-soft)', maxWidth: 'var(--rh-measure)' }}>
+            Ratings below are read from each branch&rsquo;s live Google listing. If a
+            branch has no rating yet, nothing is shown for it — we do not publish a
+            number we cannot point you at.
+          </p>
+          <div style={{ display: 'flex', gap: 'var(--rh-3)', flexWrap: 'wrap', marginTop: 'var(--rh-6)' }}>
+            {BRANCH_LIST.map((b) => (
+              <ReviewBadge key={b.id} branch={b.id} />
+            ))}
+          </div>
+        </div>
+      </section>
       {/* Video Reviews Section */}
       <VideoGallery videos={videoReviews} />
 
@@ -90,25 +86,25 @@ export default async function ReviewsPage() {
             style={{
               maxWidth: '800px',
               margin: '0 auto',
-              background: 'linear-gradient(145deg, #0f172a 0%, #1e293b 100%)',
+              background: 'linear-gradient(145deg, #2B2A1C 0%, #2B2A1C 100%)',
               padding: 'clamp(3rem, 5vw, 4rem)',
               borderRadius: '2rem',
               border: '1px solid rgba(255,255,255,0.1)',
               boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
-              color: 'white',
+              color: 'var(--rh-ink)',
             }}
           >
             <h2
               style={{
                 fontSize: 'clamp(2rem, 4vw, 2.5rem)',
-                fontWeight: 800,
+                fontWeight: 600,
                 marginBottom: '1rem',
                 letterSpacing: '-0.02em'
               }}
             >
-              Share Your <span style={{ color: '#38bdf8' }}>Experience</span>
+              Share Your <span style={{ color: 'var(--rh-brass)' }}>Experience</span>
             </h2>
-            <p style={{ fontSize: '1.1rem', marginBottom: '2.5rem', color: '#cbd5e1', lineHeight: '1.7', maxWidth: '600px', margin: '0 auto 2.5rem' }}>
+            <p style={{ fontSize: '1.1rem', marginBottom: '2.5rem', color: '#C9C5B2', lineHeight: '1.7', maxWidth: '600px', margin: '0 auto 2.5rem' }}>
               Had a great visit? We&apos;d love to hear your story. Your review helps others discover quality dental care and helps us serve you better.
             </p>
             <a
@@ -121,11 +117,11 @@ export default async function ReviewsPage() {
                 padding: '1rem 2.5rem', 
                 fontSize: '1.05rem',
                 fontWeight: 700,
-                borderRadius: '999px',
-                background: '#0ea5e9',
-                color: 'white',
+                borderRadius: '4px',
+                background: '#9C7C38',
+                color: 'var(--rh-ink)',
                 border: 'none',
-                boxShadow: '0 10px 25px rgba(14, 165, 233, 0.4)'
+                boxShadow: '0 10px 25px rgba(156, 124, 56, 0.4)'
               }}
             >
               Write a Review on Google

@@ -1,6 +1,6 @@
 .treatments-modern {
-  background: #020617; /* Deep dark background for premium feel (Contrast) */
-  color: #f8fafc;
+  background: var(--rh-paper); /* Deep dark background for premium feel (Contrast) */
+  color: var(--rh-ink);
   min-height: 100vh;
   font-family: 'Inter', system-ui, sans-serif;
 }
@@ -8,7 +8,7 @@
 /* ── Hero & Neuromarketing Elements ── */
 .tr-hero {
   position: relative;
-  background: radial-gradient(circle at 50% -20%, rgba(14, 165, 233, 0.2) 0%, #020617 70%);
+  background: radial-gradient(circle at 50% -20%, rgba(156, 124, 56, 0.2) 0%, var(--rh-paper) 70%);
   padding: calc(var(--nav-height, 80px) + 3rem) 2rem 6rem;
   overflow: hidden;
   text-align: center;
@@ -25,31 +25,31 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: rgba(14, 165, 233, 0.15);
-  border: 1px solid rgba(14, 165, 233, 0.3);
-  color: #38bdf8;
+  background: rgba(156, 124, 56, 0.15);
+  border: 1px solid rgba(156, 124, 56, 0.3);
+  color: var(--rh-brass);
   padding: 0.5rem 1.25rem;
   border-radius: 999px;
   font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 0.1em;
-  text-transform: uppercase;
+  text-transform: none;
   margin-bottom: 2rem;
   backdrop-filter: blur(8px);
 }
 
 .tr-hero-title {
   font-size: clamp(3rem, 6vw, 5.5rem);
-  font-weight: 900;
-  color: white;
+  font-weight: 600;
+  color: var(--rh-ink);
   margin-bottom: 1.5rem;
   line-height: 1.05;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.02em;
 }
 
 .tr-hero-desc {
   font-size: clamp(1.1rem, 2vw, 1.25rem);
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--rh-ink-soft);
   max-width: 700px;
   margin: 0 auto 3rem;
   line-height: 1.6;
@@ -60,7 +60,7 @@
   display: flex;
   justify-content: center;
   gap: clamp(1.5rem, 4vw, 3rem);
-  border-top: 1px solid rgba(255,255,255,0.1);
+  border-top: 1px solid var(--rh-hairline);
   padding-top: 2.5rem;
   flex-wrap: wrap;
 }
@@ -73,16 +73,16 @@
 
 .tr-stat-num {
   font-size: clamp(1.75rem, 3vw, 2.5rem);
-  font-weight: 800;
-  color: #38bdf8;
+  font-weight: 600;
+  color: var(--rh-brass);
   line-height: 1;
   margin-bottom: 0.5rem;
 }
 
 .tr-stat-label {
   font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.5);
-  text-transform: uppercase;
+  color: var(--rh-ink-soft);
+  text-transform: none;
   letter-spacing: 0.05em;
   font-weight: 600;
 }
@@ -103,25 +103,25 @@
 .tr-search-input {
   width: 100%;
   padding: 1.25rem 1.5rem 1.25rem 4rem;
-  border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  background: rgba(255, 255, 255, 0.03);
+  border-radius: var(--rh-r-sm);
+  border: 1px solid var(--rh-hairline);
+  background: rgba(43, 42, 28, 0.05);
   font-size: 1.1rem;
-  color: #fff;
+  color: var(--rh-ink);
   transition: all 0.3s ease;
 }
 
 .tr-search-input:focus {
   outline: none;
-  border-color: #38bdf8;
-  background: rgba(15, 23, 42, 0.8);
-  box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.1);
+  border-color: var(--rh-brass);
+  background: var(--rh-surface);
+  box-shadow: 0 0 0 4px rgba(205, 174, 81, 0.1);
 }
 
 .tr-concern-btn {
   /* Using important because the original code used inline styles for white theme */
   background: rgba(255,255,255,0.05) !important;
-  color: #fff !important;
+  color: var(--rh-ink)!important;
   border-color: rgba(255,255,255,0.1) !important;
 }
 .tr-concern-btn:hover {
@@ -143,12 +143,12 @@
 }
 
 .tr-bento-card {
-  background: rgba(15, 23, 42, 0.6);
+  background: var(--rh-surface);
   backdrop-filter: blur(20px);
   border-radius: 2rem;
   padding: 3rem 2.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--rh-hairline);
+  box-shadow: var(--rh-glow-md);
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
   overflow: hidden;
@@ -156,8 +156,8 @@
 
 .tr-bento-card:hover {
   transform: translateY(-5px) scale(1.01);
-  border-color: rgba(255, 255, 255, 0.15);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  border-color: var(--rh-ink-soft);
+  box-shadow: var(--rh-glow-md);
 }
 
 .tr-bento-header {
@@ -169,21 +169,21 @@
 
 .tr-bento-sn {
   font-size: 4rem;
-  font-weight: 900;
-  color: rgba(255, 255, 255, 0.05);
+  font-weight: 600;
+  color: var(--rh-ink-soft);
   line-height: 1;
 }
 
 .tr-bento-card h3 {
   font-size: 1.5rem;
-  font-weight: 800;
-  color: #fff;
+  font-weight: 600;
+  color: var(--rh-ink);
   margin-bottom: 1rem;
   letter-spacing: -0.02em;
 }
 
 .tr-bento-card p {
-  color: #94a3b8;
+  color: var(--rh-ink-soft);
   font-size: 1.05rem;
   line-height: 1.6;
   margin-bottom: 2rem;
@@ -192,14 +192,14 @@
 .tr-bento-meta {
   display: flex;
   gap: 1.5rem;
-  border-top: 1px solid rgba(255,255,255,0.05);
+  border-top: 1px solid var(--rh-hairline);
   padding-top: 1.5rem;
 }
 
 .tr-bento-meta-item {
   font-size: 0.85rem;
   font-weight: 600;
-  color: #cbd5e1;
+  color: var(--rh-ink-soft);
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -213,16 +213,16 @@
 }
 
 .tr-category-card {
-  background: rgba(15, 23, 42, 0.4);
+  background: var(--rh-surface);
   border-radius: 1.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--rh-hairline);
   transition: all 0.3s ease;
   overflow: hidden;
 }
 
 .tr-category-card:hover {
-  border-color: rgba(255, 255, 255, 0.1);
-  background: rgba(15, 23, 42, 0.6);
+  border-color: var(--rh-ink-soft);
+  background: var(--rh-surface);
 }
 
 .tr-category-btn {
@@ -249,14 +249,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+  color: var(--rh-ink);
+  box-shadow: var(--rh-glow-sm);
 }
 
 .tr-cat-title {
   font-size: 1.35rem;
-  font-weight: 800;
-  color: #fff;
+  font-weight: 600;
+  color: var(--rh-ink);
   letter-spacing: -0.01em;
   margin-bottom: 0.25rem;
 }
@@ -271,7 +271,7 @@
   font-size: 0.75rem;
   font-weight: 700;
   padding: 0.25rem 0.75rem;
-  border-radius: 999px;
+  border-radius: var(--rh-r-sm);
 }
 
 .tr-treatment-list {
@@ -287,25 +287,25 @@
   align-items: center;
   padding: 1.5rem;
   border-radius: 1rem;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.03);
+  background: rgba(43, 42, 28, 0.05);
+  border: 1px solid var(--rh-hairline);
   transition: all 0.3s ease;
 }
 
 .tr-treatment-item:hover {
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(43, 42, 28, 0.05);
   transform: translateX(5px);
-  border-color: rgba(255, 255, 255, 0.1);
+  border-color: var(--rh-ink-soft);
 }
 
 .tr-treatment-item.highlight {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(43, 42, 28, 0.05);
 }
 
 .tr-treatment-name {
   font-size: 1.15rem;
   font-weight: 700;
-  color: #fff;
+  color: var(--rh-ink);
   margin-bottom: 0.5rem;
   display: flex;
   align-items: center;
@@ -313,7 +313,7 @@
 
 .tr-treatment-desc {
   font-size: 0.95rem;
-  color: #94a3b8;
+  color: var(--rh-ink-soft);
   line-height: 1.6;
 }
 

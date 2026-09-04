@@ -24,14 +24,14 @@ const specialtyMeta: Record<string, { title: string; description: string; keywor
   implants: {
     title: 'Dental Implants in Dhaka — Advanced Implantology | RH Dental Care',
     description:
-      'Permanent dental implants at RH Dental Care, Dhaka. 3D-guided surgery, lifetime implant guarantee, 98% success rate. Single implant, All-on-4/6, implant bridges. BMDC-certified oral surgeon.',
+      'Permanent dental implants at RH Dental Care, Dhaka. 3D-guided surgery, lifetime implant guarantee, planned from a 3D CBCT scan. Single implant, All-on-4/6, implant bridges. BMDC-certified oral surgeon.',
     keywords: ['dental implants Dhaka', 'dental implant Bangladesh', 'All-on-4 implants Dhaka', 'implant dentist Dhaka', 'permanent tooth replacement Dhaka'],
   },
   'root-canal': {
     title: 'Painless Root Canal Treatment in Dhaka | RH Dental Care',
     description:
       'Painless root canal therapy at RH Dental Care, Dhaka using dental microscopes and rotary endodontics. Single-visit available, 5-year guarantee. BMDC-certified endodontist.',
-    keywords: ['root canal treatment Dhaka', 'painless root canal Bangladesh', 'endodontics Dhaka', 'root canal specialist Bangladesh', 'root canal dentist Dhaka'],
+    keywords: ['root canal treatment Dhaka', 'root canal treatment Bangladesh', 'endodontics Dhaka', 'root canal specialist Bangladesh', 'root canal dentist Dhaka'],
   },
   'gum-care': {
     title: 'Gum Disease Treatment & Periodontal Care in Dhaka | RH Dental Care',

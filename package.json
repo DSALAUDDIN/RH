@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "seo:audit": "node --experimental-strip-types scripts/seo-audit.mjs"
   },
   "dependencies": {
     "@prisma/client": "^6.19.3",
@@ -23,7 +24,8 @@
     "nodemailer": "^8.0.5",
     "prisma": "^6.19.3",
     "react": "19.2.4",
-    "react-dom": "19.2.4"
+    "react-dom": "19.2.4",
+    "server-only": "^0.0.1"
   },
   "devDependencies": {
     "@types/node": "^20",

@@ -1,0 +1,22 @@
+.rh-review-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--rh-2);
+  padding: 0.4rem 0.75rem;
+  border: 1px solid var(--rh-hairline);
+  border-radius: var(--rh-r-sm);
+  background: var(--rh-surface);
+  box-shadow: var(--rh-glow-sm);
+  color: var(--rh-ink);
+  font-size: var(--rh-step--1);
+  text-decoration: none;
+  transition: box-shadow var(--rh-dur) var(--rh-ease);
+}
+.rh-review-badge:hover { box-shadow: var(--rh-glow-md); }
+.rh-review-badge:focus-visible { outline: 2px solid var(--rh-accent); outline-offset: 3px; }
+
+.rh-review-stars { display: inline-flex; gap: 1px; color: var(--rh-hairline-strong); }
+.rh-review-stars .is-filled { color: var(--rh-brass); fill: var(--rh-brass-light); }
+
+.rh-review-value { font-weight: 700; font-variant-numeric: tabular-nums; }
+.rh-review-count { color: var(--rh-ink-soft); }

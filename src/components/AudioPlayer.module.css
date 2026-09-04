@@ -7,19 +7,19 @@
   height: 48px;
   border-radius: 50%;
   border: none;
-  background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
-  color: #ffffff;
+  background: linear-gradient(135deg, var(--rh-brass) 0%, var(--rh-sage-deep) 100%);
+  color: var(--rh-ink);
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 20px rgba(14, 165, 233, 0.4);
+  box-shadow: 0 4px 20px rgba(156, 124, 56, 0.4);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .audioToggle:hover {
   transform: scale(1.1);
-  box-shadow: 0 6px 28px rgba(14, 165, 233, 0.5);
+  box-shadow: 0 6px 28px rgba(156, 124, 56, 0.5);
 }
 
 .audioToggle:active {
@@ -43,11 +43,11 @@
 /* Dark mode support */
 @media (prefers-color-scheme: dark) {
   .audioToggle {
-    background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
-    box-shadow: 0 4px 20px rgba(2, 132, 199, 0.4);
+    background: linear-gradient(135deg, var(--rh-sage-deep) 0%, var(--rh-sage-deep) 100%);
+    box-shadow: 0 4px 20px rgba(85, 104, 79, 0.4);
   }
   
   .audioToggle:hover {
-    box-shadow: 0 6px 28px rgba(2, 132, 199, 0.5);
+    box-shadow: 0 6px 28px rgba(85, 104, 79, 0.5);
   }
 }

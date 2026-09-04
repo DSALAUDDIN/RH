@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { MapPin, Phone, Mail, MessageCircle, Clock, Shield } from 'lucide-react';
 import logo from '../assets/rhlogo.jpeg';
 import './Footer.css';
+import { BRANCHES } from '@/lib/branches';
 
 // SVG social icons
 const Facebook = ({ size = 20 }) => (
@@ -53,11 +54,13 @@ export default function Footer() {
           {/* ── Links & Specialties ── */}
           <div className="footer-links">
             <h3>Quick Links</h3>
-            <ul style={{ marginBottom: '2.5rem' }}>
+            <ul style={{ marginBottom: '2rem' }}>
               <li><Link href="/">Home</Link></li>
               <li><Link href="/about">About Our Clinic</Link></li>
-              <li><Link href="/treatments">Treatments & Pricing</Link></li>
-              <li><Link href="/contact">Book Appointment</Link></li>
+              <li><Link href="/banani">Banani VIP Suite</Link></li>
+              <li><Link href="/banasree">Banasree Flagship Hospital</Link></li>
+              <li><Link href="/treatments">Treatments</Link></li>
+              <li><Link href="/contact">Contact Hub</Link></li>
             </ul>
 
             <h3>Specialties</h3>
@@ -69,11 +72,11 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* ── Rampura Branch Card ── */}
+          {/* ── Banasree Branch Card ── */}
           <div className="location-card">
             <div className="location-map-wrap">
               <iframe
-                title="Rampura Branch Map"
+                title="Banasree Branch Map"
                 src="https://maps.google.com/maps?q=RH%20Dental%20Care,%20House%2042,%20Road%208,%20Block%20C,%20Banasree,%20Dhaka&t=&z=15&ie=UTF8&iwloc=&output=embed"
                 allowFullScreen={false}
                 loading="lazy"
@@ -81,7 +84,7 @@ export default function Footer() {
               ></iframe>
             </div>
             <div className="location-content">
-              <h4><MapPin size={18} /> Rampura Branch</h4>
+              <h4><MapPin size={18} /> Banasree Branch (Flagship)</h4>
               <ul>
                 <li>
                   <MapPin size={16} className="contact-icon" style={{ marginTop: '2px' }} />
@@ -89,13 +92,18 @@ export default function Footer() {
                 </li>
                 <li>
                   <Phone size={16} className="contact-icon" /> 
-                  <a href="tel:+8801775227902" style={{ fontWeight: 600, color: '#e2e8f0' }}>01775-227902</a>
+                  <a href={`tel:${BRANCHES.banasree.phone}`} style={{ fontWeight: 600, color: '#E4E0D2' }}>{BRANCHES.banasree.phoneDisplay}</a>
                 </li>
                 <li>
                   <Clock size={16} className="contact-icon" />
                   <span>3:00 PM – 10:00 PM (Thu: Closed)</span>
                 </li>
               </ul>
+              <div style={{ marginTop: '10px' }}>
+                <Link href="/banasree" style={{ fontSize: '0.82rem', color: 'var(--rh-brass)', textDecoration: 'none', fontWeight: 600 }}>
+                  Explore Flagship Hospital →
+                </Link>
+              </div>
             </div>
           </div>
 
@@ -111,7 +119,7 @@ export default function Footer() {
               ></iframe>
             </div>
             <div className="location-content">
-              <h4><MapPin size={18} /> Banani Branch</h4>
+              <h4><MapPin size={18} /> Banani Branch (Private Suite)</h4>
               <ul>
                 <li>
                   <MapPin size={16} className="contact-icon" style={{ marginTop: '2px' }} />
@@ -119,13 +127,18 @@ export default function Footer() {
                 </li>
                 <li>
                   <Phone size={16} className="contact-icon" /> 
-                  <a href="tel:+8801721367622" style={{ fontWeight: 600, color: '#e2e8f0' }}>01721-367622</a>
+                  <a href={`tel:${BRANCHES.banani.phone}`} style={{ fontWeight: 600, color: '#E4E0D2' }}>{BRANCHES.banani.phoneDisplay}</a>
                 </li>
                 <li>
                   <Mail size={16} className="contact-icon" />
                   <span><a href="mailto:drhasan0712@gmail.com">drhasan0712@gmail.com</a></span>
                 </li>
               </ul>
+              <div style={{ marginTop: '10px' }}>
+                <Link href="/banani" style={{ fontSize: '0.82rem', color: 'var(--rh-brass)', textDecoration: 'none', fontWeight: 600 }}>
+                  Explore Private Suite →
+                </Link>
+              </div>
             </div>
           </div>
 
@@ -137,32 +150,32 @@ export default function Footer() {
             <h3>We Accept</h3>
             <div className="payment-icons">
               {/* Visa */}
-              <div className="pay-badge" style={{ backgroundColor: '#fff', border: '1px solid #e2e8f0' }}>
-                <span style={{ color: '#1434CB', fontStyle: 'italic', fontWeight: 900, fontSize: '18px', letterSpacing: '-0.5px' }}>VISA</span>
+              <div className="pay-badge" style={{ backgroundColor: '#fff', border: '1px solid #E4E0D2' }}>
+                <span style={{ color: '#1434CB', fontStyle: 'italic', fontWeight: 600, fontSize: '18px', letterSpacing: '-0.5px' }}>VISA</span>
               </div>
               {/* Mastercard */}
-              <div className="pay-badge" style={{ backgroundColor: '#fff', border: '1px solid #e2e8f0', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <div className="pay-badge" style={{ backgroundColor: '#fff', border: '1px solid #E4E0D2', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <div style={{ width: '18px', height: '18px', borderRadius: '50%', backgroundColor: '#EB001B', position: 'relative', zIndex: 1 }}></div>
                 <div style={{ width: '18px', height: '18px', borderRadius: '50%', backgroundColor: '#F79E1B', marginLeft: '-8px', position: 'relative', zIndex: 0 }}></div>
               </div>
               {/* Amex */}
               <div className="pay-badge" style={{ backgroundColor: '#006FCF' }}>
-                <span style={{ color: '#fff', fontWeight: 700, fontSize: '11px', textTransform: 'uppercase', lineHeight: 1.1, textAlign: 'center', letterSpacing: '0.5px' }}>AMEX</span>
+                <span style={{ color: 'var(--rh-ink)', fontWeight: 700, fontSize: '11px', textTransform: 'uppercase', lineHeight: 1.1, textAlign: 'center', letterSpacing: '0.5px' }}>AMEX</span>
               </div>
               {/* Nexus */}
-              <div className="pay-badge" style={{ backgroundColor: '#fff', border: '1px solid #e2e8f0' }}>
-                <span style={{ color: '#005BBB', fontWeight: 800, fontSize: '15px', fontStyle: 'italic' }}>Nexus</span>
+              <div className="pay-badge" style={{ backgroundColor: '#fff', border: '1px solid #E4E0D2' }}>
+                <span style={{ color: '#005BBB', fontWeight: 600, fontSize: '15px', fontStyle: 'italic' }}>Nexus</span>
               </div>
               {/* bKash */}
               <div className="pay-badge" style={{ backgroundColor: '#DF146E' }}>
-                <span style={{ color: '#fff', fontWeight: 700, fontSize: '16px' }}>bKash</span>
+                <span style={{ color: 'var(--rh-ink)', fontWeight: 700, fontSize: '16px' }}>bKash</span>
               </div>
               {/* NPSB */}
-              <div className="pay-badge" style={{ backgroundColor: '#fff', border: '1px solid #e2e8f0' }}>
-                <span style={{ color: '#008C44', fontWeight: 900, fontSize: '15px' }}>NPSB</span>
+              <div className="pay-badge" style={{ backgroundColor: '#fff', border: '1px solid #E4E0D2' }}>
+                <span style={{ color: '#008C44', fontWeight: 600, fontSize: '15px' }}>NPSB</span>
               </div>
               {/* Google Pay */}
-              <div className="pay-badge" style={{ backgroundColor: '#fff', border: '1px solid #e2e8f0', gap: '4px' }}>
+              <div className="pay-badge" style={{ backgroundColor: '#fff', border: '1px solid #E4E0D2', gap: '4px' }}>
                 <span style={{ color: '#4285F4', fontWeight: 700, fontSize: '16px' }}>G</span>
                 <span style={{ color: '#5F6368', fontWeight: 500, fontSize: '16px' }}>Pay</span>
               </div>

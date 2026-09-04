@@ -91,13 +91,13 @@ export default function AdminDashboard() {
   };
 
   return (
-    <div style={{ minHeight: '100vh', backgroundColor: '#f8fafc', display: 'flex', fontFamily: 'sans-serif' }}>
+    <div style={{ minHeight: '100vh', backgroundColor: '#F7F5EE', display: 'flex', fontFamily: 'sans-serif' }}>
       
       {/* Sidebar Navigation */}
-      <aside style={{ width: '260px', backgroundColor: '#0f172a', color: '#fff', display: 'flex', flexDirection: 'column' }}>
-        <div style={{ padding: '24px', borderBottom: '1px solid #1e293b' }}>
-          <h2 style={{ margin: 0, fontSize: '1.25rem', fontWeight: 700, color: '#f8fafc', display: 'flex', alignItems: 'center', gap: '8px' }}>
-            <div style={{ width: '32px', height: '32px', backgroundColor: '#0ea5e9', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <aside style={{ width: '260px', backgroundColor: '#2B2A1C', color: '#fff', display: 'flex', flexDirection: 'column' }}>
+        <div style={{ padding: '24px', borderBottom: '1px solid #2B2A1C' }}>
+          <h2 style={{ margin: 0, fontSize: '1.25rem', fontWeight: 700, color: '#F7F5EE', display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <div style={{ width: '32px', height: '32px', backgroundColor: '#9C7C38', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <Star size={18} color="#fff" />
             </div>
             RH Dental CMS
@@ -105,42 +105,42 @@ export default function AdminDashboard() {
         </div>
 
         <nav style={{ flex: 1, padding: '24px 16px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
-          <a href="#" style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '12px 16px', borderRadius: '8px', color: '#94a3b8', textDecoration: 'none', fontWeight: 500 }}>
+          <a href="#" style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '12px 16px', borderRadius: '8px', color: '#8C8973', textDecoration: 'none', fontWeight: 500 }}>
             <LayoutDashboard size={20} /> Dashboard
           </a>
           
-          <a href="#" style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '12px 16px', borderRadius: '8px', backgroundColor: 'rgba(14, 165, 233, 0.1)', color: '#0ea5e9', textDecoration: 'none', fontWeight: 600 }}>
+          <a href="#" style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '12px 16px', borderRadius: '8px', backgroundColor: 'rgba(156, 124, 56, 0.1)', color: '#9C7C38', textDecoration: 'none', fontWeight: 600 }}>
             <Video size={20} /> Video Reviews
           </a>
 
-          <div style={{ marginTop: '24px', marginBottom: '8px', paddingLeft: '16px', fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase', color: '#475569', letterSpacing: '1px' }}>
+          <div style={{ marginTop: '24px', marginBottom: '8px', paddingLeft: '16px', fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase', color: '#5A5747', letterSpacing: '1px' }}>
             Future Scopes
           </div>
 
-          <a href="#" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '12px 16px', borderRadius: '8px', color: '#64748b', textDecoration: 'none', fontWeight: 500, opacity: 0.7, cursor: 'not-allowed' }}>
+          <a href="#" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '12px 16px', borderRadius: '8px', color: '#6E6B57', textDecoration: 'none', fontWeight: 500, opacity: 0.7, cursor: 'not-allowed' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
               <CalendarDays size={20} /> Appointments
             </div>
-            <span style={{ fontSize: '0.65rem', backgroundColor: '#334155', padding: '2px 6px', borderRadius: '4px', color: '#94a3b8' }}>SOON</span>
+            <span style={{ fontSize: '0.65rem', backgroundColor: '#45432F', padding: '2px 6px', borderRadius: '4px', color: '#8C8973' }}>SOON</span>
           </a>
 
-          <a href="#" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '12px 16px', borderRadius: '8px', color: '#64748b', textDecoration: 'none', fontWeight: 500, opacity: 0.7, cursor: 'not-allowed' }}>
+          <a href="#" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '12px 16px', borderRadius: '8px', color: '#6E6B57', textDecoration: 'none', fontWeight: 500, opacity: 0.7, cursor: 'not-allowed' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
               <FileText size={20} /> Blog Posts
             </div>
-            <span style={{ fontSize: '0.65rem', backgroundColor: '#334155', padding: '2px 6px', borderRadius: '4px', color: '#94a3b8' }}>SOON</span>
+            <span style={{ fontSize: '0.65rem', backgroundColor: '#45432F', padding: '2px 6px', borderRadius: '4px', color: '#8C8973' }}>SOON</span>
           </a>
 
-          <a href="#" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '12px 16px', borderRadius: '8px', color: '#64748b', textDecoration: 'none', fontWeight: 500, opacity: 0.7, cursor: 'not-allowed' }}>
+          <a href="#" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '12px 16px', borderRadius: '8px', color: '#6E6B57', textDecoration: 'none', fontWeight: 500, opacity: 0.7, cursor: 'not-allowed' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
               <Settings size={20} /> Settings
             </div>
-            <span style={{ fontSize: '0.65rem', backgroundColor: '#334155', padding: '2px 6px', borderRadius: '4px', color: '#94a3b8' }}>SOON</span>
+            <span style={{ fontSize: '0.65rem', backgroundColor: '#45432F', padding: '2px 6px', borderRadius: '4px', color: '#8C8973' }}>SOON</span>
           </a>
         </nav>
 
-        <div style={{ padding: '24px', borderTop: '1px solid #1e293b' }}>
-          <button onClick={handleLogout} style={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', padding: '12px', background: 'rgba(239, 68, 68, 0.1)', color: '#ef4444', border: 'none', borderRadius: '8px', cursor: 'pointer', fontWeight: 600, transition: 'background 0.2s' }}>
+        <div style={{ padding: '24px', borderTop: '1px solid #2B2A1C' }}>
+          <button onClick={handleLogout} style={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', padding: '12px', background: 'rgba(239, 68, 68, 0.1)', color: '#8A3B2A', border: 'none', borderRadius: '8px', cursor: 'pointer', fontWeight: 600, transition: 'background 0.2s' }}>
             <LogOut size={18} /> Logout
           </button>
         </div>
@@ -151,54 +151,54 @@ export default function AdminDashboard() {
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           
           <header style={{ marginBottom: '40px' }}>
-            <h1 style={{ margin: 0, fontSize: '2rem', fontWeight: 800, color: '#0f172a' }}>Video Reviews</h1>
-            <p style={{ color: '#64748b', marginTop: '8px' }}>Manage patient testimonials and upload new success stories.</p>
+            <h1 style={{ margin: 0, fontSize: '2rem', fontWeight: 600, color: '#2B2A1C' }}>Video Reviews</h1>
+            <p style={{ color: '#6E6B57', marginTop: '8px' }}>Manage patient testimonials and upload new success stories.</p>
           </header>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: '32px' }}>
           
           {/* Upload Form */}
           <div style={{ backgroundColor: '#fff', padding: '32px', borderRadius: '16px', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.1)' }}>
-            <h2 style={{ fontSize: '1.25rem', marginBottom: '24px', color: '#0f172a' }}>Upload New Review</h2>
+            <h2 style={{ fontSize: '1.25rem', marginBottom: '24px', color: '#2B2A1C' }}>Upload New Review</h2>
             
             <form onSubmit={handleUpload} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               <div>
-                <label style={{ display: 'block', fontSize: '0.875rem', marginBottom: '8px', color: '#475569', fontWeight: 600 }}>Patient Name</label>
+                <label style={{ display: 'block', fontSize: '0.875rem', marginBottom: '8px', color: '#5A5747', fontWeight: 600 }}>Patient Name</label>
                 <input
                   type="text"
                   value={patientName}
                   onChange={(e) => setPatientName(e.target.value)}
-                  style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '1px solid #cbd5e1', outline: 'none' }}
+                  style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '1px solid #C9C5B2', outline: 'none' }}
                   required
                 />
               </div>
 
               <div>
-                <label style={{ display: 'block', fontSize: '0.875rem', marginBottom: '8px', color: '#475569', fontWeight: 600 }}>Rating (1-5)</label>
+                <label style={{ display: 'block', fontSize: '0.875rem', marginBottom: '8px', color: '#5A5747', fontWeight: 600 }}>Rating (1-5)</label>
                 <input
                   type="number"
                   min="1"
                   max="5"
                   value={rating}
                   onChange={(e) => setRating(Number(e.target.value))}
-                  style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '1px solid #cbd5e1', outline: 'none' }}
+                  style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '1px solid #C9C5B2', outline: 'none' }}
                   required
                 />
               </div>
 
               <div>
-                <label style={{ display: 'block', fontSize: '0.875rem', marginBottom: '8px', color: '#475569', fontWeight: 600 }}>Video File (MP4/WebM)</label>
+                <label style={{ display: 'block', fontSize: '0.875rem', marginBottom: '8px', color: '#5A5747', fontWeight: 600 }}>Video File (MP4/WebM)</label>
                 <input
                   type="file"
                   accept="video/*"
                   onChange={(e) => setFile(e.target.files?.[0] || null)}
-                  style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '1px dashed #94a3b8', backgroundColor: '#f8fafc', cursor: 'pointer' }}
+                  style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '1px dashed #8C8973', backgroundColor: '#F7F5EE', cursor: 'pointer' }}
                   required
                 />
               </div>
 
               {message && (
-                <div style={{ padding: '12px', backgroundColor: message.includes('Error') ? '#fee2e2' : '#dcfce7', color: message.includes('Error') ? '#991b1b' : '#166534', borderRadius: '8px', fontSize: '0.875rem' }}>
+                <div style={{ padding: '12px', backgroundColor: message.includes('Error') ? '#F0E0D8' : '#DCE7D2', color: message.includes('Error') ? '#6B2C20' : '#45543F', borderRadius: '8px', fontSize: '0.875rem' }}>
                   {message}
                 </div>
               )}
@@ -206,7 +206,7 @@ export default function AdminDashboard() {
               <button
                 type="submit"
                 disabled={loading}
-                style={{ width: '100%', padding: '14px', borderRadius: '8px', border: 'none', backgroundColor: '#0ea5e9', color: '#fff', fontWeight: 600, cursor: loading ? 'not-allowed' : 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', marginTop: '8px' }}
+                style={{ width: '100%', padding: '14px', borderRadius: '8px', border: 'none', backgroundColor: '#9C7C38', color: '#fff', fontWeight: 600, cursor: loading ? 'not-allowed' : 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', marginTop: '8px' }}
               >
                 <UploadCloud size={20} /> {loading ? 'Processing...' : 'Upload Review'}
               </button>
@@ -215,11 +215,11 @@ export default function AdminDashboard() {
 
           {/* List of Reviews */}
           <div style={{ backgroundColor: '#fff', padding: '32px', borderRadius: '16px', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.1)' }}>
-            <h2 style={{ fontSize: '1.25rem', marginBottom: '24px', color: '#0f172a' }}>Existing Reviews ({reviews.length})</h2>
+            <h2 style={{ fontSize: '1.25rem', marginBottom: '24px', color: '#2B2A1C' }}>Existing Reviews ({reviews.length})</h2>
             
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               {reviews.map((review) => (
-                <div key={review.id} style={{ display: 'flex', gap: '16px', padding: '16px', border: '1px solid #e2e8f0', borderRadius: '12px', alignItems: 'center' }}>
+                <div key={review.id} style={{ display: 'flex', gap: '16px', padding: '16px', border: '1px solid #E4E0D2', borderRadius: '12px', alignItems: 'center' }}>
                   <div style={{ width: '120px', height: '70px', backgroundColor: '#000', borderRadius: '8px', overflow: 'hidden', flexShrink: 0 }}>
                     <video 
                       src={review.videoUrl} 
@@ -229,7 +229,7 @@ export default function AdminDashboard() {
                     />
                   </div>
                   <div>
-                    <h3 style={{ margin: '0 0 4px 0', fontSize: '1rem', color: '#0f172a', fontWeight: 600 }}>{review.patient}</h3>
+                    <h3 style={{ margin: '0 0 4px 0', fontSize: '1rem', color: '#2B2A1C', fontWeight: 600 }}>{review.patient}</h3>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '4px', fontSize: '0.875rem', color: '#eab308' }}>
                       {Array(review.rating).fill(0).map((_, i) => <CheckCircle2 key={i} size={14} />)}
                     </div>
@@ -237,7 +237,7 @@ export default function AdminDashboard() {
                   
                   <button 
                     onClick={() => handleDelete(review.id)}
-                    style={{ marginLeft: 'auto', background: 'none', border: 'none', color: '#ef4444', cursor: 'pointer', padding: '8px', borderRadius: '8px', transition: 'background 0.2s' }}
+                    style={{ marginLeft: 'auto', background: 'none', border: 'none', color: '#8A3B2A', cursor: 'pointer', padding: '8px', borderRadius: '8px', transition: 'background 0.2s' }}
                     onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = 'rgba(239, 68, 68, 0.1)'; }}
                     onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; }}
                     title="Delete Video"
@@ -248,7 +248,7 @@ export default function AdminDashboard() {
               ))}
 
               {reviews.length === 0 && (
-                <p style={{ color: '#94a3b8', textAlign: 'center', padding: '40px' }}>No reviews found. Upload one to get started.</p>
+                <p style={{ color: '#8C8973', textAlign: 'center', padding: '40px' }}>No reviews found. Upload one to get started.</p>
               )}
             </div>
           </div>

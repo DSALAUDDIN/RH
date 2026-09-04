@@ -4,9 +4,13 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
-  ArrowLeft, Search, ChevronDown, Star, ArrowUpRight, Clock, Calendar, CheckCircle2
+  ArrowLeft, Search, ChevronDown, Star, ArrowUpRight, Clock, Calendar, CheckCircle2,
+  Sparkles, ShieldCheck, CreditCard, Building2, Phone, MessageCircle
 } from 'lucide-react';
 import './treatments.css';
+import { useBranch } from '@/components/branch/BranchProvider';
+import BranchCTA from '@/components/branch/BranchCTA';
+import { BRANCHES } from '@/lib/branches';
 
 /* ────────────────────────────────────────────────
    Custom Dental Icons
@@ -101,9 +105,9 @@ const categories: Category[] = [
     title: 'Periodontology',
     focus: 'Diagnosis, prevention, and treatment of gum diseases',
     icon: <PerioIcon size={26} />,
-    color: '#0ea5e9',
-    colorLight: '#e0f2fe',
-    colorBg: 'linear-gradient(135deg, #0ea5e9, #0284c7)',
+    color: '#9C7C38',
+    colorLight: '#DCE7D2',
+    colorBg: 'linear-gradient(135deg, #9C7C38, #55684F)',
     treatments: [
       { name: 'Deep Curettage', description: 'Non-surgical periodontal scaling and root planing. Removes plaque, tartar & bacterial toxins from deep pockets.' },
       { name: 'Scaling', description: 'Professional dental cleaning to remove plaque, tartar & stains. Prevents gum disease and improves oral hygiene.' },
@@ -118,9 +122,9 @@ const categories: Category[] = [
     title: 'Oral & Maxillofacial Surgery',
     focus: 'Surgical management of oral diseases, trauma, and reconstruction',
     icon: <SurgeryIcon size={26} />,
-    color: '#ef4444',
-    colorLight: '#fee2e2',
-    colorBg: 'linear-gradient(135deg, #ef4444, #dc2626)',
+    color: '#8A3B2A',
+    colorLight: '#F0E0D8',
+    colorBg: 'linear-gradient(135deg, #8A3B2A, #7A3325)',
     treatments: [
       { name: 'Tooth Extraction (Surgical)', description: 'Surgical removal of impacted, fractured, or severely decayed teeth under local anesthesia.' },
       { name: 'Minor OT (Oral Surgery)', description: 'Minor surgical procedures including frenectomy, biopsies, abscess removal and alveoloplasty.' },
@@ -137,9 +141,9 @@ const categories: Category[] = [
     title: 'Conservative Dentistry & Endodontics',
     focus: 'Preservation and restoration of natural teeth',
     icon: <EndoIcon size={26} />,
-    color: '#6366f1',
-    colorLight: '#ede9fe',
-    colorBg: 'linear-gradient(135deg, #6366f1, #4f46e5)',
+    color: '#9C7C38',
+    colorLight: '#F1EEE3',
+    colorBg: 'linear-gradient(135deg, #9C7C38, #7E6329)',
     treatments: [
       { name: 'RCT + Crown Packages', description: 'Complete root canal therapy including crown (PFM, Premium PFM, or Zirconia options).', highlight: true },
       { name: 'RCT / RE-RCT (Only Treatment)', description: 'Root canal treatment to remove infected pulp and seal canals. Crown placed separately.' },
@@ -174,9 +178,9 @@ const categories: Category[] = [
     title: 'Orthodontics & Dentofacial Orthopedics',
     focus: 'Alignment of teeth and correction of jaw irregularities',
     icon: <OrthoIcon size={26} />,
-    color: '#8b5cf6',
+    color: '#9C7C38',
     colorLight: '#f3e8ff',
-    colorBg: 'linear-gradient(135deg, #8b5cf6, #7c3aed)',
+    colorBg: 'linear-gradient(135deg, #9C7C38, #7E6329)',
     treatments: [
       { name: 'Orthodontic Braces', description: 'Effective, reliable, and transformative teeth alignment. Ideal for simple to complex cases.', highlight: true },
       { name: 'Orthodontic Aligner', description: 'Virtually invisible and removable clear aligners. Discreet innovation and everyday comfort.', highlight: true },
@@ -189,9 +193,9 @@ const categories: Category[] = [
     title: 'Prosthodontics',
     focus: 'Restoration and replacement of missing teeth',
     icon: <ProsthoIcon size={26} />,
-    color: '#f59e0b',
-    colorLight: '#fef3c7',
-    colorBg: 'linear-gradient(135deg, #f59e0b, #d97706)',
+    color: 'var(--rh-brass)',
+    colorLight: '#EFE3CB',
+    colorBg: 'linear-gradient(135deg, #CDAE51, #9C7C38)',
     treatments: [
       { name: 'Re-insertion of Dislodged Crown', description: 'Re-cementing a crown that has fallen off or become loose back onto the prepared tooth.' },
       { name: 'Crown (Porcelain / Metal)', description: 'Ceramic or metal dental cap to fully cover and restore a damaged, decayed or root-canal-treated tooth.' },
@@ -212,9 +216,9 @@ const categories: Category[] = [
     title: 'Aesthetic Dentistry',
     focus: 'Improving the appearance of teeth and smile',
     icon: <AestheticIcon size={26} />,
-    color: '#ec4899',
-    colorLight: '#fce7f3',
-    colorBg: 'linear-gradient(135deg, #ec4899, #db2777)',
+    color: '#9C7C38',
+    colorLight: '#EFE3CB',
+    colorBg: 'linear-gradient(135deg, #9C7C38, #db2777)',
     treatments: [
       { name: 'Smile Designing', description: 'Comprehensive smile makeover blending art and science for a naturally perfect, camera-ready smile.', highlight: true },
       { name: 'Anterior Build-Up (Direct Veneer)', description: 'Composite resin applied to front teeth to improve shape, size, and color in a single visit.' },
@@ -231,9 +235,9 @@ const categories: Category[] = [
     title: 'Additional Treatments',
     focus: 'Cross-Departmental Focus',
     icon: <AdditionalIcon size={26} />,
-    color: '#10b981',
-    colorLight: '#d1fae5',
-    colorBg: 'linear-gradient(135deg, #10b981, #059669)',
+    color: '#55684F',
+    colorLight: '#DCE7D2',
+    colorBg: 'linear-gradient(135deg, #55684F, #45543F)',
     treatments: [
       { name: 'PRF (Platelet-Rich Fibrin)', description: 'Regenerative technique using patient\'s own blood to accelerate healing in grafts and periodontal procedures.' },
       { name: 'Dressing', description: 'Post-surgical wound dressing to protect surgical sites and support healing.' },
@@ -251,7 +255,7 @@ const signatureTreatments = [
     desc: 'Combines laser-assisted root canal therapy with intraoral scanner and 3D printer-fabricated resin crown — all in one day.',
     duration: '1 Day (3–4 hrs)',
     visits: '1',
-    color: '#6366f1',
+    color: '#9C7C38',
   },
   {
     sn: '02',
@@ -259,7 +263,7 @@ const signatureTreatments = [
     desc: 'Same-day implant placement and prosthesis attachment. Minimizes treatment time, restores function and aesthetics quickly.',
     duration: '1 Day (7–21 hrs)',
     visits: '3+',
-    color: '#0ea5e9',
+    color: '#9C7C38',
   },
   {
     sn: '03',
@@ -267,7 +271,7 @@ const signatureTreatments = [
     desc: 'Discreet, removable clear aligners designed using advanced digital planning for a confident, wire-free smile transformation.',
     duration: '12–24 Months',
     visits: '10–20',
-    color: '#8b5cf6',
+    color: '#9C7C38',
   },
   {
     sn: '04',
@@ -275,7 +279,7 @@ const signatureTreatments = [
     desc: 'Advanced laser-activated whitening gel removes deep stains. Safe, non-invasive, and delivers dramatic results in just 1 hour.',
     duration: '1 Hour',
     visits: '1',
-    color: '#f59e0b',
+    color: 'var(--rh-brass)',
   },
   {
     sn: '05',
@@ -283,7 +287,7 @@ const signatureTreatments = [
     desc: 'Platelet-Rich Fibrin is applied in bone grafts, sinus lifts, and periodontal treatments to accelerate healing and tissue regeneration.',
     duration: '—',
     visits: '—',
-    color: '#10b981',
+    color: '#55684F',
   },
 ];
 
@@ -292,16 +296,16 @@ export default function TreatmentsPage() {
   const [searchQuery, setSearchQuery] = useState('');
 
   const patientConcerns = [
-    { label: "I have a Toothache", icon: "😖", query: "root canal", color: "#ef4444" },
-    { label: "I want a Brighter Smile", icon: "✨", query: "whitening", color: "#ec4899" },
-    { label: "Replacing Missing Teeth", icon: "🦷", query: "implant", color: "#f59e0b" },
-    { label: "My Gums are Bleeding", icon: "🩸", query: "scaling", color: "#0ea5e9" },
+    { label: "I have a Toothache", icon: "😖", query: "root canal", color: "#8A3B2A" },
+    { label: "I want a Brighter Smile", icon: "✨", query: "whitening", color: "#9C7C38" },
+    { label: "Replacing Missing Teeth", icon: "🦷", query: "implant", color: "#CDAE51" },
+    { label: "My Gums are Bleeding", icon: "🩸", query: "scaling", color: "#9C7C38" },
     { label: "Checkup for my Child", icon: "👶", query: "child", color: "#f97316" },
-    { label: "Straightening Teeth", icon: "📐", query: "braces", color: "#8b5cf6" },
-    { label: "Broken or Chipped Tooth", icon: "💥", query: "crown", color: "#6366f1" },
-    { label: "Wisdom Tooth Pain", icon: "😩", query: "extraction", color: "#dc2626" },
-    { label: "Jaw Pain or Clicking", icon: "🤕", query: "tmj", color: "#14b8a6" },
-    { label: "I Think I Have a Cavity", icon: "🕳️", query: "filling", color: "#64748b" },
+    { label: "Straightening Teeth", icon: "📐", query: "braces", color: "#9C7C38" },
+    { label: "Broken or Chipped Tooth", icon: "💥", query: "crown", color: "#9C7C38" },
+    { label: "Wisdom Tooth Pain", icon: "😩", query: "extraction", color: "#7A3325" },
+    { label: "Jaw Pain or Clicking", icon: "🤕", query: "tmj", color: "#55684F" },
+    { label: "I Think I Have a Cavity", icon: "🕳️", query: "filling", color: "#6E6B57" },
   ];
 
   const filteredCategories = searchQuery
@@ -321,7 +325,7 @@ export default function TreatmentsPage() {
         <div className="tr-hero-content">
           <Link href="/specialties" style={{
             display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
-            color: 'rgba(255,255,255,0.6)', textDecoration: 'none',
+            color: 'var(--rh-ink-soft)', textDecoration: 'none',
             fontSize: '0.85rem', fontWeight: 600, marginBottom: '2rem',
             transition: 'color 0.3s ease',
           }} onMouseEnter={(e) => e.currentTarget.style.color = '#fff'} onMouseLeave={(e) => e.currentTarget.style.color = 'rgba(255,255,255,0.6)'}>
@@ -405,7 +409,7 @@ export default function TreatmentsPage() {
           style={{ marginBottom: '4rem' }}
         >
           <div style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
-            <p style={{ color: '#94a3b8', fontWeight: 700, fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
+            <p style={{ color: '#8C8973', fontWeight: 700, fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
               What Brings You Here Today?
             </p>
           </div>
@@ -418,8 +422,8 @@ export default function TreatmentsPage() {
                 style={{
                   display: 'flex', alignItems: 'center', gap: '0.5rem',
                   background: 'rgba(255, 255, 255, 0.03)', border: `1px solid rgba(255, 255, 255, 0.1)`,
-                  padding: '0.75rem 1.25rem', borderRadius: '999px',
-                  fontSize: '0.95rem', fontWeight: 600, color: '#f8fafc',
+                  padding: '0.75rem 1.25rem', borderRadius: '4px',
+                  fontSize: '0.95rem', fontWeight: 600, color: '#F7F5EE',
                   cursor: 'pointer', transition: 'all 0.3s ease',
                   boxShadow: '0 4px 10px rgba(0,0,0,0.2)',
                 }}
@@ -577,6 +581,71 @@ export default function TreatmentsPage() {
           })}
         </div>
         
+        {/* ── Dual-Branch Treatment & Pricing Policy ── */}
+        <section style={{ margin: '4rem 0', background: 'rgba(43, 42, 28, 0.7)', borderRadius: '24px', padding: '3rem 2rem', border: '1px solid rgba(255, 255, 255, 0.08)' }}>
+          <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
+            <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', background: 'rgba(205, 174, 81, 0.1)', color: 'var(--rh-brass)', padding: '6px 14px', borderRadius: '4px', fontSize: '0.8rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.75rem' }}>
+              <ShieldCheck size={14} /> Transparent Clinical Policy
+            </span>
+            <h2 style={{ fontSize: 'clamp(1.6rem, 3.5vw, 2.2rem)', fontWeight: 600, color: 'var(--rh-ink)', letterSpacing: '-0.02em', margin: '0 0 0.5rem 0' }}>
+              Treatment Planning by Branch
+            </h2>
+            <p style={{ color: '#8C8973', fontSize: '1rem', maxWidth: '650px', margin: '0 auto' }}>
+              Every treatment plan begins with digital imaging and specialist diagnosis. Select your preferred branch below to schedule your consultation.
+            </p>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2rem', maxWidth: '950px', margin: '0 auto' }}>
+            {/* Banani Card */}
+            <div style={{ background: 'rgba(255, 255, 255, 0.03)', border: '1px solid rgba(245, 158, 11, 0.3)', borderRadius: '20px', padding: '2rem', display: 'flex', flexDirection: 'column' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
+                <h3 style={{ fontSize: '1.3rem', fontWeight: 600, color: 'var(--rh-ink)', margin: 0 }}>Banani Branch</h3>
+                <span style={{ background: 'rgba(245, 158, 11, 0.15)', color: 'var(--rh-brass)', padding: '4px 10px', borderRadius: '6px', fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase' }}>Private Suite</span>
+              </div>
+              <p style={{ color: '#C9C5B2', fontSize: '0.9rem', lineHeight: 1.5, marginBottom: '1.25rem' }}>
+                Appointment-only executive care featuring private treatment suites, dedicated 3D CBCT imaging, and waiting room amenities.
+              </p>
+              <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 1.5rem 0', display: 'flex', flexDirection: 'column', gap: '8px', color: '#8C8973', fontSize: '0.85rem' }}>
+                <li style={{ display: 'flex', alignItems: 'center', gap: '8px' }}><CheckCircle2 size={15} color="#CDAE51" /> Personalized package estimates at consultation</li>
+                <li style={{ display: 'flex', alignItems: 'center', gap: '8px' }}><CheckCircle2 size={15} color="#CDAE51" /> Private 1-on-1 specialist session</li>
+                <li style={{ display: 'flex', alignItems: 'center', gap: '8px' }}><CheckCircle2 size={15} color="#CDAE51" /> Priority executive scheduling</li>
+              </ul>
+              <div style={{ marginTop: 'auto', display: 'flex', gap: '10px' }}>
+                <BranchCTA action="call" branch="banani" className="cg-btn-secondary" style={{ flex: 1, padding: '0.75rem', fontSize: '0.88rem' }}>
+                  <Phone size={15} /> {BRANCHES.banani.phoneDisplay}
+                </BranchCTA>
+                <BranchCTA action="whatsapp" branch="banani" className="cg-btn-secondary" style={{ flex: 1, padding: '0.75rem', fontSize: '0.88rem', color: '#25D366' }}>
+                  <MessageCircle size={15} /> WhatsApp
+                </BranchCTA>
+              </div>
+            </div>
+
+            {/* Banasree Card */}
+            <div style={{ background: 'rgba(255, 255, 255, 0.03)', border: '1px solid rgba(85, 104, 79, 0.3)', borderRadius: '20px', padding: '2rem', display: 'flex', flexDirection: 'column' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
+                <h3 style={{ fontSize: '1.3rem', fontWeight: 600, color: 'var(--rh-ink)', margin: 0 }}>Banasree Branch</h3>
+                <span style={{ background: 'rgba(85, 104, 79, 0.15)', color: 'var(--rh-brass)', padding: '4px 10px', borderRadius: '6px', fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase' }}>Flagship Hospital</span>
+              </div>
+              <p style={{ color: '#C9C5B2', fontSize: '0.9rem', lineHeight: 1.5, marginBottom: '1.25rem' }}>
+                Full-service multi-chair hospital setup with on-site master digital lab, multi-specialty surgical team, and family treatment plans.
+              </p>
+              <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 1.5rem 0', display: 'flex', flexDirection: 'column', gap: '8px', color: '#8C8973', fontSize: '0.85rem' }}>
+                <li style={{ display: 'flex', alignItems: 'center', gap: '8px' }}><CheckCircle2 size={15} color="#CDAE51" /> 0% Interest EMI facilities available</li>
+                <li style={{ display: 'flex', alignItems: 'center', gap: '8px' }}><CheckCircle2 size={15} color="#CDAE51" /> In-house CAD/CAM lab turnaround</li>
+                <li style={{ display: 'flex', alignItems: 'center', gap: '8px' }}><CheckCircle2 size={15} color="#CDAE51" /> Complete multi-chair family capacity</li>
+              </ul>
+              <div style={{ marginTop: 'auto', display: 'flex', gap: '10px' }}>
+                <BranchCTA action="call" branch="banasree" className="cg-btn-secondary" style={{ flex: 1, padding: '0.75rem', fontSize: '0.88rem' }}>
+                  <Phone size={15} /> {BRANCHES.banasree.phoneDisplay}
+                </BranchCTA>
+                <BranchCTA action="whatsapp" branch="banasree" className="cg-btn-secondary" style={{ flex: 1, padding: '0.75rem', fontSize: '0.88rem', color: '#25D366' }}>
+                  <MessageCircle size={15} /> WhatsApp
+                </BranchCTA>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* ── CTA Section (Neuromarketing: Scarcity & Action) ── */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -587,15 +656,15 @@ export default function TreatmentsPage() {
         >
           <div className="tr-cta-bg-fx"></div>
           <div className="tr-cta-content">
-            <div className="tr-cta-badge">Limited Slots Available Today</div>
+            <div className="tr-cta-badge">Two branches, one clinical team</div>
             <h2>Secure Your Brilliant Smile Today</h2>
             <p>
               Our elite specialists are ready to architect your personalized dental treatment plan. Experience dentistry at its highest level.
             </p>
             <div className="tr-cta-actions">
-              <Link href="/contact" className="tr-btn-primary">
-                Book Priority Consultation
-              </Link>
+              <BranchCTA action="book" className="tr-btn-primary">
+                Request an appointment
+              </BranchCTA>
               <div className="tr-cta-note">
                 <CheckCircle2 size={16} /> Instant Confirmation • No Wait Time
               </div>

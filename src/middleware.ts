@@ -1,10 +1,7 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 import { jwtVerify } from 'jose';
-
-const SECRET_KEY = new TextEncoder().encode(
-  process.env.JWT_SECRET || 'fallback_secret_key_for_dev'
-);
+import { getAuthSecret } from '@/lib/auth-secret';
 
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
@@ -12,13 +9,16 @@ export async function middleware(request: NextRequest) {
   // Only protect routes under /admin/dashboard
   if (pathname.startsWith('/admin/dashboard')) {
     const token = request.cookies.get('admin_token')?.value;
+    const secret = getAuthSecret();
 
-    if (!token) {
+    // No secret configured in production → no token can be trusted. Deny,
+    // rather than fall back to a secret that is public in the repository.
+    if (!token || !secret) {
       return NextResponse.redirect(new URL('/admin', request.url));
     }
 
     try {
-      await jwtVerify(token, SECRET_KEY);
+      await jwtVerify(token, secret);
       return NextResponse.next();
     } catch (error) {
       // Invalid or expired token

@@ -59,7 +59,7 @@ const specialtiesData: Record<string, SpecialtyDetail> = {
       'Complete 360° view of teeth, jaw, and sinuses',
       'Instant digital results for faster diagnosis',
       'Perfect for implant planning and complex cases',
-      'Non-invasive and completely painless',
+      'Non-invasive and carried out under local anaesthetic',
     ],
     process: [
       { step: 'Quick Scan', desc: 'Single 20-second rotation captures everything' },
@@ -70,8 +70,8 @@ const specialtiesData: Record<string, SpecialtyDetail> = {
     duration: '20 seconds',
     recovery: 'None required',
     warranty: 'Digital records stored for life',
-    accentColor: '#0ea5e9',
-    accentLight: '#e0f2fe',
+    accentColor: '#9C7C38',
+    accentLight: '#DCE7D2',
   },
   'braces': {
     title: 'Orthodontics & Clear Aligners',
@@ -98,8 +98,8 @@ const specialtiesData: Record<string, SpecialtyDetail> = {
     duration: '6-18 months',
     recovery: 'Immediate',
     warranty: 'Retainer guarantee',
-    accentColor: '#8b5cf6',
-    accentLight: '#ede9fe',
+    accentColor: '#9C7C38',
+    accentLight: '#F1EEE3',
   },
   'zirconia': {
     title: 'Premium Zirconia Restoration',
@@ -125,8 +125,8 @@ const specialtiesData: Record<string, SpecialtyDetail> = {
     duration: '2-3 visits',
     recovery: 'Same day function',
     warranty: '10-year guarantee',
-    accentColor: '#f59e0b',
-    accentLight: '#fef3c7',
+    accentColor: '#CDAE51',
+    accentLight: '#EFE3CB',
   },
   'implants': {
     title: 'Advanced Dental Implantology',
@@ -142,7 +142,7 @@ const specialtiesData: Record<string, SpecialtyDetail> = {
       'Prevents bone loss and maintains facial structure',
       'Functions exactly like natural teeth',
       '3D guided surgery for precision placement',
-      '98% success rate with proper care',
+      'planned from a 3D CBCT scan with proper care',
     ],
     process: [
       { step: '3D Planning', desc: 'Precise implant positioning using CT scans' },
@@ -153,8 +153,8 @@ const specialtiesData: Record<string, SpecialtyDetail> = {
     duration: '3-6 months total',
     recovery: '7-10 days',
     warranty: 'Lifetime implant guarantee',
-    accentColor: '#10b981',
-    accentLight: '#d1fae5',
+    accentColor: '#55684F',
+    accentLight: '#DCE7D2',
   },
   'root-canal': {
     title: 'Painless Root Canal Therapy',
@@ -181,8 +181,8 @@ const specialtiesData: Record<string, SpecialtyDetail> = {
     duration: '60-90 minutes',
     recovery: '1-2 days mild soreness',
     warranty: '5-year success guarantee',
-    accentColor: '#ef4444',
-    accentLight: '#fee2e2',
+    accentColor: '#8A3B2A',
+    accentLight: '#F0E0D8',
   },
   'gum-care': {
     title: 'Advanced Periodontal Care',
@@ -208,8 +208,8 @@ const specialtiesData: Record<string, SpecialtyDetail> = {
     duration: '2-4 sessions',
     recovery: '3-5 days',
     warranty: 'Ongoing care program',
-    accentColor: '#ec4899',
-    accentLight: '#fce7f3',
+    accentColor: '#9C7C38',
+    accentLight: '#EFE3CB',
   },
   'kids-care': {
     title: 'Specialized Pediatric Dentistry',
@@ -262,13 +262,13 @@ const specialtiesData: Record<string, SpecialtyDetail> = {
     duration: '1-3 visits',
     recovery: 'Immediate',
     warranty: '5+ years guarantee on veneers',
-    accentColor: '#ec4899',
-    accentLight: '#fce7f3',
+    accentColor: '#9C7C38',
+    accentLight: '#EFE3CB',
   },
   'dental-tourism': {
     title: 'RH Dental Tourism',
     category: 'Global Travel Care',
-    tagline: 'World-Class Dental Care & Beautiful Bangladesh',
+    tagline: 'Considered Dental Care & Beautiful Bangladesh',
     bannerImg: dentalTourismBanner,
     flyerImg: dentalTourismBanner,
     flyerFileName: 'RH-Dental-Tourism.png',
@@ -290,7 +290,7 @@ const specialtiesData: Record<string, SpecialtyDetail> = {
     duration: 'Bespoke Schedules',
     recovery: 'Varies by treatment',
     warranty: 'Digital records & warranty package',
-    accentColor: '#14b8a6',
+    accentColor: '#55684F',
     accentLight: '#ccfbf1',
   },
 };
@@ -357,7 +357,7 @@ function FlyerLightbox({
             position: 'fixed',
             inset: 0,
             zIndex: 9999,
-            background: 'rgba(2,6,23,0.92)',
+            background: 'rgba(247, 245, 238, 0.92)',
             backdropFilter: 'blur(16px)',
             display: 'flex',
             alignItems: 'center',
@@ -390,8 +390,8 @@ function FlyerLightbox({
               padding: '0 0.25rem',
             }}>
               <div>
-                <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.1em', margin: 0 }}>Treatment Flyer</p>
-                <p style={{ color: '#fff', fontSize: '1rem', fontWeight: 700, margin: 0 }}>{title}</p>
+                <p style={{ color: 'var(--rh-ink-soft)', fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.1em', margin: 0 }}>Treatment Flyer</p>
+                <p style={{ color: 'var(--rh-ink)', fontSize: '1rem', fontWeight: 700, margin: 0 }}>{title}</p>
               </div>
               <button
                 onClick={onClose}
@@ -401,7 +401,7 @@ function FlyerLightbox({
                   borderRadius: '50%',
                   background: 'rgba(255,255,255,0.1)',
                   border: '1px solid rgba(255,255,255,0.15)',
-                  color: '#fff',
+                  color: 'var(--rh-ink)',
                   cursor: 'pointer',
                   display: 'flex',
                   alignItems: 'center',
@@ -424,7 +424,7 @@ function FlyerLightbox({
               maxHeight: 'calc(90vh - 130px)',
               borderRadius: '1rem',
               overflow: 'hidden',
-              boxShadow: '0 30px 80px rgba(0,0,0,0.6)',
+              boxShadow: '0 30px 80px rgba(43, 42, 28, 0.60)',
               border: '1px solid rgba(255,255,255,0.08)',
             }}>
               <Image
@@ -451,8 +451,8 @@ function FlyerLightbox({
               style={{
                 width: '100%',
                 padding: '1rem',
-                background: 'linear-gradient(135deg, #0ea5e9, #0284c7)',
-                color: '#fff',
+                background: 'linear-gradient(135deg, #9C7C38, #55684F)',
+                color: 'var(--rh-ink)',
                 border: 'none',
                 borderRadius: '0.875rem',
                 fontWeight: 700,
@@ -462,7 +462,7 @@ function FlyerLightbox({
                 alignItems: 'center',
                 justifyContent: 'center',
                 gap: '0.75rem',
-                boxShadow: '0 8px 30px rgba(14,165,233,0.4)',
+                boxShadow: '0 8px 30px rgba(156,124,56,0.4)',
                 transition: 'all 0.2s ease',
                 letterSpacing: '-0.01em',
               }}
@@ -490,14 +490,14 @@ export default function SpecialtyDetailPage() {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        background: '#020617',
-        color: '#fff',
+        background: 'var(--rh-surface)',
+        color: 'var(--rh-ink)',
         fontSize: '2rem',
-        fontWeight: 800
+        fontWeight: 600
       }}>
         <div>
           <h1 style={{ marginBottom: '2rem' }}>Specialty Not Found</h1>
-          <Link href="/specialties" style={{ color: '#0ea5e9', fontSize: '1.2rem' }}>
+          <Link href="/specialties" style={{ color: '#9C7C38', fontSize: '1.2rem' }}>
             ← Back to Specialties
           </Link>
         </div>
@@ -516,7 +516,7 @@ export default function SpecialtyDetailPage() {
         onClose={() => setLightboxOpen(false)}
       />
 
-      <div style={{ background: '#f8fafc', minHeight: '100vh', paddingTop: 'var(--nav-height, 80px)' }}>
+      <div style={{ background: '#F7F5EE', minHeight: '100vh', paddingTop: 'var(--nav-height, 80px)' }}>
 
         {/* ── Sticky Top Nav Bar ── */}
         <div style={{
@@ -535,7 +535,7 @@ export default function SpecialtyDetailPage() {
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '0.5rem',
-                color: '#64748b',
+                color: '#6E6B57',
                 textDecoration: 'none',
                 fontSize: '0.9rem',
                 fontWeight: 600,
@@ -543,7 +543,7 @@ export default function SpecialtyDetailPage() {
                 padding: '0.4rem 0.75rem',
                 borderRadius: '0.5rem',
                 border: '1px solid rgba(0,0,0,0.08)',
-                background: '#f8fafc',
+                background: '#F7F5EE',
               }}
             >
               <ArrowLeft size={16} />
@@ -557,7 +557,7 @@ export default function SpecialtyDetailPage() {
                 style={{
                   color: specialty.accentColor,
                   fontSize: '0.75rem',
-                  fontWeight: 800,
+                  fontWeight: 600,
                   textTransform: 'uppercase',
                   letterSpacing: '0.12em',
                   display: 'flex',
@@ -565,7 +565,7 @@ export default function SpecialtyDetailPage() {
                   gap: '0.4rem',
                   background: specialty.accentLight,
                   padding: '0.35rem 0.875rem',
-                  borderRadius: '100px',
+                  borderRadius: '4px',
                 }}
               >
                 <Sparkles size={12} />
@@ -583,14 +583,14 @@ export default function SpecialtyDetailPage() {
                   alignItems: 'center',
                   gap: '0.4rem',
                   padding: '0.4rem 1rem',
-                  background: 'linear-gradient(135deg, #0ea5e9, #0284c7)',
-                  color: '#fff',
+                  background: 'linear-gradient(135deg, #9C7C38, #55684F)',
+                  color: 'var(--rh-ink)',
                   border: 'none',
-                  borderRadius: '100px',
+                  borderRadius: '4px',
                   fontSize: '0.8rem',
                   fontWeight: 700,
                   cursor: 'pointer',
-                  boxShadow: '0 4px 14px rgba(14,165,233,0.3)',
+                  boxShadow: '0 4px 14px rgba(156,124,56,0.3)',
                   transition: 'all 0.2s ease',
                 }}
               >
@@ -694,10 +694,10 @@ export default function SpecialtyDetailPage() {
                     style={{
                       flex: 1,
                       padding: '0.85rem 1rem',
-                      background: 'linear-gradient(135deg, #0ea5e9, #0284c7)',
+                      background: 'linear-gradient(135deg, #9C7C38, #55684F)',
                       border: 'none',
                       borderRadius: '0.875rem',
-                      color: '#fff',
+                      color: 'var(--rh-ink)',
                       fontWeight: 700,
                       fontSize: '0.85rem',
                       cursor: 'pointer',
@@ -705,7 +705,7 @@ export default function SpecialtyDetailPage() {
                       alignItems: 'center',
                       justifyContent: 'center',
                       gap: '0.5rem',
-                      boxShadow: '0 6px 20px rgba(14,165,233,0.3)',
+                      boxShadow: '0 6px 20px rgba(156,124,56,0.3)',
                       transition: 'all 0.2s ease',
                     }}
                   >
@@ -718,7 +718,7 @@ export default function SpecialtyDetailPage() {
                 <p style={{
                   textAlign: 'center',
                   fontSize: '0.75rem',
-                  color: '#94a3b8',
+                  color: '#8C8973',
                   fontWeight: 500,
                   marginTop: '0.75rem',
                   marginBottom: 0,
@@ -743,9 +743,9 @@ export default function SpecialtyDetailPage() {
                 background: specialty.accentLight,
                 color: specialty.accentColor,
                 padding: '0.4rem 1rem',
-                borderRadius: '100px',
+                borderRadius: '4px',
                 fontSize: '0.78rem',
-                fontWeight: 800,
+                fontWeight: 600,
                 textTransform: 'uppercase',
                 letterSpacing: '0.1em',
                 marginBottom: '1.5rem',
@@ -758,10 +758,10 @@ export default function SpecialtyDetailPage() {
               <div style={{ marginBottom: '2.5rem' }}>
                 <h1 style={{
                   fontSize: 'clamp(2rem, 4vw, 3.2rem)',
-                  fontWeight: 900,
-                  color: '#0f172a',
+                  fontWeight: 600,
+                  color: '#2B2A1C',
                   marginBottom: '1rem',
-                  letterSpacing: '-0.04em',
+                  letterSpacing: '-0.02em',
                   lineHeight: 1.1,
                 }}>
                   {specialty.title}
@@ -782,13 +782,13 @@ export default function SpecialtyDetailPage() {
                   width: '60px',
                   height: '4px',
                   background: `linear-gradient(90deg, ${specialty.accentColor}, ${specialty.accentColor}40)`,
-                  borderRadius: '100px',
+                  borderRadius: '4px',
                   marginBottom: '1.5rem',
                 }} />
 
                 <p style={{
                   fontSize: '1.05rem',
-                  color: '#475569',
+                  color: '#5A5747',
                   lineHeight: 1.9,
                 }}>
                   {specialty.description}
@@ -806,9 +806,9 @@ export default function SpecialtyDetailPage() {
                 }}
               >
                 {[
-                  { icon: <Clock size={22} />, label: 'Duration', value: specialty.duration, bg: 'linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%)', color: '#0369a1', border: 'rgba(14,165,233,0.2)' },
+                  { icon: <Clock size={22} />, label: 'Duration', value: specialty.duration, bg: 'linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%)', color: '#55684F', border: 'rgba(156,124,56,0.2)' },
                   { icon: <Shield size={22} />, label: 'Recovery', value: specialty.recovery, bg: 'linear-gradient(135deg, #e9d5ff 0%, #d8b4fe 100%)', color: '#7e22ce', border: 'rgba(139,92,246,0.2)' },
-                  { icon: <Award size={22} />, label: 'Warranty', value: specialty.warranty, bg: 'linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%)', color: '#047857', border: 'rgba(16,185,129,0.2)' },
+                  { icon: <Award size={22} />, label: 'Warranty', value: specialty.warranty, bg: 'linear-gradient(135deg, #DCE7D2 0%, #a7f3d0 100%)', color: '#047857', border: 'rgba(85,104,79,0.2)' },
                 ].map(({ icon, label, value, bg, color, border }) => (
                   <motion.div
                     key={label}
@@ -823,7 +823,7 @@ export default function SpecialtyDetailPage() {
                   >
                     <div style={{ color, marginBottom: '0.6rem' }}>{icon}</div>
                     <div style={{ fontSize: '0.7rem', color, fontWeight: 700, marginBottom: '0.25rem', textTransform: 'uppercase', letterSpacing: '0.06em' }}>{label}</div>
-                    <div style={{ fontSize: '1.05rem', fontWeight: 900, color: '#0f172a', lineHeight: 1.3 }}>{value}</div>
+                    <div style={{ fontSize: '1.05rem', fontWeight: 600, color: '#2B2A1C', lineHeight: 1.3 }}>{value}</div>
                   </motion.div>
                 ))}
               </div>
@@ -832,8 +832,8 @@ export default function SpecialtyDetailPage() {
               <div>
                 <h2 style={{
                   fontSize: '1.6rem',
-                  fontWeight: 900,
-                  color: '#0f172a',
+                  fontWeight: 600,
+                  color: '#2B2A1C',
                   marginBottom: '1.25rem',
                   letterSpacing: '-0.03em',
                 }}>
@@ -870,7 +870,7 @@ export default function SpecialtyDetailPage() {
                       />
                       <span style={{
                         fontSize: '0.97rem',
-                        color: '#334155',
+                        color: '#45432F',
                         lineHeight: 1.7,
                         fontWeight: 500,
                       }}>
@@ -898,9 +898,9 @@ export default function SpecialtyDetailPage() {
                 background: specialty.accentLight,
                 color: specialty.accentColor,
                 padding: '0.35rem 1rem',
-                borderRadius: '100px',
+                borderRadius: '4px',
                 fontSize: '0.75rem',
-                fontWeight: 800,
+                fontWeight: 600,
                 textTransform: 'uppercase',
                 letterSpacing: '0.1em',
                 marginBottom: '1rem',
@@ -909,8 +909,8 @@ export default function SpecialtyDetailPage() {
               </span>
               <h2 style={{
                 fontSize: '2.25rem',
-                fontWeight: 900,
-                color: '#0f172a',
+                fontWeight: 600,
+                color: '#2B2A1C',
                 letterSpacing: '-0.03em',
               }}>
                 Treatment Process
@@ -961,11 +961,11 @@ export default function SpecialtyDetailPage() {
                     height: '3rem',
                     borderRadius: '50%',
                     background: `linear-gradient(135deg, ${specialty.accentColor}, ${specialty.accentColor}cc)`,
-                    color: '#fff',
+                    color: 'var(--rh-ink)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    fontWeight: 900,
+                    fontWeight: 600,
                     fontSize: '1.15rem',
                     boxShadow: `0 8px 24px ${specialty.accentColor}50`,
                     marginBottom: '1.25rem',
@@ -976,15 +976,15 @@ export default function SpecialtyDetailPage() {
 
                   <h3 style={{
                     fontSize: '1.2rem',
-                    fontWeight: 800,
-                    color: '#0f172a',
+                    fontWeight: 600,
+                    color: '#2B2A1C',
                     marginBottom: '0.75rem',
                     letterSpacing: '-0.02em',
                   }}>
                     {step.step}
                   </h3>
                   <p style={{
-                    color: '#64748b',
+                    color: '#6E6B57',
                     fontSize: '0.97rem',
                     lineHeight: 1.7,
                     margin: 0,
@@ -1033,10 +1033,10 @@ export default function SpecialtyDetailPage() {
                 />
               </div>
               <div>
-                <p style={{ margin: 0, fontWeight: 800, fontSize: '1.1rem', color: '#0f172a' }}>
+                <p style={{ margin: 0, fontWeight: 600, fontSize: '1.1rem', color: '#2B2A1C' }}>
                   📋 Treatment Flyer Available
                 </p>
-                <p style={{ margin: 0, color: '#64748b', fontSize: '0.9rem', marginTop: '0.25rem' }}>
+                <p style={{ margin: 0, color: '#6E6B57', fontSize: '0.9rem', marginTop: '0.25rem' }}>
                   Download or view our complete {specialty.title.toLowerCase()} information sheet
                 </p>
               </div>
@@ -1072,7 +1072,7 @@ export default function SpecialtyDetailPage() {
                   padding: '0.875rem 1.75rem',
                   background: `linear-gradient(135deg, ${specialty.accentColor}, ${specialty.accentColor}cc)`,
                   border: 'none',
-                  color: '#fff',
+                  color: 'var(--rh-ink)',
                   borderRadius: '0.875rem',
                   fontWeight: 700,
                   fontSize: '0.9rem',
@@ -1135,11 +1135,11 @@ export default function SpecialtyDetailPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
             style={{
-              background: 'linear-gradient(135deg, #020617 0%, #0f172a 100%)',
+              background: 'linear-gradient(135deg, #1F1E14 0%, #2B2A1C 100%)',
               borderRadius: '2rem',
               padding: '4rem 3rem',
               textAlign: 'center',
-              boxShadow: '0 30px 70px rgba(2,6,23,0.3)',
+              boxShadow: '0 30px 70px rgba(247, 245, 238, 0.42)',
               position: 'relative',
               overflow: 'hidden',
             }}
@@ -1154,7 +1154,7 @@ export default function SpecialtyDetailPage() {
             <div style={{
               position: 'absolute', bottom: '-10%', right: '10%',
               width: '300px', height: '300px',
-              background: 'radial-gradient(circle, rgba(56,189,248,0.2) 0%, transparent 70%)',
+              background: 'radial-gradient(circle, rgba(205,174,81,0.2) 0%, transparent 70%)',
               borderRadius: '50%', filter: 'blur(50px)',
             }} />
 
@@ -1163,8 +1163,8 @@ export default function SpecialtyDetailPage() {
                 display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
                 background: `${specialty.accentColor}20`,
                 color: specialty.accentColor,
-                padding: '0.4rem 1rem', borderRadius: '100px',
-                fontSize: '0.75rem', fontWeight: 800,
+                padding: '0.4rem 1rem', borderRadius: '4px',
+                fontSize: '0.75rem', fontWeight: 600,
                 textTransform: 'uppercase', letterSpacing: '0.1em',
                 marginBottom: '1.5rem',
               }}>
@@ -1174,17 +1174,17 @@ export default function SpecialtyDetailPage() {
 
               <h3 style={{
                 fontSize: 'clamp(1.75rem, 3vw, 2.75rem)',
-                fontWeight: 900, color: '#fff',
+                fontWeight: 600, color: 'var(--rh-ink)',
                 marginBottom: '1.25rem', letterSpacing: '-0.03em',
               }}>
                 Ready to Transform Your Smile?
               </h3>
               <p style={{
-                fontSize: '1.1rem', color: 'rgba(255,255,255,0.7)',
+                fontSize: '1.1rem', color: 'var(--rh-ink-soft)',
                 marginBottom: '2.5rem', maxWidth: '520px',
                 margin: '0 auto 2.5rem', lineHeight: 1.7,
               }}>
-                Book your consultation today and experience world-class dental care
+                Book your consultation today and experience dental care
               </p>
 
               <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
@@ -1195,8 +1195,8 @@ export default function SpecialtyDetailPage() {
                       display: 'inline-flex', alignItems: 'center', gap: '0.75rem',
                       padding: '1.1rem 2.75rem',
                       background: `linear-gradient(135deg, ${specialty.accentColor}, ${specialty.accentColor}cc)`,
-                      color: '#fff', borderRadius: '100px',
-                      fontWeight: 800, fontSize: '1rem', textDecoration: 'none',
+                      color: 'var(--rh-ink)', borderRadius: '4px',
+                      fontWeight: 600, fontSize: '1rem', textDecoration: 'none',
                       boxShadow: `0 15px 40px ${specialty.accentColor}50`,
                       transition: 'all 0.3s ease',
                     }}
@@ -1215,7 +1215,7 @@ export default function SpecialtyDetailPage() {
                     padding: '1.1rem 2.25rem',
                     background: 'rgba(255,255,255,0.1)',
                     border: '1.5px solid rgba(255,255,255,0.2)',
-                    color: '#fff', borderRadius: '100px',
+                    color: 'var(--rh-ink)', borderRadius: '4px',
                     fontWeight: 700, fontSize: '1rem', cursor: 'pointer',
                     backdropFilter: 'blur(10px)',
                     transition: 'all 0.3s ease',

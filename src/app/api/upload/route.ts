@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import { v2 as cloudinary } from 'cloudinary';
 import { jwtVerify } from 'jose';
 import { cookies } from 'next/headers';
+import { getAuthSecret } from '@/lib/auth-secret';
 
 // Configure Cloudinary
 cloudinary.config({
@@ -10,17 +11,19 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
-const SECRET_KEY = new TextEncoder().encode(
-  process.env.JWT_SECRET || 'fallback_secret_key_for_dev'
-);
 
 export async function POST(req: Request) {
+  const secret = getAuthSecret();
+  if (!secret) {
+    return NextResponse.json({ success: false, message: 'Not configured.' }, { status: 503 });
+  }
+
   try {
     // 1. Verify Admin token
     const cookieStore = await cookies();
     const token = cookieStore.get('admin_token')?.value;
     if (!token) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
-    await jwtVerify(token, SECRET_KEY);
+    await jwtVerify(token, secret);
 
     // 2. Parse FormData
     const formData = await req.formData();

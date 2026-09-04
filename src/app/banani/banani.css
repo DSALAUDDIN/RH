@@ -1,350 +1,251 @@
-/* src/app/banani/banani.css */
+/* /banani — built from the branch photographs and the master brief §3.
+   docs/banani-design-reference.html was not in the repo (audit §4).
 
-.banani-branch-page {
-  background-color: #020617;
-  color: #f8fafc;
-  min-height: 100vh;
-  font-family: var(--font-body), sans-serif;
-  padding-bottom: 80px;
-}
+   Elevation here is always --rh-glow-*, never a grey drop shadow. No all-caps
+   eyebrows, no arrows appended to buttons, no 01/02/03 markers, no blanket
+   fade-up: only the hero text rises, once. */
 
-/* Typography Enhancements */
-.text-gradient {
-  background: linear-gradient(135deg, #0ea5e9, #6366f1);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
+.bn { background: var(--rh-paper); }
 
-.text-gradient-gold {
-  background: linear-gradient(135deg, #fbbf24, #f59e0b);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* Hero Section */
-.banani-hero {
-  position: relative;
-  padding: 100px 20px 80px;
-  text-align: center;
-  background: radial-gradient(circle at top center, rgba(14, 165, 233, 0.15) 0%, transparent 70%);
-  overflow: hidden;
-}
-
-.banani-hero::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: url('/assets/tourism/clinic_reception.png') center/cover;
-  opacity: 0.05;
-  z-index: 0;
-  animation: slowZoom 30s infinite alternate;
-}
-
-@keyframes slowZoom {
-  0% { transform: scale(1); }
-  100% { transform: scale(1.1); }
-}
-
-.banani-hero-content {
-  position: relative;
-  z-index: 2;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.banani-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(251, 191, 36, 0.1);
-  border: 1px solid rgba(251, 191, 36, 0.3);
-  color: #fbbf24;
-  padding: 8px 16px;
-  border-radius: 50px;
-  font-size: 0.875rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 24px;
-}
-
-.banani-hero-title {
-  font-family: var(--font-display), sans-serif;
-  font-size: clamp(2.5rem, 5vw, 4.5rem);
-  font-weight: 800;
-  line-height: 1.1;
-  margin-bottom: 24px;
-  letter-spacing: -0.03em;
-}
-
-.banani-hero-subtitle {
-  font-size: 1.25rem;
-  color: #94a3b8;
-  max-width: 700px;
-  margin: 0 auto 40px;
-  line-height: 1.6;
-}
-
-/* Facilities Section (Glassmorphism Grid) */
-.banani-section {
-  padding: 80px 20px;
-  position: relative;
-  z-index: 2;
-}
-
-.banani-section-title {
-  text-align: center;
-  font-family: var(--font-display), sans-serif;
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 16px;
-}
-
-.banani-section-subtitle {
-  text-align: center;
-  color: #94a3b8;
-  margin-bottom: 60px;
-  font-size: 1.1rem;
-}
-
-.facilities-grid {
+/* ── Hero ─────────────────────────────────────────────────────────────────
+   Asymmetric: the photograph takes the larger share and bleeds off the right
+   edge, the way the room continues past the frame. */
+.bn-hero {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 24px;
-  max-width: 1200px;
-  margin: 0 auto;
+  grid-template-columns: minmax(0, 48%) minmax(0, 52%);
+  align-items: center;
+  gap: clamp(2rem, 5vw, 4.5rem);
+  padding: clamp(3rem, 7vw, 6rem) 0 clamp(3rem, 7vw, 6rem)
+           max(var(--rh-6), calc((100vw - 1120px) / 2));
 }
 
-.facility-card {
-  background: rgba(15, 23, 42, 0.6);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  border-radius: 1.5rem;
-  padding: 32px;
-  transition: all 0.3s ease;
+.bn-hero-media {
   position: relative;
+  border-radius: var(--rh-r-lg) 0 0 var(--rh-r-lg);
   overflow: hidden;
+  box-shadow: var(--rh-glow-lg);
 }
+.bn-hero-img { display: block; width: 100%; height: auto; }
 
-.facility-card::before {
+/* The cove strip, echoing the ceiling light in the photograph itself. */
+.bn-hero-media::after {
   content: '';
   position: absolute;
+  inset-inline: 0;
   top: 0;
-  left: 0;
-  width: 100%;
   height: 4px;
-  background: linear-gradient(90deg, transparent, #0ea5e9, transparent);
-  transform: translateX(-100%);
-  transition: transform 0.5s ease;
+  background: var(--rh-cove);
+  pointer-events: none;
 }
 
-.facility-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-  border-color: rgba(14, 165, 233, 0.3);
-}
+.bn-hero-text { order: -1; max-width: 34rem; }
 
-.facility-card:hover::before {
-  transform: translateX(100%);
-}
-
-.facility-icon-wrap {
-  width: 60px;
-  height: 60px;
-  border-radius: 1rem;
-  background: rgba(14, 165, 233, 0.1);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #0ea5e9;
-  margin-bottom: 24px;
-}
-
-.facility-title {
-  font-size: 1.25rem;
+.bn-kicker {
+  font-size: var(--rh-step--1);
+  letter-spacing: 0.04em;
+  color: var(--rh-brass);
+  margin: 0 0 var(--rh-4);
   font-weight: 600;
-  margin-bottom: 12px;
-  color: #f1f5f9;
 }
 
-.facility-desc {
-  color: #94a3b8;
-  line-height: 1.6;
-  font-size: 0.95rem;
+.bn-h1 {
+  font-family: var(--rh-font-display);
+  font-size: clamp(2.1rem, 1.5rem + 2.1vw, 3.4rem);
+  font-weight: 300;
+  line-height: 1.08;
+  letter-spacing: -0.018em;
+  margin: 0 0 var(--rh-6);
+  color: var(--rh-ink);
+  text-wrap: balance;
+}
+.bn-h1 em { font-style: italic; color: var(--rh-brass); }
+
+.bn-lede {
+  font-size: var(--rh-step-1);
+  line-height: 1.55;
+  color: var(--rh-ink-soft);
+  margin: 0 0 var(--rh-8);
 }
 
-/* Specialists Section */
-.specialists-grid {
+.bn-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--rh-3);
+  margin-bottom: var(--rh-6);
+}
+
+.bn-review { margin-top: var(--rh-2); }
+
+/* ── Shared type ─────────────────────────────────────────────────────────── */
+.bn-h2 {
+  font-family: var(--rh-font-display);
+  font-size: var(--rh-step-3);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  color: var(--rh-ink);
+  margin: 0 0 var(--rh-6);
+  max-width: 20ch;
+}
+
+.bn-body {
+  font-size: var(--rh-step-0);
+  line-height: var(--rh-lead);
+  color: var(--rh-ink-soft);
+  max-width: var(--rh-measure);
+  margin: 0 0 var(--rh-4);
+}
+
+.bn-link {
+  color: var(--rh-brass);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  text-decoration-thickness: 1px;
+}
+.bn-link:hover { color: var(--rh-ink); }
+
+.bn-todo {
+  color: var(--rh-brass);
+  font-size: var(--rh-step--1);
+  border-left: 2px solid var(--rh-brass-light);
+  padding-left: var(--rh-3);
+}
+
+.bn-two {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 32px;
-  max-width: 900px;
-  margin: 0 auto;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: start;
 }
 
-.specialist-card {
-  display: block;
-  text-decoration: none;
-  background: rgba(15, 23, 42, 0.8);
-  border-radius: 2rem;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  overflow: hidden;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+/* ── Facts: a lit list, not a grid of identical cards ────────────────────── */
+.bn-facts {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--rh-hairline);
+}
+.bn-fact {
   position: relative;
+  padding: var(--rh-4) 0 var(--rh-4) var(--rh-6);
+  border-bottom: 1px solid var(--rh-hairline);
+  color: var(--rh-ink);
+  font-size: var(--rh-step-0);
 }
-
-.specialist-card:hover {
-  transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), 0 0 40px rgba(14, 165, 233, 0.2);
-  border-color: rgba(14, 165, 233, 0.4);
-}
-
-.specialist-img-box {
-  height: 350px;
-  width: 100%;
-  overflow: hidden;
-  position: relative;
-}
-
-.specialist-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.6s ease;
-}
-
-.specialist-card:hover .specialist-img {
-  transform: scale(1.05);
-}
-
-.specialist-img-overlay {
+.bn-fact::before {
+  content: '';
   position: absolute;
-  bottom: 0;
   left: 0;
-  width: 100%;
-  height: 50%;
-  background: linear-gradient(to top, rgba(15, 23, 42, 1), transparent);
-}
-
-.specialist-info {
-  padding: 24px 32px 32px;
-  text-align: center;
-  position: relative;
-}
-
-.specialist-name {
-  font-family: var(--font-display), sans-serif;
-  font-size: 1.75rem;
-  font-weight: 700;
-  color: #fff;
-  margin-bottom: 8px;
-}
-
-.specialist-role {
-  color: #0ea5e9;
-  font-weight: 500;
-  margin-bottom: 24px;
-}
-
-.specialist-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 12px 24px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 50px;
-  color: #f1f5f9;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
-
-.specialist-card:hover .specialist-btn {
-  background: #0ea5e9;
-  color: #fff;
-  border-color: #0ea5e9;
-}
-
-/* Sticky Urgency CTA */
-.banani-cta-bar {
-  position: fixed;
-  bottom: 24px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: rgba(15, 23, 42, 0.9);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(14, 165, 233, 0.3);
-  padding: 16px 32px;
-  border-radius: 50px;
-  display: flex;
-  align-items: center;
-  gap: 32px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255,255,255,0.05);
-  z-index: 50;
-  width: 90%;
-  max-width: 800px;
-  justify-content: space-between;
-}
-
-.cta-text {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.pulse-dot {
+  top: calc(var(--rh-4) + 0.62em);
   width: 10px;
-  height: 10px;
-  background: #ef4444;
-  border-radius: 50%;
-  box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
-  animation: pulse-red 2s infinite;
+  height: 1.5px;
+  background: var(--rh-brass);
 }
 
-@keyframes pulse-red {
-  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
-  70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(239, 68, 68, 0); }
-  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+/* ── Rooms ───────────────────────────────────────────────────────────────
+   A staggered editorial grid, not four identical cards in a row. Each frame
+   carries the cove strip at its top edge, echoing the ceiling light that runs
+   through every one of these photographs. */
+.bn-rooms { background: var(--rh-surface-sunk); }
+.bn-rooms-lede { margin-bottom: var(--rh-12); }
+
+.bn-gallery {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: clamp(1.5rem, 3.5vw, 3rem) clamp(1.25rem, 3vw, 2.5rem);
+  align-items: start;
 }
 
-.cta-primary-btn {
-  background: linear-gradient(135deg, #0ea5e9, #2563eb);
-  color: white;
-  padding: 12px 28px;
-  border-radius: 50px;
-  font-weight: 600;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  transition: all 0.3s;
-  box-shadow: 0 10px 20px rgba(14, 165, 233, 0.3);
+.bn-figure { margin: 0; min-width: 0; }
+
+.bn-figure-frame {
+  position: relative;
+  border-radius: var(--rh-r-lg);
+  overflow: hidden;
+  box-shadow: var(--rh-glow-md);
+  background: var(--rh-surface);
+  transition: box-shadow var(--rh-dur) var(--rh-ease);
+}
+.bn-figure-frame::after {
+  content: '';
+  position: absolute; inset-inline: 0; top: 0; height: 3px;
+  background: var(--rh-cove);
+  pointer-events: none;
+}
+.bn-figure:hover .bn-figure-frame { box-shadow: var(--rh-glow-lg); }
+.bn-figure img { display: block; width: 100%; height: auto; }
+
+.bn-figure figcaption {
+  margin-top: var(--rh-4);
+  padding-left: var(--rh-4);
+  border-left: 1.5px solid var(--rh-brass-light);
+  font-size: var(--rh-step--1);
+  line-height: 1.65;
+  color: var(--rh-ink-soft);
+  max-width: 44ch;
 }
 
-.cta-primary-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 15px 25px rgba(14, 165, 233, 0.4);
-}
+/* Reception — the widest room, given the widest frame. */
+.bn-figure-0 { grid-column: 1 / span 7; }
+/* Lounge — sits lower, so the two landscape frames do not read as a row. */
+.bn-figure-1 { grid-column: 8 / span 5; margin-top: clamp(2rem, 6vw, 5rem); }
+/* Consultation — the one portrait frame, kept narrow. */
+.bn-figure-2 { grid-column: 1 / span 5; }
+/* Treatment room — set against the portrait, aligned to its foot. */
+.bn-figure-3 { grid-column: 6 / span 7; align-self: end; }
 
-@media (max-width: 768px) {
-  .banani-cta-bar {
-    flex-direction: column;
-    gap: 16px;
-    padding: 16px;
-    border-radius: 1.5rem;
-    text-align: center;
+@media (max-width: 900px) {
+  .bn-gallery { grid-template-columns: 1fr; }
+  .bn-figure-0, .bn-figure-1, .bn-figure-2, .bn-figure-3 {
+    grid-column: 1 / -1;
+    margin-top: 0;
+    align-self: auto;
   }
-  .cta-text {
-    flex-direction: column;
-    gap: 8px;
+}
+
+/* ── Parity ──────────────────────────────────────────────────────────────── */
+.bn-parity-line {
+  font-family: var(--rh-font-display);
+  font-size: var(--rh-step-1);
+  color: var(--rh-ink);
+  border-left: 2px solid var(--rh-brass);
+  padding-left: var(--rh-6);
+  margin-bottom: var(--rh-6);
+}
+.bn-parity-cta { margin-top: var(--rh-4); }
+
+/* ── Cost ────────────────────────────────────────────────────────────────── */
+.bn-cost { background: var(--rh-surface-sunk); }
+.bn-cost-note {
+  padding: var(--rh-6);
+  margin: var(--rh-6) 0;
+  max-width: var(--rh-measure);
+}
+.bn-cost-note p { margin: 0; position: relative; z-index: 1; color: var(--rh-ink-soft); }
+.bn-cost-note strong { color: var(--rh-brass); }
+
+/* ── Visit ───────────────────────────────────────────────────────────────── */
+.bn-address {
+  font-style: normal;
+  font-family: var(--rh-font-display);
+  font-size: var(--rh-step-1);
+  line-height: 1.45;
+  color: var(--rh-ink);
+  margin-bottom: var(--rh-6);
+  max-width: 26ch;
+}
+
+.bn-map { aspect-ratio: 4 / 3; }
+.bn-map iframe { display: block; width: 100%; height: 100%; border: 0; }
+
+/* ── Responsive ──────────────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .bn-hero {
+    grid-template-columns: 1fr;
+    padding-inline: var(--rh-6);
+    gap: var(--rh-8);
   }
-  .cta-primary-btn {
-    width: 100%;
-    justify-content: center;
-  }
+  .bn-hero-media { border-radius: var(--rh-r-lg); }
+  .bn-two, .bn-gallery { grid-template-columns: 1fr; }
+  .bn-h2 { max-width: none; }
 }

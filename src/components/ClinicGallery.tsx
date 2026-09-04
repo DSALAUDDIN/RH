@@ -20,6 +20,7 @@ import img66 from '../assets/clinicGallery/66.jpeg';
 import img67 from '../assets/clinicGallery/67.jpeg';
 
 import './ClinicGallery.css';
+import BranchCTA from './branch/BranchCTA';
 
 /* ─── Types ─────────────────────────────────── */
 type Category = 'all' | 'clinic' | 'surgery' | 'team';
@@ -99,10 +100,10 @@ const lightboxPhotos = [
 
 /* ─── Stats ───────────────────────────────────── */
 const stats = [
-  { icon: Star,         num: '5.0★',  lab: 'Google Rating',          color: '#f59e0b' },
-  { icon: ShieldCheck,  num: '13k+',  lab: 'Happy Patients',         color: '#10b981' },
-  { icon: Clock,        num: '12+',   lab: 'Years of Excellence',    color: '#6366f1' },
-  { icon: CalendarCheck,num: 'Daily', lab: 'Appointments Available', color: '#0ea5e9' },
+  { icon: Star,         num: '5.0★',  lab: 'Google Rating',          color: 'var(--rh-brass)' },
+  // REMOVED: '13k+ Happy Patients' — unevidenced. See docs/audit-report.md P2-2.
+  { icon: Clock,        num: '12+',   lab: 'Years of Excellence',    color: '#9C7C38' },
+  { icon: CalendarCheck,num: 'Daily', lab: 'Appointments Available', color: '#9C7C38' },
 ];
 
 /* ─── Filter tabs ─────────────────────────────── */
@@ -240,33 +241,31 @@ export default function ClinicGallery() {
             </p>
           </div>
           <div className="cg-cta-actions">
-            <a
-              href="/contact"
+            <BranchCTA
+              action="book"
               className="cg-btn-primary"
               aria-label="Book an appointment at RH Dental Care"
             >
               <CalendarCheck size={17} />
               Book Appointment
-            </a>
-            <a
-              href="tel:+8801775227902"
+            </BranchCTA>
+            <BranchCTA
+              action="call"
               className="cg-btn-secondary"
               aria-label="Call RH Dental Care"
             >
               <Phone size={16} />
               Call Now
-            </a>
-            <a
-              href="https://wa.me/8801775227902"
-              target="_blank"
-              rel="noopener noreferrer"
+            </BranchCTA>
+            <BranchCTA
+              action="whatsapp"
               className="cg-btn-secondary"
               aria-label="WhatsApp RH Dental Care"
               style={{ color: '#25D366', borderColor: 'rgba(37, 211, 102, 0.3)' }}
             >
               <MessageCircle size={16} />
               WhatsApp
-            </a>
+            </BranchCTA>
           </div>
         </motion.div>
 

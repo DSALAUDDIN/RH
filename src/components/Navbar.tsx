@@ -7,15 +7,25 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Phone, ChevronDown } from 'lucide-react';
+import { Menu, X, Phone, ChevronDown, MapPin } from 'lucide-react';
 import logo from '../assets/rhlogo.jpeg';
+import { useBranch } from './branch/BranchProvider';
+import { BRANCHES } from '@/lib/branches';
 import './Navbar.css';
+import BranchCTA from './branch/BranchCTA';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const pathname = usePathname();
+  const { branch, isPinned, openPicker } = useBranch();
+
+  /* On a branch page the pill shows that branch and stays switchable — clicking
+     it opens the picker, and selecting the other branch navigates there.
+     Scroll position is never touched: nothing here re-navigates the page. */
+  const branchPillLabel = branch ? BRANCHES[branch].shortName : 'Choose branch';
+  const branchPillClass = branch ? `active-${branch}` : '';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -49,7 +59,7 @@ export default function Navbar() {
         { name: 'Kids Care (Pediatric)', path: '/kids-care', icon: '🧸', desc: 'Painless care for your little ones' },
         { name: 'Dental Surgery', path: '/dental-surgery', icon: '🔴', desc: 'Advanced oral surgical care' },
         { name: 'Digital Dentistry', path: '/digital-dentistry', icon: '🔵', desc: '3D scanning & CAD/CAM' },
-        { name: 'RH Dental Tourism', path: '/dental-tourism', icon: '✈️', desc: 'World-class care & travel' },
+        { name: 'RH Dental Tourism', path: '/dental-tourism', icon: '✈️', desc: 'Planning treatment from abroad' },
         { name: 'View All Specialties', path: '/specialties', icon: '→', desc: '' },
       ]
     },
@@ -148,10 +158,26 @@ export default function Navbar() {
         </nav>
 
         <div className="nav-actions">
-          <Link href="/contact" className="btn-book" aria-label="Book Now">
+          <button
+            type="button"
+            onClick={() => openPicker()}
+            className={`branch-nav-pill ${branchPillClass}`}
+            aria-haspopup="dialog"
+            aria-label={
+              branch
+                ? `Branch: ${BRANCHES[branch].shortName}${isPinned ? ' (this page)' : ''}. Change branch.`
+                : 'Choose a branch'
+            }
+          >
+            <MapPin size={13} aria-hidden="true" />
+            <span>{branchPillLabel}</span>
+            <ChevronDown size={12} aria-hidden="true" />
+          </button>
+
+          <BranchCTA action="book" className="btn-book">
             <Phone size={16} aria-hidden="true" />
-            <span>Book Now</span>
-          </Link>
+            <span>Book</span>
+          </BranchCTA>
 
           {/* Mobile Menu Toggle */}
           <button 
@@ -227,10 +253,14 @@ export default function Navbar() {
                 );
               })}
               <li>
-                <Link href="/contact" className="btn-book mobile-book-btn" onClick={() => setMobileMenuOpen(false)}>
+                <BranchCTA
+                  action="book"
+                  className="btn-book mobile-book-btn"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
                   <Phone size={18} />
-                  Book Appointment
-                </Link>
+                  Book an appointment
+                </BranchCTA>
               </li>
             </ul>
           </motion.div>

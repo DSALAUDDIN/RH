@@ -1,0 +1,273 @@
+/* ============================================================================
+   RH Dental Care — design tokens
+   Sampled from the Banani branch photographs (reception, lounge, consultation
+   room). Both branches share this palette; only the accent shifts, set via
+   [data-branch] on <html>.
+
+   THE SIGNATURE IS BACKLIGHTING. Every room in the photographs glows from
+   behind: cove LED strips at the ceiling perimeter, an under-lit reception
+   desk, edge-lit glass display shelves, LED buried in the reveals of the oak
+   slat columns. So in this UI, ELEVATION IS A WARM GLOW — never a grey drop
+   shadow. Use --rh-glow-* below. There is no neutral box-shadow token here on
+   purpose.
+
+   NOTE ON WARMTH (see docs/audit-report.md §5): the rooms photograph warmer and
+   more yellow than the sage hexes below, because they are lit at ~2700–3000K.
+   The core palette is kept as specified; the warmth lives in the light — the
+   glow and cove-gradient tokens — which is what the photographs actually show.
+   ========================================================================= */
+
+:root {
+  /* ── Core palette — do not add colours outside this set ── */
+  --rh-paper: #F7F5EE;
+  --rh-ink: #2B2A1C;
+  --rh-ink-soft: #5A5747;
+  --rh-ink-deep: #1F1E14;
+
+  --rh-sage: #B4D1A8;
+  --rh-sage-pale: #DCE7D2;
+  --rh-sage-deep: #55684F;
+
+  --rh-brass: #9C7C38;
+  --rh-brass-light: #CDAE51;
+  --rh-oak: #D9C49A;
+
+  /* The one colour outside the palette: an error state has to read as one.
+     Kept earthy so it belongs to the same world. */
+  --rh-error: #8A3B2A;
+
+  /* ── Derived surfaces (mixes of the above, no new hues) ── */
+  --rh-surface: #FFFDF7;
+  --rh-surface-sunk: #F1EEE3;
+  --rh-hairline: rgba(43, 42, 28, 0.10);
+  --rh-hairline-strong: rgba(43, 42, 28, 0.18);
+
+  /* ── Branch accent. Banani = brass, Banasree = sage-deep. ──
+     Default is null-branch: neutral ink, so nothing silently reads as a branch. */
+  --rh-accent: var(--rh-ink);
+  --rh-accent-soft: var(--rh-sage-pale);
+  --rh-accent-contrast: var(--rh-paper);
+
+  /* ── Backlight / glow. This is the elevation system. ──
+     Warm, coloured, diffuse — the light behind the cove, not a shadow under a card. */
+  --rh-glow-sm:
+    0 1px 2px rgba(43, 42, 28, 0.04),
+    0 4px 16px -6px rgba(156, 124, 56, 0.22);
+  --rh-glow-md:
+    0 2px 4px rgba(43, 42, 28, 0.04),
+    0 10px 30px -10px rgba(156, 124, 56, 0.28),
+    0 2px 10px -4px rgba(205, 174, 81, 0.20);
+  --rh-glow-lg:
+    0 4px 8px rgba(43, 42, 28, 0.05),
+    0 24px 60px -20px rgba(156, 124, 56, 0.32),
+    0 4px 20px -6px rgba(205, 174, 81, 0.24);
+
+  /* Cove strip — the thin bright line at the top of a panel, as at the ceiling. */
+  --rh-cove: linear-gradient(
+    180deg,
+    rgba(255, 249, 232, 0.95) 0%,
+    rgba(205, 174, 81, 0.35) 40%,
+    rgba(205, 174, 81, 0) 100%
+  );
+
+  /* Shelf backlight — the glow inside the lit display niches. */
+  --rh-niche: radial-gradient(
+    120% 90% at 50% 0%,
+    rgba(255, 246, 220, 0.9) 0%,
+    rgba(217, 196, 154, 0.35) 45%,
+    rgba(217, 196, 154, 0) 100%
+  );
+
+  /* ── Type ── */
+  --rh-font-display: var(--font-display), 'Newsreader', Georgia, 'Times New Roman', serif;
+  --rh-font-body: var(--font-body), 'Karla', system-ui, -apple-system, sans-serif;
+  --rh-font-bn: var(--font-bn), 'Hind Siliguri', system-ui, sans-serif;
+
+  /* Left-aligned, generous. Display sizes are restrained — the serif carries it. */
+  --rh-step--1: clamp(0.82rem, 0.79rem + 0.15vw, 0.9rem);
+  --rh-step-0: clamp(1rem, 0.96rem + 0.2vw, 1.09rem);
+  --rh-step-1: clamp(1.2rem, 1.12rem + 0.4vw, 1.42rem);
+  --rh-step-2: clamp(1.5rem, 1.34rem + 0.8vw, 2rem);
+  --rh-step-3: clamp(1.9rem, 1.6rem + 1.5vw, 2.9rem);
+  --rh-step-4: clamp(2.3rem, 1.8rem + 2.5vw, 4rem);
+
+  --rh-measure: 62ch;
+  --rh-lead-tight: 1.18;
+  --rh-lead: 1.65;
+
+  /* ── Space ── */
+  --rh-1: 0.25rem;
+  --rh-2: 0.5rem;
+  --rh-3: 0.75rem;
+  --rh-4: 1rem;
+  --rh-6: 1.5rem;
+  --rh-8: 2rem;
+  --rh-12: 3rem;
+  --rh-16: 4rem;
+  --rh-24: 6rem;
+  --rh-section: clamp(3.5rem, 8vw, 7rem);
+
+  /* ── Radius — joinery, not pills. The oak cabinetry has soft, small radii. ── */
+  --rh-r-sm: 4px;
+  --rh-r-md: 8px;
+  --rh-r-lg: 14px;
+
+  --rh-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --rh-dur: 320ms;
+}
+
+/* ── Branch accents ───────────────────────────────────────────────────────── */
+[data-branch='banani'] {
+  --rh-accent: var(--rh-brass);
+  --rh-accent-soft: rgba(205, 174, 81, 0.16);
+  --rh-accent-contrast: var(--rh-paper);
+}
+
+[data-branch='banasree'] {
+  --rh-accent: var(--rh-sage-deep);
+  --rh-accent-soft: rgba(85, 104, 79, 0.14);
+  --rh-accent-contrast: var(--rh-paper);
+
+  /* Banasree's glow shifts green — same backlighting language, its own colour. */
+  --rh-glow-sm:
+    0 1px 2px rgba(43, 42, 28, 0.04),
+    0 4px 16px -6px rgba(85, 104, 79, 0.22);
+  --rh-glow-md:
+    0 2px 4px rgba(43, 42, 28, 0.04),
+    0 10px 30px -10px rgba(85, 104, 79, 0.28),
+    0 2px 10px -4px rgba(180, 209, 168, 0.24);
+  --rh-glow-lg:
+    0 4px 8px rgba(43, 42, 28, 0.05),
+    0 24px 60px -20px rgba(85, 104, 79, 0.32),
+    0 4px 20px -6px rgba(180, 209, 168, 0.26);
+}
+
+/* ── Primitives ───────────────────────────────────────────────────────────── */
+
+.rh-scope {
+  background: var(--rh-paper);
+  color: var(--rh-ink);
+  font-family: var(--rh-font-body);
+  font-size: var(--rh-step-0);
+  line-height: var(--rh-lead);
+}
+
+.rh-scope :is(h1, h2, h3) {
+  font-family: var(--rh-font-display);
+  font-weight: 400;
+  line-height: var(--rh-lead-tight);
+  letter-spacing: -0.012em;
+  color: var(--rh-ink);
+  text-wrap: balance;
+}
+
+.rh-scope h1 { font-size: var(--rh-step-4); }
+.rh-scope h2 { font-size: var(--rh-step-3); }
+.rh-scope h3 { font-size: var(--rh-step-1); font-weight: 500; }
+
+.rh-scope p { max-width: var(--rh-measure); color: var(--rh-ink-soft); }
+.rh-scope :lang(bn) { font-family: var(--rh-font-bn); }
+
+.rh-section { padding-block: var(--rh-section); }
+
+.rh-container {
+  width: min(1120px, 100% - 2 * var(--rh-6));
+  margin-inline: auto;
+}
+
+/* A panel is a lit surface, not a floating card.
+   The ::before is the cove strip along its top edge. */
+.rh-panel {
+  position: relative;
+  background: var(--rh-surface);
+  border: 1px solid var(--rh-hairline);
+  border-radius: var(--rh-r-lg);
+  box-shadow: var(--rh-glow-sm);
+  overflow: hidden;
+  transition: box-shadow var(--rh-dur) var(--rh-ease);
+}
+
+.rh-panel::before {
+  content: '';
+  position: absolute;
+  inset-inline: 0;
+  top: 0;
+  height: 3px;
+  background: var(--rh-cove);
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+.rh-panel:hover { box-shadow: var(--rh-glow-md); }
+
+/* A niche is a lit recess — for anything that should read as displayed. */
+.rh-niche {
+  position: relative;
+  background: var(--rh-surface-sunk);
+  border: 1px solid var(--rh-hairline);
+  border-radius: var(--rh-r-md);
+}
+.rh-niche::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--rh-niche);
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+/* Buttons — no arrow glyphs appended, no pill shapes. */
+.rh-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--rh-2);
+  padding: 0.8rem 1.4rem;
+  font: inherit;
+  font-weight: 600;
+  font-size: var(--rh-step--1);
+  letter-spacing: 0.01em;
+  border-radius: var(--rh-r-sm);
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition: box-shadow var(--rh-dur) var(--rh-ease),
+              background-color var(--rh-dur) var(--rh-ease);
+}
+
+.rh-btn-primary {
+  background: var(--rh-accent);
+  color: var(--rh-accent-contrast);
+  box-shadow: var(--rh-glow-sm);
+}
+.rh-btn-primary:hover { box-shadow: var(--rh-glow-md); }
+
+.rh-btn-ghost {
+  background: transparent;
+  color: var(--rh-ink);
+  border-color: var(--rh-hairline-strong);
+}
+.rh-btn-ghost:hover {
+  background: var(--rh-accent-soft);
+  box-shadow: var(--rh-glow-sm);
+}
+
+.rh-btn:focus-visible,
+.rh-panel a:focus-visible {
+  outline: 2px solid var(--rh-accent);
+  outline-offset: 3px;
+}
+
+.rh-hairline { border: 0; border-top: 1px solid var(--rh-hairline); }
+
+/* Entrance animation is opt-in per section, never blanket fade-up.
+   It never starts from opacity:0 — a hidden H1 is an SEO and LCP defect
+   (docs/audit-report.md P1-2). 0.001 keeps the text painted and measurable. */
+@media (prefers-reduced-motion: no-preference) {
+  .rh-rise {
+    animation: rh-rise var(--rh-dur) var(--rh-ease) both;
+  }
+  @keyframes rh-rise {
+    from { opacity: 0.001; transform: translateY(10px); }
+    to { opacity: 1; transform: none; }
+  }
+}

@@ -3,42 +3,14 @@ import ServicesList from '@/components/ServicesList';
 import Link from 'next/link';
 import { Sparkles, ArrowLeft, CheckCircle2, ShieldCheck, Star } from 'lucide-react';
 import './services.css';
+import { pageMeta } from '@/lib/metadata';
 
-export const metadata: Metadata = {
-  title: 'Dental Services in Dhaka — Implants, Braces, Root Canal & More | RH Dental Care',
-  description:
-    'Explore all dental services at RH Dental Care, Dhaka — dental implants, orthodontics (braces & aligners), painless root canal, cosmetic smile design, teeth whitening, zirconia crowns, gum care, pediatric dentistry & full-mouth rehabilitation. BMDC-certified specialists.',
-  keywords: [
-    'dental services Dhaka',
-    'dental implants Dhaka',
-    'orthodontics braces Dhaka',
-    'clear aligners Bangladesh',
-    'root canal treatment Dhaka',
-    'teeth whitening Dhaka',
-    'smile design Dhaka',
-    'zirconia crown Dhaka',
-    'gum treatment Dhaka',
-    'pediatric dentistry Dhaka',
-    'cosmetic dentistry Bangladesh',
-    'full mouth rehabilitation Dhaka',
-    'dental clinic services Bangladesh',
-    'RH Dental Care services',
-  ],
-  alternates: { canonical: '/services' },
-  openGraph: {
-    title: 'Dental Services — Implants, Braces, Root Canal & More | RH Dental Care Dhaka',
-    description:
-      'Comprehensive dental care under one roof in Dhaka. Advanced implants, orthodontics, cosmetic dentistry & painless treatments by BMDC-certified specialists.',
-    url: 'https://www.rhdentalcare.com/services',
-    images: [{ url: '/rhlogo.jpeg', width: 1200, height: 630, alt: 'RH Dental Care Services Dhaka' }],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Dental Services | RH Dental Care Dhaka',
-    description: 'All dental services at RH Dental Care — implants, orthodontics, root canal, cosmetic care & more.',
-    images: ['/rhlogo.jpeg'],
-  },
-};
+export const metadata: Metadata = pageMeta({
+  title: 'Dental Services in Dhaka',
+  description: 'What RH Dental Care treats, at the Banani appointment-only suite and the Banasree flagship hospital in Dhaka.',
+  path: '/services',
+});
+
 
 const BASE_URL = 'https://www.rhdentalcare.com';
 
@@ -95,13 +67,13 @@ export default function ServicesPage() {
           <div className="srv-badge"><Sparkles size={14} /> Comprehensive Dental Care</div>
           <Link href="/" style={{
             display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
-            color: 'rgba(255,255,255,0.6)', textDecoration: 'none',
+            color: 'var(--rh-ink-soft)', textDecoration: 'none',
             fontSize: '0.85rem', fontWeight: 600, marginBottom: '1.5rem',
             transition: 'color 0.3s ease', position: 'absolute', top: '-4rem', left: '0'
           }}>
             <ArrowLeft size={16} /> Back to Home
           </Link>
-          <h1 className="srv-title">Premium Dental <br/><span style={{ color: '#38bdf8' }}>Services</span></h1>
+          <h1 className="srv-title">Premium Dental <br/><span style={{ color: 'var(--rh-brass)' }}>Services</span></h1>
           <p className="srv-subtitle">
             We provide a full spectrum of dental treatments tailored to give you the perfect healthy smile. Explore our specialties below.
           </p>

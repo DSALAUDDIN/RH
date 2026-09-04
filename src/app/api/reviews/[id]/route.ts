@@ -3,6 +3,7 @@ import { prisma } from '@/lib/prisma';
 import { jwtVerify } from 'jose';
 import { cookies } from 'next/headers';
 import { v2 as cloudinary } from 'cloudinary';
+import { getAuthSecret } from '@/lib/auth-secret';
 
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
@@ -10,17 +11,19 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
-const SECRET_KEY = new TextEncoder().encode(
-  process.env.JWT_SECRET || 'fallback_secret_key_for_dev'
-);
 
 export async function DELETE(req: Request, { params }: { params: Promise<{ id: string }> }) {
+  const secret = getAuthSecret();
+  if (!secret) {
+    return NextResponse.json({ success: false, message: 'Not configured.' }, { status: 503 });
+  }
+
   try {
     // 1. Verify Admin token
     const cookieStore = await cookies();
     const token = cookieStore.get('admin_token')?.value;
     if (!token) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
-    await jwtVerify(token, SECRET_KEY);
+    await jwtVerify(token, secret);
 
     const { id } = await params;
 

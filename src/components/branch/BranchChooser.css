@@ -1,0 +1,388 @@
+/* src/components/branch/BranchChooser.css */
+
+.branch-chooser-section {
+  padding: 4rem 1.25rem;
+  background: linear-gradient(180deg, var(--rh-paper) 0%, var(--rh-surface-sunk) 100%);
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid var(--rh-hairline);
+}
+
+.branch-chooser-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.branch-chooser-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.branch-chooser-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(43, 42, 28, 0.05);
+  border: 1px solid var(--rh-hairline);
+  color: var(--rh-brass);
+  padding: 6px 18px;
+  border-radius: 50px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: none;
+  margin-bottom: 1rem;
+}
+
+.branch-chooser-title {
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  font-weight: 600;
+  color: var(--rh-ink);
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  margin-bottom: 1rem;
+}
+
+.branch-chooser-subtitle {
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  color: var(--rh-ink-soft);
+  max-width: 680px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ── Chooser Active Indicator ── */
+.branch-active-banner {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--rh-surface);
+  border: 1px solid var(--rh-hairline);
+  padding: 8px 18px;
+  border-radius: 50px;
+  margin-top: 1.5rem;
+  font-size: 0.88rem;
+  color: var(--rh-ink-soft);
+}
+
+.branch-active-banner strong {
+  color: var(--rh-ink);
+}
+
+.branch-change-link {
+  color: var(--rh-brass);
+  text-decoration: underline;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 0.88rem;
+  font-weight: 600;
+  padding: 0;
+}
+
+/* ── Grid ── */
+.branch-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-bottom: 3.5rem;
+}
+
+@media (min-width: 840px) {
+  .branch-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+  }
+}
+
+/* ── Cards ── */
+.branch-card {
+  background: var(--rh-surface);
+  border-radius: 28px;
+  overflow: hidden;
+  border: 2px solid transparent;
+  box-shadow: var(--rh-glow-md);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+.branch-card.card-banani {
+  border-color: rgba(245, 158, 11, 0.25);
+}
+
+.branch-card.card-banani.is-active,
+.branch-card.card-banani:hover {
+  border-color: var(--rh-brass);
+  box-shadow: 0 25px 50px -12px rgba(245, 158, 11, 0.2);
+  transform: translateY(-4px);
+}
+
+.branch-card.card-banasree {
+  border-color: rgba(156, 124, 56, 0.25);
+}
+
+.branch-card.card-banasree.is-active,
+.branch-card.card-banasree:hover {
+  border-color: var(--rh-brass);
+  box-shadow: 0 25px 50px -12px rgba(156, 124, 56, 0.2);
+  transform: translateY(-4px);
+}
+
+/* Card Visual Header */
+.branch-card-media {
+  position: relative;
+  height: 230px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.branch-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.branch-card:hover .branch-card-img {
+  transform: scale(1.04);
+}
+
+.branch-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(43, 42, 28, 0.70) 100%);
+}
+
+.branch-card-tag {
+  position: absolute;
+  top: 1.25rem;
+  left: 1.25rem;
+  padding: 6px 14px;
+  border-radius: 50px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: none;
+  backdrop-filter: blur(8px);
+}
+
+.card-banani .branch-card-tag {
+  background: rgba(217, 119, 6, 0.85);
+  color: var(--rh-ink);
+  border: 1px solid rgba(253, 230, 138, 0.4);
+}
+
+.card-banasree .branch-card-tag {
+  background: rgba(85, 104, 79, 0.85);
+  color: var(--rh-ink);
+  border: 1px solid rgba(186, 230, 253, 0.4);
+}
+
+.branch-card-status {
+  position: absolute;
+  bottom: 1.25rem;
+  left: 1.25rem;
+  color: var(--rh-ink);
+}
+
+.branch-card-status h3 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin: 0 0 2px 0;
+  letter-spacing: -0.02em;
+}
+
+.branch-card-status p {
+  font-size: 0.88rem;
+  margin: 0;
+  color: var(--rh-ink-soft);
+  font-weight: 600;
+}
+
+/* Card Body */
+.branch-card-body {
+  padding: 2rem 1.75rem 2.25rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.branch-audience-box {
+  background: var(--rh-paper);
+  border-radius: 14px;
+  padding: 1rem 1.1rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--rh-surface-sunk);
+}
+
+.branch-audience-label {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: none;
+  color: var(--rh-ink-soft);
+  margin-bottom: 4px;
+  letter-spacing: 0.05em;
+}
+
+.branch-audience-text {
+  font-size: 0.95rem;
+  color: var(--rh-ink);
+  font-weight: 600;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* Facilities */
+.branch-facilities-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.75rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.branch-facilities-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.92rem;
+  color: var(--rh-ink-soft);
+  font-weight: 500;
+}
+
+.card-banani .facility-icon {
+  color: var(--rh-brass);
+}
+
+.card-banasree .facility-icon {
+  color: var(--rh-sage-deep);
+}
+
+/* Location meta */
+.branch-location-meta {
+  font-size: 0.85rem;
+  color: var(--rh-ink-soft);
+  margin-bottom: 1.75rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Action Buttons */
+.branch-card-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  margin-top: auto;
+}
+
+.btn-card-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0.85rem 1rem;
+  border-radius: var(--rh-r-sm);
+  font-size: 0.92rem;
+  font-weight: 700;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-card-call {
+  background: var(--rh-paper);
+  color: var(--rh-ink);
+}
+
+.btn-card-call:hover {
+  background: var(--rh-paper);
+  transform: translateY(-1px);
+}
+
+.btn-card-wa {
+  background: #25d366;
+  color: var(--rh-ink);
+}
+
+.btn-card-wa:hover {
+  background: #20bd5a;
+  transform: translateY(-1px);
+}
+
+.btn-card-explore {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 0.85rem;
+  border-radius: 50px;
+  font-size: 0.92rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.card-banani .btn-card-explore {
+  background: var(--rh-paper);
+  color: var(--rh-brass);
+  border: 1px solid #fde68a;
+}
+
+.card-banani .btn-card-explore:hover {
+  background: var(--rh-oak);
+}
+
+.card-banasree .btn-card-explore {
+  background: var(--rh-paper);
+  color: var(--rh-sage-deep);
+  border: 1px solid #bae6fd;
+}
+
+.card-banasree .btn-card-explore:hover {
+  background: var(--rh-sage-pale);
+}
+
+/* ── Shared Trust Bar ── */
+.branch-shared-trust {
+  text-align: center;
+  padding: 1.5rem 1.5rem;
+  border-radius: 20px;
+  background: rgba(43, 42, 28, 0.05);
+  border: 1px solid var(--rh-hairline);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  color: var(--rh-ink-soft);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.trust-pillar {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.trust-pillar-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+@media (max-width: 640px) {
+  .trust-pillar-dot {
+    display: none;
+  }
+}

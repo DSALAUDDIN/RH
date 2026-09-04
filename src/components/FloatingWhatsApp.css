@@ -1,98 +1,61 @@
 .floating-whatsapp {
   position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  z-index: 9999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-}
-
-.wa-icon-container {
-  width: 60px;
-  height: 60px;
-  background-color: #25D366;
+  right: clamp(1rem, 3vw, 1.75rem);
+  bottom: clamp(1rem, 3vw, 1.75rem);
+  z-index: 900;
+  display: grid;
+  place-items: center;
+  width: 54px; height: 54px;
+  border: 1px solid var(--rh-hairline);
   border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.4);
-  position: relative;
-  z-index: 2;
-  transition: transform 0.3s ease;
+  background: var(--rh-accent, var(--rh-ink));
+  color: var(--rh-paper);
+  box-shadow: var(--rh-glow-md);
+  cursor: pointer;
+  text-decoration: none;
+  transition: box-shadow var(--rh-dur) var(--rh-ease), transform var(--rh-dur) var(--rh-ease);
 }
+.floating-whatsapp:hover { box-shadow: var(--rh-glow-lg); transform: translateY(-2px); }
+.floating-whatsapp:focus-visible { outline: 2px solid var(--rh-accent); outline-offset: 3px; }
 
-.floating-whatsapp:hover .wa-icon-container {
-  transform: scale(1.1);
-}
+.floating-whatsapp[data-branch='banani'] { --rh-accent: var(--rh-brass); }
+.floating-whatsapp[data-branch='banasree'] { --rh-accent: var(--rh-sage-deep); }
 
+.wa-icon { display: grid; place-items: center; }
+
+/* The ring is a backlight pulse, matching the cove lighting language. */
 .wa-pulse-ring {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #25D366;
+  inset: -6px;
   border-radius: 50%;
-  z-index: 1;
-  animation: wa-pulse 2s infinite;
+  background: var(--rh-accent, var(--rh-brass));
+  opacity: 0.22;
+  pointer-events: none;
 }
-
-@keyframes wa-pulse {
-  0% {
-    transform: scale(1);
-    opacity: 0.8;
-  }
-  100% {
-    transform: scale(1.5);
-    opacity: 0;
+@media (prefers-reduced-motion: no-preference) {
+  .wa-pulse-ring { animation: wa-breathe 3.2s var(--rh-ease) infinite; }
+  @keyframes wa-breathe {
+    0%, 100% { transform: scale(1); opacity: 0.16; }
+    50% { transform: scale(1.14); opacity: 0.05; }
   }
 }
 
 .wa-tooltip {
   position: absolute;
-  right: 75px;
-  background-color: #fff;
-  color: #0f172a;
-  padding: 8px 12px;
-  border-radius: 8px;
-  font-size: 0.85rem;
-  font-weight: 600;
+  right: calc(100% + 10px);
   white-space: nowrap;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 0.4rem 0.7rem;
+  border-radius: var(--rh-r-sm);
+  background: var(--rh-paper);
+  color: var(--rh-paper);
+  font-size: 0.78rem;
+  font-family: var(--rh-font-body);
   opacity: 0;
-  transform: translateX(10px);
+  transform: translateX(6px);
   pointer-events: none;
-  transition: all 0.3s ease;
+  transition: opacity var(--rh-dur) var(--rh-ease), transform var(--rh-dur) var(--rh-ease);
 }
+.floating-whatsapp:hover .wa-tooltip,
+.floating-whatsapp:focus-visible .wa-tooltip { opacity: 1; transform: none; }
 
-.wa-tooltip::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  right: -5px;
-  transform: translateY(-50%);
-  border-width: 5px 0 5px 5px;
-  border-style: solid;
-  border-color: transparent transparent transparent #fff;
-}
-
-.floating-whatsapp:hover .wa-tooltip {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-@media (max-width: 768px) {
-  .floating-whatsapp {
-    bottom: 1.5rem;
-    right: 1.5rem;
-  }
-  .wa-icon-container {
-    width: 50px;
-    height: 50px;
-  }
-  .wa-tooltip {
-    display: none;
-  }
-}
+@media (max-width: 520px) { .wa-tooltip { display: none; } }

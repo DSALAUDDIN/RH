@@ -143,9 +143,14 @@ export default function Hero() {
   const homeVideoUrl = 'https://res.cloudinary.com/dxrcufs8f/video/upload/v1778516898/Untitled_design_1_1_whreqj.mp4';
 
   const stats = [
-    { val: 13, suf: 'k+', lab: 'Happy Smiles' },
-    { val: 12, suf: '+', lab: 'Years Exp.' },
-    { val: 99,   suf: '%', lab: 'Success Rate' },
+    // REMOVED: '13k+ Happy Smiles', '12+ Years Exp.' and a '99% Success Rate'.
+    // None was evidenced, the patient count contradicted the 5,000+ figure used
+    // elsewhere on the same site, and a 99% clinical success rate is a claim no
+    // practice can make without a published series behind it.
+    // docs/audit-report.md P2-2.
+    { val: 2,  suf: '',  lab: 'Branches in Dhaka' },
+    { val: 2,  suf: '',  lab: 'Clinicians at both' },
+    { val: 3,  suf: 'D', lab: 'CBCT on site' },
   ];
 
   const [particles, setParticles] = useState<{ left: string; top: string; duration: number; delay: number; size: number; xOffset: number }[]>([]);
@@ -230,10 +235,10 @@ export default function Hero() {
           </motion.div>
 
           <h1 className="hero-title">
-            <RevealText text="Your Smile is" />
+            <RevealText text="Two clinics." />
             <br />
             <span className="text-gradient-accent" style={{ opacity: 1, transform: 'none' }}>
-              Our Happiness.
+              One clinical team.
             </span>
           </h1>
 
@@ -243,27 +248,27 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.15, duration: 0.6 }}
           >
-            Experience dentistry redefined by two leading experts. From microscopic endodontics to advanced implant surgery, we deliver painless precision in a premium environment.
+            Two clinics in Dhaka run by the same clinical team: an appointment-only private suite in Banani, and a full-service flagship hospital in Banasree. Choose the one that suits how you want to be seen.
           </motion.p>
 
           <motion.div
-            className="hero-actions"
+            className="hero-actions hero-dual-branch-actions"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.6 }}
           >
-            <Link href="/contact" className="btn-premium">
-              Book Appointment
-              <ArrowUpRight className="btn-icon" size={20} />
+            <Link href="/banani" className="btn-hero-banani">
+              <span>Banani — Private Suite</span>
+              <ArrowUpRight size={18} />
             </Link>
             
-            <a href="tel:+8801775227902" className="btn-glass">
-              <Phone size={18} className="btn-icon-glass" />
-              Call Now
-            </a>
-            <a href="https://wa.me/8801775227902" target="_blank" rel="noopener noreferrer" className="btn-glass" style={{ color: '#25D366' }}>
-              <MessageCircle size={18} className="btn-icon-glass" />
-              WhatsApp
+            <Link href="/banasree" className="btn-hero-banasree">
+              <span>Banasree — Flagship Hospital</span>
+              <ArrowUpRight size={18} />
+            </Link>
+
+            <a href="#choose-branch" className="btn-hero-compare">
+              Choose Branch ↓
             </a>
           </motion.div>
 
@@ -274,17 +279,17 @@ export default function Hero() {
             transition={{ delay: 0.3, duration: 0.6 }}
           >
             <div className="trust-item">
-              <CheckCircle2 color="#4ade80" size={18} />
-              <span>Pain-free Guarantee</span>
+              <CheckCircle2 color="#55684F" size={18} />
+              <span>Comfort-focused care</span>
             </div>
             <div className="trust-sep" />
             <div className="trust-item">
-              <Award color="#38bdf8" size={18} />
-              <span>BMDC Certified</span>
+              <Award color="#9C7C38" size={18} />
+              <span>BMDC registered</span>
             </div>
             <div className="trust-sep" />
             <div className="trust-item">
-              <GraduationCap color="#a78bfa" size={18} />
+              <GraduationCap color="#9C7C38" size={18} />
               <span>Internationally Trained</span>
             </div>
           </motion.div>
@@ -407,7 +412,7 @@ export default function Hero() {
               transition={{ delay: 0.5, duration: 0.5 }}
             >
               <ShieldCheck size={13} className="accent-icon" />
-              <span>Both BMDC Certified · 12+ Years Combined Experience</span>
+              <span>Both BMDC registered · the same team at both branches</span>
             </motion.div>
 
           </motion.div>

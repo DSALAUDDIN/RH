@@ -39,18 +39,18 @@ const teamMembers = [
         <p>Dr. B.M. Rafiqul Hasan (Mehedi) is a leading Oral & Dental Surgeon in Dhaka, widely recognized for his expertise in dental implants, full mouth rehabilitation, and advanced cosmetic dentistry. With extensive international training and years of clinical experience, he is considered one of the best dental implant specialists in Bangladesh.</p>
         <p>He provides advanced, technology-driven dental care focused on precision, aesthetics, and long-term success, making him a trusted choice for both local and international patients seeking high-quality dental treatment in Dhaka.</p>
         
-        <h4 style={{ marginTop: '1.25rem', marginBottom: '0.5rem', color: '#0f172a' }}>Education & International Training</h4>
+        <h4 style={{ marginTop: '1.25rem', marginBottom: '0.5rem', color: '#2B2A1C' }}>Education & International Training</h4>
         <p>Dr. Hasan has completed advanced international training in Dental Implantology from China, Korea, and India, specializing in complex implant procedures and full mouth reconstruction.</p>
         <p>Additional certifications include:</p>
-        <ul style={{ listStyleType: 'disc', paddingLeft: '1.25rem', marginBottom: '1rem', color: '#475569' }}>
+        <ul style={{ listStyleType: 'disc', paddingLeft: '1.25rem', marginBottom: '1rem', color: '#5A5747' }}>
           <li>Minimally Invasive Cosmetic Dentistry (MICD) – Nepal</li>
           <li>Basic Orthodontics</li>
           <li>Advanced Implant Procedures & Digital Dentistry Workflow</li>
         </ul>
 
-        <h4 style={{ marginTop: '1.25rem', marginBottom: '0.5rem', color: '#0f172a' }}>Specialist in Dental Implants & Full Mouth Rehabilitation</h4>
+        <h4 style={{ marginTop: '1.25rem', marginBottom: '0.5rem', color: '#2B2A1C' }}>Specialist in Dental Implants & Full Mouth Rehabilitation</h4>
         <p>Dr. Hasan is highly experienced in advanced implant dentistry in Bangladesh, offering complete solutions for missing teeth using the latest techniques and technologies.</p>
-        <ul style={{ listStyleType: 'disc', paddingLeft: '1.25rem', marginBottom: '1rem', color: '#475569' }}>
+        <ul style={{ listStyleType: 'disc', paddingLeft: '1.25rem', marginBottom: '1rem', color: '#5A5747' }}>
           <li>Single Tooth Dental Implants</li>
           <li>Multiple Teeth Implants</li>
           <li>Full Mouth Dental Implants (All-on-4 / All-on-6)</li>
@@ -60,32 +60,32 @@ const teamMembers = [
         </ul>
         <p>He has successfully treated hundreds of implant cases, delivering natural-looking, long-lasting results.</p>
 
-        <h4 style={{ marginTop: '1.25rem', marginBottom: '0.5rem', color: '#0f172a' }}>Advanced Digital Dentistry in Dhaka</h4>
+        <h4 style={{ marginTop: '1.25rem', marginBottom: '0.5rem', color: '#2B2A1C' }}>Advanced Digital Dentistry in Dhaka</h4>
         <p>Dr. Hasan utilizes modern digital technology to ensure precision and predictability in every procedure, including:</p>
-        <ul style={{ listStyleType: 'disc', paddingLeft: '1.25rem', marginBottom: '1rem', color: '#475569' }}>
+        <ul style={{ listStyleType: 'disc', paddingLeft: '1.25rem', marginBottom: '1rem', color: '#5A5747' }}>
           <li>3D Dental Imaging & CBCT Scan</li>
           <li>Digital Smile Design (DSD)</li>
           <li>Computer-Guided Implant Surgery</li>
           <li>Intraoral Scanning & 3D Printing</li>
         </ul>
 
-        <h4 style={{ marginTop: '1.25rem', marginBottom: '0.5rem', color: '#0f172a' }}>In-House Dental Lab for Precision & Speed</h4>
-        <ul style={{ listStyleType: 'disc', paddingLeft: '1.25rem', marginBottom: '1rem', color: '#475569' }}>
+        <h4 style={{ marginTop: '1.25rem', marginBottom: '0.5rem', color: '#2B2A1C' }}>In-House Dental Lab for Precision & Speed</h4>
+        <ul style={{ listStyleType: 'disc', paddingLeft: '1.25rem', marginBottom: '1rem', color: '#5A5747' }}>
           <li>Custom-made crowns, bridges & implant prosthesis</li>
           <li>Faster treatment completion</li>
           <li>High-quality materials and strict quality control</li>
           <li>Improved aesthetics and accuracy</li>
         </ul>
 
-        <h4 style={{ marginTop: '1.25rem', marginBottom: '0.5rem', color: '#0f172a' }}>Professional Positions</h4>
-        <ul style={{ listStyleType: 'disc', paddingLeft: '1.25rem', marginBottom: '1rem', color: '#475569' }}>
+        <h4 style={{ marginTop: '1.25rem', marginBottom: '0.5rem', color: '#2B2A1C' }}>Professional Positions</h4>
+        <ul style={{ listStyleType: 'disc', paddingLeft: '1.25rem', marginBottom: '1rem', color: '#5A5747' }}>
           <li>Chief Consultant – RH Dental Care, Dhaka</li>
           <li>Senior Lecturer (since 2014) – Saphena Women's Dental College and MH Samorita Medical College & Hospital</li>
           <li>Senior Oral & Dental Surgeon – Labaid Dental Clinic, Gulshan</li>
         </ul>
 
-        <h4 style={{ marginTop: '1.25rem', marginBottom: '0.5rem', color: '#0f172a' }}>Why Choose Dr. B.M. Rafiqul Hasan?</h4>
-        <ul style={{ listStyleType: 'disc', paddingLeft: '1.25rem', marginBottom: '1rem', color: '#475569' }}>
+        <h4 style={{ marginTop: '1.25rem', marginBottom: '0.5rem', color: '#2B2A1C' }}>Why Choose Dr. B.M. Rafiqul Hasan?</h4>
+        <ul style={{ listStyleType: 'disc', paddingLeft: '1.25rem', marginBottom: '1rem', color: '#5A5747' }}>
           <li>One of the best dental implant doctors in Dhaka</li>
           <li>Internationally trained in advanced implantology</li>
           <li>Expertise in digital & guided implant surgery</li>
@@ -94,16 +94,16 @@ const teamMembers = [
           <li>Modern clinic with advanced dental technology</li>
         </ul>
 
-        <h4 style={{ marginTop: '1.25rem', marginBottom: '0.5rem', color: '#0f172a' }}>Medical Tourism in Bangladesh</h4>
+        <h4 style={{ marginTop: '1.25rem', marginBottom: '0.5rem', color: '#2B2A1C' }}>Medical Tourism in Bangladesh</h4>
         <p>Dr. Hasan is a preferred choice for international patients seeking affordable, high-quality dental implants in Bangladesh. RH Dental Care offers:</p>
-        <ul style={{ listStyleType: 'disc', paddingLeft: '1.25rem', marginBottom: '1rem', color: '#475569' }}>
+        <ul style={{ listStyleType: 'disc', paddingLeft: '1.25rem', marginBottom: '1rem', color: '#5A5747' }}>
           <li>Complete treatment planning before arrival</li>
           <li>Fast-track appointments</li>
           <li>Digital workflow for fewer visits</li>
           <li>Cost-effective solutions compared to Western countries</li>
         </ul>
         
-        <p style={{ marginTop: '1.5rem', fontSize: '0.85rem', color: '#94a3b8' }}>
+        <p style={{ marginTop: '1.5rem', fontSize: '0.85rem', color: '#8C8973' }}>
           Keywords: Dental Implant in Dhaka, Best Dentist in Dhaka, Implant Specialist Bangladesh, Full Mouth Rehabilitation Dhaka, Cosmetic Dentist Dhaka, Digital Dentistry Bangladesh, Affordable Dental Implants Bangladesh
         </p>
       </>
@@ -135,7 +135,7 @@ const teamMembers = [
         <p>He holds prestigious qualifications including BDS, MS, and FDS RCPS (Glasgow), along with advanced international training in Dental Implantology, oral surgery and Micro & digital dentistry from Korea, India & Dubai. He is currently doing PhD on Oral cancer.</p>
         <p>Over the years, he has developed exceptional expertise in full mouth rehabilitation, implant-supported prosthesis, esthetic prosthodontics, complex oral surgery, maxillofacial rehabilitation, and multidisciplinary restorative treatment planning.</p>
         <p>He is also serving as a Senior Consultant at Pacific Dental Clinic, Uttara, Dhaka where he is actively involved in advanced prosthodontic care, implant rehabilitation, and comprehensive patient management using modern dental technologies and evidence-based treatment approaches.</p>
-        <h4 style={{ marginTop: '1.25rem', marginBottom: '0.5rem', color: '#0f172a' }}>Role at RH Dental Care</h4>
+        <h4 style={{ marginTop: '1.25rem', marginBottom: '0.5rem', color: '#2B2A1C' }}>Role at RH Dental Care</h4>
         <p>At RH Dental Care, Prof. Dr. Shahidul Islam Shaheen is associated as an On-Call Doctor and Clinical Advisor. He primarily deals with critical and complex surgical cases, advanced oral rehabilitation procedures, and specialized treatment planning for challenging dental conditions. His expert guidance plays a vital role in managing complicated implant, prosthodontic, and oral surgical cases at RH Dental Care.</p>
         <p>Through his vast clinical experience and academic excellence, he continuously supports the institution in delivering high-quality, modern, and patient-centered dental care. Known for his precision, professionalism, and dedication to excellence, Prof. Dr. Shahidul Islam Shaheen continues to inspire students, dentists, and healthcare professionals through his leadership, teaching, and advanced clinical practice.</p>
       </>
@@ -273,7 +273,7 @@ export default function TeamPage() {
             <Users size={16} /> Elite Specialists
           </div>
           <h1 className="team-title">
-            Meet the Masters of <br />
+            Meet the clinicians of <br />
             <span>Modern Dentistry</span>
           </h1>
           <p className="team-desc">
@@ -321,7 +321,7 @@ export default function TeamPage() {
                 <div className="team-designation">{m.designation}</div>
                 <h3 className="team-name">{m.name}</h3>
                 <p className="team-role">{m.role}</p>
-                <p style={{ fontSize: '0.8rem', color: '#64748b', marginTop: '4px', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                <p style={{ fontSize: '0.8rem', color: '#6E6B57', marginTop: '4px', display: 'flex', alignItems: 'center', gap: '4px' }}>
                   <ShieldCheck size={12} /> BMDC: {m.bmdc}
                 </p>
                 <div className="team-action">
@@ -375,7 +375,7 @@ export default function TeamPage() {
                     style={{
                       objectFit: 'contain',
                       objectPosition: 'center',
-                      background: '#020617',
+                      background: 'var(--rh-surface)',
                     }}
                   />
                 )}

@@ -3,12 +3,21 @@ import { SignJWT } from 'jose';
 import { cookies } from 'next/headers';
 import bcrypt from 'bcryptjs';
 import { prisma } from '@/lib/prisma';
+import { getAuthSecret } from '@/lib/auth-secret';
 
-const SECRET_KEY = new TextEncoder().encode(
-  process.env.JWT_SECRET || 'fallback_secret_key_for_dev'
-);
+
 
 export async function POST(req: Request) {
+  const secret = getAuthSecret();
+  if (!secret) {
+    // Production with no JWT_SECRET. Refuse to issue a token rather than sign
+    // one with a secret that is public in the repository.
+    return NextResponse.json(
+      { success: false, message: 'Admin login is not configured on this deployment.' },
+      { status: 503 }
+    );
+  }
+
   try {
     const { username, password } = await req.json();
 
@@ -39,7 +48,7 @@ export async function POST(req: Request) {
     const token = await new SignJWT({ id: admin.id, username: admin.username })
       .setProtectedHeader({ alg: 'HS256' })
       .setExpirationTime('24h')
-      .sign(SECRET_KEY);
+      .sign(secret);
 
     const cookieStore = await cookies();
     cookieStore.set('admin_token', token, {

@@ -2,7 +2,7 @@
    PREMIUM DARK FOOTER — RH Dental Care
    ═══════════════════════════════════════════════ */
 .footer {
-  background: linear-gradient(180deg, #0a0f1e 0%, #020617 100%);
+  background: linear-gradient(180deg, var(--rh-paper) 0%, var(--rh-surface-sunk) 100%);
   padding: 5rem 0 0;
   font-size: 0.95rem;
   position: relative;
@@ -17,7 +17,7 @@
   left: -120px;
   width: 400px;
   height: 400px;
-  background: radial-gradient(circle, rgba(14,165,233,0.06), transparent 70%);
+  background: radial-gradient(circle, rgba(156,124,56,0.06), transparent 70%);
   pointer-events: none;
   z-index: 0;
 }
@@ -28,7 +28,7 @@
   right: -60px;
   width: 300px;
   height: 300px;
-  background: radial-gradient(circle, rgba(99,102,241,0.05), transparent 70%);
+  background: radial-gradient(circle, rgba(156,124,56,0.05), transparent 70%);
   pointer-events: none;
   z-index: 0;
 }
@@ -45,7 +45,7 @@
   gap: 3rem;
   margin-bottom: 0;
   padding-bottom: 4rem;
-  border-bottom: 1px solid rgba(255,255,255,0.06);
+  border-bottom: 1px solid var(--rh-hairline);
 }
 
 @media (min-width: 640px) {
@@ -72,8 +72,8 @@
 
 .footer-brand .logo-text {
   font-size: 1.1rem;
-  font-weight: 800;
-  color: #f1f5f9;
+  font-weight: 600;
+  color: var(--rh-surface-sunk);
   letter-spacing: -0.02em;
 }
 
@@ -90,13 +90,13 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: rgba(14,165,233,0.1);
-  border: 1px solid rgba(14,165,233,0.2);
+  background: rgba(156,124,56,0.1);
+  border: 1px solid rgba(156,124,56,0.2);
   color: #7dd3fc;
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.08em;
-  text-transform: uppercase;
+  text-transform: none;
   padding: 0.35rem 0.9rem;
   border-radius: 100px;
   margin-bottom: 1.5rem;
@@ -115,27 +115,27 @@
   width: 40px;
   height: 40px;
   border-radius: 10px;
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(43, 42, 28, 0.05);
+  border: 1px solid var(--rh-hairline);
   color: rgba(148,163,184,0.8);
   transition: all 0.25s ease;
 }
 
 .social-link:hover {
-  background: rgba(14,165,233,0.15);
-  border-color: rgba(14,165,233,0.35);
+  background: rgba(156,124,56,0.15);
+  border-color: rgba(156,124,56,0.35);
   color: #7dd3fc;
   transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(14,165,233,0.15);
+  box-shadow: 0 8px 20px rgba(156,124,56,0.15);
 }
 
 /* ── Headings ── */
 .footer h3 {
   font-size: 0.75rem;
-  font-weight: 800;
+  font-weight: 600;
   letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: #f1f5f9;
+  text-transform: none;
+  color: var(--rh-surface-sunk);
   margin-bottom: 1.5rem;
   position: relative;
   padding-bottom: 0.75rem;
@@ -148,7 +148,7 @@
   left: 0;
   width: 28px;
   height: 2px;
-  background: linear-gradient(90deg, #0ea5e9, transparent);
+  background: linear-gradient(90deg, var(--rh-brass), transparent);
   border-radius: 2px;
 }
 
@@ -177,7 +177,7 @@
   display: inline-block;
   width: 5px;
   height: 5px;
-  background: #0ea5e9;
+  background: var(--rh-brass);
   border-radius: 50%;
   opacity: 0.4;
   transition: opacity 0.2s, transform 0.2s;
@@ -185,7 +185,7 @@
 }
 
 .footer-links a:hover {
-  color: #e2e8f0;
+  color: var(--rh-surface-sunk);
   padding-left: 4px;
 }
 
@@ -215,7 +215,7 @@
 
 .footer-contact .contact-icon {
   flex-shrink: 0;
-  color: #0ea5e9;
+  color: var(--rh-brass);
   margin-top: 2px;
 }
 
@@ -231,8 +231,8 @@
 
 /* ── Location Cards ── */
 .location-card {
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(43, 42, 28, 0.05);
+  border: 1px solid var(--rh-hairline);
   border-radius: 1rem;
   overflow: hidden;
   transition: all 0.3s ease;
@@ -242,16 +242,16 @@
 }
 
 .location-card:hover {
-  background: rgba(255, 255, 255, 0.04);
-  border-color: rgba(255, 255, 255, 0.15);
+  background: rgba(43, 42, 28, 0.05);
+  border-color: var(--rh-ink-soft);
   transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+  box-shadow: var(--rh-glow-md);
 }
 
 .location-map-wrap {
   height: 160px;
   width: 100%;
-  border-bottom: 1px solid rgba(255,255,255,0.06);
+  border-bottom: 1px solid var(--rh-hairline);
 }
 
 .location-map-wrap iframe {
@@ -267,9 +267,9 @@
 }
 
 .location-content h4 {
-  color: #0ea5e9;
+  color: var(--rh-brass);
   font-size: 1.05rem;
-  font-weight: 800;
+  font-weight: 600;
   margin-bottom: 1rem;
   display: flex;
   align-items: center;
@@ -311,27 +311,27 @@
   align-items: center;
   padding: 2.5rem 0 1.5rem;
   margin-top: 1rem;
-  border-top: 1px solid rgba(255,255,255,0.06);
+  border-top: 1px solid var(--rh-hairline);
 }
 
 .footer-payments-inner {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(43, 42, 28, 0.05);
+  border: 1px solid var(--rh-hairline);
   border-radius: 1rem;
   padding: 1.5rem 2.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  box-shadow: var(--rh-glow-md);
 }
 
 .footer-payments h3 {
   margin-bottom: 1.25rem;
-  color: #f1f5f9;
+  color: var(--rh-surface-sunk);
   font-size: 0.85rem;
-  font-weight: 800;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: none;
 }
 
 .footer-payments h3::after {
@@ -355,7 +355,7 @@
   border-radius: 6px;
   transition: all 0.3s ease;
   user-select: none;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  box-shadow: var(--rh-glow-sm);
 }
 
 .pay-badge:hover {

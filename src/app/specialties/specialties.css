@@ -8,8 +8,8 @@
   border-radius: 1.5rem;
   padding: 2.5rem;
   height: 100%;
-  border: 1px solid #e2e8f0;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--rh-surface-sunk);
+  box-shadow: var(--rh-glow-sm);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
@@ -19,7 +19,7 @@
 
 .specialty-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--rh-glow-md);
   border-color: var(--hover-color);
 }
 
@@ -35,12 +35,12 @@
 .sp-book-btn {
   display: inline-block;
   padding: 1.2rem 3rem;
-  border-radius: 100px;
-  background: #0ea5e9;
-  color: #fff;
-  font-weight: 800;
+  border-radius: var(--rh-r-sm);
+  background: var(--rh-brass);
+  color: var(--rh-ink);
+  font-weight: 600;
   text-decoration: none;
-  box-shadow: 0 10px 30px rgba(14, 165, 233, 0.3);
+  box-shadow: 0 10px 30px rgba(156, 124, 56, 0.3);
   transition: transform 0.2s;
 }
 

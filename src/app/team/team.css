@@ -1,6 +1,6 @@
 .team-page {
-  background-color: #020617;
-  color: #f8fafc;
+  background: var(--rh-surface);
+  color: var(--rh-ink);
   min-height: 100vh;
   padding-bottom: 5rem;
 }
@@ -9,7 +9,7 @@
 .team-hero {
   position: relative;
   padding: 10rem 1.5rem 5rem;
-  background: linear-gradient(180deg, #020617 0%, #0f172a 100%);
+  background: linear-gradient(180deg, var(--rh-paper) 0%, var(--rh-surface-sunk) 100%);
   text-align: center;
   overflow: hidden;
 }
@@ -18,7 +18,7 @@
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: radial-gradient(circle at 50% 0%, rgba(56, 189, 248, 0.12) 0%, transparent 65%);
+  background: radial-gradient(circle at 50% 0%, rgba(205, 174, 81, 0.12) 0%, transparent 65%);
   pointer-events: none;
 }
 
@@ -26,29 +26,29 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: rgba(56, 189, 248, 0.1);
-  color: #38bdf8;
+  background: rgba(205, 174, 81, 0.1);
+  color: var(--rh-brass);
   padding: 0.5rem 1.25rem;
   border-radius: 999px;
   font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 0.1em;
-  text-transform: uppercase;
+  text-transform: none;
   margin-bottom: 1.5rem;
-  border: 1px solid rgba(56, 189, 248, 0.2);
+  border: 1px solid rgba(205, 174, 81, 0.2);
 }
 
 .team-title {
   font-size: clamp(2.2rem, 5.5vw, 3.75rem);
-  font-weight: 900;
-  color: #f8fafc;
+  font-weight: 600;
+  color: var(--rh-ink);
   line-height: 1.1;
   letter-spacing: -0.03em;
   margin-bottom: 1.25rem;
 }
 
 .team-title span {
-  background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+  background: linear-gradient(135deg, var(--rh-brass-light) 0%, var(--rh-brass-light) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -57,7 +57,7 @@
   max-width: 620px;
   margin: 0 auto;
   font-size: 1.05rem;
-  color: #94a3b8;
+  color: var(--rh-ink-soft);
   line-height: 1.7;
 }
 
@@ -79,21 +79,21 @@
 
 /* ── Card ── */
 .team-card {
-  background: #0f172a;
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: var(--rh-paper);
+  border: 1px solid var(--rh-hairline);
   border-radius: 1.25rem;
   overflow: hidden;
   cursor: pointer;
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  box-shadow: var(--rh-glow-md);
   display: flex;
   flex-direction: column;
 }
 
 .team-card:hover {
   transform: translateY(-6px);
-  border-color: rgba(56, 189, 248, 0.25);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(56, 189, 248, 0.08);
+  border-color: rgba(205, 174, 81, 0.25);
+  box-shadow: var(--rh-glow-md);
 }
 
 /* Portrait area — full image visible */
@@ -101,7 +101,7 @@
   width: 100%;
   aspect-ratio: 16 / 9;
   position: relative;
-  background: #020617;
+  background: var(--rh-paper);
   overflow: hidden;
 }
 
@@ -118,7 +118,7 @@
 .team-card-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, #0f172a 0%, rgba(15, 23, 42, 0.2) 45%, transparent 70%);
+  background: linear-gradient(180deg, var(--rh-paper) 0%, var(--rh-surface-sunk) 100%);
   z-index: 1;
 }
 
@@ -127,11 +127,11 @@
   position: absolute;
   top: 0.875rem;
   right: 0.875rem;
-  background: rgba(15, 23, 42, 0.85);
+  background: var(--rh-surface);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  color: #e2e8f0;
+  border: 1px solid var(--rh-hairline);
+  color: var(--rh-surface-sunk);
   padding: 0.35rem 0.75rem;
   border-radius: 999px;
   font-size: 0.72rem;
@@ -146,13 +146,13 @@
 .team-role-badge.lead {
   background: rgba(147, 51, 234, 0.85);
   border-color: rgba(168, 85, 247, 0.4);
-  color: #fff;
+  color: var(--rh-ink);
 }
 
 .team-role-badge.director {
-  background: rgba(14, 165, 233, 0.85);
-  border-color: rgba(56, 189, 248, 0.4);
-  color: #fff;
+  background: rgba(156, 124, 56, 0.85);
+  border-color: rgba(205, 174, 81, 0.4);
+  color: var(--rh-ink);
 }
 
 /* Card text area */
@@ -168,23 +168,23 @@
 .team-designation {
   font-size: 0.72rem;
   font-weight: 700;
-  color: #38bdf8;
-  text-transform: uppercase;
+  color: var(--rh-brass);
+  text-transform: none;
   letter-spacing: 0.06em;
   margin-bottom: 0.1rem;
 }
 
 .team-name {
   font-size: 1.1rem;
-  font-weight: 800;
-  color: #f8fafc;
+  font-weight: 600;
+  color: var(--rh-ink);
   line-height: 1.2;
   margin: 0;
 }
 
 .team-role {
   font-size: 0.85rem;
-  color: #64748b;
+  color: var(--rh-ink-soft);
   flex-grow: 1;
   margin: 0;
   line-height: 1.4;
@@ -196,8 +196,8 @@
   justify-content: space-between;
   padding-top: 0.75rem;
   margin-top: 0.5rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-  color: #38bdf8;
+  border-top: 1px solid var(--rh-hairline);
+  color: var(--rh-brass);
   font-size: 0.82rem;
   font-weight: 600;
   transition: color 0.2s ease;
@@ -213,7 +213,7 @@
 .lightbox-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(2, 6, 23, 0.92);
+  background: rgba(247, 245, 238, 0.92);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   z-index: 99999;
@@ -227,9 +227,9 @@
   position: absolute;
   top: 1.25rem;
   right: 1.25rem;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  color: #fff;
+  background: rgba(43, 42, 28, 0.05);
+  border: 1px solid var(--rh-hairline);
+  color: var(--rh-ink);
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -252,19 +252,19 @@
   width: 100%;
   max-width: 1050px;
   max-height: 88vh;
-  background: #0f172a;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--rh-paper);
+  border: 1px solid var(--rh-hairline);
   border-radius: 1.5rem;
   display: flex;
   overflow: hidden;
-  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.6);
+  box-shadow: var(--rh-glow-lg);
 }
 
 /* Left portrait panel */
 .lightbox-image-section {
   flex: 0 0 52%;
   position: relative;
-  background: #020617;
+  background: var(--rh-paper);
   min-height: 380px;
   overflow: hidden;
 }
@@ -285,13 +285,13 @@
 .lightbox-image-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to right, transparent 60%, #0f172a 100%);
+  background: linear-gradient(180deg, var(--rh-paper) 0%, var(--rh-surface-sunk) 100%);
   z-index: 1;
 }
 
 .lightbox-image-section.flyer-mode {
   flex: 0 0 55%;
-  background: #020617;
+  background: var(--rh-paper);
 }
 
 .lightbox-image-section.flyer-mode img {
@@ -306,9 +306,9 @@
   bottom: 0.875rem;
   left: 0.875rem;
   z-index: 10;
-  background: rgba(15, 23, 42, 0.88);
-  border: 1px solid rgba(56, 189, 248, 0.35);
-  color: #38bdf8;
+  background: var(--rh-surface);
+  border: 1px solid rgba(205, 174, 81, 0.35);
+  color: var(--rh-brass);
   padding: 0.35rem 0.9rem;
   border-radius: 999px;
   font-size: 0.75rem;
@@ -321,8 +321,8 @@
 }
 
 .flyer-toggle-btn:hover {
-  background: rgba(56, 189, 248, 0.15);
-  border-color: #38bdf8;
+  background: rgba(205, 174, 81, 0.15);
+  border-color: var(--rh-brass);
   transform: translateY(-1px);
 }
 
@@ -339,9 +339,9 @@
 
 .lightbox-designation {
   font-size: 0.75rem;
-  font-weight: 800;
-  color: #38bdf8;
-  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--rh-brass);
+  text-transform: none;
   letter-spacing: 0.1em;
   margin-bottom: 0.5rem;
 }
@@ -351,48 +351,48 @@
   align-items: center;
   gap: 0.35rem;
   padding: 0.3rem 0.75rem;
-  border-radius: 999px;
+  border-radius: var(--rh-r-sm);
   font-size: 0.75rem;
   font-weight: 700;
 }
 
 .lightbox-chip-specialty {
-  background: rgba(99, 102, 241, 0.15);
+  background: rgba(156, 124, 56, 0.15);
   color: #a5b4fc;
-  border: 1px solid rgba(99, 102, 241, 0.3);
+  border: 1px solid rgba(156, 124, 56, 0.3);
 }
 
 .lightbox-chip-bmdc {
-  background: rgba(56, 189, 248, 0.1);
-  color: #38bdf8;
-  border: 1px solid rgba(56, 189, 248, 0.25);
+  background: rgba(205, 174, 81, 0.1);
+  color: var(--rh-brass);
+  border: 1px solid rgba(205, 174, 81, 0.25);
 }
 
 .lightbox-name {
   font-size: 1.6rem;
-  font-weight: 900;
-  color: #f8fafc;
+  font-weight: 600;
+  color: var(--rh-ink);
   line-height: 1.15;
   margin: 0.6rem 0 0.2rem;
 }
 
 .lightbox-role {
   font-size: 0.95rem;
-  color: #64748b;
+  color: var(--rh-ink-soft);
   margin: 0 0 1rem;
 }
 
 .lightbox-divider {
   height: 1px;
-  background: rgba(255, 255, 255, 0.06);
+  background: rgba(43, 42, 28, 0.05);
   margin: 1rem 0;
 }
 
 .lightbox-section-title {
   font-size: 0.72rem;
-  font-weight: 800;
-  color: #94a3b8;
-  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--rh-ink-soft);
+  text-transform: none;
   letter-spacing: 0.08em;
   margin: 0 0 0.65rem;
 }
@@ -410,20 +410,20 @@
   display: flex;
   align-items: flex-start;
   gap: 0.5rem;
-  color: #cbd5e1;
+  color: var(--rh-ink-soft);
   font-size: 0.9rem;
   line-height: 1.4;
 }
 
 .lightbox-bullet {
-  color: #38bdf8;
+  color: var(--rh-brass);
   flex-shrink: 0;
   font-size: 1.1rem;
   line-height: 1.2;
 }
 
 .lightbox-bio {
-  color: #94a3b8;
+  color: var(--rh-ink-soft);
   font-size: 0.9rem;
   line-height: 1.75;
   margin: 0;
@@ -439,9 +439,9 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: rgba(56, 189, 248, 0.08);
-  color: #38bdf8;
-  border: 1px solid rgba(56, 189, 248, 0.3);
+  background: rgba(205, 174, 81, 0.08);
+  color: var(--rh-brass);
+  border: 1px solid rgba(205, 174, 81, 0.3);
   padding: 0.6rem 1.25rem;
   border-radius: 999px;
   font-size: 0.85rem;
@@ -454,10 +454,10 @@
 }
 
 .lightbox-download-btn:hover {
-  background: rgba(56, 189, 248, 0.2);
-  border-color: #38bdf8;
+  background: rgba(205, 174, 81, 0.2);
+  border-color: var(--rh-brass);
   transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(56, 189, 248, 0.2);
+  box-shadow: 0 6px 20px rgba(205, 174, 81, 0.2);
 }
 
 .lightbox-book-btn {
@@ -465,24 +465,24 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  background: #0ea5e9;
-  color: #fff;
+  background: var(--rh-brass);
+  color: var(--rh-ink);
   border: none;
   padding: 0.65rem 1.25rem;
   border-radius: 999px;
   font-size: 0.85rem;
-  font-weight: 800;
+  font-weight: 600;
   text-decoration: none;
   transition: all 0.25s ease;
   cursor: pointer;
   flex: 1;
-  box-shadow: 0 6px 20px rgba(14, 165, 233, 0.3);
+  box-shadow: 0 6px 20px rgba(156, 124, 56, 0.3);
 }
 
 .lightbox-book-btn:hover {
-  background: #38bdf8;
+  background: var(--rh-brass-light);
   transform: translateY(-1px);
-  box-shadow: 0 10px 28px rgba(56, 189, 248, 0.4);
+  box-shadow: 0 10px 28px rgba(205, 174, 81, 0.4);
 }
 
 /* ── Responsive ── */
@@ -498,11 +498,11 @@
     height: 38vw;
     max-height: 220px;
     min-height: 160px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    border-bottom: 1px solid var(--rh-hairline);
   }
 
   .lightbox-image-overlay {
-    background: linear-gradient(to top, #0f172a 0%, transparent 55%);
+    background: linear-gradient(180deg, var(--rh-paper) 0%, var(--rh-surface-sunk) 100%);
   }
 
   .lightbox-text-section {

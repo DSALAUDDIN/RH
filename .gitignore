@@ -49,3 +49,8 @@ next-env.d.ts
 *.mkv
 public/*.mp4
 src/assets/Video/*.mp4
+
+# local sqlite database — the Admin table carries a bcrypt hash, which should not
+# sit in a public repository where it can be brute-forced offline
+prisma/*.db
+prisma/*.db-journal

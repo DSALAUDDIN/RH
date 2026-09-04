@@ -62,7 +62,7 @@ const timelineData: TimelineItemData[] = [
     desc: 'With a strong vision and a commitment to patient-centered care, we laid the foundation of RH Dental Care. Our focus was on providing honest, effective, and ethical dental treatments from day one.',
     images: [img14a, img14b, img14c],
     icon: <Calendar size={20} />,
-    color: '#94a3b8'
+    color: '#8C8973'
   },
   {
     year: '2015',
@@ -71,7 +71,7 @@ const timelineData: TimelineItemData[] = [
     desc: 'As our reputation grew, so did our patient base. We started expanding our basic clinical facilities to accommodate more patients, always prioritizing quality and hygiene.',
     images: [img15a, img15b, img15c],
     icon: <Building size={20} />,
-    color: '#64748b'
+    color: '#6E6B57'
   },
   {
     year: '2019',
@@ -80,7 +80,7 @@ const timelineData: TimelineItemData[] = [
     desc: 'A significant milestone in upgrading our clinical infrastructure. We brought in new-generation dental chairs and improved our sterilization protocols to meet international standards.',
     images: [img21a, img21b, img21c],
     icon: <Rocket size={20} />,
-    color: '#0ea5e9'
+    color: '#9C7C38'
   },
   {
     year: '2021',
@@ -89,7 +89,7 @@ const timelineData: TimelineItemData[] = [
     desc: 'Adapting to the new normal, we transformed our clinic with hospital-grade sterilization protocols and specialized air filtration, ensuring an absolutely safe environment for every patient.',
     images: [img19a, img19b, img19c],
     icon: <CheckCircle size={20} />,
-    color: '#10b981'
+    color: '#55684F'
   },
   {
     year: '2022',
@@ -98,7 +98,7 @@ const timelineData: TimelineItemData[] = [
     desc: 'We fully integrated digital workflows into our practice. From digital x-rays to intraoral cameras, we began diagnosing with unprecedented clarity and precision.',
     images: [img22a, img22b, img22c],
     icon: <Zap size={20} />,
-    color: '#8b5cf6'
+    color: '#9C7C38'
   },
   {
     year: '2024',
@@ -125,7 +125,7 @@ const timelineData: TimelineItemData[] = [
     desc: 'Today, RH Dental Care stands as a 3,500 sq.ft state-of-the-art facility. Featuring GA OT, 3D imaging, and a team of specialists — we are setting new benchmarks in modern dentistry.',
     images: [img26a, img26b, img26c],
     icon: <ArrowUpRight size={20} />,
-    color: '#0284c7'
+    color: '#55684F'
   }
 ];
 
@@ -168,7 +168,7 @@ export default function EvolutionTimeline() {
               Our Journey of <span className="et-highlight">Evolution</span>
             </h2>
             <p className="et-subtitle">
-              Take a walk through time. From 2014 to today, witness how RH Dental Care continuously evolved its facility, technology, and expertise to deliver world-class care.
+              Take a walk through time. From 2014 to today, witness how RH Dental Care continuously evolved its facility, technology, and expertise to deliver considered care.
             </p>
           </motion.div>
         </div>

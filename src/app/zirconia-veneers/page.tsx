@@ -10,6 +10,7 @@ import {
 } from 'lucide-react';
 import '../implants/implants.css';
 import '../zirconia-crown/zirconia.css';
+import BranchCTA from '@/components/branch/BranchCTA';
 
 import heroImg      from '@/assets/specialties/zirconia.jpg';
 import digitalImg   from '@/assets/specialties/zirconia_digital_workflow.png';
@@ -34,11 +35,11 @@ function FadeIn({ children, delay = 0, className }: { children: React.ReactNode;
 
 /* ─── page metadata ─── */
 const advantages = [
-  { icon: <Sparkles size={22}/>, title: 'Exceptional Natural Appearance', desc: 'Modern zirconia veneers mimic the translucency and shine of natural teeth, creating a highly aesthetic and realistic smile.', color: '#10b981', bg: '#d1fae5' },
-  { icon: <Shield size={22}/>,   title: 'Strong & Durable', desc: 'Zirconia is one of the strongest dental ceramics, highly resistant to fracture, wear, and discoloration for long-term smile rehabilitation.', color: '#0ea5e9', bg: '#e0f2fe' },
-  { icon: <ShieldCheck size={22}/>, title: 'Stain Resistant', desc: 'Resists staining from tea, coffee, smoking, and colored foods, helping maintain a bright smile for years.', color: '#ec4899', bg: '#fce7f3' },
-  { icon: <Zap size={22}/>,      title: 'Minimal Tooth Reduction', desc: 'Our minimally invasive technique preserves maximum natural tooth structure while delivering outstanding cosmetic improvement.', color: '#f59e0b', bg: '#fef3c7' },
-  { icon: <Monitor size={22}/>,   title: 'Digitally Customized Smile', desc: 'Using advanced 3D scanning technology, we create highly accurate designs tailored specifically to your facial aesthetics.', color: '#6366f1', bg: '#ede9fe' },
+  { icon: <Sparkles size={22}/>, title: 'Exceptional Natural Appearance', desc: 'Modern zirconia veneers mimic the translucency and shine of natural teeth, creating a highly aesthetic and realistic smile.', color: '#55684F', bg: '#DCE7D2' },
+  { icon: <Shield size={22}/>,   title: 'Strong & Durable', desc: 'Zirconia is one of the strongest dental ceramics, highly resistant to fracture, wear, and discoloration for long-term smile rehabilitation.', color: '#9C7C38', bg: '#DCE7D2' },
+  { icon: <ShieldCheck size={22}/>, title: 'Stain Resistant', desc: 'Resists staining from tea, coffee, smoking, and colored foods, helping maintain a bright smile for years.', color: '#9C7C38', bg: '#EFE3CB' },
+  { icon: <Zap size={22}/>,      title: 'Minimal Tooth Reduction', desc: 'Our minimally invasive technique preserves maximum natural tooth structure while delivering outstanding cosmetic improvement.', color: 'var(--rh-brass)', bg: '#EFE3CB' },
+  { icon: <Monitor size={22}/>,   title: 'Digitally Customized Smile', desc: 'Using advanced 3D scanning technology, we create highly accurate designs tailored specifically to your facial aesthetics.', color: '#9C7C38', bg: '#F1EEE3' },
 ];
 
 const steps = [
@@ -80,8 +81,8 @@ export default function ZirconiaVeneersPage() {
         <div className="imp-hero-overlay zircon-overlay" />
         <div className="imp-hero-content">
           <motion.div initial={{ opacity: 0, y: -14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-            <Link href="/" style={{ color: 'rgba(255,255,255,0.5)', textDecoration: 'none', fontSize: '0.85rem', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '0.4rem', marginBottom: '1rem' }}>
-              Home <ChevronRight size={12} /> <span style={{ color: 'rgba(255,255,255,0.8)' }}>Zirconia Veneers</span>
+            <Link href="/" style={{ color: 'var(--rh-ink-soft)', textDecoration: 'none', fontSize: '0.85rem', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '0.4rem', marginBottom: '1rem' }}>
+              Home <ChevronRight size={12} /> <span style={{ color: 'var(--rh-ink-soft)' }}>Zirconia Veneers</span>
             </Link>
           </motion.div>
 
@@ -90,7 +91,7 @@ export default function ZirconiaVeneersPage() {
           </motion.div>
 
           <motion.h1 className="imp-hero-title"
-            initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0.001, y: 40 }} animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           >
             Indirect Zirconia <span>Veneers</span>
@@ -104,22 +105,23 @@ export default function ZirconiaVeneersPage() {
           </motion.p>
 
           <motion.div className="imp-hero-cta-row" initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.8 }}>
-            <Link href="/contact" className="imp-btn-primary zircon-btn">Book Consultation <ArrowUpRight size={18}/></Link>
-            <a href="tel:+8801775227902" className="imp-btn-glass"><Phone size={18}/> Call Now</a>
+            <BranchCTA action="book" service="Zirconia Veneers" className="imp-btn-primary zircon-btn">Book Consultation <ArrowUpRight size={18}/></BranchCTA>
+            <BranchCTA action="call" service="Zirconia Veneers" className="imp-btn-glass"><Phone size={18}/> Call Now</BranchCTA>
+            <BranchCTA action="whatsapp" service="Zirconia Veneers" className="imp-btn-glass" style={{ color: '#25D366' }}><MessageCircle size={18} /> WhatsApp</BranchCTA>
           </motion.div>
         </div>
       </section>
 
       {/* ═══════════════════════ INTRODUCTION ═══════════════════════ */}
-      <section className="imp-section" style={{ background: '#f8fafc' }}>
+      <section className="imp-section" style={{ background: '#F7F5EE' }}>
         <div className="container">
           <div className="imp-what-grid" style={{ alignItems: 'center' }}>
             <FadeIn>
               <div className="imp-what-content">
-                <span className="imp-label" style={{ background: 'rgba(5,150,105,0.1)', color: '#059669', borderColor: 'rgba(5,150,105,0.2)' }}>
+                <span className="imp-label" style={{ background: 'rgba(5,150,105,0.1)', color: '#45543F', borderColor: 'rgba(5,150,105,0.2)' }}>
                   <Star size={14} /> The Gold Standard in Aesthetics
                 </span>
-                <h2 className="imp-title">What Are Indirect <span className="imp-accent" style={{ background: 'linear-gradient(135deg, #10b981, #059669)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>Zirconia Veneers?</span></h2>
+                <h2 className="imp-title">What Are Indirect <span className="imp-accent" style={{ background: 'linear-gradient(135deg, #55684F, #45543F)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>Zirconia Veneers?</span></h2>
                 <div className="imp-description">
                   <p>
                     Indirect zirconia veneers are ultra-thin customized ceramic shells made from premium zirconia material that are bonded to the front surface of teeth to improve appearance and smile aesthetics.
@@ -167,24 +169,24 @@ export default function ZirconiaVeneersPage() {
       </section>
 
       {/* ═══════════════════════ PERFECT FOR ═══════════════════════ */}
-      <section className="imp-section" style={{ background: '#f1f5f9', borderTop: '1px solid rgba(0,0,0,0.05)', borderBottom: '1px solid rgba(0,0,0,0.05)' }}>
+      <section className="imp-section" style={{ background: '#F1EEE3', borderTop: '1px solid rgba(0,0,0,0.05)', borderBottom: '1px solid rgba(0,0,0,0.05)' }}>
         <div className="container">
           <div className="imp-what-grid" style={{ alignItems: 'center' }}>
             <FadeIn>
               <div className="imp-what-content">
-                <span className="imp-label" style={{ background: 'rgba(99,102,241,0.1)', color: '#4f46e5', borderColor: 'rgba(99,102,241,0.2)' }}>
+                <span className="imp-label" style={{ background: 'rgba(156,124,56,0.1)', color: '#7E6329', borderColor: 'rgba(156,124,56,0.2)' }}>
                   <Target size={14} /> Treatment Indications
                 </span>
-                <h2 className="imp-title">Conditions That Can Be <span className="imp-accent" style={{ background: 'linear-gradient(135deg, #6366f1, #4f46e5)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>Corrected</span></h2>
+                <h2 className="imp-title">Conditions That Can Be <span className="imp-accent" style={{ background: 'linear-gradient(135deg, #9C7C38, #7E6329)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>Corrected</span></h2>
                 <p className="imp-subtitle" style={{ textAlign: 'left', margin: '0 0 2rem 0', maxWidth: '100%' }}>
                   Indirect zirconia veneers can dramatically improve a wide variety of cosmetic dental issues to give you a flawless smile.
                 </p>
 
                 <div className="imp-perfect-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem' }}>
                   {perfectFor.map((item, i) => (
-                    <div key={i} className="imp-perfect-item" style={{ background: '#fff', padding: '1rem', borderRadius: '1rem', border: '1px solid rgba(99,102,241,0.1)', display: 'flex', alignItems: 'flex-start', gap: '0.75rem', boxShadow: '0 4px 12px rgba(0,0,0,0.02)' }}>
-                      <CheckCircle2 size={18} style={{ color: '#4f46e5', flexShrink: 0, marginTop: '0.1rem' }} />
-                      <span style={{ fontSize: '0.95rem', fontWeight: 500, color: '#334155' }}>{item}</span>
+                    <div key={i} className="imp-perfect-item" style={{ background: '#fff', padding: '1rem', borderRadius: '1rem', border: '1px solid rgba(156,124,56,0.1)', display: 'flex', alignItems: 'flex-start', gap: '0.75rem', boxShadow: '0 4px 12px rgba(0,0,0,0.02)' }}>
+                      <CheckCircle2 size={18} style={{ color: '#7E6329', flexShrink: 0, marginTop: '0.1rem' }} />
+                      <span style={{ fontSize: '0.95rem', fontWeight: 500, color: '#45432F' }}>{item}</span>
                     </div>
                   ))}
                 </div>
@@ -193,21 +195,21 @@ export default function ZirconiaVeneersPage() {
             <FadeIn delay={0.2}>
               <div className="imp-what-content" style={{ background: '#fff', padding: '2.5rem', borderRadius: '2rem', boxShadow: '0 20px 40px rgba(0,0,0,0.05)', border: '1px solid rgba(0,0,0,0.05)' }}>
                 <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
-                  <div style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '64px', height: '64px', background: 'rgba(99,102,241,0.1)', color: '#4f46e5', borderRadius: '50%', marginBottom: '1rem' }}>
+                  <div style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '64px', height: '64px', background: 'rgba(156,124,56,0.1)', color: '#7E6329', borderRadius: '50%', marginBottom: '1rem' }}>
                     <Info size={32} />
                   </div>
-                  <h3 style={{ fontSize: '1.5rem', fontWeight: 800, color: '#0f172a' }}>Smile with Confidence</h3>
-                  <p style={{ color: '#64748b', fontSize: '0.95rem', marginTop: '0.5rem', lineHeight: 1.6 }}>
+                  <h3 style={{ fontSize: '1.5rem', fontWeight: 600, color: '#2B2A1C' }}>Smile with Confidence</h3>
+                  <p style={{ color: '#6E6B57', fontSize: '0.95rem', marginTop: '0.5rem', lineHeight: 1.6 }}>
                     A beautiful smile can improve confidence, personality, and overall appearance. Our goal is to create confident, healthy, and attractive smiles through modern digital dentistry.
                   </p>
                 </div>
 
-                <div style={{ background: 'linear-gradient(135deg, #f8fafc, #f1f5f9)', padding: '1.5rem', borderRadius: '1.25rem', border: '1px solid rgba(0,0,0,0.03)' }}>
-                  <h4 style={{ fontSize: '1rem', fontWeight: 700, color: '#1e293b', marginBottom: '1rem' }}>The RH Difference</h4>
+                <div style={{ background: 'linear-gradient(135deg, #F7F5EE, #F1EEE3)', padding: '1.5rem', borderRadius: '1.25rem', border: '1px solid rgba(0,0,0,0.03)' }}>
+                  <h4 style={{ fontSize: '1rem', fontWeight: 700, color: '#2B2A1C', marginBottom: '1rem' }}>The RH Difference</h4>
                   <ul style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', listStyle: 'none', padding: 0, margin: 0 }}>
                     {whyUs.slice(0, 4).map((benefit, i) => (
-                      <li key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', fontSize: '0.9rem', color: '#475569', fontWeight: 500 }}>
-                        <div style={{ width: '6px', height: '6px', background: '#4f46e5', borderRadius: '50%' }} />
+                      <li key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', fontSize: '0.9rem', color: '#5A5747', fontWeight: 500 }}>
+                        <div style={{ width: '6px', height: '6px', background: '#7E6329', borderRadius: '50%' }} />
                         {benefit}
                       </li>
                     ))}
@@ -224,8 +226,8 @@ export default function ZirconiaVeneersPage() {
         <div className="container">
           <FadeIn>
             <div className="imp-section-header">
-              <span className="imp-label" style={{ background: 'rgba(16,185,129,0.08)', borderColor: 'rgba(16,185,129,0.2)', color: '#059669' }}><Monitor size={14} /> Our Digital Workflow</span>
-              <h2 className="imp-title">Seamless <span className="imp-accent" style={{ background: 'linear-gradient(135deg, #10b981, #059669)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>Digital Procedure</span></h2>
+              <span className="imp-label" style={{ background: 'rgba(85,104,79,0.08)', borderColor: 'rgba(85,104,79,0.2)', color: '#45543F' }}><Monitor size={14} /> Our Digital Workflow</span>
+              <h2 className="imp-title">Seamless <span className="imp-accent" style={{ background: 'linear-gradient(135deg, #55684F, #45543F)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>Digital Procedure</span></h2>
               <p className="imp-subtitle">This digital workflow improves treatment accuracy, patient comfort, fit precision, and final aesthetic outcome while reducing conventional impression-related discomfort.</p>
             </div>
           </FadeIn>
@@ -243,7 +245,7 @@ export default function ZirconiaVeneersPage() {
                     transition={{ duration: 0.6, delay: i * 0.12, ease: [0.16, 1, 0.3, 1] }}
                     style={{ background: '#fff', border: '1.5px solid rgba(0,0,0,0.05)', borderRadius: '1.25rem', padding: '1.5rem', boxShadow: '0 4px 20px rgba(0,0,0,0.03)', alignItems: 'flex-start' }}
                   >
-                    <div className="imp-anatomy-icon" style={{ background: 'linear-gradient(135deg, #10b981, #059669)', minWidth: '48px', height: '48px', fontSize: '0.95rem', fontWeight: 900 }}>{step.num}</div>
+                    <div className="imp-anatomy-icon" style={{ background: 'linear-gradient(135deg, #55684F, #45543F)', minWidth: '48px', height: '48px', fontSize: '0.95rem', fontWeight: 600 }}>{step.num}</div>
                     <div>
                       <div className="imp-anatomy-title" style={{ marginBottom: '0.35rem' }}>{step.title}</div>
                       <p className="imp-anatomy-desc" style={{ margin: 0 }}>{step.desc}</p>
@@ -258,10 +260,10 @@ export default function ZirconiaVeneersPage() {
                   <Image src={digitalImg} alt="Digital Workflow at RH Dental Care" fill sizes="50vw" style={{ objectFit: 'cover' }} />
                 </div>
 
-                <h4 style={{ fontWeight: 900, color: '#0f172a', fontSize: '1.1rem', marginBottom: '1.25rem' }}>Advantages of Choosing RH Dental Care</h4>
+                <h4 style={{ fontWeight: 600, color: '#2B2A1C', fontSize: '1.1rem', marginBottom: '1.25rem' }}>Advantages of Choosing RH Dental Care</h4>
                 <div className="imp-gallery-checks">
                   {whyUs.map((t, i) => (
-                    <div key={i} className="imp-gallery-check"><CheckCircle2 size={16} style={{ color: '#10b981' }} />{t}</div>
+                    <div key={i} className="imp-gallery-check"><CheckCircle2 size={16} style={{ color: '#55684F' }} />{t}</div>
                   ))}
                 </div>
               </div>
@@ -271,26 +273,26 @@ export default function ZirconiaVeneersPage() {
       </section>
 
       {/* ═══════════════════════ CTA ═══════════════════════ */}
-      <section className="imp-video-section" style={{ background: 'linear-gradient(135deg, #020617 0%, #022c22 50%, #020617 100%)' }}>
-        <div className="imp-video-orb imp-video-orb-1" style={{ background: 'radial-gradient(circle, rgba(16,185,129,0.12), transparent 70%)' }} />
+      <section className="imp-video-section" style={{ background: 'linear-gradient(135deg, #1F1E14 0%, #022c22 50%, #1F1E14 100%)' }}>
+        <div className="imp-video-orb imp-video-orb-1" style={{ background: 'radial-gradient(circle, rgba(85,104,79,0.12), transparent 70%)' }} />
         <div className="imp-video-orb imp-video-orb-2" style={{ background: 'radial-gradient(circle, rgba(5,150,105,0.07), transparent 70%)' }} />
         <div className="container">
           <FadeIn>
-            <div className="imp-section-header" style={{ color: '#fff' }}>
-              <span className="imp-label" style={{ background: 'rgba(16,185,129,0.15)', borderColor: 'rgba(16,185,129,0.3)', color: '#6ee7b7' }}><Sparkles size={14} /> Enhance Your Beauty</span>
-              <h2 className="imp-title" style={{ color: '#f1f5f9' }}>
-                Ready for a <span style={{ background: 'linear-gradient(135deg, #34d399, #6ee7b7)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>Beautiful Smile?</span>
+            <div className="imp-section-header" style={{ color: 'var(--rh-ink)' }}>
+              <span className="imp-label" style={{ background: 'rgba(85,104,79,0.15)', borderColor: 'rgba(85,104,79,0.3)', color: 'var(--rh-sage-deep)' }}><Sparkles size={14} /> Enhance Your Beauty</span>
+              <h2 className="imp-title" style={{ color: '#F1EEE3' }}>
+                Ready for a <span style={{ background: 'linear-gradient(135deg, #34d399, #B4D1A8)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>Beautiful Smile?</span>
               </h2>
-              <p className="imp-subtitle" style={{ color: 'rgba(203,213,225,0.8)' }}>Visit RH Dental Care today and experience advanced digital dentistry designed for comfort, aesthetics, and long-term success. Your dream smile is just one appointment away.</p>
+              <p className="imp-subtitle" style={{ color: 'rgba(201,197,178,0.8)' }}>Visit RH Dental Care today and experience advanced digital dentistry designed for comfort, aesthetics, and long-term success. Your dream smile is just one appointment away.</p>
             </div>
           </FadeIn>
           <FadeIn delay={0.15}>
             <div className="imp-hero-cta-row" style={{ justifyContent: 'center' }}>
-              <Link href="/contact" className="imp-btn-primary" style={{ background: 'linear-gradient(135deg, #10b981, #059669)', boxShadow: '0 8px 32px rgba(16,185,129,0.4)', padding: '1rem 2.5rem', fontSize: '1rem' }}>
+              <BranchCTA action="book" service="Zirconia Veneers" className="imp-btn-primary" style={{ background: 'linear-gradient(135deg, #55684F, #45543F)', boxShadow: '0 8px 32px rgba(85,104,79,0.4)', padding: '1rem 2.5rem', fontSize: '1rem' }}>
                 Book Your Appointment Now <ArrowUpRight size={18} />
-              </Link>
-              <a href="tel:+8801775227902" className="imp-btn-glass"><Phone size={16} /> Call Now</a>
-              <a href="https://wa.me/8801775227902" target="_blank" rel="noopener noreferrer" className="imp-btn-glass" style={{ color: '#25D366' }}><MessageCircle size={16} /> WhatsApp</a>
+              </BranchCTA>
+              <BranchCTA action="call" service="Zirconia Veneers" className="imp-btn-glass"><Phone size={16} /> Call Now</BranchCTA>
+              <BranchCTA action="whatsapp" service="Zirconia Veneers" className="imp-btn-glass" style={{ color: '#25D366' }}><MessageCircle size={16} /> WhatsApp</BranchCTA>
             </div>
           </FadeIn>
         </div>
