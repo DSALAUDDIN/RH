@@ -57,7 +57,7 @@ export default function Footer() {
             <ul style={{ marginBottom: '2rem' }}>
               <li><Link href="/">Home</Link></li>
               <li><Link href="/about">About Our Clinic</Link></li>
-              <li><Link href="/banani">Banani VIP Suite</Link></li>
+              <li><Link href="/banani">Banani Branch</Link></li>
               <li><Link href="/banasree">Banasree Flagship Hospital</Link></li>
               <li><Link href="/treatments">Treatments</Link></li>
               <li><Link href="/contact">Contact Hub</Link></li>
@@ -92,7 +92,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <Phone size={16} className="contact-icon" /> 
-                  <a href={`tel:${BRANCHES.banasree.phone}`} style={{ fontWeight: 600, color: '#E4E0D2' }}>{BRANCHES.banasree.phoneDisplay}</a>
+                  <a href={`tel:${BRANCHES.banasree.phone}`} style={{ fontWeight: 600, color: '#e2e8f0' }}>{BRANCHES.banasree.phoneDisplay}</a>
                 </li>
                 <li>
                   <Clock size={16} className="contact-icon" />
@@ -100,7 +100,7 @@ export default function Footer() {
                 </li>
               </ul>
               <div style={{ marginTop: '10px' }}>
-                <Link href="/banasree" style={{ fontSize: '0.82rem', color: 'var(--rh-brass)', textDecoration: 'none', fontWeight: 600 }}>
+                <Link href="/banasree" style={{ fontSize: '0.82rem', color: '#38bdf8', textDecoration: 'none', fontWeight: 600 }}>
                   Explore Flagship Hospital →
                 </Link>
               </div>
@@ -127,7 +127,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <Phone size={16} className="contact-icon" /> 
-                  <a href={`tel:${BRANCHES.banani.phone}`} style={{ fontWeight: 600, color: '#E4E0D2' }}>{BRANCHES.banani.phoneDisplay}</a>
+                  <a href={`tel:${BRANCHES.banani.phone}`} style={{ fontWeight: 600, color: '#e2e8f0' }}>{BRANCHES.banani.phoneDisplay}</a>
                 </li>
                 <li>
                   <Mail size={16} className="contact-icon" />
@@ -135,7 +135,7 @@ export default function Footer() {
                 </li>
               </ul>
               <div style={{ marginTop: '10px' }}>
-                <Link href="/banani" style={{ fontSize: '0.82rem', color: 'var(--rh-brass)', textDecoration: 'none', fontWeight: 600 }}>
+                <Link href="/banani" style={{ fontSize: '0.82rem', color: '#fbbf24', textDecoration: 'none', fontWeight: 600 }}>
                   Explore Private Suite →
                 </Link>
               </div>
@@ -150,32 +150,32 @@ export default function Footer() {
             <h3>We Accept</h3>
             <div className="payment-icons">
               {/* Visa */}
-              <div className="pay-badge" style={{ backgroundColor: '#fff', border: '1px solid #E4E0D2' }}>
-                <span style={{ color: '#1434CB', fontStyle: 'italic', fontWeight: 600, fontSize: '18px', letterSpacing: '-0.5px' }}>VISA</span>
+              <div className="pay-badge" style={{ backgroundColor: '#fff', border: '1px solid #e2e8f0' }}>
+                <span style={{ color: '#1434CB', fontStyle: 'italic', fontWeight: 900, fontSize: '18px', letterSpacing: '-0.5px' }}>VISA</span>
               </div>
               {/* Mastercard */}
-              <div className="pay-badge" style={{ backgroundColor: '#fff', border: '1px solid #E4E0D2', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <div className="pay-badge" style={{ backgroundColor: '#fff', border: '1px solid #e2e8f0', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <div style={{ width: '18px', height: '18px', borderRadius: '50%', backgroundColor: '#EB001B', position: 'relative', zIndex: 1 }}></div>
                 <div style={{ width: '18px', height: '18px', borderRadius: '50%', backgroundColor: '#F79E1B', marginLeft: '-8px', position: 'relative', zIndex: 0 }}></div>
               </div>
               {/* Amex */}
               <div className="pay-badge" style={{ backgroundColor: '#006FCF' }}>
-                <span style={{ color: 'var(--rh-ink)', fontWeight: 700, fontSize: '11px', textTransform: 'uppercase', lineHeight: 1.1, textAlign: 'center', letterSpacing: '0.5px' }}>AMEX</span>
+                <span style={{ color: '#fff', fontWeight: 700, fontSize: '11px', textTransform: 'uppercase', lineHeight: 1.1, textAlign: 'center', letterSpacing: '0.5px' }}>AMEX</span>
               </div>
               {/* Nexus */}
-              <div className="pay-badge" style={{ backgroundColor: '#fff', border: '1px solid #E4E0D2' }}>
-                <span style={{ color: '#005BBB', fontWeight: 600, fontSize: '15px', fontStyle: 'italic' }}>Nexus</span>
+              <div className="pay-badge" style={{ backgroundColor: '#fff', border: '1px solid #e2e8f0' }}>
+                <span style={{ color: '#005BBB', fontWeight: 800, fontSize: '15px', fontStyle: 'italic' }}>Nexus</span>
               </div>
               {/* bKash */}
               <div className="pay-badge" style={{ backgroundColor: '#DF146E' }}>
-                <span style={{ color: 'var(--rh-ink)', fontWeight: 700, fontSize: '16px' }}>bKash</span>
+                <span style={{ color: '#fff', fontWeight: 700, fontSize: '16px' }}>bKash</span>
               </div>
               {/* NPSB */}
-              <div className="pay-badge" style={{ backgroundColor: '#fff', border: '1px solid #E4E0D2' }}>
-                <span style={{ color: '#008C44', fontWeight: 600, fontSize: '15px' }}>NPSB</span>
+              <div className="pay-badge" style={{ backgroundColor: '#fff', border: '1px solid #e2e8f0' }}>
+                <span style={{ color: '#008C44', fontWeight: 900, fontSize: '15px' }}>NPSB</span>
               </div>
               {/* Google Pay */}
-              <div className="pay-badge" style={{ backgroundColor: '#fff', border: '1px solid #E4E0D2', gap: '4px' }}>
+              <div className="pay-badge" style={{ backgroundColor: '#fff', border: '1px solid #e2e8f0', gap: '4px' }}>
                 <span style={{ color: '#4285F4', fontWeight: 700, fontSize: '16px' }}>G</span>
                 <span style={{ color: '#5F6368', fontWeight: 500, fontSize: '16px' }}>Pay</span>
               </div>

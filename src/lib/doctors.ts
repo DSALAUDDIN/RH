@@ -76,6 +76,7 @@ export const DOCTORS: Record<string, Clinician> = {
     training: ['Advanced implantology training in China, Korea and India'],
     appointments: ['Senior Lecturer, MH Samorita Medical College & Hospital'],
     procedures: [
+      'Team Lead (Banasree & Banani Branch)',
       'Dental implants, including guided placement planned from a CBCT scan',
       'Full-mouth rehabilitation',
       'Oral and minor surgical procedures',
@@ -87,7 +88,7 @@ export const DOCTORS: Record<string, Clinician> = {
       'His main clinical interest is implantology planned in three dimensions: a CBCT scan taken before placement, the implant position decided against measured bone volume and nerve position rather than estimated from a flat radiograph, and, where the case calls for it, placed through a guided surgical stent.',
       'He also teaches, as a Senior Lecturer at MH Samorita Medical College & Hospital.',
     ],
-    image: '/assets/dr_hasan_office_notext.png',
+    image: '/assets/dr_hasan_flyer.jpeg',
     imageAlt:
       'Dr. B.M. Rafiqul Hasan, Chief Consultant Oral and Dental Surgeon at RH Dental Care, in a white clinical coat.',
   },
@@ -120,7 +121,7 @@ export const DOCTORS: Record<string, Clinician> = {
       'Her clinical focus is endodontics done under an operating microscope — the discipline where seeing a canal rather than feeling for it is what separates a root canal that lasts from one that has to be redone — alongside aesthetic dentistry, prosthodontics and minor oral surgery.',
       'She is a Senior Lecturer at MH Samorita Medical College & Dental Unit.',
     ],
-    image: '/assets/dr_shimia_no_text.png',
+    image: '/assets/dr_shimia_flyer.jpeg',
     imageAlt: 'Dr. Shimia Binte Taher, Senior Dental Surgeon at RH Dental Care, in a white clinical coat.',
   },
 };
@@ -180,7 +181,7 @@ export const ROSTER: Clinician[] = [
     qualifications: ['BDS (DU)', 'PGT (BSMMU)', 'Endodontics (DDC)'],
     bmdc: '9632',
     postings: BSR('Saturday – Wednesday, Friday', '3:30 pm – 10:00 pm'),
-    image: `${P}/tamima.webp`,
+    image: `${P}/Tamima.jpeg`,
   }),
   rosterEntry({
     name: 'Dr. Nishat Tamanna Alam',
@@ -188,7 +189,7 @@ export const ROSTER: Clinician[] = [
     qualifications: ['BDS (DU)', 'PGT (DDC)'],
     bmdc: '9245',
     postings: BSR('Saturday – Wednesday', '3:30 pm – 10:00 pm'),
-    image: `${P}/tamanna.webp`,
+    image: `${P}/Tamanna.jpeg`,
   }),
   rosterEntry({
     name: 'Dr. Mansura Panna',
@@ -197,7 +198,7 @@ export const ROSTER: Clinician[] = [
     bmdc: '15054',
     speciality: 'Endodontics',
     postings: BSR('Friday – Tuesday', '5:00 pm – 10:00 pm'),
-    image: `${P}/panna.webp`,
+    image: `${P}/Panna.jpeg`,
   }),
   rosterEntry({
     name: 'Dr. Fariha Ferdous',
@@ -205,7 +206,7 @@ export const ROSTER: Clinician[] = [
     qualifications: ['BDS — Mymensingh Medical College, Dental Unit'],
     bmdc: '14623',
     postings: BSR('Saturday, Sunday, Monday, Wednesday, Friday', '3:30 pm – 9:00 pm'),
-    image: `${P}/fariha.webp`,
+    image: `${P}/Fariha.jpeg`,
   }),
   rosterEntry({
     name: 'Dr. Umaya Khanam',
@@ -213,7 +214,7 @@ export const ROSTER: Clinician[] = [
     qualifications: ['BDS (DU)'],
     bmdc: '18104',
     postings: BSR('Saturday, Sunday, Monday, Tuesday, Friday', '4:30 pm – 10:00 pm'),
-    image: `${P}/umaya.webp`,
+    image: `${P}/Umaya.jpeg`,
   }),
   rosterEntry({
     name: 'Dr. Afzal Chowdhury',
@@ -221,17 +222,31 @@ export const ROSTER: Clinician[] = [
     qualifications: ['BDS (DU)'],
     bmdc: '18107',
     postings: BSR('Saturday, Sunday, Monday, Wednesday, Friday', '4:30 pm – 10:00 pm'),
-    image: `${P}/afzal.webp`,
+    image: `${P}/Afzal.jpeg`,
   }),
   rosterEntry({
     name: 'Dr. Nabil Rahaman',
     role: 'Consultant Orthodontist',
     qualifications: ['FCPS', 'BDS'],
     // TODO(client): Dr. Nabil's flyer is the only one with no BMDC number on it.
+    // TODO(client): The only image supplied (nabil.webp) is a social-media
+    //   appointment-booking card, not a headshot — the right half is a scheduling
+    //   UI that renders visibly in the card. Replaced with initials until a clean
+    //   portrait is provided.
     bmdc: null,
     speciality: 'Orthodontics',
     postings: BSR('Saturday', '3:30 pm – 9:00 pm'),
-    image: `${P}/nabil.webp`,
+    image: `${P}/Nabil.jpeg`,
+  }),
+
+  rosterEntry({
+    name: 'Prof. Dr. Md. Shahidul Islam Shaheen',
+    role: 'Clinical Advisor',
+    qualifications: ['BDS', 'MS (OMS)', 'FCPS (Surgery)'],
+    bmdc: '934',
+    speciality: 'Oral & Maxillofacial Surgery',
+    postings: [{ branch: 'banasree', onCall: true }],
+    image: `${P}/shaheen.png`,
   }),
 
   // ── No flyer in the repository: name and branch only. ──
@@ -261,7 +276,7 @@ export const ROSTER: Clinician[] = [
       { branch: 'banasree', days: 'Sunday, Tuesday', hours: '5:00 pm – 10:00 pm' },
       { branch: 'banani' },
     ],
-    image: `${P}/borsha.webp`,
+    image: `${P}/Barsha.jpeg`,
   }),
 
   // ── Banani ──
@@ -273,7 +288,7 @@ export const ROSTER: Clinician[] = [
     // TODO(client): her flyer prints the Banasree address and these Banasree
     // hours, but your roster places her at Banani. Which is current?
     postings: [{ branch: 'banani' }],
-    image: `${P}/hreedy.webp`,
+    image: `${P}/Hreedy.jpeg`,
   }),
   rosterEntry({
     name: 'Dr. Mim',

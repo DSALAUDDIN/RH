@@ -2,10 +2,10 @@
 
 .branch-chooser-section {
   padding: 4rem 1.25rem;
-  background: linear-gradient(180deg, var(--rh-paper) 0%, var(--rh-surface-sunk) 100%);
+  background: linear-gradient(180deg, #020617 0%, #0f172a 100%);
   position: relative;
   overflow: hidden;
-  border-top: 1px solid var(--rh-hairline);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .branch-chooser-container {
@@ -24,22 +24,22 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(43, 42, 28, 0.05);
-  border: 1px solid var(--rh-hairline);
-  color: var(--rh-brass);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #38bdf8;
   padding: 6px 18px;
   border-radius: 50px;
   font-size: 0.82rem;
   font-weight: 700;
   letter-spacing: 0.05em;
-  text-transform: none;
+  text-transform: uppercase;
   margin-bottom: 1rem;
 }
 
 .branch-chooser-title {
   font-size: clamp(2rem, 4.5vw, 3rem);
-  font-weight: 600;
-  color: var(--rh-ink);
+  font-weight: 900;
+  color: #ffffff;
   letter-spacing: -0.03em;
   line-height: 1.15;
   margin-bottom: 1rem;
@@ -47,7 +47,7 @@
 
 .branch-chooser-subtitle {
   font-size: clamp(1rem, 2vw, 1.15rem);
-  color: var(--rh-ink-soft);
+  color: #94a3b8;
   max-width: 680px;
   margin: 0 auto;
   line-height: 1.6;
@@ -58,21 +58,21 @@
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  background: var(--rh-surface);
-  border: 1px solid var(--rh-hairline);
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   padding: 8px 18px;
   border-radius: 50px;
   margin-top: 1.5rem;
   font-size: 0.88rem;
-  color: var(--rh-ink-soft);
+  color: #cbd5e1;
 }
 
 .branch-active-banner strong {
-  color: var(--rh-ink);
+  color: #ffffff;
 }
 
 .branch-change-link {
-  color: var(--rh-brass);
+  color: #38bdf8;
   text-decoration: underline;
   cursor: pointer;
   background: none;
@@ -99,11 +99,11 @@
 
 /* ── Cards ── */
 .branch-card {
-  background: var(--rh-surface);
+  background: #ffffff;
   border-radius: 28px;
   overflow: hidden;
   border: 2px solid transparent;
-  box-shadow: var(--rh-glow-md);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.3);
   display: flex;
   flex-direction: column;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
@@ -116,19 +116,19 @@
 
 .branch-card.card-banani.is-active,
 .branch-card.card-banani:hover {
-  border-color: var(--rh-brass);
+  border-color: #f59e0b;
   box-shadow: 0 25px 50px -12px rgba(245, 158, 11, 0.2);
   transform: translateY(-4px);
 }
 
 .branch-card.card-banasree {
-  border-color: rgba(156, 124, 56, 0.25);
+  border-color: rgba(14, 165, 233, 0.25);
 }
 
 .branch-card.card-banasree.is-active,
 .branch-card.card-banasree:hover {
-  border-color: var(--rh-brass);
-  box-shadow: 0 25px 50px -12px rgba(156, 124, 56, 0.2);
+  border-color: #0ea5e9;
+  box-shadow: 0 25px 50px -12px rgba(14, 165, 233, 0.2);
   transform: translateY(-4px);
 }
 
@@ -154,7 +154,7 @@
 .branch-card-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(43, 42, 28, 0.70) 100%);
+  background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.7) 100%);
 }
 
 .branch-card-tag {
@@ -164,21 +164,21 @@
   padding: 6px 14px;
   border-radius: 50px;
   font-size: 0.78rem;
-  font-weight: 600;
+  font-weight: 800;
   letter-spacing: 0.04em;
-  text-transform: none;
+  text-transform: uppercase;
   backdrop-filter: blur(8px);
 }
 
 .card-banani .branch-card-tag {
   background: rgba(217, 119, 6, 0.85);
-  color: var(--rh-ink);
+  color: #ffffff;
   border: 1px solid rgba(253, 230, 138, 0.4);
 }
 
 .card-banasree .branch-card-tag {
-  background: rgba(85, 104, 79, 0.85);
-  color: var(--rh-ink);
+  background: rgba(2, 132, 199, 0.85);
+  color: #ffffff;
   border: 1px solid rgba(186, 230, 253, 0.4);
 }
 
@@ -186,12 +186,12 @@
   position: absolute;
   bottom: 1.25rem;
   left: 1.25rem;
-  color: var(--rh-ink);
+  color: #ffffff;
 }
 
 .branch-card-status h3 {
   font-size: 1.6rem;
-  font-weight: 600;
+  font-weight: 900;
   margin: 0 0 2px 0;
   letter-spacing: -0.02em;
 }
@@ -199,7 +199,7 @@
 .branch-card-status p {
   font-size: 0.88rem;
   margin: 0;
-  color: var(--rh-ink-soft);
+  color: rgba(255, 255, 255, 0.9);
   font-weight: 600;
 }
 
@@ -212,26 +212,26 @@
 }
 
 .branch-audience-box {
-  background: var(--rh-paper);
+  background: #f8fafc;
   border-radius: 14px;
   padding: 1rem 1.1rem;
   margin-bottom: 1.5rem;
-  border: 1px solid var(--rh-surface-sunk);
+  border: 1px solid #e2e8f0;
 }
 
 .branch-audience-label {
   display: block;
   font-size: 0.72rem;
   font-weight: 700;
-  text-transform: none;
-  color: var(--rh-ink-soft);
+  text-transform: uppercase;
+  color: #64748b;
   margin-bottom: 4px;
   letter-spacing: 0.05em;
 }
 
 .branch-audience-text {
   font-size: 0.95rem;
-  color: var(--rh-ink);
+  color: #0f172a;
   font-weight: 600;
   line-height: 1.4;
   margin: 0;
@@ -252,22 +252,22 @@
   align-items: center;
   gap: 10px;
   font-size: 0.92rem;
-  color: var(--rh-ink-soft);
+  color: #334155;
   font-weight: 500;
 }
 
 .card-banani .facility-icon {
-  color: var(--rh-brass);
+  color: #d97706;
 }
 
 .card-banasree .facility-icon {
-  color: var(--rh-sage-deep);
+  color: #0284c7;
 }
 
 /* Location meta */
 .branch-location-meta {
   font-size: 0.85rem;
-  color: var(--rh-ink-soft);
+  color: #64748b;
   margin-bottom: 1.75rem;
   display: flex;
   align-items: center;
@@ -289,7 +289,7 @@
   justify-content: center;
   gap: 8px;
   padding: 0.85rem 1rem;
-  border-radius: var(--rh-r-sm);
+  border-radius: 50px;
   font-size: 0.92rem;
   font-weight: 700;
   text-decoration: none;
@@ -299,18 +299,18 @@
 }
 
 .btn-card-call {
-  background: var(--rh-paper);
-  color: var(--rh-ink);
+  background: #0f172a;
+  color: #ffffff;
 }
 
 .btn-card-call:hover {
-  background: var(--rh-paper);
+  background: #1e293b;
   transform: translateY(-1px);
 }
 
 .btn-card-wa {
   background: #25d366;
-  color: var(--rh-ink);
+  color: #ffffff;
 }
 
 .btn-card-wa:hover {
@@ -332,23 +332,23 @@
 }
 
 .card-banani .btn-card-explore {
-  background: var(--rh-paper);
-  color: var(--rh-brass);
+  background: #fffbeb;
+  color: #b45309;
   border: 1px solid #fde68a;
 }
 
 .card-banani .btn-card-explore:hover {
-  background: var(--rh-oak);
+  background: #fef3c7;
 }
 
 .card-banasree .btn-card-explore {
-  background: var(--rh-paper);
-  color: var(--rh-sage-deep);
+  background: #f0f9ff;
+  color: #0369a1;
   border: 1px solid #bae6fd;
 }
 
 .card-banasree .btn-card-explore:hover {
-  background: var(--rh-sage-pale);
+  background: #e0f2fe;
 }
 
 /* ── Shared Trust Bar ── */
@@ -356,14 +356,14 @@
   text-align: center;
   padding: 1.5rem 1.5rem;
   border-radius: 20px;
-  background: rgba(43, 42, 28, 0.05);
-  border: 1px solid var(--rh-hairline);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   gap: 1.5rem;
-  color: var(--rh-ink-soft);
+  color: #cbd5e1;
   font-size: 0.9rem;
   font-weight: 500;
 }

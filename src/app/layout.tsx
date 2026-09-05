@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next';
-import { Newsreader, Karla, Hind_Siliguri } from 'next/font/google';
+import { Inter, Bricolage_Grotesque, Geist, Hind_Siliguri } from 'next/font/google';
 import Script from 'next/script';
 import { cookies } from 'next/headers';
 import './tokens.css';
@@ -13,22 +13,25 @@ import { isBranchId } from '@/lib/branches';
 import { BASE_URL } from '@/lib/metadata';
 
 /* ── Type ──────────────────────────────────────────────────────────────────
-   Newsreader for display: a warm, low-contrast serif that matches the panelled
-   walls in the branch photographs. Karla for body. Hind Siliguri for Bengali —
-   the schema declares আরএইচ ডেন্টাল কেয়ার as an alternate name, and until now no
-   Bengali face was loaded at all.                                          */
-const newsreader = Newsreader({
+   The site's original faces: Bricolage Grotesque for display, Geist for body,
+   Inter for UI. Hind Siliguri is the one addition — the schema declares
+   আরএইচ ডেন্টাল কেয়ার as an alternate name and no Bengali face was loaded at
+   all, so Bengali text fell back to whatever the device happened to have. */
+const bricolage = Bricolage_Grotesque({
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600'],
-  style: ['normal', 'italic'],
   variable: '--font-display',
   display: 'swap',
 });
 
-const karla = Karla({
+const geist = Geist({
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
   variable: '--font-body',
+  display: 'swap',
+});
+
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
   display: 'swap',
 });
 
@@ -122,8 +125,8 @@ export const viewport: Viewport = {
   initialScale: 1,
   maximumScale: 5,
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#F7F5EE' },
-    { media: '(prefers-color-scheme: dark)', color: '#2B2A1C' },
+    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
+    { media: '(prefers-color-scheme: dark)', color: '#050e1e' },
   ],
 };
 
@@ -143,7 +146,7 @@ export default async function RootLayout({
   return (
     <html
       lang="en"
-      className={`${newsreader.variable} ${karla.variable} ${hindSiliguri.variable}`}
+      className={`${bricolage.variable} ${geist.variable} ${inter.variable} ${hindSiliguri.variable}`}
       data-branch={initialBranch || undefined}
       suppressHydrationWarning
     >

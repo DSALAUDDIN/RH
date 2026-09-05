@@ -56,7 +56,7 @@ export default function ServicesList({ limit = services.length }: { limit?: numb
         <div className="section-title">
           <div className="sl-title-tag"><Sparkles size={14} /> Our Premium Services</div>
           <h2>Exceptional Dental Treatments in Dhaka</h2>
-          <p>We combine advanced technology with artistic expertise to deliver considered dental implants, orthodontics, and cosmetic dentistry in Bangladesh.</p>
+          <p>We combine advanced technology with artistic expertise to deliver dental implants, orthodontics, and cosmetic dentistry in Bangladesh.</p>
         </div>
 
         <motion.div 
@@ -82,7 +82,7 @@ export default function ServicesList({ limit = services.length }: { limit?: numb
 
         {limit < services.length && (
           <div className="services-action">
-            <Link href="/services" className="btn btn-primary" style={{ padding: '1.25rem 2.5rem', borderRadius: '4px', fontSize: '1rem', fontWeight: 600 }}>
+            <Link href="/services" className="btn btn-primary" style={{ padding: '1.25rem 2.5rem', borderRadius: '100px', fontSize: '1rem', fontWeight: 800 }}>
               View All Dental Services
             </Link>
           </div>

@@ -866,8 +866,8 @@ export default function DentalTourism() {
             <a href="#contact" key="5" className="treat-row" data-reveal data-cursor="View">
               <div className="treat-num">06 —</div>
               <div className="treat-title"><span className="glyph">🔬</span>Microscopic Root Canal</div>
-              <div className="treat-desc">Painless, single-visit endodontic therapy using advanced endo microscopes — stress-free and highly precise.</div>
-              <div className="treat-badge">Pain-free</div>
+              <div className="treat-desc">Single-visit endodontic therapy under local anaesthetic, using an operating microscope so canals are seen rather than felt for.</div>
+              <div className="treat-badge">Microscope</div>
             </a>
           </div>
         </div>
@@ -1541,14 +1541,14 @@ export default function DentalTourism() {
             <div className="gscore-big">
               <div className="gscore-num">5.0</div>
               <div className="gscore-stars">★★★★★</div>
-              <div className="gscore-sub">verified reviews</div>
+              <div className="gscore-sub">Verified Google reviews</div>
             </div>
           </div>
 
           <div className="reviews-grid">
             <article className="rev" data-reveal data-tilt>
               <div className="rev-source"><span className="g-badge">G</span> Google · ★★★★★</div>
-              <p className="rev-body">"The entire root canal was carried out under local anaesthetic. The clinic environment is very premium and clean. Highly impressed."</p>
+              <p className="rev-body">"The entire root canal was done under local anaesthetic and I felt nothing during it. The clinic environment is very clean. Highly impressed."</p>
               <div className="rev-author"><b>Sayed Anwar</b><span>Local Guide · Bangladesh</span></div>
             </article>
             <article className="rev" data-reveal data-tilt>
@@ -1808,7 +1808,7 @@ export default function DentalTourism() {
                 <textarea rows={3} placeholder="Pain, broken tooth, cosmetic concern, current dental records you can share…" required value={formData.message} onChange={e => setFormData({...formData, message: e.target.value})}></textarea>
               </div>
 
-              {error && <div style={{ color: '#8A3B2A', marginBottom: '1rem', fontSize: '0.9rem' }}>{error}</div>}
+              {error && <div style={{ color: '#ef4444', marginBottom: '1rem', fontSize: '0.9rem' }}>{error}</div>}
 
               <button type="submit" className="tm-btn tm-btn-primary block magnetic" data-cursor="Send" disabled={loading} style={{ opacity: loading ? 0.7 : 1 }}>
                 {loading ? 'Sending...' : 'Send my request'}

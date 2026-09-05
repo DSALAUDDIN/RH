@@ -4,7 +4,7 @@
 
 .ds-hero .imp-hero-overlay {
   background:
-    linear-gradient(180deg, rgba(247, 245, 238, 0.87) 0%, rgba(247, 245, 238, 0.62) 40%, rgba(247, 245, 238, 0.92) 100%),
+    linear-gradient(180deg, rgba(2,6,23,0.75) 0%, rgba(2,6,23,0.5) 40%, rgba(2,6,23,0.9) 100%),
     linear-gradient(135deg, rgba(239,68,68,0.18) 0%, transparent 55%);
 }
 
@@ -24,7 +24,7 @@
 .ds-label {
   background: rgba(239,68,68,0.08) !important;
   border-color: rgba(239,68,68,0.2) !important;
-  color: var(--rh-error) !important;
+  color: #dc2626 !important;
 }
 
 /* Reuse image badge from special-child */
@@ -37,17 +37,17 @@
   border-radius: 100px;
   padding: 0.55rem 1.3rem;
   font-size: 0.8rem;
-  font-weight: 600;
+  font-weight: 800;
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  box-shadow: var(--rh-glow-md);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.12);
   z-index: 2;
   border: 1px solid;
 }
 
 .ds-img-badge {
-  color: var(--rh-error);
+  color: #ef4444;
   border-color: rgba(239,68,68,0.2);
 }
 

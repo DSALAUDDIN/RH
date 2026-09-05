@@ -100,10 +100,10 @@ const lightboxPhotos = [
 
 /* ─── Stats ───────────────────────────────────── */
 const stats = [
-  { icon: Star,         num: '5.0★',  lab: 'Google Rating',          color: 'var(--rh-brass)' },
+  { icon: Star,         num: '5.0★',  lab: 'Google Rating',          color: '#f59e0b' },
   // REMOVED: '13k+ Happy Patients' — unevidenced. See docs/audit-report.md P2-2.
-  { icon: Clock,        num: '12+',   lab: 'Years of Excellence',    color: '#9C7C38' },
-  { icon: CalendarCheck,num: 'Daily', lab: 'Appointments Available', color: '#9C7C38' },
+  { icon: Clock,        num: '12+',   lab: 'Years of Excellence',    color: '#6366f1' },
+  { icon: CalendarCheck,num: 'Daily', lab: 'Appointments Available', color: '#0ea5e9' },
 ];
 
 /* ─── Filter tabs ─────────────────────────────── */

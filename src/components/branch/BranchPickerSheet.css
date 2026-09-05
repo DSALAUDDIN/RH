@@ -5,8 +5,9 @@
   display: grid;
   place-items: end center;
   padding: var(--rh-4);
-  background: var(--rh-surface);
-  backdrop-filter: blur(3px);
+  background: rgba(5, 14, 30, 0.75);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
 }
 @media (min-width: 700px) { .branch-sheet-overlay { place-items: center; } }
 

@@ -25,7 +25,7 @@ const reels = [
   },
   {
     id: 3,
-    title: 'Painless Care Experience',
+    title: 'Comfort-focused Care',
     views: '8k',
     videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-dentist-examining-a-patient-s-teeth-in-his-clinic-31465-large.mp4',
     poster: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&q=80&w=400',

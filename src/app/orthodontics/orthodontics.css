@@ -9,8 +9,8 @@
   50% { transform: translateY(-10px); }
 }
 @keyframes orthoGlow {
-  0%, 100% { box-shadow: 0 0 20px rgba(156,124,56,0.15); }
-  50% { box-shadow: 0 0 40px rgba(156,124,56,0.25); }
+  0%, 100% { box-shadow: 0 0 20px rgba(99,102,241,0.15); }
+  50% { box-shadow: 0 0 40px rgba(99,102,241,0.25); }
 }
 @keyframes orthoShine {
   0% { left: -100%; }
@@ -27,24 +27,24 @@
 }
 
 /* ── Hero ── */
-.ortho-hero { background: var(--rh-paper); }
+.ortho-hero { background: #020617; }
 .ortho-overlay {
   background:
-    linear-gradient(180deg, rgba(247, 245, 238, 0.72) 0%, rgba(247, 245, 238, 0.47) 40%, rgba(247, 245, 238, 0.92) 100%),
-    radial-gradient(ellipse at 30% 20%, rgba(156,124,56,0.2) 0%, transparent 60%),
+    linear-gradient(180deg, rgba(2,6,23,0.6) 0%, rgba(2,6,23,0.35) 40%, rgba(2,6,23,0.9) 100%),
+    radial-gradient(ellipse at 30% 20%, rgba(99,102,241,0.2) 0%, transparent 60%),
     radial-gradient(ellipse at 70% 80%, rgba(139,92,246,0.1) 0%, transparent 50%);
 }
 
 .ortho-badge {
-  background: rgba(156,124,56,0.12) !important;
-  border-color: rgba(156,124,56,0.25) !important;
+  background: rgba(99,102,241,0.12) !important;
+  border-color: rgba(99,102,241,0.25) !important;
   color: #a5b4fc !important;
   animation: orthoPulse 3s ease-in-out infinite;
 }
 
 /* Breadcrumb */
 .ortho-breadcrumb {
-  color: var(--rh-ink-soft);
+  color: rgba(255,255,255,0.45);
   text-decoration: none;
   font-size: 0.82rem;
   font-weight: 600;
@@ -54,8 +54,8 @@
   margin-bottom: 1.2rem;
   transition: color 0.3s ease;
 }
-.ortho-breadcrumb:hover { color: var(--rh-ink-soft); }
-.ortho-breadcrumb span { color: var(--rh-ink-soft); }
+.ortho-breadcrumb:hover { color: rgba(255,255,255,0.7); }
+.ortho-breadcrumb span { color: rgba(255,255,255,0.65); }
 .ortho-breadcrumb-active { color: #a5b4fc !important; }
 
 /* ── Hero Stat Pills — Glassmorphic ── */
@@ -70,8 +70,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: rgba(43, 42, 28, 0.05);
-  border: 1px solid var(--rh-hairline);
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
   border-radius: 1.25rem;
   padding: 1rem 1.6rem;
   backdrop-filter: blur(16px);
@@ -85,20 +85,20 @@
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  background: linear-gradient(135deg, rgba(156,124,56,0.08) 0%, transparent 50%);
+  background: linear-gradient(135deg, rgba(99,102,241,0.08) 0%, transparent 50%);
   opacity: 0;
   transition: opacity 0.4s ease;
 }
 .ortho-stat-pill:hover::before { opacity: 1; }
 .ortho-stat-pill:hover {
-  background: rgba(156,124,56,0.08);
-  border-color: rgba(156,124,56,0.25);
+  background: rgba(99,102,241,0.08);
+  border-color: rgba(99,102,241,0.25);
   transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(156,124,56,0.15);
+  box-shadow: 0 12px 32px rgba(99,102,241,0.15);
 }
 .ortho-stat-val {
   font-size: 1.75rem;
-  font-weight: 600;
+  font-weight: 900;
   background: linear-gradient(135deg, #a5b4fc, #c4b5fd);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -111,7 +111,7 @@
   font-size: 0.68rem;
   color: rgba(148,163,184,0.75);
   font-weight: 600;
-  text-transform: none;
+  text-transform: uppercase;
   letter-spacing: 0.1em;
   margin-top: 0.4rem;
   position: relative;
@@ -121,7 +121,7 @@
 /* ═══════════════════════ PHILOSOPHY STRIP ═══════════════════════ */
 .ortho-philosophy {
   background: linear-gradient(135deg, #eef2ff 0%, #f5f3ff 50%, #fdf4ff 100%);
-  border-bottom: 1px solid rgba(156,124,56,0.06);
+  border-bottom: 1px solid rgba(99,102,241,0.06);
   padding: 3.5rem 0;
   position: relative;
   overflow: hidden;
@@ -132,7 +132,7 @@
   width: 300px;
   height: 300px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(156,124,56,0.06), transparent 70%);
+  background: radial-gradient(circle, rgba(99,102,241,0.06), transparent 70%);
   top: -100px;
   right: -50px;
   pointer-events: none;
@@ -153,16 +153,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, var(--rh-brass), var(--rh-brass));
-  color: var(--rh-ink);
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  color: #fff;
   flex-shrink: 0;
-  box-shadow: 0 8px 24px rgba(156,124,56,0.3);
+  box-shadow: 0 8px 24px rgba(99,102,241,0.3);
   animation: orthoFloat 6s ease-in-out infinite;
 }
 .ortho-philosophy-title {
   font-size: 1.15rem;
-  font-weight: 600;
-  color: var(--rh-ink);
+  font-weight: 800;
+  color: #1e1b4b;
   margin-bottom: 0.6rem;
   letter-spacing: -0.01em;
 }
@@ -206,29 +206,29 @@
 }
 .ortho-option-card:hover {
   transform: translateY(-8px);
-  box-shadow: var(--rh-glow-lg);
+  box-shadow: 0 32px 80px rgba(0,0,0,0.12);
 }
 
 /* Braces card */
 .ortho-braces-card {
-  background: linear-gradient(155deg, var(--rh-paper) 0%, var(--rh-surface) 60%, var(--rh-sage-pale) 100%);
-  border-color: rgba(156,124,56,0.12);
-  box-shadow: 0 8px 32px rgba(156,124,56,0.06);
+  background: linear-gradient(155deg, #f0f9ff 0%, #ffffff 60%, #e0f2fe 100%);
+  border-color: rgba(14,165,233,0.12);
+  box-shadow: 0 8px 32px rgba(14,165,233,0.06);
 }
 .ortho-braces-card:hover {
-  border-color: rgba(156,124,56,0.3);
-  box-shadow: 0 32px 80px rgba(156,124,56,0.1);
+  border-color: rgba(14,165,233,0.3);
+  box-shadow: 0 32px 80px rgba(14,165,233,0.1);
 }
 
 /* Aligner card */
 .ortho-aligner-card {
-  background: linear-gradient(155deg, #faf5ff 0%, var(--rh-surface) 60%, var(--rh-surface-sunk) 100%);
-  border-color: rgba(156,124,56,0.12);
-  box-shadow: 0 8px 32px rgba(156,124,56,0.06);
+  background: linear-gradient(155deg, #faf5ff 0%, #ffffff 60%, #ede9fe 100%);
+  border-color: rgba(99,102,241,0.12);
+  box-shadow: 0 8px 32px rgba(99,102,241,0.06);
 }
 .ortho-aligner-card:hover {
-  border-color: rgba(156,124,56,0.3);
-  box-shadow: 0 32px 80px rgba(156,124,56,0.1);
+  border-color: rgba(99,102,241,0.3);
+  box-shadow: 0 32px 80px rgba(99,102,241,0.1);
 }
 
 /* Card Header */
@@ -253,39 +253,39 @@
 .ortho-option-card:hover .ortho-card-icon { transform: scale(1.1) rotate(3deg); }
 
 .ortho-braces-icon {
-  background: linear-gradient(135deg, var(--rh-sage-pale), #bae6fd);
-  box-shadow: 0 6px 20px rgba(156,124,56,0.12);
+  background: linear-gradient(135deg, #e0f2fe, #bae6fd);
+  box-shadow: 0 6px 20px rgba(14,165,233,0.12);
 }
 .ortho-aligner-icon {
-  background: linear-gradient(135deg, var(--rh-surface-sunk), #ddd6fe);
-  box-shadow: 0 6px 20px rgba(156,124,56,0.12);
+  background: linear-gradient(135deg, #ede9fe, #ddd6fe);
+  box-shadow: 0 6px 20px rgba(99,102,241,0.12);
 }
 
 /* Card Tags */
 .ortho-card-tag {
   font-size: 0.68rem;
-  font-weight: 600;
-  text-transform: none;
-  letter-spacing: 0.02em;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
   padding: 0.3rem 0.9rem;
   border-radius: 100px;
   display: inline-block;
   margin-bottom: 0.35rem;
 }
-.ortho-braces-tag { background: rgba(156,124,56,0.08); color: var(--rh-sage-deep); }
-.ortho-aligner-tag { background: rgba(156,124,56,0.08); color: var(--rh-brass); }
+.ortho-braces-tag { background: rgba(14,165,233,0.08); color: #0284c7; }
+.ortho-aligner-tag { background: rgba(99,102,241,0.08); color: #4f46e5; }
 
 .ortho-card-title {
   font-size: 1.45rem;
-  font-weight: 600;
-  color: var(--rh-ink);
+  font-weight: 900;
+  color: #0f172a;
   margin: 0;
   letter-spacing: -0.02em;
 }
 
 .ortho-card-desc {
   font-size: 0.93rem;
-  color: var(--rh-ink-soft);
+  color: #475569;
   line-height: 1.85;
   margin-bottom: 1.75rem;
 }
@@ -302,7 +302,7 @@
   align-items: center;
   gap: 0.75rem;
   font-size: 0.87rem;
-  color: var(--rh-ink-soft);
+  color: #334155;
   font-weight: 600;
   padding: 0.35rem 0;
   transition: transform 0.3s ease;
@@ -322,15 +322,15 @@
 .ortho-advantage-item:hover .ortho-advantage-icon { transform: scale(1.1); }
 
 .ortho-braces-adv-icon {
-  background: rgba(156,124,56,0.08);
-  color: var(--rh-sage-deep);
+  background: rgba(14,165,233,0.08);
+  color: #0284c7;
 }
-.ortho-braces-adv-icon:hover { box-shadow: 0 4px 12px rgba(156,124,56,0.15); }
+.ortho-braces-adv-icon:hover { box-shadow: 0 4px 12px rgba(14,165,233,0.15); }
 .ortho-aligner-adv-icon {
-  background: rgba(156,124,56,0.08);
-  color: var(--rh-brass);
+  background: rgba(99,102,241,0.08);
+  color: #4f46e5;
 }
-.ortho-aligner-adv-icon:hover { box-shadow: 0 4px 12px rgba(156,124,56,0.15); }
+.ortho-aligner-adv-icon:hover { box-shadow: 0 4px 12px rgba(99,102,241,0.15); }
 
 /* Best-For Box */
 .ortho-card-best-for {
@@ -342,16 +342,16 @@
 }
 .ortho-best-label {
   font-size: 0.68rem;
-  font-weight: 600;
-  text-transform: none;
-  letter-spacing: 0.02em;
-  color: var(--rh-ink-soft);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #94a3b8;
   display: block;
   margin-bottom: 0.35rem;
 }
 .ortho-card-best-for p {
   font-size: 0.87rem;
-  color: var(--rh-ink-soft);
+  color: #475569;
   margin: 0;
   font-weight: 500;
 }
@@ -362,9 +362,9 @@
   align-items: center;
   gap: 0.5rem;
   font-size: 0.9rem;
-  font-weight: 600;
+  font-weight: 800;
   padding: 0.9rem 1.85rem;
-  border-radius: var(--rh-r-sm);
+  border-radius: 100px;
   text-decoration: none;
   transition: all 0.35s cubic-bezier(0.16,1,0.3,1);
   position: relative;
@@ -382,23 +382,23 @@
 .ortho-card-cta:hover::before { opacity: 1; }
 
 .ortho-braces-cta {
-  background: linear-gradient(135deg, var(--rh-brass), var(--rh-sage-deep));
-  color: var(--rh-ink);
-  box-shadow: 0 8px 28px rgba(156,124,56,0.3);
+  background: linear-gradient(135deg, #0ea5e9, #0284c7);
+  color: #fff;
+  box-shadow: 0 8px 28px rgba(14,165,233,0.3);
 }
 .ortho-braces-cta:hover {
   transform: translateY(-3px);
-  box-shadow: 0 14px 40px rgba(156,124,56,0.4);
+  box-shadow: 0 14px 40px rgba(14,165,233,0.4);
 }
 
 .ortho-aligner-cta {
-  background: linear-gradient(135deg, var(--rh-brass), var(--rh-brass));
-  color: var(--rh-ink);
-  box-shadow: 0 8px 28px rgba(156,124,56,0.3);
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  color: #fff;
+  box-shadow: 0 8px 28px rgba(99,102,241,0.3);
 }
 .ortho-aligner-cta:hover {
   transform: translateY(-3px);
-  box-shadow: 0 14px 40px rgba(156,124,56,0.4);
+  box-shadow: 0 14px 40px rgba(99,102,241,0.4);
 }
 
 /* ── Image Badge ── */
@@ -411,14 +411,14 @@
   border-radius: 100px;
   padding: 0.55rem 1.3rem;
   font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--rh-brass);
+  font-weight: 800;
+  color: #4f46e5;
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  box-shadow: var(--rh-glow-md);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.12);
   z-index: 2;
-  border: 1px solid rgba(156,124,56,0.1);
+  border: 1px solid rgba(99,102,241,0.1);
   animation: orthoPulse 4s ease-in-out infinite;
 }
 
@@ -434,7 +434,7 @@
   width: 500px;
   height: 500px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(156,124,56,0.04), transparent 70%);
+  background: radial-gradient(circle, rgba(99,102,241,0.04), transparent 70%);
   bottom: -200px;
   left: -100px;
   pointer-events: none;
@@ -450,7 +450,7 @@
   border-radius: 1.5rem;
   padding: 2.25rem;
   border: 1px solid rgba(0,0,0,0.04);
-  box-shadow: var(--rh-glow-md);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.02);
   transition: all 0.45s cubic-bezier(0.16,1,0.3,1);
   position: relative;
   overflow: hidden;
@@ -462,15 +462,15 @@
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(90deg, transparent, rgba(156,124,56,0.2), transparent);
+  background: linear-gradient(90deg, transparent, rgba(99,102,241,0.2), transparent);
   opacity: 0;
   transition: opacity 0.4s ease;
 }
 .ortho-why-card:hover::after { opacity: 1; }
 .ortho-why-card:hover {
   transform: translateY(-8px);
-  box-shadow: var(--rh-glow-lg);
-  border-color: rgba(156,124,56,0.1);
+  box-shadow: 0 24px 60px rgba(0,0,0,0.08);
+  border-color: rgba(99,102,241,0.1);
 }
 
 .ortho-why-icon {
@@ -485,19 +485,19 @@
 }
 .ortho-why-card:hover .ortho-why-icon {
   transform: scale(1.1);
-  box-shadow: var(--rh-glow-sm);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
 }
 
 .ortho-why-title {
   font-size: 1.08rem;
-  font-weight: 600;
-  color: var(--rh-ink);
+  font-weight: 800;
+  color: #0f172a;
   margin-bottom: 0.6rem;
   letter-spacing: -0.01em;
 }
 .ortho-why-desc {
   font-size: 0.87rem;
-  color: var(--rh-ink-soft);
+  color: #64748b;
   line-height: 1.75;
   margin: 0;
 }
@@ -516,12 +516,12 @@
   transition: all 0.35s cubic-bezier(0.16,1,0.3,1);
 }
 .ortho-faq-item:hover {
-  border-color: rgba(156,124,56,0.12);
-  box-shadow: var(--rh-glow-sm);
+  border-color: rgba(99,102,241,0.12);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.03);
 }
 .ortho-faq-item.open {
-  border-color: rgba(156,124,56,0.25);
-  box-shadow: 0 12px 36px rgba(156,124,56,0.08);
+  border-color: rgba(99,102,241,0.25);
+  box-shadow: 0 12px 36px rgba(99,102,241,0.08);
   background: linear-gradient(180deg, #faf8ff, #fff);
 }
 
@@ -538,26 +538,26 @@
   text-align: left;
   font-size: 0.97rem;
   font-weight: 700;
-  color: var(--rh-ink);
+  color: #0f172a;
   font-family: inherit;
   transition: color 0.3s ease;
 }
-.ortho-faq-q:hover { color: var(--rh-brass); }
+.ortho-faq-q:hover { color: #4f46e5; }
 
 .ortho-faq-icon {
   flex-shrink: 0;
-  color: var(--rh-ink-soft);
+  color: #94a3b8;
   transition: all 0.35s cubic-bezier(0.16,1,0.3,1);
 }
 .ortho-faq-item.open .ortho-faq-icon {
   transform: rotate(180deg);
-  color: var(--rh-brass);
+  color: #6366f1;
 }
 
 .ortho-faq-a { padding: 0 1.5rem 1.35rem; }
 .ortho-faq-a p {
   font-size: 0.9rem;
-  color: var(--rh-ink-soft);
+  color: #64748b;
   line-height: 1.85;
   margin: 0;
 }
@@ -568,13 +568,13 @@
   50% { transform: translate(-20px, 15px) scale(1.08); }
 }
 @keyframes orthoVidGlow {
-  0%, 100% { box-shadow: var(--rh-glow-lg); }
-  50% { box-shadow: var(--rh-glow-lg); }
+  0%, 100% { box-shadow: 0 0 30px rgba(99,102,241,0.12), 0 24px 60px rgba(0,0,0,0.3); }
+  50% { box-shadow: 0 0 50px rgba(99,102,241,0.2), 0 24px 60px rgba(0,0,0,0.4); }
 }
 
 .ortho-video-section {
   padding: 7rem 0;
-  background: linear-gradient(180deg, var(--rh-paper) 0%, var(--rh-surface-sunk) 100%);
+  background: linear-gradient(135deg, #020617 0%, #1e1b4b 50%, #020617 100%);
   position: relative;
   overflow: hidden;
 }
@@ -585,7 +585,7 @@
 }
 .ortho-vid-orb-1 {
   width: 450px; height: 450px;
-  background: radial-gradient(circle, rgba(156,124,56,0.1), transparent 70%);
+  background: radial-gradient(circle, rgba(99,102,241,0.1), transparent 70%);
   top: -160px; right: -80px;
   animation: orthoVidOrb 12s ease-in-out infinite;
 }
@@ -605,7 +605,7 @@
   overflow: hidden;
   background: #000;
   aspect-ratio: 9/16;
-  border: 1.5px solid rgba(156,124,56,0.15);
+  border: 1.5px solid rgba(99,102,241,0.15);
   animation: orthoVidGlow 5s ease-in-out infinite;
 }
 .ortho-video {
@@ -623,16 +623,16 @@
   justify-content: center;
   gap: 0.6rem;
   padding: 0.65rem 1rem;
-  background: linear-gradient(180deg, transparent, rgba(43, 42, 28, 0.60));
+  background: linear-gradient(180deg, transparent, rgba(0,0,0,0.6));
   z-index: 3;
   opacity: 0;
   transition: opacity 0.3s ease;
 }
 .ortho-video-wrapper:hover .ortho-video-controls { opacity: 1; }
 .ortho-video-controls button {
-  background: rgba(43, 42, 28, 0.05);
-  border: 1px solid var(--rh-hairline);
-  color: var(--rh-ink);
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: #fff;
   border-radius: 50%;
   width: 36px; height: 36px;
   display: flex;
@@ -692,7 +692,7 @@
   position: absolute;
   inset: -30px;
   border-radius: 2rem;
-  background: radial-gradient(ellipse at center, rgba(156,124,56,0.15), transparent 70%);
+  background: radial-gradient(ellipse at center, rgba(14,165,233,0.15), transparent 70%);
   filter: blur(20px);
   z-index: 0;
   pointer-events: none;
@@ -708,10 +708,10 @@
 .ortho-invisalign-tagline {
   font-size: 1.1rem;
   font-style: italic;
-  color: var(--rh-ink-soft);
+  color: #64748b;
   margin-bottom: 2rem;
   padding-left: 1rem;
-  border-left: 3px solid var(--rh-brass);
+  border-left: 3px solid #0ea5e9;
 }
 
 /* Numbered step cards */
@@ -724,14 +724,14 @@
   margin-bottom: 1rem;
   background: #fff;
   border: 1.5px solid rgba(0,0,0,0.05);
-  box-shadow: var(--rh-glow-sm);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.03);
   transition: all 0.35s cubic-bezier(0.16,1,0.3,1);
   cursor: default;
 }
 
 .ortho-step-card:hover {
   transform: translateX(6px);
-  box-shadow: var(--rh-glow-md);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.07);
 }
 
 .ortho-step-num {
@@ -742,7 +742,7 @@
   align-items: center;
   justify-content: center;
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 900;
   flex-shrink: 0;
   letter-spacing: -0.02em;
 }
@@ -753,14 +753,14 @@
 
 .ortho-step-title {
   font-size: 1.2rem;
-  font-weight: 600;
+  font-weight: 800;
   margin-bottom: 0.4rem;
   letter-spacing: -0.01em;
 }
 
 .ortho-step-desc {
   font-size: 0.9rem;
-  color: var(--rh-ink-soft);
+  color: #475569;
   line-height: 1.75;
   margin: 0;
 }

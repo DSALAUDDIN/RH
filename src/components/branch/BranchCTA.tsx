@@ -48,21 +48,34 @@ export default function BranchCTA({
   const { branch: ctxBranch, openPicker } = useBranch();
   const activeBranch = propBranch ?? ctxBranch;
 
+  /** Stable href — no random ref — safe for SSR/initial render. */
   const hrefFor = (id: BranchId): string => {
     const b = BRANCHES[id];
     switch (action) {
       case 'call':
         return telUrl(b);
       case 'whatsapp':
+        // makeRef() uses Date + Math.random(), so it must NOT be called here.
+        // The ref is appended at click time in hrefWithRef / perform.
         return whatsappUrl(
           b,
-          `${b.waIntent}${service ? `\nTreatment: ${service}` : ''}\nRef: ${makeRef(id, service)}`
+          `${b.waIntent}${service ? `\nTreatment: ${service}` : ''}`
         );
       case 'directions':
         return b.mapLink;
       case 'book':
         return `${b.href}#book`;
     }
+  };
+
+  /** Click-time href — includes the per-enquiry ref. Only call from event handlers. */
+  const hrefWithRef = (id: BranchId): string => {
+    if (action !== 'whatsapp') return hrefFor(id);
+    const b = BRANCHES[id];
+    return whatsappUrl(
+      b,
+      `${b.waIntent}${service ? `\nTreatment: ${service}` : ''}\nRef: ${makeRef(id, service)}`
+    );
   };
 
   const eventFor = (): string =>
@@ -73,7 +86,7 @@ export default function BranchCTA({
 
   const perform = (id: BranchId) => {
     track(eventFor(), { branch: id, service, action });
-    const href = hrefFor(id);
+    const href = hrefWithRef(id);
     if (action === 'whatsapp' || action === 'directions') {
       window.open(href, '_blank', 'noopener,noreferrer');
     } else {
@@ -92,7 +105,13 @@ export default function BranchCTA({
         className={cls}
         style={style}
         {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-        onClick={() => {
+        onClick={(e) => {
+          // WhatsApp: append a fresh per-click ref and open programmatically
+          // so the rendered href stays stable (no Date/random = no hydration mismatch).
+          if (action === 'whatsapp') {
+            e.preventDefault();
+            window.open(hrefWithRef(activeBranch), '_blank', 'noopener,noreferrer');
+          }
           onClick?.();
           track(eventFor(), { branch: activeBranch, service, action });
         }}
@@ -102,7 +121,42 @@ export default function BranchCTA({
     );
   }
 
-  /* ── No branch resolved: open the picker, then complete the intent. ── */
+  /* ── No branch resolved ── */
+  if (action === 'whatsapp') {
+    return (
+      <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', ...style }}>
+        <a
+          href={hrefFor('banasree')}
+          className={cls}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={(e) => {
+            e.preventDefault();
+            window.open(hrefWithRef('banasree'), '_blank', 'noopener,noreferrer');
+            onClick?.();
+            track(eventFor(), { branch: 'banasree', service, action });
+          }}
+        >
+          {children} (Banasree)
+        </a>
+        <a
+          href={hrefFor('banani')}
+          className={cls}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={(e) => {
+            e.preventDefault();
+            window.open(hrefWithRef('banani'), '_blank', 'noopener,noreferrer');
+            onClick?.();
+            track(eventFor(), { branch: 'banani', service, action });
+          }}
+        >
+          {children} (Banani)
+        </a>
+      </div>
+    );
+  }
+
   return (
     <button
       type="button"

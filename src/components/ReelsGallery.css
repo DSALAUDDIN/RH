@@ -62,7 +62,7 @@
   flex-direction: column;
   justify-content: space-between;
   padding: var(--space-6);
-  color: var(--rh-ink);
+  color: white;
   transition: all 0.3s ease;
 }
 

@@ -1,32 +1,47 @@
-.team-page { background: var(--rh-paper); }
+.team-page { background: #060b19; }
 
-.team-hero { padding-block: clamp(3rem, 7vw, 5.5rem); }
-.team-h1 {
+/* globals.css zeroes .main-content padding-top when .team-hero is present
+   (the old team page drew its own full-bleed hero), so this hero has to
+   clear the fixed navbar itself. */
+.team-hero {
+  padding-block: clamp(3rem, 7vw, 5.5rem);
+  padding-top: calc(72px + clamp(3rem, 7vw, 5.5rem));
+}
+@media (max-width: 480px) {
+  .team-hero { padding-top: calc(60px + clamp(3rem, 7vw, 5.5rem)); }
+}
+/* .rh-scope :is(h1,h2,h3) in tokens.css has specificity (0,1,1), which beats
+   a plain class selector (0,1,0). Nesting under .team-page gives (0,2,0),
+   enough to override the base-layer rules without !important.            */
+.team-page .team-h1 {
   font-family: var(--rh-font-display);
   font-size: var(--rh-step-4);
   font-weight: 300;
   letter-spacing: -0.02em;
-  color: var(--rh-ink);
+  line-height: 1.1;
+  color: #ffffff;
   margin: 0 0 var(--rh-6);
 }
-.team-lede {
+/* Same specificity fix: .rh-scope p (0,1,1) beats a plain class (0,1,0) for
+   color and max-width. Nest under .team-page to reach (0,2,0).             */
+.team-page .team-lede {
   font-size: var(--rh-step-1);
   line-height: 1.55;
-  color: var(--rh-ink-soft);
+  color: #94a3b8;
   max-width: 56ch;
   margin: 0 0 var(--rh-6);
 }
-.team-trust {
+.team-page .team-trust {
   font-family: var(--rh-font-display);
-  color: var(--rh-ink);
-  border-left: 2px solid var(--rh-brass);
+  color: #e2e8f0;
+  border-left: 2px solid #3b82f6;
   padding-left: var(--rh-4);
   max-width: 56ch;
   margin: 0;
 }
 
 .team-note-inner { padding: var(--rh-6); max-width: var(--rh-measure); }
-.team-note-inner p { margin: 0; position: relative; z-index: 1; color: var(--rh-ink-soft); }
+.team-note-inner p { margin: 0; position: relative; z-index: 1; color: #94a3b8; }
 .team-note-inner strong { color: var(--rh-brass); }
 .team-note-inner code {
   font-size: 0.9em;

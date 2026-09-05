@@ -50,7 +50,7 @@ const clinicsBanners = [
 		slug: 'implants',
 	},
 	{
-		title: 'Painless Root Canal',
+		title: 'Microscope Root Canal',
 		desc: 'Elite endodontic therapy using the latest microscopic technology for a completely stress-free and effective treatment.',
 		image: rootCanalImg,
 		category: 'Endodontics',
@@ -83,7 +83,7 @@ const clinicsBanners = [
 	},
 	{
 		title: 'RH Dental Tourism',
-		desc: 'Combine considered specialized dental care with a relaxing vacation in Bangladesh. VIP airport pickup, 5-star lodging, and custom sightseeing support.',
+		desc: 'Treatment planned before you fly, scheduled around a short stay in Bangladesh. Airport pickup, lodging and sightseeing support arranged.',
 		image: dentalTourismImg,
 		category: 'Global Travel Care',
 		featured: true,
@@ -127,7 +127,7 @@ export default function Specialties() {
 					<span className="tag">Signature Experience</span>
 					<h2>Top-Ranked Dental Clinic in Dhaka</h2>
 					<p>
-						RH Dental Care provides considered dental treatments in Bangladesh – including dental implants, braces, and root canal treatments tailored to your smile.
+						RH Dental Care provides dental treatment in Bangladesh – including dental implants, braces, and microscope root canal treatment tailored to your smile.
 					</p>
 				</motion.div>
 

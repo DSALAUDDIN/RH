@@ -60,7 +60,7 @@ function RevealText({ text, className }: { text: string; className?: string }) {
 const googleReviews = [
   { name: "Walid Mohammad", text: "Commendable work and great care. The environment here is truly premium." },
   { name: "Tanvir AHAMED", text: "One of the best doctors I have ever seen. The most modern dental clinic in Dhaka." },
-  { name: "Nafisa Islam", text: "The most painless dental experience I've ever had. Highly recommended!" }
+  { name: "Nafisa Islam", text: "The calmest dental appointment I've had. Everything was explained first." }
 ];
 
 /* ─── Doctor Data ─── */
@@ -279,17 +279,17 @@ export default function Hero() {
             transition={{ delay: 0.3, duration: 0.6 }}
           >
             <div className="trust-item">
-              <CheckCircle2 color="#55684F" size={18} />
+              <CheckCircle2 color="#4ade80" size={18} />
               <span>Comfort-focused care</span>
             </div>
             <div className="trust-sep" />
             <div className="trust-item">
-              <Award color="#9C7C38" size={18} />
+              <Award color="#38bdf8" size={18} />
               <span>BMDC registered</span>
             </div>
             <div className="trust-sep" />
             <div className="trust-item">
-              <GraduationCap color="#9C7C38" size={18} />
+              <GraduationCap color="#a78bfa" size={18} />
               <span>Internationally Trained</span>
             </div>
           </motion.div>
@@ -424,7 +424,7 @@ export default function Hero() {
       <div className="marquee-container">
         <div className="marquee-track">
           {[...Array(4)].fill([
-            { t: 'Painless Root Canals', i: <Activity size={14} /> },
+            { t: 'Microscope Root Canals', i: <Activity size={14} /> },
             { t: 'Premium Implants', i: <ShieldCheck size={14} /> },
             { t: 'Invisalign & Braces', i: <Star size={14} /> },
             { t: 'Aesthetic Veneers', i: <Sparkles size={14} /> },

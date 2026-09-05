@@ -37,8 +37,8 @@ const fadeUp: Variants = { hidden: { opacity: 0, y: 36 }, show: { opacity: 1, y:
 
 const heroStats = [
   { val: '1 Visit', label: 'Complete Treatment' },
-  // REMOVED: a '99% Pain-Free Rate' statistic with no source behind it.
-  // REMOVED: an unevidenced '12+ Years Expertise' counter.
+  // REMOVED: a '99% Pain-Free Rate' statistic with no source behind it, and
+  // an unevidenced '12+ Years Expertise' counter.
   { val: '2', label: 'Branches' },
   { val: '6 Tech', label: 'Advanced Systems' },
 ];
@@ -152,7 +152,7 @@ export default function RootCanalPage() {
             <div className="imp-section-header">
               <span className="imp-label"><Heart size={14} /> Tailored for Everyone</span>
               <h2 className="imp-title">Care Designed <span className="imp-accent">for You</span></h2>
-              <p className="imp-subtitle">Whether you are a local patient or traveling from abroad — our single-visit protocol delivers considered results within your timeline.</p>
+              <p className="imp-subtitle">Whether you are a local patient or traveling from abroad — our single-visit protocol is built around your timeline.</p>
             </div>
           </FadeIn>
           <div className="rc-patient-grid">
@@ -180,7 +180,7 @@ export default function RootCanalPage() {
                   <div className="rc-patient-icon rc-intl-icon"><Globe size={28} /></div>
                   <div>
                     <div className="rc-patient-tag rc-intl-tag">International Patients</div>
-                    <h3 className="rc-patient-title">Considered Dentistry, Optimized for Your Time</h3>
+                    <h3 className="rc-patient-title">Endodontics, Optimized for Your Time</h3>
                   </div>
                 </div>
                 <p className="rc-patient-desc">For patients traveling abroad, every day matters. Our single visit protocol is designed to deliver premium-quality treatment within a limited stay, without compromising clinical excellence.</p>
@@ -197,13 +197,13 @@ export default function RootCanalPage() {
       </section>
 
       {/* ═══════════════ EXCELLENCE IN ENDODONTICS (NEW IMAGE) ═══════════════ */}
-      <section className="imp-section" style={{ background: '#F7F5EE' }}>
+      <section className="imp-section" style={{ background: '#f8fafc' }}>
         <div className="container">
           <div className="imp-what-grid">
             <FadeIn>
               <div className="imp-what-content">
                 <span className="imp-label"><Award size={14} /> Uncompromised Quality</span>
-                <h2>Excellence in <span style={{ color: '#9C7C38' }}>Endodontics</span></h2>
+                <h2>Excellence in <span style={{ color: '#0ea5e9' }}>Endodontics</span></h2>
                 <p>We are committed to providing root canal therapies that are not just pain-free, but meticulously precise. By leveraging advanced materials and continuous training, we ensure that every treated tooth is preserved for the longest possible time.</p>
                 <div className="imp-gallery-checks">
                   {['Biocompatible Materials', 'Minimally Invasive Techniques', 'Focus on Tooth Preservation'].map((t, i) => (
@@ -239,17 +239,17 @@ export default function RootCanalPage() {
             </div>
           </FadeIn>
           <motion.div className="rc-tech-grid rc-tech-grid-2" variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true, margin: '-60px' }}>
-            <motion.div className="rc-tech-card" variants={fadeUp} style={{ '--card-color': '#9C7C38', '--card-bg': '#DCE7D2' } as React.CSSProperties}>
-              <div className="rc-tech-icon" style={{ background: '#DCE7D2', color: '#9C7C38' }}><ScanLine size={26} /></div>
+            <motion.div className="rc-tech-card" variants={fadeUp} style={{ '--card-color': '#0ea5e9', '--card-bg': '#e0f2fe' } as React.CSSProperties}>
+              <div className="rc-tech-icon" style={{ background: '#e0f2fe', color: '#0ea5e9' }}><ScanLine size={26} /></div>
               <div className="rc-tech-title">CBCT (3D Imaging)</div>
               <p className="rc-tech-desc">Detailed three-dimensional view of tooth anatomy, infections, and surrounding bone — ensuring accurate diagnosis and precise treatment planning.</p>
-              <div className="rc-tech-line" style={{ background: '#9C7C38' }} />
+              <div className="rc-tech-line" style={{ background: '#0ea5e9' }} />
             </motion.div>
-            <motion.div className="rc-tech-card" variants={fadeUp} style={{ '--card-color': '#9C7C38', '--card-bg': '#F1EEE3' } as React.CSSProperties}>
-              <div className="rc-tech-icon" style={{ background: '#F1EEE3', color: '#9C7C38' }}><Activity size={26} /></div>
+            <motion.div className="rc-tech-card" variants={fadeUp} style={{ '--card-color': '#6366f1', '--card-bg': '#ede9fe' } as React.CSSProperties}>
+              <div className="rc-tech-icon" style={{ background: '#ede9fe', color: '#6366f1' }}><Activity size={26} /></div>
               <div className="rc-tech-title">RVG (Digital X-Ray)</div>
               <p className="rc-tech-desc">Instant, high-resolution imaging with minimal radiation exposure, allowing real-time evaluation and monitoring throughout the procedure.</p>
-              <div className="rc-tech-line" style={{ background: '#9C7C38' }} />
+              <div className="rc-tech-line" style={{ background: '#6366f1' }} />
             </motion.div>
           </motion.div>
 
@@ -260,17 +260,17 @@ export default function RootCanalPage() {
             </div>
           </FadeIn>
           <motion.div className="rc-tech-grid rc-tech-grid-2" variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true, margin: '-60px' }}>
-            <motion.div className="rc-tech-card" variants={fadeUp} style={{ '--card-color': '#CDAE51', '--card-bg': '#EFE3CB' } as React.CSSProperties}>
-              <div className="rc-tech-icon" style={{ background: '#EFE3CB', color: 'var(--rh-brass)' }}><Microscope size={26} /></div>
+            <motion.div className="rc-tech-card" variants={fadeUp} style={{ '--card-color': '#f59e0b', '--card-bg': '#fef3c7' } as React.CSSProperties}>
+              <div className="rc-tech-icon" style={{ background: '#fef3c7', color: '#f59e0b' }}><Microscope size={26} /></div>
               <div className="rc-tech-title">Dental Operating Microscope</div>
               <p className="rc-tech-desc">High magnification and illumination enable detection of complex or hidden canals, cracks, and anatomical variations — significantly improving treatment accuracy.</p>
-              <div className="rc-tech-line" style={{ background: '#CDAE51' }} />
+              <div className="rc-tech-line" style={{ background: '#f59e0b' }} />
             </motion.div>
-            <motion.div className="rc-tech-card" variants={fadeUp} style={{ '--card-color': '#55684F', '--card-bg': '#DCE7D2' } as React.CSSProperties}>
-              <div className="rc-tech-icon" style={{ background: '#DCE7D2', color: '#55684F' }}><Target size={26} /></div>
+            <motion.div className="rc-tech-card" variants={fadeUp} style={{ '--card-color': '#10b981', '--card-bg': '#d1fae5' } as React.CSSProperties}>
+              <div className="rc-tech-icon" style={{ background: '#d1fae5', color: '#10b981' }}><Target size={26} /></div>
               <div className="rc-tech-title">Apex Locator</div>
               <p className="rc-tech-desc">Electronic working length measurement ensures precise canal preparation and reduces the risk of procedural errors.</p>
-              <div className="rc-tech-line" style={{ background: '#55684F' }} />
+              <div className="rc-tech-line" style={{ background: '#10b981' }} />
             </motion.div>
           </motion.div>
 
@@ -281,17 +281,17 @@ export default function RootCanalPage() {
             </div>
           </FadeIn>
           <motion.div className="rc-tech-grid rc-tech-grid-2" variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true, margin: '-60px' }}>
-            <motion.div className="rc-tech-card" variants={fadeUp} style={{ '--card-color': '#8A3B2A', '--card-bg': '#F0E0D8' } as React.CSSProperties}>
-              <div className="rc-tech-icon" style={{ background: '#F0E0D8', color: '#8A3B2A' }}><Zap size={26} /></div>
+            <motion.div className="rc-tech-card" variants={fadeUp} style={{ '--card-color': '#ef4444', '--card-bg': '#fee2e2' } as React.CSSProperties}>
+              <div className="rc-tech-icon" style={{ background: '#fee2e2', color: '#ef4444' }}><Zap size={26} /></div>
               <div className="rc-tech-title">Rotary Endodontics</div>
               <p className="rc-tech-desc">Advanced flexible instruments allow efficient, smooth, and minimally invasive canal shaping.</p>
-              <div className="rc-tech-line" style={{ background: '#8A3B2A' }} />
+              <div className="rc-tech-line" style={{ background: '#ef4444' }} />
             </motion.div>
-            <motion.div className="rc-tech-card" variants={fadeUp} style={{ '--card-color': '#9C7C38', '--card-bg': '#F1EEE3' } as React.CSSProperties}>
-              <div className="rc-tech-icon" style={{ background: '#F1EEE3', color: '#9C7C38' }}><Layers size={26} /></div>
+            <motion.div className="rc-tech-card" variants={fadeUp} style={{ '--card-color': '#8b5cf6', '--card-bg': '#ede9fe' } as React.CSSProperties}>
+              <div className="rc-tech-icon" style={{ background: '#ede9fe', color: '#8b5cf6' }}><Layers size={26} /></div>
               <div className="rc-tech-title">Advanced Irrigation &amp; Disinfection</div>
               <p className="rc-tech-desc">Enhanced protocols ensure deep cleaning of even the most complex canal systems, eliminating bacteria effectively.</p>
-              <div className="rc-tech-line" style={{ background: '#9C7C38' }} />
+              <div className="rc-tech-line" style={{ background: '#8b5cf6' }} />
             </motion.div>
           </motion.div>
         </div>
@@ -304,7 +304,7 @@ export default function RootCanalPage() {
             <FadeIn>
               <div className="imp-what-content">
                 <span className="imp-label"><ShieldCheck size={14} /> State-of-the-Art Care</span>
-                <h2>Premium Clinical <span style={{ color: '#45543F' }}>Environment</span></h2>
+                <h2>Premium Clinical <span style={{ color: '#059669' }}>Environment</span></h2>
                 <p>Experience root canal treatment in a modern, fully-equipped clinical setting designed for maximum precision, sterility, and patient comfort.</p>
                 <div className="imp-gallery-checks">
                   {['Advanced Sterilization Protocols', 'Ergonomic Patient Seating', 'Integrated Digital Workflow', 'Calm & Relaxing Atmosphere', 'Dedicated Micro-Endodontics Setup'].map((t, i) => (
@@ -328,10 +328,10 @@ export default function RootCanalPage() {
         <div className="rc-vid-orb rc-vid-orb-2" />
         <div className="container">
           <FadeIn>
-            <div className="imp-section-header" style={{ color: 'var(--rh-ink)' }}>
-              <span className="imp-label" style={{ background: 'rgba(85,104,79,0.15)', borderColor: 'rgba(85,104,79,0.3)', color: 'var(--rh-sage-deep)' }}><Play size={14} /> Watch the Procedure</span>
-              <h2 className="imp-title" style={{ color: '#F1EEE3' }}>See Precision <span style={{ background: 'linear-gradient(135deg, #B4D1A8, #34d399)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>in Action</span></h2>
-              <p className="imp-subtitle" style={{ color: 'rgba(201,197,178,0.8)' }}>Watch a real single-visit root canal treatment performed at RH Dental Care with microscope guidance and digital workflow.</p>
+            <div className="imp-section-header" style={{ color: '#fff' }}>
+              <span className="imp-label" style={{ background: 'rgba(16,185,129,0.15)', borderColor: 'rgba(16,185,129,0.3)', color: '#6ee7b7' }}><Play size={14} /> Watch the Procedure</span>
+              <h2 className="imp-title" style={{ color: '#f1f5f9' }}>See Precision <span style={{ background: 'linear-gradient(135deg, #6ee7b7, #34d399)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>in Action</span></h2>
+              <p className="imp-subtitle" style={{ color: 'rgba(203,213,225,0.8)' }}>Watch a real single-visit root canal treatment performed at RH Dental Care with microscope guidance and digital workflow.</p>
             </div>
           </FadeIn>
           <FadeIn delay={0.15}>
@@ -344,8 +344,8 @@ export default function RootCanalPage() {
                 { icon: <ShieldCheck size={16} />, text: 'Single Visit Protocol' },
                 { icon: <Zap size={16} />, text: 'Rotary Endodontics' },
               ].map((b, i) => (
-                <div key={i} className="imp-video-badge-item" style={{ borderColor: 'rgba(85,104,79,0.15)' }}>
-                  <span style={{ color: 'var(--rh-sage-deep)' }}>{b.icon}</span> <span>{b.text}</span>
+                <div key={i} className="imp-video-badge-item" style={{ borderColor: 'rgba(16,185,129,0.15)' }}>
+                  <span style={{ color: '#6ee7b7' }}>{b.icon}</span> <span>{b.text}</span>
                 </div>
               ))}
             </div>
@@ -366,13 +366,13 @@ export default function RootCanalPage() {
             <FadeIn delay={0.15}>
               <div className="imp-what-content">
                 <span className="imp-label"><ShieldCheck size={14} /> Long-Term Success</span>
-                <h2>Save Your Natural <span style={{ color: '#45543F' }}>Tooth for Life</span></h2>
+                <h2>Save Your Natural <span style={{ color: '#059669' }}>Tooth for Life</span></h2>
                 <p>Following root canal treatment, a dental crown is strongly recommended to restore structural integrity and function. With proper care, a treated tooth can last many years — even a lifetime.</p>
                 <div className="imp-anatomy-list">
                   {[
-                    { icon: <Layers size={18} />, title: 'Biocompatible Filling', desc: 'Ensures a durable, hermetic seal to prevent reinfection permanently.', bg: 'linear-gradient(135deg, #9C7C38, #55684F)' },
-                    { icon: <Award size={18} />, title: 'Post-Endodontic Crown', desc: 'Restores strength, function, and long-term durability of the treated tooth.', bg: 'linear-gradient(135deg, #9C7C38, #7E6329)' },
-                    { icon: <Activity size={18} />, title: 'Digital Follow-Up', desc: 'Remote monitoring ensures smooth healing — especially for international patients.', bg: 'linear-gradient(135deg, #55684F, #45543F)' },
+                    { icon: <Layers size={18} />, title: 'Biocompatible Filling', desc: 'Ensures a durable, hermetic seal to prevent reinfection permanently.', bg: 'linear-gradient(135deg, #0ea5e9, #0284c7)' },
+                    { icon: <Award size={18} />, title: 'Post-Endodontic Crown', desc: 'Restores strength, function, and long-term durability of the treated tooth.', bg: 'linear-gradient(135deg, #6366f1, #4f46e5)' },
+                    { icon: <Activity size={18} />, title: 'Digital Follow-Up', desc: 'Remote monitoring ensures smooth healing — especially for international patients.', bg: 'linear-gradient(135deg, #10b981, #059669)' },
                   ].map((item, i) => (
                     <motion.div key={i} className="imp-anatomy-item" initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}>
                       <div className="imp-anatomy-icon" style={{ background: item.bg }}>{item.icon}</div>
@@ -399,7 +399,7 @@ export default function RootCanalPage() {
           <FadeIn>
             <div className="imp-section-header">
               <span className="imp-label"><Sparkles size={14} /> Investment in Your Health</span>
-              <h2 className="imp-title">Root Canal <span className="imp-accent" style={{ color: '#45543F' }}>Packages</span></h2>
+              <h2 className="imp-title">Root Canal <span className="imp-accent" style={{ color: '#059669' }}>Packages</span></h2>
               <p className="imp-subtitle">Comprehensive RCT + Crown packages designed for durability, protection, and aesthetics. Choose the plan that best fits your tooth condition and budget.</p>
             </div>
           </FadeIn>
@@ -411,8 +411,8 @@ export default function RootCanalPage() {
                 name: 'N2 Sealer + PFM Crown',
                 price: '৳13,000',
                 tag: 'Essential Protection',
-                color: '#6E6B57',
-                bg: '#F1EEE3',
+                color: '#64748b',
+                bg: '#f1f5f9',
                 desc: 'A budget-friendly and dependable restoration. PFM crown provides good strength and a natural appearance.',
                 features: ['Complete RCT Treatment', 'N2 advanced sealing', 'Color matching PFM crown', 'Good strength & durability', 'Economical solution']
               },
@@ -421,8 +421,8 @@ export default function RootCanalPage() {
                 name: 'MTA Sealer + Premium PFM',
                 price: '৳15,000',
                 tag: 'Enhanced Healing',
-                color: '#9C7C38',
-                bg: '#DCE7D2',
+                color: '#0ea5e9',
+                bg: '#e0f2fe',
                 desc: 'Advanced biocompatible sealers for better sealing and healing. Premium PFM offers improved esthetics and strength.',
                 features: ['Complete RCT Treatment', 'Sealapex / MTA sealer', 'Premium matching PFM crown', 'Better sealing & healing', 'Improved esthetics']
               },
@@ -431,8 +431,8 @@ export default function RootCanalPage() {
                 name: 'Biosealer + Zirconia Crown',
                 price: '৳20,000',
                 tag: 'Premium Esthetics',
-                color: '#55684F',
-                bg: '#DCE7D2',
+                color: '#10b981',
+                bg: '#d1fae5',
                 desc: 'Elite package combining advanced Biosealers with highly esthetic Zirconia. Best for beauty, performance, and longevity.',
                 features: ['Complete RCT Treatment', 'Biosealer / MTA sealer', 'High-end Zirconia crown', 'Highly esthetic & natural', 'Excellent long-term results']
               }
@@ -466,19 +466,19 @@ export default function RootCanalPage() {
 
           {/* ── Payment Note ── */}
           <FadeIn delay={0.3}>
-            <div className="imp-payment-note" style={{ borderColor: 'rgba(85,104,79,0.1)' }}>
-              <div className="imp-payment-icon" style={{ color: '#55684F' }}><MessageCircle size={24} /></div>
+            <div className="imp-payment-note" style={{ borderColor: 'rgba(16,185,129,0.1)' }}>
+              <div className="imp-payment-icon" style={{ color: '#10b981' }}><MessageCircle size={24} /></div>
               <div className="imp-payment-body">
                 <h4>Flexible Payment Structure</h4>
                 <p>We understand that quality care is an investment. We offer a two-phase payment plan:</p>
                 <div className="imp-payment-steps">
                   <div className="imp-payment-step">
-                    <strong style={{ color: '#55684F' }}>Phase One (Surgery)</strong>
+                    <strong style={{ color: '#10b981' }}>Phase One (Surgery)</strong>
                     <span>Paid during the Root Canal procedure and initial preparation.</span>
                   </div>
                   <div className="imp-payment-step-arrow"><ChevronRight size={20} /></div>
                   <div className="imp-payment-step">
-                    <strong style={{ color: '#55684F' }}>Phase Two (Prosthesis)</strong>
+                    <strong style={{ color: '#10b981' }}>Phase Two (Prosthesis)</strong>
                     <span>Paid upon successful placement and fitting of your final crown.</span>
                   </div>
                 </div>
@@ -489,7 +489,7 @@ export default function RootCanalPage() {
       </section>
 
       {/* ═══════════════ TECHNOLOGY FLYER ═══════════════ */}
-      <section className="imp-section" style={{ background: '#F7F5EE', padding: '0 0 6rem 0' }}>
+      <section className="imp-section" style={{ background: '#f8fafc', padding: '0 0 6rem 0' }}>
         <div className="container">
           <FadeIn>
             <div style={{
@@ -501,7 +501,7 @@ export default function RootCanalPage() {
               borderRadius: '1.5rem',
               overflow: 'hidden',
               boxShadow: '0 25px 60px rgba(0,0,0,0.08)',
-              border: '2px solid rgba(85,104,79,0.1)'
+              border: '2px solid rgba(16,185,129,0.1)'
             }}>
               <Image 
                 src={require('@/assets/specialties/root-canal-flyer.jpg').default} 
@@ -548,20 +548,20 @@ export default function RootCanalPage() {
       {/* ═══════════════ CTA ═══════════════ */}
       <section className="imp-cta">
         <div className="imp-cta-orb" />
-        <div className="imp-cta-orb" style={{ top: 'auto', bottom: -120, left: -80, right: 'auto', background: 'radial-gradient(circle, rgba(85,104,79,0.1), transparent 70%)' }} />
+        <div className="imp-cta-orb" style={{ top: 'auto', bottom: -120, left: -80, right: 'auto', background: 'radial-gradient(circle, rgba(16,185,129,0.1), transparent 70%)' }} />
         <div className="container">
           <FadeIn>
             <div className="imp-cta-inner">
-              <div className="imp-badge" style={{ margin: '0 auto 1.5rem', background: 'rgba(85,104,79,0.15)', borderColor: 'rgba(85,104,79,0.3)', color: 'var(--rh-sage-deep)' }}>
+              <div className="imp-badge" style={{ margin: '0 auto 1.5rem', background: 'rgba(16,185,129,0.15)', borderColor: 'rgba(16,185,129,0.3)', color: '#6ee7b7' }}>
                 <Sparkles size={14} /> Experience the Future of Dentistry
               </div>
               <h2 className="imp-cta-title">
                 Faster Treatment. Greater Precision.{' '}
-                <span style={{ background: 'linear-gradient(135deg, #B4D1A8, #34d399)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>Exceptional Results.</span>
+                <span style={{ background: 'linear-gradient(135deg, #6ee7b7, #34d399)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>Exceptional Results.</span>
               </h2>
               <p className="imp-cta-sub">At RH Dental Care, we combine advanced technology, clinical precision, and patient-focused care to deliver dentistry that meets international standards.</p>
               <div className="imp-cta-btns">
-                <BranchCTA action="book" service="Root Canal Treatment" className="imp-btn-primary" style={{ background: 'linear-gradient(135deg, #55684F, #45543F)' }}>Book Your Appointment <ArrowUpRight size={18} /></BranchCTA>
+                <BranchCTA action="book" service="Root Canal Treatment" className="imp-btn-primary" style={{ background: 'linear-gradient(135deg, #10b981, #059669)' }}>Book Your Appointment <ArrowUpRight size={18} /></BranchCTA>
                 <BranchCTA action="call" service="Root Canal Treatment" className="imp-btn-glass"><Phone size={16} /> Call Now</BranchCTA>
                 <BranchCTA action="whatsapp" service="Root Canal Treatment" className="imp-btn-glass" style={{ color: '#25D366' }}><MessageCircle size={16} /> WhatsApp</BranchCTA>
               </div>

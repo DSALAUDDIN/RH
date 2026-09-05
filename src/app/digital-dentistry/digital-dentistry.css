@@ -2,27 +2,27 @@
 
 .dd-hero .imp-hero-overlay {
   background:
-    linear-gradient(180deg, rgba(247, 245, 238, 0.84) 0%, rgba(247, 245, 238, 0.60) 40%, rgba(247, 245, 238, 0.92) 100%),
-    linear-gradient(135deg, rgba(156,124,56,0.2) 0%, transparent 55%);
+    linear-gradient(180deg, rgba(2,6,23,0.72) 0%, rgba(2,6,23,0.48) 40%, rgba(2,6,23,0.88) 100%),
+    linear-gradient(135deg, rgba(99,102,241,0.2) 0%, transparent 55%);
 }
 
 .dd-badge {
-  background: rgba(156,124,56,0.15) !important;
-  border-color: rgba(156,124,56,0.3) !important;
+  background: rgba(99,102,241,0.15) !important;
+  border-color: rgba(99,102,241,0.3) !important;
   color: #c7d2fe !important;
 }
 
 .dd-hero .imp-hero-title span {
-  background: linear-gradient(135deg, var(--rh-brass-light), #c7d2fe);
+  background: linear-gradient(135deg, #818cf8, #c7d2fe);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .dd-label {
-  background: rgba(156,124,56,0.08) !important;
-  border-color: rgba(156,124,56,0.2) !important;
-  color: var(--rh-brass) !important;
+  background: rgba(99,102,241,0.08) !important;
+  border-color: rgba(99,102,241,0.2) !important;
+  color: #4f46e5 !important;
 }
 
 .imp-what-img-badge {
@@ -34,18 +34,18 @@
   border-radius: 100px;
   padding: 0.55rem 1.3rem;
   font-size: 0.8rem;
-  font-weight: 600;
+  font-weight: 800;
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  box-shadow: var(--rh-glow-md);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.12);
   z-index: 2;
   border: 1px solid;
 }
 
 .dd-img-badge {
-  color: var(--rh-brass);
-  border-color: rgba(156,124,56,0.2);
+  color: #6366f1;
+  border-color: rgba(99,102,241,0.2);
 }
 
 /* Use cases grid responsive */

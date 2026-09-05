@@ -32,7 +32,7 @@ export default function PromoModal() {
             left: 0,
             right: 0,
             bottom: 0,
-            backgroundColor: 'rgba(247, 245, 238, 0.92)',
+            backgroundColor: 'rgba(2, 6, 23, 0.85)',
             backdropFilter: 'blur(8px)',
             zIndex: 99999,
             display: 'flex',
@@ -47,7 +47,7 @@ export default function PromoModal() {
         >
           <motion.div
             style={{
-              background: 'linear-gradient(145deg, #2B2A1C, #1F1E14)',
+              background: 'linear-gradient(145deg, #0f172a, #020617)',
               borderRadius: '24px',
               border: '1px solid rgba(139, 92, 246, 0.3)', // Subtle purple/premium border
               boxShadow: '0 25px 50px -12px rgba(139, 92, 246, 0.25)',
@@ -55,7 +55,7 @@ export default function PromoModal() {
               maxWidth: '550px',
               position: 'relative',
               overflow: 'hidden',
-              color: 'var(--rh-ink)'
+              color: '#fff'
             }}
             initial={{ scale: 0.95, opacity: 0, y: 30 }}
             animate={{ scale: 1, opacity: 1, y: 0 }}
@@ -64,7 +64,7 @@ export default function PromoModal() {
             onClick={(e) => e.stopPropagation()}
           >
             {/* Top decorative gradient line */}
-            <div style={{ height: '4px', width: '100%', background: 'linear-gradient(90deg, #9C7C38, var(--rh-brass))' }} />
+            <div style={{ height: '4px', width: '100%', background: 'linear-gradient(90deg, #8b5cf6, #3b82f6)' }} />
 
             <button 
               onClick={close} 
@@ -80,7 +80,7 @@ export default function PromoModal() {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                color: '#C9C5B2',
+                color: '#cbd5e1',
                 cursor: 'pointer',
                 zIndex: 10,
                 transition: 'background 0.2s'
@@ -94,25 +94,25 @@ export default function PromoModal() {
 
             <div style={{ padding: '2.5rem 2.5rem 2rem' }}>
               
-              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(139, 92, 246, 0.15)', padding: '6px 14px', borderRadius: '4px', color: '#c4b5fd', fontSize: '0.8rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '1.5rem', border: '1px solid rgba(139, 92, 246, 0.3)' }}>
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(139, 92, 246, 0.15)', padding: '6px 14px', borderRadius: '50px', color: '#c4b5fd', fontSize: '0.8rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '1.5rem', border: '1px solid rgba(139, 92, 246, 0.3)' }}>
                 <Sparkles size={14} /> VIP Access
               </div>
 
-              <h2 style={{ fontSize: '2rem', fontWeight: 600, lineHeight: 1.1, marginBottom: '1rem', letterSpacing: '-0.02em' }}>
-                Experience the Pinnacle of <span style={{ color: 'var(--rh-brass)' }}>Premium Dentistry.</span>
+              <h2 style={{ fontSize: '2rem', fontWeight: 900, lineHeight: 1.1, marginBottom: '1rem', letterSpacing: '-0.02em' }}>
+                Experience the Pinnacle of <span style={{ color: '#a78bfa' }}>Premium Dentistry.</span>
               </h2>
 
-              <p style={{ color: '#8C8973', fontSize: '1.05rem', lineHeight: 1.6, marginBottom: '2rem' }}>
-                Our exclusive <strong style={{ color: 'var(--rh-ink)' }}>Banani Premium Center</strong> is now accepting a limited number of high-priority patients for advanced aesthetic and implant procedures.
+              <p style={{ color: '#94a3b8', fontSize: '1.05rem', lineHeight: 1.6, marginBottom: '2rem' }}>
+                Our exclusive <strong style={{ color: '#fff' }}>Banani Premium Center</strong> is now accepting a limited number of high-priority patients for advanced aesthetic and implant procedures.
               </p>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '2.5rem', background: 'rgba(255,255,255,0.03)', padding: '1.5rem', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.05)' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                  <ShieldCheck size={20} color="#B4D1A8" />
+                  <ShieldCheck size={20} color="#4ade80" />
                   <span style={{ fontSize: '0.95rem', fontWeight: 600 }}>Zero Wait Time & Private Lounge</span>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                  <MapPin size={20} color="#CDAE51" />
+                  <MapPin size={20} color="#a78bfa" />
                   <span style={{ fontSize: '0.95rem', fontWeight: 600 }}>Prime Location: Level 7, Road 11, Banani</span>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
@@ -132,10 +132,10 @@ export default function PromoModal() {
                     gap: '8px',
                     width: '100%',
                     padding: '1rem',
-                    background: '#9C7C38',
-                    color: 'var(--rh-ink)',
+                    background: '#8b5cf6',
+                    color: '#fff',
                     borderRadius: '12px',
-                    fontWeight: 600,
+                    fontWeight: 800,
                     fontSize: '1.1rem',
                     textDecoration: 'none',
                     boxShadow: '0 10px 25px rgba(139, 92, 246, 0.4)',
@@ -157,7 +157,7 @@ export default function PromoModal() {
                   style={{
                     background: 'transparent',
                     border: 'none',
-                    color: '#6E6B57',
+                    color: '#64748b',
                     fontSize: '0.9rem',
                     fontWeight: 600,
                     cursor: 'pointer',

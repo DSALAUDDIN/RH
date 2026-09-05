@@ -6,19 +6,19 @@
 /* Hero accent tones — green instead of blue */
 .zircon-hero .imp-hero-overlay {
   background:
-    linear-gradient(180deg, rgba(247, 245, 238, 0.82) 0%, rgba(247, 245, 238, 0.62) 40%, rgba(247, 245, 238, 0.92) 100%),
-    linear-gradient(135deg, rgba(85,104,79,0.15) 0%, transparent 50%);
+    linear-gradient(180deg, rgba(2,6,23,0.7) 0%, rgba(2,6,23,0.5) 40%, rgba(2,6,23,0.85) 100%),
+    linear-gradient(135deg, rgba(16,185,129,0.15) 0%, transparent 50%);
 }
 
 .zircon-badge {
-  background: rgba(85,104,79,0.15) !important;
-  border-color: rgba(85,104,79,0.3) !important;
-  color: var(--rh-sage) !important;
+  background: rgba(16,185,129,0.15) !important;
+  border-color: rgba(16,185,129,0.3) !important;
+  color: #6ee7b7 !important;
 }
 
 /* Hero title gradient — green */
 .zircon-hero .imp-hero-title span {
-  background: linear-gradient(135deg, #34d399, var(--rh-sage));
+  background: linear-gradient(135deg, #34d399, #6ee7b7);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -33,11 +33,11 @@
   border-radius: 100px;
   padding: 0.55rem 1.3rem;
   font-size: 0.8rem;
-  font-weight: 600;
+  font-weight: 800;
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  box-shadow: var(--rh-glow-md);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.12);
   z-index: 2;
   border: 1px solid;
   background: rgba(255,255,255,0.92);

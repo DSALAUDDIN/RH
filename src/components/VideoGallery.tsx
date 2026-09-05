@@ -41,14 +41,14 @@ export default function VideoGallery({ videos }: { videos: any[] }) {
   if (!videos || videos.length === 0) return null;
 
   return (
-    <section style={{ paddingTop: 'calc(var(--nav-height) + 4rem)', paddingBottom: '4rem', background: 'var(--rh-surface)', color: 'var(--rh-ink)' }}>
+    <section style={{ paddingTop: 'calc(var(--nav-height) + 4rem)', paddingBottom: '4rem', background: '#020617', color: '#fff' }}>
       <div className="container">
         <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
-          <h2 style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', fontWeight: 600, fontFamily: 'var(--font-display), sans-serif', letterSpacing: '-0.03em' }}>
-            Real Patient <span style={{ color: '#9C7C38' }}>Stories</span>
+          <h2 style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', fontWeight: 800, fontFamily: 'var(--font-display), sans-serif', letterSpacing: '-0.03em' }}>
+            Real Patient <span style={{ color: '#0ea5e9' }}>Stories</span>
           </h2>
-          <p style={{ color: '#8C8973', fontSize: '1.1rem', marginTop: '1rem', maxWidth: '600px', margin: '1rem auto 0' }}>
-            Hear directly from our patients about their painless treatments and life-changing smile transformations.
+          <p style={{ color: '#94a3b8', fontSize: '1.1rem', marginTop: '1rem', maxWidth: '600px', margin: '1rem auto 0' }}>
+            Hear directly from our patients about their treatment and their results.
           </p>
         </div>
         
@@ -57,7 +57,7 @@ export default function VideoGallery({ videos }: { videos: any[] }) {
             <div 
               key={review.id} 
               style={{ 
-                background: 'var(--rh-surface)', 
+                background: '#0f172a', 
                 borderRadius: '1.5rem', 
                 overflow: 'hidden', 
                 border: '1px solid rgba(255,255,255,0.05)', 
@@ -67,7 +67,7 @@ export default function VideoGallery({ videos }: { videos: any[] }) {
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = 'translateY(-5px)';
-                e.currentTarget.style.boxShadow = '0 30px 60px rgba(43, 42, 28, 0.50)';
+                e.currentTarget.style.boxShadow = '0 30px 60px rgba(0,0,0,0.5)';
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.transform = 'translateY(0)';
@@ -111,31 +111,31 @@ export default function VideoGallery({ videos }: { videos: any[] }) {
                       cursor: 'pointer',
                       transition: 'background 0.3s'
                     }}
-                    onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(43, 42, 28, 0.50)'; }}
+                    onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(0,0,0,0.5)'; }}
                     onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(0,0,0,0.3)'; }}
                   >
                     <div style={{
                       width: '64px',
                       height: '64px',
                       borderRadius: '50%',
-                      backgroundColor: 'rgba(156, 124, 56, 0.9)',
+                      backgroundColor: 'rgba(14, 165, 233, 0.9)',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      boxShadow: '0 0 30px rgba(156, 124, 56, 0.5)',
+                      boxShadow: '0 0 30px rgba(14, 165, 233, 0.5)',
                       paddingLeft: '4px' // Optical alignment for play button
                     }}>
-                      <Play fill="#fff" color="var(--rh-ink)" size={32} />
+                      <Play fill="#fff" color="#fff" size={32} />
                     </div>
                   </div>
                 )}
               </div>
               
-              <div style={{ padding: '1.5rem', background: 'linear-gradient(to top, #2B2A1C, #2B2A1C)' }}>
-                <div style={{ display: 'flex', gap: '4px', color: 'var(--rh-brass)', marginBottom: '0.75rem' }}>
-                  {Array(review.rating).fill(0).map((_, i) => <Star key={i} size={16} fill="#CDAE51" />)}
+              <div style={{ padding: '1.5rem', background: 'linear-gradient(to top, #0f172a, #1e293b)' }}>
+                <div style={{ display: 'flex', gap: '4px', color: '#fbbf24', marginBottom: '0.75rem' }}>
+                  {Array(review.rating).fill(0).map((_, i) => <Star key={i} size={16} fill="#fbbf24" />)}
                 </div>
-                <h3 style={{ fontSize: '1.25rem', fontWeight: 600, color: '#F7F5EE', margin: 0 }}>{review.patient}</h3>
+                <h3 style={{ fontSize: '1.25rem', fontWeight: 600, color: '#f8fafc', margin: 0 }}>{review.patient}</h3>
               </div>
             </div>
           ))}
@@ -152,22 +152,22 @@ export default function VideoGallery({ videos }: { videos: any[] }) {
                 padding: '12px 28px',
                 backgroundColor: 'rgba(255,255,255,0.05)',
                 border: '1px solid rgba(255,255,255,0.1)',
-                borderRadius: '4px',
-                color: '#F7F5EE',
+                borderRadius: '50px',
+                color: '#f8fafc',
                 fontSize: '1rem',
                 fontWeight: 600,
                 cursor: 'pointer',
                 transition: 'all 0.3s'
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = 'rgba(156, 124, 56, 0.1)';
-                e.currentTarget.style.borderColor = '#9C7C38';
-                e.currentTarget.style.color = '#9C7C38';
+                e.currentTarget.style.backgroundColor = 'rgba(14, 165, 233, 0.1)';
+                e.currentTarget.style.borderColor = '#0ea5e9';
+                e.currentTarget.style.color = '#0ea5e9';
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.05)';
                 e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)';
-                e.currentTarget.style.color = '#F7F5EE';
+                e.currentTarget.style.color = '#f8fafc';
               }}
             >
               Load More Videos <ChevronDown size={18} />

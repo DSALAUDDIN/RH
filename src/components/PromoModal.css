@@ -1,7 +1,7 @@
 .promo-modal-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(247, 245, 238, 0.92); /* Dark slate backdrop */
+  background: rgba(2, 6, 23, 0.85); /* Dark slate backdrop */
   backdrop-filter: blur(8px);
   z-index: 9999; /* Ensure it's above everything */
   display: flex;
@@ -12,7 +12,7 @@
 
 .promo-modal-content {
   position: relative;
-  background: var(--rh-surface);
+  background: #ffffff;
   border-radius: 16px;
   width: 100%;
   max-width: 500px;
@@ -20,7 +20,7 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  box-shadow: var(--rh-glow-lg);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
 }
 
 .promo-modal-close {
@@ -29,7 +29,7 @@
   right: 12px;
   background: rgba(255, 255, 255, 0.9);
   border: none;
-  color: var(--rh-ink);
+  color: #0f172a;
   width: 36px;
   height: 36px;
   border-radius: 50%;
@@ -39,11 +39,11 @@
   cursor: pointer;
   transition: all 0.2s;
   z-index: 20;
-  box-shadow: var(--rh-glow-sm);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .promo-modal-close:hover {
-  background: var(--rh-surface-sunk);
+  background: #f1f5f9;
   transform: scale(1.05);
 }
 
@@ -51,7 +51,7 @@
   position: relative;
   width: 100%;
   aspect-ratio: 3/4; /* Matches flyer aspect ratios roughly */
-  background: var(--rh-paper);
+  background: #f8fafc;
   overflow: hidden;
 }
 
@@ -74,7 +74,7 @@
   transform: translateY(-50%);
   background: rgba(255, 255, 255, 0.8);
   border: none;
-  color: var(--rh-ink);
+  color: #0f172a;
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -84,11 +84,11 @@
   cursor: pointer;
   transition: all 0.2s;
   z-index: 10;
-  box-shadow: var(--rh-glow-sm);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .promo-nav-btn:hover {
-  background: var(--rh-surface);
+  background: #ffffff;
   transform: translateY(-50%) scale(1.1);
 }
 
@@ -127,14 +127,14 @@
 }
 
 .promo-dot.active {
-  background: var(--rh-surface);
+  background: #ffffff;
   transform: scale(1.2);
 }
 
 /* Footer CTA */
 .promo-modal-footer {
   padding: 1rem;
-  background: var(--rh-surface);
+  background: #ffffff;
   display: flex;
   justify-content: center;
 }
@@ -144,7 +144,7 @@
   width: 100%;
   text-align: center;
   background: hsl(var(--primary));
-  color: var(--rh-ink);
+  color: white;
   padding: 1rem;
   border-radius: 8px;
   font-weight: 600;

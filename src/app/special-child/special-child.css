@@ -4,7 +4,7 @@
 
 .sc-hero .imp-hero-overlay {
   background:
-    linear-gradient(180deg, rgba(247, 245, 238, 0.84) 0%, rgba(247, 245, 238, 0.60) 40%, rgba(247, 245, 238, 0.92) 100%),
+    linear-gradient(180deg, rgba(2,6,23,0.72) 0%, rgba(2,6,23,0.48) 40%, rgba(2,6,23,0.88) 100%),
     linear-gradient(135deg, rgba(20,184,166,0.18) 0%, transparent 55%);
 }
 
@@ -15,7 +15,7 @@
 }
 
 .sc-hero .imp-hero-title span {
-  background: linear-gradient(135deg, var(--rh-sage), #99f6e4);
+  background: linear-gradient(135deg, #2dd4bf, #99f6e4);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -37,17 +37,17 @@
   border-radius: 100px;
   padding: 0.55rem 1.3rem;
   font-size: 0.8rem;
-  font-weight: 600;
+  font-weight: 800;
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  box-shadow: var(--rh-glow-md);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.12);
   z-index: 2;
   border: 1px solid;
 }
 
 .sc-img-badge {
-  color: var(--rh-sage-deep);
+  color: #14b8a6;
   border-color: rgba(20,184,166,0.2);
 }
 

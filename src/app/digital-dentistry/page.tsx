@@ -40,12 +40,12 @@ function FadeIn({ children, delay=0, className }: { children: React.ReactNode; d
 
 /* ─── data ─── */
 const scanAdvantages = [
-  { icon: <ScanLine size={22}/>,   title: 'Highly Accurate Impressions',    desc: 'Millimeter-precision 3D digital impressions far exceeding traditional methods.', color: '#9C7C38', bg: '#F1EEE3' },
-  { icon: <Sparkles size={22}/>,   title: 'Comfortable & Painless',         desc: 'No messy conventional impression materials — just a smooth, comfortable scan.', color: '#9C7C38', bg: '#DCE7D2' },
-  { icon: <Cpu size={22}/>,        title: 'Better Fitting Prosthesis',       desc: 'Crowns, bridges, aligners, and implants fit with superior precision.', color: '#55684F', bg: '#DCE7D2' },
-  { icon: <Zap size={22}/>,        title: 'Reduced Treatment Time',          desc: 'Faster chairside scanning, faster lab communication, faster delivery.', color: 'var(--rh-brass)', bg: '#EFE3CB' },
-  { icon: <Globe size={22}/>,      title: 'Digital Lab Communication',       desc: 'Instant, accurate data transfer between our clinic and digital laboratories.', color: '#9C7C38', bg: '#f3e8ff' },
-  { icon: <BarChart3 size={22}/>,  title: 'Long-Term Digital Records',       desc: 'Complete digital patient records for accurate comparison and monitoring.', color: '#9C7C38', bg: '#EFE3CB' },
+  { icon: <ScanLine size={22}/>,   title: 'Highly Accurate Impressions',    desc: 'Millimeter-precision 3D digital impressions far exceeding traditional methods.', color: '#6366f1', bg: '#ede9fe' },
+  { icon: <Sparkles size={22}/>,   title: 'Comfortable & Painless',         desc: 'No messy conventional impression materials — just a smooth, comfortable scan.', color: '#0ea5e9', bg: '#e0f2fe' },
+  { icon: <Cpu size={22}/>,        title: 'Better Fitting Prosthesis',       desc: 'Crowns, bridges, aligners, and implants fit with superior precision.', color: '#10b981', bg: '#d1fae5' },
+  { icon: <Zap size={22}/>,        title: 'Reduced Treatment Time',          desc: 'Faster chairside scanning, faster lab communication, faster delivery.', color: '#f59e0b', bg: '#fef3c7' },
+  { icon: <Globe size={22}/>,      title: 'Digital Lab Communication',       desc: 'Instant, accurate data transfer between our clinic and digital laboratories.', color: '#8b5cf6', bg: '#f3e8ff' },
+  { icon: <BarChart3 size={22}/>,  title: 'Long-Term Digital Records',       desc: 'Complete digital patient records for accurate comparison and monitoring.', color: '#ec4899', bg: '#fce7f3' },
 ];
 
 const workflowBenefits = [
@@ -62,7 +62,7 @@ const useCases = [
   {
     icon: <Monitor size={22}/>,
     title: 'Prosthodontic Treatment',
-    color: '#9C7C38', bg: '#F1EEE3',
+    color: '#6366f1', bg: '#ede9fe',
     points: [
       'Highly accurate crown, bridge & veneer design',
       'Superior restoration fit and precision',
@@ -75,7 +75,7 @@ const useCases = [
   {
     icon: <RefreshCw size={22}/>,
     title: 'Orthodontics & Clear Aligners',
-    color: '#9C7C38', bg: '#f3e8ff',
+    color: '#8b5cf6', bg: '#f3e8ff',
     points: [
       'Accurate digital orthodontic model creation',
       'Virtual tooth movement simulation',
@@ -88,7 +88,7 @@ const useCases = [
   {
     icon: <Layers size={22}/>,
     title: 'Guided Dental Surgery',
-    color: '#9C7C38', bg: '#DCE7D2',
+    color: '#0ea5e9', bg: '#e0f2fe',
     points: [
       'Digital implant planning with CBCT integration',
       'Guided implant surgery & surgical guide fabrication',
@@ -101,12 +101,12 @@ const useCases = [
 ];
 
 const futureTech = [
-  { icon: <ScanLine size={20}/>,   title: '3D Intraoral Scanning',      color: '#9C7C38' },
-  { icon: <Monitor size={20}/>,    title: 'Digital Smile Design',        color: '#9C7C38' },
-  { icon: <Cpu size={20}/>,        title: 'CAD/CAM Systems',             color: '#55684F' },
-  { icon: <Layers size={20}/>,     title: 'Guided Surgery',              color: 'var(--rh-brass)' },
-  { icon: <Sparkles size={20}/>,   title: 'AI-Assisted Diagnostics',     color: '#9C7C38' },
-  { icon: <Globe size={20}/>,      title: '3D Printing Technology',      color: '#9C7C38' },
+  { icon: <ScanLine size={20}/>,   title: '3D Intraoral Scanning',      color: '#6366f1' },
+  { icon: <Monitor size={20}/>,    title: 'Digital Smile Design',        color: '#0ea5e9' },
+  { icon: <Cpu size={20}/>,        title: 'CAD/CAM Systems',             color: '#10b981' },
+  { icon: <Layers size={20}/>,     title: 'Guided Surgery',              color: '#f59e0b' },
+  { icon: <Sparkles size={20}/>,   title: 'AI-Assisted Diagnostics',     color: '#ec4899' },
+  { icon: <Globe size={20}/>,      title: '3D Printing Technology',      color: '#8b5cf6' },
 ];
 
 type GalleryItem = { src: StaticImageData; alt: string; label: string; desc: string };
@@ -153,19 +153,19 @@ export default function DigitalDentistryPage() {
       {lightboxIdx !== null && (
         <motion.div
           initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-          style={{ position:'fixed', inset:0, zIndex:9999, background:'rgba(247, 245, 238, 0.92)', display:'flex', alignItems:'center', justifyContent:'center', padding:'1.5rem' }}
+          style={{ position:'fixed', inset:0, zIndex:9999, background:'rgba(2,6,23,0.97)', display:'flex', alignItems:'center', justifyContent:'center', padding:'1.5rem' }}
           onClick={closeLightbox}
         >
           {/* Close */}
-          <button onClick={closeLightbox} style={{ position:'absolute', top:'1.5rem', right:'1.5rem', width:48, height:48, borderRadius:'50%', background:'rgba(255,255,255,0.1)', border:'1px solid rgba(255,255,255,0.2)', color: 'var(--rh-ink)', cursor:'pointer', display:'flex', alignItems:'center', justifyContent:'center', backdropFilter:'blur(8px)', zIndex:10 }}>
+          <button onClick={closeLightbox} style={{ position:'absolute', top:'1.5rem', right:'1.5rem', width:48, height:48, borderRadius:'50%', background:'rgba(255,255,255,0.1)', border:'1px solid rgba(255,255,255,0.2)', color:'#fff', cursor:'pointer', display:'flex', alignItems:'center', justifyContent:'center', backdropFilter:'blur(8px)', zIndex:10 }}>
             <X size={22}/>
           </button>
           {/* Prev */}
-          <button onClick={e => { e.stopPropagation(); navigate(-1); }} style={{ position:'absolute', left:'1.5rem', top:'50%', transform:'translateY(-50%)', width:52, height:52, borderRadius:'50%', background:'rgba(255,255,255,0.1)', border:'1px solid rgba(255,255,255,0.15)', color: 'var(--rh-ink)', cursor:'pointer', display:'flex', alignItems:'center', justifyContent:'center', backdropFilter:'blur(8px)', zIndex:10 }}>
+          <button onClick={e => { e.stopPropagation(); navigate(-1); }} style={{ position:'absolute', left:'1.5rem', top:'50%', transform:'translateY(-50%)', width:52, height:52, borderRadius:'50%', background:'rgba(255,255,255,0.1)', border:'1px solid rgba(255,255,255,0.15)', color:'#fff', cursor:'pointer', display:'flex', alignItems:'center', justifyContent:'center', backdropFilter:'blur(8px)', zIndex:10 }}>
             <ChevronLeft size={24}/>
           </button>
           {/* Next */}
-          <button onClick={e => { e.stopPropagation(); navigate(1); }} style={{ position:'absolute', right:'1.5rem', top:'50%', transform:'translateY(-50%)', width:52, height:52, borderRadius:'50%', background:'rgba(255,255,255,0.1)', border:'1px solid rgba(255,255,255,0.15)', color: 'var(--rh-ink)', cursor:'pointer', display:'flex', alignItems:'center', justifyContent:'center', backdropFilter:'blur(8px)', zIndex:10 }}>
+          <button onClick={e => { e.stopPropagation(); navigate(1); }} style={{ position:'absolute', right:'1.5rem', top:'50%', transform:'translateY(-50%)', width:52, height:52, borderRadius:'50%', background:'rgba(255,255,255,0.1)', border:'1px solid rgba(255,255,255,0.15)', color:'#fff', cursor:'pointer', display:'flex', alignItems:'center', justifyContent:'center', backdropFilter:'blur(8px)', zIndex:10 }}>
             <ChevronRightIcon size={24}/>
           </button>
           {/* Image */}
@@ -174,18 +174,18 @@ export default function DigitalDentistryPage() {
             initial={{ opacity:0, scale:0.92 }} animate={{ opacity:1, scale:1 }} exit={{ opacity:0, scale:0.95 }}
             transition={{ duration:0.3, ease:[0.16,1,0.3,1] }}
             onClick={e => e.stopPropagation()}
-            style={{ position:'relative', width:'min(900px, 92vw)', height:'min(600px, 80vh)', borderRadius:'1.5rem', overflow:'hidden', boxShadow:'0 40px 100px rgba(43, 42, 28, 0.80)', border:'1px solid rgba(255,255,255,0.1)' }}
+            style={{ position:'relative', width:'min(900px, 92vw)', height:'min(600px, 80vh)', borderRadius:'1.5rem', overflow:'hidden', boxShadow:'0 40px 100px rgba(0,0,0,0.8)', border:'1px solid rgba(255,255,255,0.1)' }}
           >
             <Image src={galleryItems[lightboxIdx].src} alt={galleryItems[lightboxIdx].alt} fill style={{ objectFit:'contain', background:'#0a0a1a' }}/>
-            <div style={{ position:'absolute', bottom:0, left:0, right:0, padding:'2rem', background:'linear-gradient(transparent, rgba(247, 245, 238, 0.92))', backdropFilter:'blur(2px)' }}>
-              <div style={{ fontSize:'0.7rem', fontWeight: 600, letterSpacing:'0.12em', textTransform:'uppercase', color:'#a5b4fc', marginBottom:'0.4rem' }}>{lightboxIdx + 1} / {galleryItems.length} — {galleryItems[lightboxIdx].label}</div>
-              <p style={{ margin:0, color: 'var(--rh-ink-soft)', fontSize:'0.9rem', lineHeight:1.6 }}>{galleryItems[lightboxIdx].desc}</p>
+            <div style={{ position:'absolute', bottom:0, left:0, right:0, padding:'2rem', background:'linear-gradient(transparent, rgba(2,6,23,0.95))', backdropFilter:'blur(2px)' }}>
+              <div style={{ fontSize:'0.7rem', fontWeight:800, letterSpacing:'0.12em', textTransform:'uppercase', color:'#a5b4fc', marginBottom:'0.4rem' }}>{lightboxIdx + 1} / {galleryItems.length} — {galleryItems[lightboxIdx].label}</div>
+              <p style={{ margin:0, color:'rgba(255,255,255,0.8)', fontSize:'0.9rem', lineHeight:1.6 }}>{galleryItems[lightboxIdx].desc}</p>
             </div>
           </motion.div>
           {/* Dots */}
           <div style={{ position:'absolute', bottom:'1.5rem', left:'50%', transform:'translateX(-50%)', display:'flex', gap:'0.5rem' }}>
             {galleryItems.map((_, i) => (
-              <button key={i} onClick={e => { e.stopPropagation(); setLightboxIdx(i); }} style={{ width: i === lightboxIdx ? 24 : 8, height:8, borderRadius:4, background: i === lightboxIdx ? '#CDAE51' : 'rgba(255,255,255,0.3)', border:'none', cursor:'pointer', transition:'all 0.3s ease', padding:0 }}/>
+              <button key={i} onClick={e => { e.stopPropagation(); setLightboxIdx(i); }} style={{ width: i === lightboxIdx ? 24 : 8, height:8, borderRadius:4, background: i === lightboxIdx ? '#818cf8' : 'rgba(255,255,255,0.3)', border:'none', cursor:'pointer', transition:'all 0.3s ease', padding:0 }}/>
             ))}
           </div>
         </motion.div>
@@ -202,8 +202,8 @@ export default function DigitalDentistryPage() {
         <div className="imp-hero-overlay dd-overlay"/>
         <div className="imp-hero-content">
           <motion.div initial={{ opacity:0, y:-14 }} animate={{ opacity:1, y:0 }} transition={{ duration:0.6 }}>
-            <Link href="/" style={{ color: 'var(--rh-ink-soft)', textDecoration:'none', fontSize:'0.85rem', fontWeight:600, display:'inline-flex', alignItems:'center', gap:'0.4rem', marginBottom:'1rem' }}>
-              Home <ChevronRight size={12}/> <span style={{ color: 'var(--rh-ink-soft)' }}>Specialties</span> <ChevronRight size={12}/> <span style={{ color:'#c7d2fe' }}>Digital Dentistry</span>
+            <Link href="/" style={{ color:'rgba(255,255,255,0.5)', textDecoration:'none', fontSize:'0.85rem', fontWeight:600, display:'inline-flex', alignItems:'center', gap:'0.4rem', marginBottom:'1rem' }}>
+              Home <ChevronRight size={12}/> <span style={{ color:'rgba(255,255,255,0.8)' }}>Specialties</span> <ChevronRight size={12}/> <span style={{ color:'#c7d2fe' }}>Digital Dentistry</span>
             </Link>
           </motion.div>
 
@@ -220,7 +220,7 @@ export default function DigitalDentistryPage() {
           </motion.p>
 
           <motion.div className="imp-hero-cta-row" initial={{ opacity:0, y:24 }} animate={{ opacity:1, y:0 }} transition={{ duration:0.8, delay:0.8 }}>
-            <BranchCTA action="book" service="Digital Dentistry & 3D Scanning" className="imp-btn-primary" style={{ background:'linear-gradient(135deg, #9C7C38, #7E6329)', boxShadow:'0 8px 32px rgba(156,124,56,0.4)' }}>
+            <BranchCTA action="book" service="Digital Dentistry & 3D Scanning" className="imp-btn-primary" style={{ background:'linear-gradient(135deg, #6366f1, #4f46e5)', boxShadow:'0 8px 32px rgba(99,102,241,0.4)' }}>
               Book Digital Consultation <ArrowUpRight size={18}/>
             </BranchCTA>
             <BranchCTA action="call" service="Digital Dentistry & 3D Scanning" className="imp-btn-glass"><Phone size={16}/> Call Now</BranchCTA>
@@ -245,20 +245,20 @@ export default function DigitalDentistryPage() {
             <FadeIn delay={0.15}>
               <div className="imp-what-content">
                 <span className="imp-label dd-label"><ScanLine size={14}/> Advanced Technology</span>
-                <h2>What is Dental <span style={{ color:'#9C7C38' }}>3D Intraoral Scanning?</span></h2>
+                <h2>What is Dental <span style={{ color:'#6366f1' }}>3D Intraoral Scanning?</span></h2>
                 <p>Dental 3D intraoral scanning is an advanced digital technology that captures highly accurate three-dimensional images of the teeth, gums, bite, and surrounding oral structures using a small handheld scanner.</p>
                 <p>This digital process <strong>replaces uncomfortable conventional impression techniques</strong>, instantly creating a virtual digital model of the patient's mouth — allowing dentists to diagnose and plan treatments with exceptional precision.</p>
 
-                <div style={{ background:'linear-gradient(135deg, #eef2ff, #F1EEE3)', border:'1px solid rgba(156,124,56,0.2)', borderRadius:'1.25rem', padding:'1.5rem', marginTop:'1.5rem' }}>
-                  <h4 style={{ color:'#3730a3', fontWeight: 600, marginBottom:'0.5rem', display:'flex', alignItems:'center', gap:'0.5rem' }}><Cpu size={16}/> At RH Dental Care</h4>
+                <div style={{ background:'linear-gradient(135deg, #eef2ff, #e0e7ff)', border:'1px solid rgba(99,102,241,0.2)', borderRadius:'1.25rem', padding:'1.5rem', marginTop:'1.5rem' }}>
+                  <h4 style={{ color:'#3730a3', fontWeight:800, marginBottom:'0.5rem', display:'flex', alignItems:'center', gap:'0.5rem' }}><Cpu size={16}/> At RH Dental Care</h4>
                   <p style={{ margin:0, fontSize:'0.9rem', color:'#4338ca', lineHeight:1.75 }}>We integrate Digital 3D Intraoral Scanning, CAD/CAM systems, digital smile designing, and digital surgical planning to provide more precise, comfortable, and predictable treatment experiences.</p>
                 </div>
 
                 <div className="imp-anatomy-list" style={{ marginTop:'1.75rem' }}>
                   {[
-                    { n:'01', t:'Replaces messy conventional impression materials', c:'linear-gradient(135deg, #9C7C38, #7E6329)' },
-                    { n:'02', t:'Instant virtual 3D model of the entire oral cavity', c:'linear-gradient(135deg, #9C7C38, #55684F)' },
-                    { n:'03', t:'Digital data shared instantly with labs and surgeons', c:'linear-gradient(135deg, #55684F, #45543F)' },
+                    { n:'01', t:'Replaces messy conventional impression materials', c:'linear-gradient(135deg, #6366f1, #4f46e5)' },
+                    { n:'02', t:'Instant virtual 3D model of the entire oral cavity', c:'linear-gradient(135deg, #0ea5e9, #0284c7)' },
+                    { n:'03', t:'Digital data shared instantly with labs and surgeons', c:'linear-gradient(135deg, #10b981, #059669)' },
                   ].map((item, i) => (
                     <motion.div key={i} className="imp-anatomy-item" initial={{ opacity:0, x:-20 }} whileInView={{ opacity:1, x:0 }} viewport={{ once:true }} transition={{ delay:i*0.1 }}>
                       <div className="imp-anatomy-icon" style={{ background:item.c }}>{item.n}</div>
@@ -279,11 +279,11 @@ export default function DigitalDentistryPage() {
             <FadeIn>
               <div className="imp-what-content">
                 <span className="imp-label dd-label"><BarChart3 size={14}/> Digital Workflow</span>
-                <h2>How Digital Dentistry <span style={{ color:'#9C7C38' }}>Improves Treatment</span></h2>
+                <h2>How Digital Dentistry <span style={{ color:'#6366f1' }}>Improves Treatment</span></h2>
                 <p>Digital dentistry has revolutionized the complete dental workflow. With 3D scanning and digital planning, treatments become more efficient, minimally invasive, and highly predictable.</p>
                 <div className="imp-gallery-checks" style={{ marginTop:'1.5rem' }}>
                   {workflowBenefits.map((t, i) => (
-                    <div key={i} className="imp-gallery-check"><CheckCircle2 size={16} style={{ color:'#9C7C38' }}/>{t}</div>
+                    <div key={i} className="imp-gallery-check"><CheckCircle2 size={16} style={{ color:'#6366f1' }}/>{t}</div>
                   ))}
                 </div>
               </div>
@@ -297,8 +297,8 @@ export default function DigitalDentistryPage() {
                       style={{ display:'flex', alignItems:'flex-start', gap:'1rem', background:'#fff', padding:'1.25rem', borderRadius:'1.1rem', border:`1px solid ${adv.color}15`, boxShadow:'0 4px 16px rgba(0,0,0,0.02)' }}>
                       <div style={{ width:44, height:44, borderRadius:12, background:adv.bg, color:adv.color, display:'flex', alignItems:'center', justifyContent:'center', flexShrink:0 }}>{adv.icon}</div>
                       <div>
-                        <div style={{ fontWeight: 600, color:'#2B2A1C', fontSize:'0.92rem', marginBottom:'0.2rem' }}>{adv.title}</div>
-                        <p style={{ margin:0, fontSize:'0.8rem', color:'#6E6B57', lineHeight:1.5 }}>{adv.desc}</p>
+                        <div style={{ fontWeight:800, color:'#1e293b', fontSize:'0.92rem', marginBottom:'0.2rem' }}>{adv.title}</div>
+                        <p style={{ margin:0, fontSize:'0.8rem', color:'#64748b', lineHeight:1.5 }}>{adv.desc}</p>
                       </div>
                     </motion.div>
                   ))}
@@ -315,7 +315,7 @@ export default function DigitalDentistryPage() {
           <FadeIn>
             <div className="imp-section-header">
               <span className="imp-label dd-label"><Layers size={14}/> Clinical Applications</span>
-              <h2 className="imp-title">Where We Apply <span className="imp-accent" style={{ background:'linear-gradient(135deg, #9C7C38, #7E6329)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>Digital Technology</span></h2>
+              <h2 className="imp-title">Where We Apply <span className="imp-accent" style={{ background:'linear-gradient(135deg, #6366f1, #4f46e5)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>Digital Technology</span></h2>
               <p className="imp-subtitle">Our digital workflow enhances outcomes across all major dental disciplines — from crowns and aligners to complex surgical planning.</p>
             </div>
           </FadeIn>
@@ -325,7 +325,7 @@ export default function DigitalDentistryPage() {
               <FadeIn key={i} delay={i * 0.1}>
                 <div style={{ background:'#fff', borderRadius:'1.75rem', padding:'2rem', border:`1px solid ${uc.color}15`, boxShadow:'0 4px 24px rgba(0,0,0,0.03)', borderTop:`5px solid ${uc.color}`, height:'100%' }}>
                   <div style={{ width:54, height:54, borderRadius:16, background:uc.bg, color:uc.color, display:'flex', alignItems:'center', justifyContent:'center', marginBottom:'1.25rem' }}>{uc.icon}</div>
-                  <h3 style={{ fontSize:'1.15rem', fontWeight: 600, color:'#2B2A1C', marginBottom:'1.25rem' }}>{uc.title}</h3>
+                  <h3 style={{ fontSize:'1.15rem', fontWeight:900, color:'#0f172a', marginBottom:'1.25rem' }}>{uc.title}</h3>
                   <div className="imp-gallery-checks">
                     {uc.points.map((p, j) => (
                       <div key={j} className="imp-gallery-check" style={{ fontSize:'0.82rem' }}><CheckCircle2 size={14} style={{ color:uc.color }}/>{p}</div>
@@ -344,7 +344,7 @@ export default function DigitalDentistryPage() {
           <FadeIn>
             <div className="imp-section-header">
               <span className="imp-label dd-label"><Globe size={14}/> The Digital Future</span>
-              <h2 className="imp-title">The Future of <span className="imp-accent" style={{ background:'linear-gradient(135deg, #9C7C38, #7E6329)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>Dentistry is Digital</span></h2>
+              <h2 className="imp-title">The Future of <span className="imp-accent" style={{ background:'linear-gradient(135deg, #6366f1, #4f46e5)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>Dentistry is Digital</span></h2>
               <p className="imp-subtitle">Modern dentistry is rapidly moving toward fully digital workflows. At RH Dental Care, we are committed to staying at the forefront of dental innovation.</p>
             </div>
           </FadeIn>
@@ -359,15 +359,15 @@ export default function DigitalDentistryPage() {
           </motion.div>
 
           <FadeIn delay={0.2}>
-            <div className="imp-what-grid" style={{ background:'linear-gradient(135deg, #eef2ff, #F1EEE3)', border:'1px solid rgba(156,124,56,0.15)', borderRadius:'2rem', padding:'3rem', marginTop:'4rem', alignItems:'center' }}>
+            <div className="imp-what-grid" style={{ background:'linear-gradient(135deg, #eef2ff, #e0e7ff)', border:'1px solid rgba(99,102,241,0.15)', borderRadius:'2rem', padding:'3rem', marginTop:'4rem', alignItems:'center' }}>
               <div>
-                <h3 style={{ fontSize:'1.75rem', fontWeight: 600, color:'#2B2A1C', lineHeight:1.2, marginBottom:'1rem' }}>RH Dental Care — <span style={{ color:'#9C7C38' }}>Digitally Advanced</span></h3>
+                <h3 style={{ fontSize:'1.75rem', fontWeight:900, color:'#1e1b4b', lineHeight:1.2, marginBottom:'1rem' }}>RH Dental Care — <span style={{ color:'#6366f1' }}>Digitally Advanced</span></h3>
                 <p style={{ color:'#4338ca', lineHeight:1.8, margin:0 }}>We are continuously upgrading our technologies to deliver dental services with greater accuracy and efficiency. Digital dentistry is the future — and we are already here.</p>
               </div>
               <div style={{ display:'flex', flexDirection:'column', gap:'0.75rem' }}>
                 {['Advanced 3D scanning for all prosthetic work', 'Digital implant planning with CBCT', 'CAD/CAM crown and bridge fabrication', 'Clear aligner design and monitoring', 'Digital smile design visualization'].map((t, i) => (
                   <div key={i} style={{ display:'flex', alignItems:'center', gap:'0.75rem', background:'rgba(255,255,255,0.6)', padding:'0.75rem 1rem', borderRadius:'0.75rem', backdropFilter:'blur(8px)' }}>
-                    <Shield size={16} style={{ color:'#9C7C38', flexShrink:0 }}/>
+                    <Shield size={16} style={{ color:'#6366f1', flexShrink:0 }}/>
                     <span style={{ fontSize:'0.88rem', fontWeight:600, color:'#3730a3' }}>{t}</span>
                   </div>
                 ))}
@@ -378,15 +378,15 @@ export default function DigitalDentistryPage() {
       </section>
 
       {/* ═══════════════ REAL CASES GALLERY ═══════════════ */}
-      <section style={{ background: 'var(--rh-surface)', padding:'6rem 0', position:'relative', overflow:'hidden' }}>
-        <div className="imp-video-orb imp-video-orb-1" style={{ background:'radial-gradient(circle, rgba(156,124,56,0.12), transparent 70%)' }}/>
+      <section style={{ background:'#020617', padding:'6rem 0', position:'relative', overflow:'hidden' }}>
+        <div className="imp-video-orb imp-video-orb-1" style={{ background:'radial-gradient(circle, rgba(99,102,241,0.12), transparent 70%)' }}/>
         <div className="imp-video-orb imp-video-orb-2" style={{ background:'radial-gradient(circle, rgba(79,70,229,0.07), transparent 70%)' }}/>
         <div className="container">
           <FadeIn>
-            <div className="imp-section-header" style={{ color: 'var(--rh-ink)' }}>
-              <span className="imp-label" style={{ background:'rgba(156,124,56,0.15)', borderColor:'rgba(156,124,56,0.3)', color:'#c7d2fe' }}><Monitor size={14}/> Our Digital Lab</span>
-              <h2 className="imp-title" style={{ color:'#F1EEE3' }}>Real Cases from <span style={{ background:'linear-gradient(135deg, #CDAE51, #c7d2fe)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>Our Digital Lab</span></h2>
-              <p className="imp-subtitle" style={{ color:'rgba(201,197,178,0.7)' }}>Actual digital planning work by Dr. B.M. Rafiqul Hasan Mehedi — click any image to view in full screen.</p>
+            <div className="imp-section-header" style={{ color:'#fff' }}>
+              <span className="imp-label" style={{ background:'rgba(99,102,241,0.15)', borderColor:'rgba(99,102,241,0.3)', color:'#c7d2fe' }}><Monitor size={14}/> Our Digital Lab</span>
+              <h2 className="imp-title" style={{ color:'#f1f5f9' }}>Real Cases from <span style={{ background:'linear-gradient(135deg, #818cf8, #c7d2fe)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>Our Digital Lab</span></h2>
+              <p className="imp-subtitle" style={{ color:'rgba(203,213,225,0.7)' }}>Actual digital planning work by Dr. B.M. Rafiqul Hasan Mehedi — click any image to view in full screen.</p>
             </div>
           </FadeIn>
 
@@ -395,19 +395,19 @@ export default function DigitalDentistryPage() {
             <motion.div
               onClick={() => openLightbox(0)}
               whileHover={{ scale:1.01 }}
-              style={{ position:'relative', borderRadius:'2rem', overflow:'hidden', height:'480px', marginBottom:'2rem', boxShadow:'0 32px 80px rgba(43, 42, 28, 0.50)', border:'1px solid rgba(156,124,56,0.25)', cursor:'pointer' }}
+              style={{ position:'relative', borderRadius:'2rem', overflow:'hidden', height:'480px', marginBottom:'2rem', boxShadow:'0 32px 80px rgba(0,0,0,0.5)', border:'1px solid rgba(99,102,241,0.25)', cursor:'pointer' }}
             >
               <Image src={galleryItems[0].src} alt={galleryItems[0].alt} fill style={{ objectFit:'cover', objectPosition:'center 30%' }}/>
-              <div style={{ position:'absolute', inset:0, background:'linear-gradient(180deg, rgba(247, 245, 238, 0.22) 0%, rgba(247, 245, 238, 0.92) 100%)' }}/>
+              <div style={{ position:'absolute', inset:0, background:'linear-gradient(180deg, rgba(2,6,23,0.1) 0%, rgba(2,6,23,0.8) 100%)' }}/>
               {/* Zoom badge */}
-              <div style={{ position:'absolute', top:'1.5rem', right:'1.5rem', width:48, height:48, borderRadius:'50%', background:'rgba(156,124,56,0.8)', backdropFilter:'blur(8px)', border:'1px solid rgba(255,255,255,0.2)', display:'flex', alignItems:'center', justifyContent:'center', color: 'var(--rh-ink)', boxShadow:'0 8px 24px rgba(156,124,56,0.4)' }}>
+              <div style={{ position:'absolute', top:'1.5rem', right:'1.5rem', width:48, height:48, borderRadius:'50%', background:'rgba(99,102,241,0.8)', backdropFilter:'blur(8px)', border:'1px solid rgba(255,255,255,0.2)', display:'flex', alignItems:'center', justifyContent:'center', color:'#fff', boxShadow:'0 8px 24px rgba(99,102,241,0.4)' }}>
                 <ZoomIn size={20}/>
               </div>
-              <div style={{ position:'absolute', top:'1.5rem', left:'1.5rem', background:'rgba(156,124,56,0.85)', backdropFilter:'blur(8px)', border:'1px solid rgba(255,255,255,0.15)', borderRadius: '4px', padding:'0.45rem 1.1rem', fontSize:'0.7rem', fontWeight: 600, letterSpacing:'0.1em', textTransform:'uppercase', color: 'var(--rh-ink)' }}>Featured</div>
-              <div style={{ position:'absolute', bottom:'2.5rem', left:'2.5rem', color: 'var(--rh-ink)' }}>
-                <div style={{ fontSize:'0.72rem', fontWeight: 600, textTransform:'uppercase', letterSpacing:'0.12em', color:'#c7d2fe', marginBottom:'0.5rem' }}>Digital Implant Planning — 3Shape</div>
-                <h3 style={{ fontSize:'1.75rem', fontWeight: 600, margin:0, letterSpacing:'-0.02em' }}>Dr. Mehedi — Live Digital Planning</h3>
-                <p style={{ margin:'0.5rem 0 0', color: 'var(--rh-ink-soft)', fontSize:'0.9rem' }}>Real-time 3D surgical planning for complex implant cases at RH Dental Care</p>
+              <div style={{ position:'absolute', top:'1.5rem', left:'1.5rem', background:'rgba(99,102,241,0.85)', backdropFilter:'blur(8px)', border:'1px solid rgba(255,255,255,0.15)', borderRadius:'100px', padding:'0.45rem 1.1rem', fontSize:'0.7rem', fontWeight:800, letterSpacing:'0.1em', textTransform:'uppercase', color:'#fff' }}>Featured</div>
+              <div style={{ position:'absolute', bottom:'2.5rem', left:'2.5rem', color:'#fff' }}>
+                <div style={{ fontSize:'0.72rem', fontWeight:800, textTransform:'uppercase', letterSpacing:'0.12em', color:'#c7d2fe', marginBottom:'0.5rem' }}>Digital Implant Planning — 3Shape</div>
+                <h3 style={{ fontSize:'1.75rem', fontWeight:900, margin:0, letterSpacing:'-0.02em' }}>Dr. Mehedi — Live Digital Planning</h3>
+                <p style={{ margin:'0.5rem 0 0', color:'rgba(255,255,255,0.65)', fontSize:'0.9rem' }}>Real-time 3D surgical planning for complex implant cases at RH Dental Care</p>
               </div>
             </motion.div>
           </FadeIn>
@@ -419,20 +419,20 @@ export default function DigitalDentistryPage() {
                 <motion.div
                   onClick={() => openLightbox(i + 1)}
                   whileHover={{ scale:1.02, y:-4 }}
-                  style={{ position:'relative', borderRadius:'1.5rem', overflow:'hidden', height: i === 0 ? '380px' : '300px', border:'1px solid rgba(156,124,56,0.2)', boxShadow:'0 12px 40px rgba(0,0,0,0.3)', cursor:'pointer' }}
+                  style={{ position:'relative', borderRadius:'1.5rem', overflow:'hidden', height: i === 0 ? '380px' : '300px', border:'1px solid rgba(99,102,241,0.2)', boxShadow:'0 12px 40px rgba(0,0,0,0.3)', cursor:'pointer' }}
                 >
                   <Image src={img.src} alt={img.alt} fill style={{ objectFit:'cover' }}/>
-                  <div style={{ position:'absolute', inset:0, background:'linear-gradient(180deg, transparent 30%, rgba(247, 245, 238, 0.92) 100%)' }}/>
+                  <div style={{ position:'absolute', inset:0, background:'linear-gradient(180deg, transparent 30%, rgba(2,6,23,0.92) 100%)' }}/>
                   {/* hover zoom icon */}
                   <motion.div
                     initial={{ opacity:0, scale:0.8 }} whileHover={{ opacity:1, scale:1 }}
-                    style={{ position:'absolute', top:'1rem', right:'1rem', width:40, height:40, borderRadius:'50%', background:'rgba(156,124,56,0.8)', backdropFilter:'blur(8px)', display:'flex', alignItems:'center', justifyContent:'center', color: 'var(--rh-ink)' }}
+                    style={{ position:'absolute', top:'1rem', right:'1rem', width:40, height:40, borderRadius:'50%', background:'rgba(99,102,241,0.8)', backdropFilter:'blur(8px)', display:'flex', alignItems:'center', justifyContent:'center', color:'#fff' }}
                   >
                     <ZoomIn size={18}/>
                   </motion.div>
                   <div style={{ position:'absolute', bottom:'1.5rem', left:'1.5rem', right:'1.5rem' }}>
-                    <div style={{ fontSize:'0.62rem', fontWeight: 600, textTransform:'uppercase', letterSpacing:'0.1em', color:'#a5b4fc', marginBottom:'0.4rem' }}>{img.label}</div>
-                    <p style={{ margin:0, color: 'var(--rh-ink-soft)', fontSize:'0.82rem', fontWeight:500, lineHeight:1.5 }}>{img.desc}</p>
+                    <div style={{ fontSize:'0.62rem', fontWeight:800, textTransform:'uppercase', letterSpacing:'0.1em', color:'#a5b4fc', marginBottom:'0.4rem' }}>{img.label}</div>
+                    <p style={{ margin:0, color:'rgba(255,255,255,0.85)', fontSize:'0.82rem', fontWeight:500, lineHeight:1.5 }}>{img.desc}</p>
                   </div>
                 </motion.div>
               </FadeIn>
@@ -441,18 +441,18 @@ export default function DigitalDentistryPage() {
 
           {/* 3Shape badge */}
           <FadeIn delay={0.25}>
-            <div style={{ marginTop:'3rem', background:'rgba(255,255,255,0.04)', borderRadius:'1.5rem', border:'1px solid rgba(156,124,56,0.2)', padding:'2rem', display:'flex', alignItems:'center', gap:'2rem', flexWrap:'wrap', backdropFilter:'blur(8px)' }}>
+            <div style={{ marginTop:'3rem', background:'rgba(255,255,255,0.04)', borderRadius:'1.5rem', border:'1px solid rgba(99,102,241,0.2)', padding:'2rem', display:'flex', alignItems:'center', gap:'2rem', flexWrap:'wrap', backdropFilter:'blur(8px)' }}>
               <div style={{ flex:1, minWidth:'250px' }}>
-                <h4 style={{ fontWeight: 600, color:'#E4E0D2', marginBottom:'0.5rem', fontSize:'1.1rem' }}>Powered by 3Shape — World&apos;s Leading Dental Software</h4>
+                <h4 style={{ fontWeight:900, color:'#e2e8f0', marginBottom:'0.5rem', fontSize:'1.1rem' }}>Powered by 3Shape — World&apos;s Leading Dental Software</h4>
                 <p style={{ margin:0, color:'rgba(148,163,184,0.85)', fontSize:'0.88rem', lineHeight:1.7 }}>All digital planning at RH Dental Care is performed using 3Shape — the world&apos;s most advanced dental CAD/CAM and implant planning platform.</p>
               </div>
               <div style={{ display:'flex', gap:'1.25rem', flexWrap:'wrap' }}>
                 {['3Shape CAD/CAM', 'CBCT Integration', 'Implant Studio', 'Bone Analysis'].map((t, i) => (
                   <div key={i} style={{ textAlign:'center' }}>
-                    <div style={{ width:48, height:48, borderRadius:14, background:'rgba(156,124,56,0.15)', border:'1px solid rgba(156,124,56,0.25)', display:'flex', alignItems:'center', justifyContent:'center', margin:'0 auto 0.5rem', color: 'var(--rh-brass)' }}>
+                    <div style={{ width:48, height:48, borderRadius:14, background:'rgba(99,102,241,0.15)', border:'1px solid rgba(99,102,241,0.25)', display:'flex', alignItems:'center', justifyContent:'center', margin:'0 auto 0.5rem', color:'#818cf8' }}>
                       <Cpu size={20}/>
                     </div>
-                    <div style={{ fontSize:'0.72rem', fontWeight:700, color:'#8C8973' }}>{t}</div>
+                    <div style={{ fontSize:'0.72rem', fontWeight:700, color:'#94a3b8' }}>{t}</div>
                   </div>
                 ))}
               </div>
@@ -467,14 +467,14 @@ export default function DigitalDentistryPage() {
           <FadeIn>
             <div className="imp-section-header">
               <span className="imp-label dd-label"><PlayCircle size={14}/> Patient Experiences</span>
-              <h2 className="imp-title">In their words <span className="imp-accent" style={{ background:'linear-gradient(135deg, #9C7C38, #7E6329)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>patients</span></h2>
+              <h2 className="imp-title">In their words — <span className="imp-accent" style={{ background:'linear-gradient(135deg, #6366f1, #4f46e5)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>patients</span></h2>
               <p className="imp-subtitle">Watch real patient stories and clinical experiences from our digital dentistry workflow.</p>
             </div>
           </FadeIn>
 
           <div style={{ maxWidth: '800px', margin: '0 auto' }}>
             <FadeIn>
-              <div style={{ background: '#fff', borderRadius: '1.5rem', overflow: 'hidden', border: '1px solid rgba(156,124,56,0.1)', boxShadow: '0 12px 40px rgba(0,0,0,0.08)', position: 'relative' }}>
+              <div style={{ background: '#fff', borderRadius: '1.5rem', overflow: 'hidden', border: '1px solid rgba(99,102,241,0.1)', boxShadow: '0 12px 40px rgba(0,0,0,0.08)', position: 'relative' }}>
                 <div style={{ position: 'relative', paddingTop: '56.25%' /* 16:9 Aspect Ratio */, backgroundColor: '#000' }}>
                   <video 
                     controls 
@@ -487,8 +487,8 @@ export default function DigitalDentistryPage() {
                   </video>
                 </div>
                 <div style={{ padding: '1.5rem', textAlign: 'center' }}>
-                  <div style={{ fontSize: '1.1rem', fontWeight: 600, color: '#2B2A1C', marginBottom: '0.25rem' }}>Our Happy Patient</div>
-                  <p style={{ margin: 0, fontSize: '0.9rem', color: '#6E6B57' }}>Experience with Digital Dentistry at RH Dental Care</p>
+                  <div style={{ fontSize: '1.1rem', fontWeight: 800, color: '#1e293b', marginBottom: '0.25rem' }}>A patient at RH Dental Care</div>
+                  <p style={{ margin: 0, fontSize: '0.9rem', color: '#64748b' }}>Experience with Digital Dentistry at RH Dental Care</p>
                 </div>
               </div>
             </FadeIn>
@@ -497,26 +497,26 @@ export default function DigitalDentistryPage() {
       </section>
 
       {/* ═══════════════ CTA ═══════════════ */}
-      <section className="imp-video-section" style={{ background:'linear-gradient(135deg, #1F1E14 0%, #0c0a2e 50%, #1F1E14 100%)' }}>
-        <div className="imp-video-orb imp-video-orb-1" style={{ background:'radial-gradient(circle, rgba(156,124,56,0.15), transparent 70%)' }}/>
+      <section className="imp-video-section" style={{ background:'linear-gradient(135deg, #020617 0%, #0c0a2e 50%, #020617 100%)' }}>
+        <div className="imp-video-orb imp-video-orb-1" style={{ background:'radial-gradient(circle, rgba(99,102,241,0.15), transparent 70%)' }}/>
         <div className="imp-video-orb imp-video-orb-2" style={{ background:'radial-gradient(circle, rgba(79,70,229,0.08), transparent 70%)' }}/>
         <div className="container">
           <FadeIn>
-            <div className="imp-section-header" style={{ color: 'var(--rh-ink)' }}>
-              <span className="imp-label" style={{ background:'rgba(156,124,56,0.15)', borderColor:'rgba(156,124,56,0.3)', color:'#c7d2fe' }}>
+            <div className="imp-section-header" style={{ color:'#fff' }}>
+              <span className="imp-label" style={{ background:'rgba(99,102,241,0.15)', borderColor:'rgba(99,102,241,0.3)', color:'#c7d2fe' }}>
                 <Cpu size={14}/> Experience Digital Dentistry
               </span>
-              <h2 className="imp-title" style={{ color:'#F1EEE3' }}>
-                Experience the <span style={{ background:'linear-gradient(135deg, #CDAE51, #c7d2fe)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>Digital Difference</span>
+              <h2 className="imp-title" style={{ color:'#f1f5f9' }}>
+                Experience the <span style={{ background:'linear-gradient(135deg, #818cf8, #c7d2fe)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>Digital Difference</span>
               </h2>
-              <p className="imp-subtitle" style={{ color:'rgba(201,197,178,0.8)' }}>
+              <p className="imp-subtitle" style={{ color:'rgba(203,213,225,0.8)' }}>
                 Discover how our advanced digital dentistry workflow can transform your treatment experience — more accurate, more comfortable, and more predictable than ever before.
               </p>
             </div>
           </FadeIn>
           <FadeIn delay={0.15}>
             <div className="imp-hero-cta-row" style={{ justifyContent:'center' }}>
-              <BranchCTA action="book" service="Digital Dentistry & 3D Scanning" className="imp-btn-primary" style={{ background:'linear-gradient(135deg, #9C7C38, #7E6329)', boxShadow:'0 8px 32px rgba(156,124,56,0.4)', padding:'1rem 2.5rem', fontSize:'1rem' }}>
+              <BranchCTA action="book" service="Digital Dentistry & 3D Scanning" className="imp-btn-primary" style={{ background:'linear-gradient(135deg, #6366f1, #4f46e5)', boxShadow:'0 8px 32px rgba(99,102,241,0.4)', padding:'1rem 2.5rem', fontSize:'1rem' }}>
                 Book a Consultation <ArrowUpRight size={18}/>
               </BranchCTA>
               <BranchCTA action="call" service="Digital Dentistry & 3D Scanning" className="imp-btn-glass"><Phone size={16}/> Call Now</BranchCTA>

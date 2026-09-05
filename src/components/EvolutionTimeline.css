@@ -4,7 +4,7 @@
 
 .et-section {
   padding: 6rem 0;
-  background: var(--rh-paper);
+  background: #f8fafc;
   position: relative;
   overflow: hidden;
 }
@@ -26,28 +26,28 @@
   align-items: center;
   gap: 0.5rem;
   padding: 0.4rem 1.2rem;
-  border-radius: var(--rh-r-sm);
-  background: rgba(156, 124, 56, 0.1);
-  color: var(--rh-sage-deep);
+  border-radius: 100px;
+  background: rgba(14, 165, 233, 0.1);
+  color: #0284c7;
   font-size: 0.75rem;
   font-weight: 700;
-  letter-spacing: 0.02em;
-  text-transform: none;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
   margin-bottom: 1.25rem;
-  border: 1px solid rgba(156, 124, 56, 0.2);
+  border: 1px solid rgba(14, 165, 233, 0.2);
 }
 
 .et-title {
   font-size: clamp(2rem, 4vw, 3.2rem);
-  font-weight: 600;
-  color: var(--rh-ink);
-  letter-spacing: -0.02em;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.04em;
   margin: 0 0 1rem;
   line-height: 1.1;
 }
 
 .et-highlight {
-  background: linear-gradient(135deg, var(--rh-brass), var(--rh-brass));
+  background: linear-gradient(135deg, #0ea5e9, #6366f1);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -55,7 +55,7 @@
 
 .et-subtitle {
   font-size: 1.05rem;
-  color: var(--rh-ink-soft);
+  color: #475569;
   max-width: 600px;
   margin: 0 auto;
   line-height: 1.7;
@@ -82,7 +82,7 @@
   left: -10%;
   width: 500px;
   height: 500px;
-  background: rgba(156, 124, 56, 0.2);
+  background: rgba(14, 165, 233, 0.2);
 }
 .et-orb-2 {
   bottom: 20%;
@@ -100,7 +100,7 @@
   left: 50%;
   transform: translateX(-50%);
   width: 4px;
-  background: rgba(156, 124, 56, 0.1);
+  background: rgba(14, 165, 233, 0.1);
   border-radius: 4px;
   z-index: 1;
 }
@@ -113,8 +113,8 @@
   left: 50%;
   transform: translateX(-50%);
   width: 4px;
-  background: linear-gradient(to bottom, var(--rh-brass), var(--rh-brass), var(--rh-sage-deep));
-  box-shadow: 0 0 15px rgba(156, 124, 56, 0.5);
+  background: linear-gradient(to bottom, #0ea5e9, #8b5cf6, #10b981);
+  box-shadow: 0 0 15px rgba(14, 165, 233, 0.5);
   border-radius: 4px;
   z-index: 2;
 }
@@ -148,7 +148,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: var(--rh-glow-sm);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
 }
 
 .et-marker-icon {
@@ -181,25 +181,25 @@
 
 /* ── Content Card ── */
 .et-card {
-  background: var(--rh-surface);
+  background: #ffffff;
   padding: 2.5rem;
   border-radius: 20px;
-  box-shadow: var(--rh-glow-md);
+  box-shadow: 0 10px 40px -10px rgba(0,0,0,0.06);
   border: 1px solid rgba(0,0,0,0.04);
 }
 
 .et-card-year {
   font-size: 2.5rem;
-  font-weight: 600;
-  letter-spacing: -0.02em;
+  font-weight: 900;
+  letter-spacing: -0.05em;
   margin-bottom: 0.5rem;
   line-height: 1;
 }
 
 .et-card-title {
   font-size: 1.5rem;
-  font-weight: 600;
-  color: var(--rh-ink);
+  font-weight: 800;
+  color: #0f172a;
   margin: 0 0 0.25rem;
   letter-spacing: -0.02em;
 }
@@ -207,15 +207,15 @@
 .et-card-subtitle {
   font-size: 0.9rem;
   font-weight: 600;
-  color: var(--rh-ink-soft);
-  text-transform: none;
+  color: #64748b;
+  text-transform: uppercase;
   letter-spacing: 0.1em;
   margin-bottom: 1.25rem;
 }
 
 .et-card-desc {
   font-size: 1rem;
-  color: var(--rh-ink-soft);
+  color: #475569;
   line-height: 1.7;
   margin: 0;
 }
@@ -233,7 +233,7 @@
   flex: 2;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: var(--rh-glow-md);
+  box-shadow: 0 15px 35px -10px rgba(0,0,0,0.15);
 }
 
 .et-cluster-side {
@@ -248,7 +248,7 @@
   flex: 1;
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: var(--rh-glow-sm);
+  box-shadow: 0 10px 20px -5px rgba(0,0,0,0.1);
 }
 
 .et-img {
@@ -278,7 +278,7 @@
 .et-lightbox {
   position: fixed;
   inset: 0;
-  background: var(--rh-surface);
+  background: rgba(15, 23, 42, 0.95);
   backdrop-filter: blur(8px);
   z-index: 9999;
   display: flex;
@@ -293,7 +293,7 @@
   right: 2rem;
   background: rgba(255,255,255,0.1);
   border: 1px solid rgba(255,255,255,0.2);
-  color: var(--rh-ink);
+  color: white;
   width: 44px;
   height: 44px;
   border-radius: 50%;
@@ -307,7 +307,7 @@
 
 .et-lightbox-close:hover {
   background: white;
-  color: var(--rh-ink);
+  color: #0f172a;
   transform: scale(1.1);
 }
 
@@ -318,7 +318,7 @@
   aspect-ratio: 16 / 9;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: var(--rh-glow-lg);
+  box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
 }
 
 .et-lightbox-img {

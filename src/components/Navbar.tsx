@@ -11,8 +11,8 @@ import { Menu, X, Phone, ChevronDown, MapPin } from 'lucide-react';
 import logo from '../assets/rhlogo.jpeg';
 import { useBranch } from './branch/BranchProvider';
 import { BRANCHES } from '@/lib/branches';
-import './Navbar.css';
 import BranchCTA from './branch/BranchCTA';
+import './Navbar.css';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -22,8 +22,7 @@ export default function Navbar() {
   const { branch, isPinned, openPicker } = useBranch();
 
   /* On a branch page the pill shows that branch and stays switchable — clicking
-     it opens the picker, and selecting the other branch navigates there.
-     Scroll position is never touched: nothing here re-navigates the page. */
+     it opens the picker, and selecting the other branch navigates there. */
   const branchPillLabel = branch ? BRANCHES[branch].shortName : 'Choose branch';
   const branchPillClass = branch ? `active-${branch}` : '';
 
@@ -43,7 +42,7 @@ export default function Navbar() {
       dropdown: [
         { name: 'About Us', path: '/about', icon: '🏥', desc: 'Our history & mission' },
         { name: 'Banani Branch', path: '/banani', icon: '🌟', desc: 'Premium Care at Banani' },
-        { name: 'Banasree Branch', path: '/contact', icon: '📍', desc: 'Our Main Branch' }
+        { name: 'Banasree Branch', path: '/banasree', icon: '📍', desc: 'Our Flagship Hospital' }
       ]
     },
     { name: 'Our Team', path: '/team' },
@@ -56,7 +55,7 @@ export default function Navbar() {
         { name: 'Root Canal', path: '/root-canal', icon: '🔬', desc: 'Single-visit precision care' },
         { name: 'Zirconia Crown', path: '/zirconia-crown', icon: '👑', desc: 'Premium smile restoration' },
         { name: 'Zirconia Veneers', path: '/zirconia-veneers', icon: '💎', desc: 'Flawless smile transformation' },
-        { name: 'Kids Care (Pediatric)', path: '/kids-care', icon: '🧸', desc: 'Painless care for your little ones' },
+        { name: 'Kids Care (Pediatric)', path: '/kids-care', icon: '🧸', desc: 'Dentistry for children' },
         { name: 'Dental Surgery', path: '/dental-surgery', icon: '🔴', desc: 'Advanced oral surgical care' },
         { name: 'Digital Dentistry', path: '/digital-dentistry', icon: '🔵', desc: '3D scanning & CAD/CAM' },
         { name: 'RH Dental Tourism', path: '/dental-tourism', icon: '✈️', desc: 'Planning treatment from abroad' },
@@ -160,8 +159,14 @@ export default function Navbar() {
         <div className="nav-actions">
           <button
             type="button"
-            onClick={() => openPicker()}
-            className={`branch-nav-pill ${branchPillClass}`}
+            onClick={() => {
+              openPicker((selected) => {
+                if (selected !== branch) {
+                  window.location.href = `/${selected}`;
+                }
+              });
+            }}
+            className={`branch-nav-pill desktop-only-pill ${branchPillClass}`}
             aria-haspopup="dialog"
             aria-label={
               branch
@@ -201,6 +206,28 @@ export default function Navbar() {
             className="mobile-nav glass-modern"
           >
             <ul className="mobile-nav-links">
+              <li className="mobile-branch-section">
+                <p className="mobile-branch-label">Location Setting</p>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    openPicker((selected) => {
+                      if (selected !== branch) {
+                        window.location.href = `/${selected}`;
+                      }
+                    });
+                  }}
+                  className={`branch-nav-pill ${branchPillClass}`}
+                  style={{ width: '100%', justifyContent: 'space-between', padding: '0.8rem 1rem', fontSize: '0.95rem' }}
+                >
+                  <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    <MapPin size={16} />
+                    <span>{branch ? BRANCHES[branch].name : 'Choose your branch'}</span>
+                  </span>
+                  <ChevronDown size={16} />
+                </button>
+              </li>
               {navLinks.map((link) => {
                 const isDropdownActive = link.dropdown && link.dropdown.some(sub => pathname === sub.path);
                 const isActive = pathname === link.path || (isDropdownActive && link.name === 'Specialties') || (isDropdownActive && link.name === 'About');

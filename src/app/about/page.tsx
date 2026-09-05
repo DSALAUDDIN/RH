@@ -70,9 +70,11 @@ const fadeUp: any  = { hidden: { opacity: 0, y: 36 }, show: { opacity: 1, y: 0, 
 
 /* ══ REAL DATA ══ */
 const heroStats = [
-  { val: 5000, suf: '+', label: 'Happy Smiles' },
+  // REMOVED: a '5,000+ Happy Smiles' counter, which also contradicted the
+  // '13k+' figure used elsewhere on the same site. Unevidenced either way.
+  // REMOVED: a '12+ Years Exp.' counter with nothing behind it.
   // TODO(client): give the year of first BMDC registration and this becomes
-  // a fact that stays true without editing. Removed until then.
+  // a fact that stays true without editing.
   { val: 2,    suf: '',  label: 'Premium Branches' },
   { val: 5000, suf: '+ sqft', label: 'Total Area' },
 ];
@@ -138,7 +140,7 @@ const whyCards = [
   { icon: <Brain size={22} />,       title: 'Advanced Technology & Digital Workflow', desc: '3D scanners, digital imaging, and in-house lab for accurate diagnosis and seamless treatment execution.' },
   { icon: <User size={22} />,        title: 'Customised Patient-Centered Care',    desc: 'Every treatment plan is tailored to each patient\'s unique anatomy, aesthetic goals, and oral health needs.' },
   { icon: <Smile size={22} />,       title: 'Special Care for Children & SEN',     desc: 'Dedicated child-friendly approach and GA OT setup for patients who need extra comfort and care.' },
-  { icon: <Zap size={22} />,         title: 'Comfort-focused care',                 desc: 'Latest anesthetic and sedation techniques ensure every procedure is comfortable — we guarantee it.' },
+  { icon: <Zap size={22} />,         title: 'Comfort-focused care',                 desc: 'Local anaesthetic and, where a case needs it, sedation. Tell us if you are anxious and the appointment is paced around that.' },
   { icon: <CalendarCheck size={22} />,title: 'Proven Complex Case Success',        desc: 'Numerous full mouth rehabilitations and smile makeovers completed with outstanding, long-lasting results.' },
 ];
 
@@ -215,7 +217,7 @@ export default function AboutPage() {
           <motion.p className="ab-hero-subtitle"
             initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}>
-            At RH Dental Care, we are dedicated to transforming smiles and enhancing oral health — with dental care, advanced technology, and a patient-first approach for patients of all ages, including children and patients with special needs.
+            At RH Dental Care, we are dedicated to transforming smiles and enhancing oral health — with careful dental care, advanced technology, and a patient-first approach for patients of all ages, including children and patients with special needs.
           </motion.p>
 
           <motion.div className="ab-hero-cta-row"
@@ -283,10 +285,10 @@ export default function AboutPage() {
                   <span className="ab-shine-text">(Mehedi)</span>
                 </h2>
                 <p className="ab-body-dark">
-                  A distinguished Oral &amp; Dental Surgeon known for his precision, advanced clinical expertise, and commitment to excellence. With over <strong style={{color:'#2B2A1C'}}>12 years of clinical experience</strong>, Dr. Hasan combines professional expertise, modern technology, and patient-centred care to deliver lasting, functional, and aesthetically pleasing results.
+                  A distinguished Oral &amp; Dental Surgeon known for his precision, advanced clinical expertise, and commitment to excellence. With over <strong style={{color:'#0f172a'}}>12 years of clinical experience</strong>, Dr. Hasan combines professional expertise, modern technology, and patient-centred care to deliver lasting, functional, and aesthetically pleasing results.
                 </p>
                 <p className="ab-body-dark">
-                  He has undergone advanced international training in Dental Implantology from <strong style={{color:'#2B2A1C'}}>China, Korea, and India</strong>, and completed specialised training in Minimally Invasive Cosmetic Dentistry (MICD) in Nepal. Since 2015, he also serves as <strong style={{color:'#2B2A1C'}}>Senior Lecturer at MH Samorita Medical College &amp; Hospital</strong>.
+                  He has undergone advanced international training in Dental Implantology from <strong style={{color:'#0f172a'}}>China, Korea, and India</strong>, and completed specialised training in Minimally Invasive Cosmetic Dentistry (MICD) in Nepal. Since 2015, he also serves as <strong style={{color:'#0f172a'}}>Senior Lecturer at MH Samorita Medical College &amp; Hospital</strong>.
                 </p>
 
                 <div className="ab-doc-values">
@@ -336,15 +338,15 @@ export default function AboutPage() {
                 <span className="ab-label ab-shimia-label"><BadgeCheck size={14} /> Senior Doctor &amp; Team Lead</span>
                 <h2 className="ab-section-title-dark">
                   Dr. Shimia{' '}
-                  <span style={{ background: 'linear-gradient(90deg,#9333ea,#CDAE51)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>
+                  <span style={{ background: 'linear-gradient(90deg,#9333ea,#818cf8)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>
                     Binte Taher
                   </span>
                 </h2>
                 <p className="ab-body-dark">
-                  A highly accomplished dental professional who combines clinical excellence with compassionate, patient-centred care. She completed her <strong style={{color:'#2B2A1C'}}>BDS from Pioneer Dental College</strong> — one of the most prestigious dental institutions in Bangladesh — and furthered her expertise through <strong style={{color:'#2B2A1C'}}>Postgraduate Training in Oral &amp; Maxillofacial Surgery at Dhaka Medical College</strong>.
+                  A highly accomplished dental professional who combines clinical excellence with compassionate, patient-centred care. She completed her <strong style={{color:'#0f172a'}}>BDS from Pioneer Dental College</strong> — one of the most prestigious dental institutions in Bangladesh — and furthered her expertise through <strong style={{color:'#0f172a'}}>Postgraduate Training in Oral &amp; Maxillofacial Surgery at Dhaka Medical College</strong>.
                 </p>
                 <p className="ab-body-dark">
-                  At RH Dental Care, Dr. Shimia plays a vital <strong style={{color:'#2B2A1C'}}>leadership role</strong>, guiding and managing the clinical team with professionalism and vision. She is especially dedicated to providing <strong style={{color:'#2B2A1C'}}>female-oriented dental care</strong> in a safe, respectful environment.
+                  At RH Dental Care, Dr. Shimia plays a vital <strong style={{color:'#0f172a'}}>leadership role</strong>, guiding and managing the clinical team with professionalism and vision. She is especially dedicated to providing <strong style={{color:'#0f172a'}}>female-oriented dental care</strong> in a safe, respectful environment.
                 </p>
 
                 <div className="ab-doc-values">
@@ -411,7 +413,7 @@ export default function AboutPage() {
                 A Team of <span className="ab-blue-text">Specialists</span>
               </h2>
               <p className="ab-team-subtitle">
-                Every clinician at RH Dental Care holds specialist qualifications and is dedicated to delivering outstanding, patient-centred outcomes. We bring together diverse expertise to provide complete, dental care.
+                Every clinician at RH Dental Care holds specialist qualifications and is dedicated to delivering outstanding, patient-centred outcomes. We bring together diverse expertise to provide complete dental care.
               </p>
             </div>
           </FadeIn>
@@ -474,9 +476,9 @@ export default function AboutPage() {
           </FadeIn>
           <motion.div className="ab-stats-bento" variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true, margin: '-60px' }}>
             {[
-              // REMOVED: a '5,000+ Happy Patients' counter, which also contradicted the
-              // '13k+' figure used elsewhere on the same site.
-              // TODO(client): year of first registration — see the note above.
+              // REMOVED: a '5,000+ Happy Patients' counter and a '12+ Years
+              // Experience' counter. Neither was evidenced, and the patient count
+              // contradicted the '13k+' figure used elsewhere on the same site.
               { val: 2,    suf: '',  label: 'Premium Branches',   icon: <Building2 size={22} /> },
               { val: 5000, suf: '+', label: 'Total sq.ft Area',   icon: <ScanLine size={22} /> },
             ].map((s, i) => (
@@ -496,7 +498,7 @@ export default function AboutPage() {
           <FadeIn>
             <span className="ab-label ab-label-light"><HeartPulse size={12} /> Our Services</span>
             <h2 className="ab-section-title-light">Comprehensive Care <span className="ab-blue-text">Under One Roof</span></h2>
-            <p style={{ fontSize: '1rem', color: '#5A5747', maxWidth: '560px', lineHeight: 1.75, marginBottom: 0 }}>
+            <p style={{ fontSize: '1rem', color: '#475569', maxWidth: '560px', lineHeight: 1.75, marginBottom: 0 }}>
               A full spectrum of dental services tailored to meet every patient&apos;s needs — from routine prevention to complex full-mouth rehabilitation.
             </p>
           </FadeIn>
@@ -524,7 +526,7 @@ export default function AboutPage() {
               5,000+ sq.ft across <span className="ab-shine-text">Two Branches</span>
             </h2>
             <p className="ab-body-dark" style={{ maxWidth: '560px' }}>
-              With two state-of-the-art locations in Banani and Banasree, our clinics are purpose-designed for comfort, safety, and efficiency — housing everything needed for dental care.
+              With two state-of-the-art locations in Banani and Banasree, our clinics are purpose-designed for comfort, safety, and efficiency — housing everything needed for modern dental care.
             </p>
           </FadeIn>
 
@@ -575,7 +577,7 @@ export default function AboutPage() {
             <div style={{ textAlign: 'center' }}>
               <span className="ab-label ab-label-light"><CalendarCheck size={12} /> How It Works</span>
               <h2 className="ab-section-title-light">Your Journey to a <span className="ab-blue-text">Perfect Smile</span></h2>
-              <p style={{ fontSize: '1rem', color: '#5A5747', maxWidth: '500px', margin: '0 auto', lineHeight: 1.75 }}>
+              <p style={{ fontSize: '1rem', color: '#475569', maxWidth: '500px', margin: '0 auto', lineHeight: 1.75 }}>
                 Our streamlined 4-step process ensures clarity, comfort, and outstanding results at every stage.
               </p>
             </div>
@@ -611,32 +613,32 @@ export default function AboutPage() {
         </motion.div>
         <div style={{
           position: 'absolute', inset: 0,
-          background: 'linear-gradient(to right, rgba(43,42,28,0.85) 0%, rgba(43,42,28,0.6) 50%, rgba(43,42,28,0.85) 100%)',
+          background: 'linear-gradient(to right, rgba(15,23,42,0.85) 0%, rgba(15,23,42,0.6) 50%, rgba(15,23,42,0.85) 100%)',
           display: 'flex', alignItems: 'center', justifyContent: 'center',
           padding: '0 max(1.5rem, calc((100vw - 1280px)/2))',
         }}>
           <div style={{ maxWidth: '600px', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
             <motion.div 
                variants={{
-                 rest: { scale: 1, boxShadow: '0 0 0 0 rgba(156,124,56,0)' },
+                 rest: { scale: 1, boxShadow: '0 0 0 0 rgba(14,165,233,0)' },
                  hover: { scale: 1.1, boxShadow: '0 0 0 14px rgba(255,255,255,0.05)' }
                }}
                style={{
                  width: '80px', height: '80px', borderRadius: '50%',
                  background: 'rgba(255,255,255,0.15)', border: '1px solid rgba(255,255,255,0.4)',
                  backdropFilter: 'blur(8px)', display: 'flex', alignItems: 'center', justifyContent: 'center',
-                 marginBottom: '1.75rem', color: 'var(--rh-ink)',
+                 marginBottom: '1.75rem', color: '#fff',
                }}
             >
               <Play size={32} fill="currentColor" style={{ marginLeft: '4px' }} />
             </motion.div>
-            <div className="ab-label" style={{ marginBottom: '1.25rem', background: 'rgba(255,255,255,0.1)', color: 'var(--rh-ink)', borderColor: 'rgba(255,255,255,0.2)' }}>
+            <div className="ab-label" style={{ marginBottom: '1.25rem', background: 'rgba(255,255,255,0.1)', color: '#fff', borderColor: 'rgba(255,255,255,0.2)' }}>
               <Building2 size={14} /> Full Clinic Virtual Tour
             </div>
-            <h2 style={{ fontSize: 'clamp(2rem,4vw,3.2rem)', fontWeight: 600, color: 'var(--rh-ink)', letterSpacing: '-0.02em', lineHeight: 1.1, marginBottom: '1.25rem' }}>
-              Take a Tour of <span className="ab-blue-text" style={{ background: 'linear-gradient(90deg, #CDAE51, #CDAE51)', WebkitBackgroundClip: 'text' }}>Our Clinics</span>
+            <h2 style={{ fontSize: 'clamp(2rem,4vw,3.2rem)', fontWeight: 900, color: '#fff', letterSpacing: '-0.04em', lineHeight: 1.1, marginBottom: '1.25rem' }}>
+              Take a Tour of <span className="ab-blue-text" style={{ background: 'linear-gradient(90deg, #38bdf8, #818cf8)', WebkitBackgroundClip: 'text' }}>Our Clinics</span>
             </h2>
-            <p style={{ fontSize: '1.05rem', color: '#C9C5B2', lineHeight: 1.7, marginBottom: '0' }}>
+            <p style={{ fontSize: '1.05rem', color: '#cbd5e1', lineHeight: 1.7, marginBottom: '0' }}>
               Experience our 5,000+ sq.ft of premium clinical space from the comfort of your home. Explore our modern OT setups across both branches, digital technology, and inviting reception areas.
             </p>
           </div>
@@ -655,16 +657,16 @@ export default function AboutPage() {
                 Ready for Your <span className="ab-shine-text">Dream Smile?</span>
               </h2>
               <p className="ab-cta-sub">
-                Two branches, one clinical team. Choose the one that suits how you want to be seen and your request reaches that reception directly.
+                Two branches, one clinical team. Choose the one that suits how you want to be seen, and your request reaches that reception directly.
               </p>
               <div className="ab-cta-btns">
                 <Link href="/contact" className="ab-btn-primary">Request an appointment <ArrowUpRight size={18} /></Link>
                 <BranchCTA action="call" className="ab-btn-glass"><Phone size={16} /> Call us</BranchCTA>
               </div>
               <div className="ab-cta-trust">
-                <div className="ab-cta-trust-item"><CheckCircle2 size={14} color="#55684F" /> Comfort-focused care</div>
-                <div className="ab-cta-trust-item"><Award size={14} color="#CDAE51" /> BMDC registered</div>
-                <div className="ab-cta-trust-item"><Users size={14} color="#CDAE51" /> Two branches</div>
+                <div className="ab-cta-trust-item"><CheckCircle2 size={14} color="#16a34a" /> Comfort-focused care</div>
+                <div className="ab-cta-trust-item"><Award size={14} color="#38bdf8" /> BMDC registered</div>
+                <div className="ab-cta-trust-item"><Users size={14} color="#818cf8" /> Two branches in Dhaka</div>
               </div>
             </div>
           </FadeIn>
@@ -682,7 +684,7 @@ export default function AboutPage() {
             style={{
               position: 'fixed',
               top: 0, left: 0, right: 0, bottom: 0,
-              backgroundColor: 'rgba(43, 42, 28, 0.92)',
+              backgroundColor: 'rgba(15, 23, 42, 0.92)',
               backdropFilter: 'blur(15px)',
               WebkitBackdropFilter: 'blur(15px)',
               zIndex: 99999,
@@ -703,7 +705,7 @@ export default function AboutPage() {
               style={{
                 position: 'absolute', top: '2rem', right: '2rem',
                 background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)',
-                color: 'var(--rh-ink)', width: '50px', height: '50px', borderRadius: '50%',
+                color: '#fff', width: '50px', height: '50px', borderRadius: '50%',
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
                 cursor: 'pointer', zIndex: 100000,
                 transition: 'all 0.3s ease'
@@ -727,7 +729,7 @@ export default function AboutPage() {
                 src={selectedImage} 
                 alt="Full Profile" 
                 fill 
-                style={{ objectFit: 'contain', filter: 'drop-shadow(0 20px 40px rgba(43, 42, 28, 0.40))' }} 
+                style={{ objectFit: 'contain', filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.4))' }} 
                 quality={100}
               />
             </motion.div>
@@ -746,7 +748,7 @@ export default function AboutPage() {
             style={{
               position: 'fixed',
               top: 0, left: 0, right: 0, bottom: 0,
-              backgroundColor: 'rgba(43, 42, 28, 0.95)',
+              backgroundColor: 'rgba(15, 23, 42, 0.95)',
               backdropFilter: 'blur(15px)',
               WebkitBackdropFilter: 'blur(15px)',
               zIndex: 99999,
@@ -767,7 +769,7 @@ export default function AboutPage() {
               style={{
                 position: 'absolute', top: '2rem', right: '2rem',
                 background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)',
-                color: 'var(--rh-ink)', width: '50px', height: '50px', borderRadius: '50%',
+                color: '#fff', width: '50px', height: '50px', borderRadius: '50%',
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
                 cursor: 'pointer', zIndex: 100000,
                 transition: 'all 0.3s ease'
@@ -787,7 +789,7 @@ export default function AboutPage() {
               style={{ 
                 position: 'relative', width: '100%', maxWidth: '1200px', aspectRatio: '16/9',
                 background: '#000', borderRadius: '1.5rem', overflow: 'hidden',
-                boxShadow: '0 20px 40px rgba(43, 42, 28, 0.50)', border: '1px solid rgba(255,255,255,0.15)'
+                boxShadow: '0 20px 40px rgba(0,0,0,0.5)', border: '1px solid rgba(255,255,255,0.15)'
               }}
               onClick={(e) => e.stopPropagation()} 
             >

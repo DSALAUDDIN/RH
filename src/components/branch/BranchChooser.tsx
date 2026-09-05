@@ -191,18 +191,18 @@ export default function BranchChooser() {
         {/* Shared Trust Bar */}
         <div className="branch-shared-trust">
           <div className="trust-pillar">
-            <Award size={18} color="#CDAE51" />
+            <Award size={18} color="#38bdf8" />
             <span>Same BMDC Certified Specialist Doctors</span>
           </div>
           <div className="trust-pillar-dot" />
           <div className="trust-pillar">
-            <ShieldCheck size={18} color="#B4D1A8" />
+            <ShieldCheck size={18} color="#4ade80" />
             <span>Same Hospital-Grade Sterilization Protocols</span>
           </div>
           <div className="trust-pillar-dot" />
           <div className="trust-pillar">
-            <Sparkles size={18} color="#CDAE51" />
-            <span>Same Considered German & Swiss Implant Systems</span>
+            <Sparkles size={18} color="#fbbf24" />
+            <span>The same implant systems and materials at both branches</span>
           </div>
         </div>
 

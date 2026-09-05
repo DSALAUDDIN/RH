@@ -32,12 +32,12 @@ function FadeIn({ children, delay = 0, className }: { children: React.ReactNode;
 
 /* ─── data ─── */
 const pillars = [
-  { icon: <Baby size={22}/>,        title: 'Child-Friendly Environment',  desc: 'Warm, welcoming, and stress-free atmosphere designed to ease anxiety and build trust with every child.', color: '#55684F', bg: '#ccfbf1' },
-  { icon: <Heart size={22}/>,       title: 'Individualized Care',          desc: 'Every treatment plan is tailored to the child\'s unique medical condition, behavior, and dental needs.', color: '#9C7C38', bg: '#EFE3CB' },
-  { icon: <ShieldCheck size={22}/>, title: 'Safe & Comfortable Treatment', desc: 'Advanced behavior management techniques and GA protocols ensure maximum safety and comfort.', color: '#9C7C38', bg: '#F1EEE3' },
-  { icon: <Smile size={22}/>,       title: 'Better Oral Health',           desc: 'Long-term preventive care and oral hygiene guidance for a healthier, happier quality of life.', color: '#55684F', bg: '#DCE7D2' },
-  { icon: <Users size={22}/>,       title: 'Parent & Caregiver Support',   desc: 'Continuous communication and guidance for parents throughout the entire treatment journey.', color: 'var(--rh-brass)', bg: '#EFE3CB' },
-  { icon: <BookOpen size={22}/>,    title: 'Awareness & Education',        desc: 'Creating oral health awareness among parents, caregivers, and the wider community.', color: '#9C7C38', bg: '#DCE7D2' },
+  { icon: <Baby size={22}/>,        title: 'Child-Friendly Environment',  desc: 'Warm, welcoming, and stress-free atmosphere designed to ease anxiety and build trust with every child.', color: '#14b8a6', bg: '#ccfbf1' },
+  { icon: <Heart size={22}/>,       title: 'Individualized Care',          desc: 'Every treatment plan is tailored to the child\'s unique medical condition, behavior, and dental needs.', color: '#ec4899', bg: '#fce7f3' },
+  { icon: <ShieldCheck size={22}/>, title: 'Safe & Comfortable Treatment', desc: 'Advanced behavior management techniques and GA protocols ensure maximum safety and comfort.', color: '#6366f1', bg: '#ede9fe' },
+  { icon: <Smile size={22}/>,       title: 'Better Oral Health',           desc: 'Long-term preventive care and oral hygiene guidance for a healthier, happier quality of life.', color: '#10b981', bg: '#d1fae5' },
+  { icon: <Users size={22}/>,       title: 'Parent & Caregiver Support',   desc: 'Continuous communication and guidance for parents throughout the entire treatment journey.', color: '#f59e0b', bg: '#fef3c7' },
+  { icon: <BookOpen size={22}/>,    title: 'Awareness & Education',        desc: 'Creating oral health awareness among parents, caregivers, and the wider community.', color: '#0ea5e9', bg: '#e0f2fe' },
 ];
 
 const gaFeatures = [
@@ -57,11 +57,11 @@ const mouFeatures = [
 ];
 
 const approach = [
-  { icon: <Users size={20}/>,       title: 'Awareness & Education',    desc: 'Creating awareness among parents, caregivers and the community about special child dental needs.', color: '#55684F' },
-  { icon: <Target size={20}/>,      title: 'Specialized Assessment',   desc: 'Individual evaluation and treatment planning based on each child\'s unique clinical needs.', color: '#9C7C38' },
-  { icon: <Heart size={20}/>,       title: 'Comfortable Treatment',    desc: 'Gentle behavior management techniques in a caring and child-friendly environment.', color: '#9C7C38' },
-  { icon: <ShieldCheck size={20}/>, title: 'Safe Management',          desc: 'Treatments under GA with strict safety protocols, expert anesthesiology and monitoring.', color: '#55684F' },
-  { icon: <Smile size={20}/>,       title: 'Preventive Care',          desc: 'Focus on long-term oral health, prevention and regular follow-up for lasting outcomes.', color: 'var(--rh-brass)' },
+  { icon: <Users size={20}/>,       title: 'Awareness & Education',    desc: 'Creating awareness among parents, caregivers and the community about special child dental needs.', color: '#14b8a6' },
+  { icon: <Target size={20}/>,      title: 'Specialized Assessment',   desc: 'Individual evaluation and treatment planning based on each child\'s unique clinical needs.', color: '#6366f1' },
+  { icon: <Heart size={20}/>,       title: 'Comfortable Treatment',    desc: 'Gentle behavior management techniques in a caring and child-friendly environment.', color: '#ec4899' },
+  { icon: <ShieldCheck size={20}/>, title: 'Safe Management',          desc: 'Treatments under GA with strict safety protocols, expert anesthesiology and monitoring.', color: '#10b981' },
+  { icon: <Smile size={20}/>,       title: 'Preventive Care',          desc: 'Focus on long-term oral health, prevention and regular follow-up for lasting outcomes.', color: '#f59e0b' },
 ];
 
 const goals = [
@@ -84,8 +84,8 @@ export default function SpecialChildPage() {
         <div className="imp-hero-overlay sc-overlay" />
         <div className="imp-hero-content">
           <motion.div initial={{ opacity: 0, y: -14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-            <Link href="/" style={{ color: 'var(--rh-ink-soft)', textDecoration:'none', fontSize:'0.85rem', fontWeight:600, display:'inline-flex', alignItems:'center', gap:'0.4rem', marginBottom:'1rem' }}>
-              Home <ChevronRight size={12}/> <span style={{ color: 'var(--rh-ink-soft)' }}>Specialties</span> <ChevronRight size={12}/> <span style={{ color:'#99f6e4' }}>Special Child Program</span>
+            <Link href="/" style={{ color:'rgba(255,255,255,0.5)', textDecoration:'none', fontSize:'0.85rem', fontWeight:600, display:'inline-flex', alignItems:'center', gap:'0.4rem', marginBottom:'1rem' }}>
+              Home <ChevronRight size={12}/> <span style={{ color:'rgba(255,255,255,0.8)' }}>Specialties</span> <ChevronRight size={12}/> <span style={{ color:'#99f6e4' }}>Special Child Program</span>
             </Link>
           </motion.div>
 
@@ -102,7 +102,7 @@ export default function SpecialChildPage() {
           </motion.p>
 
           <motion.div className="imp-hero-cta-row" initial={{ opacity:0, y:24 }} animate={{ opacity:1, y:0 }} transition={{ duration:0.8, delay:0.8 }}>
-            <BranchCTA action="book" service="Special Child Care" className="imp-btn-primary" style={{ background:'linear-gradient(135deg, #55684F, #0d9488)', boxShadow:'0 8px 32px rgba(20,184,166,0.4)' }}>
+            <BranchCTA action="book" service="Special Child Care" className="imp-btn-primary" style={{ background:'linear-gradient(135deg, #14b8a6, #0d9488)', boxShadow:'0 8px 32px rgba(20,184,166,0.4)' }}>
               Book a Consultation <ArrowUpRight size={18}/>
             </BranchCTA>
             <BranchCTA action="call" service="Special Child Care" className="imp-btn-glass"><Phone size={16}/> Call Now</BranchCTA>
@@ -127,19 +127,19 @@ export default function SpecialChildPage() {
             <FadeIn delay={0.15}>
               <div className="imp-what-content">
                 <span className="imp-label sc-label"><Info size={14}/> Our Commitment</span>
-                <h2>Every Child Deserves a <span style={{ color:'#55684F' }}>Healthy Smile</span></h2>
+                <h2>Every Child Deserves a <span style={{ color:'#14b8a6' }}>Healthy Smile</span></h2>
                 <p>At RH Dental Care, we understand that special children require extra care, patience, compassion, and a comfortable treatment environment. Our Special Child Dental Awareness &amp; Management Program is designed to provide safe, stress-free, and specialized dental care for children with special healthcare needs.</p>
                 <p>We focus on creating a <strong>child-friendly and supportive atmosphere</strong> while ensuring proper communication with parents and caregivers throughout the treatment process.</p>
 
                 <div style={{ background:'linear-gradient(135deg, #f0fdfa, #ccfbf1)', border:'1px solid rgba(20,184,166,0.2)', borderRadius:'1.25rem', padding:'1.5rem', marginTop:'1.5rem' }}>
-                  <h4 style={{ color:'#134e4a', fontWeight: 600, marginBottom:'0.5rem', display:'flex', alignItems:'center', gap:'0.5rem' }}><Heart size={16}/> Compassionate Care · Special Smiles · Better Tomorrow</h4>
+                  <h4 style={{ color:'#134e4a', fontWeight:800, marginBottom:'0.5rem', display:'flex', alignItems:'center', gap:'0.5rem' }}><Heart size={16}/> Compassionate Care · Special Smiles · Better Tomorrow</h4>
                   <p style={{ margin:0, fontSize:'0.9rem', color:'#0f766e', lineHeight:1.75 }}>We provide specialized, gentle and comprehensive dental care for children with special healthcare needs in a safe, supportive and child-friendly environment — with love, patience and expertise.</p>
                 </div>
 
                 <div className="imp-anatomy-list" style={{ marginTop:'2rem' }}>
                   {['Behavior management & desensitization protocols', 'Parent counseling and continuous communication', 'Hospital-grade safety with MOU partner hospitals'].map((t, i) => (
                     <motion.div key={i} className="imp-anatomy-item" initial={{ opacity:0, x:-20 }} whileInView={{ opacity:1, x:0 }} viewport={{ once:true }} transition={{ delay: i*0.1 }}>
-                      <div className="imp-anatomy-icon" style={{ background:'linear-gradient(135deg, #55684F, #0d9488)' }}><CheckCircle2 size={16}/></div>
+                      <div className="imp-anatomy-icon" style={{ background:'linear-gradient(135deg, #14b8a6, #0d9488)' }}><CheckCircle2 size={16}/></div>
                       <div><div className="imp-anatomy-title">{t}</div></div>
                     </motion.div>
                   ))}
@@ -156,7 +156,7 @@ export default function SpecialChildPage() {
           <FadeIn>
             <div className="imp-section-header">
               <span className="imp-label sc-label"><Award size={14}/> Program Pillars</span>
-              <h2 className="imp-title">What Makes Our <span className="imp-accent" style={{ background:'linear-gradient(135deg, #55684F, #0d9488)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>Program Special</span></h2>
+              <h2 className="imp-title">What Makes Our <span className="imp-accent" style={{ background:'linear-gradient(135deg, #14b8a6, #0d9488)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>Program Special</span></h2>
               <p className="imp-subtitle">A multi-dimensional approach combining clinical excellence, compassionate care, and family-centered support.</p>
             </div>
           </FadeIn>
@@ -180,15 +180,15 @@ export default function SpecialChildPage() {
             <FadeIn>
               <div>
                 <span className="imp-label sc-label"><Stethoscope size={14}/> Advanced Treatment</span>
-                <h3 style={{ fontSize:'1.6rem', fontWeight: 600, color:'#2B2A1C', marginBottom:'1rem', lineHeight:1.2 }}>
-                  Dental Care Under <span style={{ color:'#55684F' }}>General Anesthesia</span>
+                <h3 style={{ fontSize:'1.6rem', fontWeight:900, color:'#0f172a', marginBottom:'1rem', lineHeight:1.2 }}>
+                  Dental Care Under <span style={{ color:'#14b8a6' }}>General Anesthesia</span>
                 </h3>
-                <p style={{ color:'#5A5747', lineHeight:1.75, marginBottom:'1.5rem' }}>
-                  For children who are extremely anxious, medically compromised, uncooperative, or require extensive dental treatment — we provide comprehensive dental management under <strong style={{ color:'#55684F' }}>General Anesthesia (GA)</strong>. Multiple procedures are completed safely and comfortably in a single session, minimizing fear, stress and trauma.
+                <p style={{ color:'#475569', lineHeight:1.75, marginBottom:'1.5rem' }}>
+                  For children who are extremely anxious, medically compromised, uncooperative, or require extensive dental treatment — we provide comprehensive dental management under <strong style={{ color:'#14b8a6' }}>General Anesthesia (GA)</strong>. Multiple procedures are completed safely and comfortably in a single session, minimizing fear, stress and trauma.
                 </p>
                 <div className="imp-gallery-checks">
                   {gaFeatures.map((t, i) => (
-                    <div key={i} className="imp-gallery-check"><CheckCircle2 size={16} style={{ color:'#55684F' }}/>{t}</div>
+                    <div key={i} className="imp-gallery-check"><CheckCircle2 size={16} style={{ color:'#14b8a6' }}/>{t}</div>
                   ))}
                 </div>
               </div>
@@ -198,19 +198,19 @@ export default function SpecialChildPage() {
             <FadeIn delay={0.15}>
               <div>
                 <span className="imp-label sc-label"><Building2 size={14}/> Hospital Collaboration</span>
-                <h3 style={{ fontSize:'1.6rem', fontWeight: 600, color:'#2B2A1C', marginBottom:'1rem', lineHeight:1.2 }}>
-                  MOU with Multiple <span style={{ color:'#55684F' }}>Partner Hospitals</span>
+                <h3 style={{ fontSize:'1.6rem', fontWeight:900, color:'#0f172a', marginBottom:'1rem', lineHeight:1.2 }}>
+                  MOU with Multiple <span style={{ color:'#14b8a6' }}>Partner Hospitals</span>
                 </h3>
-                <p style={{ color:'#5A5747', lineHeight:1.75, marginBottom:'1.5rem' }}>
+                <p style={{ color:'#475569', lineHeight:1.75, marginBottom:'1.5rem' }}>
                   To ensure maximum patient safety, RH Dental Care has established <strong>MOU-based collaborations</strong> with multiple reputed hospitals for advanced patient management and dental treatment under GA. This integrated, multidisciplinary approach provides organized and safe care for every special child.
                 </p>
                 <div className="imp-gallery-checks">
                   {mouFeatures.map((t, i) => (
-                    <div key={i} className="imp-gallery-check"><CheckCircle2 size={16} style={{ color:'#55684F' }}/>{t}</div>
+                    <div key={i} className="imp-gallery-check"><CheckCircle2 size={16} style={{ color:'#14b8a6' }}/>{t}</div>
                   ))}
                 </div>
                 <div style={{ marginTop:'1.5rem', background:'rgba(20,184,166,0.08)', border:'1px solid rgba(20,184,166,0.2)', borderRadius:'1rem', padding:'1.25rem', display:'flex', alignItems:'center', gap:'0.75rem' }}>
-                  <Users size={20} style={{ color:'#55684F', flexShrink:0 }}/>
+                  <Users size={20} style={{ color:'#14b8a6', flexShrink:0 }}/>
                   <p style={{ margin:0, fontSize:'0.88rem', fontWeight:700, color:'#134e4a' }}>Together for Safe, Specialized and Quality Dental Care.</p>
                 </div>
               </div>
@@ -225,7 +225,7 @@ export default function SpecialChildPage() {
           <FadeIn>
             <div className="imp-section-header" style={{ marginBottom: '2.5rem' }}>
               <span className="imp-label sc-label"><Info size={14}/> At a Glance</span>
-              <h2 className="imp-title">Special Child <span className="imp-accent" style={{ background:'linear-gradient(135deg, #55684F, #0d9488)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>Awareness Flyer</span></h2>
+              <h2 className="imp-title">Special Child <span className="imp-accent" style={{ background:'linear-gradient(135deg, #14b8a6, #0d9488)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>Awareness Flyer</span></h2>
             </div>
             <div style={{ position:'relative', maxWidth:'800px', margin:'0 auto', borderRadius:'1.5rem', overflow:'hidden', boxShadow:'0 24px 64px rgba(20,184,166,0.15)', border:'1px solid rgba(20,184,166,0.2)' }}>
               <Image src={flyerImg} alt="Special Child Dental Awareness and Management Program Flyer" width={800} height={1131} style={{ width:'100%', height:'auto', display:'block' }}/>
@@ -240,7 +240,7 @@ export default function SpecialChildPage() {
           <FadeIn>
             <div className="imp-section-header">
               <span className="imp-label sc-label"><Target size={14}/> Clinical Approach</span>
-              <h2 className="imp-title">Our <span className="imp-accent" style={{ background:'linear-gradient(135deg, #55684F, #0d9488)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>5-Step Approach</span></h2>
+              <h2 className="imp-title">Our <span className="imp-accent" style={{ background:'linear-gradient(135deg, #14b8a6, #0d9488)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>5-Step Approach</span></h2>
               <p className="imp-subtitle">A systematic, compassionate, and clinically structured methodology designed around every child's unique needs.</p>
             </div>
           </FadeIn>
@@ -264,26 +264,26 @@ export default function SpecialChildPage() {
             <FadeIn>
               <div className="imp-what-content">
                 <span className="imp-label sc-label"><Star size={14}/> Our Goals</span>
-                <h2>Committed to <span style={{ color:'#55684F' }}>Every Child's Future</span></h2>
+                <h2>Committed to <span style={{ color:'#14b8a6' }}>Every Child's Future</span></h2>
                 <p>At RH Dental Care, we believe every child deserves a healthy smile, proper care, and a positive dental experience — regardless of their medical condition or special needs.</p>
                 <div className="imp-gallery-checks" style={{ marginTop:'1.5rem' }}>
                   {goals.map((t, i) => (
-                    <div key={i} className="imp-gallery-check"><CheckCircle2 size={16} style={{ color:'#55684F' }}/>{t}</div>
+                    <div key={i} className="imp-gallery-check"><CheckCircle2 size={16} style={{ color:'#14b8a6' }}/>{t}</div>
                   ))}
                 </div>
               </div>
             </FadeIn>
             <FadeIn delay={0.15}>
               <div className="imp-payment-note sc-cta-box">
-                <div className="imp-payment-icon" style={{ color:'#55684F' }}><Heart size={32}/></div>
+                <div className="imp-payment-icon" style={{ color:'#14b8a6' }}><Heart size={32}/></div>
                 <div className="imp-payment-body">
                   <h4 style={{ color:'#134e4a', fontSize:'1.3rem' }}>Every Child is Special. Every Smile Matters.</h4>
                   <p style={{ color:'#0f766e' }}>We are here to care, support and bring healthy smiles to special children. Book a consultation today and give your child the best dental care with love, patience and expertise.</p>
                   <div style={{ display:'flex', gap:'1rem', flexWrap:'wrap', marginTop:'1.5rem' }}>
-                    <BranchCTA action="book" service="Special Child Care" className="imp-btn-primary" style={{ background:'linear-gradient(135deg, #55684F, #0d9488)', boxShadow:'0 8px 28px rgba(20,184,166,0.3)' }}>
+                    <BranchCTA action="book" service="Special Child Care" className="imp-btn-primary" style={{ background:'linear-gradient(135deg, #14b8a6, #0d9488)', boxShadow:'0 8px 28px rgba(20,184,166,0.3)' }}>
                       Book Consultation <ArrowUpRight size={16}/>
                     </BranchCTA>
-                    <BranchCTA action="call" service="Special Child Care" className="imp-btn-glass" style={{ color:'#55684F', borderColor:'rgba(20,184,166,0.3)' }}>
+                    <BranchCTA action="call" service="Special Child Care" className="imp-btn-glass" style={{ color:'#14b8a6', borderColor:'rgba(20,184,166,0.3)' }}>
                       <Phone size={16}/> Call Us
                     </BranchCTA>
                   </div>
@@ -295,7 +295,7 @@ export default function SpecialChildPage() {
       </section>
 
       {/* ═══════════════ FINAL CALL TO ACTION ═══════════════ */}
-      <section className="imp-cta-section sc-cta-footer" style={{ background:'linear-gradient(135deg, #1F1E14 0%, #042f2e 50%, #1F1E14 100%)' }}>
+      <section className="imp-cta-section sc-cta-footer" style={{ background:'linear-gradient(135deg, #020617 0%, #042f2e 50%, #020617 100%)' }}>
         <div className="imp-cta-glow sc-cta-glow"/>
         <div className="container" style={{ position:'relative', zIndex:1 }}>
           <FadeIn>
@@ -303,18 +303,18 @@ export default function SpecialChildPage() {
               <div className="imp-badge sc-badge-footer" style={{ margin:'0 auto 1.5rem' }}>
                 <Heart size={14}/> Compassionate Dental Home
               </div>
-              <h2 className="imp-cta-title" style={{ maxWidth:'760px', margin:'0 auto 1.5rem', color:'#F1EEE3' }}>
+              <h2 className="imp-cta-title" style={{ maxWidth:'760px', margin:'0 auto 1.5rem', color:'#f1f5f9' }}>
                 Give Your Special Child the{' '}
-                <span className="sc-text-gradient-footer" style={{ background:'linear-gradient(135deg, #B4D1A8, #99f6e4)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>Care They Truly Deserve.</span>
+                <span className="sc-text-gradient-footer" style={{ background:'linear-gradient(135deg, #2dd4bf, #99f6e4)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>Care They Truly Deserve.</span>
               </h2>
-              <p className="imp-subtitle" style={{ maxWidth:'600px', margin:'0 auto 2.5rem', color:'rgba(201,197,178,0.8)' }}>
+              <p className="imp-subtitle" style={{ maxWidth:'600px', margin:'0 auto 2.5rem', color:'rgba(203,213,225,0.8)' }}>
                 Book a consultation today and take the first step towards a healthy, happy smile for your special child. RH Dental Care — Your Smile, Our Passion.
               </p>
             </div>
           </FadeIn>
           <FadeIn delay={0.15}>
             <div className="imp-hero-cta-row" style={{ justifyContent:'center' }}>
-              <BranchCTA action="book" service="Special Child Care" className="imp-btn-primary" style={{ background:'linear-gradient(135deg, #55684F, #0d9488)', boxShadow:'0 8px 32px rgba(20,184,166,0.4)', padding:'1rem 2.5rem', fontSize:'1rem' }}>
+              <BranchCTA action="book" service="Special Child Care" className="imp-btn-primary" style={{ background:'linear-gradient(135deg, #14b8a6, #0d9488)', boxShadow:'0 8px 32px rgba(20,184,166,0.4)', padding:'1rem 2.5rem', fontSize:'1rem' }}>
                 Book Appointment Now <ArrowUpRight size={18}/>
               </BranchCTA>
               <BranchCTA action="call" service="Special Child Care" className="imp-btn-glass"><Phone size={16}/> Call Now</BranchCTA>
