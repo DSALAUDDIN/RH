@@ -8,15 +8,9 @@ import './DoctorProfile.css';
 /**
  * Shared clinician profile. Renders only sections that have real content — an
  * empty memberships array produces no "Memberships" heading, rather than a
- * heading over filler. Anything unconfirmed shows as an explicit TODO(client)
- * note so it is visible in review rather than quietly absent.
+ * heading over filler.
  */
 export default function DoctorProfile({ doctor: d }: { doctor: Clinician }) {
-  const todos: string[] = [];
-  if (!d.bmdc) todos.push('BMDC registration number');
-  if (!d.appointments.length) todos.push('academic or hospital appointments');
-  if (!d.procedures.length) todos.push('clinical focus and procedures');
-
   return (
     <article className="dp rh-scope">
       <header className="dp-hero">
@@ -131,19 +125,6 @@ export default function DoctorProfile({ doctor: d }: { doctor: Clinician }) {
         </div>
       </section>
 
-      {todos.length > 0 && (
-        <section className="rh-section" aria-label="Outstanding information">
-          <div className="rh-container">
-            <div className="rh-niche dp-todo">
-              <p>
-                <strong>TODO(client):</strong> {todos.join(', ')} for {d.name}. These
-                are what a knowledge panel is built from and what an AI assistant
-                cites — the page is thin without them, and nothing here is guessed.
-              </p>
-            </div>
-          </div>
-        </section>
-      )}
     </article>
   );
 }

@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { SHARED_TRUST } from '@/lib/branches';
-import { TEAM } from '@/lib/doctors';
+import { TEAM, clinicianPath } from '@/lib/doctors';
 import { physicianSchema } from '@/lib/schema';
 import JsonLd from '@/components/JsonLd';
 import TeamRoster from '@/components/TeamRoster';
@@ -15,7 +15,7 @@ export default function TeamPage() {
      invented to fill it out. */
   const nodes = TEAM.map((c) =>
     physicianSchema({
-      slug: c.slug ?? c.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''),
+      slug: clinicianPath(c).slice(1),
       name: c.fullName,
       jobTitle: c.role ?? 'Dental Surgeon',
       description: c.bio[0] ?? `${c.role ?? 'Dental surgeon'} at RH Dental Care, Dhaka.`,

@@ -339,6 +339,14 @@ export const TEAM: Clinician[] = [...Object.values(DOCTORS), ...ROSTER];
 
 export const DOCTOR_LIST = Object.values(DOCTORS);
 
+export function clinicianSlug(c: Clinician): string {
+  return c.slug ?? c.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+}
+
+export function clinicianPath(c: Clinician): string {
+  return c.slug ? `/${c.slug}` : `/team/${clinicianSlug(c)}`;
+}
+
 export function teamAt(branch: BranchId): Clinician[] {
   return TEAM.filter((c) => c.postings.some((p) => p.branch === branch));
 }

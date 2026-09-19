@@ -2,6 +2,7 @@ import { MetadataRoute } from 'next';
 import { blogPosts } from '@/lib/blogData';
 import { ROUTES, SPECIALTY_SLUGS } from '@/lib/routes';
 import { BASE_URL } from '@/lib/metadata';
+import { ROSTER, clinicianPath } from '@/lib/doctors';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
@@ -27,5 +28,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  return [...staticRoutes, ...specialtyRoutes, ...blogRoutes];
+  const doctorRoutes: MetadataRoute.Sitemap = ROSTER.map((d) => ({
+    url: `${BASE_URL}${clinicianPath(d)}`,
+    lastModified: now,
+    changeFrequency: 'monthly',
+    priority: 0.7,
+  }));
+
+  return [...staticRoutes, ...specialtyRoutes, ...blogRoutes, ...doctorRoutes];
 }

@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { BRANCHES, BranchId } from '@/lib/branches';
-import { teamAt, postingLabel, initials, type Clinician } from '@/lib/doctors';
+import { teamAt, clinicianPath, initials, type Clinician } from '@/lib/doctors';
 import './TeamRoster.css';
 
 /** The other branch(es) a doctor is also posted to, formatted for the badge. */
@@ -78,7 +78,7 @@ export default function TeamRoster({
                 {c.role && <p className="tr-role-dark">{c.role.toUpperCase()}</p>}
                 
                 <h3 className="tr-name-dark">
-                  <Link href={`/${c.slug ?? 'team/' + c.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}`}>
+                  <Link href={clinicianPath(c)}>
                     {c.name}
                   </Link>
                 </h3>
@@ -102,7 +102,7 @@ export default function TeamRoster({
 
                 <div className="tr-footer-dark">
                   <Link 
-                    href={`/${c.slug ?? 'team/' + c.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}`} 
+                    href={clinicianPath(c)} 
                     className="tr-link-dark"
                   >
                     View Full Profile
