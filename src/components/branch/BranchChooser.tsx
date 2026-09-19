@@ -63,7 +63,7 @@ export default function BranchChooser() {
           <div className={`branch-card card-banani ${branch === 'banani' ? 'is-active' : ''}`}>
             <div className="branch-card-media">
               <Image
-                src={BRANCHES.banani.heroImage}
+                src={BRANCHES.banani.cardImage}
                 alt="Banani Private Dental Suite"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
@@ -130,8 +130,8 @@ export default function BranchChooser() {
           <div className={`branch-card card-banasree ${branch === 'banasree' ? 'is-active' : ''}`}>
             <div className="branch-card-media">
               <Image
-                src={BRANCHES.banasree.heroImage}
-                alt="Banasree Flagship Dental Hospital"
+                src={BRANCHES.banasree.cardImage}
+                alt="Reception at RH Dental Care Banasree"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
                 className="branch-card-img"

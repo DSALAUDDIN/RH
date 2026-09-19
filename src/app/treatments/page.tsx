@@ -702,8 +702,8 @@ export default function TreatmentsPage() {
                 <div className="tr-stat-label">Doctors</div>
               </div>
               <div className="tr-stat">
-                <div className="tr-stat-num">10+</div>
-                <div className="tr-stat-label">Staffs</div>
+                <div className="tr-stat-num">18+</div>
+                <div className="tr-stat-label">Staff</div>
               </div>
               <div className="tr-stat">
                 <div className="tr-stat-num">50+</div>

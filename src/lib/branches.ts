@@ -65,6 +65,8 @@ export interface Branch {
 
   schemaDescription: string;
   heroImage: string;
+  /** Image for the branch card on the home page. */
+  cardImage: string;
   ogImage: string;
   photos: { src: string; alt: string; caption?: string; w?: number; h?: number }[];
 
@@ -136,6 +138,7 @@ export const BRANCHES: Record<BranchId, Branch> = {
     schemaDescription:
       'Appointment-only private dental suite in Banani, Dhaka. 3D CBCT imaging on site and a consultation room separate from the treatment room. Same clinicians, materials and sterilisation protocol as RH Dental Care Banasree.',
     heroImage: '/assets/branches/banani/reception.webp',
+    cardImage: '/assets/branches/banani/reception.webp',
     ogImage: '/assets/branches/banani/reception.webp',
     photos: [
       {
@@ -163,12 +166,12 @@ export const BRANCHES: Record<BranchId, Branch> = {
         h: 1600,
       },
       {
-        src: '/assets/branches/banani/treatment-room.webp',
-        alt: 'The corner of the treatment room at RH Dental Care Banani: panelled walls, a cove-lit ceiling, a plant and upholstered chairs, with the sheathed arm of the dental light at the right edge.',
+        src: '/assets/branches/banani/treatment-chair.webp',
+        alt: 'A clinician treating a patient in the dental chair at RH Dental Care Banani, with the operating light overhead and the panelled lounge corner behind.',
         caption:
-          'The treatment room, from its other corner. The same panelling and cove lighting as the rest of the suite — the chair is the only thing in it that says dentist.',
+          'The treatment room. The dental chair sits in the same panelled, cove-lit space as the rest of the suite.',
         w: 1600,
-        h: 1163,
+        h: 1200,
       },
     ],
 
@@ -246,6 +249,7 @@ export const BRANCHES: Record<BranchId, Branch> = {
     schemaDescription:
       'Full-service dental hospital in Banasree, Dhaka. In-house master digital lab, a full specialist team on site, a published price list and 0% EMI. Same clinicians, materials and sterilisation protocol as RH Dental Care Banani.',
     heroImage: '/assets/branches/banasree/team.webp',
+    cardImage: '/assets/branches/banasree/reception.webp',
     ogImage: '/assets/branches/banasree/team.webp',
     photos: [
       {

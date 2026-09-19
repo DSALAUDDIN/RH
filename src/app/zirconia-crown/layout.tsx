@@ -12,7 +12,7 @@ const PATH = '/zirconia-crown';
 export const metadata: Metadata = pageMeta({
   title: 'Zirconia Crowns in Dhaka',
   description:
-    'Zirconia crowns designed and milled in our Banasree in-house lab. What they cost, how many visits, and how long they last.',
+    'Zirconia crowns designed and milled in our in-house CAD/CAM lab from Upcera and Xtcera zirconia, with quality checks at every step before fitting.',
   path: PATH,
 });
 
