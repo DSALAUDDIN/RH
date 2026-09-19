@@ -11,7 +11,6 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
-
 export async function DELETE(req: Request, { params }: { params: Promise<{ id: string }> }) {
   const secret = getAuthSecret();
   if (!secret) {
@@ -36,14 +35,14 @@ export async function DELETE(req: Request, { params }: { params: Promise<{ id: s
       // URL format: .../upload/v12345/folder/filename.mp4
       const parts = review.videoUrl.split('/upload/');
       if (parts.length > 1) {
-        let publicIdWithExtension = parts[1].split('/').slice(1).join('/'); // remove 'v12345'
+        const publicIdWithExtension = parts[1].split('/').slice(1).join('/'); // drop the version segment
         const publicId = publicIdWithExtension.substring(0, publicIdWithExtension.lastIndexOf('.'));
         if (publicId) {
           await cloudinary.uploader.destroy(publicId, { resource_type: 'video' });
         }
       }
     } catch (cloudErr) {
-      console.error("Failed to delete from Cloudinary:", cloudErr);
+      console.error('Failed to delete from Cloudinary:', cloudErr);
       // We proceed to delete from DB even if Cloudinary fails
     }
 

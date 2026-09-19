@@ -1,22 +1,8 @@
-// src/lib/prisma-models.ts
+// Typed accessors for optional Prisma models (Appointment, RefCounter).
 //
-// Narrow, hand-written accessors for the Prisma models that may not exist in
-// the GENERATED client yet.
-//
-// Why this exists: `npx prisma generate` produces the client's TypeScript types
-// from schema.prisma. If the schema gains a model but generate has not been re-run
-// on that machine, `prisma.appointment` does not exist as a TYPE and the build
-// fails at type-check — even though the code never runs that branch. That is
-// what broke the build on the server:
-//
-//   Type error: Property 'appointment' does not exist on type 'PrismaClient'
-//
-// Appointments are email-only by default (PERSIST_APPOINTMENTS unset), so the
-// application must not fail to COMPILE over a table it is not using. These
-// accessors return undefined when the model is absent from the generated client,
-// and every caller already handles that by falling back to the email path.
-//
-// Run `npx prisma generate` and they resolve normally.
+// These resolve to undefined when the generated client predates the model, so
+// the app still type-checks and falls back to the email-only booking path.
+// Run `npx prisma generate` after schema changes.
 
 import { prisma } from './prisma';
 

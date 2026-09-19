@@ -1,26 +1,7 @@
-/* ============================================================================
-   RH Dental Care — design tokens
-
-   The site's own identity: a deep navy ground with the sea-blue ramp already
-   declared in globals.css (--blue-50 … --blue-950), blue gradient CTAs and
-   glass panels. This file exists so the branch pages, the booking form, the
-   FAQ, the team roster and the picker sheet can be written once against named
-   tokens instead of hard-coded hexes — remap here and every one of them
-   follows.
-
-   ELEVATION IS A GLOW, not a grey drop shadow. On a navy ground a grey shadow
-   is invisible; what reads is coloured light spilling out from under a panel.
-   Use --rh-glow-*. There is deliberately no neutral box-shadow token.
-
-   NOTE ON --rh-accent: globals.css also declares --rh-accent and the
-   [data-branch] overrides for it, and it is imported after this file, so its
-   value wins. The values below are kept identical to globals' on purpose —
-   Banani warm gold, Banasree clinical blue — so the two never disagree.
-   ========================================================================= */
+/* RH Dental Care — design tokens */
 
 :root {
-  /* ── Core palette ──────────────────────────────────────────────────────
-     Ground and ink. "paper" is the page ground; on this theme it is navy. */
+  /* Core palette */
   --rh-paper: #050e1e;
   --rh-ink: #eaf2fb;
   --rh-ink-soft: #9db2cc;
@@ -38,9 +19,7 @@
   --rh-brass-light: #f0b357;
   --rh-oak: #c99a4e;
 
-  /* Legacy aliases. The branch and component stylesheets were written against
-     these names; they now resolve into the blue ramp. Kept rather than renamed
-     so nothing has to be touched twice. */
+  /* Aliases used by branch/component stylesheets; resolve into the blue ramp. */
   --rh-sage: var(--rh-blue-light);
   --rh-sage-pale: rgba(56, 170, 255, 0.14);
   --rh-sage-deep: var(--rh-blue-deep);
@@ -48,37 +27,28 @@
   /* The one colour outside the palette: an error state has to read as one. */
   --rh-error: #f87171;
 
-  /* ── Derived surfaces — glass over navy ── */
+  /* Derived surfaces — glass over navy */
   --rh-surface: #0c1a30;
   --rh-surface-sunk: #081426;
   --rh-hairline: rgba(160, 200, 255, 0.14);
   --rh-hairline-strong: rgba(160, 200, 255, 0.26);
 
-  /* ── Branch accent ──
-     Default is null-branch: blue, so nothing silently reads as a branch. */
+  /* Branch accent */
   --rh-accent: #0284c7;
   --rh-accent-soft: rgba(2, 132, 199, 0.16);
   --rh-accent-contrast: #ffffff;
 
-  /* ── Glow. This is the elevation system. ── */
-  --rh-glow-sm:
-    0 1px 2px rgba(0, 0, 0, 0.4),
-    0 4px 18px -8px rgba(0, 140, 255, 0.45);
-  --rh-glow-md:
-    0 2px 6px rgba(0, 0, 0, 0.45),
-    0 12px 34px -12px rgba(0, 140, 255, 0.5),
-    0 2px 12px -6px rgba(56, 170, 255, 0.35);
-  --rh-glow-lg:
-    0 6px 14px rgba(0, 0, 0, 0.5),
-    0 28px 70px -24px rgba(0, 140, 255, 0.55),
-    0 6px 24px -8px rgba(56, 170, 255, 0.4);
+  /* Glow (elevation) */
+  --rh-glow-sm: 0 2px 8px rgba(0, 0, 0, 0.14);
+  --rh-glow-md: 0 6px 18px rgba(0, 0, 0, 0.18);
+  --rh-glow-lg: 0 12px 28px rgba(0, 0, 0, 0.2);
 
   /* The thin bright line along the top edge of a glass panel. */
   --rh-cove: linear-gradient(
     90deg,
     rgba(124, 200, 255, 0) 0%,
-    rgba(124, 200, 255, 0.55) 35%,
-    rgba(124, 200, 255, 0.55) 65%,
+    rgba(124, 200, 255, 0.18) 35%,
+    rgba(124, 200, 255, 0.18) 65%,
     rgba(124, 200, 255, 0) 100%
   );
 
@@ -93,7 +63,7 @@
   /* The primary CTA fill — the blue gradient the site has always used. */
   --rh-cta: linear-gradient(135deg, #008cff 0%, #0073e6 55%, #005bb7 100%);
 
-  /* ── Type — the site's own faces ── */
+  /* Type */
   --rh-font-display: var(--font-display), 'Bricolage Grotesque', system-ui, sans-serif;
   --rh-font-body: var(--font-body), 'Geist', system-ui, -apple-system, sans-serif;
   --rh-font-bn: var(--font-bn), 'Hind Siliguri', system-ui, sans-serif;
@@ -109,7 +79,7 @@
   --rh-lead-tight: 1.1;
   --rh-lead: 1.7;
 
-  /* ── Space ── */
+  /* Space */
   --rh-1: 0.25rem;
   --rh-2: 0.5rem;
   --rh-3: 0.75rem;
@@ -122,7 +92,7 @@
   --rh-24: 6rem;
   --rh-section: clamp(3.5rem, 8vw, 7rem);
 
-  /* ── Radius — soft, matching the rest of the site ── */
+  /* Radius */
   --rh-r-sm: 8px;
   --rh-r-md: 14px;
   --rh-r-lg: 22px;
@@ -131,7 +101,7 @@
   --rh-dur: 320ms;
 }
 
-/* ── Branch accents ───────────────────────────────────────────────────────── */
+/* Branch accents */
 [data-branch='banani'] {
   --rh-accent: #d97706;
   --rh-accent-soft: rgba(217, 119, 6, 0.18);
@@ -140,23 +110,15 @@
   --rh-cta: linear-gradient(135deg, #f0b357 0%, #d97706 55%, #a85a05 100%);
 
   /* Banani's glow runs warm — same language, its own colour. */
-  --rh-glow-sm:
-    0 1px 2px rgba(0, 0, 0, 0.4),
-    0 4px 18px -8px rgba(217, 119, 6, 0.45);
-  --rh-glow-md:
-    0 2px 6px rgba(0, 0, 0, 0.45),
-    0 12px 34px -12px rgba(217, 119, 6, 0.5),
-    0 2px 12px -6px rgba(240, 179, 87, 0.35);
-  --rh-glow-lg:
-    0 6px 14px rgba(0, 0, 0, 0.5),
-    0 28px 70px -24px rgba(217, 119, 6, 0.55),
-    0 6px 24px -8px rgba(240, 179, 87, 0.4);
+  --rh-glow-sm: 0 2px 8px rgba(0, 0, 0, 0.14);
+  --rh-glow-md: 0 6px 18px rgba(0, 0, 0, 0.18);
+  --rh-glow-lg: 0 12px 28px rgba(0, 0, 0, 0.2);
 
   --rh-cove: linear-gradient(
     90deg,
     rgba(240, 179, 87, 0) 0%,
-    rgba(240, 179, 87, 0.55) 35%,
-    rgba(240, 179, 87, 0.55) 65%,
+    rgba(240, 179, 87, 0.18) 35%,
+    rgba(240, 179, 87, 0.18) 65%,
     rgba(240, 179, 87, 0) 100%
   );
 }
@@ -167,7 +129,7 @@
   --rh-accent-contrast: #ffffff;
 }
 
-/* ── Primitives ───────────────────────────────────────────────────────────── */
+/* Primitives */
 
 .rh-scope {
   background: var(--rh-paper);
@@ -186,14 +148,28 @@
   text-wrap: balance;
 }
 
-.rh-scope h1 { font-size: var(--rh-step-4); }
-.rh-scope h2 { font-size: var(--rh-step-3); }
-.rh-scope h3 { font-size: var(--rh-step-1); font-weight: 700; }
+.rh-scope h1 {
+  font-size: var(--rh-step-4);
+}
+.rh-scope h2 {
+  font-size: var(--rh-step-3);
+}
+.rh-scope h3 {
+  font-size: var(--rh-step-1);
+  font-weight: 700;
+}
 
-.rh-scope p { max-width: var(--rh-measure); color: var(--rh-ink-soft); }
-.rh-scope :lang(bn) { font-family: var(--rh-font-bn); }
+.rh-scope p {
+  max-width: var(--rh-measure);
+  color: var(--rh-ink-soft);
+}
+.rh-scope :lang(bn) {
+  font-family: var(--rh-font-bn);
+}
 
-.rh-section { padding-block: var(--rh-section); }
+.rh-section {
+  padding-block: var(--rh-section);
+}
 
 .rh-container {
   width: min(1120px, 100% - 2 * var(--rh-6));
@@ -212,8 +188,9 @@
   box-shadow: var(--rh-glow-sm);
   backdrop-filter: blur(10px);
   overflow: hidden;
-  transition: box-shadow var(--rh-dur) var(--rh-ease),
-              border-color var(--rh-dur) var(--rh-ease);
+  transition:
+    box-shadow var(--rh-dur) var(--rh-ease),
+    border-color var(--rh-dur) var(--rh-ease);
 }
 
 .rh-panel::before {
@@ -262,9 +239,10 @@
   border: 1px solid transparent;
   cursor: pointer;
   text-decoration: none;
-  transition: box-shadow var(--rh-dur) var(--rh-ease),
-              transform var(--rh-dur) var(--rh-ease),
-              background-color var(--rh-dur) var(--rh-ease);
+  transition:
+    box-shadow var(--rh-dur) var(--rh-ease),
+    transform var(--rh-dur) var(--rh-ease),
+    background-color var(--rh-dur) var(--rh-ease);
 }
 
 .rh-btn-primary {
@@ -294,7 +272,10 @@
   outline-offset: 3px;
 }
 
-.rh-hairline { border: 0; border-top: 1px solid var(--rh-hairline); }
+.rh-hairline {
+  border: 0;
+  border-top: 1px solid var(--rh-hairline);
+}
 
 /* Keyboard skip link — off-screen until focused. Without this the first tab
    stop on every page is the whole navigation. */
@@ -316,15 +297,22 @@
   outline-offset: 2px;
 }
 
-/* Entrance animation is opt-in per section, never blanket fade-up.
-   It never starts from opacity:0 — a hidden H1 is an SEO and LCP defect
-   (docs/audit-report.md P1-2). 0.001 keeps the text painted and measurable. */
+/*
+ * Opt-in entrance animation. Starts at opacity 0.001, not 0, so above-the-fold
+ * text stays painted for LCP and crawlers.
+ */
 @media (prefers-reduced-motion: no-preference) {
   .rh-rise {
     animation: rh-rise var(--rh-dur) var(--rh-ease) both;
   }
   @keyframes rh-rise {
-    from { opacity: 0.001; transform: translateY(10px); }
-    to { opacity: 1; transform: none; }
+    from {
+      opacity: 0.001;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
   }
 }

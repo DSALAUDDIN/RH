@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import DentalTourism from './DentalTourism';
-import { pageMeta } from '@/lib/metadata';
+import JsonLd from '@/components/seo/JsonLd';
+import { pageMeta } from '@/lib/seo/metadata';
+import { breadcrumbs } from '@/lib/seo/schema';
 
 export const metadata: Metadata = pageMeta({
   title: 'Dental Treatment in Dhaka for Overseas Patients',
@@ -10,5 +12,10 @@ export const metadata: Metadata = pageMeta({
 });
 
 export default function Page() {
-  return <DentalTourism />;
+  return (
+    <>
+      <JsonLd nodes={[breadcrumbs({ name: 'Dental Tourism', path: '/dental-tourism' })]} />
+      <DentalTourism />
+    </>
+  );
 }

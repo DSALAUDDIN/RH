@@ -1,12 +1,5 @@
-// src/components/ReviewBadge.tsx
-//
-// Renders the branch's real Google rating, or nothing at all.
-// There is deliberately no placeholder, no skeleton and no "coming soon" state —
-// an empty space is honest; an invented number is not.
-//
-// Server component. Replaces every hardcoded claim badge on the site
-// (the 13k+ patient counters, the "500+ reviews" line, the 4.9-star block).
-// See docs/audit-report.md P2-2.
+// Live Google rating for a branch (server component). Renders nothing when no
+// live data is available; there is intentionally no placeholder state.
 
 import { Star } from 'lucide-react';
 import { BranchId } from '@/lib/branches';

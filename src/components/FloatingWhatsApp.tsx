@@ -10,10 +10,10 @@ import { track } from '@/lib/analytics';
 import './FloatingWhatsApp.css';
 
 /**
- * Behaviour, in order:
- *   · On a branch page → pinned to that branch. Renders a real wa.me link.
- *   · Elsewhere with a branch resolved → that branch. Real link.
- *   · No branch → a button that opens the picker, then sends the message.
+ * Resolution order:
+ * - Branch page: pinned to that branch.
+ * - Branch resolved elsewhere: that branch.
+ * - No branch: opens the picker, then continues to WhatsApp.
  */
 export default function FloatingWhatsApp() {
   const pathname = usePathname();
@@ -23,10 +23,38 @@ export default function FloatingWhatsApp() {
   if (pathname?.startsWith('/admin') || pathname === '/contact') return null;
 
   const renderTooltip = (branchId?: 'banani' | 'banasree') => (
-    <span className="wa-tooltip" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '2px', background: 'transparent', padding: 0 }}>
-      <span style={{ background: 'var(--rh-paper)', color: 'var(--rh-ink)', padding: '0.4rem 0.7rem', borderRadius: '4px', fontWeight: 600 }}>WhatsApp</span>
+    <span
+      className="wa-tooltip"
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'flex-end',
+        gap: '2px',
+        background: 'transparent',
+        padding: 0,
+      }}
+    >
+      <span
+        style={{
+          background: 'var(--rh-paper)',
+          color: 'var(--rh-ink)',
+          padding: '0.4rem 0.7rem',
+          borderRadius: '4px',
+          fontWeight: 600,
+        }}
+      >
+        WhatsApp
+      </span>
       {branchId && (
-        <span style={{ background: branchId === 'banani' ? 'var(--rh-brass)' : 'var(--rh-sage-deep)', color: '#fff', padding: '0.2rem 0.5rem', borderRadius: '4px', fontSize: '0.7rem' }}>
+        <span
+          style={{
+            background: branchId === 'banani' ? 'var(--rh-brass)' : 'var(--rh-sage-deep)',
+            color: '#fff',
+            padding: '0.2rem 0.5rem',
+            borderRadius: '4px',
+            fontSize: '0.7rem',
+          }}
+        >
           {BRANCHES[branchId].shortName}
         </span>
       )}
@@ -47,9 +75,12 @@ export default function FloatingWhatsApp() {
             e.preventDefault();
             track('cta_whatsapp', { branch, source: 'floating' });
             window.open(
-              whatsappUrl(BRANCHES[branch], `${BRANCHES[branch].waIntent}\nRef: ${makeRef(branch)}`),
+              whatsappUrl(
+                BRANCHES[branch],
+                `${BRANCHES[branch].waIntent}\nRef: ${makeRef(branch)}`,
+              ),
               '_blank',
-              'noopener,noreferrer'
+              'noopener,noreferrer',
             );
           }}
         >
@@ -69,9 +100,12 @@ export default function FloatingWhatsApp() {
             openPicker((selected) => {
               track('cta_whatsapp', { branch: selected, source: 'floating' });
               window.open(
-                whatsappUrl(BRANCHES[selected], `${BRANCHES[selected].waIntent}\nRef: ${makeRef(selected)}`),
+                whatsappUrl(
+                  BRANCHES[selected],
+                  `${BRANCHES[selected].waIntent}\nRef: ${makeRef(selected)}`,
+                ),
                 '_blank',
-                'noopener,noreferrer'
+                'noopener,noreferrer',
               );
             });
           }}

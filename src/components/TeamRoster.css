@@ -1,8 +1,14 @@
-.tr { background: #060b19; }
-.tr[data-branch='banani']   { --rh-accent: #3b82f6; }
-.tr[data-branch='banasree'] { --rh-accent: #3b82f6; }
+.tr {
+  background: #060b19;
+}
+.tr[data-branch='banani'] {
+  --rh-accent: #3b82f6;
+}
+.tr[data-branch='banasree'] {
+  --rh-accent: #3b82f6;
+}
 
-/* ── Section header ──────────────────────────────────────────────────────── */
+/* Section header */
 
 /* tokens.css sets .rh-scope :is(h1,h2,h3) at specificity (0,1,1).
    Nesting under .tr gives (0,2,0), overriding the base layer without !important. */
@@ -21,7 +27,7 @@
   line-height: var(--rh-lead);
 }
 
-/* ── Branch meta bar ─────────────────────────────────────────────────────── */
+/* Branch meta bar */
 
 .tr-branch-bar {
   display: flex;
@@ -62,8 +68,9 @@
   padding: 0.35rem 0.85rem;
   border: 1px solid currentColor;
   border-radius: 999px;
-  transition: background-color var(--rh-dur) var(--rh-ease),
-              box-shadow var(--rh-dur) var(--rh-ease);
+  transition:
+    background-color var(--rh-dur) var(--rh-ease),
+    box-shadow var(--rh-dur) var(--rh-ease);
 }
 .tr-branch-link:hover {
   background: var(--rh-accent-soft);
@@ -74,16 +81,21 @@
   outline-offset: 2px;
 }
 
-/* ── Doctor card grid ────────────────────────────────────────────────────── */
+/* Doctor card grid */
 
 .tr-grid {
-  list-style: none; margin: 0; padding: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
   gap: var(--rh-4);
 }
 
-.tr-card { display: flex; flex-direction: column; }
+.tr-card {
+  display: flex;
+  flex-direction: column;
+}
 
 .tr-portrait {
   position: relative;
@@ -93,7 +105,12 @@
   place-items: center;
   overflow: hidden;
 }
-.tr-portrait img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+.tr-portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
 
 /* No photograph → an initial, not a stock portrait. */
 .tr-initials {
@@ -104,7 +121,11 @@
   letter-spacing: 0.02em;
 }
 
-.tr-body { padding: var(--rh-4); display: grid; gap: 3px; }
+.tr-body {
+  padding: var(--rh-4);
+  display: grid;
+  gap: 3px;
+}
 
 /* tokens.css sets .rh-scope h3 at specificity (0,1,1).
    Nesting under .tr-card gives (0,2,0) to win cleanly. */
@@ -116,13 +137,38 @@
   line-height: 1.25;
   color: var(--rh-ink);
 }
-.tr-card .tr-name a { color: inherit; }
-.tr-card .tr-name a:hover { color: var(--rh-accent); text-decoration: underline; text-underline-offset: 0.2em; }
+.tr-card .tr-name a {
+  color: inherit;
+}
+.tr-card .tr-name a:hover {
+  color: var(--rh-accent);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
 
-.tr-role  { font-size: var(--rh-step--1); color: var(--rh-accent); font-weight: 600; margin: 0; }
-.tr-quals { font-size: var(--rh-step--1); color: var(--rh-ink-soft); margin: 0; line-height: 1.5; }
-.tr-bmdc  { font-size: var(--rh-step--1); color: var(--rh-ink-soft); margin: 0; font-variant-numeric: tabular-nums; }
-.tr-focus { font-size: var(--rh-step--1); color: var(--rh-ink); margin: 2px 0 0; }
+.tr-role {
+  font-size: var(--rh-step--1);
+  color: var(--rh-accent);
+  font-weight: 600;
+  margin: 0;
+}
+.tr-quals {
+  font-size: var(--rh-step--1);
+  color: var(--rh-ink-soft);
+  margin: 0;
+  line-height: 1.5;
+}
+.tr-bmdc {
+  font-size: var(--rh-step--1);
+  color: var(--rh-ink-soft);
+  margin: 0;
+  font-variant-numeric: tabular-nums;
+}
+.tr-focus {
+  font-size: var(--rh-step--1);
+  color: var(--rh-ink);
+  margin: 2px 0 0;
+}
 
 .tr-hours {
   font-size: var(--rh-step--1);
@@ -133,7 +179,7 @@
   line-height: 1.45;
 }
 
-/* ── "Also at [Branch]" badge ───────────────────────────────────────────── */
+/* "Also at [Branch]" badge */
 
 .tr-also-at {
   display: inline-block;
@@ -149,18 +195,25 @@
   border-radius: 999px;
 }
 
-/* ── Responsive ─────────────────────────────────────────────────────────── */
+/* Responsive */
 
 @media (max-width: 600px) {
-  .tr-branch-bar { flex-direction: column; gap: var(--rh-3); }
-  .tr-branch-link { align-self: flex-start; }
+  .tr-branch-bar {
+    flex-direction: column;
+    gap: var(--rh-3);
+  }
+  .tr-branch-link {
+    align-self: flex-start;
+  }
 }
 
 @media (max-width: 520px) {
-  .tr-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+  .tr-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
 }
 
-/* ── Dark Card Theme (Screenshot Match) ─────────────────────────────────── */
+/* Dark card theme */
 
 .tr-grid {
   grid-template-columns: repeat(2, 1fr);
@@ -173,12 +226,14 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .tr-card-dark:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
 }
 
 .tr-banner {
@@ -221,8 +276,13 @@
   margin: 0 0 0.25rem;
   line-height: 1.3;
 }
-.tr-name-dark a { color: inherit; text-decoration: none; }
-.tr-name-dark a:hover { text-decoration: underline; }
+.tr-name-dark a {
+  color: inherit;
+  text-decoration: none;
+}
+.tr-name-dark a:hover {
+  text-decoration: underline;
+}
 
 .tr-focus-dark {
   color: #8b92a5;
@@ -240,8 +300,8 @@
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: #94a3b8;
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 999px;
   align-self: flex-start;
 }
@@ -257,7 +317,7 @@
 .tr-footer-dark {
   margin-top: auto;
   padding-top: 1rem;
-  border-top: 1px solid rgba(255,255,255,0.05);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .tr-link-dark {
@@ -274,5 +334,7 @@
 }
 
 @media (max-width: 520px) {
-  .tr-grid { grid-template-columns: 1fr; }
+  .tr-grid {
+    grid-template-columns: 1fr;
+  }
 }

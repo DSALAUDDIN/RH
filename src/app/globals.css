@@ -25,14 +25,11 @@
   --muted-foreground: var(--blue-700);
 
   /* Branch Segmentation Tokens */
-  --rh-banani: #d97706; /* champagne / warm gold */
-  --rh-banasree: #0284c7; /* teal / clinical blue */
-  --rh-accent: var(--rh-banasree); /* neutral fallback */
+  --rh-banani: #d97706;
+  --rh-banasree: #0284c7;
+  --rh-accent: var(--rh-banasree);
 
-  /* Typography — Premium Font Stack
-     Previously trapped inside [data-branch='banasree'], so every page except
-     Banasree was getting browser-default fonts, broken font-sizes and missing
-     spacing tokens. These must live on :root so they apply everywhere. */
+  /* Typography tokens (global, on :root) */
   --font-family-base: var(--font-body), 'Geist', system-ui, -apple-system, sans-serif;
   --font-family-header: var(--font-display), 'Bricolage Grotesque', system-ui, sans-serif;
   --font-family-ui: var(--font-inter), system-ui, sans-serif;
@@ -105,7 +102,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-  font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1;
+  font-feature-settings:
+    'kern' 1,
+    'liga' 1,
+    'calt' 1;
 }
 
 html {
@@ -139,7 +139,12 @@ button {
 }
 
 /* Typography styles */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-family-header);
   font-weight: 800;
   line-height: 1.1;
@@ -149,12 +154,31 @@ h1, h2, h3, h4, h5, h6 {
   text-wrap: balance;
 }
 
-h1 { font-size: var(--text-5xl); font-weight: 900; letter-spacing: -0.04em; }
-h2 { font-size: var(--text-4xl); font-weight: 800; }
-h3 { font-size: var(--text-3xl); font-weight: 700; }
-h4 { font-size: var(--text-2xl); font-weight: 700; }
-h5 { font-size: var(--text-xl);  font-weight: 600; }
-h6 { font-size: var(--text-lg);  font-weight: 600; }
+h1 {
+  font-size: var(--text-5xl);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+}
+h2 {
+  font-size: var(--text-4xl);
+  font-weight: 800;
+}
+h3 {
+  font-size: var(--text-3xl);
+  font-weight: 700;
+}
+h4 {
+  font-size: var(--text-2xl);
+  font-weight: 700;
+}
+h5 {
+  font-size: var(--text-xl);
+  font-weight: 600;
+}
+h6 {
+  font-size: var(--text-lg);
+  font-weight: 600;
+}
 
 p {
   margin-bottom: var(--space-4);
@@ -271,9 +295,15 @@ p {
     grid-template-columns: 1fr !important;
   }
 
-  h1 { font-size: clamp(2rem, 7vw, 2.8rem); }
-  h2 { font-size: clamp(1.6rem, 6vw, 2.2rem); }
-  h3 { font-size: clamp(1.2rem, 5vw, 1.6rem); }
+  h1 {
+    font-size: clamp(2rem, 7vw, 2.8rem);
+  }
+  h2 {
+    font-size: clamp(1.6rem, 6vw, 2.2rem);
+  }
+  h3 {
+    font-size: clamp(1.2rem, 5vw, 1.6rem);
+  }
 
   .section {
     padding: var(--space-12) 0;
@@ -298,9 +328,15 @@ p {
     padding: 0 1rem;
   }
 
-  h1 { font-size: clamp(1.75rem, 8vw, 2.5rem); }
-  h2 { font-size: clamp(1.45rem, 7vw, 2rem); }
-  h3 { font-size: clamp(1.1rem, 6vw, 1.4rem); }
+  h1 {
+    font-size: clamp(1.75rem, 8vw, 2.5rem);
+  }
+  h2 {
+    font-size: clamp(1.45rem, 7vw, 2rem);
+  }
+  h3 {
+    font-size: clamp(1.1rem, 6vw, 1.4rem);
+  }
 
   .section {
     padding: var(--space-10) 0;
@@ -323,7 +359,21 @@ p {
   padding-top: 72px;
 }
 /* except for the home page and other hero sections that handle their own padding */
-body:has(.hero-v5, .ab-hero, .team-hero, .imp-hero, .srv-hero, .tr-hero, .rh-tourism-root, .sp-root, .reviews-root, .banani-branch-page, .doctor-page, .kids-care-root) .main-content {
+body:has(
+    .hero-v5,
+    .ab-hero,
+    .team-hero,
+    .imp-hero,
+    .srv-hero,
+    .tr-hero,
+    .rh-tourism-root,
+    .sp-root,
+    .reviews-root,
+    .banani-branch-page,
+    .doctor-page,
+    .kids-care-root
+  )
+  .main-content {
   padding-top: 0;
 }
 
@@ -331,7 +381,21 @@ body:has(.hero-v5, .ab-hero, .team-hero, .imp-hero, .srv-hero, .tr-hero, .rh-tou
   .main-content {
     padding-top: 60px;
   }
-  body:has(.hero-v5, .ab-hero, .team-hero, .imp-hero, .srv-hero, .tr-hero, .rh-tourism-root, .sp-root, .reviews-root, .banani-branch-page, .doctor-page, .kids-care-root) .main-content {
+  body:has(
+      .hero-v5,
+      .ab-hero,
+      .team-hero,
+      .imp-hero,
+      .srv-hero,
+      .tr-hero,
+      .rh-tourism-root,
+      .sp-root,
+      .reviews-root,
+      .banani-branch-page,
+      .doctor-page,
+      .kids-care-root
+    )
+    .main-content {
     padding-top: 0;
   }
 }

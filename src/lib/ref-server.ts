@@ -1,8 +1,7 @@
-// src/lib/ref-server.ts — server only.
+// Authoritative booking reference (server only).
 //
-// The authoritative booking reference. Issued from a per-branch database
-// sequence inside a transaction, so two simultaneous submissions cannot receive
-// the same number. `Appointment.ref` is @unique as a second line of defence.
+// Issued from a per-branch counter inside a transaction; `Appointment.ref` is
+// @unique as a second guard against collisions.
 
 import 'server-only';
 import { BranchId } from './branches';
@@ -22,8 +21,8 @@ export function toPrismaBranch(b: BranchId) {
 export async function nextRef(branch: BranchId, when: Date = new Date()): Promise<string> {
   const counters = refCounterModel();
   if (!counters) {
-    // The generated Prisma client predates the RefCounter model — run
-    // `npx prisma generate`. Callers fall back to the email-mode reference.
+    // RefCounter missing from the generated client; callers fall back to the
+    // email-mode reference.
     throw new Error('RefCounter model is not in the generated Prisma client');
   }
 

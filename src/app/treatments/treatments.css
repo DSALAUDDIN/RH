@@ -1,11 +1,11 @@
 .treatments-modern {
-  background: #020617; /* Deep dark background for premium feel (Contrast) */
+  background: #020617;
   color: #f8fafc;
   min-height: 100vh;
   font-family: 'Inter', system-ui, sans-serif;
 }
 
-/* ── Hero & Neuromarketing Elements ── */
+/* Hero elements */
 .tr-hero {
   position: relative;
   background: radial-gradient(circle at 50% -20%, rgba(14, 165, 233, 0.2) 0%, #020617 70%);
@@ -60,7 +60,7 @@
   display: flex;
   justify-content: center;
   gap: clamp(1.5rem, 4vw, 3rem);
-  border-top: 1px solid rgba(255,255,255,0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
   padding-top: 2.5rem;
   flex-wrap: wrap;
 }
@@ -93,7 +93,7 @@
   padding: 2rem 2rem 8rem;
 }
 
-/* ── Search Bar & Concern Buttons ── */
+/* Search Bar & Concern Buttons */
 .tr-search-container {
   max-width: 700px;
   margin: 0 auto 2.5rem;
@@ -120,15 +120,15 @@
 
 .tr-concern-btn {
   /* Using important because the original code used inline styles for white theme */
-  background: rgba(255,255,255,0.05) !important;
+  background: rgba(255, 255, 255, 0.05) !important;
   color: #fff !important;
-  border-color: rgba(255,255,255,0.1) !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
 }
 .tr-concern-btn:hover {
-  background: rgba(255,255,255,0.1) !important;
+  background: rgba(255, 255, 255, 0.1) !important;
 }
 
-/* ── Signature Treatments Bento ── */
+/* Signature Treatments Bento */
 .tr-signature-grid {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
@@ -192,7 +192,7 @@
 .tr-bento-meta {
   display: flex;
   gap: 1.5rem;
-  border-top: 1px solid rgba(255,255,255,0.05);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
   padding-top: 1.5rem;
 }
 
@@ -205,7 +205,7 @@
   gap: 0.5rem;
 }
 
-/* ── Category Accordions ── */
+/* Category Accordions */
 .tr-accordion-wrapper {
   display: flex;
   flex-direction: column;
@@ -250,7 +250,7 @@
   align-items: center;
   justify-content: center;
   color: white;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
 .tr-cat-title {
@@ -267,11 +267,27 @@
   gap: 1rem;
 }
 
+.tr-cat-focus {
+  font-size: 0.85rem;
+  color: rgba(203, 213, 225, 0.72);
+}
+
 .tr-cat-count {
   font-size: 0.75rem;
   font-weight: 700;
   padding: 0.25rem 0.75rem;
   border-radius: 999px;
+  color: #cbd5e1;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+  .tr-cat-meta {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
 }
 
 .tr-treatment-list {
@@ -319,8 +335,19 @@
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-  .tr-hero { padding: calc(var(--nav-height, 80px) + 2rem) 1.5rem 4rem; }
-  .tr-stats-row { gap: 1.5rem; padding-left: 0; }
-  .tr-stat { flex: 0 0 calc(33.333% - 1.5rem); }
-  .tr-cat-info { flex-direction: column; align-items: flex-start; gap: 1rem; }
+  .tr-hero {
+    padding: calc(var(--nav-height, 80px) + 2rem) 1.5rem 4rem;
+  }
+  .tr-stats-row {
+    gap: 1.5rem;
+    padding-left: 0;
+  }
+  .tr-stat {
+    flex: 0 0 calc(33.333% - 1.5rem);
+  }
+  .tr-cat-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
 }

@@ -4,7 +4,6 @@ import { jwtVerify } from 'jose';
 import { cookies } from 'next/headers';
 import { getAuthSecret } from '@/lib/auth-secret';
 
-
 export async function GET() {
   const secret = getAuthSecret();
   if (!secret) {
@@ -17,6 +16,7 @@ export async function GET() {
     });
     return NextResponse.json({ reviews });
   } catch (error) {
+    console.error('[reviews] list failed:', error);
     return NextResponse.json({ error: 'Failed to fetch reviews' }, { status: 500 });
   }
 }
