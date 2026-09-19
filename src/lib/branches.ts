@@ -241,12 +241,12 @@ export const BRANCHES: Record<BranchId, Branch> = {
 
     schemaDescription:
       'Full-service dental hospital in Banasree, Dhaka. In-house master digital lab, a full specialist team on site, coordinated treatment planning. Same clinicians, materials and sterilisation protocol as RH Dental Care Banani.',
-    heroImage: '/assets/branches/banasree/team.webp',
+    heroImage: '/assets/branches/banasree/reception-new.jpg',
     cardImage: '/assets/branches/banasree/reception-new.jpg',
-    ogImage: '/assets/branches/banasree/team.webp',
+    ogImage: '/assets/branches/banasree/reception-new.jpg',
     photos: [
       {
-        src: '/assets/branches/banasree/team.webp',
+        src: '/assets/branches/banasree/reception-new.jpg',
         alt: 'Three clinicians working together around a chair at RH Dental Care Banasree, with the operating light, a vitality monitor and the delivery unit around them.',
         caption:
           'Three clinicians on one case. The specialist team is on site, so a plan that crosses disciplines does not become a series of referrals.',
