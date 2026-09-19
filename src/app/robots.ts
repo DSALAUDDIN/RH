@@ -1,17 +1,21 @@
-import { MetadataRoute } from 'next';
-import { BASE_URL } from '@/lib/metadata';
+import type { MetadataRoute } from 'next';
+import { SITE, absoluteUrl } from '@/config/site';
 
-/* AI answer engines are named explicitly rather than left to the wildcard.
-   The wildcard already permits them, but naming them is what makes the intent
-   legible to anyone auditing the file — and it is where a future decision to
-   exclude one would be recorded. */
-const AI_AGENTS = [
+/** Paths that are never useful in search results. */
+const DISALLOW = ['/api/', '/admin'];
+
+/**
+ * AI search and assistant crawlers, listed explicitly so the policy for each
+ * is visible and can be changed per agent. /_next/ stays crawlable: Googlebot
+ * needs the JS and CSS to render pages.
+ */
+const AI_CRAWLERS = [
   'GPTBot',
   'OAI-SearchBot',
   'ChatGPT-User',
   'ClaudeBot',
   'Claude-User',
-  'anthropic-ai',
+  'Claude-SearchBot',
   'PerplexityBot',
   'Perplexity-User',
   'Google-Extended',
@@ -23,17 +27,12 @@ const AI_AGENTS = [
 ];
 
 export default function robots(): MetadataRoute.Robots {
-  /* /_next/ is deliberately NOT disallowed. Blocking it stops Googlebot
-     fetching the JS and CSS it needs to render the page, and a page Google
-     cannot render is a page it cannot rank. */
-  const disallow = ['/api/', '/admin', '/private/'];
-
   return {
     rules: [
-      { userAgent: '*', allow: '/', disallow },
-      ...AI_AGENTS.map((userAgent) => ({ userAgent, allow: '/', disallow })),
+      { userAgent: '*', allow: '/', disallow: DISALLOW },
+      { userAgent: AI_CRAWLERS, allow: '/', disallow: DISALLOW },
     ],
-    sitemap: `${BASE_URL}/sitemap.xml`,
-    host: BASE_URL,
+    sitemap: absoluteUrl('/sitemap.xml'),
+    host: SITE.url,
   };
 }

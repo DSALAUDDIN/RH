@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
-import { pageMeta } from '@/lib/metadata';
-import JsonLd from '@/components/JsonLd';
-import { physicianSchema, breadcrumbSchema } from '@/lib/schema';
+import { pageMeta } from '@/lib/seo/metadata';
+import JsonLd from '@/components/seo/JsonLd';
+import { physicianSchema, breadcrumbs } from '@/lib/seo/schema';
 import DoctorProfile from '@/components/DoctorProfile';
 import { DOCTORS } from '@/lib/doctors';
 
@@ -9,8 +9,10 @@ const d = DOCTORS['dr-shimia'];
 
 export const metadata: Metadata = pageMeta({
   title: 'Dr. Shimia Binte Taher — Dental Surgeon',
-  description: 'Dental Surgeon at RH Dental Care, Dhaka. Sees patients at both the Banani appointment-only suite and the Banasree flagship hospital.',
+  description:
+    'Dental Surgeon at RH Dental Care, Dhaka. Sees patients at both the Banani appointment-only suite and the Banasree flagship hospital.',
   path: '/dr-shimia',
+  type: 'profile',
   image: d.image ?? undefined,
   imageAlt: d.imageAlt ?? undefined,
 });
@@ -31,11 +33,7 @@ export default function Page() {
             knowsAbout: d.procedures.length ? d.procedures : undefined,
             worksAt: d.postings.map((p) => p.branch),
           }),
-          breadcrumbSchema([
-            { name: 'RH Dental Care', path: '/' },
-            { name: 'Team', path: '/team' },
-            { name: d.name, path: '/dr-shimia' },
-          ]),
+          breadcrumbs({ name: 'Team', path: '/team' }, { name: d.name, path: '/dr-shimia' }),
         ]}
       />
       <DoctorProfile doctor={d} />

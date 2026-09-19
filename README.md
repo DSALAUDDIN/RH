@@ -1,36 +1,66 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# RH Dental Care
 
-## Getting Started
+Website for RH Dental Care, a two-branch dental practice in Dhaka (Banani and Banasree).
+Production: <https://www.rhdentalcare.com>
 
-First, run the development server:
+## Stack
+
+- Next.js 16 (App Router, React 19, TypeScript, Turbopack)
+- Prisma with SQLite (admin, video reviews, optional appointment persistence)
+- Nodemailer for enquiry delivery
+- GSAP and Framer Motion for animation
+- Cloudinary for video hosting
+
+## Getting started
+
+Requirements: Node.js 20.9 or later (see `.nvmrc`).
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+cp .env.example .env.local   # fill in the values you need
+npm ci                       # also runs `prisma generate`
+npm run dev                  # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Scripts
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| Command                 | Purpose                                              |
+| ----------------------- | ---------------------------------------------------- |
+| `npm run dev`           | Development server                                   |
+| `npm run build`         | Production build                                     |
+| `npm start`             | Serve the production build                           |
+| `npm run typecheck`     | TypeScript, no emit                                  |
+| `npm run lint`          | ESLint (Next.js core-web-vitals + TypeScript rules)  |
+| `npm run format`        | Prettier, write                                      |
+| `npm run check`         | Typecheck, lint and format check                     |
+| `npm run seo:audit`     | Technical SEO audit against a running build          |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Project structure
 
-## Learn More
+```
+src/
+  app/                  Routes (App Router). One folder per URL.
+    sitemap.ts          /sitemap.xml, generated from the route manifest
+    robots.ts           /robots.txt
+    manifest.ts         /manifest.webmanifest
+    llms.txt/route.ts   /llms.txt, generated from the route manifest
+  components/           Shared UI
+    seo/JsonLd.tsx      The only component that renders JSON-LD
+    branch/             Branch context, picker and call/WhatsApp CTAs
+  config/site.ts        Site identity: name, canonical origin, locale, IDs
+  lib/
+    seo/metadata.ts     pageMeta(): canonical, hreflang, Open Graph, Twitter
+    seo/schema.ts       schema.org builders with stable @ids
+    seo/routes.ts       Route manifest, redirects, specialty canonicals
+    branches.ts         Branch registry (addresses, phones, hours)
+    doctors.ts          Clinical team
+    treatment-faq.ts    FAQ content for treatment pages
+scripts/seo-audit.mjs   Crawl-based SEO checks, exits non-zero on errors
+docs/                   SEO guide, content gaps, deployment notes
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Documentation
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- [docs/seo.md](docs/seo.md): how SEO is wired and how to add or change pages
+- [docs/content-gaps.md](docs/content-gaps.md): information still needed from the clinic
+- [docs/deployment.md](docs/deployment.md): environment variables and release checklist
+- [CONTRIBUTING.md](CONTRIBUTING.md): conventions for changes

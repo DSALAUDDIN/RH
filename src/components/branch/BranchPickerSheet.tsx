@@ -51,7 +51,7 @@ export default function BranchPickerSheet() {
       const root = modalRef.current;
       if (!root) return;
       const items = Array.from(root.querySelectorAll<HTMLElement>(FOCUSABLE)).filter(
-        (el) => el.offsetParent !== null
+        (el) => el.offsetParent !== null,
       );
       if (!items.length) return;
 
@@ -76,8 +76,7 @@ export default function BranchPickerSheet() {
   }, [isPickerOpen, dismiss]);
 
   const choose = (id: (typeof BRANCH_LIST)[number]['id']) => {
-    // Completes the original intent — the call, message or booking the visitor
-    // was already trying to make — then returns focus.
+    // Complete the pending action, then restore focus to the trigger.
     executePendingAction(id);
     requestAnimationFrame(() => triggerRef.current?.focus?.());
   };
@@ -108,8 +107,8 @@ export default function BranchPickerSheet() {
                 Which branch?
               </h2>
               <p id="branch-sheet-desc" className="branch-sheet-desc">
-                So your call reaches the right reception — and so we can tell you what
-                to expect when you arrive.
+                So your call reaches the right reception — and so we can tell you what to expect
+                when you arrive.
               </p>
             </div>
 

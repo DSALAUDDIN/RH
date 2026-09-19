@@ -21,19 +21,12 @@ export interface BranchCTAProps {
 }
 
 /**
- * The only way the site offers to call, message, book or navigate.
+ * Single entry point for call, WhatsApp, booking and directions CTAs.
  *
- * Two renderings, deliberately:
- *
- *  · Branch known (prop or context) → a real <a href="tel:…"> / <a href="wa.me/…">.
- *    A crawler can read the number, the OS can offer it to a long-press, and
- *    assistive tech announces it as a link. The old version was always a
- *    <button>, so no phone number on the site was machine-readable at all.
- *
- *  · Branch not known → a <button> that opens the picker and completes the
- *    original intent once a branch is chosen. It NEVER falls back to a number.
- *    Routing an unattributed enquiry to Banasree is the bug this work exists to
- *    fix, so there is no default anywhere in this file.
+ * - Branch known (prop or context): renders a real tel:/wa.me anchor, so the
+ *   number is crawlable and accessible.
+ * - Branch unknown: renders a button that opens the branch picker and completes
+ *   the original action after selection. There is no default branch.
  */
 export default function BranchCTA({
   action,
@@ -57,10 +50,7 @@ export default function BranchCTA({
       case 'whatsapp':
         // makeRef() uses Date + Math.random(), so it must NOT be called here.
         // The ref is appended at click time in hrefWithRef / perform.
-        return whatsappUrl(
-          b,
-          `${b.waIntent}${service ? `\nTreatment: ${service}` : ''}`
-        );
+        return whatsappUrl(b, `${b.waIntent}${service ? `\nTreatment: ${service}` : ''}`);
       case 'directions':
         return b.mapLink;
       case 'book':
@@ -74,15 +64,18 @@ export default function BranchCTA({
     const b = BRANCHES[id];
     return whatsappUrl(
       b,
-      `${b.waIntent}${service ? `\nTreatment: ${service}` : ''}\nRef: ${makeRef(id, service)}`
+      `${b.waIntent}${service ? `\nTreatment: ${service}` : ''}\nRef: ${makeRef(id, service)}`,
     );
   };
 
   const eventFor = (): string =>
-    action === 'call' ? 'cta_call'
-    : action === 'whatsapp' ? 'cta_whatsapp'
-    : action === 'book' ? 'booking_start'
-    : 'cta_directions';
+    action === 'call'
+      ? 'cta_call'
+      : action === 'whatsapp'
+        ? 'cta_whatsapp'
+        : action === 'book'
+          ? 'booking_start'
+          : 'cta_directions';
 
   const perform = (id: BranchId) => {
     track(eventFor(), { branch: id, service, action });
@@ -96,7 +89,7 @@ export default function BranchCTA({
 
   const cls = `branch-cta branch-cta-${variant} ${className}`.trim();
 
-  /* ── Branch known: a real link. ── */
+  /* Branch known: a real link */
   if (activeBranch) {
     const external = action === 'whatsapp' || action === 'directions';
     return (
@@ -121,7 +114,7 @@ export default function BranchCTA({
     );
   }
 
-  /* ── No branch resolved ── */
+  /* No branch resolved */
   if (action === 'whatsapp') {
     return (
       <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', ...style }}>

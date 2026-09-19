@@ -17,176 +17,193 @@ import aestheticsImg from '../assets/specialties/aesthetic_new.png';
 import dentalTourismImg from '../assets/specialties/dental_tourism.png';
 
 const clinicsBanners = [
-	{
-		title: 'Precision 3D Dental Imaging',
-		desc: 'The future of dentistry is here. Experience ultra-accurate 360° diagnostics with 90% less radiation than traditional methods. Perfection starts with precision.',
-		image: imagingImg,
-		category: 'Elite Diagnostics',
-		featured: true,
-		slug: '3d-imaging',
-	},
-	{
-		title: 'Orthodontic Braces',
-		desc: 'Align your smile with modern ceramic and invisible solutions. Expert orthodontic care for all ages with lasting, beautiful results.',
-		image: bracesImg,
-		category: 'Orthodontics',
-		featured: false,
-		slug: 'braces',
-	},
-	{
-		title: 'Zirconia Restoration',
-		desc: 'The ultimate biocompatible material for natural-looking strength and flawless aesthetics. Experience the gold standard in dental crowns.',
-		image: zirconiaImg,
-		category: 'Prosthetics',
-		featured: false,
-		slug: 'zirconia',
-	},
-	{
-		title: 'Advanced Implantology',
-		desc: 'Permanent solutions for missing teeth with precision-guided implant surgery and high-end prosthetic integration.',
-		image: implantImg,
-		category: 'Surgical Care',
-		featured: false,
-		slug: 'implants',
-	},
-	{
-		title: 'Microscope Root Canal',
-		desc: 'Elite endodontic therapy using the latest microscopic technology for a completely stress-free and effective treatment.',
-		image: rootCanalImg,
-		category: 'Endodontics',
-		featured: false,
-		slug: 'root-canal',
-	},
-	{
-		title: 'Healthy Gums, Healthy Smile',
-		desc: 'Advanced periodontal care to treat gum diseases and protect your oral health for the long term.',
-		image: gumCareImg,
-		category: 'Periodontics',
-		featured: false,
-		slug: 'gum-care',
-	},
-	{
-		title: 'Kids Dental Care',
-		desc: 'Making dental visits fun, friendly, and fear-free for your child in a safe environment.',
-		image: kidsCareImg,
-		category: 'Pedodontics',
-		featured: false,
-		slug: 'kids-care',
-	},
-	{
-		title: 'Zirconia Veneers',
-		desc: 'Achieve a naturally beautiful, long-lasting, and confident smile with ultra-thin premium zirconia veneers.',
-		image: aestheticsImg,
-		category: 'Aesthetics',
-		featured: true,
-		slug: '/zirconia-veneers',
-	},
-	{
-		title: 'RH Dental Tourism',
-		desc: 'Treatment planned before you fly, scheduled around a short stay in Bangladesh. Airport pickup, lodging and sightseeing support arranged.',
-		image: dentalTourismImg,
-		category: 'Global Travel Care',
-		featured: true,
-		slug: '/dental-tourism',
-	},
+  {
+    title: 'Precision 3D Dental Imaging',
+    desc: 'The future of dentistry is here. Experience ultra-accurate 360° diagnostics with 90% less radiation than traditional methods. Perfection starts with precision.',
+    image: imagingImg,
+    category: 'Elite Diagnostics',
+    featured: true,
+    slug: '/digital-dentistry',
+  },
+  {
+    title: 'Orthodontic Braces',
+    desc: 'Align your smile with modern ceramic and invisible solutions. Expert orthodontic care for all ages with lasting, beautiful results.',
+    image: bracesImg,
+    category: 'Orthodontics',
+    featured: false,
+    slug: '/orthodontics',
+  },
+  {
+    title: 'Zirconia Restoration',
+    desc: 'The ultimate biocompatible material for natural-looking strength and flawless aesthetics. Experience the gold standard in dental crowns.',
+    image: zirconiaImg,
+    category: 'Prosthetics',
+    featured: false,
+    slug: '/zirconia-crown',
+  },
+  {
+    title: 'Advanced Implantology',
+    desc: 'Permanent solutions for missing teeth with precision-guided implant surgery and high-end prosthetic integration.',
+    image: implantImg,
+    category: 'Surgical Care',
+    featured: false,
+    slug: 'implants',
+  },
+  {
+    title: 'Microscope Root Canal',
+    desc: 'Elite endodontic therapy using the latest microscopic technology for a completely stress-free and effective treatment.',
+    image: rootCanalImg,
+    category: 'Endodontics',
+    featured: false,
+    slug: 'root-canal',
+  },
+  {
+    title: 'Healthy Gums, Healthy Smile',
+    desc: 'Advanced periodontal care to treat gum diseases and protect your oral health for the long term.',
+    image: gumCareImg,
+    category: 'Periodontics',
+    featured: false,
+    slug: '/specialties/gum-care',
+  },
+  {
+    title: 'Kids Dental Care',
+    desc: 'Making dental visits fun, friendly, and fear-free for your child in a safe environment.',
+    image: kidsCareImg,
+    category: 'Pedodontics',
+    featured: false,
+    slug: 'kids-care',
+  },
+  {
+    title: 'Zirconia Veneers',
+    desc: 'Achieve a naturally beautiful, long-lasting, and confident smile with ultra-thin premium zirconia veneers.',
+    image: aestheticsImg,
+    category: 'Aesthetics',
+    featured: true,
+    slug: '/zirconia-veneers',
+  },
+  {
+    title: 'RH Dental Tourism',
+    desc: 'Treatment planned before you fly, scheduled around a short stay in Bangladesh. Airport pickup, lodging and sightseeing support arranged.',
+    image: dentalTourismImg,
+    category: 'Global Travel Care',
+    featured: true,
+    slug: '/dental-tourism',
+  },
 ];
 
 const containerVariants: Variants = {
-	hidden: { opacity: 0 },
-	visible: {
-		opacity: 1,
-		transition: { staggerChildren: 0.15, delayChildren: 0.2 },
-	},
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.15, delayChildren: 0.2 },
+  },
 };
 
 const itemVariants: Variants = {
-	hidden: { opacity: 0, y: 40, scale: 0.98 },
-	visible: {
-		opacity: 1,
-		y: 0,
-		scale: 1,
-		transition: { type: 'spring', stiffness: 70, damping: 15 },
-	},
+  hidden: { opacity: 0, y: 40, scale: 0.98 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: { type: 'spring', stiffness: 70, damping: 15 },
+  },
 };
 
 export default function Specialties() {
-	return (
-		<section className="specialties-section">
-			{/* Soft glow at the dark→light transition zone */}
-			<div className="spec-glow" />
+  return (
+    <section className="specialties-section">
+      {/* Soft glow at the dark→light transition zone */}
+      <div className="spec-glow" />
 
-			<div className="specialties-inner">
-				{/* Header — sits in the dark zone, uses white text */}
-				<motion.div
-					className="section-header"
-					initial={{ opacity: 0, y: 60 }}
-					whileInView={{ opacity: 1, y: 0 }}
-					viewport={{ once: true, margin: '-100px' }}
-					transition={{ duration: 1, ease: 'easeOut' }}
-				>
-					<span className="tag">Signature Experience</span>
-					<h2>Top-Ranked Dental Clinic in Dhaka</h2>
-					<p>
-						RH Dental Care provides dental treatment in Bangladesh – including dental implants, braces, and microscope root canal treatment tailored to your smile.
-					</p>
-				</motion.div>
+      <div className="specialties-inner">
+        {/* Header — sits in the dark zone, uses white text */}
+        <motion.div
+          className="section-header"
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-100px' }}
+          transition={{ duration: 1, ease: 'easeOut' }}
+        >
+          <span className="tag">Signature Experience</span>
+          <h2>Top-Ranked Dental Clinic in Dhaka</h2>
+          <p>
+            RH Dental Care provides dental treatment in Bangladesh – including dental implants,
+            braces, and microscope root canal treatment tailored to your smile.
+          </p>
+        </motion.div>
 
-				{/* Bento grid */}
-				<motion.div
-					className="specialties-showcase"
-					variants={containerVariants}
-					initial="hidden"
-					whileInView="visible"
-					viewport={{ once: true, margin: '-50px' }}
-				>
-					{clinicsBanners.map((card, index) => (
-						<motion.div
-							key={card.title}
-							className={`premium-card ${card.featured ? 'featured' : 'standard'}`}
-							variants={itemVariants}
-						>
-							{/* Image — full-width cover, part of card, subtle overlay */}
-							<div className="card-img-wrapper">
-								<Image
-									src={card.image}
-									alt={`${card.title} - Dental Treatment at RH Dental Care Dhaka`}
-									fill
-									loading={card.featured || index < 2 ? 'eager' : 'lazy'}
-									priority={card.featured && index === 0}
-									sizes={card.featured ? '(max-width: 768px) 100vw, 40vw' : '(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw'}
-									className="card-img"
-									style={{ objectFit: 'cover' }}
-								/>
-								<div className="card-overlay" />
-							</div>
+        {/* Bento grid */}
+        <motion.div
+          className="specialties-showcase"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-50px' }}
+        >
+          {clinicsBanners.map((card, index) => (
+            <motion.div
+              key={card.title}
+              className={`premium-card ${card.featured ? 'featured' : 'standard'}`}
+              variants={itemVariants}
+            >
+              {/* Image — full-width cover, part of card, subtle overlay */}
+              <div className="card-img-wrapper">
+                <Image
+                  src={card.image}
+                  alt={`${card.title} - Dental Treatment at RH Dental Care Dhaka`}
+                  fill
+                  loading={card.featured || index < 2 ? 'eager' : 'lazy'}
+                  priority={card.featured && index === 0}
+                  sizes={
+                    card.featured
+                      ? '(max-width: 768px) 100vw, 40vw'
+                      : '(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw'
+                  }
+                  className="card-img"
+                  style={{ objectFit: 'cover' }}
+                />
+                <div className="card-overlay" />
+              </div>
 
-						<div className="card-body">
-							<span className="card-tag">{card.category}</span>
-							<h3>{card.title}</h3>
-							<p>{card.desc}</p>
-							<Link href={card.slug.startsWith('/') ? card.slug : `/${card.slug}`} className="view-link">
-								<span>View {card.title} Details</span>
-								<ArrowRight size={16} className="arrow" />
-							</Link>
-						</div>
-						</motion.div>
-					))}
-				</motion.div>
+              <div className="card-body">
+                <span className="card-tag">{card.category}</span>
+                <h3>{card.title}</h3>
+                <p>{card.desc}</p>
+                <Link
+                  href={card.slug.startsWith('/') ? card.slug : `/${card.slug}`}
+                  className="view-link"
+                >
+                  <span>View {card.title} Details</span>
+                  <ArrowRight size={16} className="arrow" />
+                </Link>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
 
-				{/* Footer CTA — sits on the near-white zone */}
-				<motion.div
-				className="section-footer"
-				initial={{ opacity: 0, y: 30 }}
-				whileInView={{ opacity: 1, y: 0 }}
-				viewport={{ once: true }}
-				transition={{ delay: 0.5 }}
-			>
-				<Link href="/treatments" className="explore-btn" style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '0.75rem' }}>
-					Explore All Treatments
-					<ArrowRight size={20} />
-				</Link>
-			</motion.div>
-			</div>
-		</section>
-	);
+        {/* Footer CTA — sits on the near-white zone */}
+        <motion.div
+          className="section-footer"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.5 }}
+        >
+          <Link
+            href="/treatments"
+            className="explore-btn"
+            style={{
+              textDecoration: 'none',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '0.75rem',
+            }}
+          >
+            Explore All Treatments
+            <ArrowRight size={20} />
+          </Link>
+        </motion.div>
+      </div>
+    </section>
+  );
 }

@@ -1,4 +1,6 @@
-.rh-testimonials { background: var(--rh-surface-sunk); }
+.rh-testimonials {
+  background: var(--rh-surface-sunk);
+}
 .rh-tm-title {
   font-family: var(--rh-font-display);
   font-size: var(--rh-step-3);
@@ -6,7 +8,11 @@
   color: var(--rh-ink);
   margin: 0 0 var(--rh-4);
 }
-.rh-tm-body { color: var(--rh-ink-soft); max-width: var(--rh-measure); margin: 0 0 var(--rh-4); }
+.rh-tm-body {
+  color: var(--rh-ink-soft);
+  max-width: var(--rh-measure);
+  margin: 0 0 var(--rh-4);
+}
 .rh-tm-trust {
   color: var(--rh-ink);
   font-family: var(--rh-font-display);
@@ -16,14 +22,42 @@
   max-width: var(--rh-measure);
 }
 .rh-tm-list {
-  list-style: none; margin: 0; padding: 0;
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--rh-4);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--rh-4);
 }
-.rh-tm-card { padding: var(--rh-6); }
-.rh-tm-card[data-branch='banani'] { --rh-accent: var(--rh-brass); }
-.rh-tm-card[data-branch='banasree'] { --rh-accent: var(--rh-sage-deep); }
-.rh-tm-card blockquote { margin: 0 0 var(--rh-4); }
-.rh-tm-card blockquote p { margin: 0; color: var(--rh-ink); line-height: var(--rh-lead); }
-.rh-tm-card footer { display: flex; justify-content: space-between; gap: var(--rh-3); align-items: baseline; }
-.rh-tm-card cite { font-style: normal; font-weight: 600; color: var(--rh-ink); }
-.rh-tm-card footer a { font-size: var(--rh-step--1); color: var(--rh-accent); }
+.rh-tm-card {
+  padding: var(--rh-6);
+}
+.rh-tm-card[data-branch='banani'] {
+  --rh-accent: var(--rh-brass);
+}
+.rh-tm-card[data-branch='banasree'] {
+  --rh-accent: var(--rh-sage-deep);
+}
+.rh-tm-card blockquote {
+  margin: 0 0 var(--rh-4);
+}
+.rh-tm-card blockquote p {
+  margin: 0;
+  color: var(--rh-ink);
+  line-height: var(--rh-lead);
+}
+.rh-tm-card footer {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--rh-3);
+  align-items: baseline;
+}
+.rh-tm-card cite {
+  font-style: normal;
+  font-weight: 600;
+  color: var(--rh-ink);
+}
+.rh-tm-card footer a {
+  font-size: var(--rh-step--1);
+  color: var(--rh-accent);
+}

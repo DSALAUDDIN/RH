@@ -1,53 +1,39 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { BRANCHES, SHARED_TRUST } from '@/lib/branches';
-import { breadcrumbSchema } from '@/lib/schema';
-import { pageMeta } from '@/lib/metadata';
-import JsonLd from '@/components/JsonLd';
+import { BRANCHES } from '@/lib/branches';
+import { breadcrumbs } from '@/lib/seo/schema';
+import { pageMeta } from '@/lib/seo/metadata';
+import JsonLd from '@/components/seo/JsonLd';
 import FAQ from '@/components/FAQ';
 import TeamRoster from '@/components/TeamRoster';
 import ReviewBadge from '@/components/ReviewBadge';
 import BranchCTA from '@/components/branch/BranchCTA';
 import banasreeFaq from './faq';
 import './banasree.css';
+import EditorialNote from '@/components/EditorialNote';
 
 const b = BRANCHES.banasree;
 
 export const metadata: Metadata = pageMeta({
   title: 'Banasree Flagship Dental Hospital',
   description:
-    'Full-service dental hospital on Block C, Banasree, Dhaka. In-house master digital lab, the full specialist team on site, published prices and 0% EMI.',
+    'Full-service dental hospital on Block C, Banasree, Dhaka. In-house master digital lab, the full specialist team on site, coordinated treatment planning.',
   path: '/banasree',
 });
-
-/* TODO(client): the published price list. This is the whole point of the
-   Banasree positioning — "everything under one roof, prices published up front"
-   — and it is the one thing the page cannot fake. Supply treatment name, price,
-   and what each price includes, and this table fills itself. Nothing is invented
-   in the meantime. */
-const PRICE_LIST: { treatment: string; price: string; includes: string }[] = [];
 
 export default function BanasreePage() {
   return (
     <div className="bs rh-scope" data-branch="banasree">
       <JsonLd
-        /* The branch entity itself is declared once, in the root layout's site
-           graph. Re-declaring it here produced two nodes sharing one @id — the
-           exact defect docs/audit-report.md P1-5 recorded. Only the breadcrumb
-           is page-specific. */
-        nodes={[
-          breadcrumbSchema([
-            { name: 'RH Dental Care', path: '/' },
-            { name: 'Banasree', path: '/banasree' },
-          ]),
-        ]}
+        /*
+         * The branch entity is part of the site graph (root layout); only the
+         * breadcrumb is page-specific.
+         */
+        nodes={[breadcrumbs({ name: 'Banasree', path: '/banasree' })]}
       />
 
-      {/* ── 1. Hero ──────────────────────────────────────────────────────
-          The lead image is the team working, not an empty room: Banasree's
-          promise is that the specialists are on site. Cropped — no written
-          consent for identifiable patients, so no patient appears. */}
+      {/* Hero */}
       <header className="bs-hero">
         <div className="bs-hero-media">
           <Image
@@ -67,18 +53,27 @@ export default function BanasreePage() {
             Everything a treatment plan needs, <em>in one building</em>.
           </h1>
           <p className="bs-lede">
-            Banasree is the flagship: the bigger setup, with the in-house master
-            digital lab, the full specialist team on site and the published price
-            list. Cases that run across several disciplines — surgery, endodontics,
-            orthodontics, prosthetics — are handled here without sending you
-            between addresses.
+            Banasree is the flagship: the bigger setup, with the in-house master digital lab, the
+            full specialist team on site. Cases that run across several
+            disciplines — surgery, endodontics, orthodontics, prosthetics — are handled here without
+            sending you between addresses.
           </p>
 
           <div className="bs-actions">
-            <BranchCTA action="call" branch="banasree" variant="primary" className="rh-btn rh-btn-primary">
+            <BranchCTA
+              action="call"
+              branch="banasree"
+              variant="primary"
+              className="rh-btn rh-btn-primary"
+            >
               Call {b.phoneDisplay}
             </BranchCTA>
-            <BranchCTA action="whatsapp" branch="banasree" variant="ghost" className="rh-btn rh-btn-ghost">
+            <BranchCTA
+              action="whatsapp"
+              branch="banasree"
+              variant="ghost"
+              className="rh-btn rh-btn-ghost"
+            >
               Book on WhatsApp
             </BranchCTA>
           </div>
@@ -87,13 +82,15 @@ export default function BanasreePage() {
         </div>
       </header>
 
-      {/* ── 1b. The rooms ────────────────────────────────────────────────── */}
+      {/* The rooms */}
       <section className="bs-rooms rh-section" aria-labelledby="bs-rooms-t">
         <div className="rh-container">
-          <h2 id="bs-rooms-t" className="bs-h2">Inside the hospital</h2>
+          <h2 id="bs-rooms-t" className="bs-h2">
+            Inside the hospital
+          </h2>
           <p className="bs-body bs-rooms-lede">
-            Photographed on working days. No patient appears in any of these —
-            we do not publish a face without written consent.
+            Photographed on working days. No patient appears in any of these — we do not publish a
+            face without written consent.
           </p>
         </div>
 
@@ -116,152 +113,105 @@ export default function BanasreePage() {
         </div>
       </section>
 
-      {/* ── 2. Who it is for ─────────────────────────────────────────────── */}
+      {/* Who it is for */}
       <section className="bs-section rh-section" aria-labelledby="bs-for">
         <div className="rh-container bs-two">
           <div>
-            <h2 id="bs-for" className="bs-h2">Who this branch is for</h2>
+            <h2 id="bs-for" className="bs-h2">
+              Who this branch is for
+            </h2>
             <p className="bs-body">{b.audience}.</p>
             <p className="bs-body">
-              {b.promise} A family can be seen across one afternoon rather than four
-              separate trips, and a multi-stage plan can be costed in full at the
-              start instead of a stage at a time.
+              {b.promise} A family can be seen across one afternoon rather than four separate trips,
+              and each stage of a multi-visit plan can be coordinated with the same team.
             </p>
             <p className="bs-body">
-              If what you want is an appointment-only slot with the room to yourself,
-              that is the{' '}
-              <Link href="/banani" className="bs-link">Banani suite</Link>.
+              If what you want is an appointment-only slot with the room to yourself, that is the{' '}
+              <Link href="/banani" className="bs-link">
+                Banani suite
+              </Link>
+              .
             </p>
           </div>
 
           <ul className="bs-facts">
             {b.facilities.map((f) => (
-              <li key={f} className="bs-fact">{f}</li>
+              <li key={f} className="bs-fact">
+                {f}
+              </li>
             ))}
-            <li className="bs-fact">Published price list — see below</li>
+
           </ul>
         </div>
       </section>
 
-      {/* ── 3. The lab ───────────────────────────────────────────────────── */}
+      {/* The lab */}
       <section className="bs-lab rh-section" aria-labelledby="bs-lab-t">
         <div className="rh-container">
-          <h2 id="bs-lab-t" className="bs-h2">The lab is in the building</h2>
+          <h2 id="bs-lab-t" className="bs-h2">
+            The lab is in the building
+          </h2>
           <p className="bs-body">
-            Most clinics send a crown out to a commercial laboratory and wait for it
-            to come back. At Banasree the scan, the design and the milling happen on
-            site, so the gap between your preparation appointment and your fitting
-            appointment is a matter of the lab&rsquo;s queue rather than a courier
-            round-trip — and a contact point or a shade that needs correcting can be
-            adjusted while you are still in the building.
+            Most clinics send a crown out to a commercial laboratory and wait for it to come back.
+            At Banasree the scan, the design and the milling happen on site, so the gap between your
+            preparation appointment and your fitting appointment is a matter of the lab&rsquo;s
+            queue rather than a courier round-trip — and a contact point or a shade that needs
+            correcting can be adjusted while you are still in the building.
           </p>
-          <p className="bs-body bs-todo">
-            TODO(client): typical turnaround in days for a single crown, and the
-            make of the mill and the intraoral scanner. Naming the equipment is what
-            makes this section citable; &ldquo;advanced technology&rdquo; is not.
-          </p>
+          <EditorialNote>
+            <p className="bs-body bs-todo">
+              Pending: single-crown turnaround (days); mill and intraoral scanner models.
+            </p>
+          </EditorialNote>
         </div>
       </section>
 
-      {/* ── 4. Prices ────────────────────────────────────────────────────── */}
-      <section className="bs-pricing rh-section" id="pricing" aria-labelledby="bs-price-t">
-        <div className="rh-container">
-          <h2 id="bs-price-t" className="bs-h2">Published prices</h2>
-          <p className="bs-body">
-            Banasree publishes what treatments cost so you can plan before you book.
-            Prices are for the treatment as described; anything your examination
-            turns up that changes the plan is quoted before it is started, never
-            after.
-          </p>
+      <TeamRoster
+        branch="banasree"
+        intro="The full team is on site through the afternoon and evening session, so a plan that crosses disciplines does not become a series of referrals."
+      />
 
-          {PRICE_LIST.length > 0 ? (
-            <div className="bs-table-wrap">
-              <table className="bs-table">
-                <caption className="bs-table-caption">
-                  RH Dental Care Banasree — published treatment prices
-                </caption>
-                <thead>
-                  <tr>
-                    <th scope="col">Treatment</th>
-                    <th scope="col">Price</th>
-                    <th scope="col">What it includes</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {PRICE_LIST.map((r) => (
-                    <tr key={r.treatment}>
-                      <th scope="row">{r.treatment}</th>
-                      <td className="bs-price">{r.price}</td>
-                      <td>{r.includes}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          ) : (
-            <div className="rh-niche bs-price-note">
-              <p>
-                <strong>TODO(client):</strong> the published price list. This is the
-                single most important missing item on the site — it is the whole
-                Banasree promise, and it is the page competitors win on. Supply
-                treatment name, price and what each price includes and this table
-                renders itself. No figures are invented in the meantime.
-              </p>
-            </div>
-          )}
-
-          <h3 className="bs-h3">0% EMI</h3>
-          <p className="bs-body">
-            Treatment plans can be spread over interest-free monthly instalments.
-          </p>
-          <p className="bs-body bs-todo">
-            TODO(client): which cards or lenders the EMI runs through, the minimum
-            treatment value, and the tenures available.
-          </p>
-        </div>
-      </section>
-
-      <TeamRoster branch="banasree" intro='The full team is on site through the afternoon and evening session, so a plan that crosses disciplines does not become a series of referrals.' />
-
-      {/* ── 5. Parity ────────────────────────────────────────────────────── */}
-      <section className="bs-parity rh-section" aria-labelledby="bs-parity-t">
-        <div className="rh-container">
-          <h2 id="bs-parity-t" className="bs-h2">The care is the same at both branches</h2>
-          <p className="bs-body bs-parity-line">{SHARED_TRUST}</p>
-          <p className="bs-body">
-            Banasree is not the cut-down option. It is the bigger setup — more chairs,
-            more disciplines, the lab. Banani costs more because its schedule keeps
-            one room and one clinician on your appointment alone, which is a
-            difference in setting, not in dentistry.
-          </p>
-          <Link href="/banani" className="rh-btn rh-btn-ghost bs-parity-cta">
-            See the Banani suite
-          </Link>
-        </div>
-      </section>
-
-      {/* ── 6. Visit ─────────────────────────────────────────────────────── */}
+      {/* Visit */}
       <section className="bs-visit rh-section" id="book" aria-labelledby="bs-visit-t">
         <div className="rh-container bs-two">
           <div>
-            <h2 id="bs-visit-t" className="bs-h2">Booking and getting here</h2>
+            <h2 id="bs-visit-t" className="bs-h2">
+              Booking and getting here
+            </h2>
             <address className="bs-address">{b.address}</address>
             {b.hoursDisplay ? (
-              <p className="bs-body"><strong>Hours:</strong> {b.hoursDisplay}</p>
-            ) : (
-              <p className="bs-body bs-todo">
-                TODO(client): confirm opening days and hours for this branch.
+              <p className="bs-body">
+                <strong>Hours:</strong> {b.hoursDisplay}
               </p>
+            ) : (
+              <EditorialNote>
+                <p className="bs-body bs-todo">Pending: opening days and hours.</p>
+              </EditorialNote>
             )}
 
             <div className="bs-actions">
-              <BranchCTA action="call" branch="banasree" variant="primary" className="rh-btn rh-btn-primary">
+              <BranchCTA
+                action="call"
+                branch="banasree"
+                variant="primary"
+                className="rh-btn rh-btn-primary"
+              >
                 Call {b.phoneDisplay}
               </BranchCTA>
-              <BranchCTA action="whatsapp" branch="banasree" variant="ghost" className="rh-btn rh-btn-ghost">
+              <BranchCTA
+                action="whatsapp"
+                branch="banasree"
+                variant="ghost"
+                className="rh-btn rh-btn-ghost"
+              >
                 WhatsApp
               </BranchCTA>
-              <BranchCTA action="directions" branch="banasree" variant="ghost" className="rh-btn rh-btn-ghost">
+              <BranchCTA
+                action="directions"
+                branch="banasree"
+                variant="ghost"
+                className="rh-btn rh-btn-ghost"
+              >
                 Directions
               </BranchCTA>
             </div>

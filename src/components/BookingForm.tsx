@@ -7,16 +7,12 @@ import { track } from '@/lib/analytics';
 import './BookingForm.css';
 
 /**
- * One form, two modes, driven by branch.bookingMode:
+ * Appointment request form. Mode follows `branch.bookingMode`:
+ * - 'slots' (Banasree): requested date and time.
+ * - 'callback' (Banani): no time field; the suite calls back to confirm.
  *
- *   'slots'    (Banasree) — a requested date and time, confirmed immediately.
- *   'callback' (Banani)   — no time field; the request goes to the suite and
- *                           someone calls back to confirm.
- *
- * The branch is REQUIRED. There is no default and nothing is inferred: the
- * server rejects a submission without one, and the form will not let you send
- * one either. That is the point of the whole exercise — reception has to be able
- * to tell which clinic an enquiry is for.
+ * A branch is required on both client and server so every enquiry is
+ * attributable to a clinic.
  */
 type State =
   | { kind: 'idle' }
@@ -100,13 +96,17 @@ export default function BookingForm({ lockBranch }: { lockBranch?: BranchId }) {
 
   return (
     <form className="bf rh-panel" onSubmit={onSubmit} data-branch={branch ?? undefined} noValidate>
-      {/* ── Branch: required, no default ── */}
+      {/* Branch: required, no default */}
       {!lockBranch && (
         <fieldset className="bf-branch">
           <legend>Which branch?</legend>
           <div className="bf-branch-options">
             {BRANCH_LIST.map((b) => (
-              <label key={b.id} className={`bf-branch-opt ${branch === b.id ? 'is-on' : ''}`} data-branch={b.id}>
+              <label
+                key={b.id}
+                className={`bf-branch-opt ${branch === b.id ? 'is-on' : ''}`}
+                data-branch={b.id}
+              >
                 <input
                   type="radio"
                   name="branch"
@@ -141,19 +141,34 @@ export default function BookingForm({ lockBranch }: { lockBranch?: BranchId }) {
         <div className="bf-field">
           <label htmlFor={`${uid}-name`}>Your name</label>
           <input id={`${uid}-name`} name="name" autoComplete="name" required />
-          {state.kind === 'error' && state.errors?.name && <p className="bf-err">{state.errors.name}</p>}
+          {state.kind === 'error' && state.errors?.name && (
+            <p className="bf-err">{state.errors.name}</p>
+          )}
         </div>
 
         <div className="bf-field">
           <label htmlFor={`${uid}-phone`}>Mobile number</label>
-          <input id={`${uid}-phone`} name="phone" type="tel" inputMode="tel" autoComplete="tel" required />
-          {state.kind === 'error' && state.errors?.phone && <p className="bf-err">{state.errors.phone}</p>}
+          <input
+            id={`${uid}-phone`}
+            name="phone"
+            type="tel"
+            inputMode="tel"
+            autoComplete="tel"
+            required
+          />
+          {state.kind === 'error' && state.errors?.phone && (
+            <p className="bf-err">{state.errors.phone}</p>
+          )}
         </div>
 
         <div className="bf-field">
-          <label htmlFor={`${uid}-email`}>Email <span className="bf-opt">optional</span></label>
+          <label htmlFor={`${uid}-email`}>
+            Email <span className="bf-opt">optional</span>
+          </label>
           <input id={`${uid}-email`} name="email" type="email" autoComplete="email" />
-          {state.kind === 'error' && state.errors?.email && <p className="bf-err">{state.errors.email}</p>}
+          {state.kind === 'error' && state.errors?.email && (
+            <p className="bf-err">{state.errors.email}</p>
+          )}
         </div>
 
         <div className="bf-field">
@@ -161,7 +176,9 @@ export default function BookingForm({ lockBranch }: { lockBranch?: BranchId }) {
           <select id={`${uid}-treatment`} name="treatment" defaultValue="">
             <option value="">Not sure yet</option>
             {(branch ? BRANCHES[branch].services : BRANCHES.banasree.services).map((s) => (
-              <option key={s} value={s}>{s}</option>
+              <option key={s} value={s}>
+                {s}
+              </option>
             ))}
             <option value="Pain or emergency">Pain or emergency</option>
           </select>
@@ -171,21 +188,27 @@ export default function BookingForm({ lockBranch }: { lockBranch?: BranchId }) {
           <div className="bf-field bf-span">
             <label htmlFor={`${uid}-when`}>Preferred date and time</label>
             <input id={`${uid}-when`} name="scheduledAt" type="datetime-local" />
-            <p className="bf-hint">
-              We will confirm this slot or offer the nearest one.
-            </p>
+            <p className="bf-hint">We will confirm this slot or offer the nearest one.</p>
           </div>
         )}
 
         <div className="bf-field bf-span">
-          <label htmlFor={`${uid}-msg`}>Anything we should know <span className="bf-opt">optional</span></label>
+          <label htmlFor={`${uid}-msg`}>
+            Anything we should know <span className="bf-opt">optional</span>
+          </label>
           <textarea id={`${uid}-msg`} name="message" rows={4} />
         </div>
       </div>
 
-      {state.kind === 'error' && !state.errors?.branch && <p className="bf-err bf-err-top">{state.message}</p>}
+      {state.kind === 'error' && !state.errors?.branch && (
+        <p className="bf-err bf-err-top">{state.message}</p>
+      )}
 
-      <button type="submit" className="rh-btn rh-btn-primary bf-submit" disabled={state.kind === 'sending' || !branch}>
+      <button
+        type="submit"
+        className="rh-btn rh-btn-primary bf-submit"
+        disabled={state.kind === 'sending' || !branch}
+      >
         {state.kind === 'sending'
           ? 'Sending…'
           : mode === 'callback'
@@ -193,9 +216,7 @@ export default function BookingForm({ lockBranch }: { lockBranch?: BranchId }) {
             : 'Request this appointment'}
       </button>
 
-      <p className="bf-note">
-        Your details go to the branch you chose, and nowhere else.
-      </p>
+      <p className="bf-note">Your details go to the branch you chose, and nowhere else.</p>
     </form>
   );
 }

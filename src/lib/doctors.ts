@@ -1,34 +1,20 @@
-// src/lib/doctors.ts
+// Clinical team data.
 //
-// The clinical team, as facts.
+// Two tiers:
+// - Full profile (Dr. Hasan, Dr. Shimia): dedicated page, verified
+//   qualifications and BMDC numbers, full Physician schema.
+// - Roster entry (everyone else): name, branch and hours only. Emits a minimal
+//   Physician node; no unverified titles, specialties or registration numbers.
 //
-// TWO TIERS, deliberately:
-//
-//  · FULL PROFILE — Dr. Hasan and Dr. Shimia. They have their own pages,
-//    confirmed qualifications and BMDC numbers, and a full Physician schema.
-//
-//  · ROSTER ENTRY — everyone else. The client supplied names, branches and, for
-//    some, working hours. Nothing else. So nothing else is published: no
-//    invented job titles, no guessed specialties, no BMDC numbers. A roster
-//    entry still emits a Physician node carrying the name and the affiliation,
-//    which is truthful and useful to the knowledge graph, but claims nothing
-//    that has not been confirmed.
-//
-// TODO(client) — to turn a roster entry into a full profile, supply per person:
-//   BMDC registration number · degrees and awarding institutions · clinical
-//   focus · a photograph. Then move them into DOCTORS below.
-//
-// CORRECTION TO docs/audit-report.md §6: BMDC 5169 and 8496 are not two numbers
-// for one person — 5169 is Dr. Hasan and 8496 is Dr. Shimia, consistently. The
-// real defect was that the old /dr-hasan page printed 8496 (Dr. Shimia's number)
-// under Dr. Hasan's name.
+// To promote a roster entry, add BMDC number, degrees, clinical focus and a
+// portrait, then move it into DOCTORS.
 
 import type { BranchId } from './branches';
 
 /** Where and when a clinician sits. */
 export interface Posting {
   branch: BranchId;
-  /** e.g. '9:00 am – 2:00 pm'. Undefined when the client did not specify. */
+  /** e.g. '9:00 am – 2:00 pm'. Undefined when not specified. */
   hours?: string;
   /** e.g. 'Saturday, Monday, Wednesday'. Undefined when not specified. */
   days?: string;
@@ -55,17 +41,14 @@ export interface Clinician {
   imageAlt: string | null;
 }
 
-/* ── Full profiles ─────────────────────────────────────────────────────── */
+/* Full profiles */
 
 export const DOCTORS: Record<string, Clinician> = {
   'dr-hasan': {
     slug: 'dr-hasan',
     name: 'Dr. B.M. Rafiqul Hasan',
     fullName: 'Dr. B.M. Rafiqul Hasan (Mehedi)',
-    postings: [
-      { branch: 'banani', hours: '9:00 am – 2:00 pm' },
-      { branch: 'banasree' },
-    ],
+    postings: [{ branch: 'banani', hours: '9:00 am – 2:00 pm' }, { branch: 'banasree' }],
     bmdc: '5169',
     role: 'Chief Consultant, Oral & Dental Surgeon',
     qualifications: [
@@ -122,23 +105,12 @@ export const DOCTORS: Record<string, Clinician> = {
       'She is a Senior Lecturer at MH Samorita Medical College & Dental Unit.',
     ],
     image: '/assets/dr_shimia_flyer.jpeg',
-    imageAlt: 'Dr. Shimia Binte Taher, Senior Dental Surgeon at RH Dental Care, in a white clinical coat.',
+    imageAlt:
+      'Dr. Shimia Binte Taher, Senior Dental Surgeon at RH Dental Care, in a white clinical coat.',
   },
 };
 
-/* ── Roster ────────────────────────────────────────────────────────────────
-   Names, titles, qualifications, BMDC numbers and working days below are read
-   off RH Dental Care's own clinician flyers, which are in the repository at
-   src/assets/doctors/*.jpeg. That is the same evidential standard as Dr. Hasan's
-   BMDC 5169, which came from src/app/team/page.tsx — the clinic's own published
-   material, not something I inferred.
-
-   TODO(client): confirm each row against the BMDC register before launch. A
-   flyer is marketing artwork; it can be out of date, and a wrong registration
-   number on a medical site is the kind of error that costs more than a blank.
-
-   TWO THINGS I COULD NOT RESOLVE — see the notes at the end of this file.
-   ─────────────────────────────────────────────────────────────────────────*/
+/* Roster (sourced from clinic flyers; verify BMDC numbers against the register) */
 
 interface RosterInput {
   name: string;
@@ -170,9 +142,7 @@ function rosterEntry(i: RosterInput): Clinician {
 const P = '/assets/team';
 
 /** Banasree's afternoon/evening session, as printed on the flyers. */
-const BSR = (days: string, hours: string): Posting[] => [
-  { branch: 'banasree', days, hours },
-];
+const BSR = (days: string, hours: string): Posting[] => [{ branch: 'banasree', days, hours }];
 
 export const ROSTER: Clinician[] = [
   rosterEntry({
@@ -228,11 +198,8 @@ export const ROSTER: Clinician[] = [
     name: 'Dr. Nabil Rahaman',
     role: 'Consultant Orthodontist',
     qualifications: ['FCPS', 'BDS'],
-    // TODO(client): Dr. Nabil's flyer is the only one with no BMDC number on it.
-    // TODO(client): The only image supplied (nabil.webp) is a social-media
-    //   appointment-booking card, not a headshot — the right half is a scheduling
-    //   UI that renders visibly in the card. Replaced with initials until a clean
-    //   portrait is provided.
+    // TODO(content): BMDC number and a clean headshot for Dr. Nabil (initials
+    // are rendered until then).
     bmdc: null,
     speciality: 'Orthodontics',
     postings: BSR('Saturday', '3:30 pm – 9:00 pm'),
@@ -249,7 +216,7 @@ export const ROSTER: Clinician[] = [
     image: `${P}/shaheen.png`,
   }),
 
-  // ── No flyer in the repository: name and branch only. ──
+  // Name and branch only
   rosterEntry({
     name: 'Dr. Tonima',
     role: 'Dental Surgeon',
@@ -265,7 +232,7 @@ export const ROSTER: Clinician[] = [
     postings: [{ branch: 'banasree' }],
   }),
 
-  // ── Both branches ──
+  // Both branches
   rosterEntry({
     name: 'Dr. Jeamima Tabassum Barsha',
     role: 'Oral & Dental Surgeon',
@@ -279,14 +246,13 @@ export const ROSTER: Clinician[] = [
     image: `${P}/Barsha.jpeg`,
   }),
 
-  // ── Banani ──
+  // Banani
   rosterEntry({
     name: 'Dr. Monisha Haque Hreedy',
     role: 'Oral & Dental Surgeon',
     qualifications: ['BDS (DU)'],
     bmdc: '17168',
-    // TODO(client): her flyer prints the Banasree address and these Banasree
-    // hours, but your roster places her at Banani. Which is current?
+    // TODO(content): confirm current branch (flyer says Banasree, roster says Banani).
     postings: [{ branch: 'banani' }],
     image: `${P}/Hreedy.jpeg`,
   }),
@@ -308,31 +274,7 @@ export const ROSTER: Clinician[] = [
   }),
 ];
 
-/* ═══ UNRESOLVED — please answer these two ═══════════════════════════════════
-
- 1. "Dr. Nishat" and "Dr. Tamanna" are numbers 4 and 7 on your Banasree list, as
-    two separate people. The repository holds ONE flyer, for "Dr. Nishat Tamanna
-    Alam" (BMDC 9245). Either that is one person you listed twice, or there is a
-    second clinician with no flyer. I have entered ONE person. If there are two,
-    send the missing one's details.
-
- 2. Dr. Hreedy and Dr. Barsha appear on your BANANI list, but both their flyers
-    print the Banasree address, phone and hours. I have followed your list for
-    the branch and dropped the flyer hours for Hreedy. Confirm.
-
- Also outstanding:
-  · No flyer for Dr. Tonima, Dr. Noton, Dr. Mim or Dr. Nusrat — they render as
-    an initial, with no qualifications shown. Send details and photographs.
-  · Dr. Asma (src/assets/Doctor_List/Asma.png) and Prof. Dr. Md. Shahidul Islam
-    Shaheen (src/assets/doctors/dr_shaheen.png, previously listed on /team as
-    "Clinical Advisor & On-Call Specialist") are NOT on your roster and are no
-    longer rendered anywhere. Have they left, or were they omitted by mistake?
-
- STRONG LEAD ON THE OPENING-HOURS TODO: every Banasree flyer shows a session
- between 3:30 pm and 10:00 pm, and your Banani list runs 9:00 am – 2:00 pm and
- 4:30 pm – 10:00 pm. That is consistent enough to publish once you confirm it —
- which would close one of the four items still blocking launch.
- ═══════════════════════════════════════════════════════════════════════════ */
+/* Open roster questions are tracked in docs/content-gaps.md. */
 
 /** Everyone, full profiles first. */
 export const TEAM: Clinician[] = [...Object.values(DOCTORS), ...ROSTER];

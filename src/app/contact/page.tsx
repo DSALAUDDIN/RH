@@ -5,10 +5,12 @@ import BranchCTA from '@/components/branch/BranchCTA';
 import BookingForm from '@/components/BookingForm';
 import ReviewBadge from '@/components/ReviewBadge';
 import './contact.css';
+import EditorialNote from '@/components/EditorialNote';
 
-/* /contact is a hub, not a third clinic. Its job is to route you to the right
-   branch page and to take a booking that is attributable to one of them.
-   Every number here comes from src/lib/branches.ts — there are no literals. */
+/*
+ * /contact routes visitors to a branch and takes a branch-attributed booking.
+ * All contact details come from src/lib/branches.ts.
+ */
 export default function ContactPage() {
   return (
     <div className="ct rh-scope">
@@ -16,10 +18,7 @@ export default function ContactPage() {
         <div className="rh-container">
           <h1 className="ct-h1">Two clinics. Choose the one that suits you.</h1>
           <p className="ct-lede">
-            They are not a better one and a cheaper one. They are a small
-            appointment-only suite and a full-service hospital, run by the same
-            clinical team — so the question is how you want to be seen, not what
-            standard of dentistry you want.
+            Choose an appointment-only private suite in Banani or a full-service hospital in Banasree, both run by the same clinical team.
           </p>
           <p className="ct-trust">{SHARED_TRUST}</p>
         </div>
@@ -27,7 +26,9 @@ export default function ContactPage() {
 
       <section className="ct-branches rh-section" aria-labelledby="ct-branches-t">
         <div className="rh-container">
-          <h2 id="ct-branches-t" className="ct-h2">The branches</h2>
+          <h2 id="ct-branches-t" className="ct-h2">
+            The branches
+          </h2>
 
           <div className="ct-grid">
             {BRANCH_LIST.map((b) => (
@@ -43,7 +44,6 @@ export default function ContactPage() {
                   />
                 ) : (
                   <div className="ct-card-noimg">
-                    {/* TODO(client): photographs of this branch. */}
                     <span>{b.shortName}</span>
                   </div>
                 )}
@@ -65,7 +65,9 @@ export default function ContactPage() {
                   {b.hoursDisplay ? (
                     <p className="ct-card-hours">{b.hoursDisplay}</p>
                   ) : (
-                    <p className="ct-card-todo">TODO(client): opening hours.</p>
+                    <EditorialNote>
+                      <p className="ct-card-todo">Pending: opening hours.</p>
+                    </EditorialNote>
                   )}
 
                   <ReviewBadge branch={b.id} className="ct-card-review" />
@@ -95,12 +97,13 @@ export default function ContactPage() {
       <section className="ct-book rh-section" id="book" aria-labelledby="ct-book-t">
         <div className="rh-container ct-book-inner">
           <div>
-            <h2 id="ct-book-t" className="ct-h2">Or send a request</h2>
+            <h2 id="ct-book-t" className="ct-h2">
+              Or send a request
+            </h2>
             <p className="ct-body">
-              Pick a branch and tell us what it is about. Banasree takes a
-              requested time and confirms it; Banani takes the request and calls
-              you back. Either way you get a reference number, and your details go
-              to that branch only.
+              Pick a branch and tell us what it is about. Banasree takes a requested time and
+              confirms it; Banani takes the request and calls you back. Either way you get a
+              reference number, and your details go to that branch only.
             </p>
           </div>
           <BookingForm />

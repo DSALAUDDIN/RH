@@ -21,11 +21,3 @@ export default function LayoutWrapper({ children }: { children: React.ReactNode 
     </>
   );
 }
-
-/* NOTE: <AudioPlayer /> was previously mounted here on every route, including
-   /admin, and called .play() against a 3.8 MB /sound.weba on load. Autoplay
-   audio is a Lighthouse best-practices failure and the opposite of the calm the
-   Banani positioning sells, so it is no longer mounted globally.
-   The component is NOT deleted — per the brief's rule 4, it is flagged for your
-   decision. If you want it, mount it on one specific page rather than the
-   layout, and gate it behind an explicit play control. */

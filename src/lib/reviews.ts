@@ -1,16 +1,9 @@
-// src/lib/reviews.ts
+// Live Google review data per branch (server only).
 //
-// Live Google review data, per branch. Server-side only.
+// Returns null unless the Places API responds. No cached or seeded ratings:
+// review markup must reflect the live listing (Google structured data policy).
 //
-// HARD RULE: this module returns null unless a real API response comes back.
-// There is no cached fallback, no seeded average, no "approximately". A rating
-// that is not currently on the live Google listing must not appear on the site
-// or in structured data — that is the Google structured-data policy the audit
-// flagged (docs/audit-report.md P0-3), and it is also the reason patients who
-// check discount everything else on the page.
-//
-// Setup: set GOOGLE_PLACES_API_KEY and each branch's `placeId` in branches.ts.
-// Until both exist, every consumer of this module renders nothing.
+// Requires GOOGLE_PLACES_API_KEY and a `placeId` per branch in branches.ts.
 
 import { BRANCHES, BranchId } from './branches';
 
@@ -27,14 +20,14 @@ export interface BranchRating {
 
 const ENDPOINT = 'https://places.googleapis.com/v1/places';
 
-/** Revalidate hourly. A stale-by-an-hour real number is fine; an invented one is not. */
+/** Revalidate hourly. */
 const REVALIDATE_SECONDS = 3600;
 
 export async function getBranchRating(branch: BranchId): Promise<BranchRating | null> {
   const key = process.env.GOOGLE_PLACES_API_KEY;
   const placeId = BRANCHES[branch].placeId;
 
-  // No key or no place id → no rating. This is the expected state today.
+  // Not configured.
   if (!key || !placeId) return null;
 
   try {
@@ -54,7 +47,7 @@ export async function getBranchRating(branch: BranchId): Promise<BranchRating | 
       googleMapsUri?: string;
     };
 
-    // A listing with no ratings yet is not an error — it is simply nothing to show.
+    // No ratings yet.
     if (typeof data.rating !== 'number' || typeof data.userRatingCount !== 'number') {
       return null;
     }

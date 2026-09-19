@@ -1,28 +1,20 @@
-// src/app/banani/faq.ts
+// Answer-first FAQ: the first sentence answers the question; the rest is
+// supporting detail (snippet- and citation-friendly).
 //
-// Answer-first. The first sentence answers the question outright; everything
-// after it is supporting detail. This is the shape Google lifts into a snippet
-// and an AI assistant quotes with attribution.
-//
-// Rules applied here:
-//  · Never claim Banani is clinically better than Banasree. It is not, and the
-//    page says so explicitly.
-//  · Price is a consequence of the room and the schedule, never the difference.
-//  · No "luxury", no "VIP", no "best", no superiority claims.
-//  · Where a number is unknown, TODO(client) — not a vague hedge.
+// Editorial rules:
+// - Never position Banani as clinically superior to Banasree.
+// - No superlatives ("best", "luxury", "VIP").
+// - Unknown figures are marked TODO(content), never estimated.
 
-import type { FaqItem } from '@/lib/schema';
+import type { FaqItem } from '@/lib/seo/schema';
 import { BRANCHES } from '@/lib/branches';
 
 export const bananiFaq: FaqItem[] = [
   {
     q: 'What is the difference between the Banani and the Banasree branch?',
-    a: 'The setting and the pace, not the clinical care. Banani is appointment-only: your slot is booked so that the room and the clinician are yours for its whole length. Banasree is the flagship hospital — a bigger setup with an in-house master digital lab, the full specialist team on site, a published price list and 0% EMI.\n\nSame doctors, same materials, same sterilisation protocol at both. If your case needs the lab or a specialist who sits at Banasree, that is where it should be done, and we will say so.',
+    a: 'The setting and the pace, not the clinical care. Banani is appointment-only: your slot is booked so that the room and the clinician are yours for its whole length. Banasree is the flagship hospital — a bigger setup with an in-house master digital lab, the full specialist team on site, coordinated treatment planning.\n\nSame doctors, same materials, same sterilisation protocol at both. If your case needs the lab or a specialist who sits at Banasree, that is where it should be done, and we will say so.',
   },
-  {
-    q: 'Why is treatment at Banani priced above Banasree?',
-    a: 'Because the room is yours for the whole appointment. Banani runs on an appointment-only schedule rather than a rolling queue, which means fewer patients per day and no overlap. You are paying for the time and the privacy, not for different dentistry — the clinical work, the materials and the sterilisation protocol are identical at both branches.',
-  },
+
   {
     q: 'Do I need an appointment to visit the Banani branch?',
     a: `Yes. Banani does not take walk-ins. Call ${BRANCHES.banani.phoneDisplay} or send a WhatsApp message and someone will call back to confirm a time; you will get a reference number for the booking. If you need to be seen the same day, say so — Banasree runs a longer daily session and may be able to take you sooner.`,
@@ -33,27 +25,25 @@ export const bananiFaq: FaqItem[] = [
   },
   {
     q: 'Where exactly is the Banani branch, and is there parking?',
-    a: 'RH Dental Care Banani is on Level 7 of B&B Empire, Plot 116, Road 11, Banani, Dhaka 1213. TODO(client): confirm parking arrangements at B&B Empire — whether the building has visitor parking, and roughly how many spaces.',
+    a: 'RH Dental Care Banani is on Level 7 of B&B Empire, Plot 116, Road 11, Banani, Dhaka 1213.',
+    pending:
+      'Confirm parking arrangements at B&B Empire — whether the building has visitor parking, and roughly how many spaces.',
   },
   {
     q: 'What are the Banani branch opening hours?',
-    a: `Banani runs two sessions: a morning from 9:00 am to 2:00 pm and an evening from 4:30 pm to 10:00 pm. Which clinician you see depends on which session you book — the team list on this page shows who sits when.\n\nBanani is appointment-only either way, so call ${BRANCHES.banani.phoneDisplay} or send a WhatsApp message and someone will confirm a time. TODO(client): confirm which days the suite opens.`,
+    a: `Banani runs two sessions: a morning from 9:00 am to 2:00 pm and an evening from 4:30 pm to 10:00 pm. Which clinician you see depends on which session you book — the team list on this page shows who sits when.\n\nBanani is appointment-only either way, so call ${BRANCHES.banani.phoneDisplay} or send a WhatsApp message and someone will confirm a time.`,
+    pending: `Confirm which days the suite opens.`,
   },
   {
     q: 'Do the same doctors work at both branches?',
     a: 'Yes. Dr. B.M. Rafiqul Hasan and Dr. Shimia Binte Taher see patients at both branches. The instruments, the implant systems, the ceramics and the sterilisation cycle are the same at both sites — there is no "Banani version" of a treatment.',
   },
-  {
-    q: 'Can I get a treatment plan and a cost before committing?',
-    a: 'Yes. A first appointment at Banani is a consultation: examination, any imaging your case needs, and a written plan with a cost against it before any treatment begins. TODO(client): confirm the Banani consultation fee and whether it is credited against treatment if you proceed.',
-  },
-  {
-    q: 'What does a course of implant treatment at Banani cost?',
-    a: 'TODO(client): confirm the Banani implant package ranges. Per the positioning, Banani publishes ranges and a consultation fee rather than an itemised list; Banasree publishes the full price list.',
-  },
+
   {
     q: 'I am travelling from abroad — can treatment be planned before I arrive?',
-    a: 'Yes. Send existing X-rays or a CBCT by WhatsApp and a provisional plan and cost range can be prepared before you fly, then confirmed against a fresh examination when you arrive. TODO(client): confirm the minimum number of days on the ground needed for a single implant case and for a full-arch case, so patients can book flights against a real number.',
+    a: 'Yes. Send existing X-rays or a CBCT by WhatsApp and a provisional treatment plan can be prepared before you fly, then confirmed against a fresh examination when you arrive.',
+    pending:
+      'Confirm the minimum number of days on the ground needed for a single implant case and for a full-arch case.',
   },
 ];
 

@@ -1,9 +1,6 @@
-/* ═══════════════════════════════════════════════════
-   Implants Page — Unified Premium Light Design
-   Flow: Dark Hero → All White/Light Content → Dark CTA
-   ═══════════════════════════════════════════════════ */
+/* Implants page */
 
-/* ── Hero Section ── */
+/* Hero Section */
 .imp-hero {
   position: relative;
   min-height: 92vh;
@@ -30,8 +27,13 @@
   inset: 0;
   z-index: 1;
   background:
-    linear-gradient(180deg, rgba(2,6,23,0.7) 0%, rgba(2,6,23,0.5) 40%, rgba(2,6,23,0.85) 100%),
-    linear-gradient(135deg, rgba(14,165,233,0.15) 0%, transparent 50%);
+    linear-gradient(
+      180deg,
+      rgba(2, 6, 23, 0.7) 0%,
+      rgba(2, 6, 23, 0.5) 40%,
+      rgba(2, 6, 23, 0.85) 100%
+    ),
+    linear-gradient(135deg, rgba(14, 165, 233, 0.15) 0%, transparent 50%);
 }
 
 .imp-hero-content {
@@ -119,7 +121,7 @@
   margin-top: 3rem;
 }
 
-/* ── Scroll Indicator ── */
+/* Scroll Indicator */
 .imp-scroll-indicator {
   position: absolute;
   bottom: 2rem;
@@ -145,14 +147,18 @@
 }
 
 @keyframes scrollPulse {
-  0%, 100% { opacity: 0.3; height: 30px; }
-  50% { opacity: 1; height: 40px; }
+  0%,
+  100% {
+    opacity: 0.3;
+    height: 30px;
+  }
+  50% {
+    opacity: 1;
+    height: 40px;
+  }
 }
 
-/* ══════════════════════════════════════════
-   UNIFIED LIGHT SECTION SYSTEM
-   All content sections use the same light palette
-   ══════════════════════════════════════════ */
+/* Light sections */
 .imp-section {
   padding: 6.5rem 0;
   position: relative;
@@ -176,7 +182,7 @@
   margin-bottom: 4rem;
 }
 
-/* ── Labels — all light-theme ── */
+/* Labels */
 .imp-label {
   display: inline-flex;
   align-items: center;
@@ -193,7 +199,7 @@
   color: #0284c7;
 }
 
-/* ── Titles — all light-theme ── */
+/* Titles */
 .imp-title {
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 900;
@@ -214,7 +220,7 @@
   line-height: 1.75;
 }
 
-/* ── Subtle section divider ── */
+/* Subtle section divider */
 .imp-divider {
   width: 60px;
   height: 3px;
@@ -223,7 +229,7 @@
   margin: 0 auto 1.5rem;
 }
 
-/* ── What is Implant ── */
+/* What is Implant */
 .imp-what-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -309,7 +315,7 @@
   margin: 0;
 }
 
-/* ── Implant Types ── */
+/* Implant Types */
 .imp-types-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -343,9 +349,15 @@
   border-radius: 2px 2px 0 0;
 }
 
-.imp-type-card.card-1::before { background: linear-gradient(90deg, #0ea5e9, #38bdf8); }
-.imp-type-card.card-2::before { background: linear-gradient(90deg, #6366f1, #818cf8); }
-.imp-type-card.card-3::before { background: linear-gradient(90deg, #f59e0b, #fbbf24); }
+.imp-type-card.card-1::before {
+  background: linear-gradient(90deg, #0ea5e9, #38bdf8);
+}
+.imp-type-card.card-2::before {
+  background: linear-gradient(90deg, #6366f1, #818cf8);
+}
+.imp-type-card.card-3::before {
+  background: linear-gradient(90deg, #f59e0b, #fbbf24);
+}
 
 .imp-type-icon {
   width: 56px;
@@ -404,7 +416,7 @@
   margin-top: 0.2rem;
 }
 
-/* ── Process Timeline — Light Theme ── */
+/* Process Timeline — Light Theme */
 .imp-process-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -480,7 +492,7 @@
   border-radius: 100px;
 }
 
-/* ── Benefits Grid — Light Theme ── */
+/* Benefits Grid — Light Theme */
 .imp-benefits-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -530,7 +542,7 @@
   margin: 0;
 }
 
-/* ── Before/After Gallery ── */
+/* Before/After Gallery */
 .imp-gallery-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -587,7 +599,7 @@
   flex-shrink: 0;
 }
 
-/* ── FAQ — Light Theme ── */
+/* FAQ — Light Theme */
 .imp-faq-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -635,7 +647,7 @@
   padding-left: 1.75rem;
 }
 
-/* ── Facility Section ── */
+/* Facility Section */
 .imp-facility-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -695,7 +707,7 @@
   margin: 0;
 }
 
-/* ── CTA Section — Only dark section after hero ── */
+/* CTA section */
 .imp-cta {
   padding: 8rem 0;
   background: linear-gradient(135deg, #020617 0%, #0c4a6e 60%, #020617 100%);
@@ -706,9 +718,15 @@
 }
 
 @keyframes ctaGradient {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .imp-cta-orb {
@@ -724,8 +742,13 @@
 }
 
 @keyframes ctaOrbFloat {
-  0%, 100% { transform: translate(0, 0); }
-  50% { transform: translate(-30px, 20px); }
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-30px, 20px);
+  }
 }
 
 .imp-cta-inner {
@@ -757,7 +780,7 @@
   flex-wrap: wrap;
 }
 
-/* ── Shared Button Styles ── */
+/* Shared Button Styles */
 .imp-btn-primary {
   display: inline-flex;
   align-items: center;
@@ -800,7 +823,7 @@
   transform: translateY(-2px);
 }
 
-/* ── Responsive ── */
+/* Responsive */
 @media (max-width: 1024px) {
   .imp-what-grid,
   .imp-gallery-grid,
@@ -899,16 +922,28 @@
   }
 }
 
-/* ═══════════════════════════════════════
-   Video Section — Highlighted Dark Showcase
-   ═══════════════════════════════════════ */
+/* Video Section — Highlighted Dark Showcase */
 @keyframes videoOrbDrift {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(-30px, 20px) scale(1.1); }
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-30px, 20px) scale(1.1);
+  }
 }
 @keyframes videoGlow {
-  0%, 100% { box-shadow: 0 0 40px rgba(14,165,233,0.15), 0 30px 80px rgba(0,0,0,0.3); }
-  50% { box-shadow: 0 0 60px rgba(14,165,233,0.25), 0 30px 80px rgba(0,0,0,0.4); }
+  0%,
+  100% {
+    box-shadow:
+      0 0 40px rgba(14, 165, 233, 0.15),
+      0 30px 80px rgba(0, 0, 0, 0.3);
+  }
+  50% {
+    box-shadow:
+      0 0 60px rgba(14, 165, 233, 0.25),
+      0 30px 80px rgba(0, 0, 0, 0.4);
+  }
 }
 
 .imp-video-section {
@@ -926,7 +961,7 @@
 .imp-video-orb-1 {
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, rgba(14,165,233,0.12), transparent 70%);
+  background: radial-gradient(circle, rgba(14, 165, 233, 0.12), transparent 70%);
   top: -180px;
   right: -100px;
   animation: videoOrbDrift 12s ease-in-out infinite;
@@ -934,13 +969,13 @@
 .imp-video-orb-2 {
   width: 400px;
   height: 400px;
-  background: radial-gradient(circle, rgba(129,140,248,0.08), transparent 70%);
+  background: radial-gradient(circle, rgba(129, 140, 248, 0.08), transparent 70%);
   bottom: -150px;
   left: -80px;
   animation: videoOrbDrift 15s ease-in-out infinite reverse;
 }
 
-/* Video Player — Premium Embedded */
+/* Embedded video player */
 .imp-video-wrapper {
   position: relative;
   width: 100%;
@@ -950,7 +985,7 @@
   overflow: hidden;
   background: #000;
   aspect-ratio: 16/9;
-  border: 1.5px solid rgba(56,189,248,0.15);
+  border: 1.5px solid rgba(56, 189, 248, 0.15);
   animation: videoGlow 5s ease-in-out infinite;
 }
 .imp-video {
@@ -1000,7 +1035,7 @@
   font-size: 0.9rem;
   font-weight: 700;
   letter-spacing: 0.04em;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 /* Controls bar */
@@ -1014,16 +1049,18 @@
   justify-content: center;
   gap: 0.75rem;
   padding: 0.75rem 1.25rem;
-  background: linear-gradient(180deg, transparent, rgba(0,0,0,0.6));
+  background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.6));
   z-index: 3;
   opacity: 0;
   transition: opacity 0.3s ease;
 }
-.imp-video-wrapper:hover .imp-video-controls { opacity: 1; }
+.imp-video-wrapper:hover .imp-video-controls {
+  opacity: 1;
+}
 
 .imp-video-controls button {
-  background: rgba(255,255,255,0.12);
-  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   color: #fff;
   border-radius: 50%;
   width: 40px;
@@ -1036,20 +1073,28 @@
   backdrop-filter: blur(8px);
 }
 .imp-video-controls button:hover {
-  background: rgba(255,255,255,0.2);
+  background: rgba(255, 255, 255, 0.2);
   transform: scale(1.08);
 }
 
 @media (max-width: 768px) {
-  .imp-video-wrapper { border-radius: 1.25rem; }
-  .imp-video-play-btn { width: 64px; height: 64px; }
-  .imp-video-controls { opacity: 1; }
-  .imp-video-controls button { width: 36px; height: 36px; }
+  .imp-video-wrapper {
+    border-radius: 1.25rem;
+  }
+  .imp-video-play-btn {
+    width: 64px;
+    height: 64px;
+  }
+  .imp-video-controls {
+    opacity: 1;
+  }
+  .imp-video-controls button {
+    width: 36px;
+    height: 36px;
+  }
 }
 
-/* ═══════════════════════════════════════
-   FAQ Cards
-   ═══════════════════════════════════════ */
+/* FAQ Cards */
 .imp-faq-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1060,16 +1105,16 @@
 
 .imp-faq-card {
   background: #fff;
-  border: 1px solid rgba(0,0,0,0.05);
+  border: 1px solid rgba(0, 0, 0, 0.05);
   border-radius: 1.5rem;
   padding: 2rem;
   transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
 }
 .imp-faq-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 20px 50px rgba(0,0,0,0.08);
-  border-color: rgba(14,165,233,0.12);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+  border-color: rgba(14, 165, 233, 0.12);
 }
 
 .imp-faq-q {
@@ -1096,12 +1141,12 @@
 }
 
 @media (max-width: 768px) {
-  .imp-faq-grid { grid-template-columns: 1fr; }
+  .imp-faq-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
-/* ═══════════════════════════════════════
-   Video Trust Badges
-   ═══════════════════════════════════════ */
+/* Video Trust Badges */
 .imp-video-badges {
   display: flex;
   align-items: center;
@@ -1114,19 +1159,19 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(12px);
   border-radius: 100px;
   padding: 0.6rem 1.25rem;
-  color: rgba(203,213,225,0.9);
+  color: rgba(203, 213, 225, 0.9);
   font-size: 0.82rem;
   font-weight: 700;
   transition: all 0.3s ease;
 }
 .imp-video-badge-item:hover {
-  background: rgba(14,165,233,0.08);
-  border-color: rgba(14,165,233,0.2);
+  background: rgba(14, 165, 233, 0.08);
+  border-color: rgba(14, 165, 233, 0.2);
   color: #e2e8f0;
   transform: translateY(-2px);
 }
@@ -1136,14 +1181,19 @@
 }
 
 @media (max-width: 768px) {
-  .imp-video-badges { gap: 0.75rem; }
-  .imp-video-badge-item { font-size: 0.75rem; padding: 0.5rem 1rem; }
-  .imp-video-section { padding: 5rem 0; }
+  .imp-video-badges {
+    gap: 0.75rem;
+  }
+  .imp-video-badge-item {
+    font-size: 0.75rem;
+    padding: 0.5rem 1rem;
+  }
+  .imp-video-section {
+    padding: 5rem 0;
+  }
 }
 
-/* ═══════════════════════════════════════
-   Implant Packages & Payment Note
-   ═══════════════════════════════════════ */
+/* Implant packages and payment note */
 .imp-type-tag {
   display: inline-block;
   font-size: 0.7rem;
@@ -1155,7 +1205,7 @@
   margin-bottom: 0.75rem;
 }
 
-/* Payment Note Styling */
+/* Payment note */
 .imp-payment-note {
   margin-top: 5rem;
   background: #f8fafc;
