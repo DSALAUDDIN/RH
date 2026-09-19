@@ -1,8 +1,8 @@
 import Link from 'next/link';
 import { SHARED_TRUST } from '@/lib/branches';
 import { TEAM, clinicianPath } from '@/lib/doctors';
-import { physicianSchema } from '@/lib/schema';
-import JsonLd from '@/components/JsonLd';
+import { physicianSchema } from '@/lib/seo/schema';
+import JsonLd from '@/components/seo/JsonLd';
 import TeamRoster from '@/components/TeamRoster';
 import './team.css';
 

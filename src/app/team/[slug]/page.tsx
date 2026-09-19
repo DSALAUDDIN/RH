@@ -1,8 +1,8 @@
 import { notFound } from 'next/navigation';
 import { ROSTER, clinicianSlug, clinicianPath } from '@/lib/doctors';
-import { pageMeta } from '@/lib/metadata';
-import { physicianSchema, breadcrumbSchema } from '@/lib/schema';
-import JsonLd from '@/components/JsonLd';
+import { pageMeta } from '@/lib/seo/metadata';
+import { physicianSchema, breadcrumbSchema } from '@/lib/seo/schema';
+import JsonLd from '@/components/seo/JsonLd';
 import DoctorProfile from '@/components/DoctorProfile';
 
 type Props = { params: Promise<{ slug: string }> };
