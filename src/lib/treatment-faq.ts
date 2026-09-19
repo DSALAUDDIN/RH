@@ -19,7 +19,7 @@ export const implantFaq: FaqItem[] = [
   },
   {
     q: 'Which implant system do you use?',
-    a: 'Osstem, a South Korean implant system, is used for our standard implant package — the fixture named on the pricing section of this page is the Osstem SA.',
+    a: 'Osstem, a South Korean implant system, is used for our standard implant package — including the Osstem SA.',
     pending:
       'Confirm whether Osstem is the only system used or whether a premium alternative is offered for particular cases, and name it.',
   },
@@ -27,15 +27,10 @@ export const implantFaq: FaqItem[] = [
     q: 'Is the crown made in-house?',
     a: 'At the Banasree branch, yes — the in-house master digital lab mills and finishes crowns and bridges on site, which removes the courier round-trip to an outside lab and shortens the wait between fitting appointments. Intraoral scanning replaces the impression tray for most cases.',
   },
-  {
-    q: 'What does an implant cost at RH Dental Care?',
-    a: '',
-    pending:
-      'Confirm the published implant price list for Banasree and the package ranges for Banani.',
-  },
+
   {
     q: 'Which branch should I go to for an implant?',
-    a: 'Either — the surgery, the systems and the clinicians are the same at both. Choose Banasree if you want the published price list, the in-house lab and 0% EMI on a multi-visit plan. Choose Banani if you want an appointment-only slot with the room to yourself and CBCT read in the same visit.',
+    a: 'Either — the surgery, the systems and the clinicians are the same at both. Choose Banasree if you want the in-house lab and a specialist team for a multi-visit plan. Choose Banani if you want an appointment-only slot with the room to yourself and CBCT read in the same visit.',
   },
 ];
 
@@ -57,12 +52,7 @@ export const rootCanalFaq: FaqItem[] = [
     q: 'Does a root-canal-treated tooth always need a crown?',
     a: 'Back teeth almost always do. Removing the pulp and the access cavity leaves the tooth more likely to split under chewing load, and a crown or an onlay holds the remaining structure together. Front teeth with a small access cavity and otherwise intact walls can sometimes be restored with a filling instead.',
   },
-  {
-    q: 'What does a root canal cost?',
-    a: '',
-    pending:
-      'Confirm the current root canal price list by tooth type, and whether the crown is quoted separately.',
-  },
+
 ];
 
 export const orthodonticsFaq: FaqItem[] = [
@@ -145,10 +135,5 @@ export const generalFaq: FaqItem[] = [
     pending:
       'Confirm which clinicians hold paediatric dentistry qualifications, and whether treatment under general anaesthesia is arranged in-house or referred.',
   },
-  {
-    q: 'Is there a payment plan?',
-    a: '0% EMI is available on treatment plans at Banasree.',
-    pending:
-      'Confirm which cards or lenders the EMI runs through, the minimum treatment value, and the available tenures.',
-  },
+
 ];

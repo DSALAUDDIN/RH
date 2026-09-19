@@ -318,7 +318,7 @@ export default function OrthodonticsPage() {
                 </span>
               </h2>
               <p className="imp-subtitle">
-                Transparent pricing tailored to your unique clinical needs and lifestyle
+                Treatment options tailored to your clinical needs and lifestyle
                 preferences.
               </p>
             </div>
@@ -338,33 +338,6 @@ export default function OrthodonticsPage() {
                   </div>
                 </div>
 
-                <div
-                  style={{
-                    background: 'rgba(255,255,255,0.6)',
-                    border: '1px dashed rgba(14,165,233,0.3)',
-                    borderRadius: '1rem',
-                    padding: '1.25rem',
-                    marginBottom: '1.5rem',
-                    textAlign: 'center',
-                  }}
-                >
-                  <span
-                    style={{
-                      fontSize: '0.7rem',
-                      fontWeight: 800,
-                      textTransform: 'uppercase',
-                      color: '#94a3b8',
-                      display: 'block',
-                      marginBottom: '0.2rem',
-                    }}
-                  >
-                    Price Range
-                  </span>
-                  <div style={{ fontSize: '1.8rem', fontWeight: 900, color: '#0f172a' }}>
-                    ৳80,000 – 120,000
-                  </div>
-                </div>
-
                 <div className="ortho-advantages-list">
                   {[
                     {
@@ -375,7 +348,7 @@ export default function OrthodonticsPage() {
                       t: 'Durable & long-lasting results',
                       d: 'Provides strong and stable movement',
                     },
-                    { t: 'Cost-effective option', d: 'More affordable compared to aligners' },
+
                     { t: 'No discipline required', d: 'Works 24/7 once placed' },
                     { t: 'Improves oral health', d: 'Easier cleaning and long-term function' },
                     { t: 'Custom treatment', d: 'Tailored to your unique dental needs' },
@@ -423,33 +396,6 @@ export default function OrthodonticsPage() {
                     <div style={{ fontSize: '0.8rem', color: '#64748b', fontWeight: 600 }}>
                       Clear · Comfortable · Confident
                     </div>
-                  </div>
-                </div>
-
-                <div
-                  style={{
-                    background: 'rgba(255,255,255,0.6)',
-                    border: '1px dashed rgba(99,102,241,0.3)',
-                    borderRadius: '1rem',
-                    padding: '1.25rem',
-                    marginBottom: '1.5rem',
-                    textAlign: 'center',
-                  }}
-                >
-                  <span
-                    style={{
-                      fontSize: '0.7rem',
-                      fontWeight: 800,
-                      textTransform: 'uppercase',
-                      color: '#94a3b8',
-                      display: 'block',
-                      marginBottom: '0.2rem',
-                    }}
-                  >
-                    Price Range
-                  </span>
-                  <div style={{ fontSize: '1.8rem', fontWeight: 900, color: '#0f172a' }}>
-                    ৳200,000 – 350,000
                   </div>
                 </div>
 

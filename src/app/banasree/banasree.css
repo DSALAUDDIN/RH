@@ -8,7 +8,7 @@
 /* Hero */
 .bs-hero {
   display: grid;
-  grid-template-columns: minmax(0, 48%) minmax(0, 52%);
+  grid-template-columns: minmax(0, 0.48fr) minmax(0, 0.52fr);
   align-items: center;
   gap: clamp(2rem, 5vw, 4.5rem);
   padding: clamp(3rem, 7vw, 6rem) 0 clamp(3rem, 7vw, 6rem)
@@ -205,6 +205,18 @@
   align-items: start;
 }
 
+/* Let grid children shrink below image and iframe intrinsic widths. */
+.bs-hero > *,
+.bs-two > * {
+  min-width: 0;
+}
+
+.bs-actions > * {
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
 .bs-facts {
   list-style: none;
   margin: 0;
@@ -327,7 +339,7 @@
 
 @media (max-width: 900px) {
   .bs-hero {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     padding-inline: var(--rh-6);
     gap: var(--rh-8);
   }
@@ -340,7 +352,7 @@
     max-width: none;
   }
   .bs-two {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
   .bs-gallery {
     grid-template-columns: 1fr;

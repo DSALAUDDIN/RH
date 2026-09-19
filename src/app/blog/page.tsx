@@ -258,7 +258,7 @@ export default async function BlogPage({
             Have more questions?
           </h2>
           <p style={{ color: 'rgba(255,255,255,0.6)', marginBottom: '2rem', fontSize: '1.05rem' }}>
-            Book a free consultation and our specialists will answer all your questions in person.
+            Book a consultation and our specialists will answer all your questions in person.
           </p>
           <Link
             href="/contact"

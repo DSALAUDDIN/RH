@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { BRANCHES, SHARED_TRUST } from '@/lib/branches';
+import { BRANCHES } from '@/lib/branches';
 import { breadcrumbs } from '@/lib/seo/schema';
 import { pageMeta } from '@/lib/seo/metadata';
 import JsonLd from '@/components/seo/JsonLd';
@@ -18,15 +18,9 @@ const b = BRANCHES.banasree;
 export const metadata: Metadata = pageMeta({
   title: 'Banasree Flagship Dental Hospital',
   description:
-    'Full-service dental hospital on Block C, Banasree, Dhaka. In-house master digital lab, the full specialist team on site, published prices and 0% EMI.',
+    'Full-service dental hospital on Block C, Banasree, Dhaka. In-house master digital lab, the full specialist team on site, coordinated treatment planning.',
   path: '/banasree',
 });
-
-/*
- * TODO(content): published price list (treatment, price, what is included).
- * The table renders automatically once PRICES is populated.
- */
-const PRICE_LIST: { treatment: string; price: string; includes: string }[] = [];
 
 export default function BanasreePage() {
   return (
@@ -60,7 +54,7 @@ export default function BanasreePage() {
           </h1>
           <p className="bs-lede">
             Banasree is the flagship: the bigger setup, with the in-house master digital lab, the
-            full specialist team on site and the published price list. Cases that run across several
+            full specialist team on site. Cases that run across several
             disciplines — surgery, endodontics, orthodontics, prosthetics — are handled here without
             sending you between addresses.
           </p>
@@ -129,8 +123,7 @@ export default function BanasreePage() {
             <p className="bs-body">{b.audience}.</p>
             <p className="bs-body">
               {b.promise} A family can be seen across one afternoon rather than four separate trips,
-              and a multi-stage plan can be costed in full at the start instead of a stage at a
-              time.
+              and each stage of a multi-visit plan can be coordinated with the same team.
             </p>
             <p className="bs-body">
               If what you want is an appointment-only slot with the room to yourself, that is the{' '}
@@ -147,7 +140,7 @@ export default function BanasreePage() {
                 {f}
               </li>
             ))}
-            <li className="bs-fact">Published price list — see below</li>
+
           </ul>
         </div>
       </section>
@@ -173,116 +166,10 @@ export default function BanasreePage() {
         </div>
       </section>
 
-      {/* Prices */}
-      <section className="bs-pricing rh-section" id="pricing" aria-labelledby="bs-price-t">
-        <div className="rh-container">
-          <h2 id="bs-price-t" className="bs-h2">
-            Published prices
-          </h2>
-          <p className="bs-body">
-            Banasree publishes what treatments cost so you can plan before you book. Prices are for
-            the treatment as described; anything your examination turns up that changes the plan is
-            quoted before it is started, never after.
-          </p>
-
-          {PRICE_LIST.length > 0 ? (
-            <div className="bs-table-wrap">
-              <table className="bs-table">
-                <caption className="bs-table-caption">
-                  RH Dental Care Banasree — published treatment prices
-                </caption>
-                <thead>
-                  <tr>
-                    <th scope="col">Treatment</th>
-                    <th scope="col">Price</th>
-                    <th scope="col">What it includes</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {PRICE_LIST.map((r) => (
-                    <tr key={r.treatment}>
-                      <th scope="row">{r.treatment}</th>
-                      <td className="bs-price">{r.price}</td>
-                      <td>{r.includes}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          ) : (
-            <div className="rh-panel bs-price-cta">
-              <div>
-                <p className="bs-price-cta-title">Ask for the current price list</p>
-                <p className="bs-body">
-                  Reception will send the Banasree price list and a written estimate for your
-                  treatment.
-                </p>
-              </div>
-              <div className="bs-actions">
-                <BranchCTA
-                  action="whatsapp"
-                  branch="banasree"
-                  variant="primary"
-                  className="rh-btn rh-btn-primary"
-                >
-                  Get prices on WhatsApp
-                </BranchCTA>
-                <BranchCTA
-                  action="call"
-                  branch="banasree"
-                  variant="ghost"
-                  className="rh-btn rh-btn-ghost"
-                >
-                  Call {b.phoneDisplay}
-                </BranchCTA>
-              </div>
-            </div>
-          )}
-          {PRICE_LIST.length === 0 && (
-            <EditorialNote>
-              <div className="rh-niche bs-price-note">
-                <p>
-                  <strong>Pending:</strong> published price list (treatment, price, inclusions). The
-                  table renders once PRICES is populated.
-                </p>
-              </div>
-            </EditorialNote>
-          )}
-
-          <h3 className="bs-h3">0% EMI</h3>
-          <p className="bs-body">
-            Treatment plans can be spread over interest-free monthly instalments.
-          </p>
-          <EditorialNote>
-            <p className="bs-body bs-todo">
-              Pending: EMI partner banks/cards, minimum treatment value, tenures.
-            </p>
-          </EditorialNote>
-        </div>
-      </section>
-
       <TeamRoster
         branch="banasree"
         intro="The full team is on site through the afternoon and evening session, so a plan that crosses disciplines does not become a series of referrals."
       />
-
-      {/* Parity */}
-      <section className="bs-parity rh-section" aria-labelledby="bs-parity-t">
-        <div className="rh-container">
-          <h2 id="bs-parity-t" className="bs-h2">
-            The care is the same at both branches
-          </h2>
-          <p className="bs-body bs-parity-line">{SHARED_TRUST}</p>
-          <p className="bs-body">
-            Banasree is not the cut-down option. It is the bigger setup — more chairs, more
-            disciplines, the lab. Banani costs more because its schedule keeps one room and one
-            clinician on your appointment alone, which is a difference in setting, not in dentistry.
-          </p>
-          <Link href="/banani" className="rh-btn rh-btn-ghost bs-parity-cta">
-            See the Banani suite
-          </Link>
-        </div>
-      </section>
 
       {/* Visit */}
       <section className="bs-visit rh-section" id="book" aria-labelledby="bs-visit-t">

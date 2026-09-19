@@ -18,9 +18,7 @@ export default function ContactPage() {
         <div className="rh-container">
           <h1 className="ct-h1">Two clinics. Choose the one that suits you.</h1>
           <p className="ct-lede">
-            They are not a better one and a cheaper one. They are a small appointment-only suite and
-            a full-service hospital, run by the same clinical team — so the question is how you want
-            to be seen, not what standard of dentistry you want.
+            Choose an appointment-only private suite in Banani or a full-service hospital in Banasree, both run by the same clinical team.
           </p>
           <p className="ct-trust">{SHARED_TRUST}</p>
         </div>

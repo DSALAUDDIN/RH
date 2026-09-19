@@ -2330,7 +2330,7 @@ const posts: BlogPost[] = [
           'Minimally Invasive: Requires little to no alteration of adjacent teeth.',
           'Quick and Convenient: Often completed in a single visit.',
           'Aesthetic Appeal: Tooth-colored composite resin blends seamlessly with natural teeth.',
-          'Cost-Effective: Generally more affordable than dental implants or traditional bridges.',
+          'Conservative: Can replace a missing tooth while preserving nearby tooth structure.',
           'Reversible: Can be easily removed without causing damage to natural teeth.',
           'Durable and Functional: Can withstand normal biting and chewing forces for front teeth.',
         ],

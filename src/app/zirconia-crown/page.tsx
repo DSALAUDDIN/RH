@@ -291,7 +291,7 @@ export default function ZirconiaCrownPage() {
               className="imp-btn-primary"
               style={{ background: ACCENT, boxShadow: '0 8px 32px rgba(16,185,129,0.4)' }}
             >
-              Book Free Consultation <ArrowUpRight size={18} />
+              Book Consultation <ArrowUpRight size={18} />
             </BranchCTA>
             <BranchCTA action="call" service="Zirconia Crown" className="imp-btn-glass">
               <Phone size={16} /> Call Now
@@ -555,31 +555,6 @@ export default function ZirconiaCrownPage() {
             </div>
           </FadeIn>
 
-          <FadeIn delay={0.2}>
-            <div
-              className="imp-payment-note"
-              style={{
-                marginTop: '3rem',
-                borderColor: 'rgba(16,185,129,0.15)',
-                maxWidth: '820px',
-                marginInline: 'auto',
-              }}
-            >
-              <div className="imp-payment-icon" style={{ color: '#10b981' }}>
-                <ShieldCheck size={24} />
-              </div>
-              <div className="imp-payment-body">
-                <h4>What If There Is a Problem?</h4>
-                <p>
-                  We stand behind the quality of our work. If a crown manufactured by our laboratory
-                  develops a manufacturing-related problem covered under our service policy, we will
-                  assess the case and, when appropriate, replace the crown rather than simply asking
-                  you to accept the problem. You should be confident about the restoration you
-                  receive.
-                </p>
-              </div>
-            </div>
-          </FadeIn>
         </div>
       </section>
 
@@ -647,22 +622,6 @@ export default function ZirconiaCrownPage() {
                   design.
                 </p>
 
-                <div
-                  className="imp-payment-note"
-                  style={{ marginTop: '2rem', borderColor: 'rgba(16,185,129,0.15)' }}
-                >
-                  <div className="imp-payment-icon" style={{ color: '#10b981' }}>
-                    <Crown size={24} />
-                  </div>
-                  <div className="imp-payment-body">
-                    <h4>Price</h4>
-                    <p>
-                      Zirconia crown treatment starts at{' '}
-                      <strong style={{ color: '#10b981', fontSize: '1.2rem' }}>৳20,000</strong>,
-                      including the digital workflow, scanning and crown placement.
-                    </p>
-                  </div>
-                </div>
               </div>
             </FadeIn>
           </div>

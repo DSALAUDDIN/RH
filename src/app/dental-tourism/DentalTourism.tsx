@@ -112,12 +112,7 @@ export default function DentalTourism() {
               <span className="sp-label">Welcome</span>
             </a>
           </li>
-          <li>
-            <a href="#savings" data-anchor="savings">
-              <span className="sp-dot"></span>
-              <span className="sp-label">The advantage</span>
-            </a>
-          </li>
+
           <li>
             <a href="#why" data-anchor="why">
               <span className="sp-dot"></span>
@@ -225,7 +220,7 @@ export default function DentalTourism() {
 
           <p className="tm-sub" data-anim="fade">
             Internationally-trained specialists. 3D digital workflows. A premium 3,500 sq.ft clinic
-            — at a fraction of Western prices. Built for visiting patients who refuse to compromise.
+            — with coordinated care for visiting patients.
           </p>
 
           <div className="tm-actions" data-anim="fade">
@@ -259,15 +254,7 @@ export default function DentalTourism() {
               </div>
               <div className="stat-lab">Years of practice</div>
             </div>
-            <div className="stat">
-              <div className="stat-num">
-                <span data-count="82" data-suffix="">
-                  0
-                </span>
-                <span className="unit">%</span>
-              </div>
-              <div className="stat-lab">Avg. savings vs UK/US</div>
-            </div>
+
             <div className="stat">
               <div className="stat-num">
                 4.9<span className="unit">★</span>
@@ -287,126 +274,6 @@ export default function DentalTourism() {
         <div className="scroll-hint" data-anim="fade">
           <span>Scroll</span>
           <span className="hint-line"></span>
-        </div>
-      </section>
-
-      {/* Savings comparison */}
-      <section className="savings" id="savings">
-        <div className="container">
-          <div className="section-head">
-            <span className="eyebrow">
-              <span className="kicker-line"></span>The Bangladesh advantage
-            </span>
-            <h2 className="display">
-              Premium care.
-              <br />
-              <em>Exceptional savings.</em>
-            </h2>
-            <p className="lead">
-              The same procedure. The same materials. The same standard. Quoted upfront, with zero
-              hidden costs.
-            </p>
-          </div>
-
-          <div className="cmp-table" id="cmpTable">
-            <div className="cmp-row cmp-head">
-              <div className="cmp-col">Procedure</div>
-              <div className="cmp-col cmp-c">UK 🇬🇧</div>
-              <div className="cmp-col cmp-c">USA 🇺🇸</div>
-              <div className="cmp-col cmp-c">EU 🇪🇺</div>
-              <div className="cmp-col cmp-c highlight">Bangladesh 🇧🇩</div>
-              <div className="cmp-col cmp-c">You save</div>
-            </div>
-            <div className="cmp-row" data-row>
-              <div className="cmp-col cmp-name">
-                Single dental implant<small>incl. titanium fixture + crown</small>
-              </div>
-              <div className="cmp-col cmp-c">$ 3,800</div>
-              <div className="cmp-col cmp-c">$ 4,500</div>
-              <div className="cmp-col cmp-c">$ 2,700</div>
-              <div className="cmp-col cmp-c highlight">
-                <span className="cmp-price" data-from="4500" data-to="650" data-prefix="$ ">
-                  $ 0
-                </span>
-              </div>
-              <div className="cmp-col cmp-c save-col">
-                <span data-savings="82">0</span>%
-              </div>
-            </div>
-            <div className="cmp-row" data-row>
-              <div className="cmp-col cmp-name">
-                Zirconia crown<small>per unit, in-house lab</small>
-              </div>
-              <div className="cmp-col cmp-c">$ 1,150</div>
-              <div className="cmp-col cmp-c">$ 1,700</div>
-              <div className="cmp-col cmp-c">$ 760</div>
-              <div className="cmp-col cmp-c highlight">
-                <span className="cmp-price" data-from="1700" data-to="280" data-prefix="$ ">
-                  $ 0
-                </span>
-              </div>
-              <div className="cmp-col cmp-c save-col">
-                <span data-savings="76">0</span>%
-              </div>
-            </div>
-            <div className="cmp-row" data-row>
-              <div className="cmp-col cmp-name">
-                Full smile makeover<small>10 e.max veneers + whitening</small>
-              </div>
-              <div className="cmp-col cmp-c">$ 22,800</div>
-              <div className="cmp-col cmp-c">$ 25,000</div>
-              <div className="cmp-col cmp-c">$ 15,200</div>
-              <div className="cmp-col cmp-c highlight">
-                <span className="cmp-price" data-from="25000" data-to="4200" data-prefix="$ ">
-                  $ 0
-                </span>
-              </div>
-              <div className="cmp-col cmp-c save-col">
-                <span data-savings="80">0</span>%
-              </div>
-            </div>
-            <div className="cmp-row" data-row>
-              <div className="cmp-col cmp-name">
-                Full mouth rehabilitation
-                <small>incl. 6+ implants &amp; full arch prosthetics</small>
-              </div>
-              <div className="cmp-col cmp-c">$ 57,000</div>
-              <div className="cmp-col cmp-c">$ 65,000</div>
-              <div className="cmp-col cmp-c">$ 41,000</div>
-              <div className="cmp-col cmp-c highlight">
-                <span className="cmp-price" data-from="65000" data-to="9800" data-prefix="$ ">
-                  $ 0
-                </span>
-              </div>
-              <div className="cmp-col cmp-c save-col">
-                <span data-savings="82">0</span>%
-              </div>
-            </div>
-          </div>
-
-          <div className="cmp-foot">
-            <p className="fineprint">
-              Indicative median prices at premium private clinics, 2025. <b>All figures in USD</b>
-              for direct comparison. UK = central London private; USA = premium urban (NYC/LA/SF);
-              EU = Germany &amp; France average. Personalised quote provided after a free WhatsApp
-              consultation.
-            </p>
-            <a href="#contact" className="tm-btn tm-btn-primary magnetic" data-cursor="Quote">
-              Get my free quote
-              <span className="arrow" aria-hidden="true">
-                <svg
-                  viewBox="0 0 24 24"
-                  width="14"
-                  height="14"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2.2"
-                >
-                  <path d="M5 12h14M13 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </span>
-            </a>
-          </div>
         </div>
       </section>
 
@@ -650,75 +517,6 @@ export default function DentalTourism() {
                     <b>4 langs</b>
                     <span>On call: EN · BN · HI · AR</span>
                   </div>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          {/* 03 — Cost of stay */}
-          <article className="reason" data-reason data-reveal>
-            <header className="reason-head">
-              <span className="reason-num">03</span>
-              <span className="reason-tag">Cost of stay</span>
-            </header>
-            <div className="reason-grid">
-              <div className="reason-copy">
-                <h3>
-                  Seventy dollars buys
-                  <br />a <em>five‑star night.</em>
-                </h3>
-                <p>
-                  The same money that gets you a Premier Inn in West London buys a top‑floor suite
-                  at the Westin Dhaka with chauffeur service to the clinic. Food, transport, guides
-                  — all proportionally affordable.
-                </p>
-                <div className="reason-stats">
-                  <div>
-                    <b>$60–120</b>
-                    <span>Top hotel / night</span>
-                  </div>
-                  <div>
-                    <b>$8–15</b>
-                    <span>Fine‑dining meal</span>
-                  </div>
-                  <div>
-                    <b>$40</b>
-                    <span>Private driver / day</span>
-                  </div>
-                </div>
-              </div>
-              <div className="reason-art art-receipt">
-                <div className="rcpt">
-                  <div className="rcpt-head">
-                    <span>HOTEL & EXTRAS</span>
-                    <span>DHAKA · 7 NIGHTS</span>
-                  </div>
-                  <div className="rcpt-row">
-                    <span>Suite, 5-star × 7</span>
-                    <b>$ 700</b>
-                  </div>
-                  <div className="rcpt-row">
-                    <span>Airport transfer ×2</span>
-                    <b>$ 60</b>
-                  </div>
-                  <div className="rcpt-row">
-                    <span>Private driver / week</span>
-                    <b>$ 250</b>
-                  </div>
-                  <div className="rcpt-row">
-                    <span>Dinners (avg)</span>
-                    <b>$ 140</b>
-                  </div>
-                  <div className="rcpt-row">
-                    <span>Concierge / guide</span>
-                    <b>$ 120</b>
-                  </div>
-                  <div className="rcpt-sep"></div>
-                  <div className="rcpt-row total">
-                    <span>Subtotal</span>
-                    <b>$ 1,270</b>
-                  </div>
-                  <div className="rcpt-foot">UK equivalent: ≈ $ 5,400</div>
                 </div>
               </div>
             </div>
@@ -1157,94 +955,6 @@ export default function DentalTourism() {
           </article>
         </div>
 
-        {/* Trip math closer */}
-        <div className="container bd-tripmath">
-          <div className="chapter" data-reveal>
-            <span className="ch-num">CHAPTER 01 · CLOSE</span>
-            <span className="ch-line"></span>
-            <span className="ch-title">The Bangladesh advantage, in one calculation</span>
-          </div>
-          <h3 className="tm-headline" data-reveal>
-            What <em>$5,000</em> actually buys you.
-          </h3>
-
-          <div className="tm-compare">
-            <div className="tm-side">
-              <div className="tm-flag">🇬🇧</div>
-              <h4>$5,000 in London</h4>
-              <ul className="tm-list">
-                <li>
-                  <span className="tm-item">One zirconia crown</span>
-                  <b>$1,800</b>
-                </li>
-                <li>
-                  <span className="tm-item">One dental implant</span>
-                  <b>$2,800</b>
-                </li>
-                <li>
-                  <span className="tm-item">Consultation × 2</span>
-                  <b>$300</b>
-                </li>
-                <li>
-                  <span className="tm-item">Total spent</span>
-                  <b>$4,900</b>
-                </li>
-              </ul>
-              <div className="tm-out">Just a fraction of the work. Nothing left for the rest.</div>
-            </div>
-
-            <div className="tm-vs" aria-hidden="true">
-              <span className="vs-x">×</span>
-              <span className="vs-lab">VS</span>
-            </div>
-
-            <div className="tm-side primary">
-              <div className="tm-flag">🇧🇩</div>
-              <h4>$5,000 in Bangladesh</h4>
-              <ul className="tm-list">
-                <li>
-                  <span className="tm-item">Full smile makeover · 10 units</span>
-                  <b>$2,800</b>
-                </li>
-                <li>
-                  <span className="tm-item">5★ hotel · 7 nights</span>
-                  <b>$700</b>
-                </li>
-                <li>
-                  <span className="tm-item">Business‑class return flight</span>
-                  <b>$900</b>
-                </li>
-                <li>
-                  <span className="tm-item">Concierge · driver · tours</span>
-                  <b>$400</b>
-                </li>
-              </ul>
-              <div className="tm-out primary">The whole trip. The whole smile. Money to spare.</div>
-            </div>
-          </div>
-
-          <div className="tm-foot" data-reveal>
-            <p>
-              Indicative figures based on premium private clinics, January 2025. Your personalised
-              quote is provided after a free 24-hour WhatsApp consultation.
-            </p>
-            <a href="#contact" className="tm-btn tm-btn-primary magnetic" data-cursor="Quote">
-              Get my personalised quote
-              <span className="arrow" aria-hidden="true">
-                <svg
-                  viewBox="0 0 24 24"
-                  width="14"
-                  height="14"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2.2"
-                >
-                  <path d="M5 12h14M13 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </span>
-            </a>
-          </div>
-        </div>
       </section>
 
       {/* Standards & safety */}
@@ -1260,12 +970,10 @@ export default function DentalTourism() {
             <h2 className="display" data-reveal>
               International standards.
               <br />
-              <em>Local rates.</em>
+              <em>Personal care.</em>
             </h2>
             <p className="lead" data-reveal>
-              We use the same premium implant systems, the same B-class sterilisation, the same
-              digital workflows as the best clinics in London or Zurich. The only thing different is
-              the price tag.
+              Our team combines established implant systems, sterilisation protocols and digital planning with personal support throughout your visit.
             </p>
           </div>
 
@@ -1638,7 +1346,7 @@ export default function DentalTourism() {
                 <div className="step-time">Before you fly</div>
                 <h4>Remote consultation</h4>
                 <p>
-                  Share dental records over WhatsApp or email. Receive a full treatment plan, costed
+                  Share dental records over WhatsApp or email. Receive a full treatment plan, tailored
                   and dated, before you book a flight.
                 </p>
               </li>
@@ -2865,9 +2573,7 @@ export default function DentalTourism() {
               <div className="faq-a">
                 <p>
                   Strongly encouraged. Our coordinators handle their travel arrangements alongside
-                  yours — same hotel, same driver, same restaurant bookings. A companion fee covers
-                  nothing clinical but everything logistical; budget about $40/day on top of your
-                  trip cost. They are welcome in the consultation room at any point you'd like them
+                  yours — same hotel, same driver, same restaurant bookings. We can coordinate their stay alongside yours. They are welcome in the consultation room at any point you'd like them
                   there.
                 </p>
               </div>
@@ -2940,7 +2646,7 @@ export default function DentalTourism() {
               </h2>
               <p className="lead">
                 Send a few photos and your dental history over WhatsApp. Within 24 hours our
-                coordinator returns a full, costed treatment plan — and an itinerary for the rest of
+                coordinator returns a full treatment plan — and an itinerary for the rest of
                 your trip.
               </p>
 
@@ -3335,43 +3041,6 @@ function initDentalTourism() {
       });
   });
 
-  /* ── Comparison morphing prices ── */
-  document.querySelectorAll<HTMLElement>('.cmp-price').forEach((el) => {
-    const from = parseFloat(el.dataset.from || '0');
-    const to = parseFloat(el.dataset.to || '0');
-    const prefix = el.dataset.prefix || '';
-    el.textContent = prefix + from.toLocaleString();
-    const obj = { v: from };
-    gsap
-      .timeline({
-        scrollTrigger: { trigger: el, start: 'top 80%', once: true },
-      })
-      .to(obj, {
-        v: to,
-        duration: 2.5,
-        ease: 'expo.inOut',
-        onUpdate: () => {
-          el.textContent = prefix + Math.round(obj.v).toLocaleString();
-        },
-      });
-  });
-  document.querySelectorAll<HTMLElement>('[data-savings]').forEach((el) => {
-    const target = parseInt(el.dataset.savings || '0', 10);
-    const obj = { v: 0 };
-    gsap
-      .timeline({
-        scrollTrigger: { trigger: el, start: 'top 85%', once: true },
-      })
-      .to(obj, {
-        v: target,
-        duration: 2,
-        ease: 'expo.out',
-        onUpdate: () => {
-          el.textContent = String(Math.round(obj.v));
-        },
-      });
-  });
-
   /* ── Generic reveal ── */
   document.querySelectorAll<HTMLElement>('[data-reveal]').forEach((el, i) => {
     gsap
@@ -3464,32 +3133,6 @@ function initDentalTourism() {
         opacity: 0,
         duration: 1,
         ease: 'expo.out',
-      });
-  }
-
-  /* ── Trip math ── */
-  if (!prefersReducedMotion) {
-    gsap
-      .timeline({
-        scrollTrigger: { trigger: '.tm-compare', start: 'top 80%', once: true },
-      })
-      .from('.tm-side', {
-        y: 40,
-        opacity: 0,
-        duration: 1,
-        stagger: 0.15,
-        ease: 'expo.out',
-      });
-    gsap
-      .timeline({
-        scrollTrigger: { trigger: '.tm-compare', start: 'top 80%', once: true },
-      })
-      .from('.tm-vs', {
-        scale: 0.4,
-        opacity: 0,
-        duration: 1.4,
-        ease: 'elastic.out(1, .5)',
-        delay: 0.4,
       });
   }
 

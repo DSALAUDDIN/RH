@@ -1,8 +1,7 @@
 'use client';
 
-import { motion, useSpring, useInView, type Variants } from 'framer-motion';
-import { useRef, useEffect, useState } from 'react';
-import Image from 'next/image';
+import { motion, useSpring, type Variants } from 'framer-motion';
+import { useRef, useEffect } from 'react';
 import Link from 'next/link';
 import {
   ArrowUpRight,
@@ -12,38 +11,11 @@ import {
   Star,
   Sparkles,
   CheckCircle2,
-  Award,
   Stethoscope,
   GraduationCap,
 } from 'lucide-react';
 import './Hero.css';
 import herobanner from '../assets/Hero/herobanner.webp';
-
-/* Animated Counter */
-function Counter({ to, suffix = '' }: { to: number; suffix?: string }) {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: '-50px' });
-  const [count, setCount] = useState(0);
-  useEffect(() => {
-    if (!inView) return;
-    let c = 0;
-    const inc = to / 70;
-    const t = setInterval(() => {
-      c += inc;
-      if (c >= to) {
-        setCount(to);
-        clearInterval(t);
-      } else setCount(Math.floor(c));
-    }, 20);
-    return () => clearInterval(t);
-  }, [inView, to]);
-  return (
-    <span ref={ref}>
-      {count}
-      {suffix}
-    </span>
-  );
-}
 
 /* Staggered Word Reveal */
 const containerVariants: Variants = {
@@ -117,33 +89,6 @@ export default function Hero() {
   const homeVideoUrl =
     'https://res.cloudinary.com/dxrcufs8f/video/upload/v1778516898/Untitled_design_1_1_whreqj.mp4';
 
-  const stats = [
-    { val: 2, suf: '', lab: 'Branches in Dhaka' },
-    { val: 2, suf: '', lab: 'Clinicians at both' },
-    { val: 3, suf: 'D', lab: 'CBCT on site' },
-  ];
-
-  const [particles, setParticles] = useState<
-    { left: string; top: string; duration: number; delay: number; size: number; xOffset: number }[]
-  >([]);
-
-  useEffect(() => {
-    // Generated after mount to avoid a hydration mismatch.
-    const frame = requestAnimationFrame(() => {
-      setParticles(
-        [...Array(10)].map(() => ({
-          left: `${Math.random() * 100}%`,
-          top: `${Math.random() * 100}%`,
-          duration: 5 + Math.random() * 8,
-          delay: Math.random() * 5,
-          size: Math.random() * 3 + 1,
-          xOffset: Math.random() * 50 - 25,
-        })),
-      );
-    });
-    return () => cancelAnimationFrame(frame);
-  }, []);
-
   return (
     <section className="hero-v5" ref={containerRef} style={{ position: 'relative' }}>
       {/* Dynamic Background */}
@@ -160,52 +105,14 @@ export default function Hero() {
           {homeVideoUrl && <source src={homeVideoUrl} type="video/mp4" />}
           <track kind="captions" srcLang="en" label="English" default />
         </video>
-        <div className="hero-mesh-1" />
-        <div className="hero-mesh-2" />
-        <div className="hero-noise" />
+
       </motion.div>
 
       {/* Cinematic Dust Particles */}
-      <div className="hero-particles">
-        {particles.map((p, i) => (
-          <motion.div
-            key={i}
-            className="hero-particle"
-            animate={{
-              y: [0, -150, 0],
-              opacity: [0, 0.6, 0],
-              x: [0, p.xOffset, 0],
-            }}
-            transition={{
-              duration: p.duration,
-              repeat: Infinity,
-              delay: p.delay,
-              ease: 'easeInOut',
-            }}
-            style={{
-              left: p.left,
-              top: p.top,
-              width: p.size,
-              height: p.size,
-            }}
-          />
-        ))}
-      </div>
 
       <motion.div className="container hero-inner">
         {/* Left section */}
         <div className="hero-left">
-          <motion.div
-            className="hero-kicker glass-badge"
-            initial={{ opacity: 0, scale: 0.9, y: 20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
-          >
-            <div className="kicker-dot">
-              <div className="kicker-pulse" />
-            </div>
-            <span className="kicker-text">Meet Our Expert Doctors</span>
-          </motion.div>
 
           <h1 className="hero-title">
             <RevealText text="Two clinics." />
@@ -247,43 +154,6 @@ export default function Hero() {
             </a>
           </motion.div>
 
-          <motion.div
-            className="hero-trust-bar"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.6 }}
-          >
-            <div className="trust-item">
-              <CheckCircle2 color="#4ade80" size={18} />
-              <span>Comfort-focused care</span>
-            </div>
-            <div className="trust-sep" />
-            <div className="trust-item">
-              <Award color="#38bdf8" size={18} />
-              <span>BMDC registered</span>
-            </div>
-            <div className="trust-sep" />
-            <div className="trust-item">
-              <GraduationCap color="#a78bfa" size={18} />
-              <span>Internationally Trained</span>
-            </div>
-          </motion.div>
-
-          <motion.div
-            className="hero-stats-glass"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4, duration: 0.6 }}
-          >
-            {stats.map((s, i) => (
-              <div key={i} className="stat-group">
-                <span className="stat-val">
-                  <Counter to={s.val} suffix={s.suf} />
-                </span>
-                <span className="stat-lab">{s.lab}</span>
-              </div>
-            ))}
-          </motion.div>
         </div>
 
         {/* Right section - doctor profiles */}
@@ -295,8 +165,6 @@ export default function Hero() {
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
           >
             {/* Decorative glowing rings */}
-            <div className="hero-glow-ring ring-1" />
-            <div className="hero-glow-ring ring-2" />
 
             {/* Panel Label */}
             <motion.div
@@ -320,12 +188,7 @@ export default function Hero() {
               <div className="hero-doc-card-accent hasan-accent" />
               <div className="hero-doc-card-inner">
                 <div className="hero-doc-avatar hasan-avatar">
-                  <Image
-                    src="/assets/team/portraits/hasan-avatar.webp"
-                    alt="Dr. B.M. Rafiqul Hasan"
-                    width={112}
-                    height={112}
-                  />
+                  <span>RH</span>
                 </div>
                 <div className="hero-doc-info">
                   <div className="hero-doc-name-row">
@@ -370,12 +233,7 @@ export default function Hero() {
               <div className="hero-doc-card-accent shimia-accent" />
               <div className="hero-doc-card-inner">
                 <div className="hero-doc-avatar shimia-avatar">
-                  <Image
-                    src="/assets/team/portraits/shimia-avatar.webp"
-                    alt="Dr. Shimia Binte Taher"
-                    width={112}
-                    height={112}
-                  />
+                  <span>ST</span>
                 </div>
                 <div className="hero-doc-info">
                   <div className="hero-doc-name-row">
@@ -401,15 +259,7 @@ export default function Hero() {
             </motion.div>
 
             {/* Bottom floating pill */}
-            <motion.div
-              className="hero-panel-footer-pill"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.5, duration: 0.5 }}
-            >
-              <ShieldCheck size={13} className="accent-icon" />
-              <span>Both BMDC registered · the same team at both branches</span>
-            </motion.div>
+
           </motion.div>
         </div>
       </motion.div>

@@ -59,9 +59,7 @@ export interface Branch {
   facilities: string[];
   services: string[];
 
-  priceRange: string;
   paymentAccepted: string;
-  pricingModel: 'ranges' | 'published-list';
 
   schemaDescription: string;
   heroImage: string;
@@ -131,9 +129,7 @@ export const BRANCHES: Record<BranchId, Branch> = {
       'CBCT Imaging',
     ],
 
-    priceRange: '৳৳৳',
     paymentAccepted: 'Cash, Card, bKash',
-    pricingModel: 'ranges',
 
     schemaDescription:
       'Appointment-only private dental suite in Banani, Dhaka. 3D CBCT imaging on site and a consultation room separate from the treatment room. Same clinicians, materials and sterilisation protocol as RH Dental Care Banasree.',
@@ -161,7 +157,7 @@ export const BRANCHES: Record<BranchId, Branch> = {
         src: '/assets/branches/banani/consultation.webp',
         alt: 'Consultation room at RH Dental Care Banani: a stone desk with two chairs facing it, beside backlit glass display shelves set into an oak slat wall.',
         caption:
-          'Consulting happens here, at a desk, before anyone reclines. Plans and costs are discussed in this room, not in the chair.',
+          'Consulting happens here, at a desk, before anyone reclines. Your treatment plan is discussed here before care begins.',
         w: 1200,
         h: 1600,
       },
@@ -186,7 +182,7 @@ export const BRANCHES: Record<BranchId, Branch> = {
     tagline: 'Flagship dental hospital',
 
     audience: 'For families, multi-visit plans and comprehensive cases',
-    promise: 'Everything under one roof, with prices published up front.',
+    promise: 'Everything under one roof, with coordinated care at each stage.',
 
     phone: '+8801775227902',
     phoneDisplay: '01775-227902',
@@ -231,7 +227,6 @@ export const BRANCHES: Record<BranchId, Branch> = {
     facilities: [
       'In-house master digital lab',
       'Full specialist team on site',
-      '0% EMI on treatment plans',
     ],
     services: [
       'Dental Implants',
@@ -242,12 +237,10 @@ export const BRANCHES: Record<BranchId, Branch> = {
       'Prosthodontics',
     ],
 
-    priceRange: '৳৳',
     paymentAccepted: 'Cash, Card, bKash',
-    pricingModel: 'published-list',
 
     schemaDescription:
-      'Full-service dental hospital in Banasree, Dhaka. In-house master digital lab, a full specialist team on site, a published price list and 0% EMI. Same clinicians, materials and sterilisation protocol as RH Dental Care Banani.',
+      'Full-service dental hospital in Banasree, Dhaka. In-house master digital lab, a full specialist team on site, coordinated treatment planning. Same clinicians, materials and sterilisation protocol as RH Dental Care Banani.',
     heroImage: '/assets/branches/banasree/team.webp',
     cardImage: '/assets/branches/banasree/reception.webp',
     ogImage: '/assets/branches/banasree/team.webp',

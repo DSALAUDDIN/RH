@@ -156,10 +156,7 @@ const pageFaqs = [
     q: 'How long does a treated tooth last?',
     a: 'With a well-placed crown and proper oral hygiene, a root-canal-treated tooth can function for decades — even a lifetime. Our success rates are consistently above 95%.',
   },
-  {
-    q: 'How much does root canal treatment cost?',
-    a: 'We offer three specialized RCT + Crown packages: Essential (৳13,000), Enhanced (৳15,000), and Premium Zirconia (৳20,000). Prices include complete root canal treatment and the final crown prosthesis.',
-  },
+
   {
     q: 'Is it suitable for international patients?',
     a: 'Absolutely. Our single-visit protocol is purpose-built for medical tourism. Complete treatment in one appointment with digital follow-up support.',
@@ -356,7 +353,7 @@ export default function RootCanalPage() {
                     'Complete treatment in one appointment',
                     'International standard sterilization and protocols',
                     'Advanced digital and minimally invasive techniques',
-                    'Exceptional value compared to global treatment costs',
+                    'Coordinated treatment for visiting patients',
                   ].map((b, i) => (
                     <div key={i} className="rc-patient-benefit rc-intl-benefit">
                       <CheckCircle2 size={15} /> <span>{b}</span>
@@ -773,154 +770,6 @@ export default function RootCanalPage() {
       </section>
 
       {/* Treatment packages */}
-      <section className="imp-section imp-section-white" id="pricing">
-        <div className="container">
-          <FadeIn>
-            <div className="imp-section-header">
-              <span className="imp-label">
-                <Sparkles size={14} /> Investment in Your Health
-              </span>
-              <h2 className="imp-title">
-                Root Canal{' '}
-                <span className="imp-accent" style={{ color: '#059669' }}>
-                  Packages
-                </span>
-              </h2>
-              <p className="imp-subtitle">
-                Comprehensive RCT + Crown packages designed for durability, protection, and
-                aesthetics. Choose the plan that best fits your tooth condition and budget.
-              </p>
-            </div>
-          </FadeIn>
-
-          <div className="imp-types-grid">
-            {[
-              {
-                id: 'essential',
-                name: 'N2 Sealer + PFM Crown',
-                price: '৳13,000',
-                tag: 'Essential Protection',
-                color: '#64748b',
-                bg: '#f1f5f9',
-                desc: 'A budget-friendly and dependable restoration. PFM crown provides good strength and a natural appearance.',
-                features: [
-                  'Complete RCT Treatment',
-                  'N2 advanced sealing',
-                  'Color matching PFM crown',
-                  'Good strength & durability',
-                  'Economical solution',
-                ],
-              },
-              {
-                id: 'enhanced',
-                name: 'MTA Sealer + Premium PFM',
-                price: '৳15,000',
-                tag: 'Enhanced Healing',
-                color: '#0ea5e9',
-                bg: '#e0f2fe',
-                desc: 'Advanced biocompatible sealers for better sealing and healing. Premium PFM offers improved esthetics and strength.',
-                features: [
-                  'Complete RCT Treatment',
-                  'Sealapex / MTA sealer',
-                  'Premium matching PFM crown',
-                  'Better sealing & healing',
-                  'Improved esthetics',
-                ],
-              },
-              {
-                id: 'premium',
-                name: 'Biosealer + Zirconia Crown',
-                price: '৳20,000',
-                tag: 'Premium Esthetics',
-                color: '#10b981',
-                bg: '#d1fae5',
-                desc: 'Elite package combining advanced Biosealers with highly esthetic Zirconia. Best for beauty, performance, and longevity.',
-                features: [
-                  'Complete RCT Treatment',
-                  'Biosealer / MTA sealer',
-                  'High-end Zirconia crown',
-                  'Highly esthetic & natural',
-                  'Excellent long-term results',
-                ],
-              },
-            ].map((pkg, i) => (
-              <FadeIn key={pkg.id} delay={i * 0.1}>
-                <div
-                  className={`imp-type-card rc-pkg-card card-${i + 1}`}
-                  style={{ borderTop: `6px solid ${pkg.color}` }}
-                >
-                  <div className="imp-type-tag" style={{ background: pkg.bg, color: pkg.color }}>
-                    {pkg.tag}
-                  </div>
-                  <h3 className="imp-type-title" style={{ marginTop: '0.5rem' }}>
-                    {pkg.name}
-                  </h3>
-                  <p className="imp-type-desc" style={{ minHeight: '4.5rem' }}>
-                    {pkg.desc}
-                  </p>
-
-                  <div className="imp-type-price">
-                    {pkg.price}
-                    <span>Full RCT + Crown Cost</span>
-                  </div>
-
-                  <div className="imp-type-features" style={{ marginTop: '1.5rem' }}>
-                    {pkg.features.map((f, j) => (
-                      <div key={j} className="imp-type-feature">
-                        <CheckCircle2 size={14} style={{ color: pkg.color }} /> {f}
-                      </div>
-                    ))}
-                  </div>
-
-                  <Link
-                    href={pkg.id === 'premium' ? '/zirconia-crown' : '/contact'}
-                    className="imp-btn-primary"
-                    style={{
-                      width: '100%',
-                      justifyContent: 'center',
-                      marginTop: '2rem',
-                      background: pkg.color,
-                      boxShadow: 'none',
-                      padding: '0.9rem',
-                    }}
-                  >
-                    {pkg.id === 'premium' ? 'Learn About Zirconia' : 'Select This Package'}
-                  </Link>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
-
-          {/* Payment note */}
-          <FadeIn delay={0.3}>
-            <div className="imp-payment-note" style={{ borderColor: 'rgba(16,185,129,0.1)' }}>
-              <div className="imp-payment-icon" style={{ color: '#10b981' }}>
-                <MessageCircle size={24} />
-              </div>
-              <div className="imp-payment-body">
-                <h4>Flexible Payment Structure</h4>
-                <p>
-                  We understand that quality care is an investment. We offer a two-phase payment
-                  plan:
-                </p>
-                <div className="imp-payment-steps">
-                  <div className="imp-payment-step">
-                    <strong style={{ color: '#10b981' }}>Phase One (Surgery)</strong>
-                    <span>Paid during the Root Canal procedure and initial preparation.</span>
-                  </div>
-                  <div className="imp-payment-step-arrow">
-                    <ChevronRight size={20} />
-                  </div>
-                  <div className="imp-payment-step">
-                    <strong style={{ color: '#10b981' }}>Phase Two (Prosthesis)</strong>
-                    <span>Paid upon successful placement and fitting of your final crown.</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
 
       {/* Technology flyer */}
       <section className="imp-section" style={{ background: '#f8fafc', padding: '0 0 6rem 0' }}>

@@ -20,7 +20,6 @@ import {
   BadgeCheck,
   Smile,
   Activity,
-  Zap,
   Eye,
   Layers,
   HeartPulse,
@@ -29,8 +28,6 @@ import {
   ScanLine,
   MonitorDot,
   Wifi,
-  User,
-  Brain,
   GraduationCap,
   X,
   Play,
@@ -228,43 +225,11 @@ const facilities = [
 ];
 
 /* Why choose us */
-const whyCards = [
-  {
-    icon: <Users size={22} />,
-    title: 'Expert Multi-Specialty Team',
-    desc: 'Specialists in all dental disciplines — from implantology and orthodontics to cosmetic design and pediatric care.',
-  },
-  {
-    icon: <Brain size={22} />,
-    title: 'Advanced Technology & Digital Workflow',
-    desc: '3D scanners, digital imaging, and in-house lab for accurate diagnosis and seamless treatment execution.',
-  },
-  {
-    icon: <User size={22} />,
-    title: 'Customised Patient-Centered Care',
-    desc: "Every treatment plan is tailored to each patient's unique anatomy, aesthetic goals, and oral health needs.",
-  },
-  {
-    icon: <Smile size={22} />,
-    title: 'Special Care for Children & SEN',
-    desc: 'Dedicated child-friendly approach and GA OT setup for patients who need extra comfort and care.',
-  },
-  {
-    icon: <Zap size={22} />,
-    title: 'Comfort-focused care',
-    desc: 'Local anaesthetic and, where a case needs it, sedation. Tell us if you are anxious and the appointment is paced around that.',
-  },
-  {
-    icon: <CalendarCheck size={22} />,
-    title: 'Proven Complex Case Success',
-    desc: 'Numerous full mouth rehabilitations and smile makeovers completed with outstanding, long-lasting results.',
-  },
-];
 
 const process = [
   {
     n: '01',
-    title: 'Free Consultation',
+    title: 'Consultation',
     desc: 'Thorough digital examination and 3D scan to fully understand your dental health.',
   },
   {
@@ -774,40 +739,6 @@ export default function AboutPage() {
       </section>
 
       {/* Stats */}
-      <section className="ab-section ab-section-white">
-        <div className="container">
-          <FadeIn>
-            <div style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
-              <span className="ab-label ab-label-light">
-                <Sparkles size={12} /> By the Numbers
-              </span>
-              <h2 className="ab-section-title-light">
-                Results that <span className="ab-blue-text">Speak for Themselves</span>
-              </h2>
-            </div>
-          </FadeIn>
-          <motion.div
-            className="ab-stats-bento"
-            variants={stagger}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, margin: '-60px' }}
-          >
-            {[
-              { val: 2, suf: '', label: 'Premium Branches', icon: <Building2 size={22} /> },
-              { val: 5000, suf: '+', label: 'Total sq.ft Area', icon: <ScanLine size={22} /> },
-            ].map((s, i) => (
-              <motion.div key={i} className="ab-stat-card" variants={fadeUp}>
-                <div className="ab-stat-card-icon">{s.icon}</div>
-                <div className="ab-stat-card-number">
-                  <Counter to={s.val} suffix={s.suf} />
-                </div>
-                <div className="ab-stat-card-label">{s.label}</div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
 
       {/* Services */}
       <section className="ab-section ab-section-light">
@@ -893,38 +824,6 @@ export default function AboutPage() {
       </section>
 
       {/* Why choose us */}
-      <section className="ab-section ab-section-mid">
-        <div className="container">
-          <FadeIn>
-            <span className="ab-label">
-              <CheckCircle2 size={14} /> Why RH Dental Care
-            </span>
-            <h2 className="ab-section-title-dark">
-              The Difference You Can <span className="ab-shine-text">Feel</span>
-            </h2>
-            <p className="ab-body-dark" style={{ maxWidth: '560px' }}>
-              Proven expertise, advanced technology, and a culture of genuine care — that&apos;s why
-              thousands of patients across Dhaka choose us and keep coming back.
-            </p>
-          </FadeIn>
-          <motion.div
-            className="ab-why-grid-dark"
-            variants={stagger}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, margin: '-60px' }}
-          >
-            {whyCards.map((c, i) => (
-              <motion.div key={i} className="ab-why-cell" variants={fadeUp}>
-                <span className="ab-why-cell-num">{String(i + 1).padStart(2, '0')}</span>
-                <div className="ab-why-icon">{c.icon}</div>
-                <h3 className="ab-why-title">{c.title}</h3>
-                <p className="ab-why-desc">{c.desc}</p>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
 
       {/* Reviews */}
       <Testimonials />

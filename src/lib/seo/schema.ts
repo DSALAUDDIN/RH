@@ -79,7 +79,6 @@ export function branchSchema(id: BranchId): JsonLdNode {
     geo: geo(b),
     hasMap: b.mapLink,
     openingHoursSpecification: openingHours(b),
-    priceRange: b.priceRange,
     currenciesAccepted: 'BDT',
     paymentAccepted: b.paymentAccepted,
     areaServed: { '@type': 'City', name: 'Dhaka' },

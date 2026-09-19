@@ -1,5 +1,4 @@
 import { Metadata } from 'next';
-import Testimonials from '@/components/Testimonials';
 import { prisma } from '@/lib/prisma';
 import VideoGallery from '@/components/VideoGallery';
 import { pageMeta } from '@/lib/seo/metadata';
@@ -67,9 +66,6 @@ export default async function ReviewsPage() {
       </section>
       {/* Video Reviews Section */}
       <VideoGallery videos={videoReviews} />
-
-      {/* Testimonials Core Section */}
-      <Testimonials />
 
       {/* Leave a Review CTA */}
       <section

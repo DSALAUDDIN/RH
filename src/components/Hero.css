@@ -94,9 +94,7 @@
   position: absolute;
   background: #fff;
   border-radius: 50%;
-  box-shadow:
-    0 0 15px rgba(255, 255, 255, 0.8),
-    0 0 30px rgba(14, 165, 233, 0.6);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
 }
 
 /* Base dark overlay gradient to ensure text readability always */
@@ -146,7 +144,7 @@
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 100px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
   margin-bottom: 2rem;
   align-self: flex-start;
 }
@@ -238,9 +236,7 @@
   border-radius: 100px;
   text-decoration: none;
   overflow: hidden;
-  box-shadow:
-    0 10px 30px -10px rgba(14, 165, 233, 0.6),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .btn-premium::before {
@@ -254,9 +250,7 @@
 }
 .btn-premium:hover {
   transform: translateY(-2px);
-  box-shadow:
-    0 20px 40px -10px rgba(14, 165, 233, 0.7),
-    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
 }
 .btn-premium:hover::before {
   opacity: 1;
@@ -314,14 +308,14 @@
   padding: 0.85rem 1.6rem;
   border-radius: 100px;
   text-decoration: none;
-  box-shadow: 0 10px 25px -5px rgba(217, 119, 6, 0.35);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
   transition: all 0.25s ease;
   border: 1px solid rgba(253, 230, 138, 0.3);
 }
 
 .btn-hero-banani:hover {
   transform: translateY(-2px);
-  box-shadow: 0 15px 30px -5px rgba(217, 119, 6, 0.5);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
 }
 
 .btn-hero-banasree {
@@ -335,14 +329,14 @@
   padding: 0.85rem 1.6rem;
   border-radius: 100px;
   text-decoration: none;
-  box-shadow: 0 10px 25px -5px rgba(2, 132, 199, 0.35);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
   transition: all 0.25s ease;
   border: 1px solid rgba(186, 230, 253, 0.3);
 }
 
 .btn-hero-banasree:hover {
   transform: translateY(-2px);
-  box-shadow: 0 15px 30px -5px rgba(2, 132, 199, 0.5);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
 }
 
 .btn-hero-compare {
@@ -391,7 +385,7 @@
   border-radius: 1.5rem;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
 }
 .stat-group {
   display: flex;
@@ -474,19 +468,14 @@
   border-radius: 1.5rem;
   overflow: hidden;
   cursor: default;
-  box-shadow:
-    0 20px 60px -15px rgba(0, 0, 0, 0.6),
-    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
   transition:
     box-shadow 0.3s ease,
     border-color 0.3s ease;
 }
 .hero-doc-card:hover {
   border-color: rgba(56, 189, 248, 0.2);
-  box-shadow:
-    0 30px 70px -15px rgba(0, 0, 0, 0.7),
-    0 0 0 1px rgba(56, 189, 248, 0.08),
-    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
 }
 
 /* Colored top accent line */
@@ -500,11 +489,11 @@
 }
 .shimia-accent {
   background: linear-gradient(90deg, #c084fc, #e879f9, #a855f7);
-  box-shadow: 0 0 20px rgba(168, 85, 247, 0.4);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
 }
 .hasan-accent {
   background: linear-gradient(90deg, #38bdf8, #0ea5e9, #0284c7);
-  box-shadow: 0 0 20px rgba(14, 165, 233, 0.4);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
 }
 
 .hero-doc-card-inner {
@@ -528,21 +517,14 @@
   color: #fff;
   letter-spacing: 0.03em;
   border: 2px solid rgba(255, 255, 255, 0.12);
-  overflow: hidden;
-}
-.hero-doc-avatar img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
 }
 .shimia-avatar {
   background: linear-gradient(135deg, #7c3aed, #a855f7, #c084fc);
-  box-shadow: 0 8px 20px -5px rgba(168, 85, 247, 0.5);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
 }
 .hasan-avatar {
   background: linear-gradient(135deg, #0369a1, #0ea5e9, #38bdf8);
-  box-shadow: 0 8px 20px -5px rgba(14, 165, 233, 0.5);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
 }
 
 .hero-doc-info {
@@ -676,9 +658,7 @@
   border-top-color: rgba(56, 189, 248, 0.15);
   border-right-color: rgba(99, 102, 241, 0.1);
   animation: spin 30s linear infinite;
-  box-shadow:
-    inset 0 0 40px rgba(56, 189, 248, 0.02),
-    0 0 20px rgba(56, 189, 248, 0.05);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
 }
 .ring-2 {
   width: 90%;
@@ -710,7 +690,7 @@
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 100px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
   z-index: 20;
   color: #f1f5f9;
   font-size: 0.75rem;
@@ -719,9 +699,7 @@
   transition: all 0.3s ease;
 }
 .glass-pill:hover {
-  box-shadow:
-    0 0 20px rgba(56, 189, 248, 0.3),
-    0 10px 30px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
   border-color: rgba(56, 189, 248, 0.4);
 }
 .accent-icon {

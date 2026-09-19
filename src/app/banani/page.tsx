@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { BRANCHES, SHARED_TRUST } from '@/lib/branches';
+import { BRANCHES } from '@/lib/branches';
 import { breadcrumbs } from '@/lib/seo/schema';
 import { pageMeta } from '@/lib/seo/metadata';
 import JsonLd from '@/components/seo/JsonLd';
@@ -153,53 +153,6 @@ export default function BananiPage() {
         branch="banani"
         intro="Banani runs a morning and an evening session. Who you see depends on the time you book, so the list below is worth a look before you choose a slot."
       />
-
-      {/* Parity */}
-      <section className="bn-parity rh-section" aria-labelledby="bn-parity-t">
-        <div className="rh-container">
-          <h2 id="bn-parity-t" className="bn-h2">
-            The care is the same at both branches
-          </h2>
-          <p className="bn-body bn-parity-line">{SHARED_TRUST}</p>
-          <p className="bn-body">
-            Banani is priced above Banasree because the room is yours for the whole appointment —
-            not because the dentistry differs. It does not. The same two clinicians, the same
-            materials and the same sterilisation protocol are used at both addresses.
-          </p>
-          <Link href="/banasree" className="rh-btn rh-btn-ghost bn-parity-cta">
-            See the Banasree hospital
-          </Link>
-        </div>
-      </section>
-
-      {/* Cost */}
-      <section className="bn-cost rh-section" aria-labelledby="bn-cost-t">
-        <div className="rh-container">
-          <h2 id="bn-cost-t" className="bn-h2">
-            What it costs
-          </h2>
-          <p className="bn-body">
-            Banani publishes a consultation fee and package ranges rather than an itemised list — a
-            plan is quoted against your own examination and imaging, in writing, before any
-            treatment starts.
-          </p>
-          <EditorialNote>
-            <div className="rh-niche bn-cost-note">
-              <p>
-                <strong>Pending:</strong> consultation fee (and whether it is credited to
-                treatment); package ranges for implants, veneers and orthodontics.
-              </p>
-            </div>
-          </EditorialNote>
-          <p className="bn-body">
-            The full published price list is at{' '}
-            <Link href="/banasree#pricing" className="bn-link">
-              Banasree
-            </Link>
-            .
-          </p>
-        </div>
-      </section>
 
       {/* Getting here / booking */}
       <section className="bn-visit rh-section" aria-labelledby="bn-visit-t" id="book">

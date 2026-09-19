@@ -1,6 +1,5 @@
 import Hero from '@/components/Hero';
 import BranchChooser from '@/components/branch/BranchChooser';
-import ServicesList from '@/components/ServicesList';
 import Specialties from '@/components/Specialties';
 import Testimonials from '@/components/Testimonials';
 import VideoSection from '@/components/VideoSection';
@@ -29,7 +28,7 @@ export default function Home() {
       <Specialties />
       <VideoSection />
       <ClinicGallery />
-      <ServicesList limit={4} />
+
       <BeforeAfter />
       <Testimonials />
 

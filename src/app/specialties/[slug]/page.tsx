@@ -288,9 +288,9 @@ const specialtiesData: Record<string, SpecialtyDetail> = {
     flyerImg: dentalTourismBanner,
     flyerFileName: 'RH-Dental-Tourism.png',
     description:
-      'Combine premium specialized dental care with a relaxing travel experience in Bangladesh. Save up to 70% compared to USA, UK & Australia. We provide complete travel assistance including airport pickups, 5-star lodging coordination, private local transit, and beautiful guided tours.',
+      'Combine premium specialized dental care with a relaxing travel experience in Bangladesh. We provide complete travel assistance including airport pickups, 5-star lodging coordination, private local transit, and beautiful guided tours.',
     benefits: [
-      'Save up to 70% on premium implants & cosmetic care',
+      'Coordinated implant and cosmetic care for overseas patients',
       'Identical global materials and diagnostic standards',
       'Fully managed visa, airport, and lodging coordination',
       'Guided sightseeing tours of beautiful Bangladesh',

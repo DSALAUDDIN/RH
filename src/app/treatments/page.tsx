@@ -984,7 +984,7 @@ export default function TreatmentsPage() {
           })}
         </div>
 
-        {/* Dual-Branch Treatment & Pricing Policy */}
+        {/* Branch treatment options */}
         <section
           style={{
             margin: '4rem 0',
@@ -1188,9 +1188,7 @@ export default function TreatmentsPage() {
                   fontSize: '0.85rem',
                 }}
               >
-                <li style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                  <CheckCircle2 size={15} color="#38bdf8" /> 0% Interest EMI facilities available
-                </li>
+
                 <li style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                   <CheckCircle2 size={15} color="#38bdf8" /> In-house CAD/CAM lab turnaround
                 </li>

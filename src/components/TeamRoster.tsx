@@ -57,8 +57,9 @@ export default function TeamRoster({
                     src={c.image}
                     alt={c.imageAlt ?? c.name}
                     width={600}
-                    height={800}
-                    sizes="(max-width: 760px) 50vw, 300px"
+                    height={338}
+                    style={{ width: '100%', height: 'auto', display: 'block' }}
+                    sizes="(max-width: 700px) 90vw, 560px"
                   />
                 ) : (
                   <span className="tr-initials" aria-hidden="true">
