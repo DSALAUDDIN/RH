@@ -23,7 +23,7 @@ import '../implants/implants.css';
 import '../zirconia-crown/zirconia.css';
 import BranchCTA from '@/components/branch/BranchCTA';
 
-import heroImg from '@/assets/specialties/zirconia.jpg';
+import heroImg from '@/assets/specialties/aesthetic_new.png';
 import digitalImg from '@/assets/specialties/zirconia_digital_workflow.png';
 import veneersFlyer from '@/assets/Service_Flyer/veneers_flyer.jpeg';
 

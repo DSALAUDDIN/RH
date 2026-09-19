@@ -23,7 +23,7 @@ const clinicsBanners = [
     image: imagingImg,
     category: 'Elite Diagnostics',
     featured: true,
-    slug: '3d-imaging',
+    slug: '/digital-dentistry',
   },
   {
     title: 'Orthodontic Braces',
@@ -31,7 +31,7 @@ const clinicsBanners = [
     image: bracesImg,
     category: 'Orthodontics',
     featured: false,
-    slug: 'braces',
+    slug: '/orthodontics',
   },
   {
     title: 'Zirconia Restoration',
@@ -39,7 +39,7 @@ const clinicsBanners = [
     image: zirconiaImg,
     category: 'Prosthetics',
     featured: false,
-    slug: 'zirconia',
+    slug: '/zirconia-crown',
   },
   {
     title: 'Advanced Implantology',
@@ -63,7 +63,7 @@ const clinicsBanners = [
     image: gumCareImg,
     category: 'Periodontics',
     featured: false,
-    slug: 'gum-care',
+    slug: '/specialties/gum-care',
   },
   {
     title: 'Kids Dental Care',

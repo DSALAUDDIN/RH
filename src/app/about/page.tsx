@@ -123,14 +123,14 @@ const heroStats = [
 ];
 
 const specialties = [
-  { icon: <Eye size={22} />, name: '3D Imaging', slug: '3d-imaging' },
-  { icon: <Activity size={22} />, name: 'Orthodontics', slug: 'braces' },
-  { icon: <Layers size={22} />, name: 'Zirconia', slug: 'zirconia' },
-  { icon: <Stethoscope size={22} />, name: 'Implants', slug: 'implants' },
-  { icon: <HeartPulse size={22} />, name: 'Root Canal', slug: 'root-canal' },
-  { icon: <Heart size={22} />, name: 'Gum Care', slug: 'gum-care' },
-  { icon: <Smile size={22} />, name: 'Kids Dental', slug: 'kids-care' },
-  { icon: <Sparkles size={22} />, name: 'Aesthetics', slug: 'treatments' },
+  { icon: <Eye size={22} />, name: '3D Imaging', href: '/digital-dentistry' },
+  { icon: <Activity size={22} />, name: 'Orthodontics', href: '/orthodontics' },
+  { icon: <Layers size={22} />, name: 'Zirconia', href: '/zirconia-crown' },
+  { icon: <Stethoscope size={22} />, name: 'Implants', href: '/implants' },
+  { icon: <HeartPulse size={22} />, name: 'Root Canal', href: '/root-canal' },
+  { icon: <Heart size={22} />, name: 'Gum Care', href: '/specialties/gum-care' },
+  { icon: <Smile size={22} />, name: 'Kids Dental', href: '/kids-care' },
+  { icon: <Sparkles size={22} />, name: 'Aesthetics', href: '/specialties/aesthetics' },
 ];
 
 /* Real services from About text */
@@ -556,7 +556,7 @@ export default function AboutPage() {
               viewport={{ once: true }}
             >
               {specialties.map((s, i) => (
-                <Link key={i} href={`/specialties/${s.slug}`} className="ab-spec-item">
+                <Link key={i} href={s.href} className="ab-spec-item">
                   <div className="ab-spec-icon">{s.icon}</div>
                   <span className="ab-spec-name">{s.name}</span>
                 </Link>

@@ -40,6 +40,9 @@ import contentImg from '@/assets/specialties/microscope-loupes.png';
 import otImg from '@/assets/rootcanal/root-ot.jpeg';
 import newImg from '@/assets/rootcanal/img.png';
 import flyerImg from '@/assets/specialties/root-canal-flyer.jpg';
+import JsonLd from '@/components/seo/JsonLd';
+import { faqSchema, publishedFaq } from '@/lib/seo/schema';
+import { rootCanalFaq } from '@/lib/treatment-faq';
 
 function FadeIn({
   children,
@@ -132,7 +135,7 @@ function RCVideo() {
   );
 }
 
-const faqs = [
+const pageFaqs = [
   {
     q: 'Is a root canal painful?',
     a: 'With modern local anaesthesia and microscope-guided techniques, root canal treatment is virtually painless. Most patients report the procedure feels no different from a routine filling.',
@@ -162,6 +165,9 @@ const faqs = [
     a: 'Absolutely. Our single-visit protocol is purpose-built for medical tourism. Complete treatment in one appointment with digital follow-up support.',
   },
 ];
+
+/** Page questions plus the shared treatment FAQ, rendered once. */
+const faqs = [...pageFaqs, ...publishedFaq(rootCanalFaq).map(({ q, a }) => ({ q, a }))];
 
 export default function RootCanalPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -944,6 +950,7 @@ export default function RootCanalPage() {
         </div>
       </section>
 
+      <JsonLd nodes={[faqSchema(faqs)]} />
       {/* FAQ */}
       <section className="imp-section imp-section-light">
         <div className="container">

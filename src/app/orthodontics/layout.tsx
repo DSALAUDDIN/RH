@@ -1,9 +1,7 @@
 import type { Metadata } from 'next';
-import FAQ from '@/components/FAQ';
 import JsonLd from '@/components/seo/JsonLd';
 import { pageMeta } from '@/lib/seo/metadata';
 import { breadcrumbs, ID, medicalProcedureSchema, medicalWebPageSchema } from '@/lib/seo/schema';
-import { orthodonticsFaq } from '@/lib/treatment-faq';
 
 const PATH = '/orthodontics';
 
@@ -37,11 +35,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         ]}
       />
       {children}
-      <FAQ
-        items={orthodonticsFaq}
-        title="Questions about braces and aligners"
-        id="orthodontics-faq"
-      />
     </>
   );
 }

@@ -30,7 +30,7 @@ import '../implants/implants.css';
 import './digital-dentistry.css';
 import BranchCTA from '@/components/branch/BranchCTA';
 
-import heroImg from '@/assets/specialties/3d-imaging.jpg';
+import heroImg from '@/assets/specialties/3d-imaging_new.png';
 import scannerImg from '@/assets/specialties/imaging.png';
 
 /* Real clinical case images */

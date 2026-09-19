@@ -267,11 +267,27 @@
   gap: 1rem;
 }
 
+.tr-cat-focus {
+  font-size: 0.85rem;
+  color: rgba(203, 213, 225, 0.72);
+}
+
 .tr-cat-count {
   font-size: 0.75rem;
   font-weight: 700;
   padding: 0.25rem 0.75rem;
   border-radius: 999px;
+  color: #cbd5e1;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+  .tr-cat-meta {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
 }
 
 .tr-treatment-list {

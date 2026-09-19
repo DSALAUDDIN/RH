@@ -1,9 +1,7 @@
 import type { Metadata } from 'next';
-import FAQ from '@/components/FAQ';
 import JsonLd from '@/components/seo/JsonLd';
 import { pageMeta } from '@/lib/seo/metadata';
 import { breadcrumbs, ID, medicalProcedureSchema, medicalWebPageSchema } from '@/lib/seo/schema';
-import { rootCanalFaq } from '@/lib/treatment-faq';
 
 const PATH = '/root-canal';
 
@@ -39,7 +37,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         ]}
       />
       {children}
-      <FAQ items={rootCanalFaq} title="Questions about root canal treatment" id="root-canal-faq" />
     </>
   );
 }

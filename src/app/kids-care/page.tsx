@@ -1,15 +1,8 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
+import heroImg from '@/assets/specialties/kids-care.jpg';
 import Link from 'next/link';
-import {
-  Phone,
-  HeartPulse,
-  Sparkles,
-  Smile,
-  CheckCircle2,
-  ShieldCheck,
-  Stethoscope,
-} from 'lucide-react';
+import { Phone, HeartPulse, Smile, CheckCircle2, ShieldCheck, Stethoscope } from 'lucide-react';
 import Testimonials from '@/components/Testimonials';
 
 import JsonLd from '@/components/seo/JsonLd';
@@ -33,19 +26,29 @@ export default function KidsCarePage() {
         style={{
           position: 'relative',
           padding: 'clamp(8rem, 15vw, 12rem) 2rem clamp(4rem, 10vw, 8rem)',
-          background: 'linear-gradient(135deg, #0ea5e9 0%, #3b82f6 100%)',
+          background: '#020617',
           color: '#fff',
           overflow: 'hidden',
           textAlign: 'center',
         }}
       >
-        {/* Subtle background decorations for a child-friendly feel */}
-        <div style={{ position: 'absolute', top: '20%', left: '10%', opacity: 0.1 }}>
-          <Smile size={120} />
-        </div>
-        <div style={{ position: 'absolute', bottom: '15%', right: '15%', opacity: 0.1 }}>
-          <Sparkles size={100} />
-        </div>
+        <Image
+          src={heroImg}
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          style={{ objectFit: 'cover', objectPosition: 'center 30%' }}
+        />
+        <div
+          aria-hidden="true"
+          style={{
+            position: 'absolute',
+            inset: 0,
+            background:
+              'linear-gradient(180deg, rgba(2,6,23,0.78) 0%, rgba(2,6,23,0.7) 45%, rgba(2,6,23,0.92) 100%)',
+          }}
+        />
 
         <div className="container" style={{ position: 'relative', zIndex: 2, maxWidth: '800px' }}>
           <div
@@ -53,7 +56,9 @@ export default function KidsCarePage() {
               display: 'inline-flex',
               alignItems: 'center',
               gap: '8px',
-              background: 'rgba(255,255,255,0.2)',
+              background: 'rgba(56,189,248,0.12)',
+              border: '1px solid rgba(56,189,248,0.3)',
+              color: '#7dd3fc',
               padding: '8px 16px',
               borderRadius: '50px',
               fontWeight: 700,
@@ -62,7 +67,7 @@ export default function KidsCarePage() {
               backdropFilter: 'blur(10px)',
             }}
           >
-            <HeartPulse size={16} fill="#fff" />
+            <HeartPulse size={16} />
             <span>Gentle, Fear-Free Pediatric Care</span>
           </div>
 
@@ -77,7 +82,7 @@ export default function KidsCarePage() {
             }}
           >
             Healthy Smiles Start <br />
-            With <span style={{ color: '#fbbf24' }}>Happy Kids</span>
+            With <span style={{ color: '#38bdf8' }}>Happy Kids</span>
           </h1>
 
           <p
@@ -97,8 +102,8 @@ export default function KidsCarePage() {
             <Link
               href="/contact"
               style={{
-                background: '#fff',
-                color: '#0ea5e9',
+                background: 'var(--rh-cta)',
+                color: '#fff',
                 padding: '16px 32px',
                 borderRadius: '50px',
                 fontWeight: 800,
@@ -106,7 +111,7 @@ export default function KidsCarePage() {
                 display: 'flex',
                 alignItems: 'center',
                 gap: '8px',
-                boxShadow: '0 10px 25px rgba(0,0,0,0.2)',
+                boxShadow: '0 12px 32px -8px rgba(0,140,255,0.55)',
                 transition: 'transform 0.2s',
               }}
             >

@@ -52,7 +52,7 @@ export default function Home() {
             transform: 'translate(-50%, -50%)',
             width: '800px',
             height: '800px',
-            background: 'radial-gradient(circle, rgba(156,124,56,0.15) 0%, transparent 70%)',
+            background: 'radial-gradient(circle, rgba(0,140,255,0.16) 0%, transparent 70%)',
             pointerEvents: 'none',
           }}
         />
@@ -64,16 +64,16 @@ export default function Home() {
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '8px',
-                background: 'rgba(255,255,255,0.1)',
+                background: 'rgba(0,140,255,0.1)',
                 padding: '6px 16px',
-                borderRadius: '4px',
+                borderRadius: '999px',
                 fontSize: '0.85rem',
                 fontWeight: 700,
                 marginBottom: '1.5rem',
-                border: '1px solid rgba(255,255,255,0.1)',
+                border: '1px solid rgba(0,140,255,0.25)',
               }}
             >
-              <Sparkles size={16} color="#CDAE51" />
+              <Sparkles size={16} color="#38bdf8" />
               <span style={{ color: '#E4E0D2' }}>Two branches, one clinical team</span>
             </div>
 
@@ -92,7 +92,7 @@ export default function Home() {
 
             <p
               style={{
-                color: '#8C8973',
+                color: 'var(--rh-ink-soft)',
                 marginBottom: '2.5rem',
                 fontSize: '1.25rem',
                 lineHeight: 1.6,
@@ -114,13 +114,13 @@ export default function Home() {
                 href="/contact"
                 className="btn-cta-hover"
                 style={{
-                  backgroundColor: '#9C7C38',
-                  color: 'var(--rh-ink)',
-                  padding: '1.2rem 3rem',
-                  fontSize: '1.15rem',
+                  background: 'var(--rh-cta)',
+                  color: '#fff',
+                  padding: '1.1rem 2.75rem',
+                  fontSize: '1.05rem',
                   fontWeight: 600,
-                  borderRadius: '4px',
-                  boxShadow: '0 10px 30px rgba(156,124,56,0.3)',
+                  borderRadius: '999px',
+                  boxShadow: '0 12px 32px -8px rgba(0,140,255,0.55)',
                   transition: 'transform 0.2s',
                   textDecoration: 'none',
                 }}

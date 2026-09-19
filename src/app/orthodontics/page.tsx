@@ -37,6 +37,9 @@ import heroImg from '@/assets/ortho/ortho-hero.jpg';
 import invisalignFlyer from '@/assets/ortho/invisalign_flyer.png';
 import bracesProgress from '@/assets/ortho/braces_progress.png';
 import clinicActionImg from '@/assets/ortho/ortho-lab.jpg';
+import JsonLd from '@/components/seo/JsonLd';
+import { faqSchema, publishedFaq } from '@/lib/seo/schema';
+import { orthodonticsFaq } from '@/lib/treatment-faq';
 
 function FadeIn({
   children,
@@ -130,7 +133,7 @@ function OrthoVideo() {
   );
 }
 
-const faqs = [
+const pageFaqs = [
   {
     q: 'How do I know which option is right for me?',
     a: 'It depends on the complexity of your case and your lifestyle preferences. During your consultation, we perform a comprehensive evaluation including 3D scanning to recommend the most suitable option — braces, aligners, or a hybrid approach.',
@@ -156,6 +159,9 @@ const faqs = [
     a: 'Some patients benefit from using both braces and aligners strategically during different phases. For example, braces for initial complex movement, then aligners for final refinement and retention.',
   },
 ];
+
+/** Page questions plus the shared treatment FAQ, rendered once. */
+const faqs = [...pageFaqs, ...publishedFaq(orthodonticsFaq).map(({ q, a }) => ({ q, a }))];
 
 export default function OrthodonticsPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -1062,6 +1068,7 @@ export default function OrthodonticsPage() {
         </div>
       </section>
 
+      <JsonLd nodes={[faqSchema(faqs)]} />
       {/* FAQ */}
       <section className="imp-section imp-section-light">
         <div className="container">

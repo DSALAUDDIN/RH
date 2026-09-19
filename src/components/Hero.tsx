@@ -2,6 +2,7 @@
 
 import { motion, useSpring, useInView, type Variants } from 'framer-motion';
 import { useRef, useEffect, useState } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import {
   ArrowUpRight,
@@ -319,7 +320,12 @@ export default function Hero() {
               <div className="hero-doc-card-accent hasan-accent" />
               <div className="hero-doc-card-inner">
                 <div className="hero-doc-avatar hasan-avatar">
-                  <span>RH</span>
+                  <Image
+                    src="/assets/team/portraits/hasan-avatar.webp"
+                    alt="Dr. B.M. Rafiqul Hasan"
+                    width={112}
+                    height={112}
+                  />
                 </div>
                 <div className="hero-doc-info">
                   <div className="hero-doc-name-row">
@@ -364,7 +370,12 @@ export default function Hero() {
               <div className="hero-doc-card-accent shimia-accent" />
               <div className="hero-doc-card-inner">
                 <div className="hero-doc-avatar shimia-avatar">
-                  <span>ST</span>
+                  <Image
+                    src="/assets/team/portraits/shimia-avatar.webp"
+                    alt="Dr. Shimia Binte Taher"
+                    width={112}
+                    height={112}
+                  />
                 </div>
                 <div className="hero-doc-info">
                   <div className="hero-doc-name-row">

@@ -216,8 +216,21 @@
 /* Dark card theme */
 
 .tr-grid {
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+}
+
+@media (max-width: 1024px) {
+  .tr-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 760px) {
+  .tr-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.875rem;
+  }
 }
 
 .tr-card-dark {
@@ -243,18 +256,23 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 4 / 5;
 }
 
 .tr-banner img {
   width: 100% !important;
   height: 100% !important;
   object-fit: cover;
-  object-position: center;
+  object-position: center 20%;
+  transition: transform 0.5s ease;
+}
+
+.tr-card-dark:hover .tr-banner img {
+  transform: scale(1.03);
 }
 
 .tr-body-dark {
-  padding: 1.5rem;
+  padding: 1.1rem 1.1rem 1.25rem;
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -262,7 +280,7 @@
 
 .tr-role-dark {
   color: #3b82f6;
-  font-size: 0.75rem;
+  font-size: 0.68rem;
   font-weight: 700;
   letter-spacing: 0.05em;
   margin: 0 0 0.5rem;
@@ -270,7 +288,7 @@
 
 .tr-name-dark {
   font-family: var(--rh-font-display);
-  font-size: 1.25rem;
+  font-size: 1.05rem;
   font-weight: 700;
   color: #ffffff;
   margin: 0 0 0.25rem;
@@ -333,8 +351,30 @@
   color: #60a5fa;
 }
 
-@media (max-width: 520px) {
-  .tr-grid {
-    grid-template-columns: 1fr;
+@media (max-width: 760px) {
+  .tr-body-dark {
+    padding: 0.85rem;
   }
+  .tr-name-dark {
+    font-size: 0.95rem;
+  }
+}
+
+/* Placeholder for clinicians without a portrait */
+.tr-card-dark .tr-banner {
+  background:
+    radial-gradient(circle at 50% 35%, rgba(59, 130, 246, 0.16), transparent 60%), #0d101d;
+}
+.tr-card-dark .tr-initials {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+  color: #bfdbfe;
+  opacity: 1;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.28), rgba(14, 165, 233, 0.08));
+  border: 1px solid rgba(148, 197, 255, 0.28);
 }

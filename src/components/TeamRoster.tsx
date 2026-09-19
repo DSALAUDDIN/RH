@@ -57,9 +57,8 @@ export default function TeamRoster({
                     src={c.image}
                     alt={c.imageAlt ?? c.name}
                     width={600}
-                    height={338}
-                    style={{ width: '100%', height: 'auto', display: 'block' }}
-                    sizes="(max-width: 700px) 90vw, 400px"
+                    height={800}
+                    sizes="(max-width: 760px) 50vw, 300px"
                   />
                 ) : (
                   <span className="tr-initials" aria-hidden="true">
@@ -72,18 +71,7 @@ export default function TeamRoster({
                 {c.role && <p className="tr-role-dark">{c.role.toUpperCase()}</p>}
 
                 <h3 className="tr-name-dark">
-                  <Link
-                    href={`/${
-                      c.slug ??
-                      'team/' +
-                        c.name
-                          .toLowerCase()
-                          .replace(/[^a-z0-9]+/g, '-')
-                          .replace(/^-|-$/g, '')
-                    }`}
-                  >
-                    {c.name}
-                  </Link>
+                  {c.slug ? <Link href={`/${c.slug}`}>{c.name}</Link> : c.name}
                 </h3>
 
                 {c.procedures.length > 0 && <p className="tr-focus-dark">{c.procedures[0]}</p>}
@@ -109,35 +97,27 @@ export default function TeamRoster({
                   </p>
                 )}
 
-                <div className="tr-footer-dark">
-                  <Link
-                    href={`/${
-                      c.slug ??
-                      'team/' +
-                        c.name
-                          .toLowerCase()
-                          .replace(/[^a-z0-9]+/g, '-')
-                          .replace(/^-|-$/g, '')
-                    }`}
-                    className="tr-link-dark"
-                  >
-                    View Full Profile
-                    <svg
-                      viewBox="0 0 24 24"
-                      width="16"
-                      height="16"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      style={{ marginLeft: 'auto' }}
-                    >
-                      <line x1="5" y1="19" x2="19" y2="5" />
-                      <polyline points="10 5 19 5 19 14" />
-                    </svg>
-                  </Link>
-                </div>
+                {c.slug && (
+                  <div className="tr-footer-dark">
+                    <Link href={`/${c.slug}`} className="tr-link-dark">
+                      View Full Profile
+                      <svg
+                        viewBox="0 0 24 24"
+                        width="16"
+                        height="16"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        style={{ marginLeft: 'auto' }}
+                      >
+                        <line x1="5" y1="19" x2="19" y2="5" />
+                        <polyline points="10 5 19 5 19 14" />
+                      </svg>
+                    </Link>
+                  </div>
+                )}
               </div>
             </li>
           ))}

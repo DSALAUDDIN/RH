@@ -357,3 +357,24 @@
     max-width: none;
   }
 }
+
+/* Price list call-to-action (shown until the published list is added) */
+.bs-price-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--rh-6);
+  flex-wrap: wrap;
+  margin-top: var(--rh-8);
+  padding: var(--rh-8);
+}
+.bs-price-cta-title {
+  font-family: var(--rh-font-display);
+  font-size: var(--rh-step-1);
+  color: var(--rh-ink);
+  margin: 0 0 var(--rh-2);
+}
+.bs-price-cta .bs-body {
+  margin: 0;
+  max-width: 46ch;
+}

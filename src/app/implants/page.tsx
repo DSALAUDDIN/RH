@@ -38,6 +38,9 @@ import heroImg from '@/assets/implants/implant-hero.jpg';
 import typesImg from '@/assets/implants/implant_types.png';
 import beforeAfterImg from '@/assets/implants/implant_before_after.png';
 import labImg from '@/assets/implants/clinic-action.jpg';
+import JsonLd from '@/components/seo/JsonLd';
+import { faqSchema, publishedFaq } from '@/lib/seo/schema';
+import { implantFaq } from '@/lib/treatment-faq';
 
 /* Counter */
 function Counter({ to, suffix = '' }: { to: number; suffix?: string }) {
@@ -217,7 +220,7 @@ const personalizedCare = [
   'Precision-crafted final restorations',
 ];
 
-const faqs = [
+const pageFaqs = [
   {
     q: 'Is dental implant surgery painful?',
     a: 'The procedure is performed under local anaesthetic, so you should not feel the surgery itself. Most patients report mild discomfort for 2-3 days afterwards, usually manageable with the medication prescribed.',
@@ -244,6 +247,9 @@ const faqs = [
     a: 'We offer three specialized packages: Osstem SA (৳45,000), Osstem SOI (৳60,000), and Nobel Biocare (৳80,000). Prices include the implant fixture, surgical placement, and final prosthesis.',
   },
 ];
+
+/** Page questions plus the shared treatment FAQ, rendered once. */
+const faqs = [...pageFaqs, ...publishedFaq(implantFaq).map(({ q, a }) => ({ q, a }))];
 
 /* Page */
 export default function ImplantsPage() {
@@ -993,6 +999,7 @@ export default function ImplantsPage() {
         </div>
       </section>
 
+      <JsonLd nodes={[faqSchema(faqs)]} />
       {/* FAQ */}
       <section className="imp-section imp-section-light">
         <div className="container">

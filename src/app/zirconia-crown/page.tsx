@@ -26,7 +26,7 @@ import '../implants/implants.css';
 import BranchCTA from '@/components/branch/BranchCTA';
 import './zirconia.css';
 
-import heroImg from '@/assets/specialties/zirconia.jpg';
+import heroImg from '@/assets/specialties/zirconia_new.png';
 import zirconiaImg from '@/assets/specialties/zirconia.png';
 import digitalImg from '@/assets/specialties/zirconia_digital_workflow.png';
 

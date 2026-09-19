@@ -15,6 +15,15 @@ import {
   ShieldCheck,
   Phone,
   MessageCircle,
+  Activity,
+  AlignCenterVertical,
+  Baby,
+  CircleDot,
+  Droplet,
+  ShieldAlert,
+  Smile,
+  Sparkles,
+  Zap,
 } from 'lucide-react';
 import './treatments.css';
 import BranchCTA from '@/components/branch/BranchCTA';
@@ -621,16 +630,51 @@ export default function TreatmentsPage() {
   const [searchQuery, setSearchQuery] = useState('');
 
   const patientConcerns = [
-    { label: 'I have a Toothache', icon: '😖', query: 'root canal', color: '#ef4444' },
-    { label: 'I want a Brighter Smile', icon: '✨', query: 'whitening', color: '#ec4899' },
-    { label: 'Replacing Missing Teeth', icon: '🦷', query: 'implant', color: '#f59e0b' },
-    { label: 'My Gums are Bleeding', icon: '🩸', query: 'scaling', color: '#0ea5e9' },
-    { label: 'Checkup for my Child', icon: '👶', query: 'child', color: '#f97316' },
-    { label: 'Straightening Teeth', icon: '📐', query: 'braces', color: '#8b5cf6' },
-    { label: 'Broken or Chipped Tooth', icon: '💥', query: 'crown', color: '#6366f1' },
-    { label: 'Wisdom Tooth Pain', icon: '😩', query: 'extraction', color: '#dc2626' },
-    { label: 'Jaw Pain or Clicking', icon: '🤕', query: 'tmj', color: '#14b8a6' },
-    { label: 'I Think I Have a Cavity', icon: '🕳️', query: 'filling', color: '#64748b' },
+    { label: 'I have a Toothache', icon: <Zap size={16} />, query: 'root canal', color: '#ef4444' },
+    {
+      label: 'I want a Brighter Smile',
+      icon: <Sparkles size={16} />,
+      query: 'whitening',
+      color: '#ec4899',
+    },
+    {
+      label: 'Replacing Missing Teeth',
+      icon: <Smile size={16} />,
+      query: 'implant',
+      color: '#f59e0b',
+    },
+    {
+      label: 'My Gums are Bleeding',
+      icon: <Droplet size={16} />,
+      query: 'scaling',
+      color: '#0ea5e9',
+    },
+    { label: 'Checkup for my Child', icon: <Baby size={16} />, query: 'child', color: '#f97316' },
+    {
+      label: 'Straightening Teeth',
+      icon: <AlignCenterVertical size={16} />,
+      query: 'braces',
+      color: '#8b5cf6',
+    },
+    {
+      label: 'Broken or Chipped Tooth',
+      icon: <ShieldAlert size={16} />,
+      query: 'crown',
+      color: '#6366f1',
+    },
+    {
+      label: 'Wisdom Tooth Pain',
+      icon: <Activity size={16} />,
+      query: 'extraction',
+      color: '#dc2626',
+    },
+    { label: 'Jaw Pain or Clicking', icon: <Activity size={16} />, query: 'tmj', color: '#14b8a6' },
+    {
+      label: 'I Think I Have a Cavity',
+      icon: <CircleDot size={16} />,
+      query: 'filling',
+      color: '#64748b',
+    },
   ];
 
   const filteredCategories = searchQuery
@@ -798,7 +842,7 @@ export default function TreatmentsPage() {
                   e.currentTarget.style.background = `rgba(255, 255, 255, 0.03)`;
                 }}
               >
-                <span style={{ fontSize: '1.2rem' }}>{concern.icon}</span>
+                <span style={{ display: 'inline-flex', color: concern.color }}>{concern.icon}</span>
                 {concern.label}
               </button>
             ))}
@@ -831,14 +875,16 @@ export default function TreatmentsPage() {
                   </div>
                   <h3>{st.name}</h3>
                   <p>{st.desc}</p>
-                  <div className="tr-bento-meta">
-                    <div className="tr-bento-meta-item">
-                      <Clock size={16} /> {st.duration}
+                  {st.duration !== '—' && (
+                    <div className="tr-bento-meta">
+                      <div className="tr-bento-meta-item">
+                        <Clock size={16} /> {st.duration}
+                      </div>
+                      <div className="tr-bento-meta-item">
+                        <Calendar size={16} /> {st.visits} Visit{st.visits !== '1' ? 's' : ''}
+                      </div>
                     </div>
-                    <div className="tr-bento-meta-item">
-                      <Calendar size={16} /> {st.visits} Visit{st.visits !== '1' ? 's' : ''}
-                    </div>
-                  </div>
+                  )}
                 </motion.div>
               ))}
             </div>

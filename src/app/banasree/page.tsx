@@ -210,6 +210,35 @@ export default function BanasreePage() {
               </table>
             </div>
           ) : (
+            <div className="rh-panel bs-price-cta">
+              <div>
+                <p className="bs-price-cta-title">Ask for the current price list</p>
+                <p className="bs-body">
+                  Reception will send the Banasree price list and a written estimate for your
+                  treatment.
+                </p>
+              </div>
+              <div className="bs-actions">
+                <BranchCTA
+                  action="whatsapp"
+                  branch="banasree"
+                  variant="primary"
+                  className="rh-btn rh-btn-primary"
+                >
+                  Get prices on WhatsApp
+                </BranchCTA>
+                <BranchCTA
+                  action="call"
+                  branch="banasree"
+                  variant="ghost"
+                  className="rh-btn rh-btn-ghost"
+                >
+                  Call {b.phoneDisplay}
+                </BranchCTA>
+              </div>
+            </div>
+          )}
+          {PRICE_LIST.length === 0 && (
             <EditorialNote>
               <div className="rh-niche bs-price-note">
                 <p>
