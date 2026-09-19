@@ -4,11 +4,21 @@ import { useParams } from 'next/navigation';
 import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
 import { useState, useEffect, useCallback } from 'react';
-import { ArrowLeft, CheckCircle2, Clock, Award, Shield, Sparkles, X, Download, ZoomIn, Eye } from 'lucide-react';
+import {
+  ArrowLeft,
+  CheckCircle2,
+  Clock,
+  Award,
+  Shield,
+  Sparkles,
+  X,
+  Download,
+  ZoomIn,
+} from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import './detail.css';
 
-/* ── Import all banner images ── */
+/* Banner images */
 import imagingBanner from '@/assets/specialties/3d-imaging.jpg';
 import bracesBanner from '@/assets/specialties/braces.jpg';
 import zirconiaBanner from '@/assets/specialties/Zirconia.jpeg';
@@ -18,13 +28,7 @@ import kidsCareBanner from '@/assets/specialties/kids-care.jpg';
 import implantImg from '@/assets/specialties/implant.png';
 import dentalTourismBanner from '@/assets/specialties/dental_tourism.png';
 
-/* ── Import flyer images (high-res promotional designs) ── */
-import imagingFlyer from '@/assets/specialties/imaging.png';
-import bracesFlyer from '@/assets/specialties/braces_clean.png';
-import zirconiaFlyer from '@/assets/specialties/Zirconia.jpeg';
-import rootCanalFlyer from '@/assets/specialties/rootcanal_clean.png';
-import gumCareFlyer from '@/assets/specialties/gum_clean.png';
-import kidsCareFlyer from '@/assets/specialties/kids_clean.png';
+/* Flyer images */
 import aestheticsFlyer from '@/assets/specialties/aesthetic.jpeg';
 
 interface SpecialtyDetail {
@@ -53,7 +57,8 @@ const specialtiesData: Record<string, SpecialtyDetail> = {
     bannerImg: imagingBanner,
     flyerImg: imagingBanner,
     flyerFileName: 'RH-Dental-3D-Imaging.png',
-    description: 'Our state-of-the-art 3D imaging technology provides unparalleled diagnostic accuracy. With cone beam CT scanning, we can visualize your entire oral structure in stunning detail, enabling precise treatment planning and exceptional outcomes.',
+    description:
+      'Our state-of-the-art 3D imaging technology provides unparalleled diagnostic accuracy. With cone beam CT scanning, we can visualize your entire oral structure in stunning detail, enabling precise treatment planning and exceptional outcomes.',
     benefits: [
       '90% less radiation than traditional CT scans',
       'Complete 360° view of teeth, jaw, and sinuses',
@@ -73,15 +78,17 @@ const specialtiesData: Record<string, SpecialtyDetail> = {
     accentColor: '#0ea5e9',
     accentLight: '#e0f2fe',
   },
-  'braces': {
+  braces: {
     title: 'Orthodontics & Clear Aligners',
     category: 'Orthodontics',
     tagline: 'Straighten your smile invisibly',
     bannerImg: bracesBanner,
     flyerImg: bracesBanner,
     flyerFileName: 'RH-Dental-Orthodontics.png',
-    videoUrl: 'https://res.cloudinary.com/dxrcufs8f/video/upload/v1777313544/ortho_video_tj8vbu.mp4',
-    description: 'Achieve the perfectly aligned smile you have always dreamed of. We offer both traditional precision braces and modern, nearly invisible clear aligners tailored to your lifestyle, delivering beautiful results with maximum comfort.',
+    videoUrl:
+      'https://res.cloudinary.com/dxrcufs8f/video/upload/v1777313544/ortho_video_tj8vbu.mp4',
+    description:
+      'Achieve the perfectly aligned smile you have always dreamed of. We offer both traditional precision braces and modern, nearly invisible clear aligners tailored to your lifestyle, delivering beautiful results with maximum comfort.',
     benefits: [
       'Corrects crooked teeth and bite issues',
       'Improves overall facial aesthetics',
@@ -101,14 +108,15 @@ const specialtiesData: Record<string, SpecialtyDetail> = {
     accentColor: '#8b5cf6',
     accentLight: '#ede9fe',
   },
-  'zirconia': {
+  zirconia: {
     title: 'Premium Zirconia Restoration',
     category: 'Prosthetics',
     tagline: 'The gold standard in flawless dental crowns',
     bannerImg: zirconiaBanner,
     flyerImg: zirconiaBanner,
     flyerFileName: 'RH-Dental-Zirconia.png',
-    description: 'Experience the pinnacle of dental restoration with biocompatible zirconia crowns. These ultra-strong, natural-looking restorations combine exceptional durability with aesthetic perfection, giving you confidence that lasts.',
+    description:
+      'Experience the pinnacle of dental restoration with biocompatible zirconia crowns. These ultra-strong, natural-looking restorations combine exceptional durability with aesthetic perfection, giving you confidence that lasts.',
     benefits: [
       'Strongest ceramic material available',
       'Natural translucency matches real teeth',
@@ -128,15 +136,17 @@ const specialtiesData: Record<string, SpecialtyDetail> = {
     accentColor: '#f59e0b',
     accentLight: '#fef3c7',
   },
-  'implants': {
+  implants: {
     title: 'Advanced Dental Implantology',
     category: 'Surgical Care',
     tagline: 'Permanent solutions that feel like natural teeth',
     bannerImg: implantImg,
     flyerImg: implantImg,
     flyerFileName: 'RH-Dental-Implants.png',
-    videoUrl: 'https://res.cloudinary.com/dxrcufs8f/video/upload/v1777313555/implantVideo_bzruai.mp4',
-    description: 'Restore your smile permanently with precision-guided dental implants. Our advanced surgical techniques and premium materials ensure successful integration, giving you teeth that look, feel, and function naturally.',
+    videoUrl:
+      'https://res.cloudinary.com/dxrcufs8f/video/upload/v1777313555/implantVideo_bzruai.mp4',
+    description:
+      'Restore your smile permanently with precision-guided dental implants. Our advanced surgical techniques and premium materials ensure successful integration, giving you teeth that look, feel, and function naturally.',
     benefits: [
       'Permanent tooth replacement solution',
       'Prevents bone loss and maintains facial structure',
@@ -163,8 +173,10 @@ const specialtiesData: Record<string, SpecialtyDetail> = {
     bannerImg: rootCanalBanner,
     flyerImg: rootCanalBanner,
     flyerFileName: 'RH-Dental-RootCanal.png',
-    videoUrl: 'https://res.cloudinary.com/dxrcufs8f/video/upload/v1777313544/rootcanal_video_yuqzk8.mp4',
-    description: 'Save your natural tooth with our advanced endodontic care. Using dental microscopes and modern techniques, we make root canal therapy completely comfortable while preserving your tooth for decades to come.',
+    videoUrl:
+      'https://res.cloudinary.com/dxrcufs8f/video/upload/v1777313544/rootcanal_video_yuqzk8.mp4',
+    description:
+      'Save your natural tooth with our advanced endodontic care. Using dental microscopes and modern techniques, we make root canal therapy completely comfortable while preserving your tooth for decades to come.',
     benefits: [
       'Completely painless with advanced anesthesia',
       'Microscopic precision for thorough cleaning',
@@ -191,7 +203,8 @@ const specialtiesData: Record<string, SpecialtyDetail> = {
     bannerImg: gumCareBanner,
     flyerImg: gumCareBanner,
     flyerFileName: 'RH-Dental-GumCare.png',
-    description: 'Protect your oral health with expert periodontal treatment. From deep cleaning to advanced gum therapy, we treat gum disease at every stage, ensuring your smile stays healthy and beautiful for life.',
+    description:
+      'Protect your oral health with expert periodontal treatment. From deep cleaning to advanced gum therapy, we treat gum disease at every stage, ensuring your smile stays healthy and beautiful for life.',
     benefits: [
       'Prevent tooth loss from gum disease',
       'Reduce inflammation and bleeding',
@@ -218,7 +231,8 @@ const specialtiesData: Record<string, SpecialtyDetail> = {
     bannerImg: kidsCareBanner,
     flyerImg: kidsCareBanner,
     flyerFileName: 'RH-Dental-KidsCare.png',
-    description: 'Give your child a lifetime of healthy smiles. Our gentle, experienced team creates a positive dental experience that makes kids excited about oral health while providing expert preventive and restorative care.',
+    description:
+      'Give your child a lifetime of healthy smiles. Our gentle, experienced team creates a positive dental experience that makes kids excited about oral health while providing expert preventive and restorative care.',
     benefits: [
       'Child-friendly environment and staff',
       'Gentle techniques for anxiety-free visits',
@@ -238,14 +252,15 @@ const specialtiesData: Record<string, SpecialtyDetail> = {
     accentColor: '#f97316',
     accentLight: '#ffedd5',
   },
-  'aesthetics': {
+  aesthetics: {
     title: 'Aesthetic Dentistry & Smile Design',
     category: 'Aesthetics',
     tagline: 'Crafting your perfect, radiant smile',
     bannerImg: aestheticsFlyer,
     flyerImg: aestheticsFlyer,
     flyerFileName: 'RH-Dental-Aesthetics.png',
-    description: 'Transform your smile with our premium aesthetic treatments. From porcelain veneers to professional teeth whitening and full smile makeovers, we blend art and science to create the perfect, natural-looking smile you have always desired.',
+    description:
+      'Transform your smile with our premium aesthetic treatments. From porcelain veneers to professional teeth whitening and full smile makeovers, we blend art and science to create the perfect, natural-looking smile you have always desired.',
     benefits: [
       'Custom-designed smile transformations',
       'Ultra-thin, natural-looking porcelain veneers',
@@ -272,7 +287,8 @@ const specialtiesData: Record<string, SpecialtyDetail> = {
     bannerImg: dentalTourismBanner,
     flyerImg: dentalTourismBanner,
     flyerFileName: 'RH-Dental-Tourism.png',
-    description: 'Combine premium specialized dental care with a relaxing travel experience in Bangladesh. Save up to 70% compared to USA, UK & Australia. We provide complete travel assistance including airport pickups, 5-star lodging coordination, private local transit, and beautiful guided tours.',
+    description:
+      'Combine premium specialized dental care with a relaxing travel experience in Bangladesh. Save up to 70% compared to USA, UK & Australia. We provide complete travel assistance including airport pickups, 5-star lodging coordination, private local transit, and beautiful guided tours.',
     benefits: [
       'Save up to 70% on premium implants & cosmetic care',
       'Identical global materials and diagnostic standards',
@@ -295,7 +311,7 @@ const specialtiesData: Record<string, SpecialtyDetail> = {
   },
 };
 
-/* ── Lightbox Modal Component ── */
+/* Lightbox Modal Component */
 function FlyerLightbox({
   isOpen,
   flyerImg,
@@ -333,7 +349,9 @@ function FlyerLightbox({
     } else {
       document.body.style.overflow = '';
     }
-    return () => { document.body.style.overflow = ''; };
+    return () => {
+      document.body.style.overflow = '';
+    };
   }, [isOpen]);
 
   useEffect(() => {
@@ -383,15 +401,30 @@ function FlyerLightbox({
             }}
           >
             {/* Top bar */}
-            <div style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              padding: '0 0.25rem',
-            }}>
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                padding: '0 0.25rem',
+              }}
+            >
               <div>
-                <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.1em', margin: 0 }}>Treatment Flyer</p>
-                <p style={{ color: '#fff', fontSize: '1rem', fontWeight: 700, margin: 0 }}>{title}</p>
+                <p
+                  style={{
+                    color: 'rgba(255,255,255,0.5)',
+                    fontSize: '0.75rem',
+                    fontWeight: 600,
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.1em',
+                    margin: 0,
+                  }}
+                >
+                  Treatment Flyer
+                </p>
+                <p style={{ color: '#fff', fontSize: '1rem', fontWeight: 700, margin: 0 }}>
+                  {title}
+                </p>
               </div>
               <button
                 onClick={onClose}
@@ -409,24 +442,30 @@ function FlyerLightbox({
                   transition: 'all 0.2s ease',
                   flexShrink: 0,
                 }}
-                onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(255,255,255,0.2)'; }}
-                onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(255,255,255,0.1)'; }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.background = 'rgba(255,255,255,0.2)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.background = 'rgba(255,255,255,0.1)';
+                }}
               >
                 <X size={18} />
               </button>
             </div>
 
             {/* Flyer Image */}
-            <div style={{
-              position: 'relative',
-              width: '100%',
-              flex: 1,
-              maxHeight: 'calc(90vh - 130px)',
-              borderRadius: '1rem',
-              overflow: 'hidden',
-              boxShadow: '0 30px 80px rgba(0,0,0,0.6)',
-              border: '1px solid rgba(255,255,255,0.08)',
-            }}>
+            <div
+              style={{
+                position: 'relative',
+                width: '100%',
+                flex: 1,
+                maxHeight: 'calc(90vh - 130px)',
+                borderRadius: '1rem',
+                overflow: 'hidden',
+                boxShadow: '0 30px 80px rgba(0,0,0,0.6)',
+                border: '1px solid rgba(255,255,255,0.08)',
+              }}
+            >
               <Image
                 src={flyerImg}
                 alt={`${title} Flyer`}
@@ -485,16 +524,18 @@ export default function SpecialtyDetailPage() {
 
   if (!specialty) {
     return (
-      <div style={{
-        minHeight: '100vh',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        background: '#020617',
-        color: '#fff',
-        fontSize: '2rem',
-        fontWeight: 800
-      }}>
+      <div
+        style={{
+          minHeight: '100vh',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          background: '#020617',
+          color: '#fff',
+          fontSize: '2rem',
+          fontWeight: 800,
+        }}
+      >
         <div>
           <h1 style={{ marginBottom: '2rem' }}>Specialty Not Found</h1>
           <Link href="/specialties" style={{ color: '#0ea5e9', fontSize: '1.2rem' }}>
@@ -507,7 +548,7 @@ export default function SpecialtyDetailPage() {
 
   return (
     <>
-      {/* ── Flyer Lightbox ── */}
+      {/* Flyer Lightbox */}
       <FlyerLightbox
         isOpen={lightboxOpen}
         flyerImg={specialty.flyerImg}
@@ -516,19 +557,30 @@ export default function SpecialtyDetailPage() {
         onClose={() => setLightboxOpen(false)}
       />
 
-      <div style={{ background: '#f8fafc', minHeight: '100vh', paddingTop: 'var(--nav-height, 80px)' }}>
-
-        {/* ── Sticky Top Nav Bar ── */}
-        <div style={{
-          background: 'rgba(255,255,255,0.95)',
-          backdropFilter: 'blur(12px)',
-          borderBottom: '1px solid rgba(0,0,0,0.07)',
-          position: 'sticky',
-          top: 0,
-          zIndex: 100,
-          padding: '0.875rem 2rem',
-        }}>
-          <div style={{ maxWidth: '1400px', margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+      <div
+        style={{ background: '#f8fafc', minHeight: '100vh', paddingTop: 'var(--nav-height, 80px)' }}
+      >
+        {/* Sticky Top Nav Bar */}
+        <div
+          style={{
+            background: 'rgba(255,255,255,0.95)',
+            backdropFilter: 'blur(12px)',
+            borderBottom: '1px solid rgba(0,0,0,0.07)',
+            position: 'sticky',
+            top: 0,
+            zIndex: 100,
+            padding: '0.875rem 2rem',
+          }}
+        >
+          <div
+            style={{
+              maxWidth: '1400px',
+              margin: '0 auto',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+            }}
+          >
             <Link
               href="/specialties"
               style={{
@@ -601,19 +653,17 @@ export default function SpecialtyDetailPage() {
           </div>
         </div>
 
-        {/* ── Main Content Container ── */}
-        <div style={{
-          maxWidth: '1400px',
-          margin: '0 auto',
-          padding: '3rem 2rem 5rem',
-        }}>
-
-          {/* ── Two Column Layout: Flyer + Content ── */}
-          <div
-            className="detail-grid"
-            style={{ marginBottom: '5rem' }}
-          >
-            {/* ── LEFT: Flyer Display (clickable) ── */}
+        {/* Main Content Container */}
+        <div
+          style={{
+            maxWidth: '1400px',
+            margin: '0 auto',
+            padding: '3rem 2rem 5rem',
+          }}
+        >
+          {/* Two Column Layout: Flyer + Content */}
+          <div className="detail-grid" style={{ marginBottom: '5rem' }}>
+            {/* LEFT: Flyer Display (clickable) */}
             <motion.div
               className="flyer-container"
               initial={{ opacity: 0, x: -30 }}
@@ -621,13 +671,15 @@ export default function SpecialtyDetailPage() {
               transition={{ duration: 0.7 }}
             >
               {/* Flyer Card */}
-              <div style={{
-                background: '#fff',
-                borderRadius: '2rem',
-                padding: '1.25rem',
-                boxShadow: '0 25px 70px rgba(0,0,0,0.1)',
-                border: `2px solid ${specialty.accentLight}`,
-              }}>
+              <div
+                style={{
+                  background: '#fff',
+                  borderRadius: '2rem',
+                  padding: '1.25rem',
+                  boxShadow: '0 25px 70px rgba(0,0,0,0.1)',
+                  border: `2px solid ${specialty.accentLight}`,
+                }}
+              >
                 {/* Clickable image */}
                 <motion.div
                   whileHover={{ scale: 1.01 }}
@@ -657,11 +709,13 @@ export default function SpecialtyDetailPage() {
                 </motion.div>
 
                 {/* Flyer action strip */}
-                <div style={{
-                  marginTop: '1rem',
-                  display: 'flex',
-                  gap: '0.75rem',
-                }}>
+                <div
+                  style={{
+                    marginTop: '1rem',
+                    display: 'flex',
+                    gap: '0.75rem',
+                  }}
+                >
                   <motion.button
                     whileHover={{ scale: 1.02, y: -1 }}
                     whileTap={{ scale: 0.98 }}
@@ -715,87 +769,99 @@ export default function SpecialtyDetailPage() {
                 </div>
 
                 {/* Caption */}
-                <p style={{
-                  textAlign: 'center',
-                  fontSize: '0.75rem',
-                  color: '#94a3b8',
-                  fontWeight: 500,
-                  marginTop: '0.75rem',
-                  marginBottom: 0,
-                  letterSpacing: '0.02em',
-                }}>
+                <p
+                  style={{
+                    textAlign: 'center',
+                    fontSize: '0.75rem',
+                    color: '#94a3b8',
+                    fontWeight: 500,
+                    marginTop: '0.75rem',
+                    marginBottom: 0,
+                    letterSpacing: '0.02em',
+                  }}
+                >
                   Click image or buttons to view full-size flyer
                 </p>
               </div>
             </motion.div>
 
-            {/* ── RIGHT: Treatment Details ── */}
+            {/* RIGHT: Treatment Details */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.7, delay: 0.2 }}
             >
               {/* Category badge */}
-              <div style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '0.5rem',
-                background: specialty.accentLight,
-                color: specialty.accentColor,
-                padding: '0.4rem 1rem',
-                borderRadius: '100px',
-                fontSize: '0.78rem',
-                fontWeight: 800,
-                textTransform: 'uppercase',
-                letterSpacing: '0.1em',
-                marginBottom: '1.5rem',
-              }}>
+              <div
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '0.5rem',
+                  background: specialty.accentLight,
+                  color: specialty.accentColor,
+                  padding: '0.4rem 1rem',
+                  borderRadius: '100px',
+                  fontSize: '0.78rem',
+                  fontWeight: 800,
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.1em',
+                  marginBottom: '1.5rem',
+                }}
+              >
                 <Sparkles size={12} />
                 {specialty.category}
               </div>
 
               {/* Title Section */}
               <div style={{ marginBottom: '2.5rem' }}>
-                <h1 style={{
-                  fontSize: 'clamp(2rem, 4vw, 3.2rem)',
-                  fontWeight: 900,
-                  color: '#0f172a',
-                  marginBottom: '1rem',
-                  letterSpacing: '-0.04em',
-                  lineHeight: 1.1,
-                }}>
+                <h1
+                  style={{
+                    fontSize: 'clamp(2rem, 4vw, 3.2rem)',
+                    fontWeight: 900,
+                    color: '#0f172a',
+                    marginBottom: '1rem',
+                    letterSpacing: '-0.04em',
+                    lineHeight: 1.1,
+                  }}
+                >
                   {specialty.title}
                 </h1>
 
-                <p style={{
-                  fontSize: '1.15rem',
-                  color: specialty.accentColor,
-                  fontWeight: 600,
-                  marginBottom: '1.25rem',
-                  lineHeight: 1.6,
-                }}>
+                <p
+                  style={{
+                    fontSize: '1.15rem',
+                    color: specialty.accentColor,
+                    fontWeight: 600,
+                    marginBottom: '1.25rem',
+                    lineHeight: 1.6,
+                  }}
+                >
                   {specialty.tagline}
                 </p>
 
                 {/* Divider */}
-                <div style={{
-                  width: '60px',
-                  height: '4px',
-                  background: `linear-gradient(90deg, ${specialty.accentColor}, ${specialty.accentColor}40)`,
-                  borderRadius: '100px',
-                  marginBottom: '1.5rem',
-                }} />
+                <div
+                  style={{
+                    width: '60px',
+                    height: '4px',
+                    background: `linear-gradient(90deg, ${specialty.accentColor}, ${specialty.accentColor}40)`,
+                    borderRadius: '100px',
+                    marginBottom: '1.5rem',
+                  }}
+                />
 
-                <p style={{
-                  fontSize: '1.05rem',
-                  color: '#475569',
-                  lineHeight: 1.9,
-                }}>
+                <p
+                  style={{
+                    fontSize: '1.05rem',
+                    color: '#475569',
+                    lineHeight: 1.9,
+                  }}
+                >
                   {specialty.description}
                 </p>
               </div>
 
-              {/* ── Quick Stats ── */}
+              {/* Quick Stats */}
               <div
                 className="stats-grid"
                 style={{
@@ -806,9 +872,30 @@ export default function SpecialtyDetailPage() {
                 }}
               >
                 {[
-                  { icon: <Clock size={22} />, label: 'Duration', value: specialty.duration, bg: 'linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%)', color: '#0369a1', border: 'rgba(14,165,233,0.2)' },
-                  { icon: <Shield size={22} />, label: 'Recovery', value: specialty.recovery, bg: 'linear-gradient(135deg, #e9d5ff 0%, #d8b4fe 100%)', color: '#7e22ce', border: 'rgba(139,92,246,0.2)' },
-                  { icon: <Award size={22} />, label: 'Warranty', value: specialty.warranty, bg: 'linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%)', color: '#047857', border: 'rgba(16,185,129,0.2)' },
+                  {
+                    icon: <Clock size={22} />,
+                    label: 'Duration',
+                    value: specialty.duration,
+                    bg: 'linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%)',
+                    color: '#0369a1',
+                    border: 'rgba(14,165,233,0.2)',
+                  },
+                  {
+                    icon: <Shield size={22} />,
+                    label: 'Recovery',
+                    value: specialty.recovery,
+                    bg: 'linear-gradient(135deg, #e9d5ff 0%, #d8b4fe 100%)',
+                    color: '#7e22ce',
+                    border: 'rgba(139,92,246,0.2)',
+                  },
+                  {
+                    icon: <Award size={22} />,
+                    label: 'Warranty',
+                    value: specialty.warranty,
+                    bg: 'linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%)',
+                    color: '#047857',
+                    border: 'rgba(16,185,129,0.2)',
+                  },
                 ].map(({ icon, label, value, bg, color, border }) => (
                   <motion.div
                     key={label}
@@ -822,21 +909,43 @@ export default function SpecialtyDetailPage() {
                     }}
                   >
                     <div style={{ color, marginBottom: '0.6rem' }}>{icon}</div>
-                    <div style={{ fontSize: '0.7rem', color, fontWeight: 700, marginBottom: '0.25rem', textTransform: 'uppercase', letterSpacing: '0.06em' }}>{label}</div>
-                    <div style={{ fontSize: '1.05rem', fontWeight: 900, color: '#0f172a', lineHeight: 1.3 }}>{value}</div>
+                    <div
+                      style={{
+                        fontSize: '0.7rem',
+                        color,
+                        fontWeight: 700,
+                        marginBottom: '0.25rem',
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.06em',
+                      }}
+                    >
+                      {label}
+                    </div>
+                    <div
+                      style={{
+                        fontSize: '1.05rem',
+                        fontWeight: 900,
+                        color: '#0f172a',
+                        lineHeight: 1.3,
+                      }}
+                    >
+                      {value}
+                    </div>
                   </motion.div>
                 ))}
               </div>
 
-              {/* ── Key Benefits ── */}
+              {/* Key Benefits */}
               <div>
-                <h2 style={{
-                  fontSize: '1.6rem',
-                  fontWeight: 900,
-                  color: '#0f172a',
-                  marginBottom: '1.25rem',
-                  letterSpacing: '-0.03em',
-                }}>
+                <h2
+                  style={{
+                    fontSize: '1.6rem',
+                    fontWeight: 900,
+                    color: '#0f172a',
+                    marginBottom: '1.25rem',
+                    letterSpacing: '-0.03em',
+                  }}
+                >
                   Key Benefits
                 </h2>
                 <div style={{ display: 'grid', gap: '0.75rem' }}>
@@ -868,12 +977,14 @@ export default function SpecialtyDetailPage() {
                           marginTop: '0.15rem',
                         }}
                       />
-                      <span style={{
-                        fontSize: '0.97rem',
-                        color: '#334155',
-                        lineHeight: 1.7,
-                        fontWeight: 500,
-                      }}>
+                      <span
+                        style={{
+                          fontSize: '0.97rem',
+                          color: '#334155',
+                          lineHeight: 1.7,
+                          fontWeight: 500,
+                        }}
+                      >
                         {benefit}
                       </span>
                     </motion.div>
@@ -883,7 +994,7 @@ export default function SpecialtyDetailPage() {
             </motion.div>
           </div>
 
-          {/* ── Treatment Process (Full Width) ── */}
+          {/* Treatment Process (Full Width) */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -893,26 +1004,30 @@ export default function SpecialtyDetailPage() {
           >
             {/* Section header */}
             <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
-              <span style={{
-                display: 'inline-block',
-                background: specialty.accentLight,
-                color: specialty.accentColor,
-                padding: '0.35rem 1rem',
-                borderRadius: '100px',
-                fontSize: '0.75rem',
-                fontWeight: 800,
-                textTransform: 'uppercase',
-                letterSpacing: '0.1em',
-                marginBottom: '1rem',
-              }}>
+              <span
+                style={{
+                  display: 'inline-block',
+                  background: specialty.accentLight,
+                  color: specialty.accentColor,
+                  padding: '0.35rem 1rem',
+                  borderRadius: '100px',
+                  fontSize: '0.75rem',
+                  fontWeight: 800,
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.1em',
+                  marginBottom: '1rem',
+                }}
+              >
                 Step by Step
               </span>
-              <h2 style={{
-                fontSize: '2.25rem',
-                fontWeight: 900,
-                color: '#0f172a',
-                letterSpacing: '-0.03em',
-              }}>
+              <h2
+                style={{
+                  fontSize: '2.25rem',
+                  fontWeight: 900,
+                  color: '#0f172a',
+                  letterSpacing: '-0.03em',
+                }}
+              >
                 Treatment Process
               </h2>
             </div>
@@ -945,50 +1060,58 @@ export default function SpecialtyDetailPage() {
                   }}
                 >
                   {/* Accent top bar */}
-                  <div style={{
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    right: 0,
-                    height: '4px',
-                    background: `linear-gradient(90deg, ${specialty.accentColor}, ${specialty.accentColor}60)`,
-                    borderRadius: '0 0 0 0',
-                  }} />
+                  <div
+                    style={{
+                      position: 'absolute',
+                      top: 0,
+                      left: 0,
+                      right: 0,
+                      height: '4px',
+                      background: `linear-gradient(90deg, ${specialty.accentColor}, ${specialty.accentColor}60)`,
+                      borderRadius: '0 0 0 0',
+                    }}
+                  />
 
                   {/* Step number */}
-                  <div style={{
-                    width: '3rem',
-                    height: '3rem',
-                    borderRadius: '50%',
-                    background: `linear-gradient(135deg, ${specialty.accentColor}, ${specialty.accentColor}cc)`,
-                    color: '#fff',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    fontWeight: 900,
-                    fontSize: '1.15rem',
-                    boxShadow: `0 8px 24px ${specialty.accentColor}50`,
-                    marginBottom: '1.25rem',
-                    marginTop: '0.5rem',
-                  }}>
+                  <div
+                    style={{
+                      width: '3rem',
+                      height: '3rem',
+                      borderRadius: '50%',
+                      background: `linear-gradient(135deg, ${specialty.accentColor}, ${specialty.accentColor}cc)`,
+                      color: '#fff',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      fontWeight: 900,
+                      fontSize: '1.15rem',
+                      boxShadow: `0 8px 24px ${specialty.accentColor}50`,
+                      marginBottom: '1.25rem',
+                      marginTop: '0.5rem',
+                    }}
+                  >
                     {idx + 1}
                   </div>
 
-                  <h3 style={{
-                    fontSize: '1.2rem',
-                    fontWeight: 800,
-                    color: '#0f172a',
-                    marginBottom: '0.75rem',
-                    letterSpacing: '-0.02em',
-                  }}>
+                  <h3
+                    style={{
+                      fontSize: '1.2rem',
+                      fontWeight: 800,
+                      color: '#0f172a',
+                      marginBottom: '0.75rem',
+                      letterSpacing: '-0.02em',
+                    }}
+                  >
                     {step.step}
                   </h3>
-                  <p style={{
-                    color: '#64748b',
-                    fontSize: '0.97rem',
-                    lineHeight: 1.7,
-                    margin: 0,
-                  }}>
+                  <p
+                    style={{
+                      color: '#64748b',
+                      fontSize: '0.97rem',
+                      lineHeight: 1.7,
+                      margin: 0,
+                    }}
+                  >
                     {step.desc}
                   </p>
                 </motion.div>
@@ -996,7 +1119,7 @@ export default function SpecialtyDetailPage() {
             </div>
           </motion.div>
 
-          {/* ── Flyer CTA Banner ── */}
+          {/* Flyer CTA Banner */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -1016,15 +1139,17 @@ export default function SpecialtyDetailPage() {
             }}
           >
             <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', flexWrap: 'wrap' }}>
-              <div style={{
-                width: '64px',
-                height: '64px',
-                borderRadius: '1rem',
-                overflow: 'hidden',
-                position: 'relative',
-                flexShrink: 0,
-                boxShadow: '0 8px 24px rgba(0,0,0,0.15)',
-              }}>
+              <div
+                style={{
+                  width: '64px',
+                  height: '64px',
+                  borderRadius: '1rem',
+                  overflow: 'hidden',
+                  position: 'relative',
+                  flexShrink: 0,
+                  boxShadow: '0 8px 24px rgba(0,0,0,0.15)',
+                }}
+              >
                 <Image
                   src={specialty.bannerImg}
                   alt={specialty.title}
@@ -1036,7 +1161,9 @@ export default function SpecialtyDetailPage() {
                 <p style={{ margin: 0, fontWeight: 800, fontSize: '1.1rem', color: '#0f172a' }}>
                   📋 Treatment Flyer Available
                 </p>
-                <p style={{ margin: 0, color: '#64748b', fontSize: '0.9rem', marginTop: '0.25rem' }}>
+                <p
+                  style={{ margin: 0, color: '#64748b', fontSize: '0.9rem', marginTop: '0.25rem' }}
+                >
                   Download or view our complete {specialty.title.toLowerCase()} information sheet
                 </p>
               </div>
@@ -1090,45 +1217,47 @@ export default function SpecialtyDetailPage() {
             </div>
           </motion.div>
 
-        {/* ── Highlighted Video Section (if available) ── */}
-        {specialty.videoUrl && (
-          <div style={{
-            marginBottom: '6rem',
-          }}>
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7 }}
+          {/* Highlighted Video Section (if available) */}
+          {specialty.videoUrl && (
+            <div
               style={{
-                borderRadius: '1.5rem',
-                overflow: 'hidden',
-                boxShadow: '0 30px 70px rgba(0,0,0,0.15)',
-                border: `2px solid ${specialty.accentLight}`,
-                background: '#000',
-                position: 'relative',
-                aspectRatio: '16/9',
+                marginBottom: '6rem',
               }}
             >
-              <video
-                src={specialty.videoUrl}
-                autoPlay
-                loop
-                muted
-                playsInline
-                controls
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7 }}
                 style={{
-                  width: '100%',
-                  height: '100%',
-                  objectFit: 'cover',
-                  display: 'block',
+                  borderRadius: '1.5rem',
+                  overflow: 'hidden',
+                  boxShadow: '0 30px 70px rgba(0,0,0,0.15)',
+                  border: `2px solid ${specialty.accentLight}`,
+                  background: '#000',
+                  position: 'relative',
+                  aspectRatio: '16/9',
                 }}
-              />
-            </motion.div>
-          </div>
-        )}
+              >
+                <video
+                  src={specialty.videoUrl}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  controls
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    display: 'block',
+                  }}
+                />
+              </motion.div>
+            </div>
+          )}
 
-        {/* ── CTA Section ── */}
+          {/* CTA Section */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -1145,58 +1274,93 @@ export default function SpecialtyDetailPage() {
             }}
           >
             {/* Glow blobs */}
-            <div style={{
-              position: 'absolute', top: '-10%', left: '10%',
-              width: '300px', height: '300px',
-              background: `radial-gradient(circle, ${specialty.accentColor}30 0%, transparent 70%)`,
-              borderRadius: '50%', filter: 'blur(50px)',
-            }} />
-            <div style={{
-              position: 'absolute', bottom: '-10%', right: '10%',
-              width: '300px', height: '300px',
-              background: 'radial-gradient(circle, rgba(56,189,248,0.2) 0%, transparent 70%)',
-              borderRadius: '50%', filter: 'blur(50px)',
-            }} />
+            <div
+              style={{
+                position: 'absolute',
+                top: '-10%',
+                left: '10%',
+                width: '300px',
+                height: '300px',
+                background: `radial-gradient(circle, ${specialty.accentColor}30 0%, transparent 70%)`,
+                borderRadius: '50%',
+                filter: 'blur(50px)',
+              }}
+            />
+            <div
+              style={{
+                position: 'absolute',
+                bottom: '-10%',
+                right: '10%',
+                width: '300px',
+                height: '300px',
+                background: 'radial-gradient(circle, rgba(56,189,248,0.2) 0%, transparent 70%)',
+                borderRadius: '50%',
+                filter: 'blur(50px)',
+              }}
+            />
 
             <div style={{ position: 'relative', zIndex: 1 }}>
-              <div style={{
-                display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
-                background: `${specialty.accentColor}20`,
-                color: specialty.accentColor,
-                padding: '0.4rem 1rem', borderRadius: '100px',
-                fontSize: '0.75rem', fontWeight: 800,
-                textTransform: 'uppercase', letterSpacing: '0.1em',
-                marginBottom: '1.5rem',
-              }}>
+              <div
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '0.5rem',
+                  background: `${specialty.accentColor}20`,
+                  color: specialty.accentColor,
+                  padding: '0.4rem 1rem',
+                  borderRadius: '100px',
+                  fontSize: '0.75rem',
+                  fontWeight: 800,
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.1em',
+                  marginBottom: '1.5rem',
+                }}
+              >
                 <Sparkles size={12} />
                 {specialty.category}
               </div>
 
-              <h3 style={{
-                fontSize: 'clamp(1.75rem, 3vw, 2.75rem)',
-                fontWeight: 900, color: '#fff',
-                marginBottom: '1.25rem', letterSpacing: '-0.03em',
-              }}>
+              <h3
+                style={{
+                  fontSize: 'clamp(1.75rem, 3vw, 2.75rem)',
+                  fontWeight: 900,
+                  color: '#fff',
+                  marginBottom: '1.25rem',
+                  letterSpacing: '-0.03em',
+                }}
+              >
                 Ready to Transform Your Smile?
               </h3>
-              <p style={{
-                fontSize: '1.1rem', color: 'rgba(255,255,255,0.7)',
-                marginBottom: '2.5rem', maxWidth: '520px',
-                margin: '0 auto 2.5rem', lineHeight: 1.7,
-              }}>
+              <p
+                style={{
+                  fontSize: '1.1rem',
+                  color: 'rgba(255,255,255,0.7)',
+                  marginBottom: '2.5rem',
+                  maxWidth: '520px',
+                  margin: '0 auto 2.5rem',
+                  lineHeight: 1.7,
+                }}
+              >
                 Book your consultation today and experience careful dental care
               </p>
 
-              <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+              <div
+                style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}
+              >
                 <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }}>
                   <Link
                     href="/contact"
                     style={{
-                      display: 'inline-flex', alignItems: 'center', gap: '0.75rem',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '0.75rem',
                       padding: '1.1rem 2.75rem',
                       background: `linear-gradient(135deg, ${specialty.accentColor}, ${specialty.accentColor}cc)`,
-                      color: '#fff', borderRadius: '100px',
-                      fontWeight: 800, fontSize: '1rem', textDecoration: 'none',
+                      color: '#fff',
+                      borderRadius: '100px',
+                      fontWeight: 800,
+                      fontSize: '1rem',
+                      textDecoration: 'none',
                       boxShadow: `0 15px 40px ${specialty.accentColor}50`,
                       transition: 'all 0.3s ease',
                     }}
@@ -1211,12 +1375,17 @@ export default function SpecialtyDetailPage() {
                   whileTap={{ scale: 0.97 }}
                   onClick={() => setLightboxOpen(true)}
                   style={{
-                    display: 'inline-flex', alignItems: 'center', gap: '0.75rem',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '0.75rem',
                     padding: '1.1rem 2.25rem',
                     background: 'rgba(255,255,255,0.1)',
                     border: '1.5px solid rgba(255,255,255,0.2)',
-                    color: '#fff', borderRadius: '100px',
-                    fontWeight: 700, fontSize: '1rem', cursor: 'pointer',
+                    color: '#fff',
+                    borderRadius: '100px',
+                    fontWeight: 700,
+                    fontSize: '1rem',
+                    cursor: 'pointer',
                     backdropFilter: 'blur(10px)',
                     transition: 'all 0.3s ease',
                   }}
@@ -1227,7 +1396,6 @@ export default function SpecialtyDetailPage() {
               </div>
             </div>
           </motion.div>
-
         </div>
       </div>
     </>

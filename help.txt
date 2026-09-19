@@ -1,2 +1,0 @@
-Need to install the following packages:
-create-next-app@16.2.1

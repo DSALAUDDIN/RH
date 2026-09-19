@@ -1,10 +1,18 @@
 'use client';
 
 import React from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
-import { Phone, MessageCircle, MapPin, CheckCircle2, ArrowRight, Sparkles, Building2, ShieldCheck, Award } from 'lucide-react';
+import Link from 'next/link';
+import {
+  Phone,
+  MessageCircle,
+  MapPin,
+  CheckCircle2,
+  ArrowRight,
+  Sparkles,
+  ShieldCheck,
+  Award,
+} from 'lucide-react';
 import { BRANCHES } from '@/lib/branches';
 import { useBranch } from './BranchProvider';
 import BranchCTA from './BranchCTA';
@@ -17,36 +25,32 @@ export default function BranchChooser() {
     setBranch(id);
   };
 
-  /* Every call and message goes through <BranchCTA>, which builds the tel: and
-     wa.me URLs from branches.ts and fires the GA4 event carrying `branch`.
-     Nothing here constructs a link itself — that is how the numbers drifted
-     out of sync in the first place. */
+  /*
+   * All links are built by <BranchCTA> from branches.ts, which also fires the
+   * GA4 event with `branch`.
+   */
 
   return (
     <section className="branch-chooser-section" id="choose-branch">
       <div className="branch-chooser-container">
-        
         {/* Header */}
         <div className="branch-chooser-header">
           <div className="branch-chooser-badge">
             <Sparkles size={14} /> Two clinics in Dhaka
           </div>
-          <h2 className="branch-chooser-title">
-            Which branch suits you?
-          </h2>
+          <h2 className="branch-chooser-title">Which branch suits you?</h2>
           <p className="branch-chooser-subtitle">
-            Whether you seek a private, appointment-only executive suite or our full-service flagship hospital, our certified specialists are ready for you.
+            Whether you seek a private, appointment-only executive suite or our full-service
+            flagship hospital, our certified specialists are ready for you.
           </p>
 
           {branch && (
             <div className="branch-active-banner">
-              <span>Current selection: <strong>{BRANCHES[branch].name}</strong></span>
+              <span>
+                Current selection: <strong>{BRANCHES[branch].name}</strong>
+              </span>
               <span>•</span>
-              <button
-                type="button"
-                className="branch-change-link"
-                onClick={clearBranch}
-              >
+              <button type="button" className="branch-change-link" onClick={clearBranch}>
                 Change branch
               </button>
             </div>
@@ -55,13 +59,14 @@ export default function BranchChooser() {
 
         {/* Dual Branch Cards */}
         <div className="branch-grid">
-          
           {/* Banani Card */}
           <div className={`branch-card card-banani ${branch === 'banani' ? 'is-active' : ''}`}>
             <div className="branch-card-media">
-              <img
+              <Image
                 src={BRANCHES.banani.heroImage}
                 alt="Banani Private Dental Suite"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
                 className="branch-card-img"
               />
               <div className="branch-card-overlay" />
@@ -124,9 +129,11 @@ export default function BranchChooser() {
           {/* Banasree Card */}
           <div className={`branch-card card-banasree ${branch === 'banasree' ? 'is-active' : ''}`}>
             <div className="branch-card-media">
-              <img
+              <Image
                 src={BRANCHES.banasree.heroImage}
                 alt="Banasree Flagship Dental Hospital"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
                 className="branch-card-img"
               />
               <div className="branch-card-overlay" />
@@ -185,7 +192,6 @@ export default function BranchChooser() {
               </Link>
             </div>
           </div>
-
         </div>
 
         {/* Shared Trust Bar */}
@@ -205,7 +211,6 @@ export default function BranchChooser() {
             <span>The same implant systems and materials at both branches</span>
           </div>
         </div>
-
       </div>
     </section>
   );

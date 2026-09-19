@@ -11,7 +11,6 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
-
 export async function POST(req: Request) {
   const secret = getAuthSecret();
   if (!secret) {
@@ -40,7 +39,7 @@ export async function POST(req: Request) {
         (error, result) => {
           if (error) reject(error);
           else resolve(result);
-        }
+        },
       );
       uploadStream.end(buffer);
     });

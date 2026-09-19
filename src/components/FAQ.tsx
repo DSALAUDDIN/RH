@@ -1,15 +1,13 @@
-// src/components/FAQ.tsx
-//
-// Answer-first FAQ. The answer's first sentence is the answer — no throat
-// clearing, no "it depends", no "at RH Dental Care we believe". This is the
-// shape an AI answer engine can lift verbatim and attribute.
-//
-// Renders as native <details>, so every answer is in the initial HTML and is
-// readable with JavaScript disabled. It also emits FAQPage JSON-LD on the page
-// whose visible content actually answers the questions — never site-wide, which
-// is what the old root layout did on all 24 routes.
+// Answer-first FAQ rendered with native <details>, so answers are present in
+// the initial HTML. Emits FAQPage JSON-LD scoped to the page that renders it.
 
-import { faqSchema, buildGraph, type FaqItem } from '@/lib/schema';
+import {
+  buildGraph,
+  faqSchema,
+  publishedFaq,
+  serializeJsonLd,
+  type FaqItem,
+} from '@/lib/seo/schema';
 import './FAQ.css';
 
 export type { FaqItem };
@@ -25,7 +23,8 @@ export default function FAQ({
   emitSchema?: boolean;
   id?: string;
 }) {
-  if (!items.length) return null;
+  const published = publishedFaq(items);
+  if (!published.length) return null;
 
   return (
     <section className="rh-faq rh-section" id={id} aria-labelledby={`${id}-title`}>
@@ -33,7 +32,7 @@ export default function FAQ({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(buildGraph([faqSchema(items)])).replace(/</g, '\\u003c'),
+            __html: serializeJsonLd(buildGraph([faqSchema(published)])),
           }}
         />
       )}
@@ -44,7 +43,7 @@ export default function FAQ({
         </h2>
 
         <div className="rh-faq-list">
-          {items.map((item, i) => (
+          {published.map((item, i) => (
             <details key={i} className="rh-faq-item" name={id}>
               <summary className="rh-faq-q">
                 <span>{item.q}</span>

@@ -1,22 +1,17 @@
-/* /banani — built from the branch photographs and the master brief §3.
-   docs/banani-design-reference.html was not in the repo (audit §4).
+/* /banani. Elevation uses --rh-glow-* tokens; only the hero text animates. */
 
-   Elevation here is always --rh-glow-*, never a grey drop shadow. No all-caps
-   eyebrows, no arrows appended to buttons, no 01/02/03 markers, no blanket
-   fade-up: only the hero text rises, once. */
+.bn {
+  background: var(--rh-paper);
+}
 
-.bn { background: var(--rh-paper); }
-
-/* ── Hero ─────────────────────────────────────────────────────────────────
-   Asymmetric: the photograph takes the larger share and bleeds off the right
-   edge, the way the room continues past the frame. */
+/* Hero */
 .bn-hero {
   display: grid;
   grid-template-columns: minmax(0, 48%) minmax(0, 52%);
   align-items: center;
   gap: clamp(2rem, 5vw, 4.5rem);
   padding: clamp(3rem, 7vw, 6rem) 0 clamp(3rem, 7vw, 6rem)
-           max(var(--rh-6), calc((100vw - 1120px) / 2));
+    max(var(--rh-6), calc((100vw - 1120px) / 2));
 }
 
 .bn-hero-media {
@@ -25,7 +20,11 @@
   overflow: hidden;
   box-shadow: var(--rh-glow-lg);
 }
-.bn-hero-img { display: block; width: 100%; height: auto; }
+.bn-hero-img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
 
 /* The cove strip, echoing the ceiling light in the photograph itself. */
 .bn-hero-media::after {
@@ -38,7 +37,10 @@
   pointer-events: none;
 }
 
-.bn-hero-text { order: -1; max-width: 34rem; }
+.bn-hero-text {
+  order: -1;
+  max-width: 34rem;
+}
 
 .bn-kicker {
   font-size: var(--rh-step--1);
@@ -58,7 +60,10 @@
   color: var(--rh-ink);
   text-wrap: balance;
 }
-.bn-h1 em { font-style: italic; color: var(--rh-brass); }
+.bn-h1 em {
+  font-style: italic;
+  color: var(--rh-brass);
+}
 
 .bn-lede {
   font-size: var(--rh-step-1);
@@ -74,9 +79,11 @@
   margin-bottom: var(--rh-6);
 }
 
-.bn-review { margin-top: var(--rh-2); }
+.bn-review {
+  margin-top: var(--rh-2);
+}
 
-/* ── Shared type ─────────────────────────────────────────────────────────── */
+/* Shared type */
 .bn-h2 {
   font-family: var(--rh-font-display);
   font-size: var(--rh-step-3);
@@ -102,7 +109,9 @@
   text-underline-offset: 0.2em;
   text-decoration-thickness: 1px;
 }
-.bn-link:hover { color: var(--rh-ink); }
+.bn-link:hover {
+  color: var(--rh-ink);
+}
 
 .bn-todo {
   color: var(--rh-brass);
@@ -118,7 +127,7 @@
   align-items: start;
 }
 
-/* ── Facts: a lit list, not a grid of identical cards ────────────────────── */
+/* Facts list */
 .bn-facts {
   list-style: none;
   margin: 0;
@@ -142,12 +151,13 @@
   background: var(--rh-brass);
 }
 
-/* ── Rooms ───────────────────────────────────────────────────────────────
-   A staggered editorial grid, not four identical cards in a row. Each frame
-   carries the cove strip at its top edge, echoing the ceiling light that runs
-   through every one of these photographs. */
-.bn-rooms { background: var(--rh-surface-sunk); }
-.bn-rooms-lede { margin-bottom: var(--rh-12); }
+/* Rooms */
+.bn-rooms {
+  background: var(--rh-surface-sunk);
+}
+.bn-rooms-lede {
+  margin-bottom: var(--rh-12);
+}
 
 .bn-gallery {
   display: grid;
@@ -156,7 +166,10 @@
   align-items: start;
 }
 
-.bn-figure { margin: 0; min-width: 0; }
+.bn-figure {
+  margin: 0;
+  min-width: 0;
+}
 
 .bn-figure-frame {
   position: relative;
@@ -168,12 +181,21 @@
 }
 .bn-figure-frame::after {
   content: '';
-  position: absolute; inset-inline: 0; top: 0; height: 3px;
+  position: absolute;
+  inset-inline: 0;
+  top: 0;
+  height: 3px;
   background: var(--rh-cove);
   pointer-events: none;
 }
-.bn-figure:hover .bn-figure-frame { box-shadow: var(--rh-glow-lg); }
-.bn-figure img { display: block; width: 100%; height: auto; }
+.bn-figure:hover .bn-figure-frame {
+  box-shadow: var(--rh-glow-lg);
+}
+.bn-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
 
 .bn-figure figcaption {
   margin-top: var(--rh-4);
@@ -186,24 +208,39 @@
 }
 
 /* Reception — the widest room, given the widest frame. */
-.bn-figure-0 { grid-column: 1 / span 7; }
+.bn-figure-0 {
+  grid-column: 1 / span 7;
+}
 /* Lounge — sits lower, so the two landscape frames do not read as a row. */
-.bn-figure-1 { grid-column: 8 / span 5; margin-top: clamp(2rem, 6vw, 5rem); }
+.bn-figure-1 {
+  grid-column: 8 / span 5;
+  margin-top: clamp(2rem, 6vw, 5rem);
+}
 /* Consultation — the one portrait frame, kept narrow. */
-.bn-figure-2 { grid-column: 1 / span 5; }
+.bn-figure-2 {
+  grid-column: 1 / span 5;
+}
 /* Treatment room — set against the portrait, aligned to its foot. */
-.bn-figure-3 { grid-column: 6 / span 7; align-self: end; }
+.bn-figure-3 {
+  grid-column: 6 / span 7;
+  align-self: end;
+}
 
 @media (max-width: 900px) {
-  .bn-gallery { grid-template-columns: 1fr; }
-  .bn-figure-0, .bn-figure-1, .bn-figure-2, .bn-figure-3 {
+  .bn-gallery {
+    grid-template-columns: 1fr;
+  }
+  .bn-figure-0,
+  .bn-figure-1,
+  .bn-figure-2,
+  .bn-figure-3 {
     grid-column: 1 / -1;
     margin-top: 0;
     align-self: auto;
   }
 }
 
-/* ── Parity ──────────────────────────────────────────────────────────────── */
+/* Parity */
 .bn-parity-line {
   font-family: var(--rh-font-display);
   font-size: var(--rh-step-1);
@@ -212,19 +249,30 @@
   padding-left: var(--rh-6);
   margin-bottom: var(--rh-6);
 }
-.bn-parity-cta { margin-top: var(--rh-4); }
+.bn-parity-cta {
+  margin-top: var(--rh-4);
+}
 
-/* ── Cost ────────────────────────────────────────────────────────────────── */
-.bn-cost { background: var(--rh-surface-sunk); }
+/* Cost */
+.bn-cost {
+  background: var(--rh-surface-sunk);
+}
 .bn-cost-note {
   padding: var(--rh-6);
   margin: var(--rh-6) 0;
   max-width: var(--rh-measure);
 }
-.bn-cost-note p { margin: 0; position: relative; z-index: 1; color: var(--rh-ink-soft); }
-.bn-cost-note strong { color: var(--rh-brass); }
+.bn-cost-note p {
+  margin: 0;
+  position: relative;
+  z-index: 1;
+  color: var(--rh-ink-soft);
+}
+.bn-cost-note strong {
+  color: var(--rh-brass);
+}
 
-/* ── Visit ───────────────────────────────────────────────────────────────── */
+/* Visit */
 .bn-address {
   font-style: normal;
   font-family: var(--rh-font-display);
@@ -235,17 +283,31 @@
   max-width: 26ch;
 }
 
-.bn-map { aspect-ratio: 4 / 3; }
-.bn-map iframe { display: block; width: 100%; height: 100%; border: 0; }
+.bn-map {
+  aspect-ratio: 4 / 3;
+}
+.bn-map iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
 
-/* ── Responsive ──────────────────────────────────────────────────────────── */
+/* Responsive */
 @media (max-width: 900px) {
   .bn-hero {
     grid-template-columns: 1fr;
     padding-inline: var(--rh-6);
     gap: var(--rh-8);
   }
-  .bn-hero-media { border-radius: var(--rh-r-lg); }
-  .bn-two, .bn-gallery { grid-template-columns: 1fr; }
-  .bn-h2 { max-width: none; }
+  .bn-hero-media {
+    border-radius: var(--rh-r-lg);
+  }
+  .bn-two,
+  .bn-gallery {
+    grid-template-columns: 1fr;
+  }
+  .bn-h2 {
+    max-width: none;
+  }
 }

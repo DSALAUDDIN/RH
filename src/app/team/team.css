@@ -1,18 +1,18 @@
-.team-page { background: #060b19; }
+.team-page {
+  background: #060b19;
+}
 
-/* globals.css zeroes .main-content padding-top when .team-hero is present
-   (the old team page drew its own full-bleed hero), so this hero has to
-   clear the fixed navbar itself. */
+/* Offsets the fixed navbar (globals.css removes main padding for .team-hero). */
 .team-hero {
   padding-block: clamp(3rem, 7vw, 5.5rem);
   padding-top: calc(72px + clamp(3rem, 7vw, 5.5rem));
 }
 @media (max-width: 480px) {
-  .team-hero { padding-top: calc(60px + clamp(3rem, 7vw, 5.5rem)); }
+  .team-hero {
+    padding-top: calc(60px + clamp(3rem, 7vw, 5.5rem));
+  }
 }
-/* .rh-scope :is(h1,h2,h3) in tokens.css has specificity (0,1,1), which beats
-   a plain class selector (0,1,0). Nesting under .team-page gives (0,2,0),
-   enough to override the base-layer rules without !important.            */
+/* Scoped under .team-page to out-rank .rh-scope heading rules without !important. */
 .team-page .team-h1 {
   font-family: var(--rh-font-display);
   font-size: var(--rh-step-4);
@@ -40,16 +40,28 @@
   margin: 0;
 }
 
-.team-note-inner { padding: var(--rh-6); max-width: var(--rh-measure); }
-.team-note-inner p { margin: 0; position: relative; z-index: 1; color: #94a3b8; }
-.team-note-inner strong { color: var(--rh-brass); }
+.team-note-inner {
+  padding: var(--rh-6);
+  max-width: var(--rh-measure);
+}
+.team-note-inner p {
+  margin: 0;
+  position: relative;
+  z-index: 1;
+  color: #94a3b8;
+}
+.team-note-inner strong {
+  color: var(--rh-brass);
+}
 .team-note-inner code {
   font-size: 0.9em;
   background: var(--rh-paper);
   padding: 1px 5px;
   border-radius: var(--rh-r-sm);
 }
-.team-cta-line { margin-top: var(--rh-6); }
+.team-cta-line {
+  margin-top: var(--rh-6);
+}
 .team-cta-line a {
   color: var(--rh-brass);
   text-decoration: underline;

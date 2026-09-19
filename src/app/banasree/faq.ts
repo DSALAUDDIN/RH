@@ -1,6 +1,6 @@
 // src/app/banasree/faq.ts — answer-first, same rules as banani/faq.ts.
 
-import type { FaqItem } from '@/lib/schema';
+import type { FaqItem } from '@/lib/seo/schema';
 import { BRANCHES } from '@/lib/branches';
 
 export const banasreeFaq: FaqItem[] = [
@@ -10,19 +10,24 @@ export const banasreeFaq: FaqItem[] = [
   },
   {
     q: 'What does the in-house digital lab actually change for me?',
-    a: 'It removes the courier round-trip to an outside lab, so the gap between your preparation appointment and your fitting appointment is shorter, and a shade or contact point that needs adjusting can be corrected while you wait rather than at another visit. Crowns, bridges and veneers are scanned, designed and milled on site.\n\nTODO(client): confirm the typical turnaround for a single crown at Banasree, in days, so this page can give a number.',
+    a: 'It removes the courier round-trip to an outside lab, so the gap between your preparation appointment and your fitting appointment is shorter, and a shade or contact point that needs adjusting can be corrected while you wait rather than at another visit. Crowns, bridges and veneers are scanned, designed and milled on site.',
+    pending: 'Confirm the typical turnaround for a single crown at Banasree, in days.',
   },
   {
     q: 'Are prices published?',
-    a: 'Yes. Banasree publishes its price list up front so you can see what a treatment costs before you book. TODO(client): supply the current price list — treatment name, price, and what each price includes.',
+    a: 'Yes. Banasree publishes its price list up front so you can see what a treatment costs before you book.',
+    pending: 'Supply the current price list — treatment name, price, and what each price includes.',
   },
   {
     q: 'How does the 0% EMI work?',
-    a: '0% EMI spreads the cost of a treatment plan over monthly instalments with no interest added. TODO(client): confirm which cards or lenders it runs through, the minimum treatment value that qualifies, and the tenures available.',
+    a: '0% EMI spreads the cost of a treatment plan over monthly instalments with no interest added.',
+    pending:
+      'Confirm which cards or lenders it runs through, the minimum treatment value that qualifies, and the tenures available.',
   },
   {
     q: 'Do I need an appointment, or can I walk in?',
-    a: 'TODO(client): confirm whether Banasree accepts walk-ins and, if so, during which hours. Booking ahead is always faster, and booking online gives you a reference number reception can find.',
+    a: '',
+    pending: 'Confirm whether Banasree accepts walk-ins and, if so, during which hours.',
   },
   {
     q: 'What are the Banasree opening hours?',
@@ -30,7 +35,8 @@ export const banasreeFaq: FaqItem[] = [
   },
   {
     q: 'Where is the Banasree branch?',
-    a: `RH Dental Care Banasree is at ${BRANCHES.banasree.address}. TODO(client): confirm parking and the nearest landmark for directions.`,
+    a: `RH Dental Care Banasree is at ${BRANCHES.banasree.address}.`,
+    pending: `Confirm parking and the nearest landmark for directions.`,
   },
   {
     q: 'Is treatment at Banasree a lower standard than at Banani?',

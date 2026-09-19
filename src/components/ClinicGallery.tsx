@@ -4,15 +4,22 @@ import { useState, useRef } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence, useInView } from 'framer-motion';
 import {
-  X, ZoomIn, MapPin, Phone, CalendarCheck,
-  ShieldCheck, Clock, Star, ChevronRight, MessageCircle
+  X,
+  ZoomIn,
+  MapPin,
+  Phone,
+  CalendarCheck,
+  Clock,
+  Star,
+  ChevronRight,
+  MessageCircle,
 } from 'lucide-react';
 
-import img1  from '../assets/clinicGallery/1.jpeg';
-import img2  from '../assets/clinicGallery/2.jpeg';
-import img3  from '../assets/clinicGallery/3.jpeg';
-import img4  from '../assets/clinicGallery/4.jpeg';
-import img5  from '../assets/clinicGallery/5.jpeg';
+import img1 from '../assets/clinicGallery/1.jpeg';
+import img2 from '../assets/clinicGallery/2.jpeg';
+import img3 from '../assets/clinicGallery/3.jpeg';
+import img4 from '../assets/clinicGallery/4.jpeg';
+import img5 from '../assets/clinicGallery/5.jpeg';
 import img60 from '../assets/clinicGallery/60.jpeg';
 import img62 from '../assets/clinicGallery/62.jpeg';
 import img63 from '../assets/clinicGallery/63.jpeg';
@@ -22,7 +29,7 @@ import img67 from '../assets/clinicGallery/67.jpeg';
 import './ClinicGallery.css';
 import BranchCTA from './branch/BranchCTA';
 
-/* ─── Types ─────────────────────────────────── */
+/* Types */
 type Category = 'all' | 'clinic' | 'surgery' | 'team';
 
 interface Photo {
@@ -35,83 +42,143 @@ interface Photo {
   category: Category[];
 }
 
-/* ─── Grid photos (explicit area placement) ──── */
+/* Grid photos (explicit area placement) */
 const photos: Photo[] = [
   {
-    src: img3,  alt: 'Comfortable waiting lounge at RH Dental Care',
-    label: 'Waiting Lounge', tag: 'Premium Ambiance',
-    area: 'r1a', objectPos: 'center', category: ['clinic'],
+    src: img3,
+    alt: 'Comfortable waiting lounge at RH Dental Care',
+    label: 'Waiting Lounge',
+    tag: 'Premium Ambiance',
+    area: 'r1a',
+    objectPos: 'center',
+    category: ['clinic'],
   },
   {
-    src: img67, alt: 'State-of-the-art dental treatment suite',
-    label: 'Treatment Suite', tag: 'Sterile Environment',
-    area: 'r1b', objectPos: 'center', category: ['clinic'],
+    src: img67,
+    alt: 'State-of-the-art dental treatment suite',
+    label: 'Treatment Suite',
+    tag: 'Sterile Environment',
+    area: 'r1b',
+    objectPos: 'center',
+    category: ['clinic'],
   },
   {
-    src: img1,  alt: 'RH Dental Care expert dental team',
-    label: 'Expert Team', tag: 'Clinical Excellence',
-    area: 'r2a', objectPos: 'center 30%', category: ['team'],
+    src: img1,
+    alt: 'RH Dental Care expert dental team',
+    label: 'Expert Team',
+    tag: 'Clinical Excellence',
+    area: 'r2a',
+    objectPos: 'center 30%',
+    category: ['team'],
   },
   {
-    src: img63, alt: 'Microscopic endodontics with advanced technology',
-    label: 'Precision Endodontics', tag: 'Advanced Tech',
-    area: 'r2b', objectPos: 'center top', category: ['surgery'],
+    src: img63,
+    alt: 'Microscopic endodontics with advanced technology',
+    label: 'Precision Endodontics',
+    tag: 'Advanced Tech',
+    area: 'r2b',
+    objectPos: 'center top',
+    category: ['surgery'],
   },
   {
-    src: img62, alt: 'Advanced implantology procedure in progress',
-    label: 'Implantology', tag: 'Advanced Dentistry',
-    area: 'r2c', objectPos: 'center', category: ['surgery'],
+    src: img62,
+    alt: 'Advanced implantology procedure in progress',
+    label: 'Implantology',
+    tag: 'Advanced Dentistry',
+    area: 'r2c',
+    objectPos: 'center',
+    category: ['surgery'],
   },
   {
-    src: img60, alt: 'Doctor consulting with a patient at RH Dental',
-    label: 'Patient Consultation', tag: 'Personalized Care',
-    area: 'r3a', objectPos: 'center', category: ['team'],
+    src: img60,
+    alt: 'Doctor consulting with a patient at RH Dental',
+    label: 'Patient Consultation',
+    tag: 'Personalized Care',
+    area: 'r3a',
+    objectPos: 'center',
+    category: ['team'],
   },
   {
-    src: img66, alt: 'Oral surgery being performed by specialist team',
-    label: 'Oral Surgery', tag: 'Surgical Precision',
-    area: 'r3b', objectPos: 'center', category: ['surgery'],
+    src: img66,
+    alt: 'Oral surgery being performed by specialist team',
+    label: 'Oral Surgery',
+    tag: 'Surgical Precision',
+    area: 'r3b',
+    objectPos: 'center',
+    category: ['surgery'],
   },
   {
-    src: img5,  alt: 'Surgical team performing oral surgery under theatre lights',
-    label: 'Operation Theatre', tag: 'Advanced Surgery',
-    area: 'r4a', objectPos: 'center', category: ['surgery'],
+    src: img5,
+    alt: 'Surgical team performing oral surgery under theatre lights',
+    label: 'Operation Theatre',
+    tag: 'Advanced Surgery',
+    area: 'r4a',
+    objectPos: 'center',
+    category: ['surgery'],
   },
   {
-    src: img4,  alt: 'Modern clinic interior with premium dental chairs',
-    label: 'Modern Interior', tag: 'Patient Comfort',
-    area: 'r4b', objectPos: 'center', category: ['clinic'],
+    src: img4,
+    alt: 'Modern clinic interior with premium dental chairs',
+    label: 'Modern Interior',
+    tag: 'Patient Comfort',
+    area: 'r4b',
+    objectPos: 'center',
+    category: ['clinic'],
   },
 ];
 
-/* ─── Lightbox pool (all images) ─────────────── */
+/* Lightbox pool (all images) */
 const lightboxPhotos = [
-  { src: img3,  label: 'Waiting Lounge',       tag: 'Premium Ambiance',    alt: 'Comfortable waiting lounge' },
-  { src: img67, label: 'Treatment Suite',       tag: 'Sterile Environment', alt: 'Dental treatment suite' },
-  { src: img1,  label: 'Expert Team',           tag: 'Clinical Excellence', alt: 'RH Dental expert team' },
-  { src: img63, label: 'Precision Endodontics', tag: 'Advanced Tech',       alt: 'Microscopic endodontics' },
-  { src: img62, label: 'Implantology',          tag: 'Advanced Dentistry',  alt: 'Implantology procedure' },
-  { src: img60, label: 'Patient Consultation',  tag: 'Personalized Care',   alt: 'Doctor consultation' },
-  { src: img66, label: 'Oral Surgery',          tag: 'Surgical Precision',  alt: 'Oral surgery' },
-  { src: img5,  label: 'Operation Theatre',     tag: 'Advanced Surgery',    alt: 'Operation theatre' },
-  { src: img4,  label: 'Modern Interior',       tag: 'Patient Comfort',     alt: 'Clinic interior' },
-  { src: img2,  label: 'Aesthetic Dentistry',   tag: 'Smile Design',        alt: 'Aesthetic dental procedure' },
+  {
+    src: img3,
+    label: 'Waiting Lounge',
+    tag: 'Premium Ambiance',
+    alt: 'Comfortable waiting lounge',
+  },
+  {
+    src: img67,
+    label: 'Treatment Suite',
+    tag: 'Sterile Environment',
+    alt: 'Dental treatment suite',
+  },
+  { src: img1, label: 'Expert Team', tag: 'Clinical Excellence', alt: 'RH Dental expert team' },
+  {
+    src: img63,
+    label: 'Precision Endodontics',
+    tag: 'Advanced Tech',
+    alt: 'Microscopic endodontics',
+  },
+  { src: img62, label: 'Implantology', tag: 'Advanced Dentistry', alt: 'Implantology procedure' },
+  {
+    src: img60,
+    label: 'Patient Consultation',
+    tag: 'Personalized Care',
+    alt: 'Doctor consultation',
+  },
+  { src: img66, label: 'Oral Surgery', tag: 'Surgical Precision', alt: 'Oral surgery' },
+  { src: img5, label: 'Operation Theatre', tag: 'Advanced Surgery', alt: 'Operation theatre' },
+  { src: img4, label: 'Modern Interior', tag: 'Patient Comfort', alt: 'Clinic interior' },
+  {
+    src: img2,
+    label: 'Aesthetic Dentistry',
+    tag: 'Smile Design',
+    alt: 'Aesthetic dental procedure',
+  },
 ];
 
-/* ─── Stats ───────────────────────────────────── */
+/* Stats */
 const stats = [
-  { icon: Star,         num: '5.0★',  lab: 'Google Rating',          color: '#f59e0b' },
-  // REMOVED: '13k+ Happy Patients' — unevidenced. See docs/audit-report.md P2-2.
-  { icon: Clock,        num: '12+',   lab: 'Years of Excellence',    color: '#6366f1' },
-  { icon: CalendarCheck,num: 'Daily', lab: 'Appointments Available', color: '#0ea5e9' },
+  { icon: Star, num: '5.0★', lab: 'Google Rating', color: '#f59e0b' },
+  { icon: Clock, num: '12+', lab: 'Years of Excellence', color: '#6366f1' },
+  { icon: CalendarCheck, num: 'Daily', lab: 'Appointments Available', color: '#0ea5e9' },
 ];
 
-/* ─── Filter tabs ─────────────────────────────── */
+/* Filter tabs */
 const TABS: { id: Category; label: string }[] = [
-  { id: 'all',     label: 'All Photos' },
-  { id: 'clinic',  label: '🏥 Clinic' },
+  { id: 'all', label: 'All Photos' },
+  { id: 'clinic', label: '🏥 Clinic' },
   { id: 'surgery', label: '🔬 Surgery' },
-  { id: 'team',    label: '👨‍⚕️ Our Team' },
+  { id: 'team', label: '👨‍⚕️ Our Team' },
 ];
 
 export default function ClinicGallery() {
@@ -121,19 +188,18 @@ export default function ClinicGallery() {
   const inView = useInView(sectionRef, { once: true, margin: '-60px' });
 
   const close = () => setLightbox(null);
-  const prev  = () => setLightbox(l => l !== null ? (l - 1 + lightboxPhotos.length) % lightboxPhotos.length : 0);
-  const next  = () => setLightbox(l => l !== null ? (l + 1) % lightboxPhotos.length : 0);
+  const prev = () =>
+    setLightbox((l) => (l !== null ? (l - 1 + lightboxPhotos.length) % lightboxPhotos.length : 0));
+  const next = () => setLightbox((l) => (l !== null ? (l + 1) % lightboxPhotos.length : 0));
 
   /* Filtered list (grid layout preserved — hidden cells create gaps,
      so we keep all 9 cells and just dim the ones that don't match) */
-  const isActive = (photo: Photo) =>
-    activeTab === 'all' || photo.category.includes(activeTab);
+  const isActive = (photo: Photo) => activeTab === 'all' || photo.category.includes(activeTab);
 
   return (
     <section className="cg-section" ref={sectionRef} id="clinic-gallery">
       <div className="cg-container">
-
-        {/* ── Header ── */}
+        {/* Header */}
         <motion.div
           className="cg-header"
           initial={{ opacity: 0, y: 20 }}
@@ -146,18 +212,19 @@ export default function ClinicGallery() {
           </div>
 
           <h2 className="cg-title">
-            Experience the Difference<br />
+            Experience the Difference
+            <br />
             <span className="cg-title-accent">Before You Even Arrive</span>
           </h2>
 
           <p className="cg-subtitle">
-            From our state-of-the-art operating theatres to our calming lounges —
-            every corner of RH Dental Care is designed around <em>you</em>.
+            From our state-of-the-art operating theatres to our calming lounges — every corner of RH
+            Dental Care is designed around <em>you</em>.
           </p>
 
-          {/* ── Filter Tabs ── */}
+          {/* Filter Tabs */}
           <div className="cg-tabs" role="tablist" aria-label="Filter gallery photos">
-            {TABS.map(tab => (
+            {TABS.map((tab) => (
               <button
                 key={tab.id}
                 role="tab"
@@ -171,7 +238,7 @@ export default function ClinicGallery() {
           </div>
         </motion.div>
 
-        {/* ── Bento Grid ── */}
+        {/* Bento Grid */}
         <div className="cg-grid" role="tabpanel">
           {photos.map((photo, i) => {
             const active = isActive(photo);
@@ -206,7 +273,7 @@ export default function ClinicGallery() {
           })}
         </div>
 
-        {/* ── Stats Bar ── */}
+        {/* Stats Bar */}
         <motion.div
           className="cg-stats"
           initial={{ opacity: 0, y: 16 }}
@@ -227,7 +294,7 @@ export default function ClinicGallery() {
           ))}
         </motion.div>
 
-        {/* ── CTA Block ── */}
+        {/* CTA Block */}
         <motion.div
           className="cg-cta"
           initial={{ opacity: 0, y: 20 }}
@@ -236,9 +303,7 @@ export default function ClinicGallery() {
         >
           <div className="cg-cta-text">
             <p className="cg-cta-heading">Ready to experience this yourself?</p>
-            <p className="cg-cta-sub">
-              Book your appointment today — same-day slots available.
-            </p>
+            <p className="cg-cta-sub">Book your appointment today — same-day slots available.</p>
           </div>
           <div className="cg-cta-actions">
             <BranchCTA
@@ -249,11 +314,7 @@ export default function ClinicGallery() {
               <CalendarCheck size={17} />
               Book Appointment
             </BranchCTA>
-            <BranchCTA
-              action="call"
-              className="cg-btn-secondary"
-              aria-label="Call RH Dental Care"
-            >
+            <BranchCTA action="call" className="cg-btn-secondary" aria-label="Call RH Dental Care">
               <Phone size={16} />
               Call Now
             </BranchCTA>
@@ -268,10 +329,9 @@ export default function ClinicGallery() {
             </BranchCTA>
           </div>
         </motion.div>
-
       </div>
 
-      {/* ── Lightbox ── */}
+      {/* Lightbox */}
       <AnimatePresence>
         {lightbox !== null && (
           <motion.div
@@ -287,7 +347,7 @@ export default function ClinicGallery() {
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.93, opacity: 0 }}
               transition={{ type: 'spring', damping: 26, stiffness: 220 }}
-              onClick={e => e.stopPropagation()}
+              onClick={(e) => e.stopPropagation()}
             >
               <div className="cg-lb-img-wrap">
                 <Image
@@ -310,13 +370,21 @@ export default function ClinicGallery() {
                   <a href="/contact" className="cg-lb-cta" onClick={close}>
                     Book a Visit <ChevronRight size={14} />
                   </a>
-                  <span className="cg-lb-counter">{lightbox + 1} / {lightboxPhotos.length}</span>
+                  <span className="cg-lb-counter">
+                    {lightbox + 1} / {lightboxPhotos.length}
+                  </span>
                 </div>
               </div>
 
-              <button className="cg-lb-close" onClick={close} aria-label="Close"><X size={17} /></button>
-              <button className="cg-lb-prev"  onClick={prev}  aria-label="Previous photo">&#8592;</button>
-              <button className="cg-lb-next"  onClick={next}  aria-label="Next photo">&#8594;</button>
+              <button className="cg-lb-close" onClick={close} aria-label="Close">
+                <X size={17} />
+              </button>
+              <button className="cg-lb-prev" onClick={prev} aria-label="Previous photo">
+                &#8592;
+              </button>
+              <button className="cg-lb-next" onClick={next} aria-label="Next photo">
+                &#8594;
+              </button>
             </motion.div>
           </motion.div>
         )}

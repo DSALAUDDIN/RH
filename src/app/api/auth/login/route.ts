@@ -5,16 +5,13 @@ import bcrypt from 'bcryptjs';
 import { prisma } from '@/lib/prisma';
 import { getAuthSecret } from '@/lib/auth-secret';
 
-
-
 export async function POST(req: Request) {
   const secret = getAuthSecret();
   if (!secret) {
-    // Production with no JWT_SECRET. Refuse to issue a token rather than sign
-    // one with a secret that is public in the repository.
+    // JWT_SECRET is not configured: refuse to issue tokens.
     return NextResponse.json(
       { success: false, message: 'Admin login is not configured on this deployment.' },
-      { status: 503 }
+      { status: 503 },
     );
   }
 
@@ -23,17 +20,12 @@ export async function POST(req: Request) {
 
     let admin = await prisma.admin.findUnique({ where: { username } });
 
-    /* FIRST-RUN BOOTSTRAP.
-       This used to be: if no admin row matched, `admin` / `admin123` would
-       CREATE one and log you straight in. That password string is committed to
-       a public GitHub repository, so on any deployment with an empty Admin
-       table it was a working set of credentials for anyone who read the repo.
-
-       It is now off unless BOTH are set in the environment, and it never
-       hardcodes a password:
-         ADMIN_BOOTSTRAP=true
-         ADMIN_BOOTSTRAP_PASSWORD=<a password you choose>
-       Turn it off again once the admin account exists. */
+    /*
+     * First-run bootstrap. Disabled unless both are set:
+     *   ADMIN_BOOTSTRAP=true
+     *   ADMIN_BOOTSTRAP_PASSWORD=<at least 12 characters>
+     * Unset both once the admin account exists.
+     */
     if (!admin) {
       const bootstrapEnabled = process.env.ADMIN_BOOTSTRAP === 'true';
       const bootstrapPassword = process.env.ADMIN_BOOTSTRAP_PASSWORD;
@@ -71,8 +63,8 @@ export async function POST(req: Request) {
     });
 
     return NextResponse.json({ success: true });
-  } catch (error: any) {
-    console.error('Login error:', error);
-    return NextResponse.json({ error: error.message || 'Internal Server Error' }, { status: 500 });
+  } catch (error) {
+    console.error('[auth] login failed:', error);
+    return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
   }
 }

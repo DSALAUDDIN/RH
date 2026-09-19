@@ -38,10 +38,8 @@ function branchFromPath(pathname: string | null): BranchId | null {
 }
 
 /**
- * Reads ?branch= and promotes it. Isolated in its own component and wrapped in
- * <Suspense> below because useSearchParams() opts its whole subtree out of
- * static rendering — keeping it here means only this leaf is affected, not the
- * entire application.
+ * Promotes ?branch= into context. Isolated behind <Suspense> because
+ * useSearchParams() opts its subtree out of static rendering.
  */
 function BranchParamSync({ onBranch }: { onBranch: (id: BranchId) => void }) {
   const searchParams = useSearchParams();
@@ -86,9 +84,12 @@ export function BranchProvider({
   const branch = routeBranch ?? cookieBranch;
   const isPinned = routeBranch !== null;
 
+  /** Branch last written to the cookie. */
+  const persistedRef = useRef<BranchId | null>(initialBranch);
+
   const persist = useCallback((id: BranchId) => {
-    document.cookie =
-      `${BRANCH_COOKIE}=${id}; path=/; max-age=${BRANCH_COOKIE_MAX_AGE}; SameSite=Lax`;
+    persistedRef.current = id;
+    document.cookie = `${BRANCH_COOKIE}=${id}; path=/; max-age=${BRANCH_COOKIE_MAX_AGE}; SameSite=Lax`;
   }, []);
 
   const setBranch = useCallback(
@@ -100,7 +101,7 @@ export function BranchProvider({
       });
       persist(id);
     },
-    [persist]
+    [persist],
   );
 
   const clearBranch = useCallback(() => {
@@ -108,14 +109,17 @@ export function BranchProvider({
     document.cookie = `${BRANCH_COOKIE}=; path=/; max-age=0; SameSite=Lax`;
   }, []);
 
-  /* Visiting a branch page pins that branch and remembers it for later pages. */
+  // Visiting a branch page pins that branch and remembers it for later pages.
+  // State is adjusted during render; the cookie write and analytics run as effects.
+  if (routeBranch && routeBranch !== cookieBranch) {
+    setCookieBranch(routeBranch);
+  }
+
   useEffect(() => {
-    if (routeBranch && routeBranch !== cookieBranch) {
-      setCookieBranch(routeBranch);
-      persist(routeBranch);
-      track('branch_select', { branch: routeBranch, source: 'route' });
-    }
-  }, [routeBranch, cookieBranch, persist]);
+    if (!routeBranch || persistedRef.current === routeBranch) return;
+    persist(routeBranch);
+    track('branch_select', { branch: routeBranch, source: 'route' });
+  }, [routeBranch, persist]);
 
   /* Keep <html data-branch> in step so tokens.css swaps the accent.
      Scroll position is untouched — this never navigates. */
@@ -144,13 +148,10 @@ export function BranchProvider({
       // Run after the sheet has closed so a popup is still tied to the gesture.
       if (cb) cb(selected);
     },
-    [setBranch]
+    [setBranch],
   );
 
-  const onParamBranch = useCallback(
-    (id: BranchId) => setBranch(id, 'query_param'),
-    [setBranch]
-  );
+  const onParamBranch = useCallback((id: BranchId) => setBranch(id, 'query_param'), [setBranch]);
 
   return (
     <BranchContext.Provider

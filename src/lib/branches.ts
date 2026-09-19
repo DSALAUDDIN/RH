@@ -1,14 +1,9 @@
-// src/lib/branches.ts
+// Branch registry: the single source of truth for phone numbers, WhatsApp
+// links, addresses and opening hours. No other module may hardcode these.
 //
-// Single source of truth for both branches. Nothing else in the app may hardcode
-// a phone number, WhatsApp link, address or set of opening hours.
-// Acceptance:  grep -rn "01721\|01775\|wa.me" src/   → only this file.
-//
-// POSITIONING (master brief §2). The two branches are framed by WHO EACH IS FOR,
-// never by price tier. Banasree is "Flagship" / "full-service" — never
-// "standard", "affordable", "budget" or "basic". Banani is never described as
-// clinically better; clinical quality is identical and is stated as identical.
-// Price is a consequence, never the difference.
+// Positioning: branches are distinguished by audience, never by price tier or
+// clinical quality. Banasree is the full-service flagship; Banani is the
+// appointment-only private suite. Clinical standards are identical.
 
 export type BranchId = 'banani' | 'banasree';
 
@@ -97,40 +92,28 @@ export const BRANCHES: Record<BranchId, Branch> = {
     addressLocality: 'Dhaka',
     postalCode: '1213',
 
-    // TODO(client): coordinates below are approximate and have NOT been checked
-    // against the Google Business Profile pin. The repo previously held two
-    // different longitudes for this branch (90.4066 and 90.4046). Confirm the
-    // exact pin, then set geoVerified: true.
+    // TODO(content): approximate pin. Verify against the Google Business Profile,
+    // then set geoVerified: true.
     geo: { lat: 23.7937, lng: 90.4066 },
     geoVerified: false,
 
-    /* Two sessions, from the clinician roster: Dr. Hasan and Dr. Mim 9:00 am –
-       2:00 pm, Dr. Shimia and Dr. Nusrat 4:30 pm – 10:00 pm. So the suite runs a
-       morning and an evening session with a break between them — not one
-       continuous 9-to-10 day, which is what publishing a single range would
-       have implied.
-
-       WHICH DAYS was never stated. Only Dr. Mim's days are known (Sat, Mon,
-       Wed). So the times are shown on the page, but `hours` stays empty and
-       hoursVerified stays false: schema.org openingHoursSpecification requires
-       days, and a guessed day is exactly how a patient arrives at a locked door.
-
-       TODO(client): give me the days Banani opens and I will set hoursVerified
-       to true, which puts the hours into the JSON-LD and the Google listing. */
+    /*
+     * Morning (9:00-14:00) and evening (16:30-22:00) sessions. Operating days
+     * are unconfirmed, so structured hours stay unpublished (schema.org
+     * openingHoursSpecification requires days).
+     * TODO(content): confirm Banani operating days, then populate `hours`.
+     */
     hours: undefined,
     hoursVerified: false,
-    hoursDisplay:
-      'Morning 9:00 am – 2:00 pm · Evening 4:30 pm – 10:00 pm, by appointment',
+    hoursDisplay: 'Morning 9:00 am – 2:00 pm · Evening 4:30 pm – 10:00 pm, by appointment',
 
     mapEmbed:
       'https://maps.google.com/maps?q=B%26B%20Empire%2C%20Plot%20116%2C%20Road%2011%2C%20Banani%2C%20Dhaka&t=&z=16&ie=UTF8&iwloc=&output=embed',
-    mapLink:
-      'https://maps.google.com/?q=B%26B+Empire,+Plot+116,+Road+11,+Banani,+Dhaka+1213',
+    mapLink: 'https://maps.google.com/?q=B%26B+Empire,+Plot+116,+Road+11,+Banani,+Dhaka+1213',
     href: '/banani',
 
     accent: '--rh-brass',
-    waIntent:
-      'Assalamu Alaikum. I would like to request an appointment at RH Dental Care, Banani.',
+    waIntent: 'Assalamu Alaikum. I would like to request an appointment at RH Dental Care, Banani.',
     bookingMode: 'callback',
 
     facilities: [
@@ -189,8 +172,7 @@ export const BRANCHES: Record<BranchId, Branch> = {
       },
     ],
 
-    // TODO(client): Google Place ID for the Banani listing. Until this is set,
-    // ReviewBadge renders nothing at all — which is the correct behaviour.
+    // TODO(content): Google Place ID. ReviewBadge renders nothing until set.
     placeId: null,
   },
 
@@ -206,30 +188,23 @@ export const BRANCHES: Record<BranchId, Branch> = {
     phone: '+8801775227902',
     phoneDisplay: '01775-227902',
     whatsapp: '8801775227902',
-    // TODO(client): info@rhdentalcare.com was used in the old schema but was not
-    // in the brief and is unconfirmed. Omitted rather than published.
+    // TODO(content): confirm a public branch email (info@rhdentalcare.com?).
     email: undefined,
 
-    // The clinician flyers print '1st floor … Rampura', which the repo's
-    // address did not carry. TODO(client): confirm both details.
+    // TODO(content): confirm floor and locality ('1st floor … Rampura' per flyers).
     address: '1st floor, House 42, Road 8, Block C, Banasree, Rampura, Dhaka 1219',
     streetAddress: '1st floor, House 42, Road 8, Block C, Banasree, Rampura',
     addressLocality: 'Dhaka',
     postalCode: '1219',
 
-    // TODO(client): approximate. Confirm against the Google Business Profile pin,
-    // then set geoVerified: true.
+    // TODO(content): approximate pin; verify, then set geoVerified: true.
     geo: { lat: 23.7634, lng: 90.4321 },
     geoVerified: false,
 
-    /* Corroborated by two independent sources, so it is published and goes into
-       the JSON-LD:
-         (a) every clinician flyer in src/assets/doctors/ shows an afternoon and
-             evening session, and NOT ONE of them lists Thursday;
-         (b) the old site's FAQ said "open 3:00 PM to 10:00 PM, Thu closed".
-       3:30 pm is the earliest start printed on any flyer.
-       TODO(client): if reception opens before the clinical session starts, tell
-       me and I will publish the reception hours as well. */
+    /*
+     * Clinical session hours, consistent across all Banasree clinician flyers
+     * (closed Thursday). TODO(content): add reception hours if they differ.
+     */
     hours: [
       {
         days: ['Saturday', 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Friday'],
@@ -247,8 +222,7 @@ export const BRANCHES: Record<BranchId, Branch> = {
     href: '/banasree',
 
     accent: '--rh-sage-deep',
-    waIntent:
-      'Assalamu Alaikum. I would like to book an appointment at RH Dental Care, Banasree.',
+    waIntent: 'Assalamu Alaikum. I would like to book an appointment at RH Dental Care, Banasree.',
     bookingMode: 'slots',
 
     facilities: [
@@ -316,7 +290,7 @@ export const BRANCHES: Record<BranchId, Branch> = {
       },
     ],
 
-    // TODO(client): Google Place ID for the Banasree listing.
+    // TODO(content): Google Place ID.
     placeId: null,
   },
 };
@@ -326,8 +300,7 @@ export const BRANCH_LIST: Branch[] = [BRANCHES.banani, BRANCHES.banasree];
 /** Never silently default. When no branch is resolved, the UI opens the picker. */
 export const DEFAULT_BRANCH: BranchId | null = null;
 
-export const isBranchId = (v: unknown): v is BranchId =>
-  v === 'banani' || v === 'banasree';
+export const isBranchId = (v: unknown): v is BranchId => v === 'banani' || v === 'banasree';
 
 /** Shared trust line. Identical clinical quality is stated, not implied. */
 export const SHARED_TRUST =

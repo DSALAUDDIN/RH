@@ -12,7 +12,8 @@
   position: relative;
   display: grid;
   place-items: center;
-  width: 54px; height: 54px;
+  width: 54px;
+  height: 54px;
   border: 1px solid var(--rh-hairline);
   border-radius: 50%;
   background: var(--rh-accent, var(--rh-ink));
@@ -20,15 +21,30 @@
   box-shadow: var(--rh-glow-md);
   cursor: pointer;
   text-decoration: none;
-  transition: box-shadow var(--rh-dur) var(--rh-ease), transform var(--rh-dur) var(--rh-ease);
+  transition:
+    box-shadow var(--rh-dur) var(--rh-ease),
+    transform var(--rh-dur) var(--rh-ease);
 }
-.floating-whatsapp:hover { box-shadow: var(--rh-glow-lg); transform: translateY(-2px); }
-.floating-whatsapp:focus-visible { outline: 2px solid var(--rh-accent); outline-offset: 3px; }
+.floating-whatsapp:hover {
+  box-shadow: var(--rh-glow-lg);
+  transform: translateY(-2px);
+}
+.floating-whatsapp:focus-visible {
+  outline: 2px solid var(--rh-accent);
+  outline-offset: 3px;
+}
 
-.floating-whatsapp[data-branch='banani'] { --rh-accent: var(--rh-brass); }
-.floating-whatsapp[data-branch='banasree'] { --rh-accent: var(--rh-sage-deep); }
+.floating-whatsapp[data-branch='banani'] {
+  --rh-accent: var(--rh-brass);
+}
+.floating-whatsapp[data-branch='banasree'] {
+  --rh-accent: var(--rh-sage-deep);
+}
 
-.wa-icon { display: grid; place-items: center; }
+.wa-icon {
+  display: grid;
+  place-items: center;
+}
 
 /* The ring is a backlight pulse, matching the cove lighting language. */
 .wa-pulse-ring {
@@ -40,10 +56,19 @@
   pointer-events: none;
 }
 @media (prefers-reduced-motion: no-preference) {
-  .wa-pulse-ring { animation: wa-breathe 3.2s var(--rh-ease) infinite; }
+  .wa-pulse-ring {
+    animation: wa-breathe 3.2s var(--rh-ease) infinite;
+  }
   @keyframes wa-breathe {
-    0%, 100% { transform: scale(1); opacity: 0.16; }
-    50% { transform: scale(1.14); opacity: 0.05; }
+    0%,
+    100% {
+      transform: scale(1);
+      opacity: 0.16;
+    }
+    50% {
+      transform: scale(1.14);
+      opacity: 0.05;
+    }
   }
 }
 
@@ -60,9 +85,18 @@
   opacity: 0;
   transform: translateX(6px);
   pointer-events: none;
-  transition: opacity var(--rh-dur) var(--rh-ease), transform var(--rh-dur) var(--rh-ease);
+  transition:
+    opacity var(--rh-dur) var(--rh-ease),
+    transform var(--rh-dur) var(--rh-ease);
 }
 .floating-whatsapp:hover .wa-tooltip,
-.floating-whatsapp:focus-visible .wa-tooltip { opacity: 1; transform: none; }
+.floating-whatsapp:focus-visible .wa-tooltip {
+  opacity: 1;
+  transform: none;
+}
 
-@media (max-width: 520px) { .wa-tooltip { display: none; } }
+@media (max-width: 520px) {
+  .wa-tooltip {
+    display: none;
+  }
+}

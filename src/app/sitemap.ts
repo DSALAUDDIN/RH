@@ -1,31 +1,31 @@
-import { MetadataRoute } from 'next';
+import type { MetadataRoute } from 'next';
+import { absoluteUrl } from '@/config/site';
 import { blogPosts } from '@/lib/blogData';
-import { ROUTES, SPECIALTY_SLUGS } from '@/lib/routes';
-import { BASE_URL } from '@/lib/metadata';
+import { CONTENT_UPDATED, ROUTES, SPECIALTY_CANONICAL, SPECIALTY_SLUGS } from '@/lib/seo/routes';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date();
-
-  const staticRoutes: MetadataRoute.Sitemap = ROUTES.map((r) => ({
-    url: `${BASE_URL}${r.path === '/' ? '' : r.path}`,
-    lastModified: now,
-    changeFrequency: r.changeFrequency,
-    priority: r.priority,
+  const pages: MetadataRoute.Sitemap = ROUTES.map((route) => ({
+    url: absoluteUrl(route.path),
+    lastModified: route.lastModified ?? CONTENT_UPDATED,
+    changeFrequency: route.changeFrequency,
+    priority: route.priority,
   }));
 
-  const specialtyRoutes: MetadataRoute.Sitemap = SPECIALTY_SLUGS.map((slug) => ({
-    url: `${BASE_URL}/specialties/${slug}`,
-    lastModified: now,
-    changeFrequency: 'monthly' as const,
+  const specialties: MetadataRoute.Sitemap = SPECIALTY_SLUGS.filter(
+    (slug) => !SPECIALTY_CANONICAL[slug],
+  ).map((slug) => ({
+    url: absoluteUrl(`/specialties/${slug}`),
+    lastModified: CONTENT_UPDATED,
+    changeFrequency: 'monthly',
     priority: 0.7,
   }));
 
-  const blogRoutes: MetadataRoute.Sitemap = blogPosts.map((post) => ({
-    url: `${BASE_URL}/blog/${post.slug}`,
-    lastModified: now,
-    changeFrequency: 'monthly' as const,
+  const articles: MetadataRoute.Sitemap = blogPosts.map((post) => ({
+    url: absoluteUrl(`/blog/${post.slug}`),
+    lastModified: post.updatedAt ?? post.publishedAt ?? CONTENT_UPDATED,
+    changeFrequency: 'monthly',
     priority: 0.6,
   }));
 
-  return [...staticRoutes, ...specialtyRoutes, ...blogRoutes];
+  return [...pages, ...specialties, ...articles];
 }

@@ -6,14 +6,10 @@ import { nextRef, toPrismaBranch } from '@/lib/ref-server';
 
 export const runtime = 'nodejs';
 
-/* Reception must be able to tell where an enquiry came from. That means the
-   branch is REQUIRED and is never inferred — the whole point of this work.
-
-   TODO(client): CONTACT_TO_EMAIL. The previous hardcoded recipient was
-   'drhasan07012@gmail.com', which has an extra 0 compared with the address used
-   everywhere else ('drhasan0712@gmail.com'). If that mailbox does not exist,
-   every consultation request submitted through the site has been going nowhere.
-   Set CONTACT_TO_EMAIL in the environment and confirm which is correct. */
+/*
+ * Every enquiry must carry a branch; it is never inferred.
+ * Recipient is CONTACT_TO_EMAIL, falling back to the Banani branch email.
+ */
 const FALLBACK_TO = BRANCHES.banani.email ?? '';
 
 interface Payload {
@@ -32,8 +28,9 @@ const str = (v: unknown, max = 2000): string =>
 
 /** Escapes user input before it is interpolated into the HTML email body. */
 const esc = (s: string): string =>
-  s.replace(/[&<>"']/g, (c) =>
-    ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c] as string)
+  s.replace(
+    /[&<>"']/g,
+    (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c] as string,
   );
 
 /** Bangladeshi mobile, tolerant of +88 / 0 prefixes and separators. */
@@ -165,7 +162,10 @@ export async function POST(req: Request) {
       const rows: [string, string][] = [
         ['Branch', `${b.shortName} — ${b.tagline}`],
         ...(persist && !recorded
-          ? ([['⚠ NOT SAVED', 'Database write failed — record this booking manually.']] as [string, string][])
+          ? ([['⚠ NOT SAVED', 'Database write failed — record this booking manually.']] as [
+              string,
+              string,
+            ][])
           : []),
         ['Reference', ref],
         ['Name', name],
@@ -200,16 +200,16 @@ export async function POST(req: Request) {
                 .map(
                   ([k, v]) =>
                     `<tr><td style="padding:8px 10px;border-bottom:1px solid #eee;width:140px"><strong>${esc(
-                      k
+                      k,
                     )}</strong></td><td style="padding:8px 10px;border-bottom:1px solid #eee">${esc(
-                      v
-                    )}</td></tr>`
+                      v,
+                    )}</td></tr>`,
                 )
                 .join('')}
             </table>
             <h3 style="margin:18px 0 6px">Message</h3>
             <div style="background:#f6f6f2;padding:12px;border-radius:6px;white-space:pre-wrap">${esc(
-              message || '(no message)'
+              message || '(no message)',
             )}</div>
           </div>`,
       });

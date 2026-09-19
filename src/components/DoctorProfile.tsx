@@ -4,12 +4,11 @@ import { BRANCHES } from '@/lib/branches';
 import type { Clinician } from '@/lib/doctors';
 import BranchCTA from '@/components/branch/BranchCTA';
 import './DoctorProfile.css';
+import EditorialNote from '@/components/EditorialNote';
 
 /**
- * Shared clinician profile. Renders only sections that have real content — an
- * empty memberships array produces no "Memberships" heading, rather than a
- * heading over filler. Anything unconfirmed shows as an explicit TODO(client)
- * note so it is visible in review rather than quietly absent.
+ * Clinician profile. Sections without data are omitted; pending fields are
+ * listed in development builds only (see <EditorialNote>).
  */
 export default function DoctorProfile({ doctor: d }: { doctor: Clinician }) {
   const todos: string[] = [];
@@ -57,9 +56,13 @@ export default function DoctorProfile({ doctor: d }: { doctor: Clinician }) {
       {d.bio.length > 0 && (
         <section className="dp-section rh-section" aria-labelledby="dp-about">
           <div className="rh-container">
-            <h2 id="dp-about" className="dp-h2">About</h2>
+            <h2 id="dp-about" className="dp-h2">
+              About
+            </h2>
             {d.bio.map((p, i) => (
-              <p key={i} className="dp-body">{p}</p>
+              <p key={i} className="dp-body">
+                {p}
+              </p>
             ))}
           </div>
         </section>
@@ -68,7 +71,9 @@ export default function DoctorProfile({ doctor: d }: { doctor: Clinician }) {
       {d.procedures.length > 0 && (
         <section className="dp-section rh-section" aria-labelledby="dp-proc">
           <div className="rh-container">
-            <h2 id="dp-proc" className="dp-h2">Procedures</h2>
+            <h2 id="dp-proc" className="dp-h2">
+              Procedures
+            </h2>
             <ul className="dp-list">
               {d.procedures.map((p) => (
                 <li key={p}>{p}</li>
@@ -83,7 +88,9 @@ export default function DoctorProfile({ doctor: d }: { doctor: Clinician }) {
           <div className="rh-container dp-cols">
             {d.training.length > 0 && (
               <div>
-                <h2 id="dp-train" className="dp-h2">Training</h2>
+                <h2 id="dp-train" className="dp-h2">
+                  Training
+                </h2>
                 <ul className="dp-list">
                   {d.training.map((t) => (
                     <li key={t}>{t}</li>
@@ -107,7 +114,9 @@ export default function DoctorProfile({ doctor: d }: { doctor: Clinician }) {
 
       <section className="dp-section rh-section" aria-labelledby="dp-where">
         <div className="rh-container">
-          <h2 id="dp-where" className="dp-h2">Where {d.name.split(' ').slice(0, 2).join(' ')} sees patients</h2>
+          <h2 id="dp-where" className="dp-h2">
+            Where {d.name.split(' ').slice(0, 2).join(' ')} sees patients
+          </h2>
           <div className="dp-branches">
             {d.postings.map(({ branch: id }) => {
               const b = BRANCHES[id];
@@ -132,17 +141,17 @@ export default function DoctorProfile({ doctor: d }: { doctor: Clinician }) {
       </section>
 
       {todos.length > 0 && (
-        <section className="rh-section" aria-label="Outstanding information">
-          <div className="rh-container">
-            <div className="rh-niche dp-todo">
-              <p>
-                <strong>TODO(client):</strong> {todos.join(', ')} for {d.name}. These
-                are what a knowledge panel is built from and what an AI assistant
-                cites — the page is thin without them, and nothing here is guessed.
-              </p>
+        <EditorialNote>
+          <section className="rh-section" aria-label="Outstanding information">
+            <div className="rh-container">
+              <div className="rh-niche dp-todo">
+                <p>
+                  <strong>Pending:</strong> {todos.join(', ')} for {d.name}.
+                </p>
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        </EditorialNote>
       )}
     </article>
   );

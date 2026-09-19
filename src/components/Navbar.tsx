@@ -36,31 +36,71 @@ export default function Navbar() {
 
   const navLinks = [
     { name: 'Home', path: '/' },
-    { 
-      name: 'About', 
+    {
+      name: 'About',
       path: '/about',
       dropdown: [
         { name: 'About Us', path: '/about', icon: '🏥', desc: 'Our history & mission' },
         { name: 'Banani Branch', path: '/banani', icon: '🌟', desc: 'Premium Care at Banani' },
-        { name: 'Banasree Branch', path: '/banasree', icon: '📍', desc: 'Our Flagship Hospital' }
-      ]
+        { name: 'Banasree Branch', path: '/banasree', icon: '📍', desc: 'Our Flagship Hospital' },
+      ],
     },
     { name: 'Our Team', path: '/team' },
-    { 
-      name: 'Specialties', 
+    {
+      name: 'Specialties',
       path: '/specialties',
       dropdown: [
         { name: 'Implants', path: '/implants', icon: '🦷', desc: 'Permanent tooth replacement' },
-        { name: 'Orthodontics', path: '/orthodontics', icon: '✨', desc: 'Braces & clear aligners' },
-        { name: 'Root Canal', path: '/root-canal', icon: '🔬', desc: 'Single-visit precision care' },
-        { name: 'Zirconia Crown', path: '/zirconia-crown', icon: '👑', desc: 'Premium smile restoration' },
-        { name: 'Zirconia Veneers', path: '/zirconia-veneers', icon: '💎', desc: 'Flawless smile transformation' },
-        { name: 'Kids Care (Pediatric)', path: '/kids-care', icon: '🧸', desc: 'Dentistry for children' },
-        { name: 'Dental Surgery', path: '/dental-surgery', icon: '🔴', desc: 'Advanced oral surgical care' },
-        { name: 'Digital Dentistry', path: '/digital-dentistry', icon: '🔵', desc: '3D scanning & CAD/CAM' },
-        { name: 'RH Dental Tourism', path: '/dental-tourism', icon: '✈️', desc: 'Planning treatment from abroad' },
+        {
+          name: 'Orthodontics',
+          path: '/orthodontics',
+          icon: '✨',
+          desc: 'Braces & clear aligners',
+        },
+        {
+          name: 'Root Canal',
+          path: '/root-canal',
+          icon: '🔬',
+          desc: 'Single-visit precision care',
+        },
+        {
+          name: 'Zirconia Crown',
+          path: '/zirconia-crown',
+          icon: '👑',
+          desc: 'Premium smile restoration',
+        },
+        {
+          name: 'Zirconia Veneers',
+          path: '/zirconia-veneers',
+          icon: '💎',
+          desc: 'Flawless smile transformation',
+        },
+        {
+          name: 'Kids Care (Pediatric)',
+          path: '/kids-care',
+          icon: '🧸',
+          desc: 'Dentistry for children',
+        },
+        {
+          name: 'Dental Surgery',
+          path: '/dental-surgery',
+          icon: '🔴',
+          desc: 'Advanced oral surgical care',
+        },
+        {
+          name: 'Digital Dentistry',
+          path: '/digital-dentistry',
+          icon: '🔵',
+          desc: '3D scanning & CAD/CAM',
+        },
+        {
+          name: 'RH Dental Tourism',
+          path: '/dental-tourism',
+          icon: '✈️',
+          desc: 'Planning treatment from abroad',
+        },
         { name: 'View All Specialties', path: '/specialties', icon: '→', desc: '' },
-      ]
+      ],
     },
     { name: 'Treatments', path: '/treatments' },
     { name: 'Blog', path: '/blog' },
@@ -87,24 +127,25 @@ export default function Navbar() {
         <nav className="desktop-nav">
           <ul className="nav-links">
             {navLinks.map((link) => {
-              const isDropdownActive = link.dropdown && link.dropdown.some(sub => pathname === sub.path);
-              const isActive = pathname === link.path || (isDropdownActive && link.name === 'Specialties') || (isDropdownActive && link.name === 'About');
+              const isDropdownActive =
+                link.dropdown && link.dropdown.some((sub) => pathname === sub.path);
+              const isActive =
+                pathname === link.path ||
+                (isDropdownActive && link.name === 'Specialties') ||
+                (isDropdownActive && link.name === 'About');
               return (
-                <li 
-                  key={link.name} 
+                <li
+                  key={link.name}
                   className={link.dropdown ? 'has-dropdown' : ''}
                   onMouseEnter={() => link.dropdown && setActiveDropdown(link.name)}
                   onMouseLeave={() => link.dropdown && setActiveDropdown(null)}
                 >
-                  <Link 
-                    href={link.path} 
-                    className={`nav-link ${isActive ? 'active' : ''}`}
-                  >
+                  <Link href={link.path} className={`nav-link ${isActive ? 'active' : ''}`}>
                     {link.name}
                     {link.dropdown && <ChevronDown size={14} className="dropdown-icon" />}
                     {isActive && (
-                      <motion.div 
-                        layoutId="nav-indicator" 
+                      <motion.div
+                        layoutId="nav-indicator"
                         className="nav-indicator"
                         transition={{ type: 'spring', stiffness: 400, damping: 30 }}
                       />
@@ -114,7 +155,7 @@ export default function Navbar() {
                   {link.dropdown && (
                     <AnimatePresence>
                       {activeDropdown === link.name && (
-                        <motion.div 
+                        <motion.div
                           initial={{ opacity: 0, y: 10, scale: 0.95 }}
                           animate={{ opacity: 1, y: 0, scale: 1 }}
                           exit={{ opacity: 0, y: 10, scale: 0.95 }}
@@ -126,18 +167,23 @@ export default function Navbar() {
                               {idx === link.dropdown!.length - 1 && (
                                 <div className="dropdown-separator" />
                               )}
-                              <Link 
-                                href={sublink.path} 
+                              <Link
+                                href={sublink.path}
                                 className={`dropdown-item ${pathname === sublink.path ? 'active' : ''} ${idx === link.dropdown!.length - 1 ? 'dropdown-item-all' : ''}`}
                                 onClick={() => setActiveDropdown(null)}
                               >
-                                {'icon' in sublink && (sublink as {icon: string}).icon !== '→' && (
-                                  <span className="dropdown-item-icon">{(sublink as {icon: string}).icon}</span>
-                                )}
+                                {'icon' in sublink &&
+                                  (sublink as { icon: string }).icon !== '→' && (
+                                    <span className="dropdown-item-icon">
+                                      {(sublink as { icon: string }).icon}
+                                    </span>
+                                  )}
                                 <span className="dropdown-item-text">
                                   <span className="dropdown-item-name">{sublink.name}</span>
-                                  {'desc' in sublink && (sublink as {desc: string}).desc && (
-                                    <span className="dropdown-item-desc">{(sublink as {desc: string}).desc}</span>
+                                  {'desc' in sublink && (sublink as { desc: string }).desc && (
+                                    <span className="dropdown-item-desc">
+                                      {(sublink as { desc: string }).desc}
+                                    </span>
                                   )}
                                 </span>
                                 {idx === link.dropdown!.length - 1 && (
@@ -185,8 +231,8 @@ export default function Navbar() {
           </BranchCTA>
 
           {/* Mobile Menu Toggle */}
-          <button 
-            className="mobile-toggle" 
+          <button
+            className="mobile-toggle"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -198,11 +244,11 @@ export default function Navbar() {
       {/* Mobile Navigation */}
       <AnimatePresence>
         {mobileMenuOpen && (
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: -20, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -20, scale: 0.95 }}
-            transition={{ duration: 0.2, ease: "easeOut" }}
+            transition={{ duration: 0.2, ease: 'easeOut' }}
             className="mobile-nav glass-modern"
           >
             <ul className="mobile-nav-links">
@@ -219,7 +265,12 @@ export default function Navbar() {
                     });
                   }}
                   className={`branch-nav-pill ${branchPillClass}`}
-                  style={{ width: '100%', justifyContent: 'space-between', padding: '0.8rem 1rem', fontSize: '0.95rem' }}
+                  style={{
+                    width: '100%',
+                    justifyContent: 'space-between',
+                    padding: '0.8rem 1rem',
+                    fontSize: '0.95rem',
+                  }}
                 >
                   <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                     <MapPin size={16} />
@@ -229,31 +280,43 @@ export default function Navbar() {
                 </button>
               </li>
               {navLinks.map((link) => {
-                const isDropdownActive = link.dropdown && link.dropdown.some(sub => pathname === sub.path);
-                const isActive = pathname === link.path || (isDropdownActive && link.name === 'Specialties') || (isDropdownActive && link.name === 'About');
+                const isDropdownActive =
+                  link.dropdown && link.dropdown.some((sub) => pathname === sub.path);
+                const isActive =
+                  pathname === link.path ||
+                  (isDropdownActive && link.name === 'Specialties') ||
+                  (isDropdownActive && link.name === 'About');
                 return (
                   <li key={link.name} className={link.dropdown ? 'mobile-has-dropdown' : ''}>
                     <div className="mobile-link-wrapper">
-                      <Link 
-                        href={link.path} 
+                      <Link
+                        href={link.path}
                         className={`mobile-nav-link ${isActive ? 'active' : ''}`}
                         onClick={() => !link.dropdown && setMobileMenuOpen(false)}
                       >
                         {link.name}
                       </Link>
                       {link.dropdown && (
-                        <button 
+                        <button
                           className="mobile-dropdown-toggle"
-                          onClick={() => setActiveDropdown(activeDropdown === link.name ? null : link.name)}
+                          onClick={() =>
+                            setActiveDropdown(activeDropdown === link.name ? null : link.name)
+                          }
                         >
-                          <ChevronDown size={20} style={{ transform: activeDropdown === link.name ? 'rotate(180deg)' : 'none', transition: 'transform 0.2s' }} />
+                          <ChevronDown
+                            size={20}
+                            style={{
+                              transform: activeDropdown === link.name ? 'rotate(180deg)' : 'none',
+                              transition: 'transform 0.2s',
+                            }}
+                          />
                         </button>
                       )}
                     </div>
                     {link.dropdown && (
                       <AnimatePresence>
                         {activeDropdown === link.name && (
-                          <motion.div 
+                          <motion.div
                             initial={{ height: 0, opacity: 0 }}
                             animate={{ height: 'auto', opacity: 1 }}
                             exit={{ height: 0, opacity: 0 }}
@@ -261,9 +324,9 @@ export default function Navbar() {
                             style={{ overflow: 'hidden' }}
                           >
                             <div className="mobile-dropdown-inner">
-                              {link.dropdown.map(sublink => (
-                                <Link 
-                                  key={sublink.name} 
+                              {link.dropdown.map((sublink) => (
+                                <Link
+                                  key={sublink.name}
                                   href={sublink.path}
                                   className={`mobile-dropdown-item ${pathname === sublink.path ? 'active' : ''}`}
                                   onClick={() => setMobileMenuOpen(false)}

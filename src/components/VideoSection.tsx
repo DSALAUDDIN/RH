@@ -6,7 +6,8 @@ import { Play, Pause, Volume2, VolumeX, Maximize, Cpu, Heart } from 'lucide-reac
 import './VideoSection.css';
 
 export default function VideoSection() {
-  const clinicVideoUrl = 'https://res.cloudinary.com/dxrcufs8f/video/upload/v1778516898/Untitled_design_1_1_whreqj.mp4';
+  const clinicVideoUrl =
+    'https://res.cloudinary.com/dxrcufs8f/video/upload/v1778516898/Untitled_design_1_1_whreqj.mp4';
 
   const videoRef = useRef<HTMLVideoElement>(null);
   const wrapperRef = useRef<HTMLDivElement>(null);
@@ -15,7 +16,7 @@ export default function VideoSection() {
   const [showControls, setShowControls] = useState(false);
   const hideTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  /* ── autoplay on mount (muted for browser policy) ── */
+  /* autoplay on mount (muted for browser policy) */
   useEffect(() => {
     const v = videoRef.current;
     if (!v) return;
@@ -25,7 +26,7 @@ export default function VideoSection() {
       .catch(() => setIsPlaying(false));
   }, []);
 
-  /* ── show controls briefly then hide ── */
+  /* Show controls briefly, then hide */
   const revealControls = useCallback(() => {
     setShowControls(true);
     if (hideTimer.current) clearTimeout(hideTimer.current);
@@ -42,7 +43,7 @@ export default function VideoSection() {
     hideTimer.current = setTimeout(() => setShowControls(false), 1200);
   }, []);
 
-  /* ── play / pause ── */
+  /* play / pause */
   const togglePlay = (e: React.MouseEvent) => {
     e.stopPropagation();
     const v = videoRef.current;
@@ -58,7 +59,7 @@ export default function VideoSection() {
     }
   };
 
-  /* ── mute / unmute ── */
+  /* mute / unmute */
   const toggleMute = (e: React.MouseEvent) => {
     e.stopPropagation();
     const v = videoRef.current;
@@ -69,7 +70,7 @@ export default function VideoSection() {
     revealControls();
   };
 
-  /* ── fullscreen ── */
+  /* fullscreen */
   const toggleFullscreen = (e: React.MouseEvent) => {
     e.stopPropagation();
     const el = wrapperRef.current;
@@ -88,7 +89,7 @@ export default function VideoSection() {
     return () => document.removeEventListener('fullscreenchange', onChange);
   }, []);
 
-  /* ── click on the video body = toggle play ── */
+  /* click on the video body = toggle play */
   const handleVideoClick = (e: React.MouseEvent) => {
     // only if clicking directly on the video area (not buttons)
     if ((e.target as HTMLElement).closest('button')) return;
@@ -98,7 +99,6 @@ export default function VideoSection() {
   return (
     <section className="section video-highlight">
       <div className="container">
-
         {/* Section header */}
         <div className="vs-header">
           <motion.span
@@ -183,19 +183,29 @@ export default function VideoSection() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 8 }}
                   transition={{ duration: 0.2 }}
-                  onClick={e => e.stopPropagation()}
+                  onClick={(e) => e.stopPropagation()}
                 >
                   {/* Left: play + mute */}
                   <div className="vs-ctrl-left">
-                    <button className="vs-ctrl-btn" onClick={togglePlay} title={isPlaying ? 'Pause' : 'Play'}>
-                      {isPlaying ? <Pause size={18} fill="white" /> : <Play size={18} fill="white" style={{ marginLeft: 2 }} />}
+                    <button
+                      className="vs-ctrl-btn"
+                      onClick={togglePlay}
+                      title={isPlaying ? 'Pause' : 'Play'}
+                    >
+                      {isPlaying ? (
+                        <Pause size={18} fill="white" />
+                      ) : (
+                        <Play size={18} fill="white" style={{ marginLeft: 2 }} />
+                      )}
                     </button>
-                    <button className="vs-ctrl-btn" onClick={toggleMute} title={isMuted ? 'Unmute' : 'Mute'}>
+                    <button
+                      className="vs-ctrl-btn"
+                      onClick={toggleMute}
+                      title={isMuted ? 'Unmute' : 'Mute'}
+                    >
                       {isMuted ? <VolumeX size={18} /> : <Volume2 size={18} />}
                     </button>
-                    <span className="vs-ctrl-label">
-                      {isMuted ? 'Tap to unmute' : 'Sound on'}
-                    </span>
+                    <span className="vs-ctrl-label">{isMuted ? 'Tap to unmute' : 'Sound on'}</span>
                   </div>
 
                   {/* Right: fullscreen */}
@@ -209,10 +219,12 @@ export default function VideoSection() {
             </AnimatePresence>
           </div>
 
-          {/* Stats row — BELOW the video, never overlapping */}
+          {/* Stats row, never overlapping */}
           <div className="vs-stats-row">
             <div className="vs-stat">
-              <div className="vs-stat-icon"><Cpu size={18} /></div>
+              <div className="vs-stat-icon">
+                <Cpu size={18} />
+              </div>
               <div>
                 <div className="vs-stat-title">Advanced Tech</div>
                 <div className="vs-stat-desc">State-of-the-art facilities</div>
@@ -220,7 +232,9 @@ export default function VideoSection() {
             </div>
             <div className="vs-stat-divider" />
             <div className="vs-stat">
-              <div className="vs-stat-icon"><Heart size={18} /></div>
+              <div className="vs-stat-icon">
+                <Heart size={18} />
+              </div>
               <div>
                 <div className="vs-stat-title">Comfort First</div>
                 <div className="vs-stat-desc">Relaxing environment</div>
@@ -228,7 +242,6 @@ export default function VideoSection() {
             </div>
           </div>
         </motion.div>
-
       </div>
     </section>
   );

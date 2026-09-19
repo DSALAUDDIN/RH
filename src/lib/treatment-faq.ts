@@ -1,23 +1,17 @@
-// src/lib/treatment-faq.ts
+// Answer-first FAQ content for treatment pages (same pattern as
+// src/app/banani/faq.ts).
 //
-// Answer-first FAQ content for the treatment pages, following the pattern in
-// src/app/banani/faq.ts.
-//
-// Rules applied here:
-//  · Name the specific system, material, duration or visit count. "Advanced
-//    technology" is not an answer and cannot be cited by anything.
-//  · Where the specific number is not in the repo and was not supplied,
-//    TODO(client) — never a vague hedge, and never an invented figure. A wrong
-//    duration or price on a medical site is worse than a blank.
-//  · Durations given as ranges below are ordinary clinical ranges, stated as
-//    ranges, not as promises about a particular patient.
+// - Name the specific system, material, duration or visit count.
+// - Unknown figures are marked TODO(content); never estimated.
+// - Durations are typical clinical ranges, not patient-specific promises.
 
-import type { FaqItem } from '@/lib/schema';
+import type { FaqItem } from '@/lib/seo/schema';
 
 export const implantFaq: FaqItem[] = [
   {
     q: 'How long does a dental implant take from start to finished tooth?',
-    a: 'For a straightforward single implant, most cases run three to six months from placement to the final crown, because the implant needs time to integrate with bone before it can carry a load. The surgery itself is usually a single appointment of about an hour.\n\nCases needing a bone graft or a sinus lift add healing time before placement. TODO(client): confirm your typical appointment count for a single implant, so patients can plan visits rather than guess.',
+    a: 'For a straightforward single implant, most cases run three to six months from placement to the final crown, because the implant needs time to integrate with bone before it can carry a load. The surgery itself is usually a single appointment of about an hour.\n\nCases needing a bone graft or a sinus lift add healing time before placement.',
+    pending: 'Confirm the typical appointment count for a single implant.',
   },
   {
     q: 'Is implant surgery planned from a CBCT scan?',
@@ -25,7 +19,9 @@ export const implantFaq: FaqItem[] = [
   },
   {
     q: 'Which implant system do you use?',
-    a: 'Osstem, a South Korean implant system, is used for our standard implant package — the fixture named on the pricing section of this page is the Osstem SA.\n\nTODO(client): confirm whether Osstem is the only system used or whether a premium alternative is offered for particular cases, and name it. A named system a patient can research is a real differentiator; "premium international implants" is not.',
+    a: 'Osstem, a South Korean implant system, is used for our standard implant package — the fixture named on the pricing section of this page is the Osstem SA.',
+    pending:
+      'Confirm whether Osstem is the only system used or whether a premium alternative is offered for particular cases, and name it.',
   },
   {
     q: 'Is the crown made in-house?',
@@ -33,7 +29,9 @@ export const implantFaq: FaqItem[] = [
   },
   {
     q: 'What does an implant cost at RH Dental Care?',
-    a: 'TODO(client): confirm the published implant price list for Banasree and the package ranges for Banani. Per the positioning, Banasree publishes full prices and Banani publishes ranges plus a consultation fee.',
+    a: '',
+    pending:
+      'Confirm the published implant price list for Banasree and the package ranges for Banani.',
   },
   {
     q: 'Which branch should I go to for an implant?',
@@ -44,7 +42,8 @@ export const implantFaq: FaqItem[] = [
 export const rootCanalFaq: FaqItem[] = [
   {
     q: 'How many visits does a root canal take?',
-    a: 'Most root canals are completed in one or two visits, and the tooth then needs a separate appointment for a crown in the majority of cases. A molar with curved or calcified canals, or a tooth with an active infection that needs dressing between visits, can take longer.\n\nTODO(client): confirm your typical visit count for anterior teeth versus molars.',
+    a: 'Most root canals are completed in one or two visits, and the tooth then needs a separate appointment for a crown in the majority of cases. A molar with curved or calcified canals, or a tooth with an active infection that needs dressing between visits, can take longer.',
+    pending: 'Confirm the typical visit count for anterior teeth versus molars.',
   },
   {
     q: 'Do you use a microscope for root canal treatment?',
@@ -60,18 +59,23 @@ export const rootCanalFaq: FaqItem[] = [
   },
   {
     q: 'What does a root canal cost?',
-    a: 'TODO(client): confirm the current root canal price list by tooth type, and whether the crown is quoted separately. The site previously showed ৳13,000 on one page with no indication of which tooth type or whether it included the crown.',
+    a: '',
+    pending:
+      'Confirm the current root canal price list by tooth type, and whether the crown is quoted separately.',
   },
 ];
 
 export const orthodonticsFaq: FaqItem[] = [
   {
     q: 'How long do braces take?',
-    a: 'Fixed braces typically run 18 to 36 months depending on how far the teeth have to move, and clear aligners typically 12 to 24 months for cases within their range. Both are followed by retainers, which are not optional — teeth move back without them.\n\nTODO(client): confirm your typical treatment length for a straightforward crowding case, so the page can give a real number rather than the textbook range.',
+    a: 'Fixed braces typically run 18 to 36 months depending on how far the teeth have to move, and clear aligners typically 12 to 24 months for cases within their range. Both are followed by retainers, which are not optional — teeth move back without them.',
+    pending: 'Confirm the typical treatment length for a straightforward crowding case.',
   },
   {
     q: 'How often do I need to come in during treatment?',
-    a: 'TODO(client): confirm your adjustment interval for fixed braces and your review interval for aligners. Patients budget travel and time off against this number, and it is the question that decides whether an out-of-town patient starts treatment at all.',
+    a: '',
+    pending:
+      'Confirm the adjustment interval for fixed braces and the review interval for aligners.',
   },
   {
     q: 'Are clear aligners as effective as fixed braces?',
@@ -79,7 +83,8 @@ export const orthodonticsFaq: FaqItem[] = [
   },
   {
     q: 'Which aligner system do you provide?',
-    a: 'TODO(client): name the aligner system or systems. The site currently shows an Invisalign flyer in its assets without stating whether Invisalign is actually provided.',
+    a: '',
+    pending: 'Name the aligner system or systems.',
   },
   {
     q: 'Can adults have orthodontic treatment?',
@@ -94,7 +99,9 @@ export const zirconiaFaq: FaqItem[] = [
   },
   {
     q: 'How many visits does a zirconia crown take?',
-    a: 'TODO(client): confirm the visit count and turnaround at Banasree, where the crown is milled in the in-house lab, versus Banani. Preparation, scanning and fitting are typically two appointments; the in-house lab is what shortens the gap between them.',
+    a: '',
+    pending:
+      'Confirm the visit count and turnaround at Banasree, where the crown is milled in the in-house lab, versus Banani.',
   },
   {
     q: 'Is zirconia better than a metal-ceramic crown?',
@@ -102,14 +109,17 @@ export const zirconiaFaq: FaqItem[] = [
   },
   {
     q: 'Do you take a digital scan instead of an impression?',
-    a: 'Yes, an intraoral scanner is used for most cases, which removes the impression tray and the gag reflex that comes with it, and sends the file straight to the lab. TODO(client): confirm the scanner make and model.',
+    a: 'Yes, an intraoral scanner is used for most cases, which removes the impression tray and the gag reflex that comes with it, and sends the file straight to the lab.',
+    pending: 'Confirm the scanner make and model.',
   },
 ];
 
 export const veneersFaq: FaqItem[] = [
   {
     q: 'How much tooth is removed for veneers?',
-    a: 'TODO(client): confirm your preparation protocol — minimal-prep, conventional, or case-dependent — and the typical reduction in millimetres. This is the question that decides whether a patient goes ahead, because the reduction is irreversible.',
+    a: '',
+    pending:
+      'Confirm the preparation protocol — minimal-prep, conventional, or case-dependent — and the typical reduction in millimetres.',
   },
   {
     q: 'Can I see the result before the teeth are prepared?',
@@ -117,30 +127,28 @@ export const veneersFaq: FaqItem[] = [
   },
   {
     q: 'How long do veneers last?',
-    a: 'Well-made ceramic veneers commonly last ten years or more. They chip or debond most often in patients who grind, so a night guard is usually part of the plan. TODO(client): confirm whether a night guard is included in your veneer packages.',
+    a: 'Well-made ceramic veneers commonly last ten years or more. They chip or debond most often in patients who grind, so a night guard is usually part of the plan.',
+    pending: 'Confirm whether a night guard is included in the veneer packages.',
   },
 ];
 
 export const generalFaq: FaqItem[] = [
   {
     q: 'How is sterilisation handled?',
-    a: 'Instruments are cleaned, pouched and autoclaved between every patient, and single-use items are used where a single-use item exists. The same protocol runs at both branches — it is not something the Banani setting changes.\n\nTODO(client): confirm the autoclave class (B/S/N) and whether cycles are logged and traceable to the appointment. A specific, verifiable answer here is worth more than any adjective.',
+    a: 'Instruments are cleaned, pouched and autoclaved between every patient, and single-use items are used where a single-use item exists. The same protocol runs at both branches — it is not something the Banani setting changes.',
+    pending:
+      'Confirm the autoclave class (B/S/N) and whether cycles are logged and traceable to the appointment.',
   },
   {
     q: 'Do you treat children and patients with special needs?',
-    a: 'Yes, at the Banasree branch, where the full team is on site. TODO(client): confirm which clinicians hold paediatric dentistry qualifications, and whether treatment under general anaesthesia is arranged in-house or referred.',
+    a: 'Yes, at the Banasree branch, where the full team is on site.',
+    pending:
+      'Confirm which clinicians hold paediatric dentistry qualifications, and whether treatment under general anaesthesia is arranged in-house or referred.',
   },
   {
     q: 'Is there a payment plan?',
-    a: '0% EMI is available on treatment plans at Banasree. TODO(client): confirm which cards or lenders the EMI runs through, the minimum treatment value, and the available tenures.',
+    a: '0% EMI is available on treatment plans at Banasree.',
+    pending:
+      'Confirm which cards or lenders the EMI runs through, the minimum treatment value, and the available tenures.',
   },
 ];
-
-export default {
-  implantFaq,
-  rootCanalFaq,
-  orthodonticsFaq,
-  zirconiaFaq,
-  veneersFaq,
-  generalFaq,
-};
