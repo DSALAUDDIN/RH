@@ -162,7 +162,7 @@ export const BRANCHES: Record<BranchId, Branch> = {
         h: 1600,
       },
       {
-        src: '/assets/branches/banani/treatment-chair.webp',
+        src: '/assets/branches/banani/treatment-room.webp',
         alt: 'A clinician treating a patient in the dental chair at RH Dental Care Banani, with the operating light overhead and the panelled lounge corner behind.',
         caption:
           'The treatment room. The dental chair sits in the same panelled, cove-lit space as the rest of the suite.',
@@ -242,7 +242,7 @@ export const BRANCHES: Record<BranchId, Branch> = {
     schemaDescription:
       'Full-service dental hospital in Banasree, Dhaka. In-house master digital lab, a full specialist team on site, coordinated treatment planning. Same clinicians, materials and sterilisation protocol as RH Dental Care Banani.',
     heroImage: '/assets/branches/banasree/team.webp',
-    cardImage: '/assets/branches/banasree/reception.webp',
+    cardImage: '/assets/branches/banasree/reception-new.jpg',
     ogImage: '/assets/branches/banasree/team.webp',
     photos: [
       {
