@@ -30,6 +30,8 @@ export interface PageMetaInput {
   authors?: string[];
   section?: string;
   tags?: string[];
+  locale?: string;
+  languages?: Record<string, string>;
 }
 
 /**
@@ -49,6 +51,8 @@ export function pageMeta(input: PageMetaInput): Metadata {
     noindex = false,
     canonical = path,
     type = 'website',
+    locale = SITE.locale,
+    languages,
   } = input;
 
   if (process.env.NODE_ENV !== 'production') {
@@ -78,7 +82,7 @@ export function pageMeta(input: PageMetaInput): Metadata {
           siteName: SITE.name,
           title,
           description,
-          locale: SITE.locale,
+          locale,
           images: [ogImage],
           publishedTime: input.publishedTime,
           modifiedTime: input.modifiedTime,
@@ -92,7 +96,7 @@ export function pageMeta(input: PageMetaInput): Metadata {
           siteName: SITE.name,
           title,
           description,
-          locale: SITE.locale,
+          locale,
           images: [ogImage],
         };
 
@@ -101,7 +105,7 @@ export function pageMeta(input: PageMetaInput): Metadata {
     description,
     alternates: {
       canonical,
-      languages: { [SITE.language]: canonical, 'x-default': canonical },
+      languages: languages ?? { [SITE.language]: canonical, 'x-default': canonical },
     },
     openGraph,
     twitter: {

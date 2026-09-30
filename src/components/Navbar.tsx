@@ -1,16 +1,13 @@
 'use client';
 
-import React from 'react';
-
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Phone, ChevronDown, MapPin } from 'lucide-react';
+import { Menu, X, Phone, ChevronDown, CheckCircle2, ArrowRight } from 'lucide-react';
 import logo from '../assets/rhlogo.jpeg';
 import { useBranch } from './branch/BranchProvider';
-import { BRANCHES } from '@/lib/branches';
 import BranchCTA from './branch/BranchCTA';
 import './Navbar.css';
 
@@ -19,12 +16,7 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const pathname = usePathname();
-  const { branch, isPinned, openPicker } = useBranch();
-
-  /* On a branch page the pill shows that branch and stays switchable — clicking
-     it opens the picker, and selecting the other branch navigates there. */
-  const branchPillLabel = branch ? BRANCHES[branch].shortName : 'Choose branch';
-  const branchPillClass = branch ? `active-${branch}` : '';
+  const { branch, setBranch } = useBranch();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -120,7 +112,10 @@ export default function Navbar() {
             style={{ borderRadius: '50%', objectFit: 'contain', background: '#fff' }}
             priority
           />
-          <span className="logo-text">RH Dental</span>
+          <div className="logo-text-group">
+            <span className="logo-text">RH Dental</span>
+            <span className="logo-est">Since 2014</span>
+          </div>
         </Link>
 
         {/* Desktop Navigation */}
@@ -203,27 +198,37 @@ export default function Navbar() {
         </nav>
 
         <div className="nav-actions">
-          <button
-            type="button"
-            onClick={() => {
-              openPicker((selected) => {
-                if (selected !== branch) {
-                  window.location.href = `/${selected}`;
-                }
-              });
-            }}
-            className={`branch-nav-pill desktop-only-pill ${branchPillClass}`}
-            aria-haspopup="dialog"
-            aria-label={
-              branch
-                ? `Branch: ${BRANCHES[branch].shortName}${isPinned ? ' (this page)' : ''}. Change branch.`
-                : 'Choose a branch'
-            }
-          >
-            <MapPin size={13} aria-hidden="true" />
-            <span>{branchPillLabel}</span>
-            <ChevronDown size={12} aria-hidden="true" />
-          </button>
+          {/* Direct Dual-Branch Switcher */}
+          <div className="direct-branch-switcher" role="radiogroup" aria-label="Select Clinic Branch">
+            <Link
+              href="/banani"
+              onClick={() => setBranch('banani', 'header_direct')}
+              className={`direct-branch-btn ${branch === 'banani' ? 'active-banani' : ''}`}
+              aria-label="Banani Branch — Private Dental Suite, Road 11"
+              aria-checked={branch === 'banani'}
+              role="radio"
+              title="Banani Branch — Private Dental Suite (Road 11)"
+            >
+              <span className="direct-branch-dot banani-dot" />
+              <span className="direct-branch-name">Banani</span>
+              {branch === 'banani' && <CheckCircle2 size={11} className="direct-branch-check" />}
+            </Link>
+
+            <Link
+              href="/banasree"
+              onClick={() => setBranch('banasree', 'header_direct')}
+              className={`direct-branch-btn ${branch === 'banasree' ? 'active-banasree' : ''}`}
+              aria-label="Banasree Branch — Flagship Dental Hospital, Block C"
+              aria-checked={branch === 'banasree'}
+              role="radio"
+              title="Banasree Branch — Flagship Dental Hospital (Block C)"
+            >
+              <span className="direct-branch-dot banasree-dot" />
+              <span className="direct-branch-name">Banasree</span>
+              {branch === 'banasree' && <CheckCircle2 size={11} className="direct-branch-check" />}
+            </Link>
+          </div>
+
 
           <BranchCTA action="book" className="btn-book">
             <Phone size={16} aria-hidden="true" />
@@ -253,31 +258,38 @@ export default function Navbar() {
           >
             <ul className="mobile-nav-links">
               <li className="mobile-branch-section">
-                <p className="mobile-branch-label">Location Setting</p>
-                <button
-                  type="button"
-                  onClick={() => {
-                    setMobileMenuOpen(false);
-                    openPicker((selected) => {
-                      if (selected !== branch) {
-                        window.location.href = `/${selected}`;
-                      }
-                    });
-                  }}
-                  className={`branch-nav-pill ${branchPillClass}`}
-                  style={{
-                    width: '100%',
-                    justifyContent: 'space-between',
-                    padding: '0.8rem 1rem',
-                    fontSize: '0.95rem',
-                  }}
-                >
-                  <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <MapPin size={16} />
-                    <span>{branch ? BRANCHES[branch].name : 'Choose your branch'}</span>
-                  </span>
-                  <ChevronDown size={16} />
-                </button>
+                <p className="mobile-branch-label">Choose Branch</p>
+                <div className="mobile-branch-buttons">
+                  <Link
+                    href="/banani"
+                    onClick={() => {
+                      setBranch('banani', 'mobile_menu');
+                      setMobileMenuOpen(false);
+                    }}
+                    className={`mobile-branch-btn ${branch === 'banani' ? 'active-banani' : ''}`}
+                  >
+                    <div className="mobile-branch-btn-inner">
+                      <span className="mobile-branch-name">Banani Branch</span>
+                      <span className="mobile-branch-tag">Private Dental Suite</span>
+                    </div>
+                    <ArrowRight size={15} />
+                  </Link>
+
+                  <Link
+                    href="/banasree"
+                    onClick={() => {
+                      setBranch('banasree', 'mobile_menu');
+                      setMobileMenuOpen(false);
+                    }}
+                    className={`mobile-branch-btn ${branch === 'banasree' ? 'active-banasree' : ''}`}
+                  >
+                    <div className="mobile-branch-btn-inner">
+                      <span className="mobile-branch-name">Banasree Branch</span>
+                      <span className="mobile-branch-tag">Flagship Dental Hospital</span>
+                    </div>
+                    <ArrowRight size={15} />
+                  </Link>
+                </div>
               </li>
               {navLinks.map((link) => {
                 const isDropdownActive =

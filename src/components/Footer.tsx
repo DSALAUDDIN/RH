@@ -29,7 +29,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="footer-brand">
             <div className="footer-tagline">
-              <Shield size={12} /> BMDC Certified Specialists
+              <Shield size={12} /> Established 2014 · BMDC Certified Specialists
             </div>
             <Link href="/" className="logo">
               <Image
@@ -42,8 +42,8 @@ export default function Footer() {
               <span className="logo-text">RH Dental Care</span>
             </Link>
             <p className="footer-desc">
-              Experience premium dental care in Dhaka. Advanced aesthetics, oral surgery, digital
-              dentistry & implants in a state-of-the-art 3,500 sq.ft facility.
+              Specialist dental care in Dhaka — dental implants, microscope root canals, clear
+              aligners and zirconia restorations at two branches staffed by the same clinical team.
             </p>
             <div className="social-links">
               <a
@@ -76,6 +76,12 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/treatments">Treatments</Link>
+              </li>
+              <li>
+                <Link href="/guides">Patient Guides</Link>
+              </li>
+              <li>
+                <Link href="/bn/guides">বাংলা ডেন্টাল গাইড</Link>
               </li>
               <li>
                 <Link href="/contact">Contact Hub</Link>

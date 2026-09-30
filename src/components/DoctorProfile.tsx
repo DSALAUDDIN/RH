@@ -5,6 +5,19 @@ import type { Clinician } from '@/lib/doctors';
 import BranchCTA from '@/components/branch/BranchCTA';
 import './DoctorProfile.css';
 
+function getProcedureHref(proc: string): string | null {
+  const lower = proc.toLowerCase();
+  if (lower.includes('implant')) return '/implants';
+  if (lower.includes('root canal') || lower.includes('endodontic')) return '/root-canal';
+  if (lower.includes('orthodontic') || lower.includes('aligner') || lower.includes('brace')) return '/orthodontics';
+  if (lower.includes('crown') || lower.includes('zirconia')) return '/zirconia-crown';
+  if (lower.includes('veneer') || lower.includes('aesthetic') || lower.includes('smile design')) return '/zirconia-veneers';
+  if (lower.includes('child') || lower.includes('paediatric') || lower.includes('pediatric')) return '/kids-care';
+  if (lower.includes('surgery') || lower.includes('extraction') || lower.includes('exodontia')) return '/dental-surgery';
+  if (lower.includes('imaging') || lower.includes('cbct') || lower.includes('3d')) return '/digital-dentistry';
+  return null;
+}
+
 /**
  * Shared clinician profile. Renders only sections that have real content — an
  * empty memberships array produces no "Memberships" heading, rather than a
@@ -64,9 +77,27 @@ export default function DoctorProfile({ doctor: d }: { doctor: Clinician }) {
           <div className="rh-container">
             <h2 id="dp-proc" className="dp-h2">Procedures</h2>
             <ul className="dp-list">
-              {d.procedures.map((p) => (
-                <li key={p}>{p}</li>
-              ))}
+              {d.procedures.map((p) => {
+                const href = getProcedureHref(p);
+                return (
+                  <li key={p}>
+                    {href ? (
+                      <Link
+                        href={href}
+                        style={{
+                          color: 'inherit',
+                          textDecoration: 'underline',
+                          textUnderlineOffset: '3px',
+                        }}
+                      >
+                        {p} →
+                      </Link>
+                    ) : (
+                      p
+                    )}
+                  </li>
+                );
+              })}
             </ul>
           </div>
         </section>

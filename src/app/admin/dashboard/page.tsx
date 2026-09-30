@@ -12,6 +12,7 @@ import {
   Settings,
   Star,
   Trash2,
+  ShieldCheck,
 } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 
@@ -209,6 +210,24 @@ export default function AdminDashboard() {
             }}
           >
             <Video size={20} /> Video Reviews
+          </a>
+
+          <a
+            href="/admin/seo"
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '12px',
+              padding: '12px 16px',
+              borderRadius: '8px',
+              color: '#38bdf8',
+              backgroundColor: 'rgba(56, 189, 248, 0.08)',
+              textDecoration: 'none',
+              fontWeight: 600,
+              marginTop: '6px',
+            }}
+          >
+            <ShieldCheck size={20} /> SEO Command Center
           </a>
 
           <div

@@ -280,7 +280,7 @@ const categories: Category[] = [
       {
         name: 'Dental Implant (Osstem/Nobel)',
         description:
-          'Advanced permanent tooth replacement. Packages available for Osstem SA, SOI, and Nobel Biocare.',
+          'Advanced long-term tooth replacement. Packages available for Osstem SA, SOI, and Nobel Biocare.',
         highlight: true,
       },
     ],
@@ -594,7 +594,7 @@ const signatureTreatments = [
   {
     sn: '02',
     name: 'Immediate Dental Implant with Prosthesis',
-    desc: 'Same-day implant placement and prosthesis attachment. Minimizes treatment time, restores function and aesthetics quickly.',
+    desc: 'Immediate implant placement and provisional attachment where clinically indicated. Minimizes treatment intervals, restores function and aesthetics quickly.',
     duration: '1 Day (7–21 hrs)',
     visits: '3+',
     color: '#0ea5e9',
@@ -730,9 +730,16 @@ export default function TreatmentsPage() {
               <span className="text-gradient">Confident Smile</span>
             </h1>
             <p className="tr-hero-desc">
-              Whether you are in pain, looking to restore missing teeth, or simply want a brighter
-              smile, our compassionate experts are here to help. Explore our specialized treatments
-              below.
+              Comprehensive dental treatment catalogue and procedure guide. Explore our clinical
+              disciplines below, review our concise{' '}
+              <Link href="/services" style={{ color: '#38bdf8', textDecoration: 'underline' }}>
+                Service Directory
+              </Link>
+              , or browse by{' '}
+              <Link href="/specialties" style={{ color: '#38bdf8', textDecoration: 'underline' }}>
+                Clinical Departments &amp; Specialties
+              </Link>
+              .
             </p>
 
             {/* Social Proof */}

@@ -1,0 +1,109 @@
+.bn-hero-video-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: clamp(340px, 42vw, 540px);
+  background: #020617;
+  overflow: hidden;
+  border-radius: var(--rh-r-lg, 1rem) 0 0 var(--rh-r-lg, 1rem);
+}
+
+.bn-hero-video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: clamp(340px, 42vw, 540px);
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.bn-video-tag {
+  position: absolute;
+  top: 1.25rem;
+  left: 1.25rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.85rem;
+  background: rgba(5, 14, 30, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(240, 179, 87, 0.35);
+  border-radius: 9999px;
+  color: #f0b357;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  z-index: 3;
+  pointer-events: none;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+}
+
+.bn-video-dot {
+  width: 7px;
+  height: 7px;
+  background: #22c55e;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #22c55e;
+  animation: bn-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes bn-pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.35;
+    transform: scale(0.8);
+  }
+}
+
+.bn-video-controls {
+  position: absolute;
+  bottom: 1.25rem;
+  right: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  z-index: 3;
+}
+
+.bn-video-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.45rem 0.85rem;
+  background: rgba(5, 14, 30, 0.82);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 9999px;
+  color: #ffffff;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+}
+
+.bn-video-btn:hover {
+  background: rgba(5, 14, 30, 0.95);
+  border-color: #f0b357;
+  color: #f0b357;
+  transform: translateY(-1px);
+}
+
+.bn-video-btn-icon {
+  padding: 0.45rem 0.55rem;
+}
+
+@media (max-width: 900px) {
+  .bn-hero-video-wrapper {
+    border-radius: var(--rh-r-lg, 1rem);
+    min-height: 280px;
+  }
+  .bn-hero-video {
+    min-height: 280px;
+  }
+}

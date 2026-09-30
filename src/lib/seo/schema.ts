@@ -102,6 +102,7 @@ export function organizationSchema(): JsonLdNode {
       height: SITE.logo.height,
     },
     medicalSpecialty: 'Dentistry',
+    foundingDate: String(SITE.foundedYear),
     department: [{ '@id': ID.branch('banani') }, { '@id': ID.branch('banasree') }],
     sameAs: SITE.sameAs.length ? [...SITE.sameAs] : undefined,
   });
@@ -247,6 +248,7 @@ export interface MedicalWebPageInput {
   reviewedBy?: string;
   /** ISO date of the last clinical review. */
   lastReviewed?: string;
+  inLanguage?: string;
 }
 
 export function medicalWebPageSchema(input: MedicalWebPageInput): JsonLdNode {
@@ -256,7 +258,7 @@ export function medicalWebPageSchema(input: MedicalWebPageInput): JsonLdNode {
     url: absoluteUrl(input.path),
     name: input.name,
     description: input.description,
-    inLanguage: SITE.language,
+    inLanguage: input.inLanguage ?? SITE.language,
     isPartOf: { '@id': ID.website },
     publisher: { '@id': ID.organization },
     about: input.about ? { '@id': input.about } : undefined,
@@ -276,6 +278,7 @@ export interface ArticleInput {
   author?: string;
   datePublished?: string;
   dateModified?: string;
+  inLanguage?: string;
 }
 
 export function articleSchema(input: ArticleInput): JsonLdNode {
@@ -292,7 +295,7 @@ export function articleSchema(input: ArticleInput): JsonLdNode {
     publisher: { '@id': ID.organization },
     datePublished: input.datePublished,
     dateModified: input.dateModified ?? input.datePublished,
-    inLanguage: SITE.language,
+    inLanguage: input.inLanguage ?? SITE.language,
     isPartOf: { '@id': ID.website },
   });
 }

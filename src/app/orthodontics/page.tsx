@@ -106,7 +106,7 @@ function OrthoVideo() {
         preload="auto"
       >
         <source
-          src="https://res.cloudinary.com/dxrcufs8f/video/upload/v1777313544/ortho_video_tj8vbu.mp4"
+          src="/assets/videos/orthodontics.mp4"
           type="video/mp4"
         />
       </video>
@@ -288,6 +288,29 @@ export default function OrthodonticsPage() {
                   </strong>{' '}
                   The best choice is not about &ldquo;which is better,&rdquo; but which is better{' '}
                   <em>for you</em>.
+                </p>
+                <p className="ortho-philosophy-text" style={{ marginTop: '0.75rem' }}>
+                  Our orthodontic and clear aligner therapies are led by consultant orthodontists{' '}
+                  <Link href="/team/dr-jeamima-tabassum-barsha" style={{ color: '#6366f1', textDecoration: 'underline', fontWeight: 600 }}>
+                    Dr. Jeamima Tabassum Barsha
+                  </Link>
+                  ,{' '}
+                  <Link href="/team/dr-nishat-tamanna-alam" style={{ color: '#6366f1', textDecoration: 'underline', fontWeight: 600 }}>
+                    Dr. Nishat Tamanna Alam
+                  </Link>
+                  , and{' '}
+                  <Link href="/team/dr-nabil-rahman" style={{ color: '#6366f1', textDecoration: 'underline', fontWeight: 600 }}>
+                    Dr. Nabil Rahman
+                  </Link>
+                  . Available at our{' '}
+                  <Link href="/banani" style={{ color: '#6366f1', textDecoration: 'underline' }}>
+                    Banani Private Suite
+                  </Link>{' '}
+                  and{' '}
+                  <Link href="/banasree" style={{ color: '#6366f1', textDecoration: 'underline' }}>
+                    Banasree Flagship Hospital
+                  </Link>
+                  .
                 </p>
               </div>
             </div>

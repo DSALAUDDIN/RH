@@ -60,6 +60,19 @@
 .logo:hover {
   transform: scale(1.02);
 }
+.logo-text-group {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.05;
+}
+.logo-est {
+  font-size: 0.62rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #fbbf24;
+  margin-top: 1px;
+}
 .logo-icon {
   color: #38bdf8;
   filter: drop-shadow(0 0 10px rgba(56, 189, 248, 0.4));
@@ -134,40 +147,6 @@
   background-color: rgba(56, 189, 248, 0.05);
 }
 
-/* Branch Switcher Pill */
-.branch-nav-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  color: #f1f5f9;
-  font-size: 0.82rem;
-  font-weight: 700;
-  padding: 0.45rem 0.9rem;
-  border-radius: 100px;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  white-space: nowrap;
-}
-
-.branch-nav-pill:hover {
-  background: rgba(255, 255, 255, 0.16);
-  border-color: rgba(255, 255, 255, 0.3);
-  transform: translateY(-1px);
-}
-
-.branch-nav-pill.active-banani {
-  border-color: #f59e0b;
-  color: #fbbf24;
-  background: rgba(245, 158, 11, 0.12);
-}
-
-.branch-nav-pill.active-banasree {
-  border-color: #38bdf8;
-  color: #38bdf8;
-  background: rgba(56, 189, 248, 0.12);
-}
 
 /* CTA Button */
 .btn-book {
@@ -190,16 +169,164 @@
   box-shadow: 0 8px 25px rgba(14, 165, 233, 0.4);
 }
 
-.mobile-book-btn {
-  width: 100%;
-  justify-content: center;
-  margin-top: 1rem;
-  padding: 0.875rem;
+/* Direct Branch Switcher in Header */
+.direct-branch-switcher {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 100px;
+  padding: 3px;
+  gap: 3px;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    0 2px 8px rgba(0, 0, 0, 0.25);
+  transition: all 0.2s ease;
 }
 
-@media (max-width: 850px) {
-  .desktop-only-pill {
-    display: none !important;
+.direct-branch-switcher:hover {
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+.direct-branch-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0.35rem 0.75rem;
+  border-radius: 100px;
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #94a3b8;
+  background: transparent;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+  border: 1px solid transparent;
+}
+
+.direct-branch-btn:hover {
+  color: #f8fafc;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.direct-branch-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.direct-branch-dot.banani-dot {
+  background: #f59e0b;
+  opacity: 0.65;
+}
+
+.direct-branch-dot.banasree-dot {
+  background: #38bdf8;
+  opacity: 0.65;
+}
+
+/* Active Banani State */
+.direct-branch-btn.active-banani {
+  background: rgba(245, 158, 11, 0.16);
+  color: #fbbf24;
+  font-weight: 700;
+  border-color: rgba(245, 158, 11, 0.45);
+  box-shadow: 0 0 12px rgba(245, 158, 11, 0.2);
+}
+
+.direct-branch-btn.active-banani .banani-dot {
+  opacity: 1;
+  box-shadow: 0 0 8px #f59e0b;
+  transform: scale(1.15);
+}
+
+/* Active Banasree State */
+.direct-branch-btn.active-banasree {
+  background: rgba(56, 189, 248, 0.16);
+  color: #38bdf8;
+  font-weight: 700;
+  border-color: rgba(56, 189, 248, 0.45);
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.2);
+}
+
+.direct-branch-btn.active-banasree .banasree-dot {
+  opacity: 1;
+  box-shadow: 0 0 8px #38bdf8;
+  transform: scale(1.15);
+}
+
+.direct-branch-check {
+  color: currentColor;
+  flex-shrink: 0;
+}
+
+
+/* Mobile branch buttons */
+.mobile-branch-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.mobile-branch-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.85rem 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.85rem;
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.mobile-branch-btn:hover,
+.mobile-branch-btn:active {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.mobile-branch-btn.active-banani {
+  border-color: #f59e0b;
+  background: rgba(245, 158, 11, 0.1);
+  color: #fbbf24;
+}
+
+.mobile-branch-btn.active-banasree {
+  border-color: #38bdf8;
+  background: rgba(56, 189, 248, 0.1);
+  color: #38bdf8;
+}
+
+.mobile-branch-btn-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.mobile-branch-name {
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.mobile-branch-tag {
+  font-size: 0.78rem;
+  opacity: 0.75;
+}
+
+@media (max-width: 640px) {
+  .nav-actions {
+    gap: 0.5rem;
+  }
+  .direct-branch-btn {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.74rem;
+    gap: 4px;
   }
 }
 
@@ -208,17 +335,31 @@
     padding: 0.625rem 0.625rem 0;
   }
   .navbar {
-    padding: 0.6rem 1rem;
-    gap: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    gap: 0.4rem;
   }
   .logo {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
+    gap: 0.35rem;
+  }
+  .direct-branch-switcher {
+    padding: 2px;
+    gap: 2px;
+  }
+  .direct-branch-btn {
+    padding: 0.28rem 0.5rem;
+    font-size: 0.7rem;
+    gap: 4px;
+  }
+  .direct-branch-dot {
+    width: 6px;
+    height: 6px;
   }
   .btn-book span {
     display: none;
   }
   .btn-book {
-    padding: 0.6rem;
+    padding: 0.5rem;
     border-radius: 50%;
   }
   .mobile-book-btn {
@@ -234,10 +375,14 @@
     padding: 0.5rem 0.5rem 0;
   }
   .navbar {
-    padding: 0.5rem 0.875rem;
+    padding: 0.45rem 0.6rem;
   }
-  .logo {
-    font-size: 1rem;
+  .logo .logo-text {
+    display: none;
+  }
+  .direct-branch-btn {
+    padding: 0.25rem 0.4rem;
+    font-size: 0.68rem;
   }
   .mobile-nav {
     left: 0.5rem;

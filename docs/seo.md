@@ -62,11 +62,11 @@ All JSON-LD is built in `src/lib/seo/schema.ts` and rendered by
 
 | Entity             | `@id`                                         | Emitted on          |
 | ------------------ | --------------------------------------------- | ------------------- |
-| MedicalOrganization| `https://www.rhdentalcare.com/#organization`  | every page (layout) |
-| WebSite            | `https://www.rhdentalcare.com/#website`       | every page (layout) |
-| Dentist (Banani)   | `https://www.rhdentalcare.com/banani#clinic`  | every page (layout) |
-| Dentist (Banasree) | `https://www.rhdentalcare.com/banasree#clinic`| every page (layout) |
-| Physician          | `https://www.rhdentalcare.com/<slug>#physician`| clinician pages    |
+| MedicalOrganization| `https://rhdentalcare.com/#organization`      | every page (layout) |
+| WebSite            | `https://rhdentalcare.com/#website`           | every page (layout) |
+| Dentist (Banani)   | `https://rhdentalcare.com/banani#clinic`      | every page (layout) |
+| Dentist (Banasree) | `https://rhdentalcare.com/banasree#clinic`    | every page (layout) |
+| Physician          | `https://rhdentalcare.com/<slug>#physician`   | clinician pages    |
 | Procedure          | `<page url>#procedure`                        | treatment pages     |
 | MedicalWebPage     | `<page url>#webpage`                          | treatment pages     |
 | BlogPosting        | `<page url>#article`                          | blog posts          |
@@ -109,8 +109,8 @@ content distinct. To retire one, move it to `REDIRECTS` instead.
   crawlable so Google can render pages.
 - AI search crawlers are listed explicitly in `robots.ts` so each can be allowed
   or blocked individually.
-- `/llms.txt` summarises the clinics and key pages for AI assistants.
-- The apex domain (`rhdentalcare.com`) redirects to `https://www.rhdentalcare.com`.
+- `/llms.txt` is an optional, machine-readable plain-text summary of the clinic and key routes for LLM web agents and AI assistants (informational only; not a search ranking signal).
+- The `www.rhdentalcare.com` and `*.rhdentalcare.com.bd` domains permanently redirect (HTTP 301) to `https://rhdentalcare.com`.
 - Duplicate URLs `/team/dr-hasan` and `/team/dr-shimia` redirect to the
   clinician pages.
 
@@ -130,7 +130,7 @@ The full list is in [content-gaps.md](content-gaps.md).
 ```bash
 npm run build && npm start
 npm run seo:audit                                        # local build
-npm run seo:audit -- --base=https://www.rhdentalcare.com # production
+npm run seo:audit -- --base=https://rhdentalcare.com     # production
 ```
 
 Checks: HTTP status, canonical, hreflang, title/description length and

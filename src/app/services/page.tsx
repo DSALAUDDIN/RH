@@ -13,9 +13,9 @@ import { pageMeta } from '@/lib/seo/metadata';
 import { breadcrumbs } from '@/lib/seo/schema';
 
 export const metadata: Metadata = pageMeta({
-  title: 'Dental Services in Dhaka',
+  title: 'Dental Services Directory in Dhaka',
   description:
-    'What RH Dental Care treats, at the Banani appointment-only suite and the Banasree flagship hospital in Dhaka.',
+    'Patient service directory for RH Dental Care: overview of general, aesthetic, restorative, and specialist care available at Banani and Banasree branches.',
   path: '/services',
 });
 
@@ -50,7 +50,7 @@ const detailedServices = [
     id: 'implants',
     image: imgImplants,
     title: 'Dental Implants',
-    desc: 'Replace missing teeth permanently. Implants are the gold standard for tooth replacement, offering a foundation that looks, feels, and functions like natural teeth.',
+    desc: 'Replace missing teeth with long-term implant solutions. Implants are the modern standard for tooth replacement, offering a foundation that looks, feels, and functions naturally.',
     points: [
       'Single Tooth Implants',
       'All-on-4® Treatment Concept',
@@ -63,7 +63,7 @@ const detailedServices = [
     id: 'whitening',
     image: imgWhitening,
     title: 'Professional Teeth Whitening',
-    desc: 'Over time, teeth can become stained by coffee, tea, wine, and aging. Our professional whitening treatments are safe, fast, and deliver dramatically brighter results than over-the-counter options.',
+    desc: 'Over time, teeth can become stained by coffee, tea, wine, and aging. Our professional whitening treatments are safe, fast, and deliver visibly brighter results than over-the-counter options.',
     points: [
       'In-Office Laser Whitening (1 hr)',
       'Custom Take-Home Kits',
@@ -108,8 +108,15 @@ export default function ServicesPage() {
             <span style={{ color: '#38bdf8' }}>Services</span>
           </h1>
           <p className="srv-subtitle">
-            We provide a full spectrum of dental treatments tailored to give you the perfect healthy
-            smile. Explore our specialties below.
+            Concise patient service directory for RH Dental Care. For complete procedure timelines and packages, explore our{' '}
+            <Link href="/treatments" style={{ color: '#38bdf8', textDecoration: 'underline' }}>
+              Treatment Catalogue
+            </Link>
+            , or browse by{' '}
+            <Link href="/specialties" style={{ color: '#38bdf8', textDecoration: 'underline' }}>
+              Clinical Departments &amp; Specialties
+            </Link>
+            .
           </p>
         </div>
       </section>

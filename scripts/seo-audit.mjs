@@ -4,7 +4,7 @@
  *
  *   npm run build && npm start
  *   npm run seo:audit                       # defaults to http://localhost:3000
- *   npm run seo:audit -- --base=https://www.rhdentalcare.com
+ *   npm run seo:audit -- --base=https://rhdentalcare.com
  *   npm run seo:audit -- --json             # machine-readable output
  *
  * Exits with code 1 when any ERROR-level check fails, so it can gate CI/deploys.
@@ -17,6 +17,8 @@ import {
   SPECIALTY_CANONICAL,
   SPECIALTY_SLUGS,
 } from '../src/lib/seo/routes.ts';
+import { AUTHORITY_GUIDES } from '../src/data/authorityContent.ts';
+import { BANGLA_AUTHORITY_GUIDES } from '../src/data/banglaAuthorityContent.ts';
 
 const arg = (key, fallback) => {
   const hit = process.argv.find((a) => a.startsWith(`--${key}=`));
@@ -25,7 +27,7 @@ const arg = (key, fallback) => {
 
 const BASE = arg('base', 'http://localhost:3000').replace(/\/$/, '');
 const JSON_OUT = process.argv.includes('--json');
-const CANONICAL_ORIGIN = 'https://www.rhdentalcare.com';
+const CANONICAL_ORIGIN = 'https://rhdentalcare.com';
 const LANGUAGE = 'en-BD';
 
 const TITLE_MAX = 60;
@@ -48,6 +50,20 @@ const BANNED_CLAIMS = [
   /\b98%\s*success/i,
   /\bluxur/i,
   /\blimited slots\b/i,
+];
+
+const BANNED_BANGLA_CLAIMS = [
+  /১০০%/i,
+  /গ্যারান্টি/i,
+  /নিশ্চয়তা/i,
+  /নিশ্চয়তা/i,
+  /সম্পূর্ণ ব্যথামুক্ত/i,
+  /ব্যথাহীন/i,
+  /আজীবন/i,
+  /স্থায়ী সমাধান/i,
+  /স্থায়ী সমাধান/i,
+  /\bসেরা\b/i,
+  /\bএকমাত্র\b/i,
 ];
 
 const results = [];
@@ -106,11 +122,12 @@ async function auditPage(path, { canonical: expectedCanonical = path } = {}) {
       m[2],
     ]),
   );
-  for (const lang of [LANGUAGE, 'x-default']) {
-    if (!hreflang.has(lang)) add('ERROR', path, 'hreflang', `missing ${lang}`);
-    else if (canonical && hreflang.get(lang) !== canonical)
-      add('ERROR', path, 'hreflang', `${lang} → ${hreflang.get(lang)} does not match canonical`);
-  }
+  const isBangla = path.startsWith('/bn');
+  const selfLang = isBangla ? 'bn-BD' : LANGUAGE;
+  if (!hreflang.has(selfLang)) add('ERROR', path, 'hreflang', `missing ${selfLang}`);
+  else if (canonical && hreflang.get(selfLang) !== canonical)
+    add('ERROR', path, 'hreflang', `${selfLang} → ${hreflang.get(selfLang)} does not match canonical`);
+  if (!hreflang.has('x-default')) add('ERROR', path, 'hreflang', 'missing x-default');
 
   const title = decode(first(html, /<title>([^<]*)<\/title>/));
   if (!title) add('ERROR', path, 'title', 'missing');
@@ -231,12 +248,144 @@ async function auditRedirects() {
   }
 }
 
-function report(rows) {
+async function auditAuthorityPages() {
+  const sitemap = await get('/sitemap.xml');
+  const sitemapLocs = new Set(
+    every(sitemap.html, /<loc>([^<]+)<\/loc>/g).map((u) => u.replace(CANONICAL_ORIGIN, '') || '/'),
+  );
+
+  const stats = {
+    total: AUTHORITY_GUIDES.length + BANGLA_AUTHORITY_GUIDES.length,
+    enTotal: AUTHORITY_GUIDES.length,
+    bnTotal: BANGLA_AUTHORITY_GUIDES.length,
+    live: 0,
+    review: 0,
+    draft: 0,
+  };
+
+  if (stats.enTotal !== 40) {
+    add('ERROR', 'authority-registry-en', 'count', `expected 40 English guides, found ${stats.enTotal}`);
+  }
+  if (stats.bnTotal !== 40) {
+    add('ERROR', 'authority-registry-bn', 'count', `expected 40 Bangla guides, found ${stats.bnTotal}`);
+  }
+
+  // Audit English guides
+  for (const g of AUTHORITY_GUIDES) {
+    const path = `/guides/${g.slug}`;
+    if (g.status === 'live') stats.live++;
+    else if (g.status === 'review') stats.review++;
+    else if (g.status === 'draft') stats.draft++;
+
+    const res = await get(path);
+    if (res.status !== 200) {
+      add('ERROR', path, 'http', `returned ${res.status}`);
+      continue;
+    }
+
+    const html = res.html;
+    const canonical = first(html, /<link rel="canonical" href="([^"]+)"/);
+    const robots = first(html, /<meta name="robots" content="([^"]*)"/);
+    const h1s = every(html, /<h1[^>]*>([\s\S]*?)<\/h1>/gi);
+
+    if (h1s.length === 0) add('ERROR', path, 'h1', 'missing <h1>');
+    else if (h1s.length > 1) add('ERROR', path, 'h1', `multiple <h1> (${h1s.length})`);
+
+    if (!canonical) add('ERROR', path, 'canonical', 'missing');
+    else if (canonical !== `${CANONICAL_ORIGIN}${path}`) {
+      add('ERROR', path, 'canonical', `${canonical} (expected ${CANONICAL_ORIGIN}${path})`);
+    }
+
+    if (g.status === 'live') {
+      if (robots && robots.includes('noindex')) {
+        add('ERROR', path, 'robots', `live page must not have noindex, got "${robots}"`);
+      }
+      if (!sitemapLocs.has(path)) {
+        add('ERROR', path, 'sitemap', 'live page missing from sitemap.xml');
+      }
+    } else {
+      if (!robots || !robots.includes('noindex')) {
+        add('ERROR', path, 'robots', `review/draft page must have noindex, got "${robots ?? 'none'}"`);
+      }
+      if (sitemapLocs.has(path)) {
+        add('ERROR', path, 'sitemap', 'review/draft page must NOT be in sitemap.xml');
+      }
+    }
+
+    if (!g.relatedTreatments || g.relatedTreatments.length === 0) {
+      add('WARN', path, 'internal-links', 'missing related treatment link');
+    }
+
+    for (const claim of BANNED_CLAIMS) {
+      if (claim.test(visibleText(html))) {
+        add('ERROR', path, 'safety-claim', `matched banned pattern ${claim}`);
+      }
+    }
+  }
+
+  // Audit Bangla guides
+  for (const g of BANGLA_AUTHORITY_GUIDES) {
+    const path = `/bn/guides/${g.slug}`;
+    if (g.status === 'live') stats.live++;
+    else if (g.status === 'review') stats.review++;
+    else if (g.status === 'draft') stats.draft++;
+
+    const res = await get(path);
+    if (res.status !== 200) {
+      add('ERROR', path, 'http', `returned ${res.status}`);
+      continue;
+    }
+
+    const html = res.html;
+    const canonical = first(html, /<link rel="canonical" href="([^"]+)"/);
+    const robots = first(html, /<meta name="robots" content="([^"]*)"/);
+    const h1s = every(html, /<h1[^>]*>([\s\S]*?)<\/h1>/gi);
+
+    if (h1s.length === 0) add('ERROR', path, 'h1', 'missing <h1>');
+    else if (h1s.length > 1) add('ERROR', path, 'h1', `multiple <h1> (${h1s.length})`);
+
+    // Verify self-canonicalization
+    if (!canonical) add('ERROR', path, 'canonical', 'missing');
+    else if (canonical !== `${CANONICAL_ORIGIN}${path}`) {
+      add('ERROR', path, 'canonical', `${canonical} (expected self-canonical ${CANONICAL_ORIGIN}${path})`);
+    }
+
+    if (g.status === 'live') {
+      if (robots && robots.includes('noindex')) {
+        add('ERROR', path, 'robots', `live page must not have noindex, got "${robots}"`);
+      }
+      if (!sitemapLocs.has(path)) {
+        add('ERROR', path, 'sitemap', 'live page missing from sitemap.xml');
+      }
+    } else {
+      if (!robots || !robots.includes('noindex')) {
+        add('ERROR', path, 'robots', `review/draft page must have noindex, got "${robots ?? 'none'}"`);
+      }
+      if (sitemapLocs.has(path)) {
+        add('ERROR', path, 'sitemap', 'review/draft page must NOT be in sitemap.xml');
+      }
+    }
+
+    if (!g.relatedTreatments || g.relatedTreatments.length === 0) {
+      add('WARN', path, 'internal-links', 'missing related treatment link');
+    }
+
+    for (const claim of BANNED_BANGLA_CLAIMS) {
+      if (claim.test(visibleText(html))) {
+        add('ERROR', path, 'safety-claim', `matched banned Bangla claim ${claim}`);
+      }
+    }
+  }
+
+  return stats;
+}
+
+function report(rows, authorityStats) {
   const errors = results.filter((r) => r.level === 'ERROR');
   const warnings = results.filter((r) => r.level === 'WARN');
 
   if (JSON_OUT) {
-    console.log(JSON.stringify({ base: BASE, results, pages: rows }, null, 2));
+    console.log(JSON.stringify({ base: BASE, results, pages: rows, authorityStats }, null, 2));
     return errors.length;
   }
 
@@ -257,6 +406,17 @@ function report(rows) {
         String(r.jsonld).padStart(4),
     );
   }
+
+  if (authorityStats) {
+    console.log(`\nAuthority pages verification:`);
+    console.log(`  Combined authority pages: ${authorityStats.total} (${authorityStats.enTotal} English + ${authorityStats.bnTotal} বাংলা)`);
+    console.log(`  Live (Indexable): ${authorityStats.live}`);
+    console.log(`  Review (noindex): ${authorityStats.review}`);
+    console.log(`  Draft (noindex): ${authorityStats.draft}`);
+    console.log(`  SEO errors: ${errors.filter(e => e.route.includes('/guides') || e.route.startsWith('authority-registry')).length}`);
+    console.log(`  Warnings: ${warnings.filter(w => w.route.includes('/guides')).length}`);
+  }
+
   for (const [label, list] of [
     ['Errors', errors],
     ['Warnings', warnings],
@@ -273,6 +433,8 @@ async function main() {
   await auditRobots();
   await auditSitemap();
   await auditRedirects();
+
+  const authorityStats = await auditAuthorityPages();
 
   const rows = [];
   for (const { path } of ROUTES) rows.push(await auditPage(path));
@@ -294,7 +456,7 @@ async function main() {
       add('ERROR', own.join(', '), 'duplicate-description', `"${description.slice(0, 60)}…"`);
   }
 
-  const errorCount = report(rows.filter(Boolean));
+  const errorCount = report(rows.filter(Boolean), authorityStats);
   process.exit(errorCount ? 1 : 0);
 }
 

@@ -121,7 +121,7 @@ function ImplantVideo() {
         preload="auto"
       >
         <source
-          src="https://res.cloudinary.com/dxrcufs8f/video/upload/v1777313555/implantVideo_bzruai.mp4"
+          src="/assets/videos/implant.mp4"
           type="video/mp4"
         />
       </video>
@@ -479,15 +479,28 @@ export default function ImplantsPage() {
                   Distinguished <span style={{ color: '#0284c7' }}>Implant Clinician</span>
                 </h2>
                 <p>
-                  Implant treatments are led by <strong>Dr. B.M. Rafiqul Hasan (Mehedi)</strong>, an
-                  experienced Oral &amp; Dental Surgeon with advanced international training in
-                  implantology.
+                  Implant treatments are led by{' '}
+                  <Link
+                    href="/dr-hasan"
+                    style={{ color: '#0284c7', textDecoration: 'underline', fontWeight: 700 }}
+                  >
+                    Dr. B.M. Rafiqul Hasan (Mehedi)
+                  </Link>
+                  , Chief Consultant Oral &amp; Dental Surgeon (BMDC 5169) with advanced international
+                  training in digital implantology. Consultations and surgery are available at both our{' '}
+                  <Link href="/banani" style={{ color: '#0284c7', textDecoration: 'underline' }}>
+                    Banani Private Suite
+                  </Link>{' '}
+                  and{' '}
+                  <Link href="/banasree" style={{ color: '#0284c7', textDecoration: 'underline' }}>
+                    Banasree Flagship Hospital
+                  </Link>
+                  .
                 </p>
                 <p>
                   Known for his precision, aesthetic sense, and ability to manage complex implant
-                  cases, he is widely regarded as one of the leading implant practitioners in
-                  Bangladesh. His work reflects a careful balance of scientific accuracy and
-                  artistic excellence.
+                  cases, his work reflects a careful balance of scientific accuracy, 3D CBCT planning,
+                  and in-house digital lab integration.
                 </p>
                 <div className="imp-gallery-checks">
                   {[

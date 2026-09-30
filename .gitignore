@@ -24,11 +24,12 @@ next-env.d.ts
 prisma/*.db
 prisma/*.db-journal
 
-# Large media (served from Cloudinary)
+# Large media
 *.mp4
 *.mov
 *.avi
 *.mkv
+!public/assets/videos/*.mp4
 
 # Logs
 npm-debug.log*
@@ -48,3 +49,8 @@ nul
 
 # Deployment
 .vercel
+*.zip
+
+# Large production videos - deployed separately
+/public/assets/videos/hero.mp4
+/public/assets/videos/banani.mp4

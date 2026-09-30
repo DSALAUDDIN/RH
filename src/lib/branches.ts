@@ -196,9 +196,9 @@ export const BRANCHES: Record<BranchId, Branch> = {
     addressLocality: 'Dhaka',
     postalCode: '1219',
 
-    // TODO(content): approximate pin; verify, then set geoVerified: true.
-    geo: { lat: 23.7634, lng: 90.4321 },
-    geoVerified: false,
+    // Verified from Google Maps place link in reviews page.
+    geo: { lat: 23.7606878, lng: 90.4299624 },
+    geoVerified: true,
 
     /*
      * Clinical session hours, consistent across all Banasree clinician flyers
@@ -215,9 +215,9 @@ export const BRANCHES: Record<BranchId, Branch> = {
     hoursDisplay: 'Saturday to Wednesday and Friday, 3:30 pm – 10:00 pm · Thursday closed',
 
     mapEmbed:
-      'https://maps.google.com/maps?q=RH%20Dental%20Care%2C%20House%2042%2C%20Road%208%2C%20Block%20C%2C%20Banasree%2C%20Dhaka&t=&z=16&ie=UTF8&iwloc=&output=embed',
+      'https://maps.google.com/maps?q=RH%20Dental%20Care%20and%20Implant%20Center%2C%20House%2042%2C%20Road%208%2C%20Block%20C%2C%20Banasree%2C%20Dhaka&t=&z=16&ie=UTF8&iwloc=&output=embed',
     mapLink:
-      'https://maps.google.com/?q=RH+Dental+Care,+House+42,+Road+8,+Block+C,+Banasree,+Dhaka+1219',
+      'https://www.google.com/maps/place/RH+Dental+Care+and+Implant+Center/@23.7606878,90.4299624,17z',
     href: '/banasree',
 
     accent: '--rh-sage-deep',

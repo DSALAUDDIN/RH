@@ -1,0 +1,190 @@
+import type { AuthorityGuide } from './implantGuides.ts';
+
+export const branchUtilityGuides: AuthorityGuide[] = [
+  {
+    slug: 'banani-dental-clinic-visit-guide',
+    title: 'Visiting RH Dental Banani: Appointment, Location & What to Expect',
+    shortTitle: 'Banani Clinic Visit Guide',
+    category: 'branch-guides',
+    categoryLabel: 'Branch Visit Guides',
+    primaryIntent: 'Provide practical logistical, geographical, and appointment information for patients visiting the RH Dental Banani private suite.',
+    secondaryTopics: ['Banani Road 11 landmark', 'B&B Empire Level 7', 'Private dental suite', 'Parking and access'],
+    status: 'live',
+    medicallyReviewed: true,
+    reviewer: 'RH Dental Clinical Operations Team',
+    reviewerSlug: undefined,
+    reviewerRole: 'Operations & Patient Care Directorate',
+    reviewedAt: '2026-09-28',
+    relatedTreatments: [
+      { title: 'Banani Branch Profile', href: '/banani' },
+      { title: 'Dental Implants', href: '/implants' },
+      { title: 'Zirconia Smile Design', href: '/zirconia-crown' },
+    ],
+    relatedDoctors: [
+      { name: 'Dr. B.M. Rafiqul Hasan', href: '/dr-hasan', role: 'Chief Consultant (Banani)' },
+      { name: 'Dr. Shimia Binte Taher', href: '/dr-shimia', role: 'Consultant Endodontist' },
+    ],
+    relatedBranches: ['banani'],
+    publishedAt: '2026-09-20',
+    updatedAt: '2026-09-30',
+    metaDescription: 'Practical guide to visiting RH Dental Banani: location at B&B Empire Level 7 on Road 11, appointment scheduling, and calm private suite environment.',
+    quickAnswer: 'RH Dental Care Banani is a boutique private dental suite situated on Level 7 of the B&B Empire building on Plot 116, Road 11, Banani. Consultations are arranged strictly by advance appointment to ensure unhurried, private clinical care without waiting room congestion.',
+    readingTimeMinutes: 5,
+    sections: [
+      {
+        heading: 'Location and Landmark Directions in Banani',
+        paragraphs: [
+          'Our Banani clinic is located in the commercial heart of Banani on Road 11. The facility is situated at B&B Empire, Level 7, Plot 116, Road 11, Block E, Banani, Dhaka-1213.',
+          'Road 11 is easily accessible from Gulshan-2, Mohakhali, and the Airport Road via Kemal Ataturk Avenue. Dedicated elevator access takes patients directly to Level 7.',
+        ],
+        keyPoints: [
+          'Address: B&B Empire, Level 7, Plot 116, Road 11, Block E, Banani, Dhaka-1213.',
+          'Phone: +880 1711-066556 / WhatsApp: +880 1819-216656.',
+          'Atmosphere: Calm, private consultation suites designed for executive, diaspora, and aesthetic dentistry patients.',
+        ],
+      },
+      {
+        heading: 'Scheduling and Arrival Protocols',
+        paragraphs: [
+          'To respect our patients\' time and preserve complete clinical privacy, appointments at the Banani suite are coordinated in advance. We recommend arriving 10 minutes prior to your allocated time to complete digital registration.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'banasree-dental-clinic-visit-guide',
+    title: 'Visiting RH Dental Banasree: Appointment, Location & What to Expect',
+    shortTitle: 'Banasree Clinic Visit Guide',
+    category: 'branch-guides',
+    categoryLabel: 'Branch Visit Guides',
+    primaryIntent: 'Provide clear travel directions, multi-chair setup details, and appointment logistics for patients visiting RH Dental Banasree.',
+    secondaryTopics: ['Block C Main Road', 'Multi-chair family dental center', 'Parking accessibility', 'Comprehensive family care'],
+    status: 'live',
+    medicallyReviewed: true,
+    reviewer: 'RH Dental Clinical Operations Team',
+    reviewerSlug: undefined,
+    reviewerRole: 'Operations & Patient Care Directorate',
+    reviewedAt: '2026-09-28',
+    relatedTreatments: [
+      { title: 'Banasree Branch Profile', href: '/banasree' },
+      { title: 'Root Canal Treatment', href: '/root-canal' },
+      { title: 'Children\'s Dentistry', href: '/kids-care' },
+    ],
+    relatedDoctors: [
+      { name: 'Dr. B.M. Rafiqul Hasan', href: '/dr-hasan', role: 'Chief Consultant' },
+      { name: 'Dr. Shimia Binte Taher', href: '/dr-shimia', role: 'Consultant Endodontist' },
+    ],
+    relatedBranches: ['banasree'],
+    publishedAt: '2026-09-20',
+    updatedAt: '2026-09-30',
+    metaDescription: 'Complete guide for visiting RH Dental Banasree on Main Road, Block C: family-friendly facility, verified location, operating hours, and booking contacts.',
+    quickAnswer: 'RH Dental Care Banasree is our comprehensive multi-operatory family dental center located on House 15, Road 4, Block C (Main Road), Banasree, Rampura, Dhaka-1219. Operating daily from 9:00 am to 10:00 pm, it provides accessible specialist and family dental care.',
+    readingTimeMinutes: 5,
+    sections: [
+      {
+        heading: 'Location and Landmark Directions in Banasree',
+        paragraphs: [
+          'Our Banasree branch is conveniently situated along the bustling Banasree Main Road, directly opposite the Farazy Hospital / Block C commercial axis. The verified address is House 15, Road 4, Block C, Banasree, Rampura, Dhaka-1219.',
+          'The clinic is easily reached by rickshaw, rideshare, or car from Rampura, Khilgaon, Aftabnagar, Malibagh, and Basabo.',
+        ],
+        keyPoints: [
+          'Address: House 15, Road 4, Block C, Banasree, Rampura, Dhaka-1219.',
+          'Operating hours: Daily 9:00 am – 10:00 pm.',
+          'Phone: +880 1819-216656 / +880 1971-066556.',
+          'Services: Comprehensive multi-chair facility equipped for root canals, implants, pediatric dentistry, and digital radiography.',
+        ],
+      },
+      {
+        heading: 'Family and Multi-Specialty Care Under One Roof',
+        paragraphs: [
+          'Staffed by the exact same senior clinical specialists who practice at Banani, the Banasree clinic is tailored for comprehensive family care, accommodating children, parents, and senior citizens with full accessibility.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'dental-appointment-preparation',
+    title: 'How to Prepare for a Dental Appointment',
+    shortTitle: 'Preparing for Your Appointment',
+    category: 'branch-guides',
+    categoryLabel: 'Branch Visit Guides',
+    primaryIntent: 'Help patients prepare practically, medically, and logistically for their upcoming dental visit.',
+    secondaryTopics: ['Medical record checklist', 'Medication disclosure', 'Pre-appointment meals', 'Dental anxiety management'],
+    status: 'review',
+    medicallyReviewed: false,
+    reviewer: 'RH Dental Clinical Operations Team',
+    reviewerSlug: undefined,
+    reviewerRole: 'Operations Team',
+    reviewedAt: undefined,
+    relatedTreatments: [
+      { title: 'First Visit Guide', href: '/guides/first-dental-visit' },
+      { title: 'Contact & Appointments', href: '/contact' },
+    ],
+    relatedDoctors: [
+      { name: 'Dr. B.M. Rafiqul Hasan', href: '/dr-hasan', role: 'Chief Consultant' },
+    ],
+    relatedBranches: ['banani', 'banasree'],
+    publishedAt: '2026-09-20',
+    updatedAt: '2026-09-30',
+    metaDescription: 'Practical pre-appointment checklist: what to bring, medication guidelines, eating before local anesthesia, and tips to ease dental anxiety.',
+    quickAnswer: 'To prepare for your dental visit, eat a light balanced meal before local anesthesia procedures, bring a list of all current medications, bring any previous dental x-rays or medical reports, and brush your teeth before attending.',
+    readingTimeMinutes: 5,
+    sections: [
+      {
+        heading: 'Checklist of What to Bring',
+        paragraphs: [
+          'To help your dentist form an accurate diagnosis, bring any recent dental x-rays taken within the last 12 months, dental hospital discharge cards, and an accurate list of all daily prescription medications and dosages.',
+        ],
+      },
+      {
+        heading: 'Dietary and Medication Guidelines',
+        paragraphs: [
+          'Unless you are scheduled for IV sedation or general anesthesia (which requires fasting), do not skip your meal. Low blood sugar can increase lightheadedness or nervousness during local anesthesia. Take your routine blood pressure or thyroid medications on their normal schedule unless instructed otherwise.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'questions-before-dental-treatment',
+    title: 'Useful Questions to Ask Before Dental Treatment',
+    shortTitle: 'Questions to Ask Your Dentist',
+    category: 'branch-guides',
+    categoryLabel: 'Branch Visit Guides',
+    primaryIntent: 'Empower patients with a thoughtful list of questions to ask their dentist to ensure informed consent and clarity before starting care.',
+    secondaryTopics: ['Informed consent', 'Treatment alternatives', 'Expected longevity', 'Written cost estimate'],
+    status: 'review',
+    medicallyReviewed: false,
+    reviewer: 'RH Dental Clinical Operations Team',
+    reviewerSlug: undefined,
+    reviewerRole: 'Operations Team',
+    reviewedAt: undefined,
+    relatedTreatments: [
+      { title: 'Patient Decision Guides', href: '/guides/how-to-choose-dentist-dhaka' },
+      { title: 'Our Treatments', href: '/treatments' },
+    ],
+    relatedDoctors: [
+      { name: 'Dr. B.M. Rafiqul Hasan', href: '/dr-hasan', role: 'Chief Consultant' },
+      { name: 'Dr. Shimia Binte Taher', href: '/dr-shimia', role: 'Consultant Endodontist' },
+    ],
+    relatedBranches: ['banani', 'banasree'],
+    publishedAt: '2026-09-20',
+    updatedAt: '2026-09-30',
+    metaDescription: 'Smart questions every patient should ask before agreeing to dental treatment: diagnosis clarity, alternative options, realistic timelines, and maintenance.',
+    quickAnswer: 'Before consenting to treatment, ask your dentist: What is the primary diagnosis? What are the conservative alternatives? How many appointments are needed? What are the risks of delaying treatment? And what is the all-inclusive written cost?',
+    readingTimeMinutes: 5,
+    sections: [
+      {
+        heading: 'Core Questions for Clear Communication',
+        paragraphs: [
+          'A reputable dentist welcomes an informed, inquiring patient. Here are essential questions to discuss during your consultation:',
+        ],
+        keyPoints: [
+          'What happens if I choose not to treat this condition right now?',
+          'Are there less invasive or conservative treatment alternatives available?',
+          'What is the expected long-term prognosis of this restoration if well maintained?',
+          'Can you provide a clear, itemized written proposal of the expected appointments and costs?',
+        ],
+      },
+    ],
+  },
+];

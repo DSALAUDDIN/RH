@@ -6,7 +6,6 @@ import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import './Specialties.css';
 
-import imagingImg from '../assets/specialties/3d-imaging_new.png';
 import bracesImg from '../assets/specialties/braces_new.png';
 import zirconiaImg from '../assets/specialties/zirconia_new.png';
 import implantImg from '../assets/specialties/implant_new.png';
@@ -18,44 +17,44 @@ import dentalTourismImg from '../assets/specialties/dental_tourism.png';
 
 const clinicsBanners = [
   {
-    title: 'Precision 3D Dental Imaging',
-    desc: 'The future of dentistry is here. Experience ultra-accurate 360° diagnostics with 90% less radiation than traditional methods. Perfection starts with precision.',
-    image: imagingImg,
-    category: 'Elite Diagnostics',
-    featured: true,
-    slug: '/digital-dentistry',
-  },
-  {
-    title: 'Orthodontic Braces',
-    desc: 'Align your smile with modern ceramic and invisible solutions. Expert orthodontic care for all ages with lasting, beautiful results.',
+    title: 'Clear Aligner Treatment',
+    desc: 'Straighten your teeth with nearly invisible custom aligners. Modern clear aligner therapy for discreet, comfortable orthodontic correction.',
     image: bracesImg,
     category: 'Orthodontics',
-    featured: false,
+    featured: true,
     slug: '/orthodontics',
   },
   {
-    title: 'Zirconia Restoration',
-    desc: 'The ultimate biocompatible material for natural-looking strength and flawless aesthetics. Experience the gold standard in dental crowns.',
+    title: 'Advanced Implantology',
+    desc: 'Long-term tooth replacement with 3D CBCT-planned, precision-guided implant surgery and high-quality prosthetic integration.',
+    image: implantImg,
+    category: 'Surgical Care',
+    featured: false,
+    slug: '/implants',
+  },
+  {
+    title: 'Zirconia Smile Design',
+    desc: 'Natural-looking zirconia crowns and veneers crafted in our on-site master digital lab — strong, biocompatible and aesthetically precise.',
     image: zirconiaImg,
-    category: 'Prosthetics',
+    category: 'Aesthetics',
     featured: false,
     slug: '/zirconia-crown',
   },
   {
-    title: 'Advanced Implantology',
-    desc: 'Permanent solutions for missing teeth with precision-guided implant surgery and high-end prosthetic integration.',
-    image: implantImg,
-    category: 'Surgical Care',
-    featured: false,
-    slug: 'implants',
-  },
-  {
-    title: 'Microscope Root Canal',
-    desc: 'Elite endodontic therapy using the latest microscopic technology for a completely stress-free and effective treatment.',
+    title: 'Microscopic Endodontics',
+    desc: 'Root canal treatment performed under an operating microscope — seeing the canal rather than feeling for it is what makes the difference.',
     image: rootCanalImg,
     category: 'Endodontics',
     featured: false,
-    slug: 'root-canal',
+    slug: '/root-canal',
+  },
+  {
+    title: 'Orthodontic Braces',
+    desc: 'Traditional and ceramic braces fitted and monitored by our consultant orthodontist. Precise, lasting correction for all ages.',
+    image: bracesImg,
+    category: 'Orthodontics',
+    featured: false,
+    slug: '/orthodontics',
   },
   {
     title: 'Healthy Gums, Healthy Smile',
@@ -67,15 +66,15 @@ const clinicsBanners = [
   },
   {
     title: 'Kids Dental Care',
-    desc: 'Making dental visits fun, friendly, and fear-free for your child in a safe environment.',
+    desc: 'Making dental visits gentle and reassuring for your child in a safe, friendly environment.',
     image: kidsCareImg,
     category: 'Pedodontics',
     featured: false,
-    slug: 'kids-care',
+    slug: '/kids-care',
   },
   {
     title: 'Zirconia Veneers',
-    desc: 'Achieve a naturally beautiful, long-lasting, and confident smile with ultra-thin premium zirconia veneers.',
+    desc: 'Achieve a naturally beautiful, long-lasting smile with ultra-thin premium zirconia veneers, designed and milled on site.',
     image: aestheticsImg,
     category: 'Aesthetics',
     featured: true,
@@ -125,10 +124,10 @@ export default function Specialties() {
           transition={{ duration: 1, ease: 'easeOut' }}
         >
           <span className="tag">Signature Experience</span>
-          <h2>Top-Ranked Dental Clinic in Dhaka</h2>
+          <h2>Specialist Dental Care in Dhaka</h2>
           <p>
-            RH Dental Care provides dental treatment in Bangladesh – including dental implants,
-            braces, and microscope root canal treatment tailored to your smile.
+            RH Dental Care provides specialist dental treatment in Dhaka — including dental implants,
+            clear aligners and microscope root canal treatment, tailored to your needs.
           </p>
         </motion.div>
 

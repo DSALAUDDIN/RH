@@ -31,7 +31,7 @@ const specialtiesData = [
     id: 'implants',
     title: 'Dental Implants',
     icon: <Sparkles size={32} color="#0ea5e9" />,
-    desc: 'Permanent, natural-looking tooth replacements using advanced CBCT-guided placement for maximum precision and longevity.',
+    desc: 'Long-term, natural-looking tooth replacements using advanced CBCT-guided placement for maximum precision.',
     path: '/implants',
     color: '#0ea5e9',
   },
@@ -87,7 +87,7 @@ const specialtiesData = [
     id: 'digital-dentistry',
     title: 'Digital Dentistry',
     icon: <MonitorPlay size={32} color="#3b82f6" />,
-    desc: 'Experience the future of dental care with 3D intraoral scanning, CBCT imaging, and CAD/CAM same-day restorations.',
+    desc: 'Experience the future of dental care with 3D intraoral scanning, CBCT imaging, and CAD/CAM restorations designed and milled in our on-site lab.',
     path: '/digital-dentistry',
     color: '#3b82f6',
   },
@@ -172,13 +172,22 @@ export default function SpecialtiesPage() {
             style={{
               fontSize: 'clamp(1.1rem, 2vw, 1.25rem)',
               color: '#94a3b8',
-              maxWidth: '700px',
+              maxWidth: '750px',
               margin: '0 auto',
               lineHeight: 1.7,
             }}
           >
-            From routine checkups to complex full-mouth rehabilitation, our specialist departments
-            cover the disciplines a complex case needs, in one clinical team.
+            From routine checkups to complex full-mouth rehabilitation, our specialist clinical
+            departments cover the disciplines a complex case needs. For detailed procedure protocols
+            and pricing, explore our{' '}
+            <Link href="/treatments" style={{ color: '#38bdf8', textDecoration: 'underline' }}>
+              Treatment Catalogue
+            </Link>
+            , or see our concise{' '}
+            <Link href="/services" style={{ color: '#38bdf8', textDecoration: 'underline' }}>
+              Service Directory
+            </Link>
+            .
           </p>
         </div>
       </section>

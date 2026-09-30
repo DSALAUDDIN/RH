@@ -92,6 +92,9 @@ export const ROUTES: RouteEntry[] = [
   },
   { path: '/blog', label: 'Articles', priority: 0.75, changeFrequency: 'weekly' },
   { path: '/reviews', label: 'Patient reviews', priority: 0.7, changeFrequency: 'weekly' },
+  { path: '/guides', label: 'Patient dental guides', priority: 0.85, changeFrequency: 'weekly' },
+  { path: '/bn', label: 'Bangla overview and services', priority: 0.85, changeFrequency: 'weekly' },
+  { path: '/bn/guides', label: 'Bangla dental guides hub', priority: 0.85, changeFrequency: 'weekly' },
 ];
 
 export const SPECIALTY_SLUGS = [
@@ -127,7 +130,7 @@ export function isSpecialtySlug(value: string): value is SpecialtySlug {
 }
 
 /** Routes that exist but must never be indexed or listed. */
-export const EXCLUDED = ['/admin', '/admin/dashboard'];
+export const EXCLUDED = ['/admin', '/admin/dashboard', '/seo-progress'];
 
 /** Permanent redirects, applied in next.config.ts. */
 export const REDIRECTS: { source: string; destination: string }[] = [

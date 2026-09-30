@@ -12,6 +12,7 @@ import BranchCTA from '@/components/branch/BranchCTA';
 import bananiFaq from './faq';
 import './banani.css';
 import EditorialNote from '@/components/EditorialNote';
+import BananiHeroVideo from '@/components/branch/BananiHeroVideo';
 
 const b = BRANCHES.banani;
 
@@ -38,14 +39,10 @@ export default function BananiPage() {
       {/* Hero */}
       <header className="bn-hero">
         <div className="bn-hero-media">
-          <Image
-            src="/assets/branches/banani/reception.webp"
-            alt={b.photos[0].alt}
-            width={1600}
-            height={1200}
-            priority
-            sizes="(max-width: 900px) 100vw, 58vw"
-            className="bn-hero-img"
+          <BananiHeroVideo
+            src="/assets/videos/banani.mp4"
+            poster="/assets/branches/banani/reception.webp"
+            title="Banani Suite · 4K Tour"
           />
         </div>
 
@@ -117,7 +114,7 @@ export default function BananiPage() {
         </div>
       </section>
 
-      {/* The rooms */}
+      {/* The rooms & Video Tour */}
       <section className="bn-rooms rh-section" aria-labelledby="bn-rooms-t">
         <div className="rh-container">
           <h2 id="bn-rooms-t" className="bn-h2">

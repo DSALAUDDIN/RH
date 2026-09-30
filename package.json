@@ -16,6 +16,8 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "seo:audit": "node --experimental-strip-types scripts/seo-audit.mjs",
+    "prisma:generate:pg": "prisma generate --schema=prisma/schema.postgresql.prisma",
+    "prisma:db:push:pg": "prisma db push --schema=prisma/schema.postgresql.prisma",
     "check": "npm run typecheck && npm run lint && npm run format:check",
     "postinstall": "prisma generate"
   },

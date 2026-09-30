@@ -133,7 +133,97 @@
   z-index: 15;
 }
 
-/* Kicker Badge */
+/* Heroic Since 2014 Showcase Badge */
+.hero-since-heroic {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.15rem;
+  padding: 0.55rem 1.4rem 0.55rem 0.65rem;
+  background: rgba(10, 18, 36, 0.92);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1.5px solid rgba(245, 158, 11, 0.55);
+  border-radius: 1.25rem;
+  box-shadow:
+    0 12px 35px rgba(0, 0, 0, 0.55),
+    0 0 28px rgba(245, 158, 11, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  margin-bottom: 2rem;
+  align-self: flex-start;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-since-heroic:hover {
+  border-color: rgba(245, 158, 11, 0.85);
+  box-shadow:
+    0 16px 45px rgba(0, 0, 0, 0.65),
+    0 0 38px rgba(245, 158, 11, 0.45);
+  transform: translateY(-2px);
+}
+
+.heroic-year-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.28) 0%, rgba(217, 119, 6, 0.4) 100%);
+  border: 1.5px solid rgba(245, 158, 11, 0.65);
+  padding: 0.35rem 0.95rem;
+  border-radius: 0.95rem;
+  line-height: 1;
+  box-shadow: inset 0 0 14px rgba(245, 158, 11, 0.25), 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.heroic-est {
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  color: #fbbf24;
+  margin-bottom: 2px;
+}
+
+.heroic-year-num {
+  font-size: 1.85rem;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  background: linear-gradient(135deg, #ffffff 0%, #fef08a 45%, #f59e0b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 10px rgba(245, 158, 11, 0.6));
+}
+
+.heroic-text-content {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.heroic-title-row {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.heroic-award-icon {
+  color: #fbbf24;
+  filter: drop-shadow(0 0 8px rgba(245, 158, 11, 0.7));
+}
+
+.heroic-title {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+}
+
+.heroic-sub {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #94a3b8;
+}
+
+/* Fallback Kicker Badge */
 .glass-badge {
   display: inline-flex;
   align-items: center;
@@ -356,17 +446,102 @@
 .hero-trust-bar {
   display: flex;
   align-items: center;
-  gap: 1.2rem;
+  flex-wrap: wrap;
+  gap: 1.25rem;
   margin-bottom: 2.5rem;
 }
+
 .trust-item {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  color: #cbd5e1;
-  font-size: 0.85rem;
-  font-weight: 600;
+  gap: 0.65rem;
 }
+
+.trust-since-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem 0.65rem;
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.25) 0%, rgba(217, 119, 6, 0.4) 100%);
+  border: 1.5px solid rgba(245, 158, 11, 0.65);
+  border-radius: 9px;
+  box-shadow: 0 0 14px rgba(245, 158, 11, 0.3);
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.trust-since-badge-label {
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: #fbbf24;
+}
+
+.trust-since-badge-year {
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+}
+
+.trust-icon-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  flex-shrink: 0;
+}
+
+.trust-icon-box.gold-glow {
+  background: rgba(245, 158, 11, 0.15);
+  border-color: rgba(245, 158, 11, 0.4);
+  color: #fbbf24;
+  box-shadow: 0 0 14px rgba(245, 158, 11, 0.25);
+}
+
+.trust-icon-box.cyan-glow {
+  background: rgba(56, 189, 248, 0.12);
+  border-color: rgba(56, 189, 248, 0.3);
+  color: #38bdf8;
+}
+
+.trust-icon-box.purple-glow {
+  background: rgba(167, 139, 250, 0.12);
+  border-color: rgba(167, 139, 250, 0.3);
+  color: #a78bfa;
+}
+
+.trust-text-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.trust-title-highlight {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #fbbf24;
+  letter-spacing: -0.01em;
+}
+
+.trust-title {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #f1f5f9;
+  letter-spacing: -0.01em;
+}
+
+.trust-desc-dim {
+  font-size: 0.72rem;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
 .trust-sep {
   width: 4px;
   height: 4px;
@@ -778,6 +953,11 @@
   color: #38bdf8;
   opacity: 0.8;
 }
+.marquee-award-icon {
+  color: #fbbf24;
+  opacity: 1;
+  filter: drop-shadow(0 0 6px rgba(245, 158, 11, 0.6));
+}
 .marquee-text {
   font-size: 0.75rem;
   font-weight: 700;
@@ -830,6 +1010,7 @@
   .hero-actions {
     justify-content: center;
   }
+  .hero-since-heroic,
   .glass-badge {
     align-self: center;
   }
@@ -940,6 +1121,26 @@
 
   .hero-inner {
     padding: 1.5rem 1rem 3rem;
+  }
+
+  .hero-since-heroic {
+    padding: 0.45rem 1rem 0.45rem 0.55rem;
+    gap: 0.75rem;
+    border-radius: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  .heroic-year-box {
+    padding: 0.25rem 0.7rem;
+    border-radius: 0.75rem;
+  }
+  .heroic-year-num {
+    font-size: 1.55rem;
+  }
+  .heroic-title {
+    font-size: 0.88rem;
+  }
+  .heroic-sub {
+    font-size: 0.72rem;
   }
 
   .hero-title {

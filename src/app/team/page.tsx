@@ -4,6 +4,7 @@ import { TEAM, clinicianPath } from '@/lib/doctors';
 import { physicianSchema } from '@/lib/seo/schema';
 import JsonLd from '@/components/seo/JsonLd';
 import TeamRoster from '@/components/TeamRoster';
+import EditorialNote from '@/components/EditorialNote';
 import './team.css';
 
 /* Metadata and the breadcrumb live in team/layout.tsx. */
@@ -56,16 +57,18 @@ export default function TeamPage() {
 
       <section className="rh-section team-note">
         <div className="rh-container">
-          <div className="rh-niche team-note-inner">
-            <p>
-              <strong>TODO(client):</strong> qualifications, BMDC registration and a
-              photograph are still missing for Dr. Tonima, Dr. Noton, Dr. Mim and
-              Dr. Nusrat, and Dr. Nabil&rsquo;s flyer carries no registration number.
-              They render with only what is confirmed rather than being padded out.
-              See the notes in <code>src/lib/doctors.ts</code> for the two roster
-              questions that need answering.
-            </p>
-          </div>
+          <EditorialNote>
+            <div className="rh-niche team-note-inner">
+              <p>
+                <strong>REQUIRES CLIENT CONFIRMATION:</strong> qualifications, BMDC registration and a
+                photograph are still missing for Dr. Tonima, Dr. Noton, Dr. Mim and
+                Dr. Nusrat, and Dr. Nabil&rsquo;s flyer carries no registration number.
+                They render with only what is confirmed rather than being padded out.
+                See the notes in <code>src/lib/doctors.ts</code> for the two roster
+                questions that need answering.
+              </p>
+            </div>
+          </EditorialNote>
           <p className="team-cta-line">
             <Link href="/contact">Choose a branch and book</Link>
           </p>

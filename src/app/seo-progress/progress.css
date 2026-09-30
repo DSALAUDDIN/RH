@@ -1,0 +1,354 @@
+/* Client SEO Progress Dashboard */
+
+.progress-dashboard {
+  min-height: 100vh;
+  background-color: #0F172A;
+  color: #F8FAFC;
+  padding: 3rem 1.5rem 6rem;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.progress-header {
+  max-width: 1400px;
+  margin: 0 auto 2.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #1E293B;
+}
+
+.progress-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: #1E293B;
+  border: 1px solid #334155;
+  color: #94A3B8;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  margin-bottom: 0.75rem;
+}
+
+.progress-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #F8FAFC;
+  letter-spacing: -0.03em;
+  margin: 0 0 0.5rem;
+}
+
+.progress-subtitle {
+  font-size: 0.95rem;
+  color: #94A3B8;
+  margin: 0;
+}
+
+.progress-refresh-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: #64748B;
+  background: #1E293B;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #334155;
+}
+
+/* Stats Summary Cards */
+
+.progress-stats-grid {
+  max-width: 1400px;
+  margin: 0 auto 2.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.stat-card {
+  background: #1E293B;
+  border: 1px solid #334155;
+  border-radius: 12px;
+  padding: 1.25rem;
+}
+
+.stat-card-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #94A3B8;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.35rem;
+}
+
+.stat-card-num {
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.stat-card-num.live {
+  color: #10B981;
+}
+
+.stat-card-num.review {
+  color: #F59E0B;
+}
+
+.stat-card-num.draft {
+  color: #64748B;
+}
+
+.stat-card-num.total {
+  color: #38BDF8;
+}
+
+.stat-card-num.verified {
+  color: #A78BFA;
+}
+
+/* Staged Release Pipeline */
+
+.progress-pipeline {
+  max-width: 1400px;
+  margin: 0 auto 2.5rem;
+  background: #1E293B;
+  border: 1px solid #334155;
+  border-radius: 14px;
+  padding: 1.75rem;
+}
+
+.pipeline-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0 0 1rem;
+  color: #F1F5F9;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.pipeline-batches-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.pipeline-batch-card {
+  background: #0F172A;
+  border: 1px solid #334155;
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.pipeline-batch-card.active {
+  border-color: #10B981;
+}
+
+.batch-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.batch-name {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #F8FAFC;
+}
+
+.batch-status-tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+}
+
+.batch-status-tag.live {
+  background: rgba(16, 185, 129, 0.2);
+  color: #34D399;
+}
+
+.batch-status-tag.review {
+  background: rgba(245, 158, 11, 0.2);
+  color: #FBBF24;
+}
+
+.batch-desc {
+  font-size: 0.8rem;
+  color: #94A3B8;
+  line-height: 1.5;
+}
+
+/* Master Data Table */
+
+.progress-table-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  background: #1E293B;
+  border: 1px solid #334155;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.table-controls {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid #334155;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.table-heading {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #F8FAFC;
+}
+
+.table-filter-pills {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.table-filter-pill {
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  background: #0F172A;
+  color: #94A3B8;
+  border: 1px solid #334155;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.progress-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.875rem;
+}
+
+.progress-table th {
+  background: #0F172A;
+  color: #94A3B8;
+  font-weight: 600;
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid #334155;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.progress-table td {
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid #27354A;
+  color: #E2E8F0;
+  vertical-align: middle;
+}
+
+.progress-table tr:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.table-page-title {
+  font-weight: 600;
+  color: #F8FAFC;
+  display: block;
+}
+
+.table-page-url {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.75rem;
+  color: #38BDF8;
+  text-decoration: none;
+}
+
+.table-page-url:hover {
+  text-decoration: underline;
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.status-pill.live {
+  background: rgba(16, 185, 129, 0.2);
+  color: #34D399;
+  border: 1px solid rgba(16, 185, 129, 0.4);
+}
+
+.status-pill.review {
+  background: rgba(245, 158, 11, 0.15);
+  color: #FBBF24;
+  border: 1px solid rgba(245, 158, 11, 0.35);
+}
+
+.status-pill.draft {
+  background: rgba(100, 116, 139, 0.2);
+  color: #94A3B8;
+  border: 1px solid rgba(100, 116, 139, 0.4);
+}
+
+.review-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+.review-indicator.yes {
+  color: #34D399;
+}
+
+.review-indicator.pending {
+  color: #F59E0B;
+  opacity: 0.85;
+}
+
+.table-action-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.35rem 0.65rem;
+  border-radius: 6px;
+  background: #0F172A;
+  color: #38BDF8;
+  border: 1px solid #334155;
+  text-decoration: none;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.table-action-link:hover {
+  background: #38BDF8;
+  color: #0F172A;
+  border-color: #38BDF8;
+}

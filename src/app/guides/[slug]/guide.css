@@ -1,0 +1,524 @@
+/* Patient Authority Guide Styling */
+
+.guide-page-container {
+  min-height: 100vh;
+  background-color: #FAF8F5;
+  color: #1A1A1A;
+  font-family: inherit;
+  padding-bottom: 5rem;
+}
+
+.guide-hero {
+  background: linear-gradient(180deg, #132A13 0%, #1B3B1B 100%);
+  color: #FFFFFF;
+  padding: 5rem 1.5rem 3.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.guide-hero-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.guide-breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: #A3B899;
+  margin-bottom: 1.5rem;
+}
+
+.guide-breadcrumbs a {
+  color: #A3B899;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.guide-breadcrumbs a:hover {
+  color: #E4E0D2;
+}
+
+.guide-breadcrumbs span.current {
+  color: #E4E0D2;
+  font-weight: 500;
+}
+
+.guide-review-status-banner {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.85rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+  background: rgba(228, 224, 210, 0.12);
+  border: 1px solid rgba(228, 224, 210, 0.25);
+  color: #E4E0D2;
+}
+
+.guide-review-status-banner.is-review {
+  background: rgba(245, 158, 11, 0.15);
+  border-color: rgba(245, 158, 11, 0.4);
+  color: #FBBF24;
+}
+
+.guide-title {
+  font-size: clamp(1.85rem, 4vw, 2.75rem);
+  font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: -0.03em;
+  color: #FFFFFF;
+  margin-bottom: 1.25rem;
+}
+
+.guide-meta-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.25rem;
+  font-size: 0.875rem;
+  color: #CCD8C7;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.guide-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.guide-meta-reviewer {
+  color: #E4E0D2;
+  font-weight: 600;
+}
+
+.guide-meta-reviewer a {
+  color: #E4E0D2;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Main Content Area */
+
+.guide-main {
+  max-width: 900px;
+  margin: -1.5rem auto 0;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 10;
+}
+
+.guide-quick-answer-card {
+  background: #FFFFFF;
+  border: 1px solid #E5E0D8;
+  border-left: 5px solid #C5A880;
+  border-radius: 12px;
+  padding: 1.75rem;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+  margin-bottom: 2.5rem;
+}
+
+.guide-quick-answer-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #132A13;
+  margin-bottom: 0.75rem;
+}
+
+.guide-quick-answer-text {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: #2D3748;
+}
+
+/* Article Sections */
+
+.guide-article-body {
+  background: #FFFFFF;
+  border: 1px solid #E8E5DF;
+  border-radius: 16px;
+  padding: 2.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  margin-bottom: 2.5rem;
+}
+
+.guide-section {
+  margin-bottom: 2.5rem;
+}
+
+.guide-section:last-child {
+  margin-bottom: 0;
+}
+
+.guide-section-heading {
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: #132A13;
+  letter-spacing: -0.02em;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.guide-section-heading::before {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 1.2em;
+  background: #C5A880;
+  border-radius: 4px;
+}
+
+.guide-paragraph {
+  font-size: 1.025rem;
+  line-height: 1.75;
+  color: #374151;
+  margin-bottom: 1rem;
+}
+
+.guide-paragraph:last-child {
+  margin-bottom: 0;
+}
+
+.guide-keypoints-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.25rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.guide-keypoint-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.975rem;
+  line-height: 1.6;
+  color: #2D3748;
+  background: #F8F7F4;
+  padding: 0.85rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #EDE9E3;
+}
+
+.guide-keypoint-icon {
+  color: #132A13;
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+}
+
+.guide-callout-box {
+  margin: 1.5rem 0;
+  padding: 1.25rem 1.5rem;
+  border-radius: 10px;
+  border-left: 4px solid;
+  font-size: 0.975rem;
+  line-height: 1.6;
+}
+
+.guide-callout-box.info {
+  background: #F0F7F1;
+  border-color: #2D6A4F;
+  color: #1B4332;
+}
+
+.guide-callout-box.tip {
+  background: #FBF7EE;
+  border-color: #C5A880;
+  color: #5A4728;
+}
+
+.guide-callout-box.warning {
+  background: #FFFBEB;
+  border-color: #F59E0B;
+  color: #78350F;
+}
+
+.guide-callout-title {
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+/* FAQ Accordion */
+
+.guide-faqs-section {
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid #EAE7E1;
+}
+
+.guide-faqs-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #132A13;
+  margin-bottom: 1.25rem;
+}
+
+.guide-faq-item {
+  background: #FBF9F6;
+  border: 1px solid #EAE6DF;
+  border-radius: 10px;
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.guide-faq-question {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #132A13;
+  margin-bottom: 0.5rem;
+}
+
+.guide-faq-answer {
+  font-size: 0.975rem;
+  line-height: 1.65;
+  color: #4A5568;
+}
+
+/* Related Treatments & Clinicians */
+
+.guide-relationships-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.guide-rel-card {
+  background: #FFFFFF;
+  border: 1px solid #E5E0D8;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+}
+
+.guide-rel-card-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #132A13;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.guide-rel-links-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.guide-rel-link-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 0.85rem;
+  border-radius: 6px;
+  background: #F7F5F0;
+  color: #132A13;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.guide-rel-link-item:hover {
+  background: #132A13;
+  color: #FFFFFF;
+}
+
+/* Branch Cards */
+
+.guide-branches-section {
+  background: #FFFFFF;
+  border: 1px solid #E5E0D8;
+  border-radius: 14px;
+  padding: 1.75rem;
+  margin-bottom: 2.5rem;
+}
+
+.guide-branches-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #132A13;
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.guide-branches-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+
+.guide-branch-box {
+  background: #FAF8F5;
+  border: 1px solid #E8E4DC;
+  border-radius: 10px;
+  padding: 1.25rem;
+}
+
+.guide-branch-name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #132A13;
+  margin-bottom: 0.35rem;
+}
+
+.guide-branch-tagline {
+  font-size: 0.825rem;
+  color: #6B7280;
+  margin-bottom: 0.75rem;
+}
+
+.guide-branch-address {
+  font-size: 0.875rem;
+  color: #4B5563;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.guide-branch-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.guide-branch-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.45rem 0.85rem;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.guide-branch-btn.primary {
+  background: #132A13;
+  color: #FFFFFF;
+}
+
+.guide-branch-btn.primary:hover {
+  background: #244C24;
+}
+
+.guide-branch-btn.secondary {
+  background: #EAE6DF;
+  color: #132A13;
+}
+
+.guide-branch-btn.secondary:hover {
+  background: #DDD8D0;
+}
+
+/* Consultation CTA Banner */
+
+.guide-cta-card {
+  background: linear-gradient(135deg, #132A13 0%, #204420 100%);
+  color: #FFFFFF;
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+}
+
+.guide-cta-kicker {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #C5A880;
+  margin-bottom: 0.5rem;
+}
+
+.guide-cta-title {
+  font-size: clamp(1.4rem, 3vw, 1.85rem);
+  font-weight: 800;
+  margin-bottom: 0.75rem;
+  color: #FFFFFF;
+}
+
+.guide-cta-desc {
+  font-size: 1rem;
+  color: #CCD8C7;
+  max-width: 600px;
+  margin: 0 auto 1.5rem;
+  line-height: 1.6;
+}
+
+.guide-cta-btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.guide-cta-primary-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #C5A880;
+  color: #132A13;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.guide-cta-primary-btn:hover {
+  background: #D8BD98;
+  transform: translateY(-1px);
+}
+
+.guide-cta-secondary-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.12);
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.guide-cta-secondary-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 768px) {
+  .guide-hero {
+    padding: 3.5rem 1rem 2.5rem;
+  }
+  .guide-main {
+    padding: 0 1rem;
+  }
+  .guide-article-body {
+    padding: 1.5rem;
+  }
+}

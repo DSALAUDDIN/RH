@@ -112,11 +112,10 @@ const fadeUp: Variants = {
   show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] } },
 };
 
-/* Real data */
 const heroStats = [
-  // TODO(content): year of first BMDC registration, to derive years in practice.
+  { val: 2014, suf: '', label: 'Established' },
+  { val: 12, suf: '+', label: 'Years of Excellence' },
   { val: 2, suf: '', label: 'Premium Branches' },
-  { val: 5000, suf: '+ sqft', label: 'Total Area' },
 ];
 
 const specialties = [
@@ -256,53 +255,91 @@ const teamMembers = [
     role: 'Team Lead (Banasree & Banani)',
     badge: 'Managing Director',
     img: imgMehediFlyer,
+    href: '/dr-hasan',
   },
   {
     name: 'Dr. Shimia Binte Taher',
     role: 'Team Lead (Banani) & Senior Doctor',
     badge: 'Team Lead (Banani)',
     img: imgShimiaFlyer,
+    href: '/dr-shimia',
   },
   {
     name: 'Prof. Dr. Md. Shahidul Islam',
     role: 'Clinical Advisor',
     badge: 'Clinical Advisor',
     img: imgDrShaheen,
+    href: '/team/prof-dr-md-shahidul-islam',
   },
   {
     name: 'Dr. Afzal Chowdhury',
     role: 'Consultant — Oral Surgery',
     badge: 'Oral Surgery',
     img: imgAfzal,
+    href: '/team/dr-afzal-chowdhury',
   },
-  { name: 'Dr. Mahaesa Tamima', role: 'Senior Consultant', badge: 'Endodontics', img: imgTamima },
+  {
+    name: 'Dr. Mahaesa Tamima',
+    role: 'Senior Consultant',
+    badge: 'Endodontics',
+    img: imgTamima,
+    href: '/team/dr-mahaesa-tamima',
+  },
   {
     name: 'Dr. Nishat Tamanna Alam',
     role: 'Senior Ortho Dental Surgeon',
     badge: 'Orthodontics',
     img: imgTamanna,
+    href: '/team/dr-nishat-tamanna-alam',
   },
-  { name: 'Dr. Monisha Haque Hreedy', role: 'Consultant', badge: 'Dental Surgeon', img: imgHreedy },
-  { name: 'Dr. Nabil Rahman', role: 'Ortho Dentist', badge: 'Orthodontics', img: imgNabil },
-  { name: 'Dr. Umaya Khanam', role: 'Consultant', badge: 'Dental Surgeon', img: imgUmaya },
+  {
+    name: 'Dr. Monisha Haque Hreedy',
+    role: 'Consultant',
+    badge: 'Dental Surgeon',
+    img: imgHreedy,
+    href: '/team/dr-monisha-haque-hreedy',
+  },
+  {
+    name: 'Dr. Nabil Rahman',
+    role: 'Ortho Dentist',
+    badge: 'Orthodontics',
+    img: imgNabil,
+    href: '/team/dr-nabil-rahman',
+  },
+  {
+    name: 'Dr. Umaya Khanam',
+    role: 'Consultant',
+    badge: 'Dental Surgeon',
+    img: imgUmaya,
+    href: '/team/dr-umaya-khanam',
+  },
   {
     name: 'Dr. Mansura Panna',
     role: 'Senior Dental Surgeon',
     badge: 'Dental Surgeon',
     img: imgPanna,
+    href: '/team/dr-mansura-panna',
   },
   {
     name: 'Dr. Jeamima Tabassum Barsha',
     role: 'Consultant — Orthodontics',
     badge: 'Aligner & Orthodontics',
     img: imgBarsha,
+    href: '/team/dr-jeamima-tabassum-barsha',
   },
-  { name: 'Dr. Fariha Ferdous', role: 'Consultant', badge: 'Dental Surgeon', img: imgFariha },
+  {
+    name: 'Dr. Fariha Ferdous',
+    role: 'Consultant',
+    badge: 'Dental Surgeon',
+    img: imgFariha,
+    href: '/team/dr-fariha-ferdous',
+  },
   {
     name: 'Dr. Asma Binte Faiz Tamanna',
     role: 'Consultant',
     badge: 'Aesthetic Dentistry',
     img: imgAsma,
+    href: '/team/dr-asma-binte-faiz-tamanna',
   },
 ];
 
@@ -686,54 +723,52 @@ export default function AboutPage() {
           </FadeIn>
         </div>
 
-        <div className="ab-team-marquee-container">
-          <div className="ab-team-marquee-fade left"></div>
-          <div className="ab-team-marquee-fade right"></div>
-          <div className="ab-team-marquee">
-            <div className="ab-team-track">
-              {[...teamMembers, ...teamMembers, ...teamMembers].map((m, i) => (
-                <div
-                  key={i}
-                  className="ab-team-card-premium"
-                  onClick={() => m.img && setSelectedImage(m.img)}
-                >
-                  <div className="ab-team-card-inner">
-                    {m.img ? (
-                      <Image
-                        src={m.img}
-                        alt={m.name}
-                        fill
-                        style={{ objectFit: 'contain', objectPosition: 'center' }}
-                      />
-                    ) : (
-                      <div className="ab-team-placeholder">RH</div>
+        <div className="container" style={{ position: 'relative', zIndex: 3, marginTop: '2.5rem' }}>
+          <div className="ab-team-grid">
+            {teamMembers.map((m) => (
+              <Link
+                key={m.name}
+                href={m.href}
+                className="ab-team-card-premium"
+                style={{ textDecoration: 'none', color: 'inherit' }}
+              >
+                <div className="ab-team-card-inner">
+                  {m.img ? (
+                    <Image
+                      src={m.img}
+                      alt={m.name}
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      style={{ objectFit: 'contain', objectPosition: 'center' }}
+                    />
+                  ) : (
+                    <div className="ab-team-placeholder">RH</div>
+                  )}
+                  <div className="ab-team-card-overlay" />
+
+                  {/* Badge */}
+                  <div className={`ab-team-badge ${m.badge === 'Team Lead' ? 'lead' : ''}`}>
+                    {m.badge === 'Team Lead' && (
+                      <Sparkles size={10} style={{ marginRight: '4px' }} />
                     )}
-                    <div className="ab-team-card-overlay" />
+                    {m.badge}
+                  </div>
 
-                    {/* Badge */}
-                    <div className={`ab-team-badge ${m.badge === 'Team Lead' ? 'lead' : ''}`}>
-                      {m.badge === 'Team Lead' && (
-                        <Sparkles size={10} style={{ marginRight: '4px' }} />
-                      )}
-                      {m.badge}
-                    </div>
-
-                    {/* Info Panel */}
-                    <div className="ab-team-info-panel">
-                      <div className="ab-team-info-bg"></div>
-                      <div className="ab-team-info-content">
-                        <div className="ab-team-name">{m.name}</div>
-                        <div className="ab-team-role">{m.role}</div>
-                        <div className="ab-team-action">
-                          <span className="ab-team-action-text">View Full Profile Flyer</span>
-                          <ArrowUpRight size={14} />
-                        </div>
+                  {/* Info Panel */}
+                  <div className="ab-team-info-panel">
+                    <div className="ab-team-info-bg"></div>
+                    <div className="ab-team-info-content">
+                      <div className="ab-team-name">{m.name}</div>
+                      <div className="ab-team-role">{m.role}</div>
+                      <div className="ab-team-action">
+                        <span className="ab-team-action-text">View Full Profile</span>
+                        <ArrowUpRight size={14} />
                       </div>
                     </div>
                   </div>
                 </div>
-              ))}
-            </div>
+              </Link>
+            ))}
           </div>
         </div>
       </section>

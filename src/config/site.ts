@@ -8,7 +8,7 @@ export const SITE = {
   shortName: 'RH Dental',
   alternateNames: ['RH Dental Clinic', 'আরএইচ ডেন্টাল কেয়ার'],
   /** Canonical origin. No trailing slash. */
-  url: 'https://www.rhdentalcare.com',
+  url: 'https://rhdentalcare.com',
   /** BCP 47 language tag of the published content. */
   language: 'en-BD',
   /** Open Graph locale. */
@@ -23,13 +23,14 @@ export const SITE = {
     alt: 'Reception at RH Dental Care Banani.',
   },
   themeColor: { light: '#ffffff', dark: '#050e1e' },
+  foundedYear: 2014,
   geo: { region: 'BD-13', placename: 'Dhaka, Bangladesh' },
   /**
    * Profiles the clinic controls (Facebook, Instagram, YouTube, Google
    * Business Profile). Only add handles that are verified as owned: sameAs
    * links are used for entity reconciliation.
    */
-  sameAs: [] as string[],
+  sameAs: ['https://www.facebook.com/share/18YJPadCbX/'] as string[],
   verification: {
     google: '45b388b56fe88bf2',
   },

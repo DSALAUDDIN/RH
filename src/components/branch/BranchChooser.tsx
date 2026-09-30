@@ -36,7 +36,7 @@ export default function BranchChooser() {
         {/* Header */}
         <div className="branch-chooser-header">
           <div className="branch-chooser-badge">
-            <Sparkles size={14} /> Two clinics in Dhaka
+            <Sparkles size={14} /> Serving Dhaka Since 2014 · Two clinics, one clinical team
           </div>
           <h2 className="branch-chooser-title">Which branch suits you?</h2>
           <p className="branch-chooser-subtitle">

@@ -1,0 +1,187 @@
+// Prisma Schema for Production Managed Databases (PostgreSQL / Supabase / Neon / AWS RDS)
+// Use this schema when deploying to serverless platforms such as Vercel.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Review {
+  id        String   @id @default(cuid())
+  patient   String
+  rating    Int      @default(5)
+  videoUrl  String
+  createdAt DateTime @default(now())
+}
+
+model Admin {
+  id       String @id @default(cuid())
+  username String @unique
+  password String // Hashed
+}
+
+enum Branch {
+  BANANI
+  BANASREE
+}
+
+model Appointment {
+  id          String    @id @default(cuid())
+  /// Authoritative reference, e.g. RH-BNN-2609-0042. Issued server-side by
+  /// nextRef() from RefCounter — never by the client-side makeRef().
+  ref         String    @unique
+  /// Required. A submission with no branch is rejected at the API, never inferred.
+  branch      Branch
+  patientName String
+  phone       String
+  email       String?
+  treatment   String
+  message     String?
+  /// Set for 'slots' bookings (Banasree). Null for 'callback' (Banani).
+  scheduledAt DateTime?
+  /// PENDING | CONFIRMED | CANCELLED | COMPLETED
+  status      String    @default("PENDING")
+  /// 'slots' or 'callback' — how this request was taken.
+  mode        String    @default("callback")
+  source      String?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  @@index([branch, createdAt])
+  @@index([status])
+}
+
+/// Per-branch sequence behind the authoritative booking reference.
+/// key is the branch code: "BNN" or "BSR".
+model RefCounter {
+  key       String   @id
+  value     Int      @default(0)
+  updatedAt DateTime @updatedAt
+}
+
+/// Google OAuth and API integrations state for RH SEO Command Center
+model GoogleIntegration {
+  id                    String    @id @default("primary")
+  connected             Boolean   @default(false)
+  accessToken           String?   // AES-256-GCM encrypted
+  refreshToken          String?   // AES-256-GCM encrypted
+  tokenExpiry           DateTime?
+  scope                 String?
+  gscSiteUrl            String?   // e.g. "sc-domain:rhdentalcare.com"
+  ga4PropertyId         String?   // e.g. "properties/123456789"
+  gbpAccountId          String?
+  gbpBananiLocationId   String?
+  gbpBanasreeLocationId String?
+  gbpStatus             String    @default("not_connected") // not_connected | pending_access | connected | error
+  lastSyncAt            DateTime?
+  lastSyncStatus        String?   // success | partial | error
+  lastError             String?
+  baselineDate          DateTime?
+  createdAt             DateTime  @default(now())
+  updatedAt             DateTime  @updatedAt
+}
+
+/// Daily aggregated historical snapshots for trends
+model SeoDailySnapshot {
+  id                  String   @id @default(cuid())
+  date                String   @unique // "YYYY-MM-DD"
+  healthScore         Int      @default(0)
+  scoreConfidence     Int      @default(0) // 0-100% data coverage
+  techScore           Int      @default(0)
+  contentScore        Int      @default(0)
+  visibilityScore     Int      @default(0)
+  uxScore             Int      @default(0)
+  localScore          Int      @default(0)
+  gscImpressions      Int      @default(0)
+  gscClicks           Int      @default(0)
+  gscCtr              Float    @default(0)
+  gscAvgPosition      Float    @default(0)
+  ga4ActiveUsers      Int      @default(0)
+  ga4Sessions         Int      @default(0)
+  ga4OrganicSessions  Int      @default(0)
+  conversionsPhone    Int      @default(0)
+  conversionsWhatsapp Int      @default(0)
+  conversionsBooking  Int      @default(0)
+  conversionsTotal    Int      @default(0)
+  gbpBananiActions    Int      @default(0)
+  gbpBanasreeActions  Int      @default(0)
+  pageSpeedAvg        Int      @default(0)
+  authorityLivePages  Int      @default(24)
+  authorityTotalPages Int      @default(80)
+  auditErrors         Int      @default(0)
+  auditWarnings       Int      @default(0)
+  detailsJson         String?
+  createdAt           DateTime @default(now())
+}
+
+/// Search Console Query Performance Snapshots
+model SeoQuerySnapshot {
+  id               String   @id @default(cuid())
+  date             String
+  query            String
+  clicks           Int      @default(0)
+  impressions      Int      @default(0)
+  ctr              Float    @default(0)
+  avgPosition      Float    @default(0)
+  previousPosition Float?
+  landingPage      String?
+  language         String   @default("en") // en | bn
+  cluster          String?  // implant | root-canal | orthodontics | zirconia | brand | local | general
+  isBranded        Boolean  @default(false)
+  createdAt        DateTime @default(now())
+
+  @@index([date, query])
+  @@index([cluster])
+}
+
+/// Landing Page Performance Snapshots
+model SeoPageSnapshot {
+  id          String   @id @default(cuid())
+  date        String
+  path        String
+  clicks      Int      @default(0)
+  impressions Int      @default(0)
+  ctr         Float    @default(0)
+  avgPosition Float    @default(0)
+  sessions    Int      @default(0)
+  leads       Int      @default(0)
+  group       String   @default("other") // core_treatment | doctor | branch | english_guide | bangla_guide | other
+  language    String   @default("en")
+  indexStatus String   @default("unchecked")
+  createdAt   DateTime @default(now())
+
+  @@index([date, path])
+}
+
+/// Cached and Historical Internal Technical SEO Audit Results
+model SeoAuditResult {
+  id              String   @id @default(cuid())
+  timestamp       DateTime @default(now())
+  routesAudited   Int
+  errors          Int
+  warnings        Int
+  canonicalIssues Int      @default(0)
+  metadataIssues  Int      @default(0)
+  schemaIssues    Int      @default(0)
+  hreflangIssues  Int      @default(0)
+  sitemapIssues   Int      @default(0)
+  brokenLinks     Int      @default(0)
+  enLive          Int      @default(12)
+  bnLive          Int      @default(12)
+  enReview        Int      @default(28)
+  bnReview        Int      @default(28)
+  summaryJson     String?
+  ranBy           String   @default("system")
+}
+
+/// Security and Operation Logs for SEO Integrations
+model SeoSecurityLog {
+  id        String   @id @default(cuid())
+  event     String   // connect | disconnect | manual_sync | sync_error | config_change
+  details   String?
+  createdAt DateTime @default(now())
+}

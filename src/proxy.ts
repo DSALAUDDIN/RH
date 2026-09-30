@@ -6,8 +6,8 @@ import { getAuthSecret } from '@/lib/auth-secret';
 export async function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  // Only protect routes under /admin/dashboard
-  if (pathname.startsWith('/admin/dashboard')) {
+  // Protect routes under /admin/dashboard and /admin/seo
+  if (pathname.startsWith('/admin/dashboard') || pathname.startsWith('/admin/seo')) {
     const token = request.cookies.get('admin_token')?.value;
     const secret = getAuthSecret();
 
@@ -31,5 +31,5 @@ export async function proxy(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/admin/dashboard/:path*'],
+  matcher: ['/admin/dashboard/:path*', '/admin/seo/:path*'],
 };

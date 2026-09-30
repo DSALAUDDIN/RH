@@ -1098,7 +1098,7 @@ export default function DentalTourism() {
             <article className="spec" data-reveal>
               <header className="spec-head">
                 <span className="spec-num">D · Aftercare</span>
-                <span className="spec-tag tag-care">Permanent</span>
+                <span className="spec-tag tag-care">Follow-up</span>
               </header>
               <div className="spec-grid">
                 <div className="spec-copy">
@@ -1108,19 +1108,19 @@ export default function DentalTourism() {
                     at <em>departure.</em>
                   </h3>
                   <p>
-                    Every restoration carries the manufacturer's warranty — typically 5–10 years on
-                    implants, lifetime on Straumann fixtures. We carry that warranty for you, with a
+                    Every restoration carries the manufacturer's warranty options as specified by
+                    the implant maker. We carry that documentation for you, with a
                     written record of every fixture used.
                   </p>
                 </div>
                 <ul className="brand-list">
                   <li>
                     <b>Implant warranty</b>
-                    <span>5–lifetime, by brand</span>
+                    <span>Manufacturer-backed (by brand)</span>
                   </li>
                   <li>
                     <b>Crown warranty</b>
-                    <span>5 years on zirconia</span>
+                    <span>Longevity guidance on zirconia</span>
                   </li>
                   <li>
                     <b>Digital records</b>
@@ -2250,7 +2250,7 @@ export default function DentalTourism() {
             <div className="tech-card" data-reveal>
               <div className="tech-meta">03 · Lab</div>
               <h4>3D dental printing</h4>
-              <p>In-house surgical guides, models and same-day restorations.</p>
+              <p>In-house surgical guides, models and precision CAD/CAM restorations.</p>
             </div>
             <div className="tech-card" data-reveal>
               <div className="tech-meta">04 · Soft tissue</div>
@@ -2271,7 +2271,7 @@ export default function DentalTourism() {
             <span>•</span>
             <span>Digital Smile Design</span>
             <span>•</span>
-            <span>Same-Day Crowns</span>
+            <span>On-Site Milled Crowns</span>
             <span>•</span>
             <span>Guided Implantology</span>
             <span>•</span>
@@ -2283,7 +2283,7 @@ export default function DentalTourism() {
             <span>•</span>
             <span>Digital Smile Design</span>
             <span>•</span>
-            <span>Same-Day Crowns</span>
+            <span>On-Site Milled Crowns</span>
             <span>•</span>
             <span>Guided Implantology</span>
             <span>•</span>
@@ -2439,9 +2439,9 @@ export default function DentalTourism() {
               <div className="faq-a">
                 <p>
                   It depends on the procedure. A single crown or veneer set: <b>3–5 days</b>. A full
-                  smile makeover with veneers: <b>5–8 days</b>. Implants with same-day temporary
-                  loading: <b>7–10 days</b>; with delayed loading (the safer, slower path): one
-                  short visit for surgery, then a second 4–6 months later for the permanent crowns.
+                  smile makeover with veneers: <b>5–8 days</b>. Implants with immediate provisional
+                  loading: <b>7–10 days</b>; with delayed loading (the safer, standard protocol): one
+                  short visit for surgery, then a second visit 4–6 months later for the final crowns.
                   We build the schedule around <em>your</em> calendar, not ours.
                 </p>
               </div>
@@ -2457,11 +2457,10 @@ export default function DentalTourism() {
               </button>
               <div className="faq-a">
                 <p>
-                  Every implant carries the manufacturer's warranty (5 years to lifetime, depending
+                  Every implant carries the manufacturer's warranty documentation (depending
                   on brand) and we hold the documentation for you. If you have an issue, you contact
                   us on WhatsApp; we coordinate with your local dentist, send your full digital file
-                  and X-rays, and — where the issue is on us — cover the repair work. Roughly 0.3%
-                  of our international files have required a return trip.
+                  and X-rays, and provide support for any follow-up care needed.
                 </p>
               </div>
             </li>

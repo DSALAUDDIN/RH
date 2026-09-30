@@ -1,7 +1,7 @@
 # RH Dental Care
 
 Website for RH Dental Care, a two-branch dental practice in Dhaka (Banani and Banasree).
-Production: <https://www.rhdentalcare.com>
+Production: <https://rhdentalcare.com>
 
 ## Stack
 

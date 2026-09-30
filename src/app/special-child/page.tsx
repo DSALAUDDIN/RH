@@ -106,7 +106,7 @@ const pillars = [
 ];
 
 const gaFeatures = [
-  'Pain-free and stress-free treatment',
+  'Comfort-focused and stress-free treatment',
   'Multiple procedures completed in a single session',
   'Minimizes fear, anxiety and trauma',
   'Safe and closely monitored by experienced anesthetists',

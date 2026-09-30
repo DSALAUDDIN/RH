@@ -1,0 +1,346 @@
+/* Bangla Hub Styles */
+
+.bn-home-page {
+  width: 100%;
+  min-height: 100vh;
+  padding-bottom: 4rem;
+  background: var(--surface, #ffffff);
+  color: var(--text-primary, #0f172a);
+}
+
+.bn-hero {
+  background: linear-gradient(180deg, #f0fdf4 0%, #ffffff 100%);
+  border-bottom: 1px solid var(--border, #e2e8f0);
+  padding: 4.5rem 1.5rem 3.5rem;
+  text-align: center;
+}
+
+.bn-hero-inner {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.bn-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  background: #dcfce7;
+  color: #166534;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 1.25rem;
+}
+
+.bn-hero-title {
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  font-weight: 800;
+  line-height: 1.2;
+  color: #0f172a;
+  margin-bottom: 1rem;
+}
+
+.bn-hero-subtitle {
+  display: block;
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  font-weight: 600;
+  color: var(--primary, #059669);
+  margin-top: 0.5rem;
+}
+
+.bn-hero-lead {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: #475569;
+  max-width: 680px;
+  margin: 0 auto 2rem;
+}
+
+.bn-hero-cta-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.75rem;
+}
+
+.bn-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.75rem;
+  border-radius: 0.5rem;
+  background: var(--primary, #059669);
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.bn-btn-primary:hover {
+  background: #047857;
+  transform: translateY(-1px);
+}
+
+.bn-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.75rem;
+  border-radius: 0.5rem;
+  background: #ffffff;
+  color: #0f172a;
+  border: 1px solid var(--border, #cbd5e1);
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.bn-btn-secondary:hover {
+  background: #f8fafc;
+  border-color: #94a3b8;
+}
+
+.bn-lang-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.35rem 0.9rem;
+  border-radius: 9999px;
+  background: #f1f5f9;
+  font-size: 0.8125rem;
+}
+
+.bn-lang-link {
+  color: #0284c7;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.bn-lang-link:hover {
+  text-decoration: underline;
+}
+
+.bn-lang-active {
+  font-weight: 700;
+  color: #0f172a;
+}
+
+/* Features */
+.bn-features-section,
+.bn-branches-section,
+.bn-guides-preview-section {
+  max-width: 1140px;
+  margin: 4rem auto 0;
+  padding: 0 1.5rem;
+}
+
+.bn-section-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.bn-section-title {
+  font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 0.5rem;
+}
+
+.bn-section-desc {
+  font-size: 1rem;
+  color: #64748b;
+}
+
+.bn-features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.bn-feature-card {
+  padding: 2rem;
+  border-radius: 0.75rem;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+}
+
+.bn-feature-icon-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.5rem;
+  background: #dcfce7;
+  margin-bottom: 1.25rem;
+}
+
+.bn-feature-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #0f172a;
+  margin-bottom: 0.75rem;
+}
+
+.bn-feature-card p {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: #475569;
+}
+
+/* Branches */
+.bn-branches-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.75rem;
+}
+
+.bn-branch-card {
+  border-radius: 0.75rem;
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  padding: 2rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.bn-branch-header {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-bottom: 0.75rem;
+}
+
+.bn-branch-header h3 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.bn-branch-address {
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: #475569;
+  margin-bottom: 1.25rem;
+}
+
+.bn-branch-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.bn-chip {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: 9999px;
+  background: #f1f5f9;
+  color: #334155;
+}
+
+.bn-branch-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1rem;
+  border-top: 1px solid #f1f5f9;
+}
+
+.bn-branch-phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--primary, #059669);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.bn-branch-guide-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #0284c7;
+  text-decoration: none;
+}
+
+/* Guides Grid */
+.bn-guides-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.bn-guide-preview-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.75rem;
+  border-radius: 0.75rem;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+}
+
+.bn-guide-preview-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--primary, #059669);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.bn-guide-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.85rem;
+}
+
+.bn-guide-category-badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--primary, #059669);
+  background: #dcfce7;
+  padding: 0.2rem 0.6rem;
+  border-radius: 9999px;
+}
+
+.bn-guide-read-time {
+  font-size: 0.75rem;
+  color: #94a3b8;
+}
+
+.bn-guide-card-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #0f172a;
+  margin-bottom: 0.75rem;
+}
+
+.bn-guide-card-snippet {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: #64748b;
+  flex: 1;
+  margin-bottom: 1.25rem;
+}
+
+.bn-guide-card-footer {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--primary, #059669);
+  padding-top: 0.75rem;
+  border-top: 1px solid #f1f5f9;
+}
+
+.bn-all-guides-cta {
+  text-align: center;
+  margin-top: 2.5rem;
+}

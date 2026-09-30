@@ -5,7 +5,8 @@ import Testimonials from '@/components/Testimonials';
 import VideoSection from '@/components/VideoSection';
 import ClinicGallery from '@/components/ClinicGallery';
 import BeforeAfter from '@/components/BeforeAfter';
-import { ShieldCheck, Sparkles } from 'lucide-react';
+import { ShieldCheck, Sparkles, ArrowRight } from 'lucide-react';
+import Link from 'next/link';
 
 import type { Metadata } from 'next';
 import { pageMeta } from '@/lib/seo/metadata';
@@ -31,6 +32,171 @@ export default function Home() {
 
       <BeforeAfter />
       <Testimonials />
+
+      {/* Patient Knowledge Base Authority Showcase */}
+      <section
+        style={{
+          maxWidth: '1200px',
+          margin: '3rem auto 4rem',
+          padding: '0 1.5rem',
+        }}
+      >
+        <div
+          style={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            justifyContent: 'space-between',
+            alignItems: 'flex-end',
+            marginBottom: '1.75rem',
+            gap: '1rem',
+          }}
+        >
+          <div>
+            <div
+              style={{
+                fontSize: '0.85rem',
+                fontWeight: 700,
+                textTransform: 'uppercase',
+                letterSpacing: '0.08em',
+                color: '#8C7355',
+                marginBottom: '0.35rem',
+              }}
+            >
+              Patient Knowledge Base
+            </div>
+            <h2
+              style={{
+                fontSize: 'clamp(1.5rem, 3.5vw, 2.25rem)',
+                fontWeight: 700,
+                color: 'var(--rh-ink, #132A13)',
+                margin: 0,
+                letterSpacing: '-0.02em',
+              }}
+            >
+              Doctor-Reviewed Dental Guides
+            </h2>
+          </div>
+          <Link
+            href="/guides"
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '0.4rem',
+              fontWeight: 600,
+              fontSize: '0.95rem',
+              color: 'var(--rh-ink, #132A13)',
+              textDecoration: 'none',
+            }}
+          >
+            <span>Explore Guides Hub</span>
+            <ArrowRight size={16} />
+          </Link>
+        </div>
+
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+            gap: '1.25rem',
+          }}
+        >
+          <Link
+            href="/guides/dental-implant-cost-dhaka"
+            style={{
+              background: '#FFFFFF',
+              border: '1px solid #E5E0D8',
+              borderRadius: '12px',
+              padding: '1.5rem',
+              textDecoration: 'none',
+              color: 'inherit',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between',
+              boxShadow: '0 2px 10px rgba(0,0,0,0.02)',
+            }}
+          >
+            <div>
+              <span style={{ fontSize: '0.75rem', fontWeight: 700, color: '#2D6A4F', textTransform: 'uppercase' }}>
+                Dental Implants
+              </span>
+              <h3 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#132A13', margin: '0.5rem 0' }}>
+                Dental Implant Cost in Dhaka
+              </h3>
+              <p style={{ fontSize: '0.875rem', color: '#4A5568', lineHeight: 1.5, margin: 0 }}>
+                What clinical factors and materials determine implant treatment investment in Dhaka?
+              </p>
+            </div>
+            <div style={{ marginTop: '1rem', fontSize: '0.85rem', fontWeight: 600, color: '#8C7355', display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
+              <span>Read Guide</span>
+              <ArrowRight size={14} />
+            </div>
+          </Link>
+
+          <Link
+            href="/guides/microscopic-root-canal-treatment"
+            style={{
+              background: '#FFFFFF',
+              border: '1px solid #E5E0D8',
+              borderRadius: '12px',
+              padding: '1.5rem',
+              textDecoration: 'none',
+              color: 'inherit',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between',
+              boxShadow: '0 2px 10px rgba(0,0,0,0.02)',
+            }}
+          >
+            <div>
+              <span style={{ fontSize: '0.75rem', fontWeight: 700, color: '#2D6A4F', textTransform: 'uppercase' }}>
+                Endodontics
+              </span>
+              <h3 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#132A13', margin: '0.5rem 0' }}>
+                Microscopic Root Canal Care
+              </h3>
+              <p style={{ fontSize: '0.875rem', color: '#4A5568', lineHeight: 1.5, margin: 0 }}>
+                How surgical operating microscopes illuminate hidden canals and help preserve natural teeth.
+              </p>
+            </div>
+            <div style={{ marginTop: '1rem', fontSize: '0.85rem', fontWeight: 600, color: '#8C7355', display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
+              <span>Read Guide</span>
+              <ArrowRight size={14} />
+            </div>
+          </Link>
+
+          <Link
+            href="/guides/clear-aligners-vs-braces"
+            style={{
+              background: '#FFFFFF',
+              border: '1px solid #E5E0D8',
+              borderRadius: '12px',
+              padding: '1.5rem',
+              textDecoration: 'none',
+              color: 'inherit',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between',
+              boxShadow: '0 2px 10px rgba(0,0,0,0.02)',
+            }}
+          >
+            <div>
+              <span style={{ fontSize: '0.75rem', fontWeight: 700, color: '#2D6A4F', textTransform: 'uppercase' }}>
+                Orthodontics
+              </span>
+              <h3 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#132A13', margin: '0.5rem 0' }}>
+                Clear Aligners vs Braces
+              </h3>
+              <p style={{ fontSize: '0.875rem', color: '#4A5568', lineHeight: 1.5, margin: 0 }}>
+                Clinical comparison of aesthetics, dietary freedom, hygiene, and alignment predictability.
+              </p>
+            </div>
+            <div style={{ marginTop: '1rem', fontSize: '0.85rem', fontWeight: 600, color: '#8C7355', display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
+              <span>Read Guide</span>
+              <ArrowRight size={14} />
+            </div>
+          </Link>
+        </div>
+      </section>
 
       {/* Call to Action Section */}
       <section
@@ -73,7 +239,7 @@ export default function Home() {
               }}
             >
               <Sparkles size={16} color="#38bdf8" />
-              <span style={{ color: '#E4E0D2' }}>Two branches, one clinical team</span>
+              <span style={{ color: '#E4E0D2' }}>Serving Dhaka Since 2014 · Two branches, one clinical team</span>
             </div>
 
             <h2

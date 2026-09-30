@@ -36,7 +36,7 @@ import './root-canal.css';
 import BranchCTA from '@/components/branch/BranchCTA';
 
 import heroImg from '@/assets/rootcanal/root-cover.jpeg';
-import contentImg from '@/assets/specialties/microscope-loupes.png';
+import contentImg from '@/assets/rootcanal/microscope.png';
 import otImg from '@/assets/rootcanal/root-ot.jpeg';
 import newImg from '@/assets/rootcanal/img.png';
 import flyerImg from '@/assets/specialties/root-canal-flyer.jpg';
@@ -108,7 +108,7 @@ function RCVideo() {
         preload="auto"
       >
         <source
-          src="https://res.cloudinary.com/dxrcufs8f/video/upload/v1778516898/Untitled_design_1_1_whreqj.mp4"
+          src="/assets/videos/hero.mp4"
           type="video/mp4"
         />
       </video>
@@ -138,7 +138,7 @@ function RCVideo() {
 const pageFaqs = [
   {
     q: 'Is a root canal painful?',
-    a: 'With modern local anaesthesia and microscope-guided techniques, root canal treatment is virtually painless. Most patients report the procedure feels no different from a routine filling.',
+    a: 'With modern local anaesthesia and microscope-guided techniques, root canal treatment is carried out with profound local anaesthesia for your comfort. Most patients report the procedure feels no different from a routine filling.',
   },
   {
     q: 'Can it really be done in one visit?',
@@ -150,11 +150,11 @@ const pageFaqs = [
   },
   {
     q: 'Will I need a crown after treatment?',
-    a: 'In most cases, yes. A root-canal-treated tooth becomes more brittle. A crown restores full strength, protects from fracture, and can last a lifetime with proper care.',
+    a: 'In most cases, yes. A root-canal-treated tooth becomes more brittle over time. A crown restores full strength, protects from fracture, and can provide long-lasting function with proper care.',
   },
   {
     q: 'How long does a treated tooth last?',
-    a: 'With a well-placed crown and proper oral hygiene, a root-canal-treated tooth can function for decades — even a lifetime. Our success rates are consistently above 95%.',
+    a: 'With a well-placed crown and proper oral hygiene, a root-canal-treated tooth can function for many years. Regular check-ups help ensure continued health.',
   },
 
   {
@@ -216,7 +216,7 @@ export default function RootCanalPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Single-visit, microscope-guided, virtually painless. Modern endodontics that saves your
+            Single-visit, microscope-guided, comfort-focused. Modern endodontics that saves your
             natural tooth — completed in one precise appointment.
           </motion.p>
           <motion.div
@@ -265,7 +265,7 @@ export default function RootCanalPage() {
         <div className="container">
           <div className="rc-trust-inner">
             {[
-              { icon: <ShieldCheck size={20} />, text: 'Painless Under Local Anaesthesia' },
+              { icon: <ShieldCheck size={20} />, text: 'Comfort Under Local Anaesthesia' },
               { icon: <Clock size={20} />, text: 'Single Visit — Full Treatment' },
               { icon: <Microscope size={20} />, text: 'Microscope-Guided Precision' },
               { icon: <Globe size={20} />, text: 'Optimised for International Patients' },
@@ -382,10 +382,27 @@ export default function RootCanalPage() {
                   Excellence in <span style={{ color: '#0ea5e9' }}>Endodontics</span>
                 </h2>
                 <p>
-                  We are committed to providing root canal therapies that are not just pain-free,
-                  but meticulously precise. By leveraging advanced materials and continuous
-                  training, we ensure that every treated tooth is preserved for the longest possible
-                  time.
+                  Microscopic endodontic therapies are overseen by Senior Dental Surgeon{' '}
+                  <Link
+                    href="/dr-shimia"
+                    style={{ color: '#0ea5e9', textDecoration: 'underline', fontWeight: 700 }}
+                  >
+                    Dr. Shimia Binte Taher
+                  </Link>{' '}
+                  (BMDC 8496) and our specialist endodontic team. Treatment is available at both our{' '}
+                  <Link href="/banani" style={{ color: '#0ea5e9', textDecoration: 'underline' }}>
+                    Banani Private Suite
+                  </Link>{' '}
+                  and{' '}
+                  <Link href="/banasree" style={{ color: '#0ea5e9', textDecoration: 'underline' }}>
+                    Banasree Flagship Hospital
+                  </Link>
+                  .
+                </p>
+                <p>
+                  We are committed to providing root canal therapies that are gentle,
+                  comfort-focused, and meticulously precise. By leveraging operating microscopes and
+                  rotary endodontic systems, every canal is thoroughly cleaned, disinfected, and sealed.
                 </p>
                 <div className="imp-gallery-checks">
                   {[
@@ -691,7 +708,7 @@ export default function RootCanalPage() {
               <div className="imp-what-img">
                 <Image
                   src={contentImg}
-                  alt="Root canal restoration"
+                  alt="Dental operating microscope at RH Dental Care for precision root canal treatment"
                   fill
                   sizes="(max-width:1024px) 100vw, 50vw"
                   style={{ objectFit: 'cover' }}

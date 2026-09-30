@@ -1325,10 +1325,10 @@ export default function DigitalDentistryPage() {
                         height: '100%',
                         objectFit: 'contain',
                       }}
-                      poster="https://res.cloudinary.com/dxrcufs8f/video/upload/so_0,f_auto,q_auto/v1778517737/WhatsApp_Video_2026-05-07_at_10.50.58_acsiog.jpg"
+                      poster="/assets/videos/digital-dentistry-poster.jpg"
                     >
                       <source
-                        src="https://res.cloudinary.com/dxrcufs8f/video/upload/v1778517737/WhatsApp_Video_2026-05-07_at_10.50.58_acsiog.mp4"
+                        src="/assets/videos/digital-dentistry.mp4"
                         type="video/mp4"
                       />
                       Your browser does not support the video tag.
