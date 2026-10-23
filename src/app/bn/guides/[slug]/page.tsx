@@ -132,13 +132,13 @@ export default async function BanglaAuthorityGuidePage({ params }: Props) {
           </nav>
 
           {/* Language Switcher Pill */}
-          <div className="guide-lang-switcher" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.35rem 0.85rem', background: '#f1f5f9', borderRadius: '9999px', fontSize: '0.8125rem', marginBottom: '1rem' }}>
-            <Globe size={14} className="text-slate-500" />
-            <Link href={`/guides/${slug}`} style={{ color: '#0284c7', textDecoration: 'none', fontWeight: 500 }}>
-              English Version
+          <div className="guide-lang-switcher">
+            <Globe size={13} style={{ opacity: 0.8 }} />
+            <Link href={`/guides/${slug}`} className="lang-link">
+              English
             </Link>
-            <span style={{ color: '#94a3b8' }}>|</span>
-            <span style={{ fontWeight: 700, color: '#0f172a' }}>বাংলা সংস্করণ</span>
+            <span className="lang-sep">|</span>
+            <span className="lang-active">বাংলা</span>
           </div>
 
           <div className="guide-meta-pill">

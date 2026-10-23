@@ -30,7 +30,26 @@
   gap: 0.5rem;
   font-size: 0.85rem;
   color: #A3B899;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.guide-breadcrumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  list-style: none !important;
+  list-style-type: none !important;
+  padding: 0;
+  margin: 0;
+}
+
+.guide-breadcrumbs li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  list-style: none !important;
+  list-style-type: none !important;
 }
 
 .guide-breadcrumbs a {
@@ -43,9 +62,50 @@
   color: #E4E0D2;
 }
 
-.guide-breadcrumbs span.current {
+.guide-breadcrumbs span.current,
+.guide-breadcrumbs span[aria-current="page"] {
   color: #E4E0D2;
   font-weight: 500;
+}
+
+.guide-breadcrumbs .crumb-sep {
+  opacity: 0.45;
+  color: #A3B899;
+}
+
+.guide-lang-switcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.85rem;
+  background: rgba(228, 224, 210, 0.12);
+  border: 1px solid rgba(228, 224, 210, 0.22);
+  border-radius: 9999px;
+  font-size: 0.8125rem;
+  margin-bottom: 1.25rem;
+  color: #E4E0D2;
+  backdrop-filter: blur(8px);
+}
+
+.guide-lang-switcher .lang-link {
+  color: #A3B899;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.guide-lang-switcher .lang-link:hover {
+  color: #FFFFFF;
+}
+
+.guide-lang-switcher .lang-sep {
+  opacity: 0.4;
+  color: #E4E0D2;
+}
+
+.guide-lang-switcher .lang-active {
+  font-weight: 700;
+  color: #FFFFFF;
 }
 
 .guide-review-status-banner {

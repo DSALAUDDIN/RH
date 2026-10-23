@@ -22,6 +22,7 @@ import {
   Phone,
   Shield,
   FileText,
+  Globe,
 } from 'lucide-react';
 import './guide.css';
 
@@ -113,26 +114,29 @@ export default async function AuthorityGuidePage({ params }: Props) {
       <header className="guide-hero">
         <div className="guide-hero-inner">
           <nav aria-label="Breadcrumb" className="guide-breadcrumbs">
-            {breadcrumbItems.map((item, idx) => (
-              <span key={item.path} style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
-                {idx > 0 && <span style={{ opacity: 0.5 }}>/</span>}
-                {idx === breadcrumbItems.length - 1 ? (
-                  <span className="current" aria-current="page">
-                    {item.name}
-                  </span>
-                ) : (
-                  <Link href={item.path}>{item.name}</Link>
-                )}
-              </span>
-            ))}
+            <ol>
+              {breadcrumbItems.map((item, idx) => (
+                <li key={item.path + idx}>
+                  {idx > 0 && <span className="crumb-sep">/</span>}
+                  {idx === breadcrumbItems.length - 1 ? (
+                    <span className="current" aria-current="page">
+                      {item.name}
+                    </span>
+                  ) : (
+                    <Link href={item.path}>{item.name}</Link>
+                  )}
+                </li>
+              ))}
+            </ol>
           </nav>
 
           {/* Language Switcher Pill */}
-          <div className="guide-lang-switcher" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.35rem 0.85rem', background: '#f1f5f9', borderRadius: '9999px', fontSize: '0.8125rem', marginBottom: '1rem' }}>
-            <span style={{ fontWeight: 700, color: '#0f172a' }}>English</span>
-            <span style={{ color: '#94a3b8' }}>|</span>
-            <Link href={`/bn/guides/${slug}`} style={{ color: '#0284c7', textDecoration: 'none', fontWeight: 500 }}>
-              বাংলা সংস্করণ
+          <div className="guide-lang-switcher">
+            <Globe size={13} style={{ opacity: 0.8 }} />
+            <span className="lang-active">English</span>
+            <span className="lang-sep">|</span>
+            <Link href={`/bn/guides/${slug}`} className="lang-link">
+              বাংলা
             </Link>
           </div>
 

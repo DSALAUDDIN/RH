@@ -167,7 +167,7 @@ export const BRANCHES: Record<BranchId, Branch> = {
         h: 1600,
       },
       {
-        src: '/assets/branches/banani/treatment-room.webp',
+        src: '/assets/branches/banani/banani-treatment-ot.webp',
         alt: 'A clinician treating a patient in the dental chair at RH Dental Care Banani, with the operating light overhead and the panelled lounge corner behind.',
         caption:
           'The treatment & OT room. The dental operating chair sits in the same panelled, cove-lit space as the rest of the suite.',
