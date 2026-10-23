@@ -191,7 +191,7 @@ export default function ZirconiaVeneersPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           >
-            Indirect Zirconia <span>Veneers</span>
+            Dental Veneers in Dhaka · <span>Zirconia &amp; Ceramic</span>
           </motion.h1>
 
           <motion.p

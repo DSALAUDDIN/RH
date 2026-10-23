@@ -134,10 +134,15 @@ export default function Hero() {
           </motion.div>
 
           <h1 className="hero-title">
-            <RevealText text="Two clinics." />
-            <br />
-            <span className="text-gradient-accent" style={{ opacity: 1, transform: 'none' }}>
-              One clinical team.
+            <span className="hero-kicker-seo">
+              RH Dental Care · Specialist Dental Clinics in Banani &amp; Banasree, Dhaka
+            </span>
+            <span className="hero-main-title">
+              <RevealText text="Two clinics." />
+              <br />
+              <span className="text-gradient-accent" style={{ opacity: 1, transform: 'none' }}>
+                One clinical team.
+              </span>
             </span>
           </h1>
 

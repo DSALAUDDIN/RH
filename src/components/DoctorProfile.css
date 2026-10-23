@@ -30,6 +30,15 @@
   color: var(--rh-ink);
 }
 
+.dp-sub-title {
+  display: block;
+  font-size: var(--rh-step-0);
+  font-weight: 500;
+  color: var(--rh-primary, #0073e6);
+  letter-spacing: 0.02em;
+  margin-top: 0.35rem;
+}
+
 .dp-role {
   font-family: var(--rh-font-display);
   font-style: italic;

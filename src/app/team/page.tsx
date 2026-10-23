@@ -33,7 +33,7 @@ export default function TeamPage() {
 
       <header className="team-hero">
         <div className="rh-container">
-          <h1 className="team-h1">The clinical team</h1>
+          <h1 className="team-h1">Specialist Dental Doctors &amp; Surgeons in Dhaka</h1>
           <p className="team-lede">
             Fifteen clinicians across two addresses. Where someone works, on which
             days, and what they are registered to do — set out so you can see who

@@ -490,7 +490,7 @@ export default function DigitalDentistryPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             >
-              Digital Dentistry & <span>3D Scanning</span>
+              Digital Dentistry &amp; <span>3D Scanning in Dhaka</span>
             </motion.h1>
 
             <motion.p

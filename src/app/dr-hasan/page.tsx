@@ -8,7 +8,7 @@ import { DOCTORS } from '@/lib/doctors';
 const d = DOCTORS['dr-hasan'];
 
 export const metadata: Metadata = pageMeta({
-  title: 'Dr. B.M. Rafiqul Hasan — Oral & Dental Surgeon',
+  title: 'Dr. B.M. Rafiqul Hasan · Oral & Dental Surgeon in Dhaka',
   description:
     'Chief Consultant Oral and Dental Surgeon at RH Dental Care, Dhaka. Implantology planned from 3D CBCT, full-mouth rehabilitation and oral surgery.',
   path: '/dr-hasan',

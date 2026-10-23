@@ -387,7 +387,7 @@ export default function AboutPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] as const }}
           >
-            Your Smile is <span className="ab-shine">Our Happiness.</span>
+            About RH Dental Care · <span className="ab-shine">Dhaka Dental Clinics</span>
           </motion.h1>
 
           <motion.p

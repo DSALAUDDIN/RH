@@ -5,7 +5,7 @@ import { pageMeta } from '@/lib/seo/metadata';
 import { breadcrumbs } from '@/lib/seo/schema';
 
 export const metadata: Metadata = pageMeta({
-  title: 'Dental Tourism in Bangladesh | RH Dental Care × Alif Global Tours & Travels',
+  title: 'Dental Tourism in Bangladesh · RH Dental Care Dhaka',
   description:
     'Quality dental care & travel support in Dhaka. RH Dental Care partners with Alif Global for international patients: airport transfer, hotel & dentistry.',
   path: '/dental-tourism',

@@ -282,6 +282,20 @@
   margin: 0 0 1.5rem 0;
   color: #f8fafc;
 }
+.hero-kicker-seo {
+  display: block;
+  font-size: clamp(0.75rem, 1.1vw, 0.92rem);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #38bdf8;
+  margin-bottom: 0.85rem;
+  line-height: 1.4;
+  opacity: 0.95;
+}
+.hero-main-title {
+  display: block;
+}
 .text-gradient-accent {
   background: linear-gradient(to right, #fff 20%, #7dd3fc 40%, #bae6fd 60%, #fff 80%);
   background-size: 200% auto;

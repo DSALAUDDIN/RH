@@ -209,7 +209,7 @@ export default function RootCanalPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           >
-            Root Canal <span>Treatment</span>
+            Microscopic Root Canal <span>Treatment in Dhaka</span>
           </motion.h1>
           <motion.p
             className="imp-hero-subtitle"

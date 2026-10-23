@@ -238,7 +238,7 @@ export default function DentalSurgeryPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           >
-            Advanced <span>Dental Surgery</span>
+            Oral &amp; Wisdom Tooth <span>Surgery in Dhaka</span>
           </motion.h1>
 
           <motion.p

@@ -1,12 +1,13 @@
 import type { Metadata } from 'next';
 import JsonLd from '@/components/seo/JsonLd';
 import { pageMeta } from '@/lib/seo/metadata';
-import { breadcrumbs, ID, medicalProcedureSchema, medicalWebPageSchema } from '@/lib/seo/schema';
+import { breadcrumbs, faqSchema, ID, medicalProcedureSchema, medicalWebPageSchema } from '@/lib/seo/schema';
+import { implantFaq } from '@/lib/treatment-faq';
 
 const PATH = '/implants';
 
 export const metadata: Metadata = pageMeta({
-  title: 'Dental Implants in Dhaka',
+  title: 'Dental Implants in Dhaka · Permanent Tooth Replacement',
   description:
     'Implant treatment at RH Dental Care, Dhaka: planned from a 3D CBCT scan, placed under local anaesthetic, restored with a crown from our in-house lab.',
   path: PATH,
@@ -34,6 +35,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             about: ID.procedure(PATH),
           }),
           breadcrumbs({ name: 'Dental Implants', path: PATH }),
+          faqSchema(implantFaq),
         ]}
       />
       {children}

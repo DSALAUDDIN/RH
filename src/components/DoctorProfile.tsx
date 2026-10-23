@@ -28,8 +28,10 @@ export default function DoctorProfile({ doctor: d }: { doctor: Clinician }) {
     <article className="dp rh-scope">
       <header className="dp-hero">
         <div className="dp-hero-text">
-          <p className="dp-kicker">RH Dental Care</p>
-          <h1 className="dp-name">{d.name}</h1>
+          <p className="dp-kicker">Specialist Dental Surgeon in Dhaka · RH Dental Care</p>
+          <h1 className="dp-name">
+            {d.name} <span className="dp-sub-title">· Specialist in Dhaka</span>
+          </h1>
           {d.role && <p className="dp-role">{d.role}</p>}
 
           {d.bmdc && <p className="dp-bmdc">BMDC registration {d.bmdc}</p>}

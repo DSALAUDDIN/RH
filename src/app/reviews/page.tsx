@@ -4,7 +4,7 @@ import VideoGallery from '@/components/VideoGallery';
 import { pageMeta } from '@/lib/seo/metadata';
 
 export const metadata: Metadata = pageMeta({
-  title: 'Patient Reviews',
+  title: 'Patient Reviews & Experiences · RH Dental Care Dhaka',
   description:
     'What patients say about RH Dental Care. Ratings shown here come from the live Google listing for each branch, or are not shown at all.',
   path: '/reviews',
@@ -44,7 +44,7 @@ export default async function ReviewsPage() {
               marginBottom: 'var(--rh-4)',
             }}
           >
-            What patients say
+            Patient Reviews &amp; Experiences at RH Dental Care Dhaka
           </h1>
           <p style={{ color: 'var(--rh-ink-soft)', maxWidth: 'var(--rh-measure)' }}>
             Ratings below are read from each branch&rsquo;s live Google listing. If a branch has no

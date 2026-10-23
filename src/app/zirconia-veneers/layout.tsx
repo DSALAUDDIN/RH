@@ -10,7 +10,7 @@ const PATH = '/zirconia-veneers';
 // Metadata lives in the layout because the page is a client component.
 
 export const metadata: Metadata = pageMeta({
-  title: 'Zirconia & Ceramic Veneers in Dhaka',
+  title: 'Dental Veneers in Dhaka · Porcelain & Zirconia Smiles',
   description:
     'Veneers at RH Dental Care, Dhaka: digital smile design, a mock-up you can see before preparation, and what is actually removed.',
   path: PATH,

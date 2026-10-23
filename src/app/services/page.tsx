@@ -13,7 +13,7 @@ import { pageMeta } from '@/lib/seo/metadata';
 import { breadcrumbs } from '@/lib/seo/schema';
 
 export const metadata: Metadata = pageMeta({
-  title: 'Dental Services Directory in Dhaka',
+  title: 'Specialist Dental Services in Dhaka · Directory',
   description:
     'Patient service directory for RH Dental Care: overview of general, aesthetic, restorative, and specialist care available at Banani and Banasree branches.',
   path: '/services',
@@ -104,8 +104,8 @@ export default function ServicesPage() {
             <ArrowLeft size={16} /> Back to Home
           </Link>
           <h1 className="srv-title">
-            Premium Dental <br />
-            <span style={{ color: '#38bdf8' }}>Services</span>
+            Specialist Dental Services <br />
+            <span style={{ color: '#38bdf8' }}>in Banani &amp; Banasree, Dhaka</span>
           </h1>
           <p className="srv-subtitle">
             Concise patient service directory for RH Dental Care. For complete procedure timelines and packages, explore our{' '}

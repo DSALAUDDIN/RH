@@ -10,7 +10,7 @@ const PATH = '/digital-dentistry';
 // Metadata lives in the layout because the page is a client component.
 
 export const metadata: Metadata = pageMeta({
-  title: 'Digital Dentistry: CBCT, Scanning & CAD/CAM',
+  title: 'Digital Dentistry in Dhaka · 3D CBCT & CAD/CAM',
   description:
     'Intraoral scanning, 3D CBCT planning, guided implant surgery and CAD/CAM restorations at RH Dental Care in Dhaka.',
   path: PATH,

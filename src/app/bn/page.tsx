@@ -55,17 +55,17 @@ export default function BanglaHomePage() {
       <section className="bn-hero">
         <div className="bn-hero-inner">
           <div className="bn-hero-badge">
-            <Sparkles className="w-4 h-4 text-emerald-600" />
+            <Sparkles className="w-4 h-4 text-sky-500" />
             <span>আধুনিক প্রযুক্তি ও বিশেষজ্ঞ ডেন্টাল টিম</span>
           </div>
 
           <h1 className="bn-hero-title">
             আরএইচ ডেন্টাল কেয়ার
-            <span className="bn-hero-subtitle">বনানী ও বনশ্রী, ঢাকা</span>
+            <span className="bn-hero-subtitle">বনানী ও বনশ্রী, ঢাকা — আধুনিক ডেন্টাল ক্লিনিক ও হাসপাতাল</span>
           </h1>
 
           <p className="bn-hero-lead">
-            ইন-হাউস সিবিসিটি ৩ডি স্ক্যান, মাইক্রোস্কোপিক রুট ক্যানেল এবং ক্যাড/ক্যাম ডিজিটাল ডেন্টিস্ট্রির সমন্বয়ে আন্তর্জাতিক মানের ব্যথাহীন ও জীবাণুমুক্ত ডেন্টাল সেবা।
+            ইন-হাউস সিবিসিটি ৩ডি স্ক্যান, মাইক্রোস্কোপিক রুট ক্যানেল এবং ক্যাড/ক্যাম ডিজিটাল ডেন্টিস্ট্রির সমন্বয়ে উন্নত ও জীবাণুমুক্ত ডেন্টাল সেবা।
           </p>
 
           <div className="bn-hero-cta-group">

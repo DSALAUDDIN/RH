@@ -230,7 +230,7 @@ export default function DentalTourism() {
 
           <h1 className="tm-title" data-anim="title">
             <span className="line">
-              <span className="w">World&#8209;class</span>
+              <span className="w">Specialist</span>
             </span>
             <span className="line">
               <span className="w">dentistry,</span> <span className="w">in</span>{' '}

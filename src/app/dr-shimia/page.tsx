@@ -8,7 +8,7 @@ import { DOCTORS } from '@/lib/doctors';
 const d = DOCTORS['dr-shimia'];
 
 export const metadata: Metadata = pageMeta({
-  title: 'Dr. Shimia Binte Taher — Dental Surgeon',
+  title: 'Dr. Shimia Binte Taher · Senior Dental Surgeon in Dhaka',
   description:
     'Dental Surgeon at RH Dental Care, Dhaka. Sees patients at both the Banani appointment-only suite and the Banasree flagship hospital.',
   path: '/dr-shimia',

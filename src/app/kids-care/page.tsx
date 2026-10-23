@@ -10,7 +10,7 @@ import { pageMeta } from '@/lib/seo/metadata';
 import { breadcrumbs } from '@/lib/seo/schema';
 
 export const metadata: Metadata = pageMeta({
-  title: "Children's Dentistry in Dhaka",
+  title: 'Pediatric Dentist & Kids Dental Care in Dhaka',
   description:
     'Paediatric dental care at RH Dental Care Banasree, Dhaka. Check-ups, fillings, extractions and treatment for children who are anxious about the chair.',
   path: '/kids-care',
@@ -81,8 +81,8 @@ export default function KidsCarePage() {
               textShadow: '0 4px 20px rgba(0,0,0,0.1)',
             }}
           >
-            Healthy Smiles Start <br />
-            With <span style={{ color: '#38bdf8' }}>Happy Kids</span>
+            Pediatric Dental Care in Dhaka <br />
+            <span style={{ color: '#38bdf8' }}>Healthy Smiles for Happy Kids</span>
           </h1>
 
           <p

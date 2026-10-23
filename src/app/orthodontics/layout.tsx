@@ -1,12 +1,13 @@
 import type { Metadata } from 'next';
 import JsonLd from '@/components/seo/JsonLd';
 import { pageMeta } from '@/lib/seo/metadata';
-import { breadcrumbs, ID, medicalProcedureSchema, medicalWebPageSchema } from '@/lib/seo/schema';
+import { breadcrumbs, faqSchema, ID, medicalProcedureSchema, medicalWebPageSchema } from '@/lib/seo/schema';
+import { orthodonticsFaq } from '@/lib/treatment-faq';
 
 const PATH = '/orthodontics';
 
 export const metadata: Metadata = pageMeta({
-  title: 'Braces & Clear Aligners in Dhaka',
+  title: 'Teeth Braces & Clear Aligners in Dhaka · Orthodontics',
   description:
     'Orthodontic treatment at RH Dental Care, Dhaka. Fixed braces and clear aligners, how long each takes, and how the choice between them is made.',
   path: PATH,
@@ -32,6 +33,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             about: ID.procedure(PATH),
           }),
           breadcrumbs({ name: 'Orthodontics', path: PATH }),
+          faqSchema(orthodonticsFaq),
         ]}
       />
       {children}

@@ -4,7 +4,7 @@ import JsonLd from '@/components/seo/JsonLd';
 import { breadcrumbs } from '@/lib/seo/schema';
 
 export const metadata: Metadata = pageMeta({
-  title: 'Dental Treatments in Dhaka',
+  title: 'Dental Treatments & Specialist Care in Dhaka',
   description:
     'Implants, orthodontics, root canal, crowns, veneers, oral surgery and paediatric dentistry at RH Dental Care Banani and Banasree, Dhaka.',
   path: '/treatments',

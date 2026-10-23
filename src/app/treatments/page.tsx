@@ -726,8 +726,8 @@ export default function TreatmentsPage() {
             </div>
 
             <h1 className="tr-hero-title">
-              Your Journey to a<br />
-              <span className="text-gradient">Confident Smile</span>
+              Specialist Dental Treatments in Dhaka <br />
+              <span className="text-gradient">Banani &amp; Banasree Clinics</span>
             </h1>
             <p className="tr-hero-desc">
               Comprehensive dental treatment catalogue and procedure guide. Explore our clinical

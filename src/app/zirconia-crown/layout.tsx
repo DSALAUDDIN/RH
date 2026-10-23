@@ -10,7 +10,7 @@ const PATH = '/zirconia-crown';
 // Metadata lives in the layout because the page is a client component.
 
 export const metadata: Metadata = pageMeta({
-  title: 'Zirconia Crowns in Dhaka',
+  title: 'CAD/CAM Zirconia Crowns in Dhaka · In-House Dental Lab',
   description:
     'Zirconia crowns designed and milled in our in-house CAD/CAM lab from Upcera and Xtcera zirconia, with quality checks at every step before fitting.',
   path: PATH,

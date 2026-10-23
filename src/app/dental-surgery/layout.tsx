@@ -10,7 +10,7 @@ const PATH = '/dental-surgery';
 // Metadata lives in the layout because the page is a client component.
 
 export const metadata: Metadata = pageMeta({
-  title: 'Oral & Dental Surgery in Dhaka',
+  title: 'Oral & Wisdom Tooth Surgery in Dhaka · Dental Surgery',
   description:
     'Wisdom teeth, impactions and minor oral surgery at RH Dental Care, Banani and Banasree. Planned from a 3D CBCT scan, not a flat X-ray.',
   path: PATH,

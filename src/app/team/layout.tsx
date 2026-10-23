@@ -4,7 +4,7 @@ import JsonLd from '@/components/seo/JsonLd';
 import { breadcrumbs } from '@/lib/seo/schema';
 
 export const metadata: Metadata = pageMeta({
-  title: 'The Clinical Team',
+  title: 'Dental Specialist Doctors & Surgeons in Dhaka',
   description:
     'The clinicians at RH Dental Care, Dhaka \u2014 who works at Banani, who works at Banasree, on which days, with BMDC registration numbers.',
   path: '/team',

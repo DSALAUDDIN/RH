@@ -12,7 +12,7 @@ import type { Metadata } from 'next';
 import { pageMeta } from '@/lib/seo/metadata';
 
 export const metadata: Metadata = pageMeta({
-  title: 'RH Dental Care | Dental Clinics in Banani & Banasree, Dhaka',
+  title: 'RH Dental Care · Dental Clinics in Banani & Banasree, Dhaka',
   absoluteTitle: true,
   description:
     'Two clinics in Dhaka: an appointment-only private suite in Banani and a full-service flagship hospital in Banasree. Same clinical team at both.',

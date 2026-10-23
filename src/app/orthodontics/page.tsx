@@ -212,7 +212,7 @@ export default function OrthodonticsPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           >
-            Braces &amp; Clear <span>Aligners</span>
+            Teeth Braces &amp; Clear <span>Aligners in Dhaka</span>
           </motion.h1>
           <motion.p
             className="imp-hero-subtitle"

@@ -305,7 +305,7 @@ export default function ImplantsPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           >
-            Dental <span>Implants</span>
+            Dental Implants in Dhaka · <span>Permanent Teeth</span>
           </motion.h1>
 
           <motion.p

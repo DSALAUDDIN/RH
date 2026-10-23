@@ -10,7 +10,7 @@ const PATH = '/special-child';
 // Metadata lives in the layout because the page is a client component.
 
 export const metadata: Metadata = pageMeta({
-  title: 'Dentistry for Children with Special Needs',
+  title: 'Special Needs Pediatric Dentistry in Dhaka · Banasree',
   description:
     "Dental care for children with special needs at RH Dental Care Banasree, with unhurried appointments and a team used to working at the child's pace.",
   path: PATH,

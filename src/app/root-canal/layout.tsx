@@ -1,12 +1,13 @@
 import type { Metadata } from 'next';
 import JsonLd from '@/components/seo/JsonLd';
 import { pageMeta } from '@/lib/seo/metadata';
-import { breadcrumbs, ID, medicalProcedureSchema, medicalWebPageSchema } from '@/lib/seo/schema';
+import { breadcrumbs, faqSchema, ID, medicalProcedureSchema, medicalWebPageSchema } from '@/lib/seo/schema';
+import { rootCanalFaq } from '@/lib/treatment-faq';
 
 const PATH = '/root-canal';
 
 export const metadata: Metadata = pageMeta({
-  title: 'Root Canal Treatment in Dhaka',
+  title: 'Microscopic Root Canal Treatment in Dhaka',
   description:
     'Microscope-assisted root canal treatment at RH Dental Care, Dhaka. How many visits it takes and whether the tooth needs a crown afterwards.',
   path: PATH,
@@ -34,6 +35,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             about: ID.procedure(PATH),
           }),
           breadcrumbs({ name: 'Root Canal Treatment', path: PATH }),
+          faqSchema(rootCanalFaq),
         ]}
       />
       {children}

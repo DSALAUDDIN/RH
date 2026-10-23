@@ -20,7 +20,7 @@ import { pageMeta } from '@/lib/seo/metadata';
 import { breadcrumbs } from '@/lib/seo/schema';
 
 export const metadata: Metadata = pageMeta({
-  title: 'Dental Specialties',
+  title: 'Dental Specialties & Clinical Disciplines in Dhaka',
   description:
     'The clinical disciplines covered at RH Dental Care, Dhaka: implantology, orthodontics, endodontics, prosthodontics, paediatric dentistry and oral surgery.',
   path: '/specialties',
@@ -165,7 +165,7 @@ export default function SpecialtiesPage() {
               letterSpacing: '-0.03em',
             }}
           >
-            Our Dental <span style={{ color: '#0ea5e9' }}>Specialties</span>
+            Specialist Dental Care <span style={{ color: '#0ea5e9' }}>in Dhaka</span>
           </h1>
 
           <p
