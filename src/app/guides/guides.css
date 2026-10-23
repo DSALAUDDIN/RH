@@ -1,32 +1,48 @@
-/* Guides Hub Styling */
+/* Guides Hub Styling - RH Dental Sea Blue / Navy Brand Theme */
 
 .guides-hub-container {
   min-height: 100vh;
-  background-color: #FAF8F5;
-  color: #1A1A1A;
+  background-color: #f8fafc;
+  color: #0f172a;
   padding-bottom: 6rem;
 }
 
 .guides-hub-hero {
-  background: linear-gradient(180deg, #132A13 0%, #1D3D1D 100%);
-  color: #FFFFFF;
+  background: linear-gradient(180deg, #050e1e 0%, #0a1f3d 100%);
+  color: #ffffff;
   padding: 5.5rem 1.5rem 4rem;
   text-align: center;
   position: relative;
+  overflow: hidden;
+}
+
+.guides-hub-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 1200px;
+  height: 100%;
+  background: radial-gradient(circle at 50% 15%, rgba(2, 132, 199, 0.16), transparent 70%);
+  pointer-events: none;
 }
 
 .guides-hub-hero-inner {
   max-width: 840px;
   margin: 0 auto;
+  position: relative;
+  z-index: 2;
 }
 
 .guides-hub-kicker {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: rgba(197, 168, 128, 0.15);
-  border: 1px solid rgba(197, 168, 128, 0.35);
-  color: #E4E0D2;
+  background: rgba(2, 132, 199, 0.15);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  color: #7dd3fc;
   font-size: 0.85rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -41,14 +57,14 @@
   font-weight: 800;
   letter-spacing: -0.03em;
   line-height: 1.2;
-  color: #FFFFFF;
+  color: #ffffff;
   margin-bottom: 1rem;
 }
 
 .guides-hub-subtitle {
   font-size: 1.1rem;
   line-height: 1.65;
-  color: #CCD8C7;
+  color: #cbd5e1;
   max-width: 680px;
   margin: 0 auto;
 }
@@ -71,10 +87,10 @@
   gap: 0.6rem;
   justify-content: center;
   margin-bottom: 3rem;
-  background: #FFFFFF;
+  background: #ffffff;
   padding: 1rem;
   border-radius: 14px;
-  border: 1px solid #E5E0D8;
+  border: 1px solid #e2e8f0;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
 }
 
@@ -84,16 +100,17 @@
   font-size: 0.85rem;
   font-weight: 600;
   text-decoration: none;
-  background: #F4F1EA;
-  color: #2D3748;
+  background: #f1f5f9;
+  color: #334155;
   transition: all 0.2s ease;
   border: 1px solid transparent;
 }
 
 .guides-category-pill:hover,
 .guides-category-pill.active {
-  background: #132A13;
-  color: #FFFFFF;
+  background: #0073e6;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 115, 230, 0.25);
 }
 
 /* Category Clusters */
@@ -104,7 +121,7 @@
 
 .guides-cluster-header {
   margin-bottom: 1.5rem;
-  border-bottom: 2px solid #EAE6DF;
+  border-bottom: 2px solid #e2e8f0;
   padding-bottom: 0.75rem;
   display: flex;
   justify-content: space-between;
@@ -114,14 +131,14 @@
 .guides-cluster-title {
   font-size: 1.5rem;
   font-weight: 800;
-  color: #132A13;
+  color: #002347;
   letter-spacing: -0.02em;
   margin: 0 0 0.25rem;
 }
 
 .guides-cluster-desc {
   font-size: 0.925rem;
-  color: #6B7280;
+  color: #64748b;
   margin: 0;
 }
 
@@ -134,8 +151,8 @@
 }
 
 .guide-card {
-  background: #FFFFFF;
-  border: 1px solid #E5E0D8;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
   border-radius: 14px;
   padding: 1.75rem;
   display: flex;
@@ -149,8 +166,8 @@
 
 .guide-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 12px 25px rgba(19, 42, 19, 0.08);
-  border-color: #C5A880;
+  box-shadow: 0 12px 25px rgba(0, 115, 230, 0.08);
+  border-color: #0073e6;
 }
 
 .guide-card-top {
@@ -167,13 +184,13 @@
   letter-spacing: 0.05em;
   padding: 0.25rem 0.6rem;
   border-radius: 4px;
-  background: #F0F7F1;
-  color: #1B4332;
+  background: #eff6ff;
+  color: #0284c7;
 }
 
 .guide-card-time {
   font-size: 0.8rem;
-  color: #718096;
+  color: #64748b;
   display: flex;
   align-items: center;
   gap: 0.3rem;
@@ -182,7 +199,7 @@
 .guide-card-title {
   font-size: 1.15rem;
   font-weight: 700;
-  color: #132A13;
+  color: #002347;
   line-height: 1.4;
   margin: 0 0 0.75rem;
 }
@@ -190,7 +207,7 @@
 .guide-card-excerpt {
   font-size: 0.9rem;
   line-height: 1.6;
-  color: #4A5568;
+  color: #475569;
   margin-bottom: 1.25rem;
   flex-grow: 1;
 }
@@ -201,8 +218,8 @@
   align-items: center;
   font-size: 0.85rem;
   padding-top: 1rem;
-  border-top: 1px solid #F0ECE4;
-  color: #132A13;
+  border-top: 1px solid #f1f5f9;
+  color: #0073e6;
   font-weight: 600;
 }
 
@@ -210,13 +227,13 @@
   display: flex;
   align-items: center;
   gap: 0.35rem;
-  color: #8C7355;
+  color: #0073e6;
   transition: gap 0.2s ease;
 }
 
 .guide-card:hover .guide-card-cta {
   gap: 0.55rem;
-  color: #132A13;
+  color: #005bb7;
 }
 
 /* Client Progress Notice */
@@ -224,16 +241,16 @@
 .guides-client-notice {
   margin-top: 4rem;
   padding: 1.5rem;
-  background: #F4F1EA;
+  background: #f0f7ff;
   border-radius: 12px;
-  border: 1px dashed #C5A880;
+  border: 1px dashed #7dd3fc;
   text-align: center;
   font-size: 0.9rem;
-  color: #5A4728;
+  color: #0369a1;
 }
 
 .guides-client-notice a {
-  color: #132A13;
+  color: #0073e6;
   font-weight: 700;
   text-decoration: underline;
 }

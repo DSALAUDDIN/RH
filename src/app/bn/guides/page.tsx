@@ -125,7 +125,7 @@ export default function BanglaGuidesHubPage() {
                     <div className="guide-card-footer">
                       {guide.medicallyReviewed && (
                         <div className="guide-card-reviewed">
-                          <ShieldCheck size={14} className="text-emerald-600" />
+                          <ShieldCheck size={14} className="text-sky-600" />
                           <span>চিকিৎসক দ্বারা পরীক্ষিত</span>
                         </div>
                       )}

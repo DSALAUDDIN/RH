@@ -262,7 +262,7 @@ export default async function AuthorityGuidePage({ params }: Props) {
           {guide.relatedTreatments && guide.relatedTreatments.length > 0 && (
             <div className="guide-rel-card">
               <div className="guide-rel-card-title">
-                <FileText size={18} style={{ color: '#132A13' }} />
+                <FileText size={18} style={{ color: '#0073e6' }} />
                 <span>Related Dental Treatments</span>
               </div>
               <div className="guide-rel-links-list">
@@ -279,7 +279,7 @@ export default async function AuthorityGuidePage({ params }: Props) {
           {guide.relatedDoctors && guide.relatedDoctors.length > 0 && (
             <div className="guide-rel-card">
               <div className="guide-rel-card-title">
-                <UserCheck size={18} style={{ color: '#132A13' }} />
+                <UserCheck size={18} style={{ color: '#0073e6' }} />
                 <span>Clinical Specialists</span>
               </div>
               <div className="guide-rel-links-list">
@@ -301,7 +301,7 @@ export default async function AuthorityGuidePage({ params }: Props) {
         {guide.relatedBranches && guide.relatedBranches.length > 0 && (
           <section className="guide-branches-section">
             <div className="guide-branches-title">
-              <MapPin size={20} style={{ color: '#132A13' }} />
+              <MapPin size={20} style={{ color: '#0073e6' }} />
               <span>Available Clinic Locations</span>
             </div>
             <div className="guide-branches-grid">

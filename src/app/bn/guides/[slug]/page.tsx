@@ -162,7 +162,7 @@ export default async function BanglaAuthorityGuidePage({ params }: Props) {
 
           {guide.medicallyReviewed && (
             <div className="guide-author-strip">
-              <UserCheck size={16} className="text-emerald-600" />
+              <UserCheck size={16} className="text-sky-500" />
               <span>
                 চিকিৎসাগতভাবে পরীক্ষিত: <strong>{guide.reviewer}</strong>
                 {guide.reviewerRole && <span className="author-role"> ({guide.reviewerRole})</span>}
@@ -183,7 +183,7 @@ export default async function BanglaAuthorityGuidePage({ params }: Props) {
           {/* Quick Answer Callout */}
           <div className="guide-quick-answer">
             <div className="quick-answer-header">
-              <Sparkles size={18} className="text-emerald-700" />
+              <Sparkles size={18} className="text-sky-600" />
               <h3>সংক্ষেপে মূল তথ্য</h3>
             </div>
             <p>{guide.quickAnswer}</p>
@@ -203,7 +203,7 @@ export default async function BanglaAuthorityGuidePage({ params }: Props) {
                   <ul className="guide-key-points">
                     {section.keyPoints.map((point, kIdx) => (
                       <li key={kIdx}>
-                        <CheckCircle2 size={16} className="text-emerald-600 shrink-0 mt-1" />
+                        <CheckCircle2 size={16} className="text-sky-600 shrink-0 mt-1" />
                         <span>{point}</span>
                       </li>
                     ))}
@@ -255,7 +255,7 @@ export default async function BanglaAuthorityGuidePage({ params }: Props) {
               <h4 className="sidebar-heading">চিকিৎসক পরিচিতি</h4>
               <div className="reviewer-info">
                 <div className="reviewer-avatar">
-                  <UserCheck size={22} className="text-emerald-700" />
+                  <UserCheck size={22} className="text-sky-600" />
                 </div>
                 <div>
                   <div className="reviewer-name">{guide.reviewer}</div>
@@ -294,7 +294,7 @@ export default async function BanglaAuthorityGuidePage({ params }: Props) {
               {BRANCH_LIST.filter((b) => guide.relatedBranches.includes(b.id)).map((branch) => (
                 <div key={branch.id} className="sidebar-branch-item">
                   <div className="branch-title">
-                    <MapPin size={15} className="text-emerald-600 shrink-0" />
+                    <MapPin size={15} className="text-sky-600 shrink-0" />
                     <strong>{branch.id === 'banani' ? 'বনানী শাখা' : 'বনশ্রী শাখা'}</strong>
                   </div>
                   <p className="branch-addr">{branch.streetAddress}, {branch.addressLocality}</p>
@@ -317,7 +317,7 @@ export default async function BanglaAuthorityGuidePage({ params }: Props) {
           {/* Guide Index Link */}
           <div className="sidebar-card hub-link-card">
             <div className="hub-link-inner">
-              <FileText size={18} className="text-emerald-600" />
+              <FileText size={18} className="text-sky-600" />
               <div>
                 <h5>আরও বাংলা ডেন্টাল গাইড</h5>
                 <p>আমাদের নলেজ বেসে ৪০টি বিষয়ভিত্তিক নির্দেশিকা রয়েছে।</p>

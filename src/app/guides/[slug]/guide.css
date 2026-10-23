@@ -1,19 +1,32 @@
-/* Patient Authority Guide Styling */
+/* Patient Authority Guide Styling - RH Dental Sea Blue / Navy Brand Theme */
 
 .guide-page-container {
   min-height: 100vh;
-  background-color: #FAF8F5;
-  color: #1A1A1A;
+  background-color: #f8fafc;
+  color: #0f172a;
   font-family: inherit;
   padding-bottom: 5rem;
 }
 
 .guide-hero {
-  background: linear-gradient(180deg, #132A13 0%, #1B3B1B 100%);
-  color: #FFFFFF;
+  background: linear-gradient(180deg, #050e1e 0%, #0a1f3d 100%);
+  color: #ffffff;
   padding: 5rem 1.5rem 3.5rem;
   position: relative;
   overflow: hidden;
+}
+
+.guide-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 1200px;
+  height: 100%;
+  background: radial-gradient(circle at 50% 15%, rgba(2, 132, 199, 0.16), transparent 70%);
+  pointer-events: none;
 }
 
 .guide-hero-inner {
@@ -29,7 +42,7 @@
   align-items: center;
   gap: 0.5rem;
   font-size: 0.85rem;
-  color: #A3B899;
+  color: #94a3b8;
   margin-bottom: 1.25rem;
 }
 
@@ -53,24 +66,24 @@
 }
 
 .guide-breadcrumbs a {
-  color: #A3B899;
+  color: #7dd3fc;
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
 .guide-breadcrumbs a:hover {
-  color: #E4E0D2;
+  color: #ffffff;
 }
 
 .guide-breadcrumbs span.current,
 .guide-breadcrumbs span[aria-current="page"] {
-  color: #E4E0D2;
+  color: #f8fafc;
   font-weight: 500;
 }
 
 .guide-breadcrumbs .crumb-sep {
   opacity: 0.45;
-  color: #A3B899;
+  color: #64748b;
 }
 
 .guide-lang-switcher {
@@ -78,34 +91,34 @@
   align-items: center;
   gap: 0.5rem;
   padding: 0.35rem 0.85rem;
-  background: rgba(228, 224, 210, 0.12);
-  border: 1px solid rgba(228, 224, 210, 0.22);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 9999px;
   font-size: 0.8125rem;
   margin-bottom: 1.25rem;
-  color: #E4E0D2;
+  color: #e2e8f0;
   backdrop-filter: blur(8px);
 }
 
 .guide-lang-switcher .lang-link {
-  color: #A3B899;
+  color: #7dd3fc;
   text-decoration: none;
   font-weight: 500;
   transition: color 0.2s ease;
 }
 
 .guide-lang-switcher .lang-link:hover {
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .guide-lang-switcher .lang-sep {
   opacity: 0.4;
-  color: #E4E0D2;
+  color: #94a3b8;
 }
 
 .guide-lang-switcher .lang-active {
   font-weight: 700;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .guide-review-status-banner {
@@ -117,15 +130,15 @@
   font-size: 0.8rem;
   font-weight: 600;
   margin-bottom: 1.25rem;
-  background: rgba(228, 224, 210, 0.12);
-  border: 1px solid rgba(228, 224, 210, 0.25);
-  color: #E4E0D2;
+  background: rgba(2, 132, 199, 0.15);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  color: #7dd3fc;
 }
 
 .guide-review-status-banner.is-review {
   background: rgba(245, 158, 11, 0.15);
   border-color: rgba(245, 158, 11, 0.4);
-  color: #FBBF24;
+  color: #fbbf24;
 }
 
 .guide-title {
@@ -133,7 +146,7 @@
   font-weight: 800;
   line-height: 1.25;
   letter-spacing: -0.03em;
-  color: #FFFFFF;
+  color: #ffffff;
   margin-bottom: 1.25rem;
 }
 
@@ -143,7 +156,7 @@
   align-items: center;
   gap: 1.25rem;
   font-size: 0.875rem;
-  color: #CCD8C7;
+  color: #94a3b8;
   padding-top: 1rem;
   border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
@@ -155,12 +168,12 @@
 }
 
 .guide-meta-reviewer {
-  color: #E4E0D2;
+  color: #e2e8f0;
   font-weight: 600;
 }
 
 .guide-meta-reviewer a {
-  color: #E4E0D2;
+  color: #38bdf8;
   text-decoration: underline;
   text-underline-offset: 3px;
 }
@@ -176,12 +189,12 @@
 }
 
 .guide-quick-answer-card {
-  background: #FFFFFF;
-  border: 1px solid #E5E0D8;
-  border-left: 5px solid #C5A880;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-left: 5px solid #0284c7;
   border-radius: 12px;
   padding: 1.75rem;
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 25px -5px rgba(2, 132, 199, 0.06);
   margin-bottom: 2.5rem;
 }
 
@@ -191,21 +204,21 @@
   gap: 0.5rem;
   font-size: 1.1rem;
   font-weight: 700;
-  color: #132A13;
+  color: #002347;
   margin-bottom: 0.75rem;
 }
 
 .guide-quick-answer-text {
   font-size: 1.05rem;
   line-height: 1.65;
-  color: #2D3748;
+  color: #1e293b;
 }
 
 /* Article Sections */
 
 .guide-article-body {
-  background: #FFFFFF;
-  border: 1px solid #E8E5DF;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
   border-radius: 16px;
   padding: 2.5rem;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
@@ -223,7 +236,7 @@
 .guide-section-heading {
   font-size: 1.45rem;
   font-weight: 700;
-  color: #132A13;
+  color: #002347;
   letter-spacing: -0.02em;
   margin-top: 0;
   margin-bottom: 1rem;
@@ -237,14 +250,14 @@
   display: inline-block;
   width: 4px;
   height: 1.2em;
-  background: #C5A880;
+  background: #0284c7;
   border-radius: 4px;
 }
 
 .guide-paragraph {
   font-size: 1.025rem;
   line-height: 1.75;
-  color: #374151;
+  color: #334155;
   margin-bottom: 1rem;
 }
 
@@ -267,15 +280,15 @@
   gap: 0.75rem;
   font-size: 0.975rem;
   line-height: 1.6;
-  color: #2D3748;
-  background: #F8F7F4;
+  color: #1e293b;
+  background: #f8fafc;
   padding: 0.85rem 1rem;
   border-radius: 8px;
-  border: 1px solid #EDE9E3;
+  border: 1px solid #e2e8f0;
 }
 
 .guide-keypoint-icon {
-  color: #132A13;
+  color: #0284c7;
   flex-shrink: 0;
   margin-top: 0.15rem;
 }
@@ -290,21 +303,21 @@
 }
 
 .guide-callout-box.info {
-  background: #F0F7F1;
-  border-color: #2D6A4F;
-  color: #1B4332;
+  background: #f0f7ff;
+  border-color: #0284c7;
+  color: #0369a1;
 }
 
 .guide-callout-box.tip {
-  background: #FBF7EE;
-  border-color: #C5A880;
-  color: #5A4728;
+  background: #f0fdf4;
+  border-color: #16a34a;
+  color: #14532d;
 }
 
 .guide-callout-box.warning {
-  background: #FFFBEB;
-  border-color: #F59E0B;
-  color: #78350F;
+  background: #fffbeb;
+  border-color: #f59e0b;
+  color: #78350f;
 }
 
 .guide-callout-title {
@@ -320,19 +333,19 @@
 .guide-faqs-section {
   margin-top: 2.5rem;
   padding-top: 2rem;
-  border-top: 1px solid #EAE7E1;
+  border-top: 1px solid #e2e8f0;
 }
 
 .guide-faqs-title {
   font-size: 1.3rem;
   font-weight: 700;
-  color: #132A13;
+  color: #002347;
   margin-bottom: 1.25rem;
 }
 
 .guide-faq-item {
-  background: #FBF9F6;
-  border: 1px solid #EAE6DF;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
   border-radius: 10px;
   padding: 1.25rem;
   margin-bottom: 1rem;
@@ -341,14 +354,14 @@
 .guide-faq-question {
   font-size: 1.05rem;
   font-weight: 700;
-  color: #132A13;
+  color: #002347;
   margin-bottom: 0.5rem;
 }
 
 .guide-faq-answer {
   font-size: 0.975rem;
   line-height: 1.65;
-  color: #4A5568;
+  color: #475569;
 }
 
 /* Related Treatments & Clinicians */
@@ -361,8 +374,8 @@
 }
 
 .guide-rel-card {
-  background: #FFFFFF;
-  border: 1px solid #E5E0D8;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
   border-radius: 12px;
   padding: 1.5rem;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
@@ -371,7 +384,7 @@
 .guide-rel-card-title {
   font-size: 1rem;
   font-weight: 700;
-  color: #132A13;
+  color: #002347;
   margin-bottom: 1rem;
   display: flex;
   align-items: center;
@@ -390,8 +403,8 @@
   justify-content: space-between;
   padding: 0.6rem 0.85rem;
   border-radius: 6px;
-  background: #F7F5F0;
-  color: #132A13;
+  background: #f1f5f9;
+  color: #002347;
   text-decoration: none;
   font-weight: 500;
   font-size: 0.9rem;
@@ -399,15 +412,15 @@
 }
 
 .guide-rel-link-item:hover {
-  background: #132A13;
-  color: #FFFFFF;
+  background: #0073e6;
+  color: #ffffff;
 }
 
 /* Branch Cards */
 
 .guide-branches-section {
-  background: #FFFFFF;
-  border: 1px solid #E5E0D8;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
   border-radius: 14px;
   padding: 1.75rem;
   margin-bottom: 2.5rem;
@@ -416,7 +429,7 @@
 .guide-branches-title {
   font-size: 1.2rem;
   font-weight: 700;
-  color: #132A13;
+  color: #002347;
   margin-bottom: 1.25rem;
   display: flex;
   align-items: center;
@@ -430,8 +443,8 @@
 }
 
 .guide-branch-box {
-  background: #FAF8F5;
-  border: 1px solid #E8E4DC;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
   border-radius: 10px;
   padding: 1.25rem;
 }
@@ -439,19 +452,19 @@
 .guide-branch-name {
   font-size: 1.05rem;
   font-weight: 700;
-  color: #132A13;
+  color: #002347;
   margin-bottom: 0.35rem;
 }
 
 .guide-branch-tagline {
   font-size: 0.825rem;
-  color: #6B7280;
+  color: #64748b;
   margin-bottom: 0.75rem;
 }
 
 .guide-branch-address {
   font-size: 0.875rem;
-  color: #4B5563;
+  color: #475569;
   line-height: 1.5;
   margin-bottom: 1rem;
 }
@@ -475,31 +488,32 @@
 }
 
 .guide-branch-btn.primary {
-  background: #132A13;
-  color: #FFFFFF;
+  background: #0073e6;
+  color: #ffffff;
 }
 
 .guide-branch-btn.primary:hover {
-  background: #244C24;
+  background: #005bb7;
 }
 
 .guide-branch-btn.secondary {
-  background: #EAE6DF;
-  color: #132A13;
+  background: #e2e8f0;
+  color: #002347;
 }
 
 .guide-branch-btn.secondary:hover {
-  background: #DDD8D0;
+  background: #cbd5e1;
 }
 
 /* Consultation CTA Banner */
 
 .guide-cta-card {
-  background: linear-gradient(135deg, #132A13 0%, #204420 100%);
-  color: #FFFFFF;
+  background: linear-gradient(135deg, #050e1e 0%, #0d274d 100%);
+  color: #ffffff;
   border-radius: 16px;
   padding: 2.5rem 2rem;
   text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 35, 71, 0.15);
 }
 
 .guide-cta-kicker {
@@ -507,7 +521,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: #C5A880;
+  color: #38bdf8;
   margin-bottom: 0.5rem;
 }
 
@@ -515,12 +529,12 @@
   font-size: clamp(1.4rem, 3vw, 1.85rem);
   font-weight: 800;
   margin-bottom: 0.75rem;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .guide-cta-desc {
   font-size: 1rem;
-  color: #CCD8C7;
+  color: #cbd5e1;
   max-width: 600px;
   margin: 0 auto 1.5rem;
   line-height: 1.6;
@@ -537,18 +551,19 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: #C5A880;
-  color: #132A13;
+  background: #0073e6;
+  color: #ffffff;
   font-weight: 700;
   font-size: 0.95rem;
   padding: 0.75rem 1.5rem;
   border-radius: 8px;
   text-decoration: none;
   transition: all 0.2s ease;
+  box-shadow: 0 4px 14px rgba(0, 115, 230, 0.4);
 }
 
 .guide-cta-primary-btn:hover {
-  background: #D8BD98;
+  background: #008cff;
   transform: translateY(-1px);
 }
 
@@ -557,7 +572,7 @@
   align-items: center;
   gap: 0.5rem;
   background: rgba(255, 255, 255, 0.12);
-  color: #FFFFFF;
+  color: #ffffff;
   border: 1px solid rgba(255, 255, 255, 0.25);
   font-weight: 600;
   font-size: 0.95rem;

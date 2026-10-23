@@ -68,7 +68,7 @@ export default function Home() {
               style={{
                 fontSize: 'clamp(1.5rem, 3.5vw, 2.25rem)',
                 fontWeight: 700,
-                color: 'var(--rh-ink, #132A13)',
+                color: 'var(--rh-ink, #002347)',
                 margin: 0,
                 letterSpacing: '-0.02em',
               }}
@@ -85,8 +85,8 @@ export default function Home() {
                 gap: '0.4rem',
                 fontWeight: 600,
                 fontSize: '0.9rem',
-                color: '#2D6A4F',
-                background: '#E8F5E9',
+                color: '#0073e6',
+                background: '#e0efff',
                 padding: '0.4rem 0.85rem',
                 borderRadius: '8px',
                 textDecoration: 'none',
@@ -103,7 +103,7 @@ export default function Home() {
                 gap: '0.4rem',
                 fontWeight: 600,
                 fontSize: '0.95rem',
-                color: 'var(--rh-ink, #132A13)',
+                color: 'var(--rh-ink, #002347)',
                 textDecoration: 'none',
               }}
             >
@@ -136,17 +136,17 @@ export default function Home() {
             }}
           >
             <div>
-              <span style={{ fontSize: '0.75rem', fontWeight: 700, color: '#2D6A4F', textTransform: 'uppercase' }}>
+              <span style={{ fontSize: '0.75rem', fontWeight: 700, color: '#0284c7', textTransform: 'uppercase' }}>
                 Dental Implants
               </span>
-              <h3 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#132A13', margin: '0.5rem 0' }}>
+              <h3 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#002347', margin: '0.5rem 0' }}>
                 Dental Implant Cost in Dhaka
               </h3>
               <p style={{ fontSize: '0.875rem', color: '#4A5568', lineHeight: 1.5, margin: 0 }}>
                 What clinical factors, brands, and materials determine implant investment in Dhaka.
               </p>
             </div>
-            <div style={{ marginTop: '1rem', fontSize: '0.85rem', fontWeight: 600, color: '#8C7355', display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
+            <div style={{ marginTop: '1rem', fontSize: '0.85rem', fontWeight: 600, color: '#0073e6', display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
               <span>Read Guide</span>
               <ArrowRight size={14} />
             </div>
@@ -168,17 +168,17 @@ export default function Home() {
             }}
           >
             <div>
-              <span style={{ fontSize: '0.75rem', fontWeight: 700, color: '#2D6A4F', textTransform: 'uppercase' }}>
+              <span style={{ fontSize: '0.75rem', fontWeight: 700, color: '#0284c7', textTransform: 'uppercase' }}>
                 Endodontics
               </span>
-              <h3 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#132A13', margin: '0.5rem 0' }}>
+              <h3 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#002347', margin: '0.5rem 0' }}>
                 Microscopic Root Canal Care
               </h3>
               <p style={{ fontSize: '0.875rem', color: '#4A5568', lineHeight: 1.5, margin: 0 }}>
                 How surgical operating microscopes illuminate hidden canals and help preserve natural teeth.
               </p>
             </div>
-            <div style={{ marginTop: '1rem', fontSize: '0.85rem', fontWeight: 600, color: '#8C7355', display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
+            <div style={{ marginTop: '1rem', fontSize: '0.85rem', fontWeight: 600, color: '#0073e6', display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
               <span>Read Guide</span>
               <ArrowRight size={14} />
             </div>
@@ -200,17 +200,17 @@ export default function Home() {
             }}
           >
             <div>
-              <span style={{ fontSize: '0.75rem', fontWeight: 700, color: '#2D6A4F', textTransform: 'uppercase' }}>
+              <span style={{ fontSize: '0.75rem', fontWeight: 700, color: '#0284c7', textTransform: 'uppercase' }}>
                 Orthodontics
               </span>
-              <h3 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#132A13', margin: '0.5rem 0' }}>
+              <h3 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#002347', margin: '0.5rem 0' }}>
                 Clear Aligners vs Braces
               </h3>
               <p style={{ fontSize: '0.875rem', color: '#4A5568', lineHeight: 1.5, margin: 0 }}>
                 Clinical comparison of aesthetics, hygiene, eating freedom, and alignment predictability.
               </p>
             </div>
-            <div style={{ marginTop: '1rem', fontSize: '0.85rem', fontWeight: 600, color: '#8C7355', display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
+            <div style={{ marginTop: '1rem', fontSize: '0.85rem', fontWeight: 600, color: '#0073e6', display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
               <span>Read Guide</span>
               <ArrowRight size={14} />
             </div>
