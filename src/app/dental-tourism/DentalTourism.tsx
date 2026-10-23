@@ -1797,8 +1797,8 @@ export default function DentalTourism() {
               </div>
 
               {/* CARD 02 */}
-              <div className="booking-choice-card" style={{ borderColor: 'rgba(52, 211, 153, 0.4)' }}>
-                <span className="booking-choice-num" style={{ color: '#34d399' }}>CARD 02 · FULL TOURISM PACKAGE</span>
+              <div className="booking-choice-card" style={{ borderColor: 'rgba(56, 189, 248, 0.4)' }}>
+                <span className="booking-choice-num" style={{ color: '#38bdf8' }}>CARD 02 · FULL TOURISM PACKAGE</span>
                 <h4>Book Through Alif Global Tours &amp; Travels</h4>
                 <p>
                   All-inclusive Dental Tourism journey. Complete travel coordination + hotel accommodations

@@ -244,8 +244,8 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #7fd394;
-  box-shadow: 0 0 0 0 rgba(127, 211, 148, 0.6);
+  background: #38bdf8;
+  box-shadow: 0 0 0 0 rgba(56, 189, 248, 0.6);
   animation: pulse 2s infinite;
   flex-shrink: 0;
 }
@@ -4666,11 +4666,11 @@
 }
 
 .partner-card.rh-side {
-  border-top: 3px solid #0ea5e9;
+  border-top: 3px solid #0073e6;
 }
 
 .partner-card.alif-side {
-  border-top: 3px solid #10b981;
+  border-top: 3px solid #38bdf8;
 }
 
 .partner-card-tag {
@@ -4689,15 +4689,15 @@
 }
 
 .partner-card.rh-side .partner-card-tag {
-  background: rgba(14, 165, 233, 0.15);
+  background: rgba(0, 115, 230, 0.15);
   color: #38bdf8;
-  border: 1px solid rgba(14, 165, 233, 0.3);
+  border: 1px solid rgba(0, 115, 230, 0.35);
 }
 
 .partner-card.alif-side .partner-card-tag {
-  background: rgba(16, 185, 129, 0.15);
-  color: #34d399;
-  border: 1px solid rgba(16, 185, 129, 0.3);
+  background: rgba(56, 189, 248, 0.12);
+  color: #7dd3fc;
+  border: 1px solid rgba(56, 189, 248, 0.3);
 }
 
 .partner-card-title {
@@ -4741,11 +4741,11 @@
 }
 
 .partner-card.rh-side li svg {
-  color: #38bdf8;
+  color: #008cff;
 }
 
 .partner-card.alif-side li svg {
-  color: #34d399;
+  color: #38bdf8;
 }
 
 /* Travel Support Grid */
@@ -4879,38 +4879,54 @@
   flex-grow: 1;
 }
 
+.choice-btn,
+.partner-card .choice-btn,
 .booking-choice-card .choice-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 14px 24px;
-  border-radius: 999px;
-  font-size: 14px;
-  font-weight: 700;
-  text-decoration: none;
-  transition: all 0.25s ease;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  padding: 15px 28px !important;
+  border-radius: 999px !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  width: 100% !important;
+  cursor: pointer !important;
+  box-sizing: border-box !important;
+  letter-spacing: 0.01em !important;
+  margin-top: auto !important;
 }
 
 .choice-btn.primary {
-  background: #0ea5e9;
-  color: #fff;
+  background: linear-gradient(135deg, #0073e6 0%, #008cff 100%) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+  box-shadow: 0 8px 24px -4px rgba(0, 115, 230, 0.45) !important;
 }
 
 .choice-btn.primary:hover {
-  background: #0284c7;
-  box-shadow: 0 8px 24px -6px rgba(14, 165, 233, 0.5);
+  background: linear-gradient(135deg, #005bb7 0%, #0073e6 100%) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 14px 32px -4px rgba(0, 115, 230, 0.65) !important;
+  color: #ffffff !important;
 }
 
 .choice-btn.outline {
-  background: transparent;
-  color: #34d399;
-  border: 1px solid rgba(52, 211, 153, 0.4);
+  background: rgba(255, 255, 255, 0.06) !important;
+  color: #38bdf8 !important;
+  border: 1.5px solid rgba(56, 189, 248, 0.5) !important;
+  backdrop-filter: blur(8px) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1) !important;
 }
 
 .choice-btn.outline:hover {
-  background: rgba(16, 185, 129, 0.15);
-  border-color: #34d399;
+  background: rgba(56, 189, 248, 0.18) !important;
+  border-color: #38bdf8 !important;
+  color: #ffffff !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 24px -4px rgba(56, 189, 248, 0.35) !important;
 }
 
 /* Treatment Planning Around Your Trip Banner */
