@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import FAQ from '@/components/FAQ';
 import JsonLd from '@/components/seo/JsonLd';
 import { pageMeta } from '@/lib/seo/metadata';
-import { breadcrumbs, ID, medicalProcedureSchema, medicalWebPageSchema } from '@/lib/seo/schema';
+import { breadcrumbs, faqSchema, ID, medicalProcedureSchema, medicalWebPageSchema } from '@/lib/seo/schema';
 import { veneersFaq } from '@/lib/treatment-faq';
 
 const PATH = '/zirconia-veneers';
@@ -36,6 +36,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             about: ID.procedure(PATH),
           }),
           breadcrumbs({ name: 'Veneers', path: PATH }),
+          faqSchema(veneersFaq),
         ]}
       />
       {children}
