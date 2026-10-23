@@ -227,8 +227,7 @@ export default function SpecialChildPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Dental Awareness & Management for Children with Special Healthcare Needs — safe,
-            compassionate, and designed around every child&rsquo;s unique journey.
+            Specialized autism dental clinic and gentle Down syndrome child dental treatment in Dhaka. Safe, compassionate management for children with special healthcare needs across Bangladesh — offered at our Banasree hospital and Banani suite.
           </motion.p>
 
           <motion.div

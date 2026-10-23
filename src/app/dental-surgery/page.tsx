@@ -103,14 +103,14 @@ const services = [
   {
     icon: <Zap size={22} />,
     title: 'Impacted Wisdom Tooth Extraction',
-    desc: 'Safe and advanced surgical removal of impacted wisdom teeth using modern surgical techniques — designed for reduced pain, minimal trauma, and faster recovery.',
+    desc: 'Safe and advanced surgical removal of impacted wisdom teeth using modern 3D CBCT imaging — designed for reduced pain, minimal trauma, and faster recovery. Whether you are dealing with an acute swollen cheek wisdom tooth infection near me or need complex horizontal wisdom tooth removal in Dhaka (at our Banasree or Banani clinic in Bangladesh), our oral surgeons provide gentle care with precise nerve mapping.',
     color: '#0ea5e9',
     bg: '#e0f2fe',
     features: [
-      'Advanced surgical techniques',
-      'Minimal trauma approach',
-      'Faster healing protocol',
-      'Post-extraction care guidance',
+      '3D CBCT guided horizontal wisdom tooth removal',
+      'Urgent relief for swollen cheek wisdom tooth pain',
+      'Advanced surgical techniques with minimal trauma',
+      'Post-extraction care & rapid healing protocol',
     ],
   },
   {

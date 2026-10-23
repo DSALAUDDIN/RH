@@ -205,9 +205,14 @@ const categories: Category[] = [
           'Non-surgical periodontal scaling and root planing. Removes plaque, tartar & bacterial toxins from deep pockets.',
       },
       {
-        name: 'Scaling',
+        name: 'Ultrasonic Teeth Cleaning & Scaling',
         description:
-          'Professional dental cleaning to remove plaque, tartar & stains. Prevents gum disease and improves oral hygiene.',
+          'Gentle ultrasonic teeth cleaning, scaling and polishing to remove plaque, calculus tartar & stains. Available in Dhaka at our Banasree and Banani chambers for patients across Bangladesh.',
+      },
+      {
+        name: 'Bad Breath Treatment (Halitosis)',
+        description:
+          'Targeted bad breath treatment halitosis therapy addressing deep periodontal pockets, bacterial buildup, and oral hygiene rehabilitation.',
       },
       {
         name: 'Polishing',

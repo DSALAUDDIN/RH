@@ -52,7 +52,10 @@ export const rootCanalFaq: FaqItem[] = [
     q: 'Does a root-canal-treated tooth always need a crown?',
     a: 'Back teeth almost always do. Removing the pulp and the access cavity leaves the tooth more likely to split under chewing load, and a crown or an onlay holds the remaining structure together. Front teeth with a small access cavity and otherwise intact walls can sometimes be restored with a filling instead.',
   },
-
+  {
+    q: 'What is the cost of Root Canal Treatment (RCT cost) in Dhaka?',
+    a: 'Root canal treatment (RCT treatment) cost in Dhaka depends on whether the tooth is an anterior tooth, premolar, or multi-rooted molar requiring complex instrumentation. At RH Dental Care (offering precision RCT treatment in Banasree and Banani, Dhaka, Bangladesh), root canal cost is assessed transparently following diagnostic digital X-rays or 3D CBCT imaging. For patients experiencing severe toothache treatment near me, single-visit microscopic endodontics provides prompt relief.',
+  },
 ];
 
 export const orthodonticsFaq: FaqItem[] = [
@@ -68,8 +71,8 @@ export const orthodonticsFaq: FaqItem[] = [
       'Confirm the adjustment interval for fixed braces and the review interval for aligners.',
   },
   {
-    q: 'Are clear aligners as effective as fixed braces?',
-    a: 'For mild to moderate crowding and spacing, aligners achieve comparable results and are removable for eating and cleaning. Fixed braces remain more predictable for large rotations, significant bite correction and cases needing extractions. Which is appropriate is decided from records — photographs, a scan and an X-ray — not from preference alone.',
+    q: 'Are clear aligners as effective as fixed braces for crooked teeth correction?',
+    a: 'For mild to moderate crowding and spacing, aligners achieve comparable results and are removable for eating and cleaning. For patients seeking crooked teeth correction, overbite correction, or teeth straightening without braces in Dhaka, clear aligners offer an effective alternative. Available at our Banasree and Banani branches in Bangladesh, our orthodontist specialists evaluate 3D digital scans to determine if invisible aligners or fixed braces are ideal for your smile.',
   },
   {
     q: 'Which aligner system do you provide?',

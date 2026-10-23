@@ -168,6 +168,121 @@ export default function BanglaHomePage() {
         </div>
       </section>
 
+      {/* Bangla Patient Consultation, Serial & Common Queries FAQ Section */}
+      <section className="bn-faq-section" style={{ padding: '4rem 1.5rem', background: '#f8fafc', borderTop: '1px solid #e2e8f0', borderBottom: '1px solid #e2e8f0' }}>
+        <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
+          <div className="bn-section-header" style={{ textAlign: 'center', marginBottom: '3rem' }}>
+            <h2 className="bn-section-title" style={{ fontSize: '2rem', fontWeight: 800, color: '#002347' }}>
+              রোগীদের সাধারণ জিজ্ঞাসা ও সিরিয়াল সংক্রান্ত তথ্য
+            </h2>
+            <p className="bn-section-desc" style={{ color: '#64748b', fontSize: '1.05rem', marginTop: '0.5rem' }}>
+              আরএইচ ডেন্টাল কেয়ার বনশ্রী ও বনানী শাখায় চিকিৎসা, খরচ ও সিরিয়াল সংক্রান্ত বিস্তারিত বিবরণ
+            </p>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '1.5rem' }}>
+            <div style={{ background: '#ffffff', borderRadius: '16px', padding: '1.75rem', border: '1px solid #e2e8f0', boxShadow: '0 4px 12px rgba(0,0,0,0.03)' }}>
+              <h3 style={{ fontSize: '1.2rem', fontWeight: 700, color: '#002347', marginBottom: '0.75rem' }}>
+                ডাক্তারের সিরিয়াল ও সরাসরি যোগাযোগ
+              </h3>
+              <p style={{ color: '#475569', fontSize: '0.95rem', lineHeight: 1.6 }}>
+                <strong>দাঁতের ডাক্তার বনশ্রী</strong> ও <strong>বনশ্রী ডেন্টাল ক্লিনিক সিরিয়াল</strong> নিতে কল করুন ০১৯০২-৯৯৭০৭০ নম্বরে। <strong>বনানী ডেন্টাল কেয়ার সিরিয়াল</strong> ও <strong>দাঁতের ডাক্তার ঢাকা যোগাযোগ</strong> করতে কল করুন ০১৭১১-৯৪৫১৯১ নম্বরে অথবা আমাদের হোয়াটসঅ্যাপে বার্তা পাঠান। <strong>আরএইচ ডেন্টাল কেয়ার বনশ্রী সিরিয়াল</strong> ও <strong>আরএইচ ডেন্টাল কেয়ার বনানী সিরিয়াল</strong> নিশ্চিত করতে একজন সমন্বয়ক আপনাকে সময় ও রেফারেন্স নম্বর জানিয়ে দেবেন। <strong>আধুনিক ডেন্টাল হাসপাতাল বনশ্রী সিরিয়াল</strong> সেবা প্রতিদিন খোলা থাকে।
+              </p>
+            </div>
+
+            <div style={{ background: '#ffffff', borderRadius: '16px', padding: '1.75rem', border: '1px solid #e2e8f0', boxShadow: '0 4px 12px rgba(0,0,0,0.03)' }}>
+              <h3 style={{ fontSize: '1.2rem', fontWeight: 700, color: '#002347', marginBottom: '0.75rem' }}>
+                ডেন্টাল ইমপ্লান্ট ও দাঁত বাঁধানোর খরচ কত?
+              </h3>
+              <p style={{ color: '#475569', fontSize: '0.95rem', lineHeight: 1.6 }}>
+                <strong>ডেন্টাল ইমপ্লান্ট খরচ কত</strong> ও <strong>দাঁত বাঁধানোর খরচ ঢাকা যোগাযোগ</strong> এবং <strong>ডেন্টাল ইমপ্লান্ট খরচ কত সিরিয়াল</strong> বুকিংয়ের জন্য আমাদের ক্লিনিক্যাল সমন্বয়কের সাথে কথা বলুন। <strong>দাঁত বাঁধানোর খরচ ঢাকা সিরিয়াল</strong> নির্ধারণ হয় ৩ডি সিবিসিটি স্ক্যানের মাধ্যমে হাড়ের পরিমাপ ও অস্টেয়োইনটিগ্রেশনের উপর ভিত্তি করে। আমাদের <strong>ইন-হাউস ডিজিটাল ল্যাব ঢাকা সিরিয়াল</strong> এবং <strong>ইন-হাউস ডিজিটাল ল্যাব ঢাকা যোগাযোগ</strong> ব্যবস্থার মাধ্যমে দ্রুত ফিক্সড দাঁত সংযোজন সম্পন্ন হয়।
+              </p>
+            </div>
+
+            <div style={{ background: '#ffffff', borderRadius: '16px', padding: '1.75rem', border: '1px solid #e2e8f0', boxShadow: '0 4px 12px rgba(0,0,0,0.03)' }}>
+              <h3 style={{ fontSize: '1.2rem', fontWeight: 700, color: '#002347', marginBottom: '0.75rem' }}>
+                রুট ক্যানেল করতে কত টাকা লাগে ও মাইক্রোস্কোপিক রুট ক্যানেল
+              </h3>
+              <p style={{ color: '#475569', fontSize: '0.95rem', lineHeight: 1.6 }}>
+                <strong>রুট ক্যানেল করতে কত টাকা লাগে</strong>? দাঁতের অবস্থান (সামনের দাঁত বা পেছনের মোলার) ও ক্যানেলের জটিলতার ওপর খরচ নির্ভর করে। <strong>রুট ক্যানেল করতে কত টাকা লাগে যোগাযোগ</strong> ও <strong>রুট ক্যানেল করতে কত টাকা লাগে সিরিয়াল</strong> নিতে আমাদের সাথে কথা বলুন। আমরা জার্মান ডেন্টাল মাইক্রোস্কোপ দিয়ে সিঙ্গেল-ভিজিট চিকিৎসা করি, তাই <strong>মাইক্রোস্কোপিক রুট ক্যানেল ঢাকা সিরিয়াল</strong> নেওয়া রোগীদের ব্যথামুক্ত উপশম নিশ্চিত হয়।
+              </p>
+            </div>
+
+            <div style={{ background: '#ffffff', borderRadius: '16px', padding: '1.75rem', border: '1px solid #e2e8f0', boxShadow: '0 4px 12px rgba(0,0,0,0.03)' }}>
+              <h3 style={{ fontSize: '1.2rem', fontWeight: 700, color: '#002347', marginBottom: '0.75rem' }}>
+                দাঁতে তার লাগানো ও ক্লিয়ার অ্যালাইনার খরচ
+              </h3>
+              <p style={{ color: '#475569', fontSize: '0.95rem', lineHeight: 1.6 }}>
+                বাঁকা ও ফাঁকা দাঁত সোজা করতে <strong>দাঁতে তার লাগানোর খরচ</strong>, <strong>দাঁতে তার লাগানোর খরচ যোগাযোগ</strong> ও <strong>দাঁতে তার লাগানোর খরচ সিরিয়াল</strong> আমাদের বনশ্রী সেন্টারে নির্ধারিত হয়। অদৃশ্যভাবে দাঁত সাজাতে <strong>ক্লিয়ার অ্যালাইনার খরচ সিরিয়াল</strong> নিতে ৩ডি ইন্ট্রাওরাল স্ক্যান দ্বারা চিকিৎসা পরিকল্পনা তৈরি করা হয়।
+              </p>
+            </div>
+
+            <div style={{ background: '#ffffff', borderRadius: '16px', padding: '1.75rem', border: '1px solid #e2e8f0', boxShadow: '0 4px 12px rgba(0,0,0,0.03)' }}>
+              <h3 style={{ fontSize: '1.2rem', fontWeight: 700, color: '#002347', marginBottom: '0.75rem' }}>
+                আক্কেল দাঁতের অপারেশন ও আক্কেল দাঁত তোলার খরচ
+              </h3>
+              <p style={{ color: '#475569', fontSize: '0.95rem', lineHeight: 1.6 }}>
+                হাড়ের নিচে বাঁকা হয়ে থাকা দাঁতের জন্য <strong>আক্কেল দাঁতের অপারেশন ঢাকা</strong>, <strong>আক্কেল দাঁতের অপারেশন ঢাকা যোগাযোগ</strong> ও <strong>আক্কেল দাঁতের অপারেশন ঢাকা সিরিয়াল</strong> দিন। জটিলতার মাত্রা ভেদে <strong>আক্কেল দাঁত তোলার খরচ যোগাযোগ</strong> ও <strong>আক্কেল দাঁত তোলার খরচ সিরিয়াল</strong> ৩ডি সিবিসিটি নার্ভ ম্যাপিংয়ের পর নির্ধারণ করা হয়।
+              </p>
+            </div>
+
+            <div style={{ background: '#ffffff', borderRadius: '16px', padding: '1.75rem', border: '1px solid #e2e8f0', boxShadow: '0 4px 12px rgba(0,0,0,0.03)' }}>
+              <h3 style={{ fontSize: '1.2rem', fontWeight: 700, color: '#002347', marginBottom: '0.75rem' }}>
+                দাঁতে ক্যাপ লাগানোর খরচ ও জিরকোনিয়া ক্যাপ এর দাম কত
+              </h3>
+              <p style={{ color: '#475569', fontSize: '0.95rem', lineHeight: 1.6 }}>
+                প্রাকৃতিক দাঁতের রঙের দীর্ঘস্থায়ী ক্যাপের জন্য <strong>দাঁতে ক্যাপ লাগানোর খরচ</strong>, <strong>দাঁতে ক্যাপ লাগানোর খরচ যোগাযোগ</strong> ও <strong>দাঁতে ক্যাপ লাগানোর খরচ সিরিয়াল</strong> জানতে আমাদের ল্যাব প্রোটোকল দেখুন। ক্যাড/ক্যাম প্রযুক্তির <strong>জিরকোনিয়া ক্যাপ এর দাম কত</strong>, <strong>জিরকোনিয়া ক্যাপ এর দাম কত যোগাযোগ</strong> ও <strong>জিরকোনিয়া ক্যাপ এর দাম কত সিরিয়াল</strong> বনশ্রী ইন-হাউস মিলিং সেন্টারে সরাসরি যাচাই করা যায়।
+              </p>
+            </div>
+
+            <div style={{ background: '#ffffff', borderRadius: '16px', padding: '1.75rem', border: '1px solid #e2e8f0', boxShadow: '0 4px 12px rgba(0,0,0,0.03)' }}>
+              <h3 style={{ fontSize: '1.2rem', fontWeight: 700, color: '#002347', marginBottom: '0.75rem' }}>
+                দাঁতের স্কেলিং ও পলিশিং ও দাঁত সাদা করার খরচ
+              </h3>
+              <p style={{ color: '#475569', fontSize: '0.95rem', lineHeight: 1.6 }}>
+                মাড়ির পাথর ও দাগ দূর করতে <strong>দাঁতের স্কেলিং ও পলিশিং খরচ</strong>, <strong>দাঁতের স্কেলিং ও পলিশিং খরচ যোগাযোগ</strong> ও <strong>দাঁতের স্কেলিং ও পলিশিং খরচ সিরিয়াল</strong> বুক করুন। উজ্জ্বল হাসির জন্য লেজার <strong>দাঁত সাদা করার খরচ যোগাযোগ</strong> ও <strong>দাঁত সাদা করার খরচ সিরিয়াল</strong> আমাদের বনানী ও বনশ্রী উভয় শাখায় উপলব্ধ।
+              </p>
+            </div>
+
+            <div style={{ background: '#ffffff', borderRadius: '16px', padding: '1.75rem', border: '1px solid #e2e8f0', boxShadow: '0 4px 12px rgba(0,0,0,0.03)' }}>
+              <h3 style={{ fontSize: '1.2rem', fontWeight: 700, color: '#002347', marginBottom: '0.75rem' }}>
+                বাচ্চাদের ও বিশেষ শিশুদের ডেন্টাল চিকিৎসা
+              </h3>
+              <p style={{ color: '#475569', fontSize: '0.95rem', lineHeight: 1.6 }}>
+                শিশুদের ভীতিমুক্ত চিকিৎসার জন্য <strong>বাচ্চাদের দাঁতের ডাক্তার বনশ্রী</strong>, <strong>বাচ্চাদের দাঁতের ডাক্তার বনশ্রী যোগাযোগ</strong> ও <strong>বাচ্চাদের দাঁতের ডাক্তার বনশ্রী সিরিয়াল</strong> নিতে আমাদের পেডিয়াট্রিক ডেন্টিস্টদের সাথে কথা বলুন। অটিজম বা বিশেষ চাহিদাসম্পন্ন শিশুদের জন্য <strong>বিশেষ শিশুদের ডেন্টাল চিকিৎসা</strong>, <strong>বিশেষ শিশুদের ডেন্টাল চিকিৎসা যোগাযোগ</strong> ও <strong>বিশেষ শিশুদের ডেন্টাল চিকিৎসা সিরিয়াল</strong> জেনারেল অ্যানেস্থেসিয়ার (GA) অধীনে নিরাপদ পরিবেশে প্রদান করা হয়।
+              </p>
+            </div>
+
+            <div style={{ background: '#ffffff', borderRadius: '16px', padding: '1.75rem', border: '1px solid #e2e8f0', boxShadow: '0 4px 12px rgba(0,0,0,0.03)' }}>
+              <h3 style={{ fontSize: '1.2rem', fontWeight: 700, color: '#002347', marginBottom: '0.75rem' }}>
+                সিবিসিটি ৩ডি এক্সরে ও বিশেষজ্ঞ ডেন্টাল সার্জন
+              </h3>
+              <p style={{ color: '#475569', fontSize: '0.95rem', lineHeight: 1.6 }}>
+                সঠিক ডায়াগনস্টিকের জন্য <strong>সিবিসিটি ৩ডি এক্সরে ঢাকা</strong>, <strong>সিবিসিটি ৩ডি এক্সরে ঢাকা যোগাযোগ</strong> ও <strong>সিবিসিটি ৩ডি এক্সরে ঢাকা সিরিয়াল</strong> আমাদের বনানী সেন্টারে সম্পন্ন হয়। বিএমডিসি নিবন্ধিত চিফ কনসালট্যান্ট <strong>ডঃ রফিকুল হাসান ডেন্টিস্ট</strong> (<strong>ডঃ রফিকুল হাসান ডেন্টিস্ট যোগাযোগ</strong>, <strong>ডঃ রফিকুল হাসান ডেন্টিস্ট সিরিয়াল</strong>) এবং ওরাল সার্জন <strong>ডঃ শিমিয়া বিনতে তাহের</strong> (<strong>ডঃ শিমিয়া বিনতে তাহের যোগাযোগ</strong>, <strong>ডঃ শিমিয়া বিনতে তাহের সিরিয়াল</strong>) নিয়মিত রোগী দেখেন।
+              </p>
+            </div>
+
+            <div style={{ background: '#ffffff', borderRadius: '16px', padding: '1.75rem', border: '1px solid #e2e8f0', boxShadow: '0 4px 12px rgba(0,0,0,0.03)' }}>
+              <h3 style={{ fontSize: '1.2rem', fontWeight: 700, color: '#002347', marginBottom: '0.75rem' }}>
+                ব্যথা উপশম, মাড়ির রক্তপাত ও ক্যাভিটি ফিলিং
+              </h3>
+              <p style={{ color: '#475569', fontSize: '0.95rem', lineHeight: 1.6 }}>
+                তীব্র <strong>দাঁতের ব্যথা উপশম</strong>, <strong>দাঁতের ব্যথা উপশম যোগাযোগ</strong> ও <strong>দাঁতের ব্যথা উপশম সিরিয়াল</strong> দিতে আমরা তাৎক্ষণিক এন্ডোডন্টিক সেবা দিই। <strong>দাঁতের মাড়ি দিয়ে রক্ত পড়া বন্ধের উপায়</strong>, <strong>দাঁতের মাড়ি দিয়ে রক্ত পড়া বন্ধের উপায় যোগাযোগ</strong> ও <strong>দাঁতের মাড়ি দিয়ে রক্ত পড়া বন্ধের উপায় সিরিয়াল</strong> নির্ধারণে পেরিওডন্টাল থেরাপি করা হয়। ক্ষয়রোধে <strong>দাঁতের ক্যাভিটি ফিলিং খরচ</strong>, <strong>দাঁতের ক্যাভিটি ফিলিং খরচ যোগাযোগ</strong> ও <strong>দাঁতের ক্যাভিটি ফিলিং খরচ সিরিয়াল</strong> জেনে নান্দনিক কম্পোজিট ফিলিং করিয়ে নিন।
+              </p>
+            </div>
+
+            <div style={{ background: '#ffffff', borderRadius: '16px', padding: '1.75rem', border: '1px solid #e2e8f0', boxShadow: '0 4px 12px rgba(0,0,0,0.03)' }}>
+              <h3 style={{ fontSize: '1.2rem', fontWeight: 700, color: '#002347', marginBottom: '0.75rem' }}>
+                দাঁত তোলার পর করণীয় ও প্রবাসী চিকিৎসা
+              </h3>
+              <p style={{ color: '#475569', fontSize: '0.95rem', lineHeight: 1.6 }}>
+                সার্জারির পর দ্রুত আরোগ্যের জন্য <strong>দাঁত তোলার পর করণীয়</strong>, <strong>দাঁত তোলার পর করণীয় যোগাযোগ</strong> ও <strong>দাঁত তোলার পর করণীয় সিরিয়াল</strong> ফলো-আপ নিশ্চিত করা হয়। ছুটি চলাকালীন দ্রুত সম্পূর্ণ ডেন্টাল পুনর্বাসনে <strong>প্রবাসী ডেন্টাল চিকিৎসা বাংলাদেশ যোগাযোগ</strong> ও <strong>প্রবাসী ডেন্টাল চিকিৎসা বাংলাদেশ সিরিয়াল</strong> এর মাধ্যমে নির্ধারিত প্রি-অ্যারাইভাল শিডিউলে সেবা প্রদান করা হয়।
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Featured Bangla Patient Guides */}
       <section className="bn-guides-preview-section">
         <div className="bn-section-header">

@@ -158,6 +158,21 @@ export default function BananiPage() {
         </div>
       </section>
 
+      {/* Areas Served & Neighborhood Access */}
+      <section className="bn-section rh-section" aria-labelledby="bn-areas-t">
+        <div className="rh-container">
+          <h2 id="bn-areas-t" className="bn-h2">
+            Serving Banani, Road 11 &amp; North Dhaka Neighborhoods
+          </h2>
+          <p className="bn-body">
+            For patients looking for an executive, private <strong>dental chamber in Banani</strong> or seeking the <strong>best dental chamber in Banani Road 11</strong>, our 7th-floor suite at B&amp;B Empire provides serene, appointment-only dental care.
+          </p>
+          <p className="bn-body">
+            Residents visiting from <strong>Gulshan</strong> (including <strong>Gulshan 1</strong> and <strong>Gulshan 2</strong>), <strong>Baridhara</strong>, <strong>Mohakhali</strong>, and <strong>DOHS</strong> choose RH Dental Care when searching for the <strong>best dental chamber in Banani Dhaka</strong>. With on-site 3D CBCT scanning, microscopic root canal therapy, and Dr. Hasan&rsquo;s consultation, each appointment is private, calm, and tailored to your schedule.
+          </p>
+        </div>
+      </section>
+
       <TeamRoster
         branch="banani"
         intro="Banani runs a morning and an evening session. Who you see depends on the time you book, so the list below is worth a look before you choose a slot."

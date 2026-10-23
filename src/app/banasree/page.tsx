@@ -180,6 +180,21 @@ export default function BanasreePage() {
         </div>
       </section>
 
+      {/* Areas Served & Neighborhood Access */}
+      <section className="bs-section rh-section" aria-labelledby="bs-areas-t">
+        <div className="rh-container">
+          <h2 id="bs-areas-t" className="bs-h2">
+            Serving Banasree &amp; Surrounding Communities in Dhaka
+          </h2>
+          <p className="bs-body">
+            Whether you are seeking an advanced <strong>dental chamber in Banasree</strong>, looking for the <strong>best dental chamber in Block C Banasree</strong>, or traveling from <strong>Rampura</strong>, <strong>Aftabnagar</strong>, <strong>Khilgaon</strong>, <strong>Malibagh</strong>, or <strong>Badda</strong>, RH Dental Care operates as the primary referral dental hospital and clinic in East Dhaka.
+          </p>
+          <p className="bs-body">
+            For patients searching for the <strong>best dental chamber in Banasree Dhaka</strong> or across <strong>Rampura</strong>, our hospital houses an in-house CAD/CAM milling lab, microscopic endodontics, and senior dental surgeon consultations so your family receives complete care in one visit.
+          </p>
+        </div>
+      </section>
+
       <TeamRoster
         branch="banasree"
         intro="The full team is on site through the afternoon and evening session, so a plan that crosses disciplines does not become a series of referrals."

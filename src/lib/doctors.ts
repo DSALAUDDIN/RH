@@ -68,8 +68,8 @@ export const DOCTORS: Record<string, Clinician> = {
     ],
     bio: [
       'Dr. Hasan is the founding clinician of RH Dental Care and sees patients at both branches — the appointment-only suite in Banani and the flagship hospital in Banasree.',
-      'His main clinical interest is implantology planned in three dimensions: a CBCT scan taken before placement, the implant position decided against measured bone volume and nerve position rather than estimated from a flat radiograph, and, where the case calls for it, placed through a guided surgical stent.',
-      'He also teaches, as a Senior Lecturer at MH Samorita Medical College & Hospital.',
+      'Recognized as an experienced implantologist in Dhaka, Bangladesh, his clinical focus is digital implantology planned from 3D CBCT scans with computer-guided surgical stents and biological bone grafting.',
+      'He also teaches as a Senior Lecturer at MH Samorita Medical College & Hospital. Patients can book an appointment, view verified patient review ratings, or call our clinic contact number directly.',
     ],
     image: '/assets/dr_hasan_flyer.jpeg',
     imageAlt:
