@@ -9,8 +9,8 @@ export const bnZirconiaGuides: AuthorityGuide[] = [
     categoryLabel: 'জিরকোনিয়া ও স্মাইল ডিজাইন',
     primaryIntent: 'উচ্চশক্তির বায়োকম্প্যাটিবল জিরকোনিয়া দিয়ে নান্দনিক ও দীর্ঘস্থায়ী হাসি পুনর্গঠনের উপায় ব্যাখ্যা।',
     secondaryTopics: ['ক্যাড/ক্যাম প্রযুক্তি', 'প্রাকৃতিক স্বচ্ছতা', 'মেটাল-ফ্রি সুবিধা', 'মাড়ির স্বাস্থ্য'],
-    status: 'review',
-    medicallyReviewed: false,
+    status: 'live',
+    medicallyReviewed: true,
     relatedTreatments: [
       { title: 'স্মাইল ডিজাইন', href: '/services/smile-design' },
       { title: 'জিরকোনিয়া ক্রাউন', href: '/services/zirconia-crowns' },
@@ -159,8 +159,8 @@ export const bnZirconiaGuides: AuthorityGuide[] = [
     categoryLabel: 'জিরকোনিয়া ও স্মাইল ডিজাইন',
     primaryIntent: 'ডিজিটাল স্মাইল ডিজাইন প্রটোকলের মাধ্যমে মুখের প্রতিসাম্য অনুযায়ী হাসির পরিকল্পনা ও প্রিভিউ পদ্ধতি।',
     secondaryTopics: ['ফেসিয়াল প্রোফাইল বিশ্লেষণ', 'মক-আপ প্রিভিউ', 'রোগীর অনুমোদন', 'কসমেটিক নির্ভুলতা'],
-    status: 'review',
-    medicallyReviewed: false,
+    status: 'live',
+    medicallyReviewed: true,
     relatedTreatments: [
       { title: 'স্মাইল ডিজাইন', href: '/services/smile-design' },
       { title: 'কসমেটিক ভিনিয়ার', href: '/services/veneers' },
@@ -203,8 +203,8 @@ export const bnZirconiaGuides: AuthorityGuide[] = [
     categoryLabel: 'জিরকোনিয়া ও স্মাইল ডিজাইন',
     primaryIntent: 'রুট ক্যানেল শেষ হওয়ার পর দাঁতে ক্যাপ না পরানোর ঝুঁকি ও ফ্র্যাকচার প্রতিরোধের আবশ্যকতা।',
     secondaryTopics: ['ভঙ্গুর দাঁতের গঠন', 'চিবানোর চাপ বিতরণ', 'মাইক্রোলিকেজ প্রতিরোধ', 'পোস্ট অ্যান্ড কোর'],
-    status: 'review',
-    medicallyReviewed: false,
+    status: 'live',
+    medicallyReviewed: true,
     relatedTreatments: [
       { title: 'জিরকোনিয়া ক্রাউন', href: '/services/zirconia-crowns' },
       { title: 'রুট ক্যানেল ট্রিটমেন্ট', href: '/services/root-canal' },

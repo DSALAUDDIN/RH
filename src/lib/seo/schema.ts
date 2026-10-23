@@ -78,10 +78,55 @@ export function branchSchema(id: BranchId): JsonLdNode {
     address: postalAddress(b),
     geo: geo(b),
     hasMap: b.mapLink,
+    sameAs: Array.from(new Set([b.mapLink, ...SITE.sameAs])).filter(Boolean),
     openingHoursSpecification: openingHours(b),
     currenciesAccepted: 'BDT',
     paymentAccepted: b.paymentAccepted,
-    areaServed: { '@type': 'City', name: 'Dhaka' },
+    priceRange: '$$',
+    medicalSpecialty: [
+      'Dentistry',
+      'Orthodontics',
+      'Periodontics',
+      'Prosthodontics',
+      'Endodontics',
+      'Oral and Maxillofacial Surgery',
+      'Pediatric Dentistry',
+    ],
+    areaServed: [
+      { '@type': 'City', name: 'Dhaka' },
+      ...(b.geo
+        ? [
+            {
+              '@type': 'GeoCircle',
+              geoMidpoint: {
+                '@type': 'GeoCoordinates',
+                latitude: b.geo.lat,
+                longitude: b.geo.lng,
+              },
+              geoRadius: 10000,
+            },
+          ]
+        : []),
+      ...(id === 'banani'
+        ? [
+            { '@type': 'AdministrativeArea', name: 'Banani' },
+            { '@type': 'AdministrativeArea', name: 'Gulshan' },
+            { '@type': 'AdministrativeArea', name: 'Baridhara' },
+            { '@type': 'AdministrativeArea', name: 'Mohakhali' },
+            { '@type': 'AdministrativeArea', name: 'Dhaka Cantonment (DOHS)' },
+            { '@type': 'AdministrativeArea', name: 'Nikunja' },
+            { '@type': 'AdministrativeArea', name: 'Uttara' },
+          ]
+        : [
+            { '@type': 'AdministrativeArea', name: 'Banasree' },
+            { '@type': 'AdministrativeArea', name: 'Rampura' },
+            { '@type': 'AdministrativeArea', name: 'Aftabnagar' },
+            { '@type': 'AdministrativeArea', name: 'Khilgaon' },
+            { '@type': 'AdministrativeArea', name: 'Malibagh' },
+            { '@type': 'AdministrativeArea', name: 'Badda' },
+            { '@type': 'AdministrativeArea', name: 'Motijheel' },
+          ]),
+    ],
     parentOrganization: { '@id': ID.organization },
     availableService: b.services.map((name) => ({ '@type': 'MedicalProcedure', name })),
   });
@@ -120,9 +165,73 @@ export function websiteSchema(): JsonLdNode {
   };
 }
 
+export function siteNavigationSchema(): JsonLdNode {
+  return {
+    '@type': 'ItemList',
+    '@id': `${SITE.url}/#navigation`,
+    name: 'Main Site Navigation',
+    itemListElement: [
+      {
+        '@type': 'SiteNavigationElement',
+        position: 1,
+        name: 'Dental Implants',
+        url: absoluteUrl('/implants'),
+      },
+      {
+        '@type': 'SiteNavigationElement',
+        position: 2,
+        name: 'Banani Private Suite',
+        url: absoluteUrl('/banani'),
+      },
+      {
+        '@type': 'SiteNavigationElement',
+        position: 3,
+        name: 'Banasree Flagship Hospital',
+        url: absoluteUrl('/banasree'),
+      },
+      {
+        '@type': 'SiteNavigationElement',
+        position: 4,
+        name: 'Clinical Specialists',
+        url: absoluteUrl('/team'),
+      },
+      {
+        '@type': 'SiteNavigationElement',
+        position: 5,
+        name: 'Digital Dentistry',
+        url: absoluteUrl('/digital-dentistry'),
+      },
+      {
+        '@type': 'SiteNavigationElement',
+        position: 6,
+        name: 'Dental Tourism',
+        url: absoluteUrl('/dental-tourism'),
+      },
+      {
+        '@type': 'SiteNavigationElement',
+        position: 7,
+        name: 'Patient Dental Guides',
+        url: absoluteUrl('/guides'),
+      },
+      {
+        '@type': 'SiteNavigationElement',
+        position: 8,
+        name: 'Contact & Appointments',
+        url: absoluteUrl('/contact'),
+      },
+    ],
+  };
+}
+
 /** Site-wide graph, rendered once by the root layout. */
 export function siteGraph(): JsonLdNode[] {
-  return [organizationSchema(), websiteSchema(), branchSchema('banani'), branchSchema('banasree')];
+  return [
+    organizationSchema(),
+    websiteSchema(),
+    siteNavigationSchema(),
+    branchSchema('banani'),
+    branchSchema('banasree'),
+  ];
 }
 
 /* People */
@@ -133,6 +242,7 @@ export interface PhysicianInput {
   jobTitle: string;
   description: string;
   image?: string;
+  bmdc?: string;
   /** Verified credentials only. */
   credentials?: string[];
   knowsAbout?: string[];
@@ -155,6 +265,13 @@ export function physicianSchema(p: PhysicianInput): JsonLdNode {
     medicalSpecialty: 'Dentistry',
     worksFor: { '@id': ID.organization },
     availableAtOrFrom: (p.worksAt ?? ['banani', 'banasree']).map((b) => ({ '@id': ID.branch(b) })),
+    identifier: p.bmdc
+      ? {
+          '@type': 'PropertyValue',
+          name: 'BMDC Registration Number',
+          value: p.bmdc,
+        }
+      : undefined,
     hasCredential: p.credentials?.length
       ? p.credentials.map((c) => ({
           '@type': 'EducationalOccupationalCredential',
@@ -249,6 +366,7 @@ export interface MedicalWebPageInput {
   /** ISO date of the last clinical review. */
   lastReviewed?: string;
   inLanguage?: string;
+  speakable?: boolean | string[];
 }
 
 export function medicalWebPageSchema(input: MedicalWebPageInput): JsonLdNode {
@@ -265,6 +383,14 @@ export function medicalWebPageSchema(input: MedicalWebPageInput): JsonLdNode {
     mainEntity: input.about ? { '@id': input.about } : undefined,
     reviewedBy: input.reviewedBy ? { '@id': ID.physician(input.reviewedBy) } : undefined,
     lastReviewed: input.lastReviewed,
+    speakable: input.speakable
+      ? {
+          '@type': 'SpeakableSpecification',
+          cssSelector: Array.isArray(input.speakable)
+            ? input.speakable
+            : ['h1', '.guide-lead', '.rh-lede', 'p'],
+        }
+      : undefined,
   });
 }
 
@@ -279,6 +405,7 @@ export interface ArticleInput {
   datePublished?: string;
   dateModified?: string;
   inLanguage?: string;
+  speakable?: boolean | string[];
 }
 
 export function articleSchema(input: ArticleInput): JsonLdNode {
@@ -297,6 +424,14 @@ export function articleSchema(input: ArticleInput): JsonLdNode {
     dateModified: input.dateModified ?? input.datePublished,
     inLanguage: input.inLanguage ?? SITE.language,
     isPartOf: { '@id': ID.website },
+    speakable: input.speakable
+      ? {
+          '@type': 'SpeakableSpecification',
+          cssSelector: Array.isArray(input.speakable)
+            ? input.speakable
+            : ['h1', '.guide-lead', '.summary-box'],
+        }
+      : undefined,
   });
 }
 

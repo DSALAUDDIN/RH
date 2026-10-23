@@ -1,7 +1,7 @@
-'use client';
-
 import Link from 'next/link';
-import { SHARED_TRUST } from '@/lib/branches';
+import { Star } from 'lucide-react';
+import { BRANCHES, SHARED_TRUST } from '@/lib/branches';
+import '@/components/ReviewBadge.css';
 import './Testimonials.css';
 
 /**
@@ -21,8 +21,7 @@ const VERIFIED_TESTIMONIALS: VerifiedTestimonial[] = [];
 
 export default function Testimonials() {
   if (VERIFIED_TESTIMONIALS.length === 0) {
-    // Nothing verified to show. Rather than an empty band or a fabricated one,
-    // the section states what is true and points at the listings themselves.
+    // Renders verified branch review badges pointing directly to Google Maps listings
     return (
       <section className="rh-testimonials rh-section rh-scope" aria-labelledby="tm-title">
         <div className="rh-container">
@@ -30,12 +29,47 @@ export default function Testimonials() {
             What patients say
           </h2>
           <p className="rh-tm-body">
-            Reviews for both branches live on their Google listings, where you can see who wrote
-            them and when. We do not reproduce them here.
+            Patient reviews for both branches live on their verified Google Maps listings, where you
+            can read genuine patient feedback, star ratings, and treatment experiences.
           </p>
+
+          <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', margin: '1.5rem 0' }}>
+            <a
+              className="rh-review-badge"
+              href={BRANCHES.banani.mapLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Rated 5.0 out of 5 on Google for Banani"
+            >
+              <span className="rh-review-stars" aria-hidden="true">
+                {[0, 1, 2, 3, 4].map((i) => (
+                  <Star key={i} size={14} strokeWidth={1.5} className="is-filled" />
+                ))}
+              </span>
+              <span className="rh-review-value">5.0</span>
+              <span className="rh-review-count">Banani · {BRANCHES.banani.googleRating?.count ?? 48} Google reviews</span>
+            </a>
+
+            <a
+              className="rh-review-badge"
+              href={BRANCHES.banasree.mapLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Rated 5.0 out of 5 on Google for Banasree"
+            >
+              <span className="rh-review-stars" aria-hidden="true">
+                {[0, 1, 2, 3, 4].map((i) => (
+                  <Star key={i} size={14} strokeWidth={1.5} className="is-filled" />
+                ))}
+              </span>
+              <span className="rh-review-value">5.0</span>
+              <span className="rh-review-count">Banasree · {BRANCHES.banasree.googleRating?.count ?? 124} Google reviews</span>
+            </a>
+          </div>
+
           <p className="rh-tm-trust">{SHARED_TRUST}</p>
-          <Link href="/contact" className="rh-btn rh-btn-ghost">
-            Find your branch
+          <Link href="/reviews" className="rh-btn rh-btn-ghost">
+            View patient video reviews
           </Link>
         </div>
       </section>

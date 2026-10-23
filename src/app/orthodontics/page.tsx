@@ -40,6 +40,7 @@ import clinicActionImg from '@/assets/ortho/ortho-lab.jpg';
 import JsonLd from '@/components/seo/JsonLd';
 import { faqSchema, publishedFaq } from '@/lib/seo/schema';
 import { orthodonticsFaq } from '@/lib/treatment-faq';
+import RelatedGuidesCluster from '@/components/seo/RelatedGuidesCluster';
 
 function FadeIn({
   children,
@@ -1082,6 +1083,15 @@ export default function OrthodonticsPage() {
           </div>
         </div>
       </section>
+
+      {/* Topic Cluster: Clinical Guides */}
+      <div className="container" style={{ position: 'relative', zIndex: 2 }}>
+        <RelatedGuidesCluster
+          category="orthodontics"
+          title="Clear Aligner & Orthodontic Guides in Dhaka"
+          subtitle="Compare clear aligners vs fixed braces, understand treatment duration, tray manufacturing, and cost factors."
+        />
+      </div>
 
       {/* CTA */}
       <section className="imp-cta">

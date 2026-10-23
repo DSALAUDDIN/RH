@@ -28,6 +28,7 @@ import BranchCTA from '@/components/branch/BranchCTA';
 import heroImg from '@/assets/specialties/dental_surgery_hero.png';
 import surgeonImg from '@/assets/specialties/microscope-loupes.png';
 import gumImg from '@/assets/specialties/gum-care.jpg';
+import RelatedGuidesCluster from '@/components/seo/RelatedGuidesCluster';
 
 /* Motion variants */
 const stagger: Variants = { hidden: {}, show: { transition: { staggerChildren: 0.09 } } };
@@ -644,6 +645,15 @@ export default function DentalSurgeryPage() {
           </div>
         </div>
       </section>
+
+      {/* Topic Cluster: Clinical Guides */}
+      <div className="container" style={{ position: 'relative', zIndex: 2, padding: '1rem 0' }}>
+        <RelatedGuidesCluster
+          category="surgery"
+          title="Oral Surgery & Wisdom Tooth Guides in Dhaka"
+          subtitle="Explore our specialist clinical guides on 3D CBCT guided surgery, painless wisdom tooth extractions, and post-surgical recovery."
+        />
+      </div>
 
       {/* CTA */}
       <section

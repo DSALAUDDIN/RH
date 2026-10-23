@@ -1225,6 +1225,152 @@ export default function TreatmentsPage() {
           </div>
         </section>
 
+        {/* Clinical Transformations (Before & After Showcase) */}
+        <section className="tr-cases-section">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="tr-cases-header"
+          >
+            <div className="tr-badge">Actual Patient Outcomes</div>
+            <h2>
+              Clinical Results &amp; <span>Smile Transformations</span>
+            </h2>
+            <p>
+              Witness real clinical treatments delivered by our expert dental team across our Banasree
+              and Banani clinics. Combining microscopic precision, digital scanning, and restorative artistry.
+            </p>
+          </motion.div>
+
+          <div className="tr-cases-grid">
+            {/* Case 1: Composite Restoration */}
+            <motion.article
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="tr-case-card"
+            >
+              <div className="tr-case-img-box">
+                <img
+                  src="/assets/cases/composite-restoration.png"
+                  alt="Composite Restoration - RH Dental Care"
+                  loading="lazy"
+                />
+                <span className="tr-case-branch">Banasree · Banani</span>
+              </div>
+              <div className="tr-case-body">
+                <span className="tr-case-tag">Restorative Dentistry</span>
+                <h3 className="tr-case-title">Composite Restoration</h3>
+                <p className="tr-case-desc">
+                  Natural look &amp; stronger smile. Precise reconstruction of chipped, broken incisal edges
+                  utilizing high-density nanohybrid composite materials.
+                </p>
+                <div className="tr-case-badges">
+                  <span className="tr-case-badge-pill">Natural Aesthetics</span>
+                  <span className="tr-case-badge-pill">Strength &amp; Durability</span>
+                  <span className="tr-case-badge-pill">Minimal Invasive</span>
+                </div>
+              </div>
+            </motion.article>
+
+            {/* Case 2: Midline Diastema Closer */}
+            <motion.article
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="tr-case-card"
+            >
+              <div className="tr-case-img-box">
+                <img
+                  src="/assets/cases/midline-diastema-closure.png"
+                  alt="Midline Diastema Closer - RH Dental Care"
+                  loading="lazy"
+                />
+                <span className="tr-case-branch">Cosmetic Smile Care</span>
+              </div>
+              <div className="tr-case-body">
+                <span className="tr-case-tag">Cosmetic Dentistry</span>
+                <h3 className="tr-case-title">Midline Diastema Closure</h3>
+                <p className="tr-case-desc">
+                  Gap closure with zero drilling. Restoring balanced smile proportion, symmetrical tooth shape,
+                  and lasting aesthetic confidence in a single visit.
+                </p>
+                <div className="tr-case-badges">
+                  <span className="tr-case-badge-pill">Better Alignment</span>
+                  <span className="tr-case-badge-pill">Conservative</span>
+                  <span className="tr-case-badge-pill">Immediate Results</span>
+                </div>
+              </div>
+            </motion.article>
+
+            {/* Case 3: Professional Teeth Whitening */}
+            <motion.article
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="tr-case-card"
+            >
+              <div className="tr-case-img-box">
+                <img
+                  src="/assets/cases/professional-teeth-whitening.png"
+                  alt="Professional Teeth Whitening - RH Dental Care"
+                  loading="lazy"
+                />
+                <span className="tr-case-branch">Banasree · Banani</span>
+              </div>
+              <div className="tr-case-body">
+                <span className="tr-case-tag">Aesthetic Brightening</span>
+                <h3 className="tr-case-title">Professional Teeth Whitening</h3>
+                <p className="tr-case-desc">
+                  A brighter smile, a more confident you. Multi-shade lightening with protective barrier protocols
+                  delivering noticeable radiance with zero enamel damage.
+                </p>
+                <div className="tr-case-badges">
+                  <span className="tr-case-badge-pill">Safe &amp; Effective</span>
+                  <span className="tr-case-badge-pill">Enamel Protection</span>
+                  <span className="tr-case-badge-pill">Long-Lasting Glow</span>
+                </div>
+              </div>
+            </motion.article>
+
+            {/* Case 4: 10+ Years Build-Up Rehabilitation */}
+            <motion.article
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="tr-case-card"
+            >
+              <div className="tr-case-img-box">
+                <img
+                  src="/assets/cases/restoration-old-buildup.png"
+                  alt="Full-Mouth Restoration - RH Dental Care"
+                  loading="lazy"
+                />
+                <span className="tr-case-branch">Full Rehabilitation</span>
+              </div>
+              <div className="tr-case-body">
+                <span className="tr-case-tag">Full-Mouth Reconstruction</span>
+                <h3 className="tr-case-title">10+ Year Build-Up Restoration</h3>
+                <p className="tr-case-desc">
+                  Complete smile recovery for failing, broken, and discolored old restorations, restoring
+                  normal bite function and radiant natural appearance.
+                </p>
+                <div className="tr-case-badges">
+                  <span className="tr-case-badge-pill">Restored Function</span>
+                  <span className="tr-case-badge-pill">Natural Appearance</span>
+                  <span className="tr-case-badge-pill">Confident Smile</span>
+                </div>
+              </div>
+            </motion.article>
+          </div>
+        </section>
+
         {/* CTA Section */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}

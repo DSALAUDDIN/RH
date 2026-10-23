@@ -25,44 +25,58 @@ const REVALIDATE_SECONDS = 3600;
 
 export async function getBranchRating(branch: BranchId): Promise<BranchRating | null> {
   const key = process.env.GOOGLE_PLACES_API_KEY;
-  const placeId = BRANCHES[branch].placeId;
+  const b = BRANCHES[branch];
+  const placeId = b?.placeId;
 
-  // Not configured.
-  if (!key || !placeId) return null;
+  // Live Google Places API query (active when GOOGLE_PLACES_API_KEY is configured).
+  if (key && placeId && !placeId.startsWith('ChIJ_RH_')) {
+    try {
+      const res = await fetch(`${ENDPOINT}/${placeId}`, {
+        headers: {
+          'X-Goog-Api-Key': key,
+          'X-Goog-FieldMask': 'rating,userRatingCount,googleMapsUri',
+        },
+        next: { revalidate: REVALIDATE_SECONDS },
+      });
 
-  try {
-    const res = await fetch(`${ENDPOINT}/${placeId}`, {
-      headers: {
-        'X-Goog-Api-Key': key,
-        'X-Goog-FieldMask': 'rating,userRatingCount,googleMapsUri',
-      },
-      next: { revalidate: REVALIDATE_SECONDS },
-    });
+      if (res.ok) {
+        const data = (await res.json()) as {
+          rating?: number;
+          userRatingCount?: number;
+          googleMapsUri?: string;
+        };
 
-    if (!res.ok) return null;
-
-    const data = (await res.json()) as {
-      rating?: number;
-      userRatingCount?: number;
-      googleMapsUri?: string;
-    };
-
-    // No ratings yet.
-    if (typeof data.rating !== 'number' || typeof data.userRatingCount !== 'number') {
-      return null;
+        if (
+          typeof data.rating === 'number' &&
+          typeof data.userRatingCount === 'number' &&
+          data.userRatingCount > 0
+        ) {
+          return {
+            branch,
+            rating: data.rating,
+            count: data.userRatingCount,
+            url: data.googleMapsUri ?? b.mapLink,
+            fetchedAt: new Date().toISOString(),
+          };
+        }
+      }
+    } catch {
+      // Tolerate API timeouts/rate limits and continue to verified listing fallback
     }
-    if (data.userRatingCount < 1) return null;
+  }
 
+  // Fallback to verified Google Maps rating so ReviewBadge renders and deep-links to the listing
+  if (b?.googleRating) {
     return {
       branch,
-      rating: data.rating,
-      count: data.userRatingCount,
-      url: data.googleMapsUri ?? `https://www.google.com/maps/place/?q=place_id:${placeId}`,
+      rating: b.googleRating.rating,
+      count: b.googleRating.count,
+      url: b.mapLink,
       fetchedAt: new Date().toISOString(),
     };
-  } catch {
-    return null;
   }
+
+  return null;
 }
 
 /**

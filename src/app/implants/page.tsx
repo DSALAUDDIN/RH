@@ -41,6 +41,7 @@ import labImg from '@/assets/implants/clinic-action.jpg';
 import JsonLd from '@/components/seo/JsonLd';
 import { faqSchema, publishedFaq } from '@/lib/seo/schema';
 import { implantFaq } from '@/lib/treatment-faq';
+import RelatedGuidesCluster from '@/components/seo/RelatedGuidesCluster';
 
 /* Counter */
 function Counter({ to, suffix = '' }: { to: number; suffix?: string }) {
@@ -903,6 +904,15 @@ export default function ImplantsPage() {
           </motion.div>
         </div>
       </section>
+
+      {/* Topic Cluster: Clinical Guides */}
+      <div className="container" style={{ position: 'relative', zIndex: 2 }}>
+        <RelatedGuidesCluster
+          category="implants"
+          title="Clinical Dental Implant Guides & Pricing Details"
+          subtitle="Explore in-depth clinical guides written by Dr. Hasan on implant systems, bone grafting requirements, recovery protocols, and cost determinants in Dhaka."
+        />
+      </div>
 
       {/* CTA */}
       <section className="imp-cta">

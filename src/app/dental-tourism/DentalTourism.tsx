@@ -112,7 +112,12 @@ export default function DentalTourism() {
               <span className="sp-label">Welcome</span>
             </a>
           </li>
-
+          <li>
+            <a href="#partnership" data-anchor="partnership">
+              <span className="sp-dot"></span>
+              <span className="sp-label">RH × Alif Tours</span>
+            </a>
+          </li>
           <li>
             <a href="#why" data-anchor="why">
               <span className="sp-dot"></span>
@@ -132,15 +137,27 @@ export default function DentalTourism() {
             </a>
           </li>
           <li>
-            <a href="#journey" data-anchor="journey">
+            <a href="#cases" data-anchor="cases">
               <span className="sp-dot"></span>
-              <span className="sp-label">Your journey</span>
+              <span className="sp-label">Smile Gallery</span>
             </a>
           </li>
           <li>
-            <a href="#dayone" data-anchor="dayone">
+            <a href="#journey" data-anchor="journey">
               <span className="sp-dot"></span>
-              <span className="sp-label">Day one</span>
+              <span className="sp-label">7-Step Journey</span>
+            </a>
+          </li>
+          <li>
+            <a href="#booking-options" data-anchor="booking-options">
+              <span className="sp-dot"></span>
+              <span className="sp-label">2 Ways to Book</span>
+            </a>
+          </li>
+          <li>
+            <a href="#campaign-video" data-anchor="campaign-video">
+              <span className="sp-dot"></span>
+              <span className="sp-label">Campaign Film</span>
             </a>
           </li>
           <li>
@@ -152,7 +169,7 @@ export default function DentalTourism() {
           <li>
             <a href="#beyond" data-anchor="beyond">
               <span className="sp-dot"></span>
-              <span className="sp-label">Beyond the chair</span>
+              <span className="sp-label">Beyond Dhaka</span>
             </a>
           </li>
           <li>
@@ -199,10 +216,16 @@ export default function DentalTourism() {
         </div>
 
         <div className="container hero-content">
+          <div className="hero-partnership-badge" data-anim="kicker">
+            <span className="badge-pill">RH DENTAL CARE</span>
+            <span className="badge-x">×</span>
+            <span className="badge-pill partner">ALIF GLOBAL TOURS &amp; TRAVELS</span>
+          </div>
+
           <div className="hero-eyebrow" data-anim="kicker">
             <span className="kicker-line"></span>
-            <span>International Dental Tourism Program</span>
-            <span className="kicker-bd">🇧🇩 Bangladesh</span>
+            <span>DENTAL TOURISM IN BANGLADESH · One Seamless Journey</span>
+            <span className="kicker-bd">🇧🇩</span>
           </div>
 
           <h1 className="tm-title" data-anim="title">
@@ -957,6 +980,174 @@ export default function DentalTourism() {
 
       </section>
 
+      {/* ─────────────────────────── STRATEGIC PARTNERSHIP: RH × ALIF TOURS ─────────────────────────── */}
+      <section className="partnership-section" id="partnership">
+        <div className="partner-bg-glow"></div>
+        <div className="container">
+          <div className="partner-header" data-reveal>
+            <span className="eyebrow">
+              <span className="kicker-line"></span>Strategic Partnership · Dental Tourism in Bangladesh
+            </span>
+            <h2 className="partner-main-title">
+              RH Dental Care <em>×</em> Alif Global Tours &amp; Travels
+            </h2>
+            <p className="partner-lead">
+              Quality Dental Care. Complete Travel Support. One Seamless Journey. To make your dental
+              tourism experience effortless, RH Dental Care has officially partnered with Alif Global
+              Tours &amp; Travels to support international patients throughout their journey.
+            </p>
+          </div>
+
+          <div className="partner-synergy-grid" data-reveal>
+            {/* LEFT: RH DENTAL CARE */}
+            <article className="partner-card rh-side">
+              <span className="partner-card-tag">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                  <path d="M20 6L9 17l-5-5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+                Clinical Excellence
+              </span>
+              <h3 className="partner-card-title">RH Dental Care</h3>
+              <div className="partner-card-role">Comprehensive Dental Treatment in Dhaka</div>
+              <ul className="partner-feature-list">
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span><b>Experienced Dental Professionals:</b> Multi-specialty team for advanced clinical procedures.</span>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span><b>Modern Technology:</b> 3D CBCT, digital intraoral scanning, lasers &amp; in-house CAD/CAM.</span>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span><b>Multidisciplinary Care:</b> Implants, aligners, cosmetic smile aesthetics, oral surgery &amp; full rehabilitation.</span>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span><b>Personalized Treatment Planning:</b> Custom timeline coordinated around your travel schedule.</span>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span><b>Two Modern Clinics:</b> State-of-the-art facilities in Banani and Banasree, Dhaka.</span>
+                </li>
+              </ul>
+              <a href="#treatments" className="choice-btn primary">
+                Explore Dental Services
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
+                  <path d="M5 12h14M13 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </a>
+            </article>
+
+            {/* RIGHT: ALIF GLOBAL TOURS & TRAVELS */}
+            <article className="partner-card alif-side">
+              <span className="partner-card-tag">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                  <path d="M20 6L9 17l-5-5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+                Travel &amp; Hospitality
+              </span>
+              <h3 className="partner-card-title">Alif Global Tours &amp; Travels</h3>
+              <div className="partner-card-role">Dedicated Travel Support &amp; Concierge</div>
+              <ul className="partner-feature-list">
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span><b>Visa Assistance:</b> Smooth visa documentation &amp; arrival guidance for international travelers.</span>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span><b>Travel Coordination:</b> Flight bookings and itinerary mapped to your clinical visits.</span>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span><b>Airport VIP Transfers:</b> Chauffeur greeting upon arrival at Dhaka International Airport (DAC).</span>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span><b>Hotel Accommodation:</b> Handpicked premium hotels near Banani and Banasree branches.</span>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span><b>Local Transportation:</b> Air-conditioned private rides for clinic sessions and city tours.</span>
+                </li>
+              </ul>
+              <a href="#booking-options" className="choice-btn outline">
+                View Full Package Options
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
+                  <path d="M5 12h14M13 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </a>
+            </article>
+          </div>
+
+          {/* 6 Core Travel Support Pillars */}
+          <div className="travel-support-grid" data-reveal>
+            <div className="support-pill-card">
+              <div className="support-pill-icon">🛂</div>
+              <div>
+                <h5>Visa Assistance</h5>
+                <p>Guidance with entry requirements and medical travel documentation.</p>
+              </div>
+            </div>
+            <div className="support-pill-card">
+              <div className="support-pill-icon">✈️</div>
+              <div>
+                <h5>Travel Coordination</h5>
+                <p>Flight booking and schedule optimization aligned with treatment milestones.</p>
+              </div>
+            </div>
+            <div className="support-pill-card">
+              <div className="support-pill-icon">🚘</div>
+              <div>
+                <h5>Airport Transfers</h5>
+                <p>Private chauffeur greeting upon landing in Dhaka and seamless drop-off.</p>
+              </div>
+            </div>
+            <div className="support-pill-card">
+              <div className="support-pill-icon">🏨</div>
+              <div>
+                <h5>Hotel Accommodation</h5>
+                <p>Partner boutique &amp; 5-star hotel options within minutes of the clinic.</p>
+              </div>
+            </div>
+            <div className="support-pill-card">
+              <div className="support-pill-icon">🚗</div>
+              <div>
+                <h5>Local Transportation</h5>
+                <p>Comfortable, air-conditioned transport for every clinic consultation.</p>
+              </div>
+            </div>
+            <div className="support-pill-card">
+              <div className="support-pill-icon">🗓️</div>
+              <div>
+                <h5>Appointment Sync</h5>
+                <p>Direct priority scheduling so you never experience waiting times.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Standards & safety */}
       <section className="standards" id="standards">
         <div className="container">
@@ -1297,23 +1488,192 @@ export default function DentalTourism() {
         </div>
       </section>
 
-      {/* Journey */}
+      {/* ─────────────────────────── CLINICAL CASES & SMILE GALLERY ─────────────────────────── */}
+      <section className="cases-section" id="cases">
+        <div className="container">
+          <div className="cases-header" data-reveal>
+            <span className="eyebrow">
+              <span className="kicker-line"></span>Real Clinical Cases · Dhaka Branches
+            </span>
+            <h2>
+              Real Transformations, <em>Proven Outcomes.</em>
+            </h2>
+            <p>
+              Explore actual clinical cases performed by our specialist dental surgeons across our
+              Banani and Banasree branches. From subtle aesthetic alignments to complete functional
+              smile rehabilitations.
+            </p>
+          </div>
+
+          <div className="cases-grid" data-reveal>
+            {/* Case 01: Composite Restoration */}
+            <article className="case-card">
+              <div className="case-image-frame">
+                <img
+                  src="/assets/cases/composite-restoration.png"
+                  alt="Composite Restoration - Before and After - RH Dental Care"
+                  loading="lazy"
+                />
+                <span className="case-branch-badge">Banasree &amp; Banani</span>
+              </div>
+              <div className="case-info">
+                <span className="case-category">Restorative Dentistry</span>
+                <h4 className="case-title">Composite Restoration</h4>
+                <p className="case-desc">
+                  Conservative rebuild of worn and fractured incisal enamel using advanced nanohybrid
+                  composite layering to recreate natural light reflection and dental strength.
+                </p>
+                <div className="case-highlights">
+                  <span className="case-highlight-tag">Natural Aesthetics</span>
+                  <span className="case-highlight-tag">Strength &amp; Durability</span>
+                  <span className="case-highlight-tag">Minimally Invasive</span>
+                </div>
+              </div>
+            </article>
+
+            {/* Case 02: Midline Diastema Closure */}
+            <article className="case-card">
+              <div className="case-image-frame">
+                <img
+                  src="/assets/cases/midline-diastema-closure.png"
+                  alt="Midline Diastema Closer - Before and After - RH Dental Care"
+                  loading="lazy"
+                />
+                <span className="case-branch-badge">Cosmetic Smile Care</span>
+              </div>
+              <div className="case-info">
+                <span className="case-category">Cosmetic Dentistry</span>
+                <h4 className="case-title">Midline Diastema Closure</h4>
+                <p className="case-desc">
+                  Seamless gap closure preserving original healthy tooth structure. Restores harmonious
+                  smile symmetry and natural proportions in just one coordinated appointment.
+                </p>
+                <div className="case-highlights">
+                  <span className="case-highlight-tag">Better Alignment</span>
+                  <span className="case-highlight-tag">Zero Drill</span>
+                  <span className="case-highlight-tag">Immediate Confidence</span>
+                </div>
+              </div>
+            </article>
+
+            {/* Case 03: Professional Teeth Whitening */}
+            <article className="case-card">
+              <div className="case-image-frame">
+                <img
+                  src="/assets/cases/professional-teeth-whitening.png"
+                  alt="Professional Teeth Whitening - Before and After - RH Dental Care"
+                  loading="lazy"
+                />
+                <span className="case-branch-badge">Banasree &amp; Banani</span>
+              </div>
+              <div className="case-info">
+                <span className="case-category">Aesthetic Dentistry</span>
+                <h4 className="case-title">In-Office Teeth Whitening</h4>
+                <p className="case-desc">
+                  Clinical-grade light-activated whitening system lifting years of deep intrinsic
+                  staining while safeguarding enamel and maintaining zero post-operative sensitivity.
+                </p>
+                <div className="case-highlights">
+                  <span className="case-highlight-tag">Brighter &amp; Whiter</span>
+                  <span className="case-highlight-tag">Safe &amp; Effective</span>
+                  <span className="case-highlight-tag">Radiant Glow</span>
+                </div>
+              </div>
+            </article>
+
+            {/* Case 04: 10+ Years Old Build-up Rehabilitation */}
+            <article className="case-card">
+              <div className="case-image-frame">
+                <img
+                  src="/assets/cases/restoration-old-buildup.png"
+                  alt="Old build-up restoration - Before and After - RH Dental Care"
+                  loading="lazy"
+                />
+                <span className="case-branch-badge">Full Rehabilitation</span>
+              </div>
+              <div className="case-info">
+                <span className="case-category">Full-Mouth Rehabilitation</span>
+                <h4 className="case-title">Complex Build-Up Reconstruction</h4>
+                <p className="case-desc">
+                  Revision of 10+ year old, discolored, and failing broken fillings. Rebuilt to correct
+                  bite relationship, lifelike shade harmony, and long-term biological function.
+                </p>
+                <div className="case-highlights">
+                  <span className="case-highlight-tag">Restored Function</span>
+                  <span className="case-highlight-tag">Natural Appearance</span>
+                  <span className="case-highlight-tag">Permanent Solution</span>
+                </div>
+              </div>
+            </article>
+
+            {/* Case 05: Teeth Whitening Radiant Polish */}
+            <article className="case-card">
+              <div className="case-image-frame">
+                <img
+                  src="/assets/cases/teeth-whitening-bright.png"
+                  alt="Teeth Whitening Bright - Before and After - RH Dental Care"
+                  loading="lazy"
+                />
+                <span className="case-branch-badge">Aesthetic Care</span>
+              </div>
+              <div className="case-info">
+                <span className="case-category">Enamel Rejuvenation</span>
+                <h4 className="case-title">Brighter Smile, Lasting Confidence</h4>
+                <p className="case-desc">
+                  Gentle yet potent whitening protocol removing stubborn nicotine, tea, and coffee
+                  stains for an instantly refreshed, photogenic smile.
+                </p>
+                <div className="case-highlights">
+                  <span className="case-highlight-tag">Whiter Teeth</span>
+                  <span className="case-highlight-tag">Deep Cleaning</span>
+                  <span className="case-highlight-tag">Long-Lasting Results</span>
+                </div>
+              </div>
+            </article>
+
+            {/* Case 06: Dark Luxury Whitening Experience */}
+            <article className="case-card">
+              <div className="case-image-frame">
+                <img
+                  src="/assets/cases/teeth-whitening-dark.png"
+                  alt="Teeth Whitening Luxury - Before and After - RH Dental Care"
+                  loading="lazy"
+                />
+                <span className="case-branch-badge">Specialist Monitored</span>
+              </div>
+              <div className="case-info">
+                <span className="case-category">Gingival Shielding</span>
+                <h4 className="case-title">Medical Barrier Whitening</h4>
+                <p className="case-desc">
+                  Medical dam protection isolating soft tissues followed by high-potency peroxide
+                  gel application for patients seeking executive-level smile clarity.
+                </p>
+                <div className="case-highlights">
+                  <span className="case-highlight-tag">Gingival Safety</span>
+                  <span className="case-highlight-tag">Maximum Brightness</span>
+                  <span className="case-highlight-tag">Expert Supervision</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      {/* ─────────────────────────── 7-STEP SIMPLIFIED JOURNEY ─────────────────────────── */}
       <section className="journey" id="journey">
         <div className="container">
           <div className="section-head two-col">
             <div>
               <span className="eyebrow">
-                <span className="kicker-line"></span>Your seamless journey
+                <span className="kicker-line"></span>Your Journey, Simplified
               </span>
               <h2 className="display">
-                From abroad,
-                <br />
-                <em>to a finished smile.</em>
+                HOME <em>→</em> DHAKA <em>→</em> RH DENTAL CARE <em>→</em> HOME
               </h2>
             </div>
             <p className="lead">
-              Four phases. Most international files run six to ten days on the ground — booked with
-              enough margin for you to enjoy Bangladesh between appointments.
+              Your journey starts from home. Seven clearly coordinated milestones designed to take you
+              from initial assessment to finished clinical outcome and a safe journey back.
             </p>
           </div>
 
@@ -1340,44 +1700,141 @@ export default function DentalTourism() {
               </g>
             </svg>
 
-            <ol className="steps">
+            <ol className="steps" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))' }}>
               <li className="step" data-step>
                 <div className="step-num">01</div>
-                <div className="step-time">Before you fly</div>
-                <h4>Remote consultation</h4>
+                <div className="step-time">First Contact</div>
+                <h4>1. Enquire</h4>
                 <p>
-                  Share dental records over WhatsApp or email. Receive a full treatment plan, tailored
-                  and dated, before you book a flight.
+                  Reach out through WhatsApp, email, or our web portal to discuss your dental goals
+                  and travel window.
                 </p>
               </li>
               <li className="step" data-step>
                 <div className="step-num">02</div>
-                <div className="step-time">Day 1</div>
-                <h4>Arrival & assessment</h4>
+                <div className="step-time">Records</div>
+                <h4>2. Share Your Records</h4>
                 <p>
-                  Fast-track 3D CBCT scan and intraoral examination on landing day. Treatment plan
-                  confirmed in person, with zero surprises.
+                  Send existing dental X-rays, OPG scans, clinical photos, or medical notes for our
+                  clinical panel to review.
                 </p>
               </li>
               <li className="step" data-step>
                 <div className="step-num">03</div>
-                <div className="step-time">Days 2–8</div>
-                <h4>Expert treatment</h4>
+                <div className="step-time">Assessment</div>
+                <h4>3. Treatment Assessment</h4>
                 <p>
-                  BMDC-certified specialists perform procedures in efficient, calm sessions. One
-                  clinician per chair, never overbooked.
+                  Receive a clear clinical assessment, procedure breakdown, estimated appointments,
+                  and fixed transparent quote.
                 </p>
               </li>
               <li className="step" data-step>
                 <div className="step-num">04</div>
-                <div className="step-time">After you return</div>
-                <h4>Aftercare & follow-up</h4>
+                <div className="step-time">Logistics</div>
+                <h4>4. Plan Your Visit</h4>
                 <p>
-                  Encrypted digital file, written home-care, and scheduled remote check-ins keep
-                  your outcome on track long after you're home.
+                  Coordinate flight schedules and hotel stays with Alif Global Tours &amp; Travels,
+                  locking in priority clinic chair times.
+                </p>
+              </li>
+              <li className="step" data-step>
+                <div className="step-num">05</div>
+                <div className="step-time">Arrival</div>
+                <h4>5. Travel to Bangladesh</h4>
+                <p>
+                  Land at Dhaka (DAC) with dedicated chauffeur airport pickup arranged, checking in
+                  comfortably at your hotel.
+                </p>
+              </li>
+              <li className="step" data-step>
+                <div className="step-num">06</div>
+                <div className="step-time">Clinical Care</div>
+                <h4>6. Receive Treatment</h4>
+                <p>
+                  Experience gentle, high-tech dentistry under BMDC-certified specialists with zero
+                  delays or rushed appointments.
+                </p>
+              </li>
+              <li className="step" data-step>
+                <div className="step-num">07</div>
+                <div className="step-time">Post-Op</div>
+                <h4>7. Follow-Up &amp; Return Home</h4>
+                <p>
+                  Return home safely with complete digital records, warranty certification, and
+                  scheduled remote follow-up care.
                 </p>
               </li>
             </ol>
+          </div>
+
+          {/* ─────────────────────────── TWO WAYS TO BOOK ─────────────────────────── */}
+          <div className="two-ways-to-book" id="booking-options" data-reveal style={{ marginTop: '60px' }}>
+            <div className="two-ways-head">
+              <span className="eyebrow" style={{ color: '#38bdf8' }}>SCENE 08 · FLEXIBLE BOOKING</span>
+              <h3>Two Ways to Book Your Journey</h3>
+              <p style={{ color: 'rgba(246, 241, 232, 0.75)', margin: 0 }}>
+                Whether you prefer arranging your own travel or want a fully turnkey medical tourism
+                package, we have tailored pathways for you.
+              </p>
+            </div>
+
+            <div className="two-ways-grid">
+              {/* CARD 01 */}
+              <div className="booking-choice-card">
+                <span className="booking-choice-num">CARD 01 · DIRECT DENTAL ROUTE</span>
+                <h4>Book Directly with RH Dental Care</h4>
+                <p>
+                  Ideal for visitors and expatriates who already have travel or accommodation in Dhaka.
+                  Discuss your dental needs, send your records directly to our clinical team, and schedule
+                  your treatment dates.
+                </p>
+                <a href="#contact" className="choice-btn primary">
+                  Plan Your Dental Treatment
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
+                    <path d="M5 12h14M13 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </a>
+              </div>
+
+              {/* CARD 02 */}
+              <div className="booking-choice-card" style={{ borderColor: 'rgba(52, 211, 153, 0.4)' }}>
+                <span className="booking-choice-num" style={{ color: '#34d399' }}>CARD 02 · FULL TOURISM PACKAGE</span>
+                <h4>Book Through Alif Global Tours &amp; Travels</h4>
+                <p>
+                  All-inclusive Dental Tourism journey. Complete travel coordination + hotel accommodations
+                  + airport transfers + local transportation + guaranteed priority dental appointments.
+                </p>
+                <BranchCTA
+                  action="whatsapp"
+                  branch="banani"
+                  className="choice-btn outline"
+                >
+                  Book Your Dental Tourism Journey
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
+                    <path d="M5 12h14M13 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </BranchCTA>
+              </div>
+            </div>
+
+            {/* Treatment Planning Around Your Trip Banner (Scene 09) */}
+            <div className="trip-planning-banner" style={{ marginTop: '36px' }}>
+              <div className="trip-planning-head">
+                <h4>Planned Around Your Journey</h4>
+                <span className="trip-planning-badge">SCENE 09 · CLINICAL INTEGRITY</span>
+              </div>
+              <div className="trip-factors-list">
+                <span className="trip-factor-item">✓ Clinical Needs</span>
+                <span className="trip-factor-item">✓ Travel Dates</span>
+                <span className="trip-factor-item">✓ Treatment Duration</span>
+                <span className="trip-factor-item">✓ Number of Visits</span>
+                <span className="trip-factor-item">✓ Healing Periods</span>
+              </div>
+              <p>
+                “Where clinically appropriate, your treatment schedule can be planned around your travel
+                dates, available time and clinical requirements. <b>Patient safety and appropriate clinical care always remain our priority.</b>”
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -2218,6 +2675,197 @@ export default function DentalTourism() {
                 <span className="dv-fig-desc">Rich traditional Kacchi & local delicacies.</span>
               </figcaption>
             </figure>
+          </div>
+        </div>
+      </section>
+
+      {/* ─────────────────────────── CAMPAIGN VIDEO & STORYBOARD THEATER ─────────────────────────── */}
+      <section className="video-theater-section" id="campaign-video">
+        <div className="container">
+          <div className="theater-header" data-reveal>
+            <span className="eyebrow">
+              <span className="kicker-line"></span>Official Campaign Film · 4K Clinic Showcase
+            </span>
+            <h2>
+              Dental Tourism in Bangladesh <em>Film &amp; Storyboard</em>
+            </h2>
+            <p style={{ color: 'rgba(246, 241, 232, 0.75)' }}>
+              Take a cinematic preview of the patient journey at RH Dental Care. Watch our facility
+              walkthrough, clinical technology, and coordinated travel workflow with Alif Global Tours &amp; Travels.
+            </p>
+          </div>
+
+          {/* 4K Video Player */}
+          <div className="video-player-container" data-reveal>
+            <video
+              src="/assets/videos/banani.mp4"
+              controls
+              poster="/assets/tourism/clinic_reception.png"
+              playsInline
+              preload="metadata"
+            >
+              Your browser does not support the video tag.
+            </video>
+          </div>
+
+          {/* 10-Scene Storyboard & Script Breakdown */}
+          <div className="storyboard-timeline" data-reveal>
+            <div className="storyboard-head">
+              <h4>Promotional Film Script &amp; Visual Storyboard</h4>
+              <span className="specs">Duration: 90–120s · 16:9 4K &amp; 9:16 Reels · RH × Alif Global</span>
+            </div>
+
+            <div className="storyboard-scenes-grid">
+              {/* Scene 01 */}
+              <div className="storyboard-card">
+                <div className="scene-badge-row">
+                  <span className="scene-num">SCENE 01 · OPENING</span>
+                  <span className="scene-duration">0–8s</span>
+                </div>
+                <div className="scene-title">Welcome to Bangladesh</div>
+                <div className="scene-vo">
+                  “Looking for quality dental treatment while travelling to Bangladesh? Welcome to RH Dental Care.”
+                </div>
+                <div className="scene-visual">
+                  Visual: Aerial shots of modern Dhaka → transition to premium clinic operatory.
+                </div>
+              </div>
+
+              {/* Scene 02 */}
+              <div className="storyboard-card">
+                <div className="scene-badge-row">
+                  <span className="scene-num">SCENE 02 · INTRODUCTION</span>
+                  <span className="scene-duration">8–18s</span>
+                </div>
+                <div className="scene-title">Introducing RH Dental Care</div>
+                <div className="scene-vo">
+                  “RH Dental Care welcomes international patients with comprehensive dental services, experienced dental professionals, modern technology and personalized treatment planning.”
+                </div>
+                <div className="scene-visual">
+                  Visual: Exterior/interior of RH Dental Care, reception, specialist team &amp; consultations.
+                </div>
+              </div>
+
+              {/* Scene 03 */}
+              <div className="storyboard-card">
+                <div className="scene-badge-row">
+                  <span className="scene-num">SCENE 03 · DENTISTRY</span>
+                  <span className="scene-duration">18–32s</span>
+                </div>
+                <div className="scene-title">Comprehensive Clinical Care</div>
+                <div className="scene-vo">
+                  “From preventive and restorative dentistry to root canal, implants, cosmetic dentistry, orthodontics, oral surgery, pediatric care and full-mouth rehabilitation...”
+                </div>
+                <div className="scene-visual">
+                  Visual: Fast elegant sequence of procedures &amp; digital workflow under one network.
+                </div>
+              </div>
+
+              {/* Scene 04 */}
+              <div className="storyboard-card">
+                <div className="scene-badge-row">
+                  <span className="scene-num">SCENE 04 · WHY RH?</span>
+                  <span className="scene-duration">32–43s</span>
+                </div>
+                <div className="scene-title">Why RH Dental Care?</div>
+                <div className="scene-vo">
+                  “Our focus goes beyond treatment. We combine clinical expertise, modern technology and multidisciplinary care to create a personalized treatment journey for every patient.”
+                </div>
+                <div className="scene-visual">
+                  Visual: Dentists analyzing 3D scans, diagnostic digital screens, and patient consultation.
+                </div>
+              </div>
+
+              {/* Scene 05 */}
+              <div className="storyboard-card">
+                <div className="scene-badge-row">
+                  <span className="scene-num">SCENE 05 · ROADMAP</span>
+                  <span className="scene-duration">43–56s</span>
+                </div>
+                <div className="scene-title">The Patient Journey</div>
+                <div className="scene-vo">
+                  “Your journey starts from home. Share your dental records with us, receive an initial assessment, plan your visit, travel to Bangladesh, receive your treatment and return home.”
+                </div>
+                <div className="scene-visual">
+                  Visual: Animated international route (Home → Dhaka → RH Dental Care → Home).
+                </div>
+              </div>
+
+              {/* Scene 06 */}
+              <div className="storyboard-card">
+                <div className="scene-badge-row">
+                  <span className="scene-num">SCENE 06 · PARTNERSHIP</span>
+                  <span className="scene-duration">56–70s</span>
+                </div>
+                <div className="scene-title">RH × Alif Global Tours</div>
+                <div className="scene-vo">
+                  “To make the experience even easier, RH Dental Care has partnered with Alif Global Tours &amp; Travels to support international patients throughout their travel and treatment journey.”
+                </div>
+                <div className="scene-visual">
+                  Visual: Split-screen (Dental Treatment on Left + Travel Support on Right) with joint logos.
+                </div>
+              </div>
+
+              {/* Scene 07 */}
+              <div className="storyboard-card">
+                <div className="scene-badge-row">
+                  <span className="scene-num">SCENE 07 · LOGISTICS</span>
+                  <span className="scene-duration">70–82s</span>
+                </div>
+                <div className="scene-title">Full Travel Support</div>
+                <div className="scene-vo">
+                  “Through Alif Global Tours &amp; Travels, patients can receive assistance with visa support, travel coordination, airport transfers, hotel accommodation, local transportation and appointments.”
+                </div>
+                <div className="scene-visual">
+                  Visual: Passport, visa, flight, airport chauffeur pickup, boutique hotel &amp; clinic arrival.
+                </div>
+              </div>
+
+              {/* Scene 08 */}
+              <div className="storyboard-card">
+                <div className="scene-badge-row">
+                  <span className="scene-num">SCENE 08 · BOOKING</span>
+                  <span className="scene-duration">82–96s</span>
+                </div>
+                <div className="scene-title">Two Ways to Book</div>
+                <div className="scene-vo">
+                  “You can start your journey directly with RH Dental Care—or contact Alif Global Tours &amp; Travels to arrange your travel and Dental Tourism experience with us.”
+                </div>
+                <div className="scene-visual">
+                  Visual: Card 01 (Direct Dental Treatment) and Card 02 (Turnkey Tourism Package).
+                </div>
+              </div>
+
+              {/* Scene 09 */}
+              <div className="storyboard-card">
+                <div className="scene-badge-row">
+                  <span className="scene-num">SCENE 09 · PLANNING</span>
+                  <span className="scene-duration">96–106s</span>
+                </div>
+                <div className="scene-title">Planned Around Your Trip</div>
+                <div className="scene-vo">
+                  “Where clinically appropriate, your treatment schedule can be planned around your travel dates, available time and clinical requirements. Patient safety always remains our priority.”
+                </div>
+                <div className="scene-visual">
+                  Visual: Treatment calendar, flight dates alignment, healing intervals &amp; safe recovery.
+                </div>
+              </div>
+
+              {/* Scene 10 & Final Frame */}
+              <div className="storyboard-card" style={{ borderColor: 'rgba(56, 189, 248, 0.4)', background: 'rgba(14, 165, 233, 0.08)' }}>
+                <div className="scene-badge-row">
+                  <span className="scene-num" style={{ color: '#7dd3fc' }}>SCENE 10 · CLOSING</span>
+                  <span className="scene-duration">106–120s</span>
+                </div>
+                <div className="scene-title">Your Smile, Our Happiness</div>
+                <div className="scene-vo">
+                  “From your first enquiry to your treatment and journey home, we are here to make Dental Tourism in Bangladesh simpler, more comfortable and professionally coordinated.”
+                </div>
+                <div className="scene-visual" style={{ color: '#fff' }}>
+                  Websites: <b>rhdentalcare.com</b> · <b>alifglobaltours.com</b>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

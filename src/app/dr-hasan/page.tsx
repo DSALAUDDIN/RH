@@ -28,6 +28,7 @@ export default function Page() {
             jobTitle: d.role ?? 'Dental Surgeon',
             description: d.bio[0] ?? d.role ?? 'Dental surgeon at RH Dental Care.',
             image: d.image ?? undefined,
+            bmdc: d.bmdc ?? undefined,
             // Only confirmed credentials reach the schema. See src/lib/doctors.ts.
             credentials: [...d.qualifications, ...(d.bmdc ? [`BMDC Reg. ${d.bmdc}`] : [])],
             knowsAbout: d.procedures.length ? d.procedures : undefined,

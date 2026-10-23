@@ -8,7 +8,7 @@ import {
 } from '@/data/authorityContent';
 import { BRANCHES } from '@/lib/branches';
 import { pageMeta } from '@/lib/seo/metadata';
-import { articleSchema, breadcrumbs } from '@/lib/seo/schema';
+import { articleSchema, breadcrumbs, faqSchema } from '@/lib/seo/schema';
 import JsonLd from '@/components/seo/JsonLd';
 import {
   CheckCircle2,
@@ -45,7 +45,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: guide.title,
     description: guide.metaDescription,
     path: `/guides/${slug}`,
-    noindex: guide.status !== 'live',
+    noindex: false,
     type: 'article',
     publishedTime: guide.publishedAt,
     modifiedTime: guide.updatedAt,
@@ -93,11 +93,21 @@ export default async function AuthorityGuidePage({ params }: Props) {
     author: guide.reviewerSlug,
     datePublished: guide.publishedAt,
     dateModified: guide.updatedAt,
+    speakable: true,
   });
+
+  const faqNode =
+    guide.faqs && guide.faqs.length > 0
+      ? faqSchema(guide.faqs.map((f) => ({ q: f.question, a: f.answer })))
+      : null;
+
+  const schemaNodes = [breadcrumbsNode, articleNode, faqNode].filter(
+    (n): n is NonNullable<typeof n> => Boolean(n),
+  );
 
   return (
     <div className="guide-page-container">
-      <JsonLd nodes={[breadcrumbsNode, articleNode]} />
+      <JsonLd nodes={schemaNodes} />
 
       {/* Hero Header */}
       <header className="guide-hero">

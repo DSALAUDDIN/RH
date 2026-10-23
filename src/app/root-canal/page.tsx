@@ -43,6 +43,7 @@ import flyerImg from '@/assets/specialties/root-canal-flyer.jpg';
 import JsonLd from '@/components/seo/JsonLd';
 import { faqSchema, publishedFaq } from '@/lib/seo/schema';
 import { rootCanalFaq } from '@/lib/treatment-faq';
+import RelatedGuidesCluster from '@/components/seo/RelatedGuidesCluster';
 
 function FadeIn({
   children,
@@ -861,6 +862,15 @@ export default function RootCanalPage() {
           </div>
         </div>
       </section>
+
+      {/* Topic Cluster: Clinical Guides */}
+      <div className="container" style={{ position: 'relative', zIndex: 2 }}>
+        <RelatedGuidesCluster
+          category="endodontics"
+          title="Microscopic Root Canal Guides & Aftercare Protocols"
+          subtitle="Learn why surgical operating microscopes, 3D imaging, and rotary files preserve natural teeth and prevent extractions."
+        />
+      </div>
 
       {/* CTA */}
       <section className="imp-cta">

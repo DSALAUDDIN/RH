@@ -5,9 +5,9 @@ import { pageMeta } from '@/lib/seo/metadata';
 import { breadcrumbs } from '@/lib/seo/schema';
 
 export const metadata: Metadata = pageMeta({
-  title: 'Dental Treatment in Dhaka for Overseas Patients',
+  title: 'Dental Tourism in Bangladesh | RH Dental Care × Alif Global Tours & Travels',
   description:
-    'Planning dental treatment in Dhaka from abroad: sending records ahead, what can be done in one trip, and which branch suits a short visit.',
+    'Quality Dental Care & Complete Travel Support in Dhaka. RH Dental Care partners with Alif Global Tours & Travels for international patients: visa, airport transfers, hotels & expert dentistry.',
   path: '/dental-tourism',
 });
 

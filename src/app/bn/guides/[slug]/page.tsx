@@ -8,7 +8,7 @@ import {
 } from '@/data/banglaAuthorityContent';
 import { BRANCH_LIST } from '@/lib/branches';
 import { pageMeta } from '@/lib/seo/metadata';
-import { articleSchema, breadcrumbs } from '@/lib/seo/schema';
+import { articleSchema, breadcrumbs, faqSchema } from '@/lib/seo/schema';
 import JsonLd from '@/components/seo/JsonLd';
 import {
   CheckCircle2,
@@ -47,7 +47,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: guide.metaDescription,
     path: `/bn/guides/${slug}`,
     canonical: `/bn/guides/${slug}`,
-    noindex: guide.status !== 'live',
+    noindex: false,
     type: 'article',
     locale: 'bn_BD',
     publishedTime: guide.publishedAt,
@@ -97,11 +97,21 @@ export default async function BanglaAuthorityGuidePage({ params }: Props) {
     datePublished: guide.publishedAt,
     dateModified: guide.updatedAt,
     inLanguage: 'bn-BD',
+    speakable: true,
   });
+
+  const faqNode =
+    guide.faqs && guide.faqs.length > 0
+      ? faqSchema(guide.faqs.map((f) => ({ q: f.question, a: f.answer })))
+      : null;
+
+  const schemaNodes = [breadcrumbsNode, articleNode, faqNode].filter(
+    (n): n is NonNullable<typeof n> => Boolean(n),
+  );
 
   return (
     <div className="guide-page-container">
-      <JsonLd nodes={[breadcrumbsNode, articleNode]} />
+      <JsonLd nodes={schemaNodes} />
 
       {/* Hero Header */}
       <header className="guide-hero">

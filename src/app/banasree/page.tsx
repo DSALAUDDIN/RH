@@ -20,6 +20,14 @@ export const metadata: Metadata = pageMeta({
   description:
     'Full-service dental hospital on Block C, Banasree, Dhaka. In-house master digital lab, the full specialist team on site, coordinated treatment planning.',
   path: '/banasree',
+  image: b.ogImage,
+  imageAlt: b.photos[0]?.alt,
+  other: {
+    'geo.region': 'BD-13',
+    'geo.placename': 'Banasree, Rampura, Dhaka, Bangladesh',
+    'geo.position': '23.7606878;90.4299624',
+    ICBM: '23.7606878, 90.4299624',
+  },
 });
 
 export default function BanasreePage() {

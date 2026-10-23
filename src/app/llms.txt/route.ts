@@ -1,13 +1,15 @@
 import { SITE, absoluteUrl } from '@/config/site';
 import { BRANCH_LIST } from '@/lib/branches';
 import { ROUTES } from '@/lib/seo/routes';
+import { getAllAuthorityGuides } from '@/data/authorityContent';
+import { getAllBanglaAuthorityGuides } from '@/data/banglaAuthorityContent';
 
 export const dynamic = 'force-static';
 
 /**
  * /llms.txt: a plain-text site summary for AI assistants and answer engines
- * (https://llmstxt.org). Generated from the route manifest and branch registry
- * so it never drifts from the site.
+ * (https://llmstxt.org). Generated from the route manifest, branch registry,
+ * and authority guides so it gives full topical knowledge to LLMs.
  */
 export function GET() {
   const branches = BRANCH_LIST.map(
@@ -20,17 +22,34 @@ export function GET() {
     .map((r) => `- [${r.label}](${absoluteUrl(r.path)})`)
     .join('\n');
 
+  const enGuides = getAllAuthorityGuides()
+    .map((g) => `- [${g.title}](${absoluteUrl(`/guides/${g.slug}`)}): ${g.metaDescription}`)
+    .join('\n');
+
+  const bnGuides = getAllBanglaAuthorityGuides()
+    .map((g) => `- [${g.title}](${absoluteUrl(`/bn/guides/${g.slug}`)}): ${g.metaDescription}`)
+    .join('\n');
+
   const body = `# ${SITE.name}
 
 > ${SITE.description}
+> Full technical documentation & doctor credentials: ${absoluteUrl('/llms-full.txt')}
 
-## Clinics
+## Clinics & Locations
 
 ${branches}
 
-## Pages
+## Core Pages & Specialties
 
 ${pages}
+
+## Doctor-Reviewed Patient Dental Guides (English)
+
+${enGuides}
+
+## সম্পূর্ণ বাংলায় ডেন্টাল গাইডসমূহ (Bangla Dental Guides)
+
+${bnGuides}
 `;
 
   return new Response(body, {

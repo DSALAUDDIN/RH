@@ -23,6 +23,12 @@ export const metadata: Metadata = pageMeta({
   path: '/banani',
   image: b.ogImage,
   imageAlt: b.photos[0]?.alt,
+  other: {
+    'geo.region': 'BD-13',
+    'geo.placename': 'Banani, Dhaka, Bangladesh',
+    'geo.position': '23.7937;90.4066',
+    ICBM: '23.7937, 90.4066',
+  },
 });
 
 export default function BananiPage() {

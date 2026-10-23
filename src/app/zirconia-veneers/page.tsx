@@ -22,6 +22,7 @@ import {
 import '../implants/implants.css';
 import '../zirconia-crown/zirconia.css';
 import BranchCTA from '@/components/branch/BranchCTA';
+import RelatedGuidesCluster from '@/components/seo/RelatedGuidesCluster';
 
 import heroImg from '@/assets/specialties/aesthetic_new.png';
 import digitalImg from '@/assets/specialties/zirconia_digital_workflow.png';
@@ -662,6 +663,15 @@ export default function ZirconiaVeneersPage() {
             </FadeIn>
           </div>
         </div>
+      </section>
+
+      {/* Authority Guides Cluster */}
+      <section className="container" style={{ margin: '3rem auto 1rem' }}>
+        <RelatedGuidesCluster
+          category="zirconia"
+          title="Veneers, Smile Design & Aesthetic Guides"
+          subtitle="Doctor-reviewed guides on zirconia veneers, prep vs minimal prep, shade selection, and cost comparisons in Dhaka."
+        />
       </section>
 
       {/* CTA */}

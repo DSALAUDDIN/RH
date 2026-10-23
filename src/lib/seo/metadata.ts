@@ -32,6 +32,7 @@ export interface PageMetaInput {
   tags?: string[];
   locale?: string;
   languages?: Record<string, string>;
+  other?: Record<string, string>;
 }
 
 /**
@@ -114,6 +115,7 @@ export function pageMeta(input: PageMetaInput): Metadata {
       description,
       images: [ogImage.url],
     },
+    ...(input.other ? { other: input.other } : {}),
     ...(noindex ? { robots: { index: false, follow: true } } : {}),
   };
 }

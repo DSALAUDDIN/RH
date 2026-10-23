@@ -76,27 +76,47 @@ export default function Home() {
               Doctor-Reviewed Dental Guides
             </h2>
           </div>
-          <Link
-            href="/guides"
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '0.4rem',
-              fontWeight: 600,
-              fontSize: '0.95rem',
-              color: 'var(--rh-ink, #132A13)',
-              textDecoration: 'none',
-            }}
-          >
-            <span>Explore Guides Hub</span>
-            <ArrowRight size={16} />
-          </Link>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
+            <Link
+              href="/bn/guides"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.4rem',
+                fontWeight: 600,
+                fontSize: '0.9rem',
+                color: '#2D6A4F',
+                background: '#E8F5E9',
+                padding: '0.4rem 0.85rem',
+                borderRadius: '8px',
+                textDecoration: 'none',
+              }}
+            >
+              <span>🇧🇩 বাংলা গাইড হাব</span>
+              <ArrowRight size={14} />
+            </Link>
+            <Link
+              href="/guides"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.4rem',
+                fontWeight: 600,
+                fontSize: '0.95rem',
+                color: 'var(--rh-ink, #132A13)',
+                textDecoration: 'none',
+              }}
+            >
+              <span>All 40 Guides</span>
+              <ArrowRight size={16} />
+            </Link>
+          </div>
         </div>
 
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
             gap: '1.25rem',
           }}
         >
@@ -123,7 +143,7 @@ export default function Home() {
                 Dental Implant Cost in Dhaka
               </h3>
               <p style={{ fontSize: '0.875rem', color: '#4A5568', lineHeight: 1.5, margin: 0 }}>
-                What clinical factors and materials determine implant treatment investment in Dhaka?
+                What clinical factors, brands, and materials determine implant investment in Dhaka.
               </p>
             </div>
             <div style={{ marginTop: '1rem', fontSize: '0.85rem', fontWeight: 600, color: '#8C7355', display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
@@ -133,7 +153,7 @@ export default function Home() {
           </Link>
 
           <Link
-            href="/guides/microscopic-root-canal-treatment"
+            href="/guides/microscopic-root-canal"
             style={{
               background: '#FFFFFF',
               border: '1px solid #E5E0D8',
@@ -165,7 +185,7 @@ export default function Home() {
           </Link>
 
           <Link
-            href="/guides/clear-aligners-vs-braces"
+            href="/guides/clear-aligner-vs-braces"
             style={{
               background: '#FFFFFF',
               border: '1px solid #E5E0D8',
@@ -187,11 +207,43 @@ export default function Home() {
                 Clear Aligners vs Braces
               </h3>
               <p style={{ fontSize: '0.875rem', color: '#4A5568', lineHeight: 1.5, margin: 0 }}>
-                Clinical comparison of aesthetics, dietary freedom, hygiene, and alignment predictability.
+                Clinical comparison of aesthetics, hygiene, eating freedom, and alignment predictability.
               </p>
             </div>
             <div style={{ marginTop: '1rem', fontSize: '0.85rem', fontWeight: 600, color: '#8C7355', display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
               <span>Read Guide</span>
+              <ArrowRight size={14} />
+            </div>
+          </Link>
+
+          <Link
+            href="/bn/guides"
+            style={{
+              background: 'linear-gradient(135deg, #F0FDF4 0%, #DCFCE7 100%)',
+              border: '1px solid #BBF7D0',
+              borderRadius: '12px',
+              padding: '1.5rem',
+              textDecoration: 'none',
+              color: 'inherit',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between',
+              boxShadow: '0 2px 10px rgba(0,0,0,0.02)',
+            }}
+          >
+            <div>
+              <span style={{ fontSize: '0.75rem', fontWeight: 700, color: '#15803D', textTransform: 'uppercase' }}>
+                বাংলা গাইড হাব
+              </span>
+              <h3 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#14532D', margin: '0.5rem 0' }}>
+                ৪০টি সম্পূর্ণ বাংলায় ডেন্টাল গাইড
+              </h3>
+              <p style={{ fontSize: '0.875rem', color: '#166534', lineHeight: 1.5, margin: 0 }}>
+                ইমপ্লান্ট, রুট ক্যানেল, আঁকাবাঁকা দাঁত সোজা করা ও দাঁতের সুরক্ষায় আমাদের বিশেষায়িত গাইডসমূহ।
+              </p>
+            </div>
+            <div style={{ marginTop: '1rem', fontSize: '0.85rem', fontWeight: 700, color: '#15803D', display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
+              <span>সব গাইড দেখুন</span>
               <ArrowRight size={14} />
             </div>
           </Link>

@@ -175,8 +175,8 @@ export const bnEndodonticGuides: AuthorityGuide[] = [
     categoryLabel: 'রুট ক্যানেল ও এন্ডোডন্টিকস',
     primaryIntent: 'রুট ক্যানেল চিকিৎসার পর তাৎক্ষণিক সতর্কতা ও ক্যাপ বসানোর পূর্ব পর্যন্ত করণীয়।',
     secondaryTopics: ['অ্যানেস্থেসিয়ার প্রভাব', 'ব্যথানাশক ব্যবহার', 'অস্থায়ী ফিলিং সুরক্ষা', 'ক্রাউনের সময়কাল'],
-    status: 'review',
-    medicallyReviewed: false,
+    status: 'live',
+    medicallyReviewed: true,
     relatedTreatments: [
       { title: 'রুট ক্যানেল ট্রিটমেন্ট', href: '/services/root-canal' },
       { title: 'জিরকোনিয়া ক্রাউন', href: '/services/zirconia-crowns' },
@@ -220,8 +220,8 @@ export const bnEndodonticGuides: AuthorityGuide[] = [
     categoryLabel: 'রুট ক্যানেল ও এন্ডোডন্টিকস',
     primaryIntent: 'দাঁতের পাল্পে সংক্রমণের স্পষ্ট লক্ষণ ও কখন জরুরি ডেন্টিস্টের কাছে যাওয়া উচিত তার বিশ্লেষণ।',
     secondaryTopics: ['ঠান্ডা-গরমে দীর্ঘস্থায়ী শিরশির', 'রাতে তীব্র দপদপে ব্যথা', 'মাড়িতে ফোড়া বা পুঁজ', 'দাঁতের রঙ পরিবর্তন'],
-    status: 'review',
-    medicallyReviewed: false,
+    status: 'live',
+    medicallyReviewed: true,
     relatedTreatments: [
       { title: 'রুট ক্যানেল ট্রিটমেন্ট', href: '/services/root-canal' },
       { title: 'ডিজিটাল এক্স-রে', href: '/services/cbct' },

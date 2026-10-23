@@ -29,6 +29,7 @@ import {
 import '../implants/implants.css';
 import './digital-dentistry.css';
 import BranchCTA from '@/components/branch/BranchCTA';
+import RelatedGuidesCluster from '@/components/seo/RelatedGuidesCluster';
 
 import heroImg from '@/assets/specialties/3d-imaging_new.png';
 import scannerImg from '@/assets/specialties/imaging.png';
@@ -1353,6 +1354,15 @@ export default function DigitalDentistryPage() {
               </FadeIn>
             </div>
           </div>
+        </section>
+
+        {/* Authority Guides Cluster */}
+        <section className="container" style={{ margin: '3rem auto 1rem' }}>
+          <RelatedGuidesCluster
+            category="digital-dentistry"
+            title="3D Imaging, Guided Surgery & Digital Dentistry Guides"
+            subtitle="Clinical guides on CBCT radiation safety, 3Shape intraoral scanning, surgical guides, and 3D printing in Dhaka."
+          />
         </section>
 
         {/* ═══════════════ CTA ═══════════════ */}

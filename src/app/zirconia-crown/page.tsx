@@ -29,6 +29,7 @@ import './zirconia.css';
 import heroImg from '@/assets/specialties/zirconia_new.png';
 import zirconiaImg from '@/assets/specialties/zirconia.png';
 import digitalImg from '@/assets/specialties/zirconia_digital_workflow.png';
+import RelatedGuidesCluster from '@/components/seo/RelatedGuidesCluster';
 
 /* Motion variants */
 const stagger: Variants = { hidden: {}, show: { transition: { staggerChildren: 0.09 } } };
@@ -734,6 +735,15 @@ export default function ZirconiaCrownPage() {
           </div>
         </div>
       </section>
+
+      {/* Topic Cluster: Clinical Guides */}
+      <div className="container" style={{ position: 'relative', zIndex: 2, padding: '1rem 0' }}>
+        <RelatedGuidesCluster
+          category="zirconia"
+          title="Zirconia Crowns, Veneers & Smile Design Guides"
+          subtitle="Explore in-depth clinical guides on monolithic zirconia, CAD/CAM digital smile design, and crowns after root canal treatment."
+        />
+      </div>
 
       {/* CTA */}
       <section

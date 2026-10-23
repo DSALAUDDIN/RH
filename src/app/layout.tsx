@@ -96,6 +96,8 @@ export const metadata: Metadata = {
   other: {
     'geo.region': SITE.geo.region,
     'geo.placename': SITE.geo.placename,
+    'geo.position': '23.7937;90.4066',
+    ICBM: '23.7937, 90.4066',
   },
   verification: { google: SITE.verification.google },
 };

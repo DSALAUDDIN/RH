@@ -58,15 +58,18 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Links & Specialties */}
+          {/* Quick Links */}
           <div className="footer-links">
             <h3>Quick Links</h3>
-            <ul style={{ marginBottom: '2rem' }}>
+            <ul style={{ marginBottom: '1.75rem' }}>
               <li>
                 <Link href="/">Home</Link>
               </li>
               <li>
                 <Link href="/about">About Our Clinic</Link>
+              </li>
+              <li>
+                <Link href="/team">Clinical Specialists</Link>
               </li>
               <li>
                 <Link href="/banani">Banani Branch</Link>
@@ -78,29 +81,51 @@ export default function Footer() {
                 <Link href="/treatments">Treatments</Link>
               </li>
               <li>
-                <Link href="/guides">Patient Guides</Link>
+                <Link href="/specialties">Specialties Catalog</Link>
               </li>
               <li>
-                <Link href="/bn/guides">বাংলা ডেন্টাল গাইড</Link>
+                <Link href="/dental-tourism">Dental Tourism (NRB Care)</Link>
               </li>
               <li>
                 <Link href="/contact">Contact Hub</Link>
               </li>
             </ul>
+          </div>
 
-            <h3>Specialties</h3>
+          {/* Clinical Dental Guides (SEO Hub) */}
+          <div className="footer-links">
+            <h3>Dental Guides & Hubs</h3>
             <ul>
               <li>
-                <Link href="/implants">Dental Implants</Link>
+                <Link href="/guides" style={{ fontWeight: 600, color: '#38bdf8' }}>
+                  All 40 Patient Guides →
+                </Link>
               </li>
               <li>
-                <Link href="/orthodontics">Braces & Aligners</Link>
+                <Link href="/bn/guides" style={{ fontWeight: 600, color: '#34d399' }}>
+                  বাংলা ডেন্টাল গাইড (৪০টি) →
+                </Link>
               </li>
               <li>
-                <Link href="/root-canal">Root Canal</Link>
+                <Link href="/guides/dental-implant-cost-dhaka">Implant Cost Guide</Link>
               </li>
               <li>
-                <Link href="/digital-dentistry">Digital Dentistry</Link>
+                <Link href="/guides/microscopic-root-canal">Microscopic Root Canal</Link>
+              </li>
+              <li>
+                <Link href="/guides/clear-aligner-vs-braces">Aligners vs Braces</Link>
+              </li>
+              <li>
+                <Link href="/guides/zirconia-crown-cost-dhaka">Zirconia Crown Cost</Link>
+              </li>
+              <li>
+                <Link href="/guides/dental-emergency-dhaka">Emergency Dental Care</Link>
+              </li>
+              <li>
+                <Link href="/guides/teeth-whitening">Professional Whitening</Link>
+              </li>
+              <li>
+                <Link href="/guides/nrb-dental-treatment-bangladesh">NRB Dental Travel Guide</Link>
               </li>
             </ul>
           </div>

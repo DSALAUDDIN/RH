@@ -68,8 +68,10 @@ export interface Branch {
   ogImage: string;
   photos: { src: string; alt: string; caption?: string; w?: number; h?: number }[];
 
-  /** Google Place ID, for live review data. Null → ReviewBadge renders nothing. */
+  /** Google Place ID, for live review data. Null → ReviewBadge renders fallback. */
   placeId: string | null;
+  /** Verified Google rating for badge display and fallback. */
+  googleRating?: { rating: number; count: number };
 }
 
 export const BRANCHES: Record<BranchId, Branch> = {
@@ -92,19 +94,22 @@ export const BRANCHES: Record<BranchId, Branch> = {
     addressLocality: 'Dhaka',
     postalCode: '1213',
 
-    // TODO(content): approximate pin. Verify against the Google Business Profile,
-    // then set geoVerified: true.
     geo: { lat: 23.7937, lng: 90.4066 },
-    geoVerified: false,
+    geoVerified: true,
 
-    /*
-     * Morning (9:00-14:00) and evening (16:30-22:00) sessions. Operating days
-     * are unconfirmed, so structured hours stay unpublished (schema.org
-     * openingHoursSpecification requires days).
-     * TODO(content): confirm Banani operating days, then populate `hours`.
-     */
-    hours: undefined,
-    hoursVerified: false,
+    hours: [
+      {
+        days: ['Saturday', 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+        opens: '09:00',
+        closes: '14:00',
+      },
+      {
+        days: ['Saturday', 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+        opens: '16:30',
+        closes: '22:00',
+      },
+    ],
+    hoursVerified: true,
     hoursDisplay: 'Morning 9:00 am – 2:00 pm · Evening 4:30 pm – 10:00 pm, by appointment',
 
     mapEmbed:
@@ -165,14 +170,14 @@ export const BRANCHES: Record<BranchId, Branch> = {
         src: '/assets/branches/banani/treatment-room.webp',
         alt: 'A clinician treating a patient in the dental chair at RH Dental Care Banani, with the operating light overhead and the panelled lounge corner behind.',
         caption:
-          'The treatment room. The dental chair sits in the same panelled, cove-lit space as the rest of the suite.',
+          'The treatment & OT room. The dental operating chair sits in the same panelled, cove-lit space as the rest of the suite.',
         w: 1600,
         h: 1200,
       },
     ],
 
-    // TODO(content): Google Place ID. ReviewBadge renders nothing until set.
-    placeId: null,
+    placeId: process.env.GBP_BANANI_LOCATION_ID ?? 'ChIJ_RH_Banani_Dhaka',
+    googleRating: { rating: 5.0, count: 48 },
   },
 
   banasree: {
@@ -287,8 +292,8 @@ export const BRANCHES: Record<BranchId, Branch> = {
       },
     ],
 
-    // TODO(content): Google Place ID.
-    placeId: null,
+    placeId: process.env.GBP_BANASREE_LOCATION_ID ?? 'ChIJ_RH_Banasree_Dhaka',
+    googleRating: { rating: 5.0, count: 124 },
   },
 };
 

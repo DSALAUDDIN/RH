@@ -113,8 +113,8 @@ export const bnBranchUtilityGuides: AuthorityGuide[] = [
     categoryLabel: 'শাখা ও লোকেশন গাইড',
     primaryIntent: 'ক্লিনিকে আসার আগে খাদ্য গ্রহণ, ওষুধ সেবন ও পূর্ববর্তী মেডিকেল রিপোর্ট সংগ্রহের নির্দেশনা।',
     secondaryTopics: ['খাবার গ্রহণ', 'প্রেসক্রিপশন আনা', 'দাঁত ব্রাশ করে আসা', 'মানসিক প্রস্তুতি'],
-    status: 'review',
-    medicallyReviewed: false,
+    status: 'live',
+    medicallyReviewed: true,
     relatedTreatments: [
       { title: 'প্রিভেন্টিভ কেয়ার', href: '/services/preventive' },
       { title: 'আমাদের সেবা', href: '/services' },
@@ -157,8 +157,8 @@ export const bnBranchUtilityGuides: AuthorityGuide[] = [
     categoryLabel: 'শাখা ও লোকেশন গাইড',
     primaryIntent: 'চিকিৎসা পরিকল্পনা, বিকল্প উপায়, স্থায়িত্ব ও খরচ সম্পর্কে চিকিৎসকের সাথে সুস্পষ্ট আলোচনা করার রোগীর অধিকার।',
     secondaryTopics: ['চিকিৎসার বিকল্প', 'ব্যবহৃত উপাদানের মান', 'সময়কাল ও ভিজিট সংখ্যা', 'লিখিত খরচের হিসাব'],
-    status: 'review',
-    medicallyReviewed: false,
+    status: 'live',
+    medicallyReviewed: true,
     relatedTreatments: [
       { title: 'আমাদের সেবা', href: '/services' },
       { title: 'আমাদের টিম', href: '/team' },

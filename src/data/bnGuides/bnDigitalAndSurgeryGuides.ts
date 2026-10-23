@@ -64,8 +64,8 @@ export const bnDigitalAndSurgeryGuides: AuthorityGuide[] = [
     categoryLabel: 'ডিজিটাল ডেন্টিস্ট্রি ও ডায়াগনস্টিকস',
     primaryIntent: 'ইন্ট্রাওরাল স্ক্যানার, থ্রিডি প্রিন্টিং ও ক্যাড/ক্যাম প্রযুক্তির মাধ্যমে আধুনিক আরামদায়ক চিকিৎসার সুবিধা তুলে ধরা।',
     secondaryTopics: ['ডিজিটাল ইমপ্রেশন', 'থ্রিডি প্রিন্টিং', 'ক্যাড/ক্যাম মিলিং', 'রোগীর স্বাচ্ছন্দ্য'],
-    status: 'review',
-    medicallyReviewed: false,
+    status: 'live',
+    medicallyReviewed: true,
     relatedTreatments: [
       { title: 'ডিজিটাল ডেন্টিস্ট্রি', href: '/services/digital-dentistry' },
       { title: 'স্মাইল ডিজাইন', href: '/services/smile-design' },
@@ -108,8 +108,8 @@ export const bnDigitalAndSurgeryGuides: AuthorityGuide[] = [
     categoryLabel: 'ওরাল অ্যান্ড ম্যাক্সিলোফেসিয়াল সার্জারি',
     primaryIntent: 'মাইনর ওরাল সার্জারি, সিস্ট অপসারণ, মাড়ির সার্জারি এবং রোগীর অপারেশন পূর্ববর্তী ও পরবর্তী প্রস্তুতি।',
     secondaryTopics: ['অ্যানেস্থেসিয়া নিরাপত্তা', 'ওষুধের হিস্ট্রি', 'ডায়াবেটিস নিয়ন্ত্রণ', 'পোস্ট-অপ হিলিং'],
-    status: 'review',
-    medicallyReviewed: false,
+    status: 'live',
+    medicallyReviewed: true,
     relatedTreatments: [
       { title: 'ওরাল সার্জারি', href: '/services/oral-surgery' },
       { title: 'সিবিসিটি থ্রিডি স্ক্যান', href: '/services/cbct' },

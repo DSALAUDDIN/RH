@@ -30,7 +30,10 @@ export const SITE = {
    * Business Profile). Only add handles that are verified as owned: sameAs
    * links are used for entity reconciliation.
    */
-  sameAs: ['https://www.facebook.com/share/18YJPadCbX/'] as string[],
+  sameAs: [
+    'https://www.facebook.com/share/18YJPadCbX/',
+    'https://www.google.com/maps/place/RH+Dental+Care+and+Implant+Center/@23.7606878,90.4299624,17z',
+  ] as string[],
   verification: {
     google: '45b388b56fe88bf2',
   },

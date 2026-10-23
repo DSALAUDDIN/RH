@@ -95,6 +95,20 @@ export default function Navbar() {
       ],
     },
     { name: 'Treatments', path: '/treatments' },
+    {
+      name: 'Guides',
+      path: '/guides',
+      dropdown: [
+        { name: 'Patient Guides Hub', path: '/guides', icon: '📚', desc: 'All 40 clinical dental guides' },
+        { name: 'Dental Implant Cost', path: '/guides/dental-implant-cost-dhaka', icon: '🦷', desc: 'Pricing, brands & warranty' },
+        { name: 'Microscopic Root Canal', path: '/guides/microscopic-root-canal', icon: '🔬', desc: 'Single-visit rotary & microscope' },
+        { name: 'Clear Aligners vs Braces', path: '/guides/clear-aligner-vs-braces', icon: '✨', desc: 'Aesthetic smile alignment' },
+        { name: 'Zirconia Crown Cost', path: '/guides/zirconia-crown-cost-dhaka', icon: '👑', desc: 'Monolithic vs layered crowns' },
+        { name: 'Emergency Dental Guide', path: '/guides/dental-emergency-dhaka', icon: '🚨', desc: 'Immediate relief & trauma care' },
+        { name: 'বাংলা ডেন্টাল গাইড হাব', path: '/bn/guides', icon: '🇧🇩', desc: '৪০টি সম্পূর্ণ বাংলায় রচিত গাইড' },
+        { name: 'View All 40 Guides', path: '/guides', icon: '→', desc: '' },
+      ],
+    },
     { name: 'Blog', path: '/blog' },
     { name: 'Reviews', path: '/reviews' },
     { name: 'Contact', path: '/contact' },
@@ -127,7 +141,8 @@ export default function Navbar() {
               const isActive =
                 pathname === link.path ||
                 (isDropdownActive && link.name === 'Specialties') ||
-                (isDropdownActive && link.name === 'About');
+                (isDropdownActive && link.name === 'About') ||
+                (isDropdownActive && link.name === 'Guides');
               return (
                 <li
                   key={link.name}
@@ -229,6 +244,17 @@ export default function Navbar() {
             </Link>
           </div>
 
+          {/* Language Switcher */}
+          <Link
+            href={pathname.startsWith('/bn') ? pathname.replace(/^\/bn/, '') || '/' : '/bn'}
+            className="lang-switcher-btn"
+            aria-label="Toggle Bangla language"
+            title={pathname.startsWith('/bn') ? 'Switch to English' : 'বাংলা সংস্করণে দেখুন'}
+          >
+            <span className="lang-flag">{pathname.startsWith('/bn') ? '🇬🇧' : '🇧🇩'}</span>
+            <span className="lang-text">{pathname.startsWith('/bn') ? 'EN' : 'বাংলা'}</span>
+          </Link>
+
 
           <BranchCTA action="book" className="btn-book">
             <Phone size={16} aria-hidden="true" />
@@ -291,13 +317,27 @@ export default function Navbar() {
                   </Link>
                 </div>
               </li>
+              <li className="mobile-lang-section">
+                <Link
+                  href={pathname.startsWith('/bn') ? pathname.replace(/^\/bn/, '') || '/' : '/bn'}
+                  className="mobile-lang-btn"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <span className="mobile-lang-flag">{pathname.startsWith('/bn') ? '🇬🇧' : '🇧🇩'}</span>
+                  <span className="mobile-lang-title">
+                    {pathname.startsWith('/bn') ? 'Switch to English' : 'বাংলা সংস্করণ (৪০টি গাইড)'}
+                  </span>
+                  <ArrowRight size={14} style={{ marginLeft: 'auto', opacity: 0.7 }} />
+                </Link>
+              </li>
               {navLinks.map((link) => {
                 const isDropdownActive =
                   link.dropdown && link.dropdown.some((sub) => pathname === sub.path);
                 const isActive =
                   pathname === link.path ||
                   (isDropdownActive && link.name === 'Specialties') ||
-                  (isDropdownActive && link.name === 'About');
+                  (isDropdownActive && link.name === 'About') ||
+                  (isDropdownActive && link.name === 'Guides');
                 return (
                   <li key={link.name} className={link.dropdown ? 'mobile-has-dropdown' : ''}>
                     <div className="mobile-link-wrapper">

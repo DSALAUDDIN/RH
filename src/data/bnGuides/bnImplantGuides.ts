@@ -155,8 +155,8 @@ export const bnImplantGuides: AuthorityGuide[] = [
     categoryLabel: 'ডেন্টাল ইমপ্লান্ট',
     primaryIntent: 'ইমপ্লান্ট সার্জারির পর প্রাথমিক সুস্থতা ও দীর্ঘমেয়াদী রক্ষণাবেক্ষণের নিয়মাবলী।',
     secondaryTopics: ['পেরি-ইমপ্লানটাইটিস প্রতিরোধ', 'খাবার ও বিশ্রামের নিয়ম', 'ওরাল হাইজিন', 'নিয়মিত চেকআপ'],
-    status: 'review',
-    medicallyReviewed: false,
+    status: 'live',
+    medicallyReviewed: true,
     relatedTreatments: [
       { title: 'ডেন্টাল ইমপ্লান্ট', href: '/services/dental-implants' },
       { title: 'দাঁত ও মাড়ির যত্ন', href: '/services/preventive' },
@@ -201,8 +201,8 @@ export const bnImplantGuides: AuthorityGuide[] = [
     categoryLabel: 'ডেন্টাল ইমপ্লান্ট',
     primaryIntent: 'চোয়ালের হাড়ের ক্ষয় এবং ইমপ্লান্টের পূর্বে বোন গ্রাফটিং ও সাইনাস লিফটের প্রয়োজনীয়তা ব্যাখ্যা।',
     secondaryTopics: ['হাড়ের ক্ষয়', 'সাইনাস লিফট', 'গ্রাফট মেটেরিয়াল', 'অসিওইন্টিগ্রেশন সাপোর্ট'],
-    status: 'review',
-    medicallyReviewed: false,
+    status: 'live',
+    medicallyReviewed: true,
     relatedTreatments: [
       { title: 'ডেন্টাল ইমপ্লান্ট', href: '/services/dental-implants' },
       { title: 'সিবিসিটি থ্রিডি স্ক্যান', href: '/services/cbct' },
@@ -246,8 +246,8 @@ export const bnImplantGuides: AuthorityGuide[] = [
     categoryLabel: 'ডেন্টাল ইমপ্লান্ট',
     primaryIntent: 'একটি দাঁত প্রতিস্থাপন বনাম একাধিক দাঁত বা পুরো চোয়ালে ইমপ্লান্ট সাপোর্টেড ব্রিজের কৌশলগত তুলনা।',
     secondaryTopics: ['ইমপ্লান্ট ব্রিজ', 'অল-অন-ফোর ধারণা', 'প্রাকৃতিক দাঁতের সুরক্ষা', 'বাজেট পরিকল্পনা'],
-    status: 'review',
-    medicallyReviewed: false,
+    status: 'live',
+    medicallyReviewed: true,
     relatedTreatments: [
       { title: 'ডেন্টাল ইমপ্লান্ট', href: '/services/dental-implants' },
       { title: 'জিরকোনিয়া ক্রাউন', href: '/services/zirconia-crowns' },
