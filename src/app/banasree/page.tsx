@@ -16,9 +16,9 @@ import EditorialNote from '@/components/EditorialNote';
 const b = BRANCHES.banasree;
 
 export const metadata: Metadata = pageMeta({
-  title: 'Banasree Flagship Dental Hospital',
+  title: 'Dental Clinic & Hospital in Banasree, Dhaka',
   description:
-    'Full-service dental hospital on Block C, Banasree, Dhaka. In-house master digital lab, the full specialist team on site, coordinated treatment planning.',
+    'Specialist dental clinic & hospital on Block C, Banasree, Dhaka. In-house digital CAD/CAM lab, microscope root canal, implants & orthodontics.',
   path: '/banasree',
   image: b.ogImage,
   imageAlt: b.photos[0]?.alt,
@@ -59,10 +59,13 @@ export default function BanasreePage() {
         </div>
 
         <div className="bs-hero-text rh-rise">
-          <p className="bs-kicker">RH Dental Care · Banasree</p>
+          <p className="bs-kicker">RH Dental Care · Banasree, Rampura</p>
           <h1 className="bs-h1">
-            Everything a treatment plan needs, <em>in one building</em>.
+            Dental Clinic &amp; Hospital in Banasree, Dhaka
           </h1>
+          <p className="bs-tagline" style={{ fontSize: '1.2rem', fontWeight: 600, color: 'var(--rh-navy-dark, #002347)', marginTop: '0.4rem', marginBottom: '0.85rem' }}>
+            Everything a treatment plan needs, <em>in one building</em>.
+          </p>
           <p className="bs-lede">
             Banasree is the flagship: the bigger setup, with the in-house master digital lab, the
             full specialist team on site. Cases that run across several

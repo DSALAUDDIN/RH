@@ -17,9 +17,9 @@ import BananiHeroVideo from '@/components/branch/BananiHeroVideo';
 const b = BRANCHES.banani;
 
 export const metadata: Metadata = pageMeta({
-  title: 'Banani Private Dental Suite',
+  title: 'Dental Clinic in Banani, Dhaka · Road 11',
   description:
-    'Appointment-only dental care on Road 11, Banani. 3D CBCT on site, a consultation room separate from treatment, and the same clinicians as Banasree.',
+    'Private appointment-only dental clinic on Road 11, Banani, Dhaka. 3D CBCT on site, executive consultation room, implants & cosmetic dentistry.',
   path: '/banani',
   image: b.ogImage,
   imageAlt: b.photos[0]?.alt,
@@ -56,10 +56,13 @@ export default function BananiPage() {
         </div>
 
         <div className="bn-hero-text rh-rise">
-          <p className="bn-kicker">RH Dental Care · Banani</p>
+          <p className="bn-kicker">RH Dental Care · Banani, Road 11</p>
           <h1 className="bn-h1">
-            A dental practice that does not <em>feel</em> like one.
+            Dental Clinic &amp; Private Suite in Banani, Dhaka
           </h1>
+          <p className="bn-tagline" style={{ fontSize: '1.2rem', fontWeight: 600, color: 'var(--rh-navy-dark, #002347)', marginTop: '0.4rem', marginBottom: '0.85rem' }}>
+            A dental practice that does not <em>feel</em> like one.
+          </p>
           <p className="bn-lede">
             Dental anxiety does not usually start in the chair. It starts earlier — in the room
             before it. Banani is a small, appointment-only suite on the seventh floor of B&amp;B
