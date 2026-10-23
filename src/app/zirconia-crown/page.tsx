@@ -66,7 +66,7 @@ const reasons = [
     icon: <Cpu size={22} />,
     title: 'In-House CAD/CAM Dental Laboratory',
     desc: 'Your crown is not simply ordered from an outside laboratory. Design, milling, finishing and final checks all happen in our own lab.',
-    color: '#10b981',
+    color: '#0073e6',
     bg: '#d1fae5',
   },
   {
@@ -199,11 +199,11 @@ const steps = [
   },
 ];
 
-const ACCENT = 'linear-gradient(135deg, #10b981, #059669)';
+const ACCENT = 'linear-gradient(135deg, #0073e6, #0284c7)';
 const labelStyle = {
-  background: 'rgba(16,185,129,0.08)',
-  borderColor: 'rgba(16,185,129,0.2)',
-  color: '#059669',
+  background: 'rgba(0,115,230,0.08)',
+  borderColor: 'rgba(0,115,230,0.2)',
+  color: '#0073e6',
 };
 const accentText = {
   background: ACCENT,
@@ -290,7 +290,7 @@ export default function ZirconiaCrownPage() {
               action="book"
               service="Zirconia Crown"
               className="imp-btn-primary"
-              style={{ background: ACCENT, boxShadow: '0 8px 32px rgba(16,185,129,0.4)' }}
+              style={{ background: ACCENT, boxShadow: '0 8px 32px rgba(0,115,230,0.4)' }}
             >
               Book Consultation <ArrowUpRight size={18} />
             </BranchCTA>
@@ -328,9 +328,9 @@ export default function ZirconiaCrownPage() {
                 <div
                   className="imp-what-img-badge"
                   style={{
-                    background: 'rgba(16,185,129,0.12)',
-                    borderColor: 'rgba(16,185,129,0.25)',
-                    color: '#10b981',
+                    background: 'rgba(0,115,230,0.12)',
+                    borderColor: 'rgba(0,115,230,0.25)',
+                    color: '#0073e6',
                   }}
                 >
                   <Star size={14} fill="currentColor" /> Made in our own lab
@@ -343,7 +343,7 @@ export default function ZirconiaCrownPage() {
                   <Cpu size={14} /> In-House CAD/CAM Dental Laboratory
                 </span>
                 <h2>
-                  Precision. Strength. <span style={{ color: '#10b981' }}>Natural Beauty.</span>
+                  Precision. Strength. <span style={{ color: '#0073e6' }}>Natural Beauty.</span>
                 </h2>
                 <p>
                   At RH Dental Care, we combine advanced digital dentistry, premium zirconia
@@ -439,7 +439,7 @@ export default function ZirconiaCrownPage() {
                   <Layers size={14} /> Premium Zirconia Materials
                 </span>
                 <h2>
-                  The Right Zirconia <span style={{ color: '#10b981' }}>for Your Tooth</span>
+                  The Right Zirconia <span style={{ color: '#0073e6' }}>for Your Tooth</span>
                 </h2>
                 <p>
                   We carefully select high-quality zirconia discs for our restorations, including
@@ -447,8 +447,8 @@ export default function ZirconiaCrownPage() {
                 </p>
                 <div className="imp-gallery-checks">
                   {materials.map((t) => (
-                    <div key={t} className="imp-gallery-check" style={{ color: '#059669' }}>
-                      <CheckCircle2 size={16} style={{ color: '#10b981' }} />
+                    <div key={t} className="imp-gallery-check" style={{ color: '#0073e6' }}>
+                      <CheckCircle2 size={16} style={{ color: '#0073e6' }} />
                       {t}
                     </div>
                   ))}
@@ -465,7 +465,7 @@ export default function ZirconiaCrownPage() {
                   <PenTool size={14} /> Expert Crown Designing
                 </span>
                 <h2>
-                  A Beautiful Crown <span style={{ color: '#10b981' }}>Starts with Design</span>
+                  A Beautiful Crown <span style={{ color: '#0073e6' }}>Starts with Design</span>
                 </h2>
                 <p>
                   Our crown designs can be developed and reviewed by experienced local and
@@ -481,7 +481,7 @@ export default function ZirconiaCrownPage() {
                         padding: '1rem 0.75rem',
                         background: '#fff',
                         borderRadius: '1rem',
-                        border: '1px solid rgba(16,185,129,0.1)',
+                        border: '1px solid rgba(0,115,230,0.1)',
                         boxShadow: '0 4px 16px rgba(0,0,0,0.03)',
                         fontSize: '0.8rem',
                         fontWeight: 700,
@@ -540,7 +540,7 @@ export default function ZirconiaCrownPage() {
                       padding: '0.6rem 1.1rem',
                       borderRadius: '999px',
                       background: '#f0fdf4',
-                      border: '1px solid rgba(16,185,129,0.25)',
+                      border: '1px solid rgba(0,115,230,0.25)',
                       color: '#065f46',
                       fontWeight: 700,
                       fontSize: '0.9rem',
@@ -549,7 +549,7 @@ export default function ZirconiaCrownPage() {
                     {check}
                   </span>
                   {i < qualityChecks.length - 1 && (
-                    <ArrowRight size={16} style={{ color: '#10b981' }} aria-hidden="true" />
+                    <ArrowRight size={16} style={{ color: '#0073e6' }} aria-hidden="true" />
                   )}
                 </span>
               ))}
@@ -569,12 +569,12 @@ export default function ZirconiaCrownPage() {
                   <Target size={14} /> Suitable For
                 </span>
                 <h2>
-                  When Zirconia Crowns <span style={{ color: '#10b981' }}>Are Recommended</span>
+                  When Zirconia Crowns <span style={{ color: '#0073e6' }}>Are Recommended</span>
                 </h2>
                 <div className="imp-gallery-checks">
                   {suitableFor.map((t) => (
-                    <div key={t} className="imp-gallery-check" style={{ color: '#059669' }}>
-                      <CheckCircle2 size={16} style={{ color: '#10b981' }} />
+                    <div key={t} className="imp-gallery-check" style={{ color: '#0073e6' }}>
+                      <CheckCircle2 size={16} style={{ color: '#0073e6' }} />
                       {t}
                     </div>
                   ))}
@@ -590,7 +590,7 @@ export default function ZirconiaCrownPage() {
                   <Sparkles size={14} /> Natural-Looking Smile
                 </span>
                 <h2>
-                  Strong <span style={{ color: '#10b981' }}>and Natural</span>
+                  Strong <span style={{ color: '#0073e6' }}>and Natural</span>
                 </h2>
                 <p>
                   Modern zirconia is no longer limited to strong but opaque-looking crowns. With
@@ -606,7 +606,7 @@ export default function ZirconiaCrownPage() {
                         padding: '1.25rem 0.75rem',
                         background: '#fff',
                         borderRadius: '1rem',
-                        border: '1px solid rgba(16,185,129,0.1)',
+                        border: '1px solid rgba(0,115,230,0.1)',
                         boxShadow: '0 4px 16px rgba(0,0,0,0.03)',
                         fontSize: '0.85rem',
                         fontWeight: 800,
@@ -752,7 +752,7 @@ export default function ZirconiaCrownPage() {
       >
         <div
           className="imp-video-orb imp-video-orb-1"
-          style={{ background: 'radial-gradient(circle, rgba(16,185,129,0.12), transparent 70%)' }}
+          style={{ background: 'radial-gradient(circle, rgba(0,115,230,0.12), transparent 70%)' }}
         />
         <div
           className="imp-video-orb imp-video-orb-2"
@@ -764,8 +764,8 @@ export default function ZirconiaCrownPage() {
               <span
                 className="imp-label"
                 style={{
-                  background: 'rgba(16,185,129,0.15)',
-                  borderColor: 'rgba(16,185,129,0.3)',
+                  background: 'rgba(0,115,230,0.15)',
+                  borderColor: 'rgba(0,115,230,0.3)',
                   color: '#6ee7b7',
                 }}
               >
@@ -775,7 +775,7 @@ export default function ZirconiaCrownPage() {
                 Your Tooth. Your Smile.{' '}
                 <span
                   style={{
-                    background: 'linear-gradient(135deg, #34d399, #6ee7b7)',
+                    background: 'linear-gradient(135deg, #38bdf8, #60a5fa)',
                     WebkitBackgroundClip: 'text',
                     WebkitTextFillColor: 'transparent',
                     backgroundClip: 'text',
@@ -797,7 +797,7 @@ export default function ZirconiaCrownPage() {
                 className="imp-btn-primary"
                 style={{
                   background: ACCENT,
-                  boxShadow: '0 8px 32px rgba(16,185,129,0.4)',
+                  boxShadow: '0 8px 32px rgba(0,115,230,0.4)',
                   padding: '1rem 2.5rem',
                   fontSize: '1rem',
                 }}

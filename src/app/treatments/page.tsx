@@ -554,9 +554,9 @@ const categories: Category[] = [
     title: 'Additional Treatments',
     focus: 'Cross-Departmental Focus',
     icon: <AdditionalIcon size={26} />,
-    color: '#10b981',
-    colorLight: '#d1fae5',
-    colorBg: 'linear-gradient(135deg, #10b981, #059669)',
+    color: '#0073e6',
+    colorLight: '#e0f2fe',
+    colorBg: 'linear-gradient(135deg, #0073e6, #0284c7)',
     treatments: [
       {
         name: 'PRF (Platelet-Rich Fibrin)',

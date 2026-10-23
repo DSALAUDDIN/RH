@@ -532,9 +532,9 @@ export default function RootCanalPage() {
             <motion.div
               className="rc-tech-card"
               variants={fadeUp}
-              style={{ '--card-color': '#10b981', '--card-bg': '#d1fae5' } as React.CSSProperties}
+              style={{ '--card-color': '#0073e6', '--card-bg': '#e0f2fe' } as React.CSSProperties}
             >
-              <div className="rc-tech-icon" style={{ background: '#d1fae5', color: '#10b981' }}>
+              <div className="rc-tech-icon" style={{ background: '#e0f2fe', color: '#0073e6' }}>
                 <Target size={26} />
               </div>
               <div className="rc-tech-title">Apex Locator</div>
@@ -542,7 +542,7 @@ export default function RootCanalPage() {
                 Electronic working length measurement ensures precise canal preparation and reduces
                 the risk of procedural errors.
               </p>
-              <div className="rc-tech-line" style={{ background: '#10b981' }} />
+              <div className="rc-tech-line" style={{ background: '#0073e6' }} />
             </motion.div>
           </motion.div>
 
@@ -663,7 +663,7 @@ export default function RootCanalPage() {
                 See Precision{' '}
                 <span
                   style={{
-                    background: 'linear-gradient(135deg, #6ee7b7, #34d399)',
+                    background: 'linear-gradient(135deg, #38bdf8, #60a5fa)',
                     WebkitBackgroundClip: 'text',
                     WebkitTextFillColor: 'transparent',
                     backgroundClip: 'text',
@@ -750,7 +750,7 @@ export default function RootCanalPage() {
                       icon: <Activity size={18} />,
                       title: 'Digital Follow-Up',
                       desc: 'Remote monitoring ensures smooth healing — especially for international patients.',
-                      bg: 'linear-gradient(135deg, #10b981, #059669)',
+                      bg: 'linear-gradient(135deg, #0073e6, #0284c7)',
                     },
                   ].map((item, i) => (
                     <motion.div
@@ -903,7 +903,7 @@ export default function RootCanalPage() {
                 Faster Treatment. Greater Precision.{' '}
                 <span
                   style={{
-                    background: 'linear-gradient(135deg, #6ee7b7, #34d399)',
+                    background: 'linear-gradient(135deg, #38bdf8, #60a5fa)',
                     WebkitBackgroundClip: 'text',
                     WebkitTextFillColor: 'transparent',
                     backgroundClip: 'text',
@@ -921,7 +921,7 @@ export default function RootCanalPage() {
                   action="book"
                   service="Root Canal Treatment"
                   className="imp-btn-primary"
-                  style={{ background: 'linear-gradient(135deg, #10b981, #059669)' }}
+                  style={{ background: 'linear-gradient(135deg, #0073e6, #0284c7)' }}
                 >
                   Book Your Appointment <ArrowUpRight size={18} />
                 </BranchCTA>

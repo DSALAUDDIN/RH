@@ -253,7 +253,7 @@ export default function ZirconiaVeneersPage() {
                   <span
                     className="imp-accent"
                     style={{
-                      background: 'linear-gradient(135deg, #10b981, #059669)',
+                      background: 'linear-gradient(135deg, #0073e6, #38bdf8)',
                       WebkitBackgroundClip: 'text',
                       WebkitTextFillColor: 'transparent',
                       backgroundClip: 'text',
@@ -560,7 +560,7 @@ export default function ZirconiaVeneersPage() {
                 <span
                   className="imp-accent"
                   style={{
-                    background: 'linear-gradient(135deg, #10b981, #059669)',
+                    background: 'linear-gradient(135deg, #0073e6, #38bdf8)',
                     WebkitBackgroundClip: 'text',
                     WebkitTextFillColor: 'transparent',
                     backgroundClip: 'text',
@@ -600,7 +600,7 @@ export default function ZirconiaVeneersPage() {
                     <div
                       className="imp-anatomy-icon"
                       style={{
-                        background: 'linear-gradient(135deg, #10b981, #059669)',
+                        background: 'linear-gradient(135deg, #0073e6, #0284c7)',
                         minWidth: '48px',
                         height: '48px',
                         fontSize: '0.95rem',
@@ -704,7 +704,7 @@ export default function ZirconiaVeneersPage() {
                 Ready for a{' '}
                 <span
                   style={{
-                    background: 'linear-gradient(135deg, #34d399, #6ee7b7)',
+                    background: 'linear-gradient(135deg, #38bdf8, #60a5fa)',
                     WebkitBackgroundClip: 'text',
                     WebkitTextFillColor: 'transparent',
                     backgroundClip: 'text',
@@ -727,8 +727,8 @@ export default function ZirconiaVeneersPage() {
                 service="Zirconia Veneers"
                 className="imp-btn-primary"
                 style={{
-                  background: 'linear-gradient(135deg, #10b981, #059669)',
-                  boxShadow: '0 8px 32px rgba(16,185,129,0.4)',
+                  background: 'linear-gradient(135deg, #0073e6, #0284c7)',
+                  boxShadow: '0 8px 32px rgba(0,115,230,0.35)',
                   padding: '1rem 2.5rem',
                   fontSize: '1rem',
                 }}

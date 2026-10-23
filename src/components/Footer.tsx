@@ -102,7 +102,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/bn/guides" style={{ fontWeight: 600, color: '#34d399' }}>
+                <Link href="/bn/guides" style={{ fontWeight: 600, color: '#38bdf8' }}>
                   বাংলা ডেন্টাল গাইড (৪০টি) →
                 </Link>
               </li>

@@ -1,6 +1,6 @@
-/* Zirconia Crown — Emerald accent overrides only */
+/* Zirconia Crown — Brand Sea Blue accent overrides */
 
-/* Hero accent tones — green instead of blue */
+/* Hero accent tones — Sea Blue */
 .zircon-hero .imp-hero-overlay {
   background:
     linear-gradient(
@@ -9,18 +9,18 @@
       rgba(2, 6, 23, 0.5) 40%,
       rgba(2, 6, 23, 0.85) 100%
     ),
-    linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, transparent 50%);
+    linear-gradient(135deg, rgba(0, 115, 230, 0.18) 0%, transparent 50%);
 }
 
 .zircon-badge {
-  background: rgba(16, 185, 129, 0.15) !important;
-  border-color: rgba(16, 185, 129, 0.3) !important;
-  color: #6ee7b7 !important;
+  background: rgba(0, 115, 230, 0.15) !important;
+  border-color: rgba(56, 189, 248, 0.35) !important;
+  color: #38bdf8 !important;
 }
 
-/* Hero title gradient — green */
+/* Hero title gradient — Sea Blue */
 .zircon-hero .imp-hero-title span {
-  background: linear-gradient(135deg, #34d399, #6ee7b7);
+  background: linear-gradient(135deg, #0073e6, #38bdf8);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

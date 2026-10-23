@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { BRANCHES } from '@/lib/branches';
-import { breadcrumbs } from '@/lib/seo/schema';
+import { breadcrumbs, faqSchema } from '@/lib/seo/schema';
 import { pageMeta } from '@/lib/seo/metadata';
 import JsonLd from '@/components/seo/JsonLd';
 import FAQ from '@/components/FAQ';
@@ -35,10 +35,13 @@ export default function BanasreePage() {
     <div className="bs rh-scope" data-branch="banasree">
       <JsonLd
         /*
-         * The branch entity is part of the site graph (root layout); only the
-         * breadcrumb is page-specific.
+         * The branch entity is part of the site graph (root layout);
+         * breadcrumbs and branch-specific FAQs are rendered here.
          */
-        nodes={[breadcrumbs({ name: 'Banasree', path: '/banasree' })]}
+        nodes={[
+          breadcrumbs({ name: 'Banasree', path: '/banasree' }),
+          faqSchema(banasreeFaq),
+        ]}
       />
 
       {/* Hero */}

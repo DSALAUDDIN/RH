@@ -835,7 +835,7 @@ export default function ImplantsPage() {
                   <div className="imp-anatomy-item">
                     <div
                       className="imp-anatomy-icon"
-                      style={{ background: 'linear-gradient(135deg, #10b981, #059669)' }}
+                      style={{ background: 'linear-gradient(135deg, #0073e6, #0284c7)' }}
                     >
                       <User size={18} />
                     </div>

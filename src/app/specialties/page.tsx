@@ -46,10 +46,10 @@ const specialtiesData = [
   {
     id: 'root-canal',
     title: 'Microscopic Root Canal',
-    icon: <Microscope size={32} color="#10b981" />,
+    icon: <Microscope size={32} color="#0073e6" />,
     desc: 'Single-visit root canal treatment under local anaesthetic, using an operating microscope to save severely damaged teeth.',
     path: '/root-canal',
-    color: '#10b981',
+    color: '#0073e6',
   },
   {
     id: 'zirconia-crown',
