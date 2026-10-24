@@ -67,69 +67,101 @@ export default async function ReviewsPage() {
       {/* Video Reviews Section */}
       <VideoGallery videos={videoReviews} />
 
-      {/* Leave a Review CTA */}
+      {/* Leave a Review CTA - Dual Branch & Modern Theme */}
       <section
         style={{
-          background: 'hsl(var(--background))',
-          padding: '2rem 0 6rem',
+          background: '#f8fafc',
+          padding: '4rem 1.5rem 6rem',
           textAlign: 'center',
         }}
       >
-        <div className="container">
+        <div style={{ maxWidth: '900px', margin: '0 auto' }}>
           <div
             style={{
-              maxWidth: '800px',
-              margin: '0 auto',
-              background: 'linear-gradient(145deg, #2B2A1C 0%, #2B2A1C 100%)',
-              padding: 'clamp(3rem, 5vw, 4rem)',
-              borderRadius: '2rem',
-              border: '1px solid rgba(255,255,255,0.1)',
-              boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
-              color: 'var(--rh-ink)',
+              background: 'linear-gradient(135deg, #002347 0%, #003366 100%)',
+              padding: 'clamp(2.5rem, 5vw, 3.5rem)',
+              borderRadius: '24px',
+              border: '1px solid rgba(56, 189, 248, 0.25)',
+              boxShadow: '0 20px 45px -10px rgba(0, 35, 71, 0.35)',
+              color: '#ffffff',
             }}
           >
             <h2
               style={{
-                fontSize: 'clamp(2rem, 4vw, 2.5rem)',
-                fontWeight: 600,
+                fontSize: 'clamp(1.8rem, 4vw, 2.4rem)',
+                fontWeight: 800,
                 marginBottom: '1rem',
                 letterSpacing: '-0.02em',
+                color: '#ffffff',
               }}
             >
-              Share Your <span style={{ color: 'var(--rh-brass)' }}>Experience</span>
+              Share Your Experience &amp; <span style={{ color: '#38bdf8' }}>Review Us</span>
             </h2>
             <p
               style={{
-                fontSize: '1.1rem',
+                fontSize: '1.05rem',
                 marginBottom: '2.5rem',
-                color: '#C9C5B2',
+                color: '#94a3b8',
                 lineHeight: '1.7',
-                maxWidth: '600px',
+                maxWidth: '650px',
                 margin: '0 auto 2.5rem',
               }}
             >
-              Had a great visit? We&apos;d love to hear your story. Your review helps others
-              discover quality dental care and helps us serve you better.
+              Had a positive visit? Your feedback helps fellow patients find trusted, microscope-guided dental care in Dhaka. Choose your branch below to leave a 5-star Google review:
             </p>
-            <a
-              href="https://www.google.com/maps/place/RH+Dental+Care+and+Implant+Center/@23.7606927,90.4273875,17z/data=!4m16!1m7!3m6!1s0x3755b8754cadaa87:0x9db1359510cadcfd!2sRH+Dental+Care+and+Implant+Center!8m2!3d23.7606878!4d90.4299624!16s%2Fg%2F11b5pjywjt!3m7!1s0x3755b8754cadaa87:0x9db1359510cadcfd!8m2!3d23.7606878!4d90.4299624!9m1!1b1!16s%2Fg%2F11b5pjywjt?hl=en-US&entry=ttu&g_ep=EgoyMDI2MDQwOC4wIKXMDSoASAFQAw%3D%3D"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn btn-primary"
+
+            <div
               style={{
-                display: 'inline-block',
-                padding: '1rem 2.5rem',
-                fontSize: '1.05rem',
-                fontWeight: 700,
-                borderRadius: '4px',
-                background: '#9C7C38',
-                color: 'var(--rh-ink)',
-                border: 'none',
-                boxShadow: '0 10px 25px rgba(156, 124, 56, 0.4)',
+                display: 'flex',
+                gap: '1.25rem',
+                justifyContent: 'center',
+                flexWrap: 'wrap',
               }}
             >
-              Write a Review on Google
-            </a>
+              <a
+                href="https://www.google.com/maps/place/RH+Dental+Care+and+Implant+Center/@23.7606927,90.4273875,17z/data=!4m16!1m7!3m6!1s0x3755b8754cadaa87:0x9db1359510cadcfd!2sRH+Dental+Care+and+Implant+Center!8m2!3d23.7606878!4d90.4299624!16s%2Fg%2F11b5pjywjt!3m7!1s0x3755b8754cadaa87:0x9db1359510cadcfd!8m2!3d23.7606878!4d90.4299624!9m1!1b1!16s%2Fg%2F11b5pjywjt"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '10px',
+                  padding: '1rem 2rem',
+                  fontSize: '1rem',
+                  fontWeight: 700,
+                  borderRadius: '12px',
+                  background: 'linear-gradient(135deg, #0073e6 0%, #0284c7 100%)',
+                  color: '#ffffff',
+                  textDecoration: 'none',
+                  boxShadow: '0 8px 24px rgba(0, 115, 230, 0.4)',
+                  transition: 'transform 0.2s',
+                }}
+              >
+                ★ Review Banasree Branch
+              </a>
+
+              <a
+                href="https://maps.google.com/?q=B%26B+Empire,+Plot+116,+Road+11,+Banani,+Dhaka+1213"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '10px',
+                  padding: '1rem 2rem',
+                  fontSize: '1rem',
+                  fontWeight: 700,
+                  borderRadius: '12px',
+                  background: 'rgba(255, 255, 255, 0.1)',
+                  color: '#ffffff',
+                  border: '1px solid rgba(255, 255, 255, 0.25)',
+                  textDecoration: 'none',
+                  transition: 'background 0.2s',
+                }}
+              >
+                ★ Review Banani Branch
+              </a>
+            </div>
           </div>
         </div>
       </section>
