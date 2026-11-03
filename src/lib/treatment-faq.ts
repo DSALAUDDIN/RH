@@ -138,5 +138,47 @@ export const generalFaq: FaqItem[] = [
     pending:
       'Confirm which clinicians hold paediatric dentistry qualifications, and whether treatment under general anaesthesia is arranged in-house or referred.',
   },
+];
 
+export const dentalTourismFaq: FaqItem[] = [
+  {
+    q: "Is the treatment actually safe? I've heard mixed things about medical tourism.",
+    a: "The risk in medical tourism is not the country — it's the clinic. We use the same Swiss and Swedish implants, the same Liechtenstein ceramics and the same B-class sterilisation as a private clinic in London. Our chief consultant is BMDC-certified with international training; our advisor holds the FDS RCPS from Glasgow. You're getting the same procedure at honest local rates.",
+  },
+  {
+    q: 'How long do I need to stay?',
+    a: 'It depends on the procedure. A single crown or veneer set: 3–5 days. A full smile makeover with veneers: 5–8 days. Implants with immediate provisional loading: 7–10 days; with delayed loading: one short visit for surgery, then a second visit 4–6 months later for the final crowns. We build the schedule around your calendar.',
+  },
+  {
+    q: 'What if something goes wrong after I return home?',
+    a: 'Every implant carries the manufacturer warranty documentation and we hold the documentation for you. If you have an issue, you contact us on WhatsApp; we coordinate with your local dentist, send your full digital file and X-rays, and provide support for any follow-up care needed.',
+  },
+  {
+    q: 'Can I claim this on my private health insurance?',
+    a: "Most policies that cover dental work overseas accept our paperwork — itemised invoice, treatment records, prescription summary, and the practitioner's BMDC number. We have successfully filed with Bupa, Cigna Global, Allianz Care and AXA.",
+  },
+  {
+    q: 'How and when do I pay?',
+    a: 'Half on arrival, after the 3D scan confirms the plan; the rest on completion. We accept international card payments (Visa / Mastercard / Amex) in USD, GBP or EUR, and bank transfer in any major currency. No prepayment required to book — the WhatsApp consultation is free and non-binding.',
+  },
+  {
+    q: 'Do do I need a special visa for medical treatment?',
+    a: "For most Western passports: no. A standard tourist visa (e-visa or visa-on-arrival) covers a dental treatment trip up to 30 days. If your treatment runs longer or you'd like formal protection, we issue a medical-visa invitation letter processed in 3–5 working days through the Bangladeshi mission in your country.",
+  },
+  {
+    q: 'Is it safe to travel while recovering from dental surgery?',
+    a: 'For minor work — fillings, crowns, single extractions, basic implants — you can fly the day after with no restrictions. For complex surgical work (sinus lifts, bone grafts, multiple implants), we recommend a 3-day window before flying to allow swelling to peak and recede.',
+  },
+  {
+    q: 'Will the doctors actually speak fluent English?',
+    a: 'Yes. Bangladesh has one of the highest English proficiency rates in non-anglophone Asia, and our entire clinical and coordination team works in English by default. Our chief consultant has trained internationally and lectures in English; our advisor holds a Glasgow fellowship.',
+  },
+  {
+    q: 'Can I bring a friend or family member?',
+    a: 'Strongly encouraged. Our coordinators handle their travel arrangements alongside yours — same hotel, same driver, same restaurant bookings. They are welcome in the consultation room at any point you would like them there.',
+  },
+  {
+    q: "What's the worst-case scenario you've actually seen?",
+    a: 'An honest one: a patient who landed with a fractured temporary crown after a long flight. We saw her within two hours, milled a replacement that afternoon, and rebooked her connecting flight. Most challenges are logistics, not clinical — and we have designed the whole process around catching them before they catch you.',
+  },
 ];
