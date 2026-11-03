@@ -136,17 +136,41 @@ export default function Home() {
             }}
           >
             <div>
-              <span style={{ fontSize: '0.75rem', fontWeight: 700, color: '#0284c7', textTransform: 'uppercase' }}>
+              <span
+                style={{
+                  fontSize: '0.75rem',
+                  fontWeight: 700,
+                  color: '#0284c7',
+                  textTransform: 'uppercase',
+                }}
+              >
                 Dental Implants
               </span>
-              <h3 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#002347', margin: '0.5rem 0' }}>
+              <h3
+                style={{
+                  fontSize: '1.1rem',
+                  fontWeight: 700,
+                  color: '#002347',
+                  margin: '0.5rem 0',
+                }}
+              >
                 Dental Implant Cost in Dhaka
               </h3>
               <p style={{ fontSize: '0.875rem', color: '#4A5568', lineHeight: 1.5, margin: 0 }}>
                 What clinical factors, brands, and materials determine implant investment in Dhaka.
               </p>
             </div>
-            <div style={{ marginTop: '1rem', fontSize: '0.85rem', fontWeight: 600, color: '#0073e6', display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
+            <div
+              style={{
+                marginTop: '1rem',
+                fontSize: '0.85rem',
+                fontWeight: 600,
+                color: '#0073e6',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.3rem',
+              }}
+            >
               <span>Read Guide</span>
               <ArrowRight size={14} />
             </div>
@@ -168,17 +192,42 @@ export default function Home() {
             }}
           >
             <div>
-              <span style={{ fontSize: '0.75rem', fontWeight: 700, color: '#0284c7', textTransform: 'uppercase' }}>
+              <span
+                style={{
+                  fontSize: '0.75rem',
+                  fontWeight: 700,
+                  color: '#0284c7',
+                  textTransform: 'uppercase',
+                }}
+              >
                 Endodontics
               </span>
-              <h3 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#002347', margin: '0.5rem 0' }}>
+              <h3
+                style={{
+                  fontSize: '1.1rem',
+                  fontWeight: 700,
+                  color: '#002347',
+                  margin: '0.5rem 0',
+                }}
+              >
                 Microscopic Root Canal Care
               </h3>
               <p style={{ fontSize: '0.875rem', color: '#4A5568', lineHeight: 1.5, margin: 0 }}>
-                How surgical operating microscopes illuminate hidden canals and help preserve natural teeth.
+                How surgical operating microscopes illuminate hidden canals and help preserve
+                natural teeth.
               </p>
             </div>
-            <div style={{ marginTop: '1rem', fontSize: '0.85rem', fontWeight: 600, color: '#0073e6', display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
+            <div
+              style={{
+                marginTop: '1rem',
+                fontSize: '0.85rem',
+                fontWeight: 600,
+                color: '#0073e6',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.3rem',
+              }}
+            >
               <span>Read Guide</span>
               <ArrowRight size={14} />
             </div>
@@ -200,17 +249,42 @@ export default function Home() {
             }}
           >
             <div>
-              <span style={{ fontSize: '0.75rem', fontWeight: 700, color: '#0284c7', textTransform: 'uppercase' }}>
+              <span
+                style={{
+                  fontSize: '0.75rem',
+                  fontWeight: 700,
+                  color: '#0284c7',
+                  textTransform: 'uppercase',
+                }}
+              >
                 Orthodontics
               </span>
-              <h3 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#002347', margin: '0.5rem 0' }}>
+              <h3
+                style={{
+                  fontSize: '1.1rem',
+                  fontWeight: 700,
+                  color: '#002347',
+                  margin: '0.5rem 0',
+                }}
+              >
                 Clear Aligners vs Braces
               </h3>
               <p style={{ fontSize: '0.875rem', color: '#4A5568', lineHeight: 1.5, margin: 0 }}>
-                Clinical comparison of aesthetics, hygiene, eating freedom, and alignment predictability.
+                Clinical comparison of aesthetics, hygiene, eating freedom, and alignment
+                predictability.
               </p>
             </div>
-            <div style={{ marginTop: '1rem', fontSize: '0.85rem', fontWeight: 600, color: '#0073e6', display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
+            <div
+              style={{
+                marginTop: '1rem',
+                fontSize: '0.85rem',
+                fontWeight: 600,
+                color: '#0073e6',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.3rem',
+              }}
+            >
               <span>Read Guide</span>
               <ArrowRight size={14} />
             </div>
@@ -232,17 +306,42 @@ export default function Home() {
             }}
           >
             <div>
-              <span style={{ fontSize: '0.75rem', fontWeight: 700, color: '#15803D', textTransform: 'uppercase' }}>
+              <span
+                style={{
+                  fontSize: '0.75rem',
+                  fontWeight: 700,
+                  color: '#15803D',
+                  textTransform: 'uppercase',
+                }}
+              >
                 বাংলা গাইড হাব
               </span>
-              <h3 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#14532D', margin: '0.5rem 0' }}>
+              <h3
+                style={{
+                  fontSize: '1.1rem',
+                  fontWeight: 700,
+                  color: '#14532D',
+                  margin: '0.5rem 0',
+                }}
+              >
                 ৪০টি সম্পূর্ণ বাংলায় ডেন্টাল গাইড
               </h3>
               <p style={{ fontSize: '0.875rem', color: '#166534', lineHeight: 1.5, margin: 0 }}>
-                ইমপ্লান্ট, রুট ক্যানেল, আঁকাবাঁকা দাঁত সোজা করা ও দাঁতের সুরক্ষায় আমাদের বিশেষায়িত গাইডসমূহ।
+                ইমপ্লান্ট, রুট ক্যানেল, আঁকাবাঁকা দাঁত সোজা করা ও দাঁতের সুরক্ষায় আমাদের বিশেষায়িত
+                গাইডসমূহ।
               </p>
             </div>
-            <div style={{ marginTop: '1rem', fontSize: '0.85rem', fontWeight: 700, color: '#15803D', display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
+            <div
+              style={{
+                marginTop: '1rem',
+                fontSize: '0.85rem',
+                fontWeight: 700,
+                color: '#15803D',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.3rem',
+              }}
+            >
               <span>সব গাইড দেখুন</span>
               <ArrowRight size={14} />
             </div>
@@ -291,7 +390,9 @@ export default function Home() {
               }}
             >
               <Sparkles size={16} color="#38bdf8" />
-              <span style={{ color: '#E4E0D2' }}>Serving Dhaka Since 2014 · Two branches, one clinical team</span>
+              <span style={{ color: '#E4E0D2' }}>
+                Serving Dhaka Since 2014 · Two branches, one clinical team
+              </span>
             </div>
 
             <h2

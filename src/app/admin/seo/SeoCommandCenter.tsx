@@ -157,7 +157,9 @@ export default function SeoCommandCenter({ initialData, adminUsername }: Props) 
               <div className="seo-cc-domain-pill">
                 Primary Domain: <code>https://rhdentalcare.com</code>
                 <span style={{ color: '#475569' }}>•</span>
-                <span>User: <strong>{adminUsername}</strong></span>
+                <span>
+                  User: <strong>{adminUsername}</strong>
+                </span>
               </div>
             </div>
           </div>
@@ -237,7 +239,12 @@ export default function SeoCommandCenter({ initialData, adminUsername }: Props) 
                     href={`/api/admin/seo/export?type=queries&range=${selectedRange}`}
                     download
                     className="seo-cc-btn"
-                    style={{ width: '100%', justifyContent: 'flex-start', border: 'none', background: 'none' }}
+                    style={{
+                      width: '100%',
+                      justifyContent: 'flex-start',
+                      border: 'none',
+                      background: 'none',
+                    }}
                     onClick={() => setExportOpen(false)}
                   >
                     Export Queries
@@ -246,7 +253,12 @@ export default function SeoCommandCenter({ initialData, adminUsername }: Props) 
                     href={`/api/admin/seo/export?type=pages&range=${selectedRange}`}
                     download
                     className="seo-cc-btn"
-                    style={{ width: '100%', justifyContent: 'flex-start', border: 'none', background: 'none' }}
+                    style={{
+                      width: '100%',
+                      justifyContent: 'flex-start',
+                      border: 'none',
+                      background: 'none',
+                    }}
                     onClick={() => setExportOpen(false)}
                   >
                     Export Pages
@@ -255,7 +267,12 @@ export default function SeoCommandCenter({ initialData, adminUsername }: Props) 
                     href={`/api/admin/seo/export?type=content&range=${selectedRange}`}
                     download
                     className="seo-cc-btn"
-                    style={{ width: '100%', justifyContent: 'flex-start', border: 'none', background: 'none' }}
+                    style={{
+                      width: '100%',
+                      justifyContent: 'flex-start',
+                      border: 'none',
+                      background: 'none',
+                    }}
                     onClick={() => setExportOpen(false)}
                   >
                     Export 80 Guides
@@ -264,7 +281,12 @@ export default function SeoCommandCenter({ initialData, adminUsername }: Props) 
                     href={`/api/admin/seo/export?type=local&range=${selectedRange}`}
                     download
                     className="seo-cc-btn"
-                    style={{ width: '100%', justifyContent: 'flex-start', border: 'none', background: 'none' }}
+                    style={{
+                      width: '100%',
+                      justifyContent: 'flex-start',
+                      border: 'none',
+                      background: 'none',
+                    }}
                     onClick={() => setExportOpen(false)}
                   >
                     Export GBP Local
@@ -308,12 +330,16 @@ export default function SeoCommandCenter({ initialData, adminUsername }: Props) 
           <div className="seo-cc-infobar-item">
             <Clock size={15} className="text-slate-400" />
             <span>
-              Comparing: <strong>{dateRange.startDate}</strong> to <strong>{dateRange.endDate}</strong> vs prior period
+              Comparing: <strong>{dateRange.startDate}</strong> to{' '}
+              <strong>{dateRange.endDate}</strong> vs prior period
             </span>
           </div>
           <div className="seo-cc-infobar-item">
             <span>
-              Baseline Date: <strong>{config.baselineDate ? config.baselineDate.split('T')[0] : '2026-09-30'}</strong>
+              Baseline Date:{' '}
+              <strong>
+                {config.baselineDate ? config.baselineDate.split('T')[0] : '2026-09-30'}
+              </strong>
             </span>
           </div>
           <div className="seo-cc-infobar-item">
@@ -321,7 +347,10 @@ export default function SeoCommandCenter({ initialData, adminUsername }: Props) 
               Last Sync:{' '}
               <strong>
                 {config.lastSyncAt
-                  ? new Date(config.lastSyncAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+                  ? new Date(config.lastSyncAt).toLocaleTimeString([], {
+                      hour: '2-digit',
+                      minute: '2-digit',
+                    })
                   : 'Pending OAuth'}
               </strong>
             </span>
@@ -341,7 +370,8 @@ export default function SeoCommandCenter({ initialData, adminUsername }: Props) 
               </h2>
             </div>
             <div style={{ fontSize: '0.8rem', color: '#94a3b8' }}>
-              Data Coverage: <strong style={{ color: '#38bdf8' }}>{healthScore.dataCoveragePercentage}%</strong>
+              Data Coverage:{' '}
+              <strong style={{ color: '#38bdf8' }}>{healthScore.dataCoveragePercentage}%</strong>
             </div>
           </div>
 
@@ -403,13 +433,15 @@ export default function SeoCommandCenter({ initialData, adminUsername }: Props) 
         <section className="seo-cc-metrics-grid">
           <div className="seo-cc-metric-box">
             <div className="seo-cc-metric-label">Google Impressions</div>
-            <div className="seo-cc-metric-value">{visibility.impressions.current.toLocaleString()}</div>
+            <div className="seo-cc-metric-value">
+              {visibility.impressions.current.toLocaleString()}
+            </div>
             <div className="seo-cc-metric-change">
               {visibility.impressions.percentageChange !== null ? (
                 visibility.impressions.percentageChange >= 0 ? (
                   <span className="seo-cc-change-pos">
-                    <TrendingUp size={13} style={{ display: 'inline', marginRight: '2px' }} />
-                    +{visibility.impressions.percentageChange.toFixed(1)}% vs prior period
+                    <TrendingUp size={13} style={{ display: 'inline', marginRight: '2px' }} />+
+                    {visibility.impressions.percentageChange.toFixed(1)}% vs prior period
                   </span>
                 ) : (
                   <span className="seo-cc-change-neg">
@@ -430,8 +462,8 @@ export default function SeoCommandCenter({ initialData, adminUsername }: Props) 
               {visibility.clicks.percentageChange !== null ? (
                 visibility.clicks.percentageChange >= 0 ? (
                   <span className="seo-cc-change-pos">
-                    <TrendingUp size={13} style={{ display: 'inline', marginRight: '2px' }} />
-                    +{visibility.clicks.percentageChange.toFixed(1)}% vs prior
+                    <TrendingUp size={13} style={{ display: 'inline', marginRight: '2px' }} />+
+                    {visibility.clicks.percentageChange.toFixed(1)}% vs prior
                   </span>
                 ) : (
                   <span className="seo-cc-change-neg">
@@ -451,7 +483,9 @@ export default function SeoCommandCenter({ initialData, adminUsername }: Props) 
               {visibility.avgPosition.current > 0 ? visibility.avgPosition.current.toFixed(1) : '—'}
             </div>
             <div className="seo-cc-metric-change">
-              <span className="seo-cc-change-neutral">Search Analytics average across all queries</span>
+              <span className="seo-cc-change-neutral">
+                Search Analytics average across all queries
+              </span>
             </div>
           </div>
 
@@ -567,22 +601,23 @@ export default function SeoCommandCenter({ initialData, adminUsername }: Props) 
                     config.gbpStatus === 'connected'
                       ? 'seo-cc-badge-connected'
                       : config.gbpStatus === 'pending_access'
-                      ? 'seo-cc-badge-pending'
-                      : 'seo-cc-badge-disconnected'
+                        ? 'seo-cc-badge-pending'
+                        : 'seo-cc-badge-disconnected'
                   }`}
                 >
                   {config.gbpStatus === 'connected'
                     ? 'Connected'
                     : config.gbpStatus === 'pending_access'
-                    ? 'Pending Access'
-                    : 'Not Connected'}
+                      ? 'Pending Access'
+                      : 'Not Connected'}
                 </span>
               </div>
               <div className="seo-cc-integration-detail">
                 Locations: Banani (Road 11) & Banasree (Block C)
               </div>
               <div style={{ fontSize: '0.7rem', color: '#64748b' }}>
-                Scope: business.manage (Management-capable scope required by Google for Performance API; dashboard operates strictly read-only)
+                Scope: business.manage (Management-capable scope required by Google for Performance
+                API; dashboard operates strictly read-only)
               </div>
             </div>
 
@@ -617,7 +652,13 @@ export default function SeoCommandCenter({ initialData, adminUsername }: Props) 
           <div className="seo-cc-local-grid">
             {/* Banani Card */}
             <div className="seo-cc-branch-card">
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+              <div
+                style={{
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  alignItems: 'flex-start',
+                }}
+              >
                 <div>
                   <h3 style={{ fontSize: '1rem', fontWeight: 700, margin: 0, color: '#f8fafc' }}>
                     {local.banani.name}
@@ -631,8 +672,8 @@ export default function SeoCommandCenter({ initialData, adminUsername }: Props) 
                     local.banani.status === 'connected'
                       ? 'seo-cc-badge-connected'
                       : local.banani.status === 'pending_access'
-                      ? 'seo-cc-badge-pending'
-                      : 'seo-cc-badge-disconnected'
+                        ? 'seo-cc-badge-pending'
+                        : 'seo-cc-badge-disconnected'
                   }`}
                 >
                   {local.banani.status}
@@ -671,7 +712,13 @@ export default function SeoCommandCenter({ initialData, adminUsername }: Props) 
 
             {/* Banasree Card */}
             <div className="seo-cc-branch-card">
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+              <div
+                style={{
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  alignItems: 'flex-start',
+                }}
+              >
                 <div>
                   <h3 style={{ fontSize: '1rem', fontWeight: 700, margin: 0, color: '#f8fafc' }}>
                     {local.banasree.name}
@@ -685,8 +732,8 @@ export default function SeoCommandCenter({ initialData, adminUsername }: Props) 
                     local.banasree.status === 'connected'
                       ? 'seo-cc-badge-connected'
                       : local.banasree.status === 'pending_access'
-                      ? 'seo-cc-badge-pending'
-                      : 'seo-cc-badge-disconnected'
+                        ? 'seo-cc-badge-pending'
+                        : 'seo-cc-badge-disconnected'
                   }`}
                 >
                   {local.banasree.status}
@@ -735,13 +782,21 @@ export default function SeoCommandCenter({ initialData, adminUsername }: Props) 
               lineHeight: 1.4,
             }}
           >
-            <strong>Note on Local Rankings:</strong> Exact geo-grid Maps ranking requires a dedicated local-rank
-            tracking provider and is not inferred from Google Business Profile Performance data.
+            <strong>Note on Local Rankings:</strong> Exact geo-grid Maps ranking requires a
+            dedicated local-rank tracking provider and is not inferred from Google Business Profile
+            Performance data.
           </div>
         </section>
 
         {/* 5. SEO Wins & Attention Items */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '24px' }}>
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: '1fr 1fr',
+            gap: '20px',
+            marginBottom: '24px',
+          }}
+        >
           {/* Wins */}
           <div className="seo-cc-card" style={{ margin: 0 }}>
             <h3 className="seo-cc-card-title" style={{ marginBottom: '14px' }}>
@@ -787,9 +842,7 @@ export default function SeoCommandCenter({ initialData, adminUsername }: Props) 
                 ))}
               </div>
             ) : (
-              <div className="seo-cc-empty-state">
-                No critical attention items flagged.
-              </div>
+              <div className="seo-cc-empty-state">No critical attention items flagged.</div>
             )}
           </div>
         </div>
@@ -803,7 +856,8 @@ export default function SeoCommandCenter({ initialData, adminUsername }: Props) 
                 <span>Authority Content Performance (80 Total Assets)</span>
               </h2>
               <div style={{ fontSize: '0.75rem', color: '#94a3b8', marginTop: '2px' }}>
-                English: <strong>40</strong> (12 Live · 28 Review) • বাংলা: <strong>40</strong> (12 Live · 28 Review)
+                English: <strong>40</strong> (12 Live · 28 Review) • বাংলা: <strong>40</strong> (12
+                Live · 28 Review)
               </div>
             </div>
 
@@ -873,24 +927,37 @@ export default function SeoCommandCenter({ initialData, adminUsername }: Props) 
                 {filteredAuthority.slice(0, 30).map((guide) => (
                   <tr key={`${guide.language}-${guide.slug}`}>
                     <td>
-                      <span className={`seo-cc-pill ${guide.language === 'en' ? 'seo-cc-pill-en' : 'seo-cc-pill-bn'}`}>
+                      <span
+                        className={`seo-cc-pill ${guide.language === 'en' ? 'seo-cc-pill-en' : 'seo-cc-pill-bn'}`}
+                      >
                         {guide.language.toUpperCase()}
                       </span>
                     </td>
                     <td>
                       <div style={{ fontWeight: 600, color: '#f8fafc' }}>{guide.title}</div>
-                      <code style={{ fontSize: '0.7rem', color: '#64748b' }}>/{guide.language === 'bn' ? 'bn/guides/' : 'guides/'}{guide.slug}</code>
+                      <code style={{ fontSize: '0.7rem', color: '#64748b' }}>
+                        /{guide.language === 'bn' ? 'bn/guides/' : 'guides/'}
+                        {guide.slug}
+                      </code>
                     </td>
                     <td>
-                      <span style={{ fontSize: '0.75rem', color: '#94a3b8' }}>{guide.categoryLabel}</span>
+                      <span style={{ fontSize: '0.75rem', color: '#94a3b8' }}>
+                        {guide.categoryLabel}
+                      </span>
                     </td>
                     <td>
-                      <span className={`seo-cc-badge ${guide.status === 'live' ? 'seo-cc-badge-live' : 'seo-cc-badge-review'}`}>
+                      <span
+                        className={`seo-cc-badge ${guide.status === 'live' ? 'seo-cc-badge-live' : 'seo-cc-badge-review'}`}
+                      >
                         {guide.status === 'live' ? 'Live' : 'Review'}
                       </span>
                     </td>
-                    <td style={{ whiteSpace: 'nowrap', fontSize: '0.75rem' }}>{guide.publishedAt}</td>
-                    <td><strong>{guide.gscClicks}</strong></td>
+                    <td style={{ whiteSpace: 'nowrap', fontSize: '0.75rem' }}>
+                      {guide.publishedAt}
+                    </td>
+                    <td>
+                      <strong>{guide.gscClicks}</strong>
+                    </td>
                     <td>{guide.gscImpressions}</td>
                     <td>{guide.gscCtr.toFixed(1)}%</td>
                     <td>{guide.gscAvgPosition > 0 ? guide.gscAvgPosition.toFixed(1) : '—'}</td>
@@ -899,7 +966,12 @@ export default function SeoCommandCenter({ initialData, adminUsername }: Props) 
                         href={guide.fullUrl}
                         target="_blank"
                         rel="noreferrer"
-                        style={{ color: '#38bdf8', display: 'inline-flex', alignItems: 'center', gap: '3px' }}
+                        style={{
+                          color: '#38bdf8',
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          gap: '3px',
+                        }}
                       >
                         <ExternalLink size={13} /> View
                       </a>
@@ -910,8 +982,16 @@ export default function SeoCommandCenter({ initialData, adminUsername }: Props) 
             </table>
           </div>
           {filteredAuthority.length > 30 && (
-            <div style={{ textAlign: 'center', marginTop: '12px', fontSize: '0.75rem', color: '#94a3b8' }}>
-              Showing first 30 of {filteredAuthority.length} matching guides. Use filters or Export CSV for complete list.
+            <div
+              style={{
+                textAlign: 'center',
+                marginTop: '12px',
+                fontSize: '0.75rem',
+                color: '#94a3b8',
+              }}
+            >
+              Showing first 30 of {filteredAuthority.length} matching guides. Use filters or Export
+              CSV for complete list.
             </div>
           )}
         </section>
@@ -975,28 +1055,45 @@ export default function SeoCommandCenter({ initialData, adminUsername }: Props) 
                     <tr key={kw.query}>
                       <td style={{ fontWeight: 600, color: '#f8fafc' }}>{kw.query}</td>
                       <td>
-                        <span className={`seo-cc-pill ${kw.language === 'en' ? 'seo-cc-pill-en' : 'seo-cc-pill-bn'}`}>
+                        <span
+                          className={`seo-cc-pill ${kw.language === 'en' ? 'seo-cc-pill-en' : 'seo-cc-pill-bn'}`}
+                        >
                           {kw.language.toUpperCase()}
                         </span>
                       </td>
-                      <td><strong>{kw.clicks}</strong></td>
+                      <td>
+                        <strong>{kw.clicks}</strong>
+                      </td>
                       <td>{kw.impressions}</td>
                       <td>{kw.ctr.toFixed(1)}%</td>
                       <td>{kw.avgPosition.toFixed(1)}</td>
                       <td>
                         {kw.positionChange !== null ? (
                           kw.positionChange < 0 ? (
-                            <span style={{ color: '#34d399' }}>▲ {Math.abs(kw.positionChange).toFixed(1)}</span>
+                            <span style={{ color: '#34d399' }}>
+                              ▲ {Math.abs(kw.positionChange).toFixed(1)}
+                            </span>
                           ) : (
-                            <span style={{ color: '#f87171' }}>▼ {kw.positionChange.toFixed(1)}</span>
+                            <span style={{ color: '#f87171' }}>
+                              ▼ {kw.positionChange.toFixed(1)}
+                            </span>
                           )
                         ) : (
                           '—'
                         )}
                       </td>
-                      <td style={{ maxWidth: '200px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                      <td
+                        style={{
+                          maxWidth: '200px',
+                          overflow: 'hidden',
+                          textOverflow: 'ellipsis',
+                          whiteSpace: 'nowrap',
+                        }}
+                      >
                         {kw.landingPage ? (
-                          <code style={{ fontSize: '0.7rem', color: '#94a3b8' }}>{kw.landingPage}</code>
+                          <code style={{ fontSize: '0.7rem', color: '#94a3b8' }}>
+                            {kw.landingPage}
+                          </code>
                         ) : (
                           '—'
                         )}
@@ -1010,9 +1107,15 @@ export default function SeoCommandCenter({ initialData, adminUsername }: Props) 
             <div className="seo-cc-empty-state">
               <strong>No Search Console Query Data for This Period</strong>
               {config.connected ? (
-                <span>This page or query cluster has not recorded search impressions in the selected {selectedRange}-day date range.</span>
+                <span>
+                  This page or query cluster has not recorded search impressions in the selected{' '}
+                  {selectedRange}-day date range.
+                </span>
               ) : (
-                <span>Connect Google Search Console via OAuth to populate real-time queries and ranking metrics.</span>
+                <span>
+                  Connect Google Search Console via OAuth to populate real-time queries and ranking
+                  metrics.
+                </span>
               )}
             </div>
           )}
@@ -1027,7 +1130,8 @@ export default function SeoCommandCenter({ initialData, adminUsername }: Props) 
                 <span>Query Opportunity Engine</span>
               </h2>
               <div style={{ fontSize: '0.75rem', color: '#94a3b8', marginTop: '2px' }}>
-                Algorithmic discovery: Striking distance (Pos 4–15), high impression / low CTR, and trending queries
+                Algorithmic discovery: Striking distance (Pos 4–15), high impression / low CTR, and
+                trending queries
               </div>
             </div>
 
@@ -1052,7 +1156,13 @@ export default function SeoCommandCenter({ initialData, adminUsername }: Props) 
           </div>
 
           {filteredOpportunities.length > 0 ? (
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '14px' }}>
+            <div
+              style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+                gap: '14px',
+              }}
+            >
               {filteredOpportunities.map((op) => (
                 <div
                   key={`${op.type}-${op.query}`}
@@ -1063,8 +1173,16 @@ export default function SeoCommandCenter({ initialData, adminUsername }: Props) 
                     padding: '14px',
                   }}
                 >
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-                    <div style={{ fontWeight: 700, color: '#f8fafc', fontSize: '0.9rem' }}>{op.query}</div>
+                  <div
+                    style={{
+                      display: 'flex',
+                      justifyContent: 'space-between',
+                      alignItems: 'flex-start',
+                    }}
+                  >
+                    <div style={{ fontWeight: 700, color: '#f8fafc', fontSize: '0.9rem' }}>
+                      {op.query}
+                    </div>
                     <span
                       className="seo-cc-pill"
                       style={{
@@ -1072,27 +1190,36 @@ export default function SeoCommandCenter({ initialData, adminUsername }: Props) 
                           op.type === 'striking_distance'
                             ? 'rgba(56, 189, 248, 0.15)'
                             : op.type === 'high_impression_low_ctr'
-                            ? 'rgba(245, 158, 11, 0.15)'
-                            : 'rgba(16, 185, 129, 0.15)',
+                              ? 'rgba(245, 158, 11, 0.15)'
+                              : 'rgba(16, 185, 129, 0.15)',
                         color:
                           op.type === 'striking_distance'
                             ? '#38bdf8'
                             : op.type === 'high_impression_low_ctr'
-                            ? '#fbbf24'
-                            : '#34d399',
+                              ? '#fbbf24'
+                              : '#34d399',
                       }}
                     >
                       {op.type === 'striking_distance'
                         ? 'Pos 4–15 Opportunity'
                         : op.type === 'high_impression_low_ctr'
-                        ? 'Low CTR'
-                        : op.type}
+                          ? 'Low CTR'
+                          : op.type}
                     </span>
                   </div>
 
-                  <div style={{ display: 'flex', gap: '16px', marginTop: '8px', fontSize: '0.75rem', color: '#94a3b8' }}>
+                  <div
+                    style={{
+                      display: 'flex',
+                      gap: '16px',
+                      marginTop: '8px',
+                      fontSize: '0.75rem',
+                      color: '#94a3b8',
+                    }}
+                  >
                     <div>
-                      Avg Position: <strong style={{ color: '#f1f5f9' }}>{op.currentPosition.toFixed(1)}</strong>
+                      Avg Position:{' '}
+                      <strong style={{ color: '#f1f5f9' }}>{op.currentPosition.toFixed(1)}</strong>
                     </div>
                     <div>
                       Impressions: <strong style={{ color: '#f1f5f9' }}>{op.impressions}</strong>
@@ -1102,7 +1229,14 @@ export default function SeoCommandCenter({ initialData, adminUsername }: Props) 
                     </div>
                   </div>
 
-                  <div style={{ fontSize: '0.75rem', color: '#cbd5e1', marginTop: '8px', lineHeight: 1.4 }}>
+                  <div
+                    style={{
+                      fontSize: '0.75rem',
+                      color: '#cbd5e1',
+                      marginTop: '8px',
+                      lineHeight: 1.4,
+                    }}
+                  >
                     {op.recommendation}
                   </div>
                 </div>
@@ -1141,9 +1275,7 @@ export default function SeoCommandCenter({ initialData, adminUsername }: Props) 
                 <div className="seo-cc-funnel-num">{step.count.toLocaleString()}</div>
                 <div className="seo-cc-funnel-lbl">{step.label}</div>
                 {step.conversionRate !== null && (
-                  <div className="seo-cc-funnel-rate">
-                    {step.conversionRate}% conversion
-                  </div>
+                  <div className="seo-cc-funnel-rate">{step.conversionRate}% conversion</div>
                 )}
               </div>
             ))}
@@ -1161,7 +1293,8 @@ export default function SeoCommandCenter({ initialData, adminUsername }: Props) 
                   <span>PageSpeed Insights & Core Web Vitals (Monitored URLs)</span>
                 </h2>
                 <div style={{ fontSize: '0.75rem', color: '#94a3b8' }}>
-                  Field Data (Real Users) vs Lab Data • INP is the official responsiveness metric (replaces legacy FID)
+                  Field Data (Real Users) vs Lab Data • INP is the official responsiveness metric
+                  (replaces legacy FID)
                 </div>
               </div>
 
@@ -1187,7 +1320,9 @@ export default function SeoCommandCenter({ initialData, adminUsername }: Props) 
                           <code style={{ color: '#38bdf8' }}>{ps.path}</code>
                         </td>
                         <td>
-                          <strong style={{ color: ps.performanceScore >= 90 ? '#34d399' : '#fbbf24' }}>
+                          <strong
+                            style={{ color: ps.performanceScore >= 90 ? '#34d399' : '#fbbf24' }}
+                          >
                             {ps.performanceScore}/100
                           </strong>
                         </td>
@@ -1201,7 +1336,9 @@ export default function SeoCommandCenter({ initialData, adminUsername }: Props) 
                           <span
                             className="seo-cc-pill"
                             style={{
-                              background: ps.fieldDataAvailable ? 'rgba(16,185,129,0.15)' : 'rgba(148,163,184,0.15)',
+                              background: ps.fieldDataAvailable
+                                ? 'rgba(16,185,129,0.15)'
+                                : 'rgba(148,163,184,0.15)',
                               color: ps.fieldDataAvailable ? '#34d399' : '#94a3b8',
                             }}
                           >
@@ -1223,7 +1360,9 @@ export default function SeoCommandCenter({ initialData, adminUsername }: Props) 
                   <span>Internal Technical SEO Audit (npm run seo:audit)</span>
                 </h2>
                 <span className="seo-cc-badge seo-cc-badge-live">
-                  {audit.criticalErrors === 0 ? '✓ 0 Critical Errors' : `${audit.criticalErrors} Errors`}
+                  {audit.criticalErrors === 0
+                    ? '✓ 0 Critical Errors'
+                    : `${audit.criticalErrors} Errors`}
                 </span>
               </div>
 

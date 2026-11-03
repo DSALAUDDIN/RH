@@ -126,7 +126,12 @@ async function auditPage(path, { canonical: expectedCanonical = path } = {}) {
   const selfLang = isBangla ? 'bn-BD' : LANGUAGE;
   if (!hreflang.has(selfLang)) add('ERROR', path, 'hreflang', `missing ${selfLang}`);
   else if (canonical && hreflang.get(selfLang) !== canonical)
-    add('ERROR', path, 'hreflang', `${selfLang} → ${hreflang.get(selfLang)} does not match canonical`);
+    add(
+      'ERROR',
+      path,
+      'hreflang',
+      `${selfLang} → ${hreflang.get(selfLang)} does not match canonical`,
+    );
   if (!hreflang.has('x-default')) add('ERROR', path, 'hreflang', 'missing x-default');
 
   const title = decode(first(html, /<title>([^<]*)<\/title>/));
@@ -264,10 +269,20 @@ async function auditAuthorityPages() {
   };
 
   if (stats.enTotal !== 40) {
-    add('ERROR', 'authority-registry-en', 'count', `expected 40 English guides, found ${stats.enTotal}`);
+    add(
+      'ERROR',
+      'authority-registry-en',
+      'count',
+      `expected 40 English guides, found ${stats.enTotal}`,
+    );
   }
   if (stats.bnTotal !== 40) {
-    add('ERROR', 'authority-registry-bn', 'count', `expected 40 Bangla guides, found ${stats.bnTotal}`);
+    add(
+      'ERROR',
+      'authority-registry-bn',
+      'count',
+      `expected 40 Bangla guides, found ${stats.bnTotal}`,
+    );
   }
 
   // Audit English guides
@@ -305,7 +320,12 @@ async function auditAuthorityPages() {
       }
     } else {
       if (!robots || !robots.includes('noindex')) {
-        add('ERROR', path, 'robots', `review/draft page must have noindex, got "${robots ?? 'none'}"`);
+        add(
+          'ERROR',
+          path,
+          'robots',
+          `review/draft page must have noindex, got "${robots ?? 'none'}"`,
+        );
       }
       if (sitemapLocs.has(path)) {
         add('ERROR', path, 'sitemap', 'review/draft page must NOT be in sitemap.xml');
@@ -347,7 +367,12 @@ async function auditAuthorityPages() {
     // Verify self-canonicalization
     if (!canonical) add('ERROR', path, 'canonical', 'missing');
     else if (canonical !== `${CANONICAL_ORIGIN}${path}`) {
-      add('ERROR', path, 'canonical', `${canonical} (expected self-canonical ${CANONICAL_ORIGIN}${path})`);
+      add(
+        'ERROR',
+        path,
+        'canonical',
+        `${canonical} (expected self-canonical ${CANONICAL_ORIGIN}${path})`,
+      );
     }
 
     if (g.status === 'live') {
@@ -359,7 +384,12 @@ async function auditAuthorityPages() {
       }
     } else {
       if (!robots || !robots.includes('noindex')) {
-        add('ERROR', path, 'robots', `review/draft page must have noindex, got "${robots ?? 'none'}"`);
+        add(
+          'ERROR',
+          path,
+          'robots',
+          `review/draft page must have noindex, got "${robots ?? 'none'}"`,
+        );
       }
       if (sitemapLocs.has(path)) {
         add('ERROR', path, 'sitemap', 'review/draft page must NOT be in sitemap.xml');
@@ -409,12 +439,16 @@ function report(rows, authorityStats) {
 
   if (authorityStats) {
     console.log(`\nAuthority pages verification:`);
-    console.log(`  Combined authority pages: ${authorityStats.total} (${authorityStats.enTotal} English + ${authorityStats.bnTotal} বাংলা)`);
+    console.log(
+      `  Combined authority pages: ${authorityStats.total} (${authorityStats.enTotal} English + ${authorityStats.bnTotal} বাংলা)`,
+    );
     console.log(`  Live (Indexable): ${authorityStats.live}`);
     console.log(`  Review (noindex): ${authorityStats.review}`);
     console.log(`  Draft (noindex): ${authorityStats.draft}`);
-    console.log(`  SEO errors: ${errors.filter(e => e.route.includes('/guides') || e.route.startsWith('authority-registry')).length}`);
-    console.log(`  Warnings: ${warnings.filter(w => w.route.includes('/guides')).length}`);
+    console.log(
+      `  SEO errors: ${errors.filter((e) => e.route.includes('/guides') || e.route.startsWith('authority-registry')).length}`,
+    );
+    console.log(`  Warnings: ${warnings.filter((w) => w.route.includes('/guides')).length}`);
   }
 
   for (const [label, list] of [

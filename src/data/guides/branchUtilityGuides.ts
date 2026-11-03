@@ -7,8 +7,14 @@ export const branchUtilityGuides: AuthorityGuide[] = [
     shortTitle: 'Banani Clinic Visit Guide',
     category: 'branch-guides',
     categoryLabel: 'Branch Visit Guides',
-    primaryIntent: 'Provide practical logistical, geographical, and appointment information for patients visiting the RH Dental Banani private suite.',
-    secondaryTopics: ['Banani Road 11 landmark', 'B&B Empire Level 7', 'Private dental suite', 'Parking and access'],
+    primaryIntent:
+      'Provide practical logistical, geographical, and appointment information for patients visiting the RH Dental Banani private suite.',
+    secondaryTopics: [
+      'Banani Road 11 landmark',
+      'B&B Empire Level 7',
+      'Private dental suite',
+      'Parking and access',
+    ],
     status: 'live',
     medicallyReviewed: true,
     reviewer: 'RH Dental Clinical Operations Team',
@@ -27,8 +33,10 @@ export const branchUtilityGuides: AuthorityGuide[] = [
     relatedBranches: ['banani'],
     publishedAt: '2026-09-20',
     updatedAt: '2026-09-30',
-    metaDescription: 'Practical guide to visiting RH Dental Banani: location at B&B Empire Level 7 on Road 11, appointment scheduling, and calm private suite environment.',
-    quickAnswer: 'RH Dental Care Banani is a boutique private dental suite situated on Level 7 of the B&B Empire building on Plot 116, Road 11, Banani. Consultations are arranged strictly by advance appointment to ensure unhurried, private clinical care without waiting room congestion.',
+    metaDescription:
+      'Practical guide to visiting RH Dental Banani: location at B&B Empire Level 7 on Road 11, appointment scheduling, and calm private suite environment.',
+    quickAnswer:
+      'RH Dental Care Banani is a boutique private dental suite situated on Level 7 of the B&B Empire building on Plot 116, Road 11, Banani. Consultations are arranged strictly by advance appointment to ensure unhurried, private clinical care without waiting room congestion.',
     readingTimeMinutes: 5,
     sections: [
       {
@@ -46,7 +54,7 @@ export const branchUtilityGuides: AuthorityGuide[] = [
       {
         heading: 'Scheduling and Arrival Protocols',
         paragraphs: [
-          'To respect our patients\' time and preserve complete clinical privacy, appointments at the Banani suite are coordinated in advance. We recommend arriving 10 minutes prior to your allocated time to complete digital registration.',
+          "To respect our patients' time and preserve complete clinical privacy, appointments at the Banani suite are coordinated in advance. We recommend arriving 10 minutes prior to your allocated time to complete digital registration.",
         ],
       },
     ],
@@ -57,8 +65,14 @@ export const branchUtilityGuides: AuthorityGuide[] = [
     shortTitle: 'Banasree Clinic Visit Guide',
     category: 'branch-guides',
     categoryLabel: 'Branch Visit Guides',
-    primaryIntent: 'Provide clear travel directions, multi-chair setup details, and appointment logistics for patients visiting RH Dental Banasree.',
-    secondaryTopics: ['Block C Main Road', 'Multi-chair family dental center', 'Parking accessibility', 'Comprehensive family care'],
+    primaryIntent:
+      'Provide clear travel directions, multi-chair setup details, and appointment logistics for patients visiting RH Dental Banasree.',
+    secondaryTopics: [
+      'Block C Main Road',
+      'Multi-chair family dental center',
+      'Parking accessibility',
+      'Comprehensive family care',
+    ],
     status: 'live',
     medicallyReviewed: true,
     reviewer: 'RH Dental Clinical Operations Team',
@@ -68,7 +82,7 @@ export const branchUtilityGuides: AuthorityGuide[] = [
     relatedTreatments: [
       { title: 'Banasree Branch Profile', href: '/banasree' },
       { title: 'Root Canal Treatment', href: '/root-canal' },
-      { title: 'Children\'s Dentistry', href: '/kids-care' },
+      { title: "Children's Dentistry", href: '/kids-care' },
     ],
     relatedDoctors: [
       { name: 'Dr. B.M. Rafiqul Hasan', href: '/dr-hasan', role: 'Chief Consultant' },
@@ -77,8 +91,10 @@ export const branchUtilityGuides: AuthorityGuide[] = [
     relatedBranches: ['banasree'],
     publishedAt: '2026-09-20',
     updatedAt: '2026-09-30',
-    metaDescription: 'Complete guide for visiting RH Dental Banasree on Main Road, Block C: family-friendly facility, verified location, operating hours, and booking contacts.',
-    quickAnswer: 'RH Dental Care Banasree is our comprehensive multi-operatory family dental center located on House 15, Road 4, Block C (Main Road), Banasree, Rampura, Dhaka-1219. Operating daily from 9:00 am to 10:00 pm, it provides accessible specialist and family dental care.',
+    metaDescription:
+      'Complete guide for visiting RH Dental Banasree on Main Road, Block C: family-friendly facility, verified location, operating hours, and booking contacts.',
+    quickAnswer:
+      'RH Dental Care Banasree is our comprehensive multi-operatory family dental center located on House 15, Road 4, Block C (Main Road), Banasree, Rampura, Dhaka-1219. Operating daily from 9:00 am to 10:00 pm, it provides accessible specialist and family dental care.',
     readingTimeMinutes: 5,
     sections: [
       {
@@ -108,8 +124,14 @@ export const branchUtilityGuides: AuthorityGuide[] = [
     shortTitle: 'Preparing for Your Appointment',
     category: 'branch-guides',
     categoryLabel: 'Branch Visit Guides',
-    primaryIntent: 'Help patients prepare practically, medically, and logistically for their upcoming dental visit.',
-    secondaryTopics: ['Medical record checklist', 'Medication disclosure', 'Pre-appointment meals', 'Dental anxiety management'],
+    primaryIntent:
+      'Help patients prepare practically, medically, and logistically for their upcoming dental visit.',
+    secondaryTopics: [
+      'Medical record checklist',
+      'Medication disclosure',
+      'Pre-appointment meals',
+      'Dental anxiety management',
+    ],
     status: 'live',
     medicallyReviewed: true,
     reviewer: 'RH Dental Clinical Operations Team',
@@ -126,8 +148,10 @@ export const branchUtilityGuides: AuthorityGuide[] = [
     relatedBranches: ['banani', 'banasree'],
     publishedAt: '2026-09-20',
     updatedAt: '2026-09-30',
-    metaDescription: 'Practical pre-appointment checklist: what to bring, medication guidelines, eating before local anesthesia, and tips to ease dental anxiety.',
-    quickAnswer: 'To prepare for your dental visit, eat a light balanced meal before local anesthesia procedures, bring a list of all current medications, bring any previous dental x-rays or medical reports, and brush your teeth before attending.',
+    metaDescription:
+      'Practical pre-appointment checklist: what to bring, medication guidelines, eating before local anesthesia, and tips to ease dental anxiety.',
+    quickAnswer:
+      'To prepare for your dental visit, eat a light balanced meal before local anesthesia procedures, bring a list of all current medications, bring any previous dental x-rays or medical reports, and brush your teeth before attending.',
     readingTimeMinutes: 5,
     sections: [
       {
@@ -150,8 +174,14 @@ export const branchUtilityGuides: AuthorityGuide[] = [
     shortTitle: 'Questions to Ask Your Dentist',
     category: 'branch-guides',
     categoryLabel: 'Branch Visit Guides',
-    primaryIntent: 'Empower patients with a thoughtful list of questions to ask their dentist to ensure informed consent and clarity before starting care.',
-    secondaryTopics: ['Informed consent', 'Treatment alternatives', 'Expected longevity', 'Written cost estimate'],
+    primaryIntent:
+      'Empower patients with a thoughtful list of questions to ask their dentist to ensure informed consent and clarity before starting care.',
+    secondaryTopics: [
+      'Informed consent',
+      'Treatment alternatives',
+      'Expected longevity',
+      'Written cost estimate',
+    ],
     status: 'live',
     medicallyReviewed: true,
     reviewer: 'RH Dental Clinical Operations Team',
@@ -169,8 +199,10 @@ export const branchUtilityGuides: AuthorityGuide[] = [
     relatedBranches: ['banani', 'banasree'],
     publishedAt: '2026-09-20',
     updatedAt: '2026-09-30',
-    metaDescription: 'Smart questions every patient should ask before agreeing to dental treatment: diagnosis clarity, alternative options, realistic timelines, and maintenance.',
-    quickAnswer: 'Before consenting to treatment, ask your dentist: What is the primary diagnosis? What are the conservative alternatives? How many appointments are needed? What are the risks of delaying treatment? And what is the all-inclusive written cost?',
+    metaDescription:
+      'Smart questions every patient should ask before agreeing to dental treatment: diagnosis clarity, alternative options, realistic timelines, and maintenance.',
+    quickAnswer:
+      'Before consenting to treatment, ask your dentist: What is the primary diagnosis? What are the conservative alternatives? How many appointments are needed? What are the risks of delaying treatment? And what is the all-inclusive written cost?',
     readingTimeMinutes: 5,
     sections: [
       {

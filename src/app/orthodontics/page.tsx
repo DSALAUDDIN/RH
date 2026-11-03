@@ -106,10 +106,7 @@ function OrthoVideo() {
         autoPlay
         preload="auto"
       >
-        <source
-          src="/assets/videos/orthodontics.mp4"
-          type="video/mp4"
-        />
+        <source src="/assets/videos/orthodontics.mp4" type="video/mp4" />
       </video>
       <div className="ortho-video-controls">
         <button
@@ -292,15 +289,24 @@ export default function OrthodonticsPage() {
                 </p>
                 <p className="ortho-philosophy-text" style={{ marginTop: '0.75rem' }}>
                   Our orthodontic and clear aligner therapies are led by consultant orthodontists{' '}
-                  <Link href="/team/dr-jeamima-tabassum-barsha" style={{ color: '#6366f1', textDecoration: 'underline', fontWeight: 600 }}>
+                  <Link
+                    href="/team/dr-jeamima-tabassum-barsha"
+                    style={{ color: '#6366f1', textDecoration: 'underline', fontWeight: 600 }}
+                  >
                     Dr. Jeamima Tabassum Barsha
                   </Link>
                   ,{' '}
-                  <Link href="/team/dr-nishat-tamanna-alam" style={{ color: '#6366f1', textDecoration: 'underline', fontWeight: 600 }}>
+                  <Link
+                    href="/team/dr-nishat-tamanna-alam"
+                    style={{ color: '#6366f1', textDecoration: 'underline', fontWeight: 600 }}
+                  >
                     Dr. Nishat Tamanna Alam
                   </Link>
                   , and{' '}
-                  <Link href="/team/dr-nabil-rahman" style={{ color: '#6366f1', textDecoration: 'underline', fontWeight: 600 }}>
+                  <Link
+                    href="/team/dr-nabil-rahman"
+                    style={{ color: '#6366f1', textDecoration: 'underline', fontWeight: 600 }}
+                  >
                     Dr. Nabil Rahman
                   </Link>
                   . Available at our{' '}
@@ -342,8 +348,7 @@ export default function OrthodonticsPage() {
                 </span>
               </h2>
               <p className="imp-subtitle">
-                Treatment options tailored to your clinical needs and lifestyle
-                preferences.
+                Treatment options tailored to your clinical needs and lifestyle preferences.
               </p>
             </div>
           </FadeIn>

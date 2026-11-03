@@ -18,7 +18,8 @@ export default function ContactPage() {
         <div className="rh-container">
           <h1 className="ct-h1">Contact Our Dental Clinics in Banani &amp; Banasree, Dhaka</h1>
           <p className="ct-lede">
-            Choose an appointment-only private suite in Banani or a full-service hospital in Banasree, both run by the same clinical team.
+            Choose an appointment-only private suite in Banani or a full-service hospital in
+            Banasree, both run by the same clinical team.
           </p>
           <p className="ct-trust">{SHARED_TRUST}</p>
         </div>

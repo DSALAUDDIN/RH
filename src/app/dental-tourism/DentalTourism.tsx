@@ -977,7 +977,6 @@ export default function DentalTourism() {
             </div>
           </article>
         </div>
-
       </section>
 
       {/* ─────────────────────────── STRATEGIC PARTNERSHIP: RH × ALIF TOURS ─────────────────────────── */}
@@ -986,15 +985,17 @@ export default function DentalTourism() {
         <div className="container">
           <div className="partner-header" data-reveal>
             <span className="eyebrow">
-              <span className="kicker-line"></span>Strategic Partnership · Dental Tourism in Bangladesh
+              <span className="kicker-line"></span>Strategic Partnership · Dental Tourism in
+              Bangladesh
             </span>
             <h2 className="partner-main-title">
               RH Dental Care <em>×</em> Alif Global Tours &amp; Travels
             </h2>
             <p className="partner-lead">
-              Quality Dental Care. Complete Travel Support. One Seamless Journey. To make your dental
-              tourism experience effortless, RH Dental Care has officially partnered with Alif Global
-              Tours &amp; Travels to support international patients throughout their journey.
+              Quality Dental Care. Complete Travel Support. One Seamless Journey. To make your
+              dental tourism experience effortless, RH Dental Care has officially partnered with
+              Alif Global Tours &amp; Travels to support international patients throughout their
+              journey.
             </p>
           </div>
 
@@ -1002,7 +1003,14 @@ export default function DentalTourism() {
             {/* LEFT: RH DENTAL CARE */}
             <article className="partner-card rh-side">
               <span className="partner-card-tag">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                >
                   <path d="M20 6L9 17l-5-5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
                 Clinical Excellence
@@ -1011,39 +1019,96 @@ export default function DentalTourism() {
               <div className="partner-card-role">Comprehensive Dental Treatment in Dhaka</div>
               <ul className="partner-feature-list">
                 <li>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.5"
+                  >
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
-                  <span><b>Experienced Dental Professionals:</b> Multi-specialty team for advanced clinical procedures.</span>
+                  <span>
+                    <b>Experienced Dental Professionals:</b> Multi-specialty team for advanced
+                    clinical procedures.
+                  </span>
                 </li>
                 <li>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.5"
+                  >
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
-                  <span><b>Modern Technology:</b> 3D CBCT, digital intraoral scanning, lasers &amp; in-house CAD/CAM.</span>
+                  <span>
+                    <b>Modern Technology:</b> 3D CBCT, digital intraoral scanning, lasers &amp;
+                    in-house CAD/CAM.
+                  </span>
                 </li>
                 <li>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.5"
+                  >
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
-                  <span><b>Multidisciplinary Care:</b> Implants, aligners, cosmetic smile aesthetics, oral surgery &amp; full rehabilitation.</span>
+                  <span>
+                    <b>Multidisciplinary Care:</b> Implants, aligners, cosmetic smile aesthetics,
+                    oral surgery &amp; full rehabilitation.
+                  </span>
                 </li>
                 <li>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.5"
+                  >
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
-                  <span><b>Personalized Treatment Planning:</b> Custom timeline coordinated around your travel schedule.</span>
+                  <span>
+                    <b>Personalized Treatment Planning:</b> Custom timeline coordinated around your
+                    travel schedule.
+                  </span>
                 </li>
                 <li>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.5"
+                  >
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
-                  <span><b>Two Modern Clinics:</b> State-of-the-art facilities in Banani and Banasree, Dhaka.</span>
+                  <span>
+                    <b>Two Modern Clinics:</b> State-of-the-art facilities in Banani and Banasree,
+                    Dhaka.
+                  </span>
                 </li>
               </ul>
               <a href="#treatments" className="choice-btn primary">
                 Explore Dental Services
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.2"
+                >
                   <path d="M5 12h14M13 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </a>
@@ -1052,7 +1117,14 @@ export default function DentalTourism() {
             {/* RIGHT: ALIF GLOBAL TOURS & TRAVELS */}
             <article className="partner-card alif-side">
               <span className="partner-card-tag">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                >
                   <path d="M20 6L9 17l-5-5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
                 Travel &amp; Hospitality
@@ -1061,39 +1133,96 @@ export default function DentalTourism() {
               <div className="partner-card-role">Dedicated Travel Support &amp; Concierge</div>
               <ul className="partner-feature-list">
                 <li>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.5"
+                  >
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
-                  <span><b>Visa Assistance:</b> Smooth visa documentation &amp; arrival guidance for international travelers.</span>
+                  <span>
+                    <b>Visa Assistance:</b> Smooth visa documentation &amp; arrival guidance for
+                    international travelers.
+                  </span>
                 </li>
                 <li>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.5"
+                  >
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
-                  <span><b>Travel Coordination:</b> Flight bookings and itinerary mapped to your clinical visits.</span>
+                  <span>
+                    <b>Travel Coordination:</b> Flight bookings and itinerary mapped to your
+                    clinical visits.
+                  </span>
                 </li>
                 <li>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.5"
+                  >
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
-                  <span><b>Airport VIP Transfers:</b> Chauffeur greeting upon arrival at Dhaka International Airport (DAC).</span>
+                  <span>
+                    <b>Airport VIP Transfers:</b> Chauffeur greeting upon arrival at Dhaka
+                    International Airport (DAC).
+                  </span>
                 </li>
                 <li>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.5"
+                  >
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
-                  <span><b>Hotel Accommodation:</b> Handpicked premium hotels near Banani and Banasree branches.</span>
+                  <span>
+                    <b>Hotel Accommodation:</b> Handpicked premium hotels near Banani and Banasree
+                    branches.
+                  </span>
                 </li>
                 <li>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.5"
+                  >
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
-                  <span><b>Local Transportation:</b> Air-conditioned private rides for clinic sessions and city tours.</span>
+                  <span>
+                    <b>Local Transportation:</b> Air-conditioned private rides for clinic sessions
+                    and city tours.
+                  </span>
                 </li>
               </ul>
               <a href="#booking-options" className="choice-btn outline">
                 View Full Package Options
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.2"
+                >
                   <path d="M5 12h14M13 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </a>
@@ -1164,7 +1293,8 @@ export default function DentalTourism() {
               <em>Personal care.</em>
             </h2>
             <p className="lead" data-reveal>
-              Our team combines established implant systems, sterilisation protocols and digital planning with personal support throughout your visit.
+              Our team combines established implant systems, sterilisation protocols and digital
+              planning with personal support throughout your visit.
             </p>
           </div>
 
@@ -1300,8 +1430,8 @@ export default function DentalTourism() {
                   </h3>
                   <p>
                     Every restoration carries the manufacturer's warranty options as specified by
-                    the implant maker. We carry that documentation for you, with a
-                    written record of every fixture used.
+                    the implant maker. We carry that documentation for you, with a written record of
+                    every fixture used.
                   </p>
                 </div>
                 <ul className="brand-list">
@@ -1520,8 +1650,9 @@ export default function DentalTourism() {
                 <span className="case-category">Restorative Dentistry</span>
                 <h4 className="case-title">Composite Restoration</h4>
                 <p className="case-desc">
-                  Conservative rebuild of worn and fractured incisal enamel using advanced nanohybrid
-                  composite layering to recreate natural light reflection and dental strength.
+                  Conservative rebuild of worn and fractured incisal enamel using advanced
+                  nanohybrid composite layering to recreate natural light reflection and dental
+                  strength.
                 </p>
                 <div className="case-highlights">
                   <span className="case-highlight-tag">Natural Aesthetics</span>
@@ -1545,8 +1676,9 @@ export default function DentalTourism() {
                 <span className="case-category">Cosmetic Dentistry</span>
                 <h4 className="case-title">Midline Diastema Closure</h4>
                 <p className="case-desc">
-                  Seamless gap closure preserving original healthy tooth structure. Restores harmonious
-                  smile symmetry and natural proportions in just one coordinated appointment.
+                  Seamless gap closure preserving original healthy tooth structure. Restores
+                  harmonious smile symmetry and natural proportions in just one coordinated
+                  appointment.
                 </p>
                 <div className="case-highlights">
                   <span className="case-highlight-tag">Better Alignment</span>
@@ -1571,7 +1703,8 @@ export default function DentalTourism() {
                 <h4 className="case-title">In-Office Teeth Whitening</h4>
                 <p className="case-desc">
                   Clinical-grade light-activated whitening system lifting years of deep intrinsic
-                  staining while safeguarding enamel and maintaining zero post-operative sensitivity.
+                  staining while safeguarding enamel and maintaining zero post-operative
+                  sensitivity.
                 </p>
                 <div className="case-highlights">
                   <span className="case-highlight-tag">Brighter &amp; Whiter</span>
@@ -1595,8 +1728,9 @@ export default function DentalTourism() {
                 <span className="case-category">Full-Mouth Rehabilitation</span>
                 <h4 className="case-title">Complex Build-Up Reconstruction</h4>
                 <p className="case-desc">
-                  Revision of 10+ year old, discolored, and failing broken fillings. Rebuilt to correct
-                  bite relationship, lifelike shade harmony, and long-term biological function.
+                  Revision of 10+ year old, discolored, and failing broken fillings. Rebuilt to
+                  correct bite relationship, lifelike shade harmony, and long-term biological
+                  function.
                 </p>
                 <div className="case-highlights">
                   <span className="case-highlight-tag">Restored Function</span>
@@ -1672,8 +1806,8 @@ export default function DentalTourism() {
               </h2>
             </div>
             <p className="lead">
-              Your journey starts from home. Seven clearly coordinated milestones designed to take you
-              from initial assessment to finished clinical outcome and a safe journey back.
+              Your journey starts from home. Seven clearly coordinated milestones designed to take
+              you from initial assessment to finished clinical outcome and a safe journey back.
             </p>
           </div>
 
@@ -1700,7 +1834,10 @@ export default function DentalTourism() {
               </g>
             </svg>
 
-            <ol className="steps" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))' }}>
+            <ol
+              className="steps"
+              style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))' }}
+            >
               <li className="step" data-step>
                 <div className="step-num">01</div>
                 <div className="step-time">First Contact</div>
@@ -1768,9 +1905,16 @@ export default function DentalTourism() {
           </div>
 
           {/* ─────────────────────────── TWO WAYS TO BOOK ─────────────────────────── */}
-          <div className="two-ways-to-book" id="booking-options" data-reveal style={{ marginTop: '60px' }}>
+          <div
+            className="two-ways-to-book"
+            id="booking-options"
+            data-reveal
+            style={{ marginTop: '60px' }}
+          >
             <div className="two-ways-head">
-              <span className="eyebrow" style={{ color: '#38bdf8' }}>SCENE 08 · FLEXIBLE BOOKING</span>
+              <span className="eyebrow" style={{ color: '#38bdf8' }}>
+                SCENE 08 · FLEXIBLE BOOKING
+              </span>
               <h3>Two Ways to Book Your Journey</h3>
               <p style={{ color: 'rgba(246, 241, 232, 0.75)', margin: 0 }}>
                 Whether you prefer arranging your own travel or want a fully turnkey medical tourism
@@ -1784,33 +1928,49 @@ export default function DentalTourism() {
                 <span className="booking-choice-num">CARD 01 · DIRECT DENTAL ROUTE</span>
                 <h4>Book Directly with RH Dental Care</h4>
                 <p>
-                  Ideal for visitors and expatriates who already have travel or accommodation in Dhaka.
-                  Discuss your dental needs, send your records directly to our clinical team, and schedule
-                  your treatment dates.
+                  Ideal for visitors and expatriates who already have travel or accommodation in
+                  Dhaka. Discuss your dental needs, send your records directly to our clinical team,
+                  and schedule your treatment dates.
                 </p>
                 <a href="#contact" className="choice-btn primary">
                   Plan Your Dental Treatment
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
+                  <svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.2"
+                  >
                     <path d="M5 12h14M13 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </a>
               </div>
 
               {/* CARD 02 */}
-              <div className="booking-choice-card" style={{ borderColor: 'rgba(56, 189, 248, 0.4)' }}>
-                <span className="booking-choice-num" style={{ color: '#38bdf8' }}>CARD 02 · FULL TOURISM PACKAGE</span>
+              <div
+                className="booking-choice-card"
+                style={{ borderColor: 'rgba(56, 189, 248, 0.4)' }}
+              >
+                <span className="booking-choice-num" style={{ color: '#38bdf8' }}>
+                  CARD 02 · FULL TOURISM PACKAGE
+                </span>
                 <h4>Book Through Alif Global Tours &amp; Travels</h4>
                 <p>
-                  All-inclusive Dental Tourism journey. Complete travel coordination + hotel accommodations
-                  + airport transfers + local transportation + guaranteed priority dental appointments.
+                  All-inclusive Dental Tourism journey. Complete travel coordination + hotel
+                  accommodations + airport transfers + local transportation + guaranteed priority
+                  dental appointments.
                 </p>
-                <BranchCTA
-                  action="whatsapp"
-                  branch="banani"
-                  className="choice-btn outline"
-                >
+                <BranchCTA action="whatsapp" branch="banani" className="choice-btn outline">
                   Book Your Dental Tourism Journey
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
+                  <svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.2"
+                  >
                     <path d="M5 12h14M13 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </BranchCTA>
@@ -1831,8 +1991,9 @@ export default function DentalTourism() {
                 <span className="trip-factor-item">✓ Healing Periods</span>
               </div>
               <p>
-                “Where clinically appropriate, your treatment schedule can be planned around your travel
-                dates, available time and clinical requirements. <b>Patient safety and appropriate clinical care always remain our priority.</b>”
+                “Where clinically appropriate, your treatment schedule can be planned around your
+                travel dates, available time and clinical requirements.{' '}
+                <b>Patient safety and appropriate clinical care always remain our priority.</b>”
               </p>
             </div>
           </div>
@@ -2691,7 +2852,8 @@ export default function DentalTourism() {
             </h2>
             <p style={{ color: 'rgba(246, 241, 232, 0.75)' }}>
               Take a cinematic preview of the patient journey at RH Dental Care. Watch our facility
-              walkthrough, clinical technology, and coordinated travel workflow with Alif Global Tours &amp; Travels.
+              walkthrough, clinical technology, and coordinated travel workflow with Alif Global
+              Tours &amp; Travels.
             </p>
           </div>
 
@@ -2712,7 +2874,9 @@ export default function DentalTourism() {
           <div className="storyboard-timeline" data-reveal>
             <div className="storyboard-head">
               <h4>Promotional Film Script &amp; Visual Storyboard</h4>
-              <span className="specs">Duration: 90–120s · 16:9 4K &amp; 9:16 Reels · RH × Alif Global</span>
+              <span className="specs">
+                Duration: 90–120s · 16:9 4K &amp; 9:16 Reels · RH × Alif Global
+              </span>
             </div>
 
             <div className="storyboard-scenes-grid">
@@ -2724,7 +2888,8 @@ export default function DentalTourism() {
                 </div>
                 <div className="scene-title">Welcome to Bangladesh</div>
                 <div className="scene-vo">
-                  “Looking for quality dental treatment while travelling to Bangladesh? Welcome to RH Dental Care.”
+                  “Looking for quality dental treatment while travelling to Bangladesh? Welcome to
+                  RH Dental Care.”
                 </div>
                 <div className="scene-visual">
                   Visual: Aerial shots of modern Dhaka → transition to premium clinic operatory.
@@ -2739,10 +2904,13 @@ export default function DentalTourism() {
                 </div>
                 <div className="scene-title">Introducing RH Dental Care</div>
                 <div className="scene-vo">
-                  “RH Dental Care welcomes international patients with comprehensive dental services, experienced dental professionals, modern technology and personalized treatment planning.”
+                  “RH Dental Care welcomes international patients with comprehensive dental
+                  services, experienced dental professionals, modern technology and personalized
+                  treatment planning.”
                 </div>
                 <div className="scene-visual">
-                  Visual: Exterior/interior of RH Dental Care, reception, specialist team &amp; consultations.
+                  Visual: Exterior/interior of RH Dental Care, reception, specialist team &amp;
+                  consultations.
                 </div>
               </div>
 
@@ -2754,10 +2922,13 @@ export default function DentalTourism() {
                 </div>
                 <div className="scene-title">Comprehensive Clinical Care</div>
                 <div className="scene-vo">
-                  “From preventive and restorative dentistry to root canal, implants, cosmetic dentistry, orthodontics, oral surgery, pediatric care and full-mouth rehabilitation...”
+                  “From preventive and restorative dentistry to root canal, implants, cosmetic
+                  dentistry, orthodontics, oral surgery, pediatric care and full-mouth
+                  rehabilitation...”
                 </div>
                 <div className="scene-visual">
-                  Visual: Fast elegant sequence of procedures &amp; digital workflow under one network.
+                  Visual: Fast elegant sequence of procedures &amp; digital workflow under one
+                  network.
                 </div>
               </div>
 
@@ -2769,10 +2940,13 @@ export default function DentalTourism() {
                 </div>
                 <div className="scene-title">Why RH Dental Care?</div>
                 <div className="scene-vo">
-                  “Our focus goes beyond treatment. We combine clinical expertise, modern technology and multidisciplinary care to create a personalized treatment journey for every patient.”
+                  “Our focus goes beyond treatment. We combine clinical expertise, modern technology
+                  and multidisciplinary care to create a personalized treatment journey for every
+                  patient.”
                 </div>
                 <div className="scene-visual">
-                  Visual: Dentists analyzing 3D scans, diagnostic digital screens, and patient consultation.
+                  Visual: Dentists analyzing 3D scans, diagnostic digital screens, and patient
+                  consultation.
                 </div>
               </div>
 
@@ -2784,7 +2958,9 @@ export default function DentalTourism() {
                 </div>
                 <div className="scene-title">The Patient Journey</div>
                 <div className="scene-vo">
-                  “Your journey starts from home. Share your dental records with us, receive an initial assessment, plan your visit, travel to Bangladesh, receive your treatment and return home.”
+                  “Your journey starts from home. Share your dental records with us, receive an
+                  initial assessment, plan your visit, travel to Bangladesh, receive your treatment
+                  and return home.”
                 </div>
                 <div className="scene-visual">
                   Visual: Animated international route (Home → Dhaka → RH Dental Care → Home).
@@ -2799,10 +2975,13 @@ export default function DentalTourism() {
                 </div>
                 <div className="scene-title">RH × Alif Global Tours</div>
                 <div className="scene-vo">
-                  “To make the experience even easier, RH Dental Care has partnered with Alif Global Tours &amp; Travels to support international patients throughout their travel and treatment journey.”
+                  “To make the experience even easier, RH Dental Care has partnered with Alif Global
+                  Tours &amp; Travels to support international patients throughout their travel and
+                  treatment journey.”
                 </div>
                 <div className="scene-visual">
-                  Visual: Split-screen (Dental Treatment on Left + Travel Support on Right) with joint logos.
+                  Visual: Split-screen (Dental Treatment on Left + Travel Support on Right) with
+                  joint logos.
                 </div>
               </div>
 
@@ -2814,10 +2993,13 @@ export default function DentalTourism() {
                 </div>
                 <div className="scene-title">Full Travel Support</div>
                 <div className="scene-vo">
-                  “Through Alif Global Tours &amp; Travels, patients can receive assistance with visa support, travel coordination, airport transfers, hotel accommodation, local transportation and appointments.”
+                  “Through Alif Global Tours &amp; Travels, patients can receive assistance with
+                  visa support, travel coordination, airport transfers, hotel accommodation, local
+                  transportation and appointments.”
                 </div>
                 <div className="scene-visual">
-                  Visual: Passport, visa, flight, airport chauffeur pickup, boutique hotel &amp; clinic arrival.
+                  Visual: Passport, visa, flight, airport chauffeur pickup, boutique hotel &amp;
+                  clinic arrival.
                 </div>
               </div>
 
@@ -2829,7 +3011,8 @@ export default function DentalTourism() {
                 </div>
                 <div className="scene-title">Two Ways to Book</div>
                 <div className="scene-vo">
-                  “You can start your journey directly with RH Dental Care—or contact Alif Global Tours &amp; Travels to arrange your travel and Dental Tourism experience with us.”
+                  “You can start your journey directly with RH Dental Care—or contact Alif Global
+                  Tours &amp; Travels to arrange your travel and Dental Tourism experience with us.”
                 </div>
                 <div className="scene-visual">
                   Visual: Card 01 (Direct Dental Treatment) and Card 02 (Turnkey Tourism Package).
@@ -2844,22 +3027,35 @@ export default function DentalTourism() {
                 </div>
                 <div className="scene-title">Planned Around Your Trip</div>
                 <div className="scene-vo">
-                  “Where clinically appropriate, your treatment schedule can be planned around your travel dates, available time and clinical requirements. Patient safety always remains our priority.”
+                  “Where clinically appropriate, your treatment schedule can be planned around your
+                  travel dates, available time and clinical requirements. Patient safety always
+                  remains our priority.”
                 </div>
                 <div className="scene-visual">
-                  Visual: Treatment calendar, flight dates alignment, healing intervals &amp; safe recovery.
+                  Visual: Treatment calendar, flight dates alignment, healing intervals &amp; safe
+                  recovery.
                 </div>
               </div>
 
               {/* Scene 10 & Final Frame */}
-              <div className="storyboard-card" style={{ borderColor: 'rgba(56, 189, 248, 0.4)', background: 'rgba(14, 165, 233, 0.08)' }}>
+              <div
+                className="storyboard-card"
+                style={{
+                  borderColor: 'rgba(56, 189, 248, 0.4)',
+                  background: 'rgba(14, 165, 233, 0.08)',
+                }}
+              >
                 <div className="scene-badge-row">
-                  <span className="scene-num" style={{ color: '#7dd3fc' }}>SCENE 10 · CLOSING</span>
+                  <span className="scene-num" style={{ color: '#7dd3fc' }}>
+                    SCENE 10 · CLOSING
+                  </span>
                   <span className="scene-duration">106–120s</span>
                 </div>
                 <div className="scene-title">Your Smile, Our Happiness</div>
                 <div className="scene-vo">
-                  “From your first enquiry to your treatment and journey home, we are here to make Dental Tourism in Bangladesh simpler, more comfortable and professionally coordinated.”
+                  “From your first enquiry to your treatment and journey home, we are here to make
+                  Dental Tourism in Bangladesh simpler, more comfortable and professionally
+                  coordinated.”
                 </div>
                 <div className="scene-visual" style={{ color: '#fff' }}>
                   Websites: <b>rhdentalcare.com</b> · <b>alifglobaltours.com</b>
@@ -3088,9 +3284,9 @@ export default function DentalTourism() {
                 <p>
                   It depends on the procedure. A single crown or veneer set: <b>3–5 days</b>. A full
                   smile makeover with veneers: <b>5–8 days</b>. Implants with immediate provisional
-                  loading: <b>7–10 days</b>; with delayed loading (the safer, standard protocol): one
-                  short visit for surgery, then a second visit 4–6 months later for the final crowns.
-                  We build the schedule around <em>your</em> calendar, not ours.
+                  loading: <b>7–10 days</b>; with delayed loading (the safer, standard protocol):
+                  one short visit for surgery, then a second visit 4–6 months later for the final
+                  crowns. We build the schedule around <em>your</em> calendar, not ours.
                 </p>
               </div>
             </li>
@@ -3105,9 +3301,9 @@ export default function DentalTourism() {
               </button>
               <div className="faq-a">
                 <p>
-                  Every implant carries the manufacturer's warranty documentation (depending
-                  on brand) and we hold the documentation for you. If you have an issue, you contact
-                  us on WhatsApp; we coordinate with your local dentist, send your full digital file
+                  Every implant carries the manufacturer's warranty documentation (depending on
+                  brand) and we hold the documentation for you. If you have an issue, you contact us
+                  on WhatsApp; we coordinate with your local dentist, send your full digital file
                   and X-rays, and provide support for any follow-up care needed.
                 </p>
               </div>
@@ -3220,8 +3416,9 @@ export default function DentalTourism() {
               <div className="faq-a">
                 <p>
                   Strongly encouraged. Our coordinators handle their travel arrangements alongside
-                  yours — same hotel, same driver, same restaurant bookings. We can coordinate their stay alongside yours. They are welcome in the consultation room at any point you'd like them
-                  there.
+                  yours — same hotel, same driver, same restaurant bookings. We can coordinate their
+                  stay alongside yours. They are welcome in the consultation room at any point you'd
+                  like them there.
                 </p>
               </div>
             </li>
@@ -3293,8 +3490,8 @@ export default function DentalTourism() {
               </h2>
               <p className="lead">
                 Send a few photos and your dental history over WhatsApp. Within 24 hours our
-                coordinator returns a full treatment plan — and an itinerary for the rest of
-                your trip.
+                coordinator returns a full treatment plan — and an itinerary for the rest of your
+                trip.
               </p>
 
               <div className="contact-meta">

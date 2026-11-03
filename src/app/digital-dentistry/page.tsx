@@ -1328,10 +1328,7 @@ export default function DigitalDentistryPage() {
                       }}
                       poster="/assets/videos/digital-dentistry-poster.jpg"
                     >
-                      <source
-                        src="/assets/videos/digital-dentistry.mp4"
-                        type="video/mp4"
-                      />
+                      <source src="/assets/videos/digital-dentistry.mp4" type="video/mp4" />
                       Your browser does not support the video tag.
                     </video>
                   </div>

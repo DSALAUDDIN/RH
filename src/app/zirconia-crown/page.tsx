@@ -555,7 +555,6 @@ export default function ZirconiaCrownPage() {
               ))}
             </div>
           </FadeIn>
-
         </div>
       </section>
 
@@ -622,7 +621,6 @@ export default function ZirconiaCrownPage() {
                   features, existing teeth, smile line and desired appearance before finalizing the
                   design.
                 </p>
-
               </div>
             </FadeIn>
           </div>

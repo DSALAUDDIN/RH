@@ -94,7 +94,12 @@ export const ROUTES: RouteEntry[] = [
   { path: '/reviews', label: 'Patient reviews', priority: 0.7, changeFrequency: 'weekly' },
   { path: '/guides', label: 'Patient dental guides', priority: 0.85, changeFrequency: 'weekly' },
   { path: '/bn', label: 'Bangla overview and services', priority: 0.85, changeFrequency: 'weekly' },
-  { path: '/bn/guides', label: 'Bangla dental guides hub', priority: 0.85, changeFrequency: 'weekly' },
+  {
+    path: '/bn/guides',
+    label: 'Bangla dental guides hub',
+    priority: 0.85,
+    changeFrequency: 'weekly',
+  },
 ];
 
 export const SPECIALTY_SLUGS = [

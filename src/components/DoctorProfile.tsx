@@ -9,12 +9,17 @@ function getProcedureHref(proc: string): string | null {
   const lower = proc.toLowerCase();
   if (lower.includes('implant')) return '/implants';
   if (lower.includes('root canal') || lower.includes('endodontic')) return '/root-canal';
-  if (lower.includes('orthodontic') || lower.includes('aligner') || lower.includes('brace')) return '/orthodontics';
+  if (lower.includes('orthodontic') || lower.includes('aligner') || lower.includes('brace'))
+    return '/orthodontics';
   if (lower.includes('crown') || lower.includes('zirconia')) return '/zirconia-crown';
-  if (lower.includes('veneer') || lower.includes('aesthetic') || lower.includes('smile design')) return '/zirconia-veneers';
-  if (lower.includes('child') || lower.includes('paediatric') || lower.includes('pediatric')) return '/kids-care';
-  if (lower.includes('surgery') || lower.includes('extraction') || lower.includes('exodontia')) return '/dental-surgery';
-  if (lower.includes('imaging') || lower.includes('cbct') || lower.includes('3d')) return '/digital-dentistry';
+  if (lower.includes('veneer') || lower.includes('aesthetic') || lower.includes('smile design'))
+    return '/zirconia-veneers';
+  if (lower.includes('child') || lower.includes('paediatric') || lower.includes('pediatric'))
+    return '/kids-care';
+  if (lower.includes('surgery') || lower.includes('extraction') || lower.includes('exodontia'))
+    return '/dental-surgery';
+  if (lower.includes('imaging') || lower.includes('cbct') || lower.includes('3d'))
+    return '/digital-dentistry';
   return null;
 }
 
@@ -66,9 +71,13 @@ export default function DoctorProfile({ doctor: d }: { doctor: Clinician }) {
       {d.bio.length > 0 && (
         <section className="dp-section rh-section" aria-labelledby="dp-about">
           <div className="rh-container">
-            <h2 id="dp-about" className="dp-h2">About</h2>
+            <h2 id="dp-about" className="dp-h2">
+              About
+            </h2>
             {d.bio.map((p, i) => (
-              <p key={i} className="dp-body">{p}</p>
+              <p key={i} className="dp-body">
+                {p}
+              </p>
             ))}
           </div>
         </section>
@@ -77,7 +86,9 @@ export default function DoctorProfile({ doctor: d }: { doctor: Clinician }) {
       {d.procedures.length > 0 && (
         <section className="dp-section rh-section" aria-labelledby="dp-proc">
           <div className="rh-container">
-            <h2 id="dp-proc" className="dp-h2">Procedures</h2>
+            <h2 id="dp-proc" className="dp-h2">
+              Procedures
+            </h2>
             <ul className="dp-list">
               {d.procedures.map((p) => {
                 const href = getProcedureHref(p);
@@ -110,7 +121,9 @@ export default function DoctorProfile({ doctor: d }: { doctor: Clinician }) {
           <div className="rh-container dp-cols">
             {d.training.length > 0 && (
               <div>
-                <h2 id="dp-train" className="dp-h2">Training</h2>
+                <h2 id="dp-train" className="dp-h2">
+                  Training
+                </h2>
                 <ul className="dp-list">
                   {d.training.map((t) => (
                     <li key={t}>{t}</li>
@@ -134,7 +147,9 @@ export default function DoctorProfile({ doctor: d }: { doctor: Clinician }) {
 
       <section className="dp-section rh-section" aria-labelledby="dp-where">
         <div className="rh-container">
-          <h2 id="dp-where" className="dp-h2">Where {d.name.split(' ').slice(0, 2).join(' ')} sees patients</h2>
+          <h2 id="dp-where" className="dp-h2">
+            Where {d.name.split(' ').slice(0, 2).join(' ')} sees patients
+          </h2>
           <div className="dp-branches">
             {d.postings.map(({ branch: id }) => {
               const b = BRANCHES[id];
@@ -157,7 +172,6 @@ export default function DoctorProfile({ doctor: d }: { doctor: Clinician }) {
           </div>
         </div>
       </section>
-
     </article>
   );
 }

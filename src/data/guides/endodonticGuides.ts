@@ -7,13 +7,20 @@ export const endodonticGuides: AuthorityGuide[] = [
     shortTitle: 'Root Canal Cost Factors',
     category: 'endodontics',
     categoryLabel: 'Root Canal & Endodontics',
-    primaryIntent: 'Provide transparent, clinically sound explanations of what variables affect root canal treatment pricing in Dhaka.',
-    secondaryTopics: ['Microscopic endodontics', 'Tooth anatomy', 'Retreatment cases', 'Post and core build-up'],
+    primaryIntent:
+      'Provide transparent, clinically sound explanations of what variables affect root canal treatment pricing in Dhaka.',
+    secondaryTopics: [
+      'Microscopic endodontics',
+      'Tooth anatomy',
+      'Retreatment cases',
+      'Post and core build-up',
+    ],
     status: 'live',
     medicallyReviewed: true,
     reviewer: 'Dr. Shimia Binte Taher',
     reviewerSlug: 'dr-shimia',
-    reviewerRole: 'Consultant, Dental Surgeon & Endodontist (BSMMU PGT Conservative Dentistry & Endodontics)',
+    reviewerRole:
+      'Consultant, Dental Surgeon & Endodontist (BSMMU PGT Conservative Dentistry & Endodontics)',
     reviewedAt: '2026-09-28',
     relatedTreatments: [
       { title: 'Root Canal Treatment Overview', href: '/root-canal' },
@@ -21,13 +28,19 @@ export const endodonticGuides: AuthorityGuide[] = [
       { title: 'Digital Dentistry', href: '/digital-dentistry' },
     ],
     relatedDoctors: [
-      { name: 'Dr. Shimia Binte Taher', href: '/dr-shimia', role: 'Endodontist & Root Canal Specialist' },
+      {
+        name: 'Dr. Shimia Binte Taher',
+        href: '/dr-shimia',
+        role: 'Endodontist & Root Canal Specialist',
+      },
     ],
     relatedBranches: ['banani', 'banasree'],
     publishedAt: '2026-09-20',
     updatedAt: '2026-09-30',
-    metaDescription: 'Understand what factors determine root canal treatment cost in Dhaka: tooth position, canal complexity, dental operating microscopes, and post-endodontic crowns.',
-    quickAnswer: 'Root canal treatment costs in Dhaka depend primarily on tooth anatomy (front incisors with 1 canal vs. complex molars with 3 to 5 curved canals), whether the case is an initial treatment or retreatment of a previously infected tooth, and whether specialized surgical operating microscopes are utilized.',
+    metaDescription:
+      'Understand what factors determine root canal treatment cost in Dhaka: tooth position, canal complexity, dental operating microscopes, and post-endodontic crowns.',
+    quickAnswer:
+      'Root canal treatment costs in Dhaka depend primarily on tooth anatomy (front incisors with 1 canal vs. complex molars with 3 to 5 curved canals), whether the case is an initial treatment or retreatment of a previously infected tooth, and whether specialized surgical operating microscopes are utilized.',
     readingTimeMinutes: 6,
     sections: [
       {
@@ -67,7 +80,8 @@ export const endodonticGuides: AuthorityGuide[] = [
     faqs: [
       {
         question: 'Is root canal treatment more expensive than pulling the tooth?',
-        answer: 'An extraction may cost less initially, but replacing the resulting gap with a dental bridge or implant is far more expensive. Saving your natural tooth with root canal treatment is usually the most biologically conservative and cost-effective solution.',
+        answer:
+          'An extraction may cost less initially, but replacing the resulting gap with a dental bridge or implant is far more expensive. Saving your natural tooth with root canal treatment is usually the most biologically conservative and cost-effective solution.',
       },
     ],
   },
@@ -77,26 +91,39 @@ export const endodonticGuides: AuthorityGuide[] = [
     shortTitle: 'Microscopic Root Canal Care',
     category: 'endodontics',
     categoryLabel: 'Root Canal & Endodontics',
-    primaryIntent: 'Explain the clinical benefits, diagnostic precision, and superior outcomes of dental operating microscope treatment compared to traditional endodontics.',
-    secondaryTopics: ['Dental operating microscope', 'MB2 canal detection', 'Instrument retrieval', 'Bioceramic obturation'],
+    primaryIntent:
+      'Explain the clinical benefits, diagnostic precision, and superior outcomes of dental operating microscope treatment compared to traditional endodontics.',
+    secondaryTopics: [
+      'Dental operating microscope',
+      'MB2 canal detection',
+      'Instrument retrieval',
+      'Bioceramic obturation',
+    ],
     status: 'live',
     medicallyReviewed: true,
     reviewer: 'Dr. Shimia Binte Taher',
     reviewerSlug: 'dr-shimia',
-    reviewerRole: 'Consultant, Dental Surgeon & Endodontist (BSMMU PGT Conservative Dentistry & Endodontics)',
+    reviewerRole:
+      'Consultant, Dental Surgeon & Endodontist (BSMMU PGT Conservative Dentistry & Endodontics)',
     reviewedAt: '2026-09-28',
     relatedTreatments: [
       { title: 'Root Canal Treatment Overview', href: '/root-canal' },
       { title: 'Digital Dentistry & 3D Diagnostics', href: '/digital-dentistry' },
     ],
     relatedDoctors: [
-      { name: 'Dr. Shimia Binte Taher', href: '/dr-shimia', role: 'Endodontist & Root Canal Specialist' },
+      {
+        name: 'Dr. Shimia Binte Taher',
+        href: '/dr-shimia',
+        role: 'Endodontist & Root Canal Specialist',
+      },
     ],
     relatedBranches: ['banani', 'banasree'],
     publishedAt: '2026-09-20',
     updatedAt: '2026-09-30',
-    metaDescription: 'Discover why dental operating microscopes are the benchmark in modern root canal therapy: enhanced lighting, finding hidden canals, and saving complex teeth.',
-    quickAnswer: 'Microscopic root canal treatment uses high-power clinical surgical microscopes (up to 20x magnification) with shadow-free coaxial illumination to locate hidden canals, identify hairline root fractures, preserve healthy tooth structure, and achieve thorough three-dimensional canal disinfection.',
+    metaDescription:
+      'Discover why dental operating microscopes are the benchmark in modern root canal therapy: enhanced lighting, finding hidden canals, and saving complex teeth.',
+    quickAnswer:
+      'Microscopic root canal treatment uses high-power clinical surgical microscopes (up to 20x magnification) with shadow-free coaxial illumination to locate hidden canals, identify hairline root fractures, preserve healthy tooth structure, and achieve thorough three-dimensional canal disinfection.',
     readingTimeMinutes: 7,
     sections: [
       {
@@ -137,8 +164,14 @@ export const endodonticGuides: AuthorityGuide[] = [
     shortTitle: 'Root Canal vs Extraction',
     category: 'endodontics',
     categoryLabel: 'Root Canal & Endodontics',
-    primaryIntent: 'Educate patients facing severe tooth pain on the clinical criteria used to decide between saving a natural tooth via root canal versus extracting it.',
-    secondaryTopics: ['Tooth restorability', 'Biological preservation', 'Implant replacement comparison', 'Crown-to-root ratio'],
+    primaryIntent:
+      'Educate patients facing severe tooth pain on the clinical criteria used to decide between saving a natural tooth via root canal versus extracting it.',
+    secondaryTopics: [
+      'Tooth restorability',
+      'Biological preservation',
+      'Implant replacement comparison',
+      'Crown-to-root ratio',
+    ],
     status: 'live',
     medicallyReviewed: true,
     reviewer: 'Dr. Shimia Binte Taher',
@@ -157,8 +190,10 @@ export const endodonticGuides: AuthorityGuide[] = [
     relatedBranches: ['banani', 'banasree'],
     publishedAt: '2026-09-20',
     updatedAt: '2026-09-30',
-    metaDescription: 'Facing severe dental pain or deep decay? Learn how dentists evaluate whether your natural tooth can be preserved with a root canal or if extraction is necessary.',
-    quickAnswer: 'A root canal is indicated when enough sound tooth structure remains above the gumline to support a crown. Extraction is reserved for teeth with vertical root fractures, decay extending deep under the bone level, or extreme bone loss from advanced periodontal disease.',
+    metaDescription:
+      'Facing severe dental pain or deep decay? Learn how dentists evaluate whether your natural tooth can be preserved with a root canal or if extraction is necessary.',
+    quickAnswer:
+      'A root canal is indicated when enough sound tooth structure remains above the gumline to support a crown. Extraction is reserved for teeth with vertical root fractures, decay extending deep under the bone level, or extreme bone loss from advanced periodontal disease.',
     readingTimeMinutes: 7,
     sections: [
       {
@@ -196,8 +231,14 @@ export const endodonticGuides: AuthorityGuide[] = [
     shortTitle: 'Root Canal Aftercare Guide',
     category: 'endodontics',
     categoryLabel: 'Root Canal & Endodontics',
-    primaryIntent: 'Instruct patients on what to expect after root canal treatment, managing mild soreness, and protecting temporary fillings.',
-    secondaryTopics: ['Post-treatment tenderness', 'Temporary filling care', 'Avoiding hard foods', 'Permanent crown timing'],
+    primaryIntent:
+      'Instruct patients on what to expect after root canal treatment, managing mild soreness, and protecting temporary fillings.',
+    secondaryTopics: [
+      'Post-treatment tenderness',
+      'Temporary filling care',
+      'Avoiding hard foods',
+      'Permanent crown timing',
+    ],
     status: 'live',
     medicallyReviewed: true,
     reviewer: 'Dr. Shimia Binte Taher',
@@ -208,14 +249,14 @@ export const endodonticGuides: AuthorityGuide[] = [
       { title: 'Root Canal Treatment', href: '/root-canal' },
       { title: 'Zirconia Crowns', href: '/zirconia-crown' },
     ],
-    relatedDoctors: [
-      { name: 'Dr. Shimia Binte Taher', href: '/dr-shimia', role: 'Endodontist' },
-    ],
+    relatedDoctors: [{ name: 'Dr. Shimia Binte Taher', href: '/dr-shimia', role: 'Endodontist' }],
     relatedBranches: ['banani', 'banasree'],
     publishedAt: '2026-09-20',
     updatedAt: '2026-09-30',
-    metaDescription: 'Clear recovery instructions after root canal therapy: managing transient post-op tenderness, temporary filling precautions, and when to place your permanent crown.',
-    quickAnswer: 'After root canal treatment, mild tenderness to biting is normal for 2 to 4 days as the surrounding ligament heals. Avoid chewing on the treated tooth until the temporary filling is replaced with a permanent crown, and take mild anti-inflammatory analgesics as advised.',
+    metaDescription:
+      'Clear recovery instructions after root canal therapy: managing transient post-op tenderness, temporary filling precautions, and when to place your permanent crown.',
+    quickAnswer:
+      'After root canal treatment, mild tenderness to biting is normal for 2 to 4 days as the surrounding ligament heals. Avoid chewing on the treated tooth until the temporary filling is replaced with a permanent crown, and take mild anti-inflammatory analgesics as advised.',
     readingTimeMinutes: 5,
     sections: [
       {
@@ -245,8 +286,14 @@ export const endodonticGuides: AuthorityGuide[] = [
     shortTitle: 'When Is a Root Canal Needed?',
     category: 'endodontics',
     categoryLabel: 'Root Canal & Endodontics',
-    primaryIntent: 'Educate readers on clinical symptoms, diagnostic tests, and pulpitis stages that prompt a dental evaluation for root canal therapy.',
-    secondaryTopics: ['Irreversible pulpitis', 'Lingering cold sensitivity', 'Dental abscess', 'Trauma injury'],
+    primaryIntent:
+      'Educate readers on clinical symptoms, diagnostic tests, and pulpitis stages that prompt a dental evaluation for root canal therapy.',
+    secondaryTopics: [
+      'Irreversible pulpitis',
+      'Lingering cold sensitivity',
+      'Dental abscess',
+      'Trauma injury',
+    ],
     status: 'live',
     medicallyReviewed: true,
     reviewer: 'Dr. Shimia Binte Taher',
@@ -257,14 +304,14 @@ export const endodonticGuides: AuthorityGuide[] = [
       { title: 'Root Canal Treatment', href: '/root-canal' },
       { title: 'Digital Dentistry', href: '/digital-dentistry' },
     ],
-    relatedDoctors: [
-      { name: 'Dr. Shimia Binte Taher', href: '/dr-shimia', role: 'Endodontist' },
-    ],
+    relatedDoctors: [{ name: 'Dr. Shimia Binte Taher', href: '/dr-shimia', role: 'Endodontist' }],
     relatedBranches: ['banani', 'banasree'],
     publishedAt: '2026-09-20',
     updatedAt: '2026-09-30',
-    metaDescription: 'Learn common clinical signs that indicate an inflamed or infected tooth pulp: lingering cold pain, nocturnal throbbing, spontaneous ache, or gum swelling.',
-    quickAnswer: 'Root canal treatment is needed when the dental pulp (nerve and blood vessels inside the tooth) becomes irreversibly inflamed or infected due to deep decay, repeated dental procedures, cracks, or trauma. Symptoms include lingering sensitivity, throbbing pain, or a gum boil.',
+    metaDescription:
+      'Learn common clinical signs that indicate an inflamed or infected tooth pulp: lingering cold pain, nocturnal throbbing, spontaneous ache, or gum swelling.',
+    quickAnswer:
+      'Root canal treatment is needed when the dental pulp (nerve and blood vessels inside the tooth) becomes irreversibly inflamed or infected due to deep decay, repeated dental procedures, cracks, or trauma. Symptoms include lingering sensitivity, throbbing pain, or a gum boil.',
     readingTimeMinutes: 6,
     sections: [
       {

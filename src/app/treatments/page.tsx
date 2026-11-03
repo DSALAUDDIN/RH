@@ -1200,7 +1200,6 @@ export default function TreatmentsPage() {
                   fontSize: '0.85rem',
                 }}
               >
-
                 <li style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                   <CheckCircle2 size={15} color="#38bdf8" /> In-house CAD/CAM lab turnaround
                 </li>
@@ -1244,8 +1243,9 @@ export default function TreatmentsPage() {
               Clinical Results &amp; <span>Smile Transformations</span>
             </h2>
             <p>
-              Witness real clinical treatments delivered by our expert dental team across our Banasree
-              and Banani clinics. Combining microscopic precision, digital scanning, and restorative artistry.
+              Witness real clinical treatments delivered by our expert dental team across our
+              Banasree and Banani clinics. Combining microscopic precision, digital scanning, and
+              restorative artistry.
             </p>
           </motion.div>
 
@@ -1270,8 +1270,8 @@ export default function TreatmentsPage() {
                 <span className="tr-case-tag">Restorative Dentistry</span>
                 <h3 className="tr-case-title">Composite Restoration</h3>
                 <p className="tr-case-desc">
-                  Natural look &amp; stronger smile. Precise reconstruction of chipped, broken incisal edges
-                  utilizing high-density nanohybrid composite materials.
+                  Natural look &amp; stronger smile. Precise reconstruction of chipped, broken
+                  incisal edges utilizing high-density nanohybrid composite materials.
                 </p>
                 <div className="tr-case-badges">
                   <span className="tr-case-badge-pill">Natural Aesthetics</span>
@@ -1301,8 +1301,8 @@ export default function TreatmentsPage() {
                 <span className="tr-case-tag">Cosmetic Dentistry</span>
                 <h3 className="tr-case-title">Midline Diastema Closure</h3>
                 <p className="tr-case-desc">
-                  Gap closure with zero drilling. Restoring balanced smile proportion, symmetrical tooth shape,
-                  and lasting aesthetic confidence in a single visit.
+                  Gap closure with zero drilling. Restoring balanced smile proportion, symmetrical
+                  tooth shape, and lasting aesthetic confidence in a single visit.
                 </p>
                 <div className="tr-case-badges">
                   <span className="tr-case-badge-pill">Better Alignment</span>
@@ -1332,8 +1332,8 @@ export default function TreatmentsPage() {
                 <span className="tr-case-tag">Aesthetic Brightening</span>
                 <h3 className="tr-case-title">Professional Teeth Whitening</h3>
                 <p className="tr-case-desc">
-                  A brighter smile, a more confident you. Multi-shade lightening with protective barrier protocols
-                  delivering noticeable radiance with zero enamel damage.
+                  A brighter smile, a more confident you. Multi-shade lightening with protective
+                  barrier protocols delivering noticeable radiance with zero enamel damage.
                 </p>
                 <div className="tr-case-badges">
                   <span className="tr-case-badge-pill">Safe &amp; Effective</span>
@@ -1363,8 +1363,8 @@ export default function TreatmentsPage() {
                 <span className="tr-case-tag">Full-Mouth Reconstruction</span>
                 <h3 className="tr-case-title">10+ Year Build-Up Restoration</h3>
                 <p className="tr-case-desc">
-                  Complete smile recovery for failing, broken, and discolored old restorations, restoring
-                  normal bite function and radiant natural appearance.
+                  Complete smile recovery for failing, broken, and discolored old restorations,
+                  restoring normal bite function and radiant natural appearance.
                 </p>
                 <div className="tr-case-badges">
                   <span className="tr-case-badge-pill">Restored Function</span>

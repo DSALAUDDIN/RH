@@ -7,8 +7,14 @@ export const digitalAndSurgeryGuides: AuthorityGuide[] = [
     shortTitle: 'CBCT 3D Dental Scanning',
     category: 'digital-dentistry',
     categoryLabel: 'Digital Dentistry & 3D Imaging',
-    primaryIntent: 'Educate patients on Cone Beam Computed Tomography (CBCT), radiation safety, and clinical diagnostic indications.',
-    secondaryTopics: ['Cone Beam CT', 'Radiation dose comparison', 'Implant surgical planning', 'Impacted canine localization'],
+    primaryIntent:
+      'Educate patients on Cone Beam Computed Tomography (CBCT), radiation safety, and clinical diagnostic indications.',
+    secondaryTopics: [
+      'Cone Beam CT',
+      'Radiation dose comparison',
+      'Implant surgical planning',
+      'Impacted canine localization',
+    ],
     status: 'live',
     medicallyReviewed: true,
     reviewer: 'Dr. B.M. Rafiqul Hasan',
@@ -26,8 +32,10 @@ export const digitalAndSurgeryGuides: AuthorityGuide[] = [
     relatedBranches: ['banani', 'banasree'],
     publishedAt: '2026-09-20',
     updatedAt: '2026-09-30',
-    metaDescription: 'Complete guide to CBCT 3D dental scans in Dhaka: clinical indications for implants, wisdom teeth, radiation dose facts, and diagnostic safety.',
-    quickAnswer: 'A CBCT (Cone Beam Computed Tomography) scan produces high-resolution 3D volumetric images of jawbones, teeth, nerve canals, and sinuses at a significantly lower radiation dose than conventional hospital medical CT scans, providing indispensable safety data for implantology and oral surgery.',
+    metaDescription:
+      'Complete guide to CBCT 3D dental scans in Dhaka: clinical indications for implants, wisdom teeth, radiation dose facts, and diagnostic safety.',
+    quickAnswer:
+      'A CBCT (Cone Beam Computed Tomography) scan produces high-resolution 3D volumetric images of jawbones, teeth, nerve canals, and sinuses at a significantly lower radiation dose than conventional hospital medical CT scans, providing indispensable safety data for implantology and oral surgery.',
     readingTimeMinutes: 6,
     sections: [
       {
@@ -66,8 +74,14 @@ export const digitalAndSurgeryGuides: AuthorityGuide[] = [
     shortTitle: 'Digital Dentistry Treatment Planning',
     category: 'digital-dentistry',
     categoryLabel: 'Digital Dentistry & 3D Imaging',
-    primaryIntent: 'Explain the digital workflow at modern dental practices: intraoral scanning, digital smile design, and CAD/CAM fabrication.',
-    secondaryTopics: ['Intraoral scanner', 'CAD/CAM milling', 'Surgical guide 3D printing', 'Patient communication'],
+    primaryIntent:
+      'Explain the digital workflow at modern dental practices: intraoral scanning, digital smile design, and CAD/CAM fabrication.',
+    secondaryTopics: [
+      'Intraoral scanner',
+      'CAD/CAM milling',
+      'Surgical guide 3D printing',
+      'Patient communication',
+    ],
     status: 'live',
     medicallyReviewed: true,
     reviewer: 'Dr. B.M. Rafiqul Hasan',
@@ -84,8 +98,10 @@ export const digitalAndSurgeryGuides: AuthorityGuide[] = [
     relatedBranches: ['banani', 'banasree'],
     publishedAt: '2026-09-20',
     updatedAt: '2026-09-30',
-    metaDescription: 'Discover how digital dentistry transforms patient care: optical impressions, computer-aided design, 3D surgical guides, and faster restorative timelines.',
-    quickAnswer: 'Digital dentistry replaces uncomfortable physical impressions and manual trial-and-error with high-speed 3D intraoral scanners, computerized treatment planning, and automated on-site CAD/CAM milling, resulting in superior restorative fit and shorter chair time.',
+    metaDescription:
+      'Discover how digital dentistry transforms patient care: optical impressions, computer-aided design, 3D surgical guides, and faster restorative timelines.',
+    quickAnswer:
+      'Digital dentistry replaces uncomfortable physical impressions and manual trial-and-error with high-speed 3D intraoral scanners, computerized treatment planning, and automated on-site CAD/CAM milling, resulting in superior restorative fit and shorter chair time.',
     readingTimeMinutes: 6,
     sections: [
       {
@@ -108,8 +124,14 @@ export const digitalAndSurgeryGuides: AuthorityGuide[] = [
     shortTitle: 'Dental Surgery Patient Guide',
     category: 'surgery',
     categoryLabel: 'Oral & Dental Surgery',
-    primaryIntent: 'Prepare patients psychologically and clinically for minor oral surgical procedures under local anesthesia.',
-    secondaryTopics: ['Local anesthesia', 'Pre-op preparation', 'Aseptic protocols', 'Post-surgical home care'],
+    primaryIntent:
+      'Prepare patients psychologically and clinically for minor oral surgical procedures under local anesthesia.',
+    secondaryTopics: [
+      'Local anesthesia',
+      'Pre-op preparation',
+      'Aseptic protocols',
+      'Post-surgical home care',
+    ],
     status: 'live',
     medicallyReviewed: true,
     reviewer: 'Dr. B.M. Rafiqul Hasan',
@@ -126,8 +148,10 @@ export const digitalAndSurgeryGuides: AuthorityGuide[] = [
     relatedBranches: ['banani', 'banasree'],
     publishedAt: '2026-09-20',
     updatedAt: '2026-09-30',
-    metaDescription: 'What to expect during outpatient dental surgery in Dhaka: anesthesia protocols, sterile surgical fields, procedure durations, and recovery instructions.',
-    quickAnswer: 'Most dental surgical procedures (such as surgical extractions, cyst enucleation, or bone grafts) are outpatient treatments performed comfortably under targeted local anesthesia. Patients remain fully awake, feel gentle pressure without sharp pain, and return home the same day.',
+    metaDescription:
+      'What to expect during outpatient dental surgery in Dhaka: anesthesia protocols, sterile surgical fields, procedure durations, and recovery instructions.',
+    quickAnswer:
+      'Most dental surgical procedures (such as surgical extractions, cyst enucleation, or bone grafts) are outpatient treatments performed comfortably under targeted local anesthesia. Patients remain fully awake, feel gentle pressure without sharp pain, and return home the same day.',
     readingTimeMinutes: 6,
     sections: [
       {
@@ -150,8 +174,14 @@ export const digitalAndSurgeryGuides: AuthorityGuide[] = [
     shortTitle: 'Wisdom Tooth Removal Guide',
     category: 'surgery',
     categoryLabel: 'Oral & Dental Surgery',
-    primaryIntent: 'Provide a comprehensive guide on impacted third molars, pericoronitis symptoms, surgical extraction, and dry socket prevention.',
-    secondaryTopics: ['Impacted wisdom teeth', 'Pericoronitis', 'Dry socket prevention', 'Post-op jaw stiffness'],
+    primaryIntent:
+      'Provide a comprehensive guide on impacted third molars, pericoronitis symptoms, surgical extraction, and dry socket prevention.',
+    secondaryTopics: [
+      'Impacted wisdom teeth',
+      'Pericoronitis',
+      'Dry socket prevention',
+      'Post-op jaw stiffness',
+    ],
     status: 'live',
     medicallyReviewed: true,
     reviewer: 'Dr. B.M. Rafiqul Hasan',
@@ -162,14 +192,14 @@ export const digitalAndSurgeryGuides: AuthorityGuide[] = [
       { title: 'Oral Surgery Overview', href: '/dental-surgery' },
       { title: 'Digital Dentistry', href: '/digital-dentistry' },
     ],
-    relatedDoctors: [
-      { name: 'Dr. B.M. Rafiqul Hasan', href: '/dr-hasan', role: 'Oral Surgeon' },
-    ],
+    relatedDoctors: [{ name: 'Dr. B.M. Rafiqul Hasan', href: '/dr-hasan', role: 'Oral Surgeon' }],
     relatedBranches: ['banani', 'banasree'],
     publishedAt: '2026-09-20',
     updatedAt: '2026-09-30',
-    metaDescription: 'Complete guide to wisdom tooth extraction: when impacted teeth need removal, surgical steps under local anesthesia, and tips to avoid dry socket.',
-    quickAnswer: 'Wisdom tooth removal is recommended when third molars lack adequate space to erupt upright, leading to painful gum flap infections (pericoronitis), decay in adjacent second molars, or cystic formation. Recovery typically takes 3 to 5 days with appropriate post-operative care.',
+    metaDescription:
+      'Complete guide to wisdom tooth extraction: when impacted teeth need removal, surgical steps under local anesthesia, and tips to avoid dry socket.',
+    quickAnswer:
+      'Wisdom tooth removal is recommended when third molars lack adequate space to erupt upright, leading to painful gum flap infections (pericoronitis), decay in adjacent second molars, or cystic formation. Recovery typically takes 3 to 5 days with appropriate post-operative care.',
     readingTimeMinutes: 7,
     sections: [
       {

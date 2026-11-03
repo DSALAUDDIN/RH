@@ -1,8 +1,5 @@
 import Link from 'next/link';
-import {
-  getAuthorityGuidesByCategory,
-  type AuthorityCategory,
-} from '@/data/authorityContent';
+import { getAuthorityGuidesByCategory, type AuthorityCategory } from '@/data/authorityContent';
 import { getBanglaAuthorityGuidesByCategory } from '@/data/banglaAuthorityContent';
 import { BookOpen, ArrowRight, ShieldCheck, Clock } from 'lucide-react';
 import './RelatedGuidesCluster.css';
@@ -56,7 +53,11 @@ export default function RelatedGuidesCluster({
                 <span>{guide.readingTimeMinutes} min read</span>
               </div>
               <div className="cluster-card-links">
-                <Link href={`/bn/guides/${guide.slug}`} className="cluster-bn-link" title="বাংলা সংস্করণ">
+                <Link
+                  href={`/bn/guides/${guide.slug}`}
+                  className="cluster-bn-link"
+                  title="বাংলা সংস্করণ"
+                >
                   🇧🇩 বাংলা
                 </Link>
                 <Link href={`/guides/${guide.slug}`} className="cluster-read-link">

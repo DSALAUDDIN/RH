@@ -229,10 +229,7 @@ export const BRANCHES: Record<BranchId, Branch> = {
     waIntent: 'Assalamu Alaikum. I would like to book an appointment at RH Dental Care, Banasree.',
     bookingMode: 'slots',
 
-    facilities: [
-      'In-house master digital lab',
-      'Full specialist team on site',
-    ],
+    facilities: ['In-house master digital lab', 'Full specialist team on site'],
     services: [
       'Dental Implants',
       'Orthodontics',

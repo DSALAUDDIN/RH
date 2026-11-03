@@ -108,10 +108,7 @@ function RCVideo() {
         autoPlay
         preload="auto"
       >
-        <source
-          src="/assets/videos/hero.mp4"
-          type="video/mp4"
-        />
+        <source src="/assets/videos/hero.mp4" type="video/mp4" />
       </video>
       <div className="rc-video-controls">
         <button
@@ -403,7 +400,8 @@ export default function RootCanalPage() {
                 <p>
                   We are committed to providing root canal therapies that are gentle,
                   comfort-focused, and meticulously precise. By leveraging operating microscopes and
-                  rotary endodontic systems, every canal is thoroughly cleaned, disinfected, and sealed.
+                  rotary endodontic systems, every canal is thoroughly cleaned, disinfected, and
+                  sealed.
                 </p>
                 <div className="imp-gallery-checks">
                   {[

@@ -45,9 +45,7 @@ export default function TeamRoster({
         <div className="tr-branch-bar">
           <div className="tr-branch-meta">
             <span className="tr-branch-address">{b.address}</span>
-            {b.hoursDisplay && (
-              <span className="tr-branch-hours">{b.hoursDisplay}</span>
-            )}
+            {b.hoursDisplay && <span className="tr-branch-hours">{b.hoursDisplay}</span>}
           </div>
           <Link href={b.href} className="tr-branch-link">
             About {b.shortName} →
@@ -76,24 +74,28 @@ export default function TeamRoster({
 
               <div className="tr-body-dark">
                 {c.role && <p className="tr-role-dark">{c.role.toUpperCase()}</p>}
-                
+
                 <h3 className="tr-name-dark">
-                  <Link href={clinicianPath(c)}>
-                    {c.name}
-                  </Link>
+                  <Link href={clinicianPath(c)}>{c.name}</Link>
                 </h3>
 
-                {c.procedures.length > 0 && (
-                  <p className="tr-focus-dark">{c.procedures[0]}</p>
-                )}
-                
-                {alsoAt(c, branch) && (
-                  <span className="tr-also-at-dark">{alsoAt(c, branch)}</span>
-                )}
+                {c.procedures.length > 0 && <p className="tr-focus-dark">{c.procedures[0]}</p>}
+
+                {alsoAt(c, branch) && <span className="tr-also-at-dark">{alsoAt(c, branch)}</span>}
 
                 {c.bmdc && (
                   <p className="tr-bmdc-dark">
-                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{marginRight: '6px', opacity: 0.7}}>
+                    <svg
+                      viewBox="0 0 24 24"
+                      width="14"
+                      height="14"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      style={{ marginRight: '6px', opacity: 0.7 }}
+                    >
                       <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
                     </svg>
                     BMDC: {c.bmdc}
@@ -101,12 +103,19 @@ export default function TeamRoster({
                 )}
 
                 <div className="tr-footer-dark">
-                  <Link 
-                    href={clinicianPath(c)} 
-                    className="tr-link-dark"
-                  >
+                  <Link href={clinicianPath(c)} className="tr-link-dark">
                     View Full Profile
-                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{marginLeft: 'auto'}}>
+                    <svg
+                      viewBox="0 0 24 24"
+                      width="16"
+                      height="16"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      style={{ marginLeft: 'auto' }}
+                    >
                       <line x1="5" y1="19" x2="19" y2="5" />
                       <polyline points="10 5 19 5 19 14" />
                     </svg>

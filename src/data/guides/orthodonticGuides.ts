@@ -7,7 +7,8 @@ export const orthodonticGuides: AuthorityGuide[] = [
     shortTitle: 'Clear Aligner Cost Factors',
     category: 'orthodontics',
     categoryLabel: 'Orthodontics & Aligners',
-    primaryIntent: 'Explain the factors influencing clear aligner pricing in Dhaka, including case complexity, aligner count, and digital staging.',
+    primaryIntent:
+      'Explain the factors influencing clear aligner pricing in Dhaka, including case complexity, aligner count, and digital staging.',
     secondaryTopics: ['Aligner system', 'Case severity', 'Number of trays', 'Refinement trays'],
     status: 'live',
     medicallyReviewed: true,
@@ -21,13 +22,19 @@ export const orthodonticGuides: AuthorityGuide[] = [
     ],
     relatedDoctors: [
       { name: 'Dr. B.M. Rafiqul Hasan', href: '/dr-hasan', role: 'Clinical Director' },
-      { name: 'Dr. Jeamima Tabassum Barsha', href: '/team/dr-jeamima-tabassum-barsha', role: 'Consultant Orthodontist' },
+      {
+        name: 'Dr. Jeamima Tabassum Barsha',
+        href: '/team/dr-jeamima-tabassum-barsha',
+        role: 'Consultant Orthodontist',
+      },
     ],
     relatedBranches: ['banani', 'banasree'],
     publishedAt: '2026-09-20',
     updatedAt: '2026-09-30',
-    metaDescription: 'Detailed review of clear aligner cost determinants in Dhaka: mild vs complex malocclusion, number of aligner trays, digital simulation, and retainers.',
-    quickAnswer: 'Clear aligner cost in Dhaka is primarily determined by malocclusion complexity (mild spacing vs. severe rotational crowding), the total number of custom polyurethane trays required to achieve the planned tooth movement, and whether international or certified regional aligner manufacturing laboratories are selected.',
+    metaDescription:
+      'Detailed review of clear aligner cost determinants in Dhaka: mild vs complex malocclusion, number of aligner trays, digital simulation, and retainers.',
+    quickAnswer:
+      'Clear aligner cost in Dhaka is primarily determined by malocclusion complexity (mild spacing vs. severe rotational crowding), the total number of custom polyurethane trays required to achieve the planned tooth movement, and whether international or certified regional aligner manufacturing laboratories are selected.',
     readingTimeMinutes: 6,
     sections: [
       {
@@ -63,8 +70,14 @@ export const orthodonticGuides: AuthorityGuide[] = [
     shortTitle: 'Clear Aligners vs Braces Comparison',
     category: 'orthodontics',
     categoryLabel: 'Orthodontics & Aligners',
-    primaryIntent: 'Provide an objective, clinical comparison between removable clear aligners and fixed brackets across aesthetics, lifestyle, complexity, and compliance.',
-    secondaryTopics: ['Aesthetic discretion', 'Dietary freedom', 'Hygiene maintenance', 'Patient compliance'],
+    primaryIntent:
+      'Provide an objective, clinical comparison between removable clear aligners and fixed brackets across aesthetics, lifestyle, complexity, and compliance.',
+    secondaryTopics: [
+      'Aesthetic discretion',
+      'Dietary freedom',
+      'Hygiene maintenance',
+      'Patient compliance',
+    ],
     status: 'live',
     medicallyReviewed: true,
     reviewer: 'Dr. B.M. Rafiqul Hasan',
@@ -77,13 +90,19 @@ export const orthodonticGuides: AuthorityGuide[] = [
     ],
     relatedDoctors: [
       { name: 'Dr. B.M. Rafiqul Hasan', href: '/dr-hasan', role: 'Clinical Director' },
-      { name: 'Dr. Jeamima Tabassum Barsha', href: '/team/dr-jeamima-tabassum-barsha', role: 'Consultant Orthodontist' },
+      {
+        name: 'Dr. Jeamima Tabassum Barsha',
+        href: '/team/dr-jeamima-tabassum-barsha',
+        role: 'Consultant Orthodontist',
+      },
     ],
     relatedBranches: ['banani', 'banasree'],
     publishedAt: '2026-09-20',
     updatedAt: '2026-09-30',
-    metaDescription: 'Detailed clinical comparison of clear aligners versus fixed orthodontic braces in Dhaka: aesthetics, hygiene, dietary flexibility, treatment suitability, and compliance.',
-    quickAnswer: 'Clear aligners are nearly invisible, removable for eating and flossing, and ideal for mild to moderate crowding in motivated adults. Fixed braces provide superior continuous mechanical control for severe rotations, deep vertical bites, and non-compliant patients.',
+    metaDescription:
+      'Detailed clinical comparison of clear aligners versus fixed orthodontic braces in Dhaka: aesthetics, hygiene, dietary flexibility, treatment suitability, and compliance.',
+    quickAnswer:
+      'Clear aligners are nearly invisible, removable for eating and flossing, and ideal for mild to moderate crowding in motivated adults. Fixed braces provide superior continuous mechanical control for severe rotations, deep vertical bites, and non-compliant patients.',
     readingTimeMinutes: 7,
     sections: [
       {
@@ -125,8 +144,14 @@ export const orthodonticGuides: AuthorityGuide[] = [
     shortTitle: 'Clear Aligner Step-by-Step Process',
     category: 'orthodontics',
     categoryLabel: 'Orthodontics & Aligners',
-    primaryIntent: 'Walk prospective orthodontic patients through the end-to-end journey of clear aligner treatment.',
-    secondaryTopics: ['Intraoral 3D scan', 'ClinCheck digital simulation', 'SmartForce attachments', 'Orthodontic retention'],
+    primaryIntent:
+      'Walk prospective orthodontic patients through the end-to-end journey of clear aligner treatment.',
+    secondaryTopics: [
+      'Intraoral 3D scan',
+      'ClinCheck digital simulation',
+      'SmartForce attachments',
+      'Orthodontic retention',
+    ],
     status: 'live',
     medicallyReviewed: true,
     reviewer: 'Dr. B.M. Rafiqul Hasan',
@@ -139,13 +164,19 @@ export const orthodonticGuides: AuthorityGuide[] = [
     ],
     relatedDoctors: [
       { name: 'Dr. B.M. Rafiqul Hasan', href: '/dr-hasan', role: 'Clinical Director' },
-      { name: 'Dr. Nishat Tamanna Alam', href: '/team/dr-nishat-tamanna-alam', role: 'Consultant Orthodontist' },
+      {
+        name: 'Dr. Nishat Tamanna Alam',
+        href: '/team/dr-nishat-tamanna-alam',
+        role: 'Consultant Orthodontist',
+      },
     ],
     relatedBranches: ['banani', 'banasree'],
     publishedAt: '2026-09-20',
     updatedAt: '2026-09-30',
-    metaDescription: 'Step-by-step roadmap for clear aligner therapy in Dhaka: 3D optical scanning, virtual movement staging, attachment bonding, tray switching, and retainers.',
-    quickAnswer: 'The clear aligner journey consists of five phases: 3D intraoral optical scanning, digital treatment simulation, custom aligner delivery with tooth-colored composite attachments, progressive tray switching every 7 to 14 days, and final post-treatment retention.',
+    metaDescription:
+      'Step-by-step roadmap for clear aligner therapy in Dhaka: 3D optical scanning, virtual movement staging, attachment bonding, tray switching, and retainers.',
+    quickAnswer:
+      'The clear aligner journey consists of five phases: 3D intraoral optical scanning, digital treatment simulation, custom aligner delivery with tooth-colored composite attachments, progressive tray switching every 7 to 14 days, and final post-treatment retention.',
     readingTimeMinutes: 7,
     sections: [
       {
@@ -188,17 +219,21 @@ export const orthodonticGuides: AuthorityGuide[] = [
     shortTitle: 'Orthodontic Braces Cost Factors',
     category: 'orthodontics',
     categoryLabel: 'Orthodontics & Aligners',
-    primaryIntent: 'Clarify the clinical and material elements that establish the fee structure for fixed orthodontic braces in Dhaka.',
-    secondaryTopics: ['Metal vs ceramic brackets', 'Self-ligating brackets', 'Treatment duration', 'Extraction cases'],
+    primaryIntent:
+      'Clarify the clinical and material elements that establish the fee structure for fixed orthodontic braces in Dhaka.',
+    secondaryTopics: [
+      'Metal vs ceramic brackets',
+      'Self-ligating brackets',
+      'Treatment duration',
+      'Extraction cases',
+    ],
     status: 'live',
     medicallyReviewed: true,
     reviewer: 'Dr. B.M. Rafiqul Hasan',
     reviewerSlug: 'dr-hasan',
     reviewerRole: 'Chief Consultant, Oral & Dental Surgeon',
     reviewedAt: '2026-10-01',
-    relatedTreatments: [
-      { title: 'Orthodontics & Aligners Overview', href: '/orthodontics' },
-    ],
+    relatedTreatments: [{ title: 'Orthodontics & Aligners Overview', href: '/orthodontics' }],
     relatedDoctors: [
       { name: 'Dr. B.M. Rafiqul Hasan', href: '/dr-hasan', role: 'Clinical Director' },
       { name: 'Dr. Nabil Rahman', href: '/team/dr-nabil-rahman', role: 'Consultant Orthodontist' },
@@ -206,8 +241,10 @@ export const orthodonticGuides: AuthorityGuide[] = [
     relatedBranches: ['banani', 'banasree'],
     publishedAt: '2026-09-20',
     updatedAt: '2026-09-30',
-    metaDescription: 'Overview of orthodontic braces pricing factors in Dhaka: traditional metal vs ceramic brackets, self-ligating Damon systems, and case duration.',
-    quickAnswer: 'Fixed braces costs in Dhaka vary based on bracket type (traditional stainless steel vs. discrete tooth-colored ceramic or advanced low-friction self-ligating systems), case severity, expected duration (typically 12 to 24 months), and retention appliances.',
+    metaDescription:
+      'Overview of orthodontic braces pricing factors in Dhaka: traditional metal vs ceramic brackets, self-ligating Damon systems, and case duration.',
+    quickAnswer:
+      'Fixed braces costs in Dhaka vary based on bracket type (traditional stainless steel vs. discrete tooth-colored ceramic or advanced low-friction self-ligating systems), case severity, expected duration (typically 12 to 24 months), and retention appliances.',
     readingTimeMinutes: 6,
     sections: [
       {
@@ -231,25 +268,31 @@ export const orthodonticGuides: AuthorityGuide[] = [
     shortTitle: 'Braces Care & Maintenance',
     category: 'orthodontics',
     categoryLabel: 'Orthodontics & Aligners',
-    primaryIntent: 'Educate orthodontic patients on brushing techniques, foods to avoid, emergency wire care, and maintaining healthy gums during braces.',
-    secondaryTopics: ['Orthodontic toothbrush', 'Dietary restrictions', 'Loose bracket protocol', 'Orthodontic wax'],
+    primaryIntent:
+      'Educate orthodontic patients on brushing techniques, foods to avoid, emergency wire care, and maintaining healthy gums during braces.',
+    secondaryTopics: [
+      'Orthodontic toothbrush',
+      'Dietary restrictions',
+      'Loose bracket protocol',
+      'Orthodontic wax',
+    ],
     status: 'live',
     medicallyReviewed: true,
     reviewer: 'Dr. B.M. Rafiqul Hasan',
     reviewerSlug: 'dr-hasan',
     reviewerRole: 'Chief Consultant, Oral & Dental Surgeon',
     reviewedAt: '2026-10-01',
-    relatedTreatments: [
-      { title: 'Orthodontics & Aligners Overview', href: '/orthodontics' },
-    ],
+    relatedTreatments: [{ title: 'Orthodontics & Aligners Overview', href: '/orthodontics' }],
     relatedDoctors: [
       { name: 'Dr. B.M. Rafiqul Hasan', href: '/dr-hasan', role: 'Clinical Director' },
     ],
     relatedBranches: ['banani', 'banasree'],
     publishedAt: '2026-09-20',
     updatedAt: '2026-09-30',
-    metaDescription: 'Complete patient guide to living comfortably with braces: brushing with interdental brushes, foods that prevent broken brackets, and emergency wax tips.',
-    quickAnswer: 'Caring for braces requires brushing thoroughly after every meal with an orthodontic toothbrush and interdental brush, avoiding hard or sticky foods that break brackets, and applying orthodontic relief wax over sharp wires that irritate the inner lips or cheeks.',
+    metaDescription:
+      'Complete patient guide to living comfortably with braces: brushing with interdental brushes, foods that prevent broken brackets, and emergency wax tips.',
+    quickAnswer:
+      'Caring for braces requires brushing thoroughly after every meal with an orthodontic toothbrush and interdental brush, avoiding hard or sticky foods that break brackets, and applying orthodontic relief wax over sharp wires that irritate the inner lips or cheeks.',
     readingTimeMinutes: 6,
     sections: [
       {
@@ -277,25 +320,31 @@ export const orthodonticGuides: AuthorityGuide[] = [
     shortTitle: 'Retainers After Orthodontic Care',
     category: 'orthodontics',
     categoryLabel: 'Orthodontics & Aligners',
-    primaryIntent: 'Explain the physiological basis of orthodontic relapse and why retainers are critical to maintaining aligned teeth over the long term.',
-    secondaryTopics: ['Orthodontic relapse', 'Hawley retainers', 'Essix clear retainers', 'Fixed bonded retainers'],
+    primaryIntent:
+      'Explain the physiological basis of orthodontic relapse and why retainers are critical to maintaining aligned teeth over the long term.',
+    secondaryTopics: [
+      'Orthodontic relapse',
+      'Hawley retainers',
+      'Essix clear retainers',
+      'Fixed bonded retainers',
+    ],
     status: 'live',
     medicallyReviewed: true,
     reviewer: 'Dr. B.M. Rafiqul Hasan',
     reviewerSlug: 'dr-hasan',
     reviewerRole: 'Chief Consultant, Oral & Dental Surgeon',
     reviewedAt: '2026-10-01',
-    relatedTreatments: [
-      { title: 'Orthodontics & Aligners Overview', href: '/orthodontics' },
-    ],
+    relatedTreatments: [{ title: 'Orthodontics & Aligners Overview', href: '/orthodontics' }],
     relatedDoctors: [
       { name: 'Dr. B.M. Rafiqul Hasan', href: '/dr-hasan', role: 'Clinical Director' },
     ],
     relatedBranches: ['banani', 'banasree'],
     publishedAt: '2026-09-20',
     updatedAt: '2026-09-30',
-    metaDescription: 'Understand why teeth naturally shift after braces and how clear removable retainers or lingual bonded wires preserve your orthodontic investment.',
-    quickAnswer: 'Retainers are essential because the periodontal elastic fibers surrounding your tooth roots possess biological memory and exert gentle pressure to pull teeth back toward their crooked pre-treatment positions. Retainers hold teeth steady until bone fully remodels.',
+    metaDescription:
+      'Understand why teeth naturally shift after braces and how clear removable retainers or lingual bonded wires preserve your orthodontic investment.',
+    quickAnswer:
+      'Retainers are essential because the periodontal elastic fibers surrounding your tooth roots possess biological memory and exert gentle pressure to pull teeth back toward their crooked pre-treatment positions. Retainers hold teeth steady until bone fully remodels.',
     readingTimeMinutes: 5,
     sections: [
       {

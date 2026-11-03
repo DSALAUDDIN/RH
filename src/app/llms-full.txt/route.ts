@@ -129,7 +129,14 @@ ${enGuides
 - **Reviewed By**: ${g.reviewer ?? 'RH Dental Clinical Board'}${g.reviewerRole ? ` (${g.reviewerRole})` : ''}
 - **Clinical Quick Answer**: ${g.quickAnswer}
 - **Key Intent**: ${g.primaryIntent}
-${g.faqs && g.faqs.length > 0 ? `- **Core Patient FAQs**:\n${g.faqs.slice(0, 3).map((f) => `  - Q: ${f.question}\n    A: ${f.answer}`).join('\n')}` : ''}
+${
+  g.faqs && g.faqs.length > 0
+    ? `- **Core Patient FAQs**:\n${g.faqs
+        .slice(0, 3)
+        .map((f) => `  - Q: ${f.question}\n    A: ${f.answer}`)
+        .join('\n')}`
+    : ''
+}
 `,
   )
   .join('\n')}
@@ -145,7 +152,14 @@ ${bnGuides
 - **রিভিউয়ার**: ${g.reviewer ?? 'আরএইচ ডেন্টাল ক্লিনিক্যাল টিম'}${g.reviewerRole ? ` (${g.reviewerRole})` : ''}
 - **ক্লিনিক্যাল উত্তর**: ${g.quickAnswer}
 - **উদ্দেশ্য**: ${g.primaryIntent}
-${g.faqs && g.faqs.length > 0 ? `- **রোগীদের সাধারণ প্রশ্নোত্তর**:\n${g.faqs.slice(0, 3).map((f) => `  - প্রশ্ন: ${f.question}\n    উত্তর: ${f.answer}`).join('\n')}` : ''}
+${
+  g.faqs && g.faqs.length > 0
+    ? `- **রোগীদের সাধারণ প্রশ্নোত্তর**:\n${g.faqs
+        .slice(0, 3)
+        .map((f) => `  - প্রশ্ন: ${f.question}\n    উত্তর: ${f.answer}`)
+        .join('\n')}`
+    : ''
+}
 `,
   )
   .join('\n')}

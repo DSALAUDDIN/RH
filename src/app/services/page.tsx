@@ -108,7 +108,8 @@ export default function ServicesPage() {
             <span style={{ color: '#38bdf8' }}>in Banani &amp; Banasree, Dhaka</span>
           </h1>
           <p className="srv-subtitle">
-            Concise patient service directory for RH Dental Care. For complete procedure timelines and packages, explore our{' '}
+            Concise patient service directory for RH Dental Care. For complete procedure timelines
+            and packages, explore our{' '}
             <Link href="/treatments" style={{ color: '#38bdf8', textDecoration: 'underline' }}>
               Treatment Catalogue
             </Link>

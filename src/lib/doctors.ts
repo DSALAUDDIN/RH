@@ -282,7 +282,13 @@ export const TEAM: Clinician[] = [...Object.values(DOCTORS), ...ROSTER];
 export const DOCTOR_LIST = Object.values(DOCTORS);
 
 export function clinicianSlug(c: Clinician): string {
-  return c.slug ?? c.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+  return (
+    c.slug ??
+    c.name
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/^-|-$/g, '')
+  );
 }
 
 export function clinicianPath(c: Clinician): string {

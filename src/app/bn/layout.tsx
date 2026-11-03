@@ -7,7 +7,11 @@ export const metadata: Metadata = {
 
 export default function BanglaLayout({ children }: { children: ReactNode }) {
   return (
-    <div lang="bn-BD" className="bangla-layout-root" style={{ fontFamily: 'var(--font-bn), sans-serif' }}>
+    <div
+      lang="bn-BD"
+      className="bangla-layout-root"
+      style={{ fontFamily: 'var(--font-bn), sans-serif' }}
+    >
       {children}
     </div>
   );

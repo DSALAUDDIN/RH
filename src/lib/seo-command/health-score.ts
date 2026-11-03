@@ -62,7 +62,9 @@ export function calculateRhSeoHealthScore(params: {
     if (visibility.clicks.current > 0) visibilityScore += 5;
     if (visibility.top10QueriesCount > 0) visibilityScore += 5;
   } else {
-    missingDataNotes.push('Google Search Console not connected — organic visibility data awaiting OAuth.');
+    missingDataNotes.push(
+      'Google Search Console not connected — organic visibility data awaiting OAuth.',
+    );
   }
 
   // 4. User Experience & Performance (Max: 15)
@@ -92,10 +94,15 @@ export function calculateRhSeoHealthScore(params: {
     localScore += 4;
     missingDataNotes.push('Google Business Profile API access pending Google approval/quota.');
   } else {
-    missingDataNotes.push('Google Business Profile not connected — local Maps metrics unavailable.');
+    missingDataNotes.push(
+      'Google Business Profile not connected — local Maps metrics unavailable.',
+    );
   }
 
-  const totalScore = Math.min(100, techScore + contentScore + visibilityScore + uxScore + localScore);
+  const totalScore = Math.min(
+    100,
+    techScore + contentScore + visibilityScore + uxScore + localScore,
+  );
   const dataCoveragePercentage = Math.round((availableDataPoints / totalPossibleDataPoints) * 100);
   const isScoreComplete = missingDataNotes.length === 0;
 

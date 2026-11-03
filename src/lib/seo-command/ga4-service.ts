@@ -47,11 +47,7 @@ export async function queryGa4OrganicReport(
             },
           },
         },
-        metrics: [
-          { name: 'activeUsers' },
-          { name: 'sessions' },
-          { name: 'engagedSessions' },
-        ],
+        metrics: [{ name: 'activeUsers' }, { name: 'sessions' }, { name: 'engagedSessions' }],
       }),
     });
 
@@ -117,9 +113,7 @@ export async function queryGa4OrganicReport(
         }
       }
       conversions.totalConversions =
-        conversions.phoneClicks +
-        conversions.whatsappClicks +
-        conversions.appointmentSubmissions;
+        conversions.phoneClicks + conversions.whatsappClicks + conversions.appointmentSubmissions;
     }
 
     // 3. Fetch Organic Landing Pages

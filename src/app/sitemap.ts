@@ -17,9 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
 
   // Only include specialty pages that are self-canonical (not mapped in SPECIALTY_CANONICAL)
-  const indexableSpecialtySlugs = SPECIALTY_SLUGS.filter(
-    (slug) => !SPECIALTY_CANONICAL[slug],
-  );
+  const indexableSpecialtySlugs = SPECIALTY_SLUGS.filter((slug) => !SPECIALTY_CANONICAL[slug]);
 
   const specialtyRoutes: MetadataRoute.Sitemap = indexableSpecialtySlugs.map((slug) => ({
     url: `${SITE.url}/specialties/${slug}`,

@@ -7,8 +7,14 @@ export const generalCareGuides: AuthorityGuide[] = [
     shortTitle: 'Professional Teeth Whitening',
     category: 'general-care',
     categoryLabel: 'General Oral Care',
-    primaryIntent: 'Set realistic expectations regarding professional teeth whitening, shade assessment, sensitivity management, and longevity.',
-    secondaryTopics: ['In-office bleaching', 'Intrinsic vs extrinsic stains', 'Transient dentin sensitivity', 'Maintenance protocols'],
+    primaryIntent:
+      'Set realistic expectations regarding professional teeth whitening, shade assessment, sensitivity management, and longevity.',
+    secondaryTopics: [
+      'In-office bleaching',
+      'Intrinsic vs extrinsic stains',
+      'Transient dentin sensitivity',
+      'Maintenance protocols',
+    ],
     status: 'live',
     medicallyReviewed: true,
     reviewer: 'Dr. B.M. Rafiqul Hasan',
@@ -25,8 +31,10 @@ export const generalCareGuides: AuthorityGuide[] = [
     relatedBranches: ['banani', 'banasree'],
     publishedAt: '2026-09-20',
     updatedAt: '2026-09-30',
-    metaDescription: 'Complete guide to in-office professional teeth whitening in Dhaka: how it works, managing transient sensitivity, dietary rules, and realistic shade expectations.',
-    quickAnswer: 'Professional in-office teeth whitening uses medically calibrated hydrogen or carbamide peroxide gels under gingival barrier protection to oxidize deep extrinsic stains from tea, coffee, and tobacco, safely lifting tooth shade by several levels in a single 60-minute session.',
+    metaDescription:
+      'Complete guide to in-office professional teeth whitening in Dhaka: how it works, managing transient sensitivity, dietary rules, and realistic shade expectations.',
+    quickAnswer:
+      'Professional in-office teeth whitening uses medically calibrated hydrogen or carbamide peroxide gels under gingival barrier protection to oxidize deep extrinsic stains from tea, coffee, and tobacco, safely lifting tooth shade by several levels in a single 60-minute session.',
     readingTimeMinutes: 6,
     sections: [
       {
@@ -50,8 +58,14 @@ export const generalCareGuides: AuthorityGuide[] = [
     shortTitle: 'Gum Disease Treatment Guide',
     category: 'general-care',
     categoryLabel: 'General Oral Care',
-    primaryIntent: 'Educate patients on the stages of periodontal disease, scaling and root planing, and long-term tooth preservation.',
-    secondaryTopics: ['Gingivitis vs periodontitis', 'Periodontal pocketing', 'Deep ultrasonic scaling', 'Bone loss prevention'],
+    primaryIntent:
+      'Educate patients on the stages of periodontal disease, scaling and root planing, and long-term tooth preservation.',
+    secondaryTopics: [
+      'Gingivitis vs periodontitis',
+      'Periodontal pocketing',
+      'Deep ultrasonic scaling',
+      'Bone loss prevention',
+    ],
     status: 'live',
     medicallyReviewed: true,
     reviewer: 'Dr. B.M. Rafiqul Hasan',
@@ -68,8 +82,10 @@ export const generalCareGuides: AuthorityGuide[] = [
     relatedBranches: ['banani', 'banasree'],
     publishedAt: '2026-09-20',
     updatedAt: '2026-09-30',
-    metaDescription: 'Understanding gum disease from bleeding gingivitis to destructive periodontitis: symptoms, deep ultrasonic scaling, and saving loose teeth.',
-    quickAnswer: 'Gum disease begins as reversible gingivitis (red, bleeding gums) caused by plaque buildup. Left untreated, it advances to periodontitis, where bacterial toxins destroy the bone supporting tooth roots. Treatment involves deep ultrasonic scaling and root planing.',
+    metaDescription:
+      'Understanding gum disease from bleeding gingivitis to destructive periodontitis: symptoms, deep ultrasonic scaling, and saving loose teeth.',
+    quickAnswer:
+      'Gum disease begins as reversible gingivitis (red, bleeding gums) caused by plaque buildup. Left untreated, it advances to periodontitis, where bacterial toxins destroy the bone supporting tooth roots. Treatment involves deep ultrasonic scaling and root planing.',
     readingTimeMinutes: 7,
     sections: [
       {
@@ -93,12 +109,18 @@ export const generalCareGuides: AuthorityGuide[] = [
   },
   {
     slug: 'child-first-dental-visit',
-    title: 'A Child\'s First Dental Visit: A Parent\'s Guide',
+    title: "A Child's First Dental Visit: A Parent's Guide",
     shortTitle: 'Child First Dental Visit Guide',
     category: 'general-care',
     categoryLabel: 'General Oral Care',
-    primaryIntent: 'Help parents introduce their young children to the dental clinic positively and prevent early childhood caries.',
-    secondaryTopics: ['First dental visit timing', 'Tell-Show-Do technique', 'Milk tooth cavity prevention', 'Fluoride varnish'],
+    primaryIntent:
+      'Help parents introduce their young children to the dental clinic positively and prevent early childhood caries.',
+    secondaryTopics: [
+      'First dental visit timing',
+      'Tell-Show-Do technique',
+      'Milk tooth cavity prevention',
+      'Fluoride varnish',
+    ],
     status: 'live',
     medicallyReviewed: true,
     reviewer: 'Dr. Shimia Binte Taher',
@@ -106,17 +128,23 @@ export const generalCareGuides: AuthorityGuide[] = [
     reviewerRole: 'Consultant Dental Surgeon',
     reviewedAt: '2026-10-01',
     relatedTreatments: [
-      { title: 'Children\'s Dentistry', href: '/kids-care' },
+      { title: "Children's Dentistry", href: '/kids-care' },
       { title: 'Special Child Dental Care', href: '/special-child' },
     ],
     relatedDoctors: [
-      { name: 'Dr. Shimia Binte Taher', href: '/dr-shimia', role: 'Pediatric & Endodontic Consultant' },
+      {
+        name: 'Dr. Shimia Binte Taher',
+        href: '/dr-shimia',
+        role: 'Pediatric & Endodontic Consultant',
+      },
     ],
     relatedBranches: ['banani', 'banasree'],
     publishedAt: '2026-09-20',
     updatedAt: '2026-09-30',
-    metaDescription: 'Parenting guide to preparing children for their first dental appointment: ideal timing, creating a fear-free experience, and early cavity prevention.',
-    quickAnswer: 'A child should have their first dental visit by their first birthday or within six months of their first baby tooth erupting. The goal is to establish a friendly "dental home", check early jaw development, and guide parents on bottle caries prevention.',
+    metaDescription:
+      'Parenting guide to preparing children for their first dental appointment: ideal timing, creating a fear-free experience, and early cavity prevention.',
+    quickAnswer:
+      'A child should have their first dental visit by their first birthday or within six months of their first baby tooth erupting. The goal is to establish a friendly "dental home", check early jaw development, and guide parents on bottle caries prevention.',
     readingTimeMinutes: 6,
     sections: [
       {
@@ -140,8 +168,14 @@ export const generalCareGuides: AuthorityGuide[] = [
     shortTitle: 'Oral Hygiene After Treatment',
     category: 'general-care',
     categoryLabel: 'General Oral Care',
-    primaryIntent: 'Provide precise daily hygiene instructions for patients with new crowns, bridges, implants, or post-surgical sutures.',
-    secondaryTopics: ['Flossing under bridges', 'Super-floss for implants', 'Chlorhexidine rinse use', 'Electric toothbrush benefits'],
+    primaryIntent:
+      'Provide precise daily hygiene instructions for patients with new crowns, bridges, implants, or post-surgical sutures.',
+    secondaryTopics: [
+      'Flossing under bridges',
+      'Super-floss for implants',
+      'Chlorhexidine rinse use',
+      'Electric toothbrush benefits',
+    ],
     status: 'live',
     medicallyReviewed: true,
     reviewer: 'Dr. Shimia Binte Taher',
@@ -153,14 +187,14 @@ export const generalCareGuides: AuthorityGuide[] = [
       { title: 'Dental Implants', href: '/implants' },
       { title: 'Zirconia Crowns', href: '/zirconia-crown' },
     ],
-    relatedDoctors: [
-      { name: 'Dr. Shimia Binte Taher', href: '/dr-shimia', role: 'Consultant' },
-    ],
+    relatedDoctors: [{ name: 'Dr. Shimia Binte Taher', href: '/dr-shimia', role: 'Consultant' }],
     relatedBranches: ['banani', 'banasree'],
     publishedAt: '2026-09-20',
     updatedAt: '2026-09-30',
-    metaDescription: 'Essential oral hygiene protocols following dental procedures: brushing around new crowns, flossing under bridges, and caring for healing surgical sites.',
-    quickAnswer: 'Maintaining oral hygiene after treatment requires gentle brushing with a soft-bristled toothbrush, using specialized super-floss or interdental brushes under bridges and around implants, and short-term warm saline or chlorhexidine rinses for healing gums.',
+    metaDescription:
+      'Essential oral hygiene protocols following dental procedures: brushing around new crowns, flossing under bridges, and caring for healing surgical sites.',
+    quickAnswer:
+      'Maintaining oral hygiene after treatment requires gentle brushing with a soft-bristled toothbrush, using specialized super-floss or interdental brushes under bridges and around implants, and short-term warm saline or chlorhexidine rinses for healing gums.',
     readingTimeMinutes: 5,
     sections: [
       {
@@ -178,8 +212,14 @@ export const generalCareGuides: AuthorityGuide[] = [
     shortTitle: 'How Dental Costs Are Estimated',
     category: 'general-care',
     categoryLabel: 'General Oral Care',
-    primaryIntent: 'Demystify dental fee calculations by explaining the legitimate clinical, technological, and diagnostic factors that shape comprehensive treatment estimates.',
-    secondaryTopics: ['Diagnosis and radiography', 'Biomaterial grades', 'Laboratory craftsmanship', 'Specialist chair time'],
+    primaryIntent:
+      'Demystify dental fee calculations by explaining the legitimate clinical, technological, and diagnostic factors that shape comprehensive treatment estimates.',
+    secondaryTopics: [
+      'Diagnosis and radiography',
+      'Biomaterial grades',
+      'Laboratory craftsmanship',
+      'Specialist chair time',
+    ],
     status: 'live',
     medicallyReviewed: true,
     reviewer: 'Dr. B.M. Rafiqul Hasan',
@@ -196,8 +236,10 @@ export const generalCareGuides: AuthorityGuide[] = [
     relatedBranches: ['banani', 'banasree'],
     publishedAt: '2026-09-20',
     updatedAt: '2026-09-30',
-    metaDescription: 'Learn how dental treatment estimates are formulated: diagnostic imaging, procedure complexity, biomaterial quality, dental lab work, and clinical expertise.',
-    quickAnswer: 'Dental treatment cost estimates reflect five core clinical variables: diagnostic imaging requirements (2D vs 3D CBCT), case anatomical complexity, the grade of biocompatible restorative materials used, laboratory craftsmanship, and the clinician\'s specialist training.',
+    metaDescription:
+      'Learn how dental treatment estimates are formulated: diagnostic imaging, procedure complexity, biomaterial quality, dental lab work, and clinical expertise.',
+    quickAnswer:
+      "Dental treatment cost estimates reflect five core clinical variables: diagnostic imaging requirements (2D vs 3D CBCT), case anatomical complexity, the grade of biocompatible restorative materials used, laboratory craftsmanship, and the clinician's specialist training.",
     readingTimeMinutes: 6,
     sections: [
       {
@@ -226,8 +268,14 @@ export const generalCareGuides: AuthorityGuide[] = [
     shortTitle: 'Dental Second Opinion Guide',
     category: 'general-care',
     categoryLabel: 'General Oral Care',
-    primaryIntent: 'Offer balanced, patient-first advice on when and why seeking a second clinical opinion is wise before major irreversible dental procedures.',
-    secondaryTopics: ['Irreversible treatments', 'Conflicting diagnoses', 'Full mouth rehabilitation', 'Patient comfort'],
+    primaryIntent:
+      'Offer balanced, patient-first advice on when and why seeking a second clinical opinion is wise before major irreversible dental procedures.',
+    secondaryTopics: [
+      'Irreversible treatments',
+      'Conflicting diagnoses',
+      'Full mouth rehabilitation',
+      'Patient comfort',
+    ],
     status: 'live',
     medicallyReviewed: true,
     reviewer: 'Dr. Shimia Binte Taher',
@@ -245,8 +293,10 @@ export const generalCareGuides: AuthorityGuide[] = [
     relatedBranches: ['banani', 'banasree'],
     publishedAt: '2026-09-20',
     updatedAt: '2026-09-30',
-    metaDescription: 'When to seek a second dental opinion: invasive extraction recommendations, extensive cosmetic plans, unclear diagnosis, or complex surgery decisions.',
-    quickAnswer: 'Seeking a second dental opinion is recommended before undergoing irreversible or extensive procedures—such as extracting a tooth that might be savable, invasive full-mouth smile reconstructions, or complex surgical bone grafts. A second consultation offers clarity and peace of mind.',
+    metaDescription:
+      'When to seek a second dental opinion: invasive extraction recommendations, extensive cosmetic plans, unclear diagnosis, or complex surgery decisions.',
+    quickAnswer:
+      'Seeking a second dental opinion is recommended before undergoing irreversible or extensive procedures—such as extracting a tooth that might be savable, invasive full-mouth smile reconstructions, or complex surgical bone grafts. A second consultation offers clarity and peace of mind.',
     readingTimeMinutes: 5,
     sections: [
       {

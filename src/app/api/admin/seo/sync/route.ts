@@ -104,13 +104,15 @@ export async function POST(request: NextRequest) {
     });
   } catch (error) {
     console.error('[SEO Sync] Error during sync execution:', error);
-    await prisma.googleIntegration.update({
-      where: { id: 'primary' },
-      data: {
-        lastSyncStatus: 'error',
-        lastError: error instanceof Error ? error.message : 'Unknown sync failure',
-      },
-    }).catch(() => {});
+    await prisma.googleIntegration
+      .update({
+        where: { id: 'primary' },
+        data: {
+          lastSyncStatus: 'error',
+          lastError: error instanceof Error ? error.message : 'Unknown sync failure',
+        },
+      })
+      .catch(() => {});
 
     return NextResponse.json(
       { error: error instanceof Error ? error.message : 'Sync failed' },

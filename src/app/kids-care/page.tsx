@@ -242,7 +242,9 @@ export default function KidsCarePage() {
               }}
             >
               From the first baby tooth to full teenage braces, we provide end-to-end dental care
-              tailored for every stage of your child&rsquo;s development. Whether your child requires a gentle milk tooth filling in Dhaka, cavity protection, or pediatric care at our Banasree or Banani clinic in Bangladesh, our team ensures fear-free comfort.
+              tailored for every stage of your child&rsquo;s development. Whether your child
+              requires a gentle milk tooth filling in Dhaka, cavity protection, or pediatric care at
+              our Banasree or Banani clinic in Bangladesh, our team ensures fear-free comfort.
             </p>
 
             <ul

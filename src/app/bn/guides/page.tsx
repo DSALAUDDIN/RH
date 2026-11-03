@@ -64,12 +64,22 @@ export default function BanglaGuidesHubPage() {
           </div>
           <h1 className="guides-hub-title">ডেন্টাল চিকিৎসা সংক্রান্ত বাংলা গাইড</h1>
           <p className="guides-hub-subtitle">
-            ডেন্টাল ইমপ্লান্টের খরচ, মাইক্রোস্কোপিক রুট ক্যানেল, ক্লিয়ার অ্যালাইনার বনাম ব্রেসেস, জিরকোনিয়া ক্রাউন এবং ঢাকায় চিকিৎসার প্রস্তুতি বিষয়ে নির্ভরযোগ্য ও চিকিৎসাগতভাবে পরীক্ষিত তথ্য।
+            ডেন্টাল ইমপ্লান্টের খরচ, মাইক্রোস্কোপিক রুট ক্যানেল, ক্লিয়ার অ্যালাইনার বনাম ব্রেসেস,
+            জিরকোনিয়া ক্রাউন এবং ঢাকায় চিকিৎসার প্রস্তুতি বিষয়ে নির্ভরযোগ্য ও চিকিৎসাগতভাবে
+            পরীক্ষিত তথ্য।
           </p>
 
           <div style={{ marginTop: '1.25rem' }}>
             <span style={{ fontSize: '0.8125rem', color: '#64748b' }}>ভাষান্তর: </span>
-            <Link href="/guides" style={{ fontSize: '0.8125rem', color: '#0284c7', textDecoration: 'none', fontWeight: 600 }}>
+            <Link
+              href="/guides"
+              style={{
+                fontSize: '0.8125rem',
+                color: '#0284c7',
+                textDecoration: 'none',
+                fontWeight: 600,
+              }}
+            >
               English Guides Hub
             </Link>
           </div>
@@ -86,7 +96,9 @@ export default function BanglaGuidesHubPage() {
             return (
               <a key={catKey} href={`#${catKey}`} className="guides-category-pill">
                 <span>{meta.label}</span>
-                <span style={{ opacity: 0.65, fontSize: '0.8em', marginLeft: '0.35rem' }}>({count})</span>
+                <span style={{ opacity: 0.65, fontSize: '0.8em', marginLeft: '0.35rem' }}>
+                  ({count})
+                </span>
               </a>
             );
           })}

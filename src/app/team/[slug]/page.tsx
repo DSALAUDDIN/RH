@@ -33,23 +33,25 @@ export default async function Page({ params }: Props) {
   const path = clinicianPath(d);
   return (
     <>
-      <JsonLd nodes={[
-        physicianSchema({
-          slug: path.slice(1),
-          name: d.fullName,
-          jobTitle: d.role ?? 'Dental Surgeon',
-          description: d.bio[0] ?? `${d.name} at RH Dental Care, Dhaka.`,
-          image: d.image ?? undefined,
-          credentials: [...d.qualifications, ...(d.bmdc ? [`BMDC Reg. ${d.bmdc}`] : [])],
-          knowsAbout: d.procedures.length ? d.procedures : undefined,
-          worksAt: d.postings.map((p) => p.branch),
-        }),
-        breadcrumbSchema([
-          { name: 'RH Dental Care', path: '/' },
-          { name: 'Team', path: '/team' },
-          { name: d.name, path },
-        ]),
-      ]} />
+      <JsonLd
+        nodes={[
+          physicianSchema({
+            slug: path.slice(1),
+            name: d.fullName,
+            jobTitle: d.role ?? 'Dental Surgeon',
+            description: d.bio[0] ?? `${d.name} at RH Dental Care, Dhaka.`,
+            image: d.image ?? undefined,
+            credentials: [...d.qualifications, ...(d.bmdc ? [`BMDC Reg. ${d.bmdc}`] : [])],
+            knowsAbout: d.procedures.length ? d.procedures : undefined,
+            worksAt: d.postings.map((p) => p.branch),
+          }),
+          breadcrumbSchema([
+            { name: 'RH Dental Care', path: '/' },
+            { name: 'Team', path: '/team' },
+            { name: d.name, path },
+          ]),
+        ]}
+      />
       <DoctorProfile doctor={d} />
     </>
   );

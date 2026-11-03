@@ -76,7 +76,7 @@
 }
 
 .guide-breadcrumbs span.current,
-.guide-breadcrumbs span[aria-current="page"] {
+.guide-breadcrumbs span[aria-current='page'] {
   color: #f8fafc;
   font-weight: 500;
 }
@@ -1127,4 +1127,3 @@
     padding: 1.5rem;
   }
 }
-

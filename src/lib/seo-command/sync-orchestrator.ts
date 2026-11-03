@@ -101,7 +101,9 @@ export async function getLatestAuditSummary(): Promise<InternalAuditSummary> {
 /**
  * Retrieve complete data bundle for the RH Dental SEO Command Center
  */
-export async function getSeoCommandCenterData(rangeDays: number = 28): Promise<SeoCommandCenterData> {
+export async function getSeoCommandCenterData(
+  rangeDays: number = 28,
+): Promise<SeoCommandCenterData> {
   const dateRange = calculateDateRanges(rangeDays);
 
   // 1. Load Google Integration Config
@@ -111,24 +113,43 @@ export async function getSeoCommandCenterData(rangeDays: number = 28): Promise<S
 
   const config: GoogleIntegrationConfig = {
     connected: Boolean(dbIntegration?.connected),
-    gscSiteUrl: dbIntegration?.gscSiteUrl || process.env.GSC_SITE_URL || 'sc-domain:rhdentalcare.com',
+    gscSiteUrl:
+      dbIntegration?.gscSiteUrl || process.env.GSC_SITE_URL || 'sc-domain:rhdentalcare.com',
     ga4PropertyId: dbIntegration?.ga4PropertyId || process.env.GA4_PROPERTY_ID || null,
     gbpAccountId: dbIntegration?.gbpAccountId || process.env.GOOGLE_BUSINESS_ACCOUNT_ID || null,
-    gbpBananiLocationId: dbIntegration?.gbpBananiLocationId || process.env.GBP_BANANI_LOCATION_ID || null,
-    gbpBanasreeLocationId: dbIntegration?.gbpBanasreeLocationId || process.env.GBP_BANASREE_LOCATION_ID || null,
-    gbpStatus: (dbIntegration?.gbpStatus as GoogleIntegrationConfig['gbpStatus']) || 'not_connected',
+    gbpBananiLocationId:
+      dbIntegration?.gbpBananiLocationId || process.env.GBP_BANANI_LOCATION_ID || null,
+    gbpBanasreeLocationId:
+      dbIntegration?.gbpBanasreeLocationId || process.env.GBP_BANASREE_LOCATION_ID || null,
+    gbpStatus:
+      (dbIntegration?.gbpStatus as GoogleIntegrationConfig['gbpStatus']) || 'not_connected',
     lastSyncAt: dbIntegration?.lastSyncAt ? dbIntegration.lastSyncAt.toISOString() : null,
-    lastSyncStatus: (dbIntegration?.lastSyncStatus as GoogleIntegrationConfig['lastSyncStatus']) || null,
+    lastSyncStatus:
+      (dbIntegration?.lastSyncStatus as GoogleIntegrationConfig['lastSyncStatus']) || null,
     lastError: dbIntegration?.lastError || null,
-    baselineDate: dbIntegration?.baselineDate ? dbIntegration.baselineDate.toISOString() : '2026-09-30',
+    baselineDate: dbIntegration?.baselineDate
+      ? dbIntegration.baselineDate.toISOString()
+      : '2026-09-30',
   };
 
   // 2. Load Internal Audit Summary
   const audit = await getLatestAuditSummary();
 
   // 3. Fetch GSC Queries & Pages if connected
-  let rawCurrentQueries: Array<{ keys: string[]; clicks: number; impressions: number; ctr: number; position: number }> = [];
-  let rawPrevQueries: Array<{ keys: string[]; clicks: number; impressions: number; ctr: number; position: number }> = [];
+  let rawCurrentQueries: Array<{
+    keys: string[];
+    clicks: number;
+    impressions: number;
+    ctr: number;
+    position: number;
+  }> = [];
+  let rawPrevQueries: Array<{
+    keys: string[];
+    clicks: number;
+    impressions: number;
+    ctr: number;
+    position: number;
+  }> = [];
 
   if (config.connected && config.gscSiteUrl) {
     rawCurrentQueries = await queryGscSearchAnalytics({
@@ -213,13 +234,15 @@ export async function getSeoCommandCenterData(rangeDays: number = 28): Promise<S
       current: curTotalImp,
       previous: prevTotalImp,
       change: curTotalImp - prevTotalImp,
-      percentageChange: prevTotalImp > 0 ? ((curTotalImp - prevTotalImp) / prevTotalImp) * 100 : null,
+      percentageChange:
+        prevTotalImp > 0 ? ((curTotalImp - prevTotalImp) / prevTotalImp) * 100 : null,
     },
     clicks: {
       current: curTotalClicks,
       previous: prevTotalClicks,
       change: curTotalClicks - prevTotalClicks,
-      percentageChange: prevTotalClicks > 0 ? ((curTotalClicks - prevTotalClicks) / prevTotalClicks) * 100 : null,
+      percentageChange:
+        prevTotalClicks > 0 ? ((curTotalClicks - prevTotalClicks) / prevTotalClicks) * 100 : null,
     },
     ctr: {
       current: curTotalImp > 0 ? Math.round((curTotalClicks / curTotalImp) * 1000) / 10 : 0,
@@ -318,7 +341,8 @@ export async function getSeoCommandCenterData(rangeDays: number = 28): Promise<S
     ...enGuides.map((g) => {
       const fullUrl = `https://rhdentalcare.com/guides/${g.slug}`;
       const path = `/guides/${g.slug}`;
-      const stats = pageMetricsMap.get(fullUrl) || pageMetricsMap.get(path) || { clicks: 0, imp: 0, posSum: 0 };
+      const stats = pageMetricsMap.get(fullUrl) ||
+        pageMetricsMap.get(path) || { clicks: 0, imp: 0, posSum: 0 };
       const avgPos = stats.imp > 0 ? Math.round((stats.posSum / stats.imp) * 10) / 10 : 0;
       const ctr = stats.imp > 0 ? Math.round((stats.clicks / stats.imp) * 1000) / 10 : 0;
 
@@ -331,13 +355,16 @@ export async function getSeoCommandCenterData(rangeDays: number = 28): Promise<S
         gscCtr: ctr,
         gscAvgPosition: avgPos,
         indexStatus: 'unchecked' as const,
-        daysLive: Math.floor((Date.now() - new Date(g.publishedAt).getTime()) / (24 * 60 * 60 * 1000)),
+        daysLive: Math.floor(
+          (Date.now() - new Date(g.publishedAt).getTime()) / (24 * 60 * 60 * 1000),
+        ),
       };
     }),
     ...bnGuides.map((g) => {
       const fullUrl = `https://rhdentalcare.com/bn/guides/${g.slug}`;
       const path = `/bn/guides/${g.slug}`;
-      const stats = pageMetricsMap.get(fullUrl) || pageMetricsMap.get(path) || { clicks: 0, imp: 0, posSum: 0 };
+      const stats = pageMetricsMap.get(fullUrl) ||
+        pageMetricsMap.get(path) || { clicks: 0, imp: 0, posSum: 0 };
       const avgPos = stats.imp > 0 ? Math.round((stats.posSum / stats.imp) * 10) / 10 : 0;
       const ctr = stats.imp > 0 ? Math.round((stats.clicks / stats.imp) * 1000) / 10 : 0;
 
@@ -350,7 +377,9 @@ export async function getSeoCommandCenterData(rangeDays: number = 28): Promise<S
         gscCtr: ctr,
         gscAvgPosition: avgPos,
         indexStatus: 'unchecked' as const,
-        daysLive: Math.floor((Date.now() - new Date(g.publishedAt).getTime()) / (24 * 60 * 60 * 1000)),
+        daysLive: Math.floor(
+          (Date.now() - new Date(g.publishedAt).getTime()) / (24 * 60 * 60 * 1000),
+        ),
       };
     }),
   ];
@@ -390,7 +419,11 @@ export async function getSeoCommandCenterData(rangeDays: number = 28): Promise<S
     { path: '/implants', title: 'Dental Implants', group: 'core_treatment' as const },
     { path: '/root-canal', title: 'Root Canal Treatment', group: 'core_treatment' as const },
     { path: '/orthodontics', title: 'Clear Aligners & Braces', group: 'core_treatment' as const },
-    { path: '/zirconia-crown', title: 'Zirconia Crowns & CAD/CAM', group: 'core_treatment' as const },
+    {
+      path: '/zirconia-crown',
+      title: 'Zirconia Crowns & CAD/CAM',
+      group: 'core_treatment' as const,
+    },
     { path: '/dr-hasan', title: 'Dr. B.M. Rafiqul Hasan', group: 'doctor' as const },
     { path: '/dr-shimia', title: 'Dr. Shimia Binte Taher', group: 'doctor' as const },
   ];
@@ -436,7 +469,8 @@ export async function getSeoCommandCenterData(rangeDays: number = 28): Promise<S
           ? Math.min(
               100,
               Math.round(
-                ((ga4Report?.sessions || visibility.clicks.current) / visibility.clicks.current) * 100,
+                ((ga4Report?.sessions || visibility.clicks.current) / visibility.clicks.current) *
+                  100,
               ),
             )
           : null,
@@ -447,7 +481,9 @@ export async function getSeoCommandCenterData(rangeDays: number = 28): Promise<S
       conversionRate:
         (ga4Report?.sessions || visibility.clicks.current) > 0
           ? Math.round(
-              ((conversions.phoneClicks + conversions.whatsappClicks + conversions.appointmentStarts) /
+              ((conversions.phoneClicks +
+                conversions.whatsappClicks +
+                conversions.appointmentStarts) /
                 (ga4Report?.sessions || visibility.clicks.current)) *
                 1000,
             ) / 10
@@ -458,7 +494,9 @@ export async function getSeoCommandCenterData(rangeDays: number = 28): Promise<S
       count: conversions.appointmentSubmissions,
       conversionRate:
         conversions.appointmentStarts > 0
-          ? Math.round((conversions.appointmentSubmissions / conversions.appointmentStarts) * 1000) / 10
+          ? Math.round(
+              (conversions.appointmentSubmissions / conversions.appointmentStarts) * 1000,
+            ) / 10
           : null,
     },
   ];

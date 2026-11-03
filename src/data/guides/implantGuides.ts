@@ -59,8 +59,14 @@ export const implantGuides: AuthorityGuide[] = [
     shortTitle: 'Dental Implant Cost Factors',
     category: 'implants',
     categoryLabel: 'Dental Implants',
-    primaryIntent: 'Understand the clinical, surgical, and restorative variables that determine dental implant pricing in Dhaka.',
-    secondaryTopics: ['Implant brands', 'Bone grafting need', 'Restoration material', 'Surgical guide'],
+    primaryIntent:
+      'Understand the clinical, surgical, and restorative variables that determine dental implant pricing in Dhaka.',
+    secondaryTopics: [
+      'Implant brands',
+      'Bone grafting need',
+      'Restoration material',
+      'Surgical guide',
+    ],
     status: 'live',
     medicallyReviewed: true,
     reviewer: 'Dr. B.M. Rafiqul Hasan',
@@ -78,8 +84,10 @@ export const implantGuides: AuthorityGuide[] = [
     relatedBranches: ['banani', 'banasree'],
     publishedAt: '2026-09-20',
     updatedAt: '2026-09-30',
-    metaDescription: 'Detailed breakdown of dental implant cost factors in Dhaka: implant fixture manufacturer, bone grafting, digital surgical guides, and crown choice.',
-    quickAnswer: 'Dental implant cost in Dhaka varies depending on the implant fixture system (such as Straumann, Osstem, or Megagen), whether bone grafting or sinus lifting is required, the type of final crown (custom-milled zirconia vs. porcelain fused to metal), and whether 3D CBCT-guided surgical templates are utilized.',
+    metaDescription:
+      'Detailed breakdown of dental implant cost factors in Dhaka: implant fixture manufacturer, bone grafting, digital surgical guides, and crown choice.',
+    quickAnswer:
+      'Dental implant cost in Dhaka varies depending on the implant fixture system (such as Straumann, Osstem, or Megagen), whether bone grafting or sinus lifting is required, the type of final crown (custom-milled zirconia vs. porcelain fused to metal), and whether 3D CBCT-guided surgical templates are utilized.',
     readingTimeMinutes: 6,
     sections: [
       {
@@ -124,11 +132,13 @@ export const implantGuides: AuthorityGuide[] = [
     faqs: [
       {
         question: 'Why cannot an exact price be given over the phone?',
-        answer: 'Without a 3D CBCT scan, a surgeon cannot assess bone thickness, proximity to the mandibular nerve, or maxillary sinus pneumatization, which dictate whether bone grafting is necessary.',
+        answer:
+          'Without a 3D CBCT scan, a surgeon cannot assess bone thickness, proximity to the mandibular nerve, or maxillary sinus pneumatization, which dictate whether bone grafting is necessary.',
       },
       {
         question: 'Are dental implants more cost-effective long term than dental bridges?',
-        answer: 'While conventional bridges may have a lower initial cost, they require grinding down adjacent healthy teeth and often require replacement after 10-15 years. Implants preserve natural teeth and stimulate bone retention.',
+        answer:
+          'While conventional bridges may have a lower initial cost, they require grinding down adjacent healthy teeth and often require replacement after 10-15 years. Implants preserve natural teeth and stimulate bone retention.',
       },
     ],
   },
@@ -138,8 +148,14 @@ export const implantGuides: AuthorityGuide[] = [
     shortTitle: 'Dental Implant Step-by-Step Process',
     category: 'implants',
     categoryLabel: 'Dental Implants',
-    primaryIntent: 'Guide prospective implant patients through the exact clinical stages, timelines, and healing phases of dental implant therapy.',
-    secondaryTopics: ['Osseointegration', 'CBCT scan', 'Implant placement surgery', 'Crown fitting'],
+    primaryIntent:
+      'Guide prospective implant patients through the exact clinical stages, timelines, and healing phases of dental implant therapy.',
+    secondaryTopics: [
+      'Osseointegration',
+      'CBCT scan',
+      'Implant placement surgery',
+      'Crown fitting',
+    ],
     status: 'live',
     medicallyReviewed: true,
     reviewer: 'Dr. B.M. Rafiqul Hasan',
@@ -157,8 +173,10 @@ export const implantGuides: AuthorityGuide[] = [
     relatedBranches: ['banani', 'banasree'],
     publishedAt: '2026-09-20',
     updatedAt: '2026-09-30',
-    metaDescription: 'Step-by-step dental implant journey in Dhaka: comprehensive 3D diagnostics, surgical fixture placement, healing osseointegration, and final crown restoration.',
-    quickAnswer: 'The dental implant process proceeds through four clear stages: thorough 3D digital diagnosis and planning, minor surgical placement of the titanium fixture under profound local anesthesia, an osseointegration healing period of 8 to 16 weeks, and digital scanning for final crown attachment.',
+    metaDescription:
+      'Step-by-step dental implant journey in Dhaka: comprehensive 3D diagnostics, surgical fixture placement, healing osseointegration, and final crown restoration.',
+    quickAnswer:
+      'The dental implant process proceeds through four clear stages: thorough 3D digital diagnosis and planning, minor surgical placement of the titanium fixture under profound local anesthesia, an osseointegration healing period of 8 to 16 weeks, and digital scanning for final crown attachment.',
     readingTimeMinutes: 7,
     sections: [
       {
@@ -203,11 +221,13 @@ export const implantGuides: AuthorityGuide[] = [
     faqs: [
       {
         question: 'Will I be left without a tooth during the healing period?',
-        answer: 'No. For front teeth and visible aesthetic areas, our clinicians provide customized provisional temporary teeth so you can speak, smile, and attend social events with confidence while healing occurs.',
+        answer:
+          'No. For front teeth and visible aesthetic areas, our clinicians provide customized provisional temporary teeth so you can speak, smile, and attend social events with confidence while healing occurs.',
       },
       {
         question: 'How long does the actual placement appointment take?',
-        answer: 'Placing a single dental implant usually requires approximately 45 to 60 minutes of clinical chair time, most of which is devoted to gentle preparation and ensuring complete local anesthesia.',
+        answer:
+          'Placing a single dental implant usually requires approximately 45 to 60 minutes of clinical chair time, most of which is devoted to gentle preparation and ensuring complete local anesthesia.',
       },
     ],
   },
@@ -217,8 +237,14 @@ export const implantGuides: AuthorityGuide[] = [
     shortTitle: 'Dental Implant Aftercare Guide',
     category: 'implants',
     categoryLabel: 'Dental Implants',
-    primaryIntent: 'Educate patients on post-operative care, oral hygiene, diet modifications, and warning signs following dental implant surgery.',
-    secondaryTopics: ['Post-operative swelling', 'Soft food diet', 'Implant cleaning', 'Peri-implantitis prevention'],
+    primaryIntent:
+      'Educate patients on post-operative care, oral hygiene, diet modifications, and warning signs following dental implant surgery.',
+    secondaryTopics: [
+      'Post-operative swelling',
+      'Soft food diet',
+      'Implant cleaning',
+      'Peri-implantitis prevention',
+    ],
     status: 'live',
     medicallyReviewed: true,
     reviewer: 'Dr. B.M. Rafiqul Hasan',
@@ -235,8 +261,10 @@ export const implantGuides: AuthorityGuide[] = [
     relatedBranches: ['banani', 'banasree'],
     publishedAt: '2026-09-20',
     updatedAt: '2026-09-30',
-    metaDescription: 'Essential recovery protocols after dental implant surgery: managing mild swelling, recommended soft foods, gentle hygiene, and long-term care.',
-    quickAnswer: 'Optimal implant recovery requires resting for the first 24 hours, applying cold packs to minimize swelling, consuming a soft nutrient-rich diet, avoiding smoking and straws, and maintaining gentle antimicrobial rinses without disturbing the surgical site.',
+    metaDescription:
+      'Essential recovery protocols after dental implant surgery: managing mild swelling, recommended soft foods, gentle hygiene, and long-term care.',
+    quickAnswer:
+      'Optimal implant recovery requires resting for the first 24 hours, applying cold packs to minimize swelling, consuming a soft nutrient-rich diet, avoiding smoking and straws, and maintaining gentle antimicrobial rinses without disturbing the surgical site.',
     readingTimeMinutes: 6,
     sections: [
       {
@@ -269,11 +297,13 @@ export const implantGuides: AuthorityGuide[] = [
     faqs: [
       {
         question: 'When can I return to normal work and exercise?',
-        answer: 'Most patients return to desk work within 24 to 48 hours. Strenuous cardiovascular exercise and heavy lifting should be avoided for 3 to 5 days to prevent throbbing or bleeding.',
+        answer:
+          'Most patients return to desk work within 24 to 48 hours. Strenuous cardiovascular exercise and heavy lifting should be avoided for 3 to 5 days to prevent throbbing or bleeding.',
       },
       {
         question: 'What symptoms warrant contacting the clinic immediately?',
-        answer: 'Contact RH Dental Care if you experience persistent heavy bleeding after firm gauze pressure, sudden worsening pain that does not respond to prescribed medication, or fever.',
+        answer:
+          'Contact RH Dental Care if you experience persistent heavy bleeding after firm gauze pressure, sudden worsening pain that does not respond to prescribed medication, or fever.',
       },
     ],
   },
@@ -283,8 +313,14 @@ export const implantGuides: AuthorityGuide[] = [
     shortTitle: 'Bone Grafting for Implants',
     category: 'implants',
     categoryLabel: 'Dental Implants',
-    primaryIntent: 'Explain alveolar bone resorption, bone graft materials, sinus lift indications, and healing timelines for patients lacking adequate bone for implants.',
-    secondaryTopics: ['Sinus lift', 'Alveolar bone loss', 'Bio-Oss bone mineral', 'Ridge augmentation'],
+    primaryIntent:
+      'Explain alveolar bone resorption, bone graft materials, sinus lift indications, and healing timelines for patients lacking adequate bone for implants.',
+    secondaryTopics: [
+      'Sinus lift',
+      'Alveolar bone loss',
+      'Bio-Oss bone mineral',
+      'Ridge augmentation',
+    ],
     status: 'live',
     medicallyReviewed: true,
     reviewer: 'Dr. B.M. Rafiqul Hasan',
@@ -302,8 +338,10 @@ export const implantGuides: AuthorityGuide[] = [
     relatedBranches: ['banani', 'banasree'],
     publishedAt: '2026-09-20',
     updatedAt: '2026-09-30',
-    metaDescription: 'Learn why jawbone loss occurs after tooth extraction and how bone grafting or sinus lifting creates a secure foundation for lasting dental implants.',
-    quickAnswer: 'Bone grafting is necessary when the jawbone lacks sufficient height, width, or density to anchor an implant securely. Common causes include long-term tooth loss, severe gum disease, or close proximity to the maxillary sinus cavity.',
+    metaDescription:
+      'Learn why jawbone loss occurs after tooth extraction and how bone grafting or sinus lifting creates a secure foundation for lasting dental implants.',
+    quickAnswer:
+      'Bone grafting is necessary when the jawbone lacks sufficient height, width, or density to anchor an implant securely. Common causes include long-term tooth loss, severe gum disease, or close proximity to the maxillary sinus cavity.',
     readingTimeMinutes: 7,
     sections: [
       {
@@ -336,7 +374,8 @@ export const implantGuides: AuthorityGuide[] = [
     faqs: [
       {
         question: 'Does bone grafting hurt?',
-        answer: 'Bone grafting is performed under thorough local anesthesia and is completely comfortable during the appointment. Post-operative discomfort is generally managed with mild analgesic medications.',
+        answer:
+          'Bone grafting is performed under thorough local anesthesia and is completely comfortable during the appointment. Post-operative discomfort is generally managed with mild analgesic medications.',
       },
     ],
   },
@@ -346,8 +385,14 @@ export const implantGuides: AuthorityGuide[] = [
     shortTitle: 'Single vs Multiple Implants',
     category: 'implants',
     categoryLabel: 'Dental Implants',
-    primaryIntent: 'Compare single tooth implant solutions against multiple implant bridges and full-arch restorative options.',
-    secondaryTopics: ['Implant bridge', 'Full arch restoration', 'Adjacent tooth health', 'Occlusal stability'],
+    primaryIntent:
+      'Compare single tooth implant solutions against multiple implant bridges and full-arch restorative options.',
+    secondaryTopics: [
+      'Implant bridge',
+      'Full arch restoration',
+      'Adjacent tooth health',
+      'Occlusal stability',
+    ],
     status: 'live',
     medicallyReviewed: true,
     reviewer: 'Dr. B.M. Rafiqul Hasan',
@@ -364,8 +409,10 @@ export const implantGuides: AuthorityGuide[] = [
     relatedBranches: ['banani', 'banasree'],
     publishedAt: '2026-09-20',
     updatedAt: '2026-09-30',
-    metaDescription: 'Understanding the differences between single tooth implants, implant-supported bridges for adjacent missing teeth, and full-arch rehabilitations.',
-    quickAnswer: 'A single dental implant replaces an individual missing tooth without altering adjacent healthy teeth. When multiple consecutive teeth are missing, an implant-supported bridge can replace 3 or 4 teeth using just two implant anchors, saving cost and surgical chair time.',
+    metaDescription:
+      'Understanding the differences between single tooth implants, implant-supported bridges for adjacent missing teeth, and full-arch rehabilitations.',
+    quickAnswer:
+      'A single dental implant replaces an individual missing tooth without altering adjacent healthy teeth. When multiple consecutive teeth are missing, an implant-supported bridge can replace 3 or 4 teeth using just two implant anchors, saving cost and surgical chair time.',
     readingTimeMinutes: 6,
     sections: [
       {

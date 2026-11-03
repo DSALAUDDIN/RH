@@ -99,13 +99,48 @@ export default function Navbar() {
       name: 'Guides',
       path: '/guides',
       dropdown: [
-        { name: 'Patient Guides Hub', path: '/guides', icon: '📚', desc: 'All 40 clinical dental guides' },
-        { name: 'Dental Implant Cost', path: '/guides/dental-implant-cost-dhaka', icon: '🦷', desc: 'Pricing, brands & warranty' },
-        { name: 'Microscopic Root Canal', path: '/guides/microscopic-root-canal', icon: '🔬', desc: 'Single-visit rotary & microscope' },
-        { name: 'Clear Aligners vs Braces', path: '/guides/clear-aligner-vs-braces', icon: '✨', desc: 'Aesthetic smile alignment' },
-        { name: 'Zirconia Crown Cost', path: '/guides/zirconia-crown-cost-dhaka', icon: '👑', desc: 'Monolithic vs layered crowns' },
-        { name: 'Emergency Dental Guide', path: '/guides/dental-emergency-dhaka', icon: '🚨', desc: 'Immediate relief & trauma care' },
-        { name: 'বাংলা ডেন্টাল গাইড হাব', path: '/bn/guides', icon: '🇧🇩', desc: '৪০টি সম্পূর্ণ বাংলায় রচিত গাইড' },
+        {
+          name: 'Patient Guides Hub',
+          path: '/guides',
+          icon: '📚',
+          desc: 'All 40 clinical dental guides',
+        },
+        {
+          name: 'Dental Implant Cost',
+          path: '/guides/dental-implant-cost-dhaka',
+          icon: '🦷',
+          desc: 'Pricing, brands & warranty',
+        },
+        {
+          name: 'Microscopic Root Canal',
+          path: '/guides/microscopic-root-canal',
+          icon: '🔬',
+          desc: 'Single-visit rotary & microscope',
+        },
+        {
+          name: 'Clear Aligners vs Braces',
+          path: '/guides/clear-aligner-vs-braces',
+          icon: '✨',
+          desc: 'Aesthetic smile alignment',
+        },
+        {
+          name: 'Zirconia Crown Cost',
+          path: '/guides/zirconia-crown-cost-dhaka',
+          icon: '👑',
+          desc: 'Monolithic vs layered crowns',
+        },
+        {
+          name: 'Emergency Dental Guide',
+          path: '/guides/dental-emergency-dhaka',
+          icon: '🚨',
+          desc: 'Immediate relief & trauma care',
+        },
+        {
+          name: 'বাংলা ডেন্টাল গাইড হাব',
+          path: '/bn/guides',
+          icon: '🇧🇩',
+          desc: '৪০টি সম্পূর্ণ বাংলায় রচিত গাইড',
+        },
         { name: 'View All 40 Guides', path: '/guides', icon: '→', desc: '' },
       ],
     },
@@ -214,7 +249,11 @@ export default function Navbar() {
 
         <div className="nav-actions">
           {/* Direct Dual-Branch Switcher */}
-          <div className="direct-branch-switcher" role="radiogroup" aria-label="Select Clinic Branch">
+          <div
+            className="direct-branch-switcher"
+            role="radiogroup"
+            aria-label="Select Clinic Branch"
+          >
             <Link
               href="/banani"
               onClick={() => setBranch('banani', 'header_direct')}
@@ -254,7 +293,6 @@ export default function Navbar() {
             <span className="lang-flag">{pathname.startsWith('/bn') ? '🇬🇧' : '🇧🇩'}</span>
             <span className="lang-text">{pathname.startsWith('/bn') ? 'EN' : 'বাংলা'}</span>
           </Link>
-
 
           <BranchCTA action="book" className="btn-book">
             <Phone size={16} aria-hidden="true" />
@@ -323,7 +361,9 @@ export default function Navbar() {
                   className="mobile-lang-btn"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  <span className="mobile-lang-flag">{pathname.startsWith('/bn') ? '🇬🇧' : '🇧🇩'}</span>
+                  <span className="mobile-lang-flag">
+                    {pathname.startsWith('/bn') ? '🇬🇧' : '🇧🇩'}
+                  </span>
                   <span className="mobile-lang-title">
                     {pathname.startsWith('/bn') ? 'Switch to English' : 'বাংলা সংস্করণ (৪০টি গাইড)'}
                   </span>

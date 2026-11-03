@@ -335,7 +335,8 @@ export default async function AuthorityGuidePage({ params }: Props) {
           <div className="guide-cta-kicker">Transparent Dental Consultations</div>
           <h2 className="guide-cta-title">Discuss Your Treatment with Our Specialists</h2>
           <p className="guide-cta-desc">
-            Receive an unhurried, personalized clinical evaluation with digital diagnostics and clear treatment planning at RH Dental Care Banani or Banasree.
+            Receive an unhurried, personalized clinical evaluation with digital diagnostics and
+            clear treatment planning at RH Dental Care Banani or Banasree.
           </p>
           <div className="guide-cta-btn-group">
             <Link href="/contact" className="guide-cta-primary-btn">

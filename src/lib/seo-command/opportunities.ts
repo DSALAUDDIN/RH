@@ -10,7 +10,14 @@ import type {
 } from './types';
 
 const BENGALI_REGEX = /[\u0980-\u09FF]/;
-const BRAND_TERMS = ['rh', 'rh dental', 'rh dental care', 'r h dental', 'rafiqul hasan', 'dr hasan'];
+const BRAND_TERMS = [
+  'rh',
+  'rh dental',
+  'rh dental care',
+  'r h dental',
+  'rafiqul hasan',
+  'dr hasan',
+];
 
 /**
  * Classify a search query into language, cluster, and brand
@@ -154,13 +161,15 @@ export function generateSeoWins(params: {
   const wins: SeoWin[] = [];
 
   // Content Architecture Win
-  const totalAssets = audit.enLiveCount + audit.bnLiveCount + audit.enReviewCount + audit.bnReviewCount;
+  const totalAssets =
+    audit.enLiveCount + audit.bnLiveCount + audit.enReviewCount + audit.bnReviewCount;
   if (totalAssets >= 80) {
     wins.push({
       id: 'content-80',
       type: 'content',
       title: 'Dual-Language Authority Architecture Active',
-      description: '80 comprehensive first-party educational guides built across English and Native বাংলা with 1-to-1 slug equivalence.',
+      description:
+        '80 comprehensive first-party educational guides built across English and Native বাংলা with 1-to-1 slug equivalence.',
       metric: '80 assets',
     });
   }
@@ -171,7 +180,8 @@ export function generateSeoWins(params: {
       id: 'tech-zero-errors',
       type: 'rank',
       title: 'Zero Critical Technical SEO Errors',
-      description: 'All 181 routes validated with correct self-canonical headers, valid JSON-LD schemas, and bidirectional hreflang tags.',
+      description:
+        'All 181 routes validated with correct self-canonical headers, valid JSON-LD schemas, and bidirectional hreflang tags.',
       metric: '0 errors',
     });
   }
@@ -230,8 +240,10 @@ export function generateSeoAttentionItems(params: {
       severity: 'high',
       category: 'visibility',
       title: 'Google Search Console Not Connected',
-      description: 'OAuth connection is pending. Connect Search Console to unlock real-time query positions, CTR, and search impression data.',
-      actionRecommendation: 'Click "Connect Google Account" in the Integrations panel to authorize read-only Search Console access.',
+      description:
+        'OAuth connection is pending. Connect Search Console to unlock real-time query positions, CTR, and search impression data.',
+      actionRecommendation:
+        'Click "Connect Google Account" in the Integrations panel to authorize read-only Search Console access.',
     });
   }
 
@@ -241,8 +253,10 @@ export function generateSeoAttentionItems(params: {
       severity: 'medium',
       category: 'local',
       title: 'Google Business Profile Not Connected',
-      description: 'Local Maps performance metrics for Banani and Banasree are waiting for account connection.',
-      actionRecommendation: 'Ensure Google Account with manager access to Banani and Banasree listings is authorized.',
+      description:
+        'Local Maps performance metrics for Banani and Banasree are waiting for account connection.',
+      actionRecommendation:
+        'Ensure Google Account with manager access to Banani and Banasree listings is authorized.',
     });
   } else if (config.gbpStatus === 'pending_access') {
     items.push({
@@ -250,8 +264,10 @@ export function generateSeoAttentionItems(params: {
       severity: 'info',
       category: 'local',
       title: 'Google Business Profile API Approval Pending',
-      description: 'The Performance API request has been initiated and is awaiting Google project quota authorization.',
-      actionRecommendation: 'Check Google Cloud Console → APIs & Services → Business Profile Performance API quota status.',
+      description:
+        'The Performance API request has been initiated and is awaiting Google project quota authorization.',
+      actionRecommendation:
+        'Check Google Cloud Console → APIs & Services → Business Profile Performance API quota status.',
     });
   }
 
@@ -262,8 +278,10 @@ export function generateSeoAttentionItems(params: {
       severity: 'medium',
       category: 'technical',
       title: `${audit.warnings} Technical SEO Warning(s) Flagged`,
-      description: 'The repository audit identified minor content or metadata warnings (e.g. word count thresholds).',
-      actionRecommendation: 'Review the Internal Audit section for specific routes and recommended copy adjustments.',
+      description:
+        'The repository audit identified minor content or metadata warnings (e.g. word count thresholds).',
+      actionRecommendation:
+        'Review the Internal Audit section for specific routes and recommended copy adjustments.',
     });
   }
 
@@ -276,7 +294,8 @@ export function generateSeoAttentionItems(params: {
       category: 'visibility',
       title: `${lowCtrKws.length} High-Impression Queries With Low CTR`,
       description: `Keywords like "${lowCtrKws[0].query}" receive strong search impressions but below 1.5% click-through rate.`,
-      actionRecommendation: 'Optimize page titles and meta descriptions with clearer patient value propositions.',
+      actionRecommendation:
+        'Optimize page titles and meta descriptions with clearer patient value propositions.',
     });
   }
 

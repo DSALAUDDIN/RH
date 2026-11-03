@@ -24,7 +24,8 @@ export function getGoogleOAuthEnv() {
   const clientId = process.env.GOOGLE_CLIENT_ID;
   const clientSecret = process.env.GOOGLE_CLIENT_SECRET;
   const redirectUri =
-    process.env.GOOGLE_REDIRECT_URI || 'https://rhdentalcare.com/api/admin/seo/auth/google/callback';
+    process.env.GOOGLE_REDIRECT_URI ||
+    'https://rhdentalcare.com/api/admin/seo/auth/google/callback';
 
   return {
     clientId: clientId || null,
@@ -78,7 +79,9 @@ export function generateGoogleAuthUrl(state: string): string {
   const { clientId, redirectUri, isConfigured } = getGoogleOAuthEnv();
 
   if (!isConfigured || !clientId) {
-    throw new Error('Google OAuth environment variables (GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET) are not configured.');
+    throw new Error(
+      'Google OAuth environment variables (GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET) are not configured.',
+    );
   }
 
   const params = new URLSearchParams({
@@ -234,7 +237,8 @@ export async function saveGoogleCredentials(tokens: {
   });
 
   const encryptedAccessToken = encryptToken(tokens.accessToken);
-  const rawRefreshToken = tokens.refreshToken || (existing?.refreshToken ? decryptToken(existing.refreshToken) : null);
+  const rawRefreshToken =
+    tokens.refreshToken || (existing?.refreshToken ? decryptToken(existing.refreshToken) : null);
   const encryptedRefreshToken = rawRefreshToken ? encryptToken(rawRefreshToken) : null;
 
   await prisma.googleIntegration.upsert({
@@ -281,10 +285,13 @@ export async function disconnectGoogleIntegration(): Promise<void> {
     const plainAccessToken = decryptToken(integration.accessToken);
     if (plainAccessToken) {
       try {
-        await fetch(`https://oauth2.googleapis.com/revoke?token=${encodeURIComponent(plainAccessToken)}`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        });
+        await fetch(
+          `https://oauth2.googleapis.com/revoke?token=${encodeURIComponent(plainAccessToken)}`,
+          {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          },
+        );
       } catch {
         // Best-effort revocation
       }

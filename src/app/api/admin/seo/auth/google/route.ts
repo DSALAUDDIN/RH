@@ -1,6 +1,10 @@
 import { NextResponse } from 'next/server';
 import { verifyAdminAuth } from '@/lib/admin-auth';
-import { generateGoogleAuthUrl, getGoogleOAuthEnv, generateSignedOAuthState } from '@/lib/seo-command/google-oauth';
+import {
+  generateGoogleAuthUrl,
+  getGoogleOAuthEnv,
+  generateSignedOAuthState,
+} from '@/lib/seo-command/google-oauth';
 
 export async function GET() {
   const admin = await verifyAdminAuth();

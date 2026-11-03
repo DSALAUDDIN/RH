@@ -126,8 +126,8 @@ export default function Specialties() {
           <span className="tag">Signature Experience</span>
           <h2>Specialist Dental Care in Dhaka</h2>
           <p>
-            RH Dental Care provides specialist dental treatment in Dhaka — including dental implants,
-            clear aligners and microscope root canal treatment, tailored to your needs.
+            RH Dental Care provides specialist dental treatment in Dhaka — including dental
+            implants, clear aligners and microscope root canal treatment, tailored to your needs.
           </p>
         </motion.div>
 

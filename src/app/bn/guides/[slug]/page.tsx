@@ -151,7 +151,10 @@ export default async function BanglaAuthorityGuidePage({ params }: Props) {
             {guide.status === 'review' && (
               <>
                 <span className="guide-meta-divider">•</span>
-                <span className="guide-staging-badge" title="এই পাতাটি বর্তমানে অভ্যন্তরীণ পর্যালোচনার অধীনে রয়েছে">
+                <span
+                  className="guide-staging-badge"
+                  title="এই পাতাটি বর্তমানে অভ্যন্তরীণ পর্যালোচনার অধীনে রয়েছে"
+                >
                   প্রিভিউ কপি
                 </span>
               </>
@@ -242,7 +245,10 @@ export default async function BanglaAuthorityGuidePage({ params }: Props) {
           <div className="guide-disclaimer">
             <Shield size={16} className="text-slate-400 shrink-0" />
             <p>
-              <strong>চিকিৎসাগত সতর্কতা:</strong> এই তথ্যগুলো শুধুমাত্র সাধারণ স্বাস্থ্য সচেতনতা ও রোগীকে সচেতন করার উদ্দেশ্যে প্রস্তুত করা হয়েছে। এটি কোনো সরাসরি চিকিৎসা পরামর্শের বিকল্প নয়। যেকোনো ডেন্টাল চিকিৎসার পূর্বে একজন যোগ্য বিএমডিসি নিবন্ধিত ডেন্টাল সার্জনের সাথে ব্যক্তিগত পরামর্শ নিন।
+              <strong>চিকিৎসাগত সতর্কতা:</strong> এই তথ্যগুলো শুধুমাত্র সাধারণ স্বাস্থ্য সচেতনতা ও
+              রোগীকে সচেতন করার উদ্দেশ্যে প্রস্তুত করা হয়েছে। এটি কোনো সরাসরি চিকিৎসা পরামর্শের
+              বিকল্প নয়। যেকোনো ডেন্টাল চিকিৎসার পূর্বে একজন যোগ্য বিএমডিসি নিবন্ধিত ডেন্টাল
+              সার্জনের সাথে ব্যক্তিগত পরামর্শ নিন।
             </p>
           </div>
         </main>
@@ -263,7 +269,10 @@ export default async function BanglaAuthorityGuidePage({ params }: Props) {
                   <div className="reviewer-sub">আরএইচ ডেন্টাল কেয়ার</div>
                 </div>
               </div>
-              <Link href={guide.reviewerSlug ? `/team/${guide.reviewerSlug}` : '/team'} className="reviewer-profile-link">
+              <Link
+                href={guide.reviewerSlug ? `/team/${guide.reviewerSlug}` : '/team'}
+                className="reviewer-profile-link"
+              >
                 <span>প্রোফাইল দেখুন</span>
                 <ArrowRight size={13} />
               </Link>
@@ -297,7 +306,9 @@ export default async function BanglaAuthorityGuidePage({ params }: Props) {
                     <MapPin size={15} className="text-sky-600 shrink-0" />
                     <strong>{branch.id === 'banani' ? 'বনানী শাখা' : 'বনশ্রী শাখা'}</strong>
                   </div>
-                  <p className="branch-addr">{branch.streetAddress}, {branch.addressLocality}</p>
+                  <p className="branch-addr">
+                    {branch.streetAddress}, {branch.addressLocality}
+                  </p>
                   <a href={`tel:${branch.phone}`} className="branch-call-link">
                     <Phone size={13} />
                     <span>{branch.phone}</span>

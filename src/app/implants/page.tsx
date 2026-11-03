@@ -121,10 +121,7 @@ function ImplantVideo() {
         autoPlay
         preload="auto"
       >
-        <source
-          src="/assets/videos/implant.mp4"
-          type="video/mp4"
-        />
+        <source src="/assets/videos/implant.mp4" type="video/mp4" />
       </video>
       <div className="imp-video-controls">
         <button
@@ -243,7 +240,6 @@ const pageFaqs = [
     q: 'Can I get teeth in one day?',
     a: 'Yes! We offer immediate loading implants where you receive a temporary prosthesis on the same day as surgery. The permanent crown is placed after osseointegration.',
   },
-
 ];
 
 /** Page questions plus the shared treatment FAQ, rendered once. */
@@ -487,8 +483,9 @@ export default function ImplantsPage() {
                   >
                     Dr. B.M. Rafiqul Hasan (Mehedi)
                   </Link>
-                  , Chief Consultant Oral &amp; Dental Surgeon (BMDC 5169) with advanced international
-                  training in digital implantology. Consultations and surgery are available at both our{' '}
+                  , Chief Consultant Oral &amp; Dental Surgeon (BMDC 5169) with advanced
+                  international training in digital implantology. Consultations and surgery are
+                  available at both our{' '}
                   <Link href="/banani" style={{ color: '#0284c7', textDecoration: 'underline' }}>
                     Banani Private Suite
                   </Link>{' '}
@@ -500,8 +497,8 @@ export default function ImplantsPage() {
                 </p>
                 <p>
                   Known for his precision, aesthetic sense, and ability to manage complex implant
-                  cases, his work reflects a careful balance of scientific accuracy, 3D CBCT planning,
-                  and in-house digital lab integration.
+                  cases, his work reflects a careful balance of scientific accuracy, 3D CBCT
+                  planning, and in-house digital lab integration.
                 </p>
                 <div className="imp-gallery-checks">
                   {[

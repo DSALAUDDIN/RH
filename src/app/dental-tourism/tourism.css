@@ -4585,7 +4585,12 @@
   transform: translateX(-50%);
   width: 700px;
   height: 400px;
-  background: radial-gradient(circle, rgba(0, 102, 204, 0.2) 0%, rgba(13, 148, 136, 0.12) 50%, transparent 75%);
+  background: radial-gradient(
+    circle,
+    rgba(0, 102, 204, 0.2) 0%,
+    rgba(13, 148, 136, 0.12) 50%,
+    transparent 75%
+  );
   filter: blur(80px);
   pointer-events: none;
   z-index: 1;
@@ -5200,7 +5205,9 @@
   margin: 0 auto 50px;
   border-radius: var(--r-lg);
   overflow: hidden;
-  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 102, 204, 0.2);
+  box-shadow:
+    0 25px 60px -15px rgba(0, 0, 0, 0.8),
+    0 0 40px rgba(0, 102, 204, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.15);
   background: #000;
 }
@@ -5306,4 +5313,3 @@
   line-height: 1.4;
   color: #38bdf8;
 }
-

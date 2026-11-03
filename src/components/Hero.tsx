@@ -105,7 +105,6 @@ export default function Hero() {
           {homeVideoUrl && <source src={homeVideoUrl} type="video/mp4" />}
           <track kind="captions" srcLang="en" label="English" default />
         </video>
-
       </motion.div>
 
       {/* Cinematic Dust Particles */}
@@ -331,7 +330,6 @@ export default function Hero() {
             </Link>
 
             {/* Bottom floating pill */}
-
           </motion.div>
         </div>
       </motion.div>
@@ -342,7 +340,10 @@ export default function Hero() {
         <div className="marquee-track">
           {[...Array(4)]
             .fill([
-              { t: '✦ SERVING SMILES SINCE 2014 ✦', i: <Award size={14} className="marquee-award-icon" /> },
+              {
+                t: '✦ SERVING SMILES SINCE 2014 ✦',
+                i: <Award size={14} className="marquee-award-icon" />,
+              },
               { t: 'Microscope Root Canals', i: <Activity size={14} /> },
               { t: 'Premium Implants', i: <ShieldCheck size={14} /> },
               { t: 'Clear Aligners & Braces', i: <Star size={14} /> },

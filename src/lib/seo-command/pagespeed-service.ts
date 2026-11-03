@@ -72,9 +72,15 @@ export async function fetchPageSpeedForPath(
     const audits = lighthouse?.audits;
     const categories = lighthouse?.categories;
 
-    const perfScore = categories?.performance?.score ? Math.round(categories.performance.score * 100) : 90;
-    const a11yScore = categories?.accessibility?.score ? Math.round(categories.accessibility.score * 100) : 95;
-    const bpScore = categories?.['best-practices']?.score ? Math.round(categories['best-practices'].score * 100) : 95;
+    const perfScore = categories?.performance?.score
+      ? Math.round(categories.performance.score * 100)
+      : 90;
+    const a11yScore = categories?.accessibility?.score
+      ? Math.round(categories.accessibility.score * 100)
+      : 95;
+    const bpScore = categories?.['best-practices']?.score
+      ? Math.round(categories['best-practices'].score * 100)
+      : 95;
     const sScore = categories?.seo?.score ? Math.round(categories.seo.score * 100) : 100;
 
     // Field Data (loadingExperience)
@@ -89,10 +95,14 @@ export async function fetchPageSpeedForPath(
       accessibilityScore: a11yScore,
       bestPracticesScore: bpScore,
       seoScore: sScore,
-      lcp: fieldLcp ? `${(fieldLcp / 1000).toFixed(1)}s` : audits?.['largest-contentful-paint']?.displayValue || '1.8s',
+      lcp: fieldLcp
+        ? `${(fieldLcp / 1000).toFixed(1)}s`
+        : audits?.['largest-contentful-paint']?.displayValue || '1.8s',
       inp: fieldInp ? `${fieldInp}ms` : '40ms',
       legacyFid: 'Deprecated (replaced by INP)',
-      cls: fieldCls ? (fieldCls / 100).toFixed(2) : audits?.['cumulative-layout-shift']?.displayValue || '0.01',
+      cls: fieldCls
+        ? (fieldCls / 100).toFixed(2)
+        : audits?.['cumulative-layout-shift']?.displayValue || '0.01',
       fieldDataAvailable: Boolean(fieldLcp),
       labFcp: audits?.['first-contentful-paint']?.displayValue || '1.0s',
       labSpeedIndex: audits?.['speed-index']?.displayValue || '1.5s',
@@ -111,7 +121,9 @@ export async function fetchPageSpeedForPath(
 /**
  * Fetch PageSpeed for all core monitored URLs
  */
-export async function fetchAllMonitoredPageSpeed(apiKey?: string | null): Promise<PageSpeedMetricItem[]> {
+export async function fetchAllMonitoredPageSpeed(
+  apiKey?: string | null,
+): Promise<PageSpeedMetricItem[]> {
   const promises = MONITORED_PAGESPEED_PATHS.map((path) => fetchPageSpeedForPath(path, apiKey));
   return Promise.all(promises);
 }

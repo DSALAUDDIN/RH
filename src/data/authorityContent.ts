@@ -68,7 +68,9 @@ export function getAuthorityStats() {
   const review = AUTHORITY_GUIDES.filter((g) => g.status === 'review').length;
   const draft = AUTHORITY_GUIDES.filter((g) => g.status === 'draft').length;
   const medicallyReviewed = AUTHORITY_GUIDES.filter((g) => g.medicallyReviewed).length;
-  const readyToPublish = AUTHORITY_GUIDES.filter((g) => g.status === 'live' || g.medicallyReviewed).length;
+  const readyToPublish = AUTHORITY_GUIDES.filter(
+    (g) => g.status === 'live' || g.medicallyReviewed,
+  ).length;
 
   return {
     total,
@@ -80,41 +82,53 @@ export function getAuthorityStats() {
   };
 }
 
-export const CATEGORY_DESCRIPTIONS: Record<AuthorityCategory, { label: string; description: string }> = {
+export const CATEGORY_DESCRIPTIONS: Record<
+  AuthorityCategory,
+  { label: string; description: string }
+> = {
   implants: {
     label: 'Dental Implants',
-    description: 'Evidence-based patient guides on single tooth replacement, bone grafting, costs, and surgical osseointegration.',
+    description:
+      'Evidence-based patient guides on single tooth replacement, bone grafting, costs, and surgical osseointegration.',
   },
   endodontics: {
     label: 'Root Canal & Endodontics',
-    description: 'Specialist insights on microscopic root canal treatment, retreatment, saving natural teeth, and recovery protocols.',
+    description:
+      'Specialist insights on microscopic root canal treatment, retreatment, saving natural teeth, and recovery protocols.',
   },
   orthodontics: {
     label: 'Clear Aligners & Orthodontics',
-    description: 'Comprehensive comparisons between clear aligners and fixed braces, treatment stages, costs, and retainers.',
+    description:
+      'Comprehensive comparisons between clear aligners and fixed braces, treatment stages, costs, and retainers.',
   },
   zirconia: {
     label: 'Zirconia & Smile Design',
-    description: 'Modern cosmetic restorative dentistry: crowns vs veneers, CAD/CAM milling, and digital smile design planning.',
+    description:
+      'Modern cosmetic restorative dentistry: crowns vs veneers, CAD/CAM milling, and digital smile design planning.',
   },
   'digital-dentistry': {
     label: 'Digital Dentistry & 3D Imaging',
-    description: 'Low-dose Cone Beam CT (CBCT) 3D scanning, computer-guided surgery, and digital impression accuracy.',
+    description:
+      'Low-dose Cone Beam CT (CBCT) 3D scanning, computer-guided surgery, and digital impression accuracy.',
   },
   surgery: {
     label: 'Oral & Dental Surgery',
-    description: 'Patient expectations for outpatient dental surgery, impacted wisdom tooth extraction, and post-operative safety.',
+    description:
+      'Patient expectations for outpatient dental surgery, impacted wisdom tooth extraction, and post-operative safety.',
   },
   'patient-guides': {
     label: 'Patient Guides & Decision Support',
-    description: 'First dental visit walkthroughs, emergency protocols, NRB dental holiday planning, and choosing a qualified dentist.',
+    description:
+      'First dental visit walkthroughs, emergency protocols, NRB dental holiday planning, and choosing a qualified dentist.',
   },
   'branch-guides': {
     label: 'Branch & Visit Logistics',
-    description: 'Detailed arrival directions, appointment scheduling, and facility overviews for Banani and Banasree clinics.',
+    description:
+      'Detailed arrival directions, appointment scheduling, and facility overviews for Banani and Banasree clinics.',
   },
   'general-care': {
     label: 'General Oral Care & Treatment Support',
-    description: 'Professional teeth whitening, gum disease therapy, pediatric care, oral hygiene, and dental second opinions.',
+    description:
+      'Professional teeth whitening, gum disease therapy, pediatric care, oral hygiene, and dental second opinions.',
   },
 };

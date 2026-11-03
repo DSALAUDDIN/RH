@@ -229,7 +229,7 @@ const specialtiesData: Record<string, SpecialtyDetail> = {
     flyerImg: kidsCareBanner,
     flyerFileName: 'RH-Dental-KidsCare.png',
     description:
-      "Give your child a lifetime of healthy smiles. Our gentle, experienced team creates a positive dental experience that helps children feel comfortable while providing expert preventive and restorative care.",
+      'Give your child a lifetime of healthy smiles. Our gentle, experienced team creates a positive dental experience that helps children feel comfortable while providing expert preventive and restorative care.',
     benefits: [
       'Child-friendly environment and staff',
       'Gentle techniques for comfortable visits',

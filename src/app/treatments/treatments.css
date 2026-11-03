@@ -359,7 +359,8 @@
 .tr-cases-section {
   position: relative;
   padding: 6rem 2rem;
-  background: radial-gradient(circle at 50% 0%, rgba(14, 165, 233, 0.08) 0%, transparent 60%), #020617;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(14, 165, 233, 0.08) 0%, transparent 60%), #020617;
   border-top: 1px solid rgba(255, 255, 255, 0.06);
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
@@ -496,4 +497,3 @@
   padding: 0.25rem 0.75rem;
   border-radius: 999px;
 }
-

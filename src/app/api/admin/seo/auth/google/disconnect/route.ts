@@ -10,7 +10,10 @@ export async function POST() {
 
   try {
     await disconnectGoogleIntegration();
-    return NextResponse.json({ success: true, message: 'Google integration disconnected successfully.' });
+    return NextResponse.json({
+      success: true,
+      message: 'Google integration disconnected successfully.',
+    });
   } catch (error) {
     return NextResponse.json(
       { error: error instanceof Error ? error.message : 'Failed to disconnect integration.' },

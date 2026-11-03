@@ -78,7 +78,9 @@ export async function fetchBranchGbpMetrics(
     }
 
     if (!res.ok) {
-      console.warn(`[GBP API] Failed to fetch metrics for ${branchId} (${res.status}): ${res.statusText}`);
+      console.warn(
+        `[GBP API] Failed to fetch metrics for ${branchId} (${res.status}): ${res.statusText}`,
+      );
       return {
         ...defaultResult,
         status: 'error',

@@ -47,7 +47,9 @@ export default function Testimonials() {
                 ))}
               </span>
               <span className="rh-review-value">5.0</span>
-              <span className="rh-review-count">Banani · {BRANCHES.banani.googleRating?.count ?? 48} Google reviews</span>
+              <span className="rh-review-count">
+                Banani · {BRANCHES.banani.googleRating?.count ?? 48} Google reviews
+              </span>
             </a>
 
             <a
@@ -63,7 +65,9 @@ export default function Testimonials() {
                 ))}
               </span>
               <span className="rh-review-value">5.0</span>
-              <span className="rh-review-count">Banasree · {BRANCHES.banasree.googleRating?.count ?? 124} Google reviews</span>
+              <span className="rh-review-count">
+                Banasree · {BRANCHES.banasree.googleRating?.count ?? 124} Google reviews
+              </span>
             </a>
           </div>
 

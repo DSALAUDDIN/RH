@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * Instant Search Engine Submission via IndexNow (Bing, Yandex, Seznam, Naver)
- * 
+ *
  * Fetches all URLs from the live sitemap and submits them directly to the
  * IndexNow API for immediate search engine crawling and ranking.
  */
@@ -19,7 +19,7 @@ async function main() {
 
   const xml = await sitemapRes.text();
   const urlMatches = xml.matchAll(/<loc>([^<]+)<\/loc>/g);
-  const urlList = Array.from(urlMatches, m => m[1].trim());
+  const urlList = Array.from(urlMatches, (m) => m[1].trim());
 
   console.log(`[IndexNow] Found ${urlList.length} URLs in sitemap.`);
 
@@ -27,13 +27,10 @@ async function main() {
     host: HOST,
     key: INDEXNOW_KEY,
     keyLocation: `https://${HOST}/${INDEXNOW_KEY}.txt`,
-    urlList: urlList
+    urlList: urlList,
   };
 
-  const endpoints = [
-    'https://api.indexnow.org/indexnow',
-    'https://www.bing.com/indexnow'
-  ];
+  const endpoints = ['https://api.indexnow.org/indexnow', 'https://www.bing.com/indexnow'];
 
   for (const endpoint of endpoints) {
     try {
@@ -41,9 +38,9 @@ async function main() {
       const res = await fetch(endpoint, {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json; charset=utf-8'
+          'Content-Type': 'application/json; charset=utf-8',
         },
-        body: JSON.stringify(payload)
+        body: JSON.stringify(payload),
       });
 
       console.log(`[IndexNow] Response from ${endpoint}: ${res.status} ${res.statusText}`);
@@ -59,7 +56,7 @@ async function main() {
   }
 }
 
-main().catch(err => {
+main().catch((err) => {
   console.error('[IndexNow] Fatal error:', err);
   process.exit(1);
 });

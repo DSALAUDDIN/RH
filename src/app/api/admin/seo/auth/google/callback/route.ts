@@ -38,7 +38,10 @@ export async function GET(request: NextRequest) {
         details: 'OAuth callback rejected: invalid or expired CSRF state token.',
       },
     });
-    baseUrl.searchParams.set('error', 'Security check failed: invalid or expired OAuth state parameter.');
+    baseUrl.searchParams.set(
+      'error',
+      'Security check failed: invalid or expired OAuth state parameter.',
+    );
     return NextResponse.redirect(baseUrl);
   }
 

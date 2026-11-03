@@ -39,10 +39,7 @@ export default function BananiPage() {
          * The branch entity is part of the site graph (root layout);
          * breadcrumbs and branch-specific FAQs are rendered here.
          */
-        nodes={[
-          breadcrumbs({ name: 'Banani', path: '/banani' }),
-          faqSchema(bananiFaq),
-        ]}
+        nodes={[breadcrumbs({ name: 'Banani', path: '/banani' }), faqSchema(bananiFaq)]}
       />
 
       {/* Hero */}
@@ -57,10 +54,17 @@ export default function BananiPage() {
 
         <div className="bn-hero-text rh-rise">
           <p className="bn-kicker">RH Dental Care · Banani, Road 11</p>
-          <h1 className="bn-h1">
-            Dental Clinic &amp; Private Suite in Banani, Dhaka
-          </h1>
-          <p className="bn-tagline" style={{ fontSize: '1.2rem', fontWeight: 600, color: 'var(--rh-navy-dark, #002347)', marginTop: '0.4rem', marginBottom: '0.85rem' }}>
+          <h1 className="bn-h1">Dental Clinic &amp; Private Suite in Banani, Dhaka</h1>
+          <p
+            className="bn-tagline"
+            style={{
+              fontSize: '1.2rem',
+              fontWeight: 600,
+              color: 'var(--rh-navy-dark, #002347)',
+              marginTop: '0.4rem',
+              marginBottom: '0.85rem',
+            }}
+          >
             A dental practice that does not <em>feel</em> like one.
           </p>
           <p className="bn-lede">
@@ -165,10 +169,17 @@ export default function BananiPage() {
             Serving Banani, Road 11 &amp; North Dhaka Neighborhoods
           </h2>
           <p className="bn-body">
-            For patients looking for an executive, private <strong>dental chamber in Banani</strong> or seeking the <strong>best dental chamber in Banani Road 11</strong>, our 7th-floor suite at B&amp;B Empire provides serene, appointment-only dental care.
+            For patients looking for an executive, private <strong>dental chamber in Banani</strong>{' '}
+            or seeking the <strong>best dental chamber in Banani Road 11</strong>, our 7th-floor
+            suite at B&amp;B Empire provides serene, appointment-only dental care.
           </p>
           <p className="bn-body">
-            Residents visiting from <strong>Gulshan</strong> (including <strong>Gulshan 1</strong> and <strong>Gulshan 2</strong>), <strong>Baridhara</strong>, <strong>Mohakhali</strong>, and <strong>DOHS</strong> choose RH Dental Care when searching for the <strong>best dental chamber in Banani Dhaka</strong>. With on-site 3D CBCT scanning, microscopic root canal therapy, and Dr. Hasan&rsquo;s consultation, each appointment is private, calm, and tailored to your schedule.
+            Residents visiting from <strong>Gulshan</strong> (including <strong>Gulshan 1</strong>{' '}
+            and <strong>Gulshan 2</strong>), <strong>Baridhara</strong>, <strong>Mohakhali</strong>,
+            and <strong>DOHS</strong> choose RH Dental Care when searching for the{' '}
+            <strong>best dental chamber in Banani Dhaka</strong>. With on-site 3D CBCT scanning,
+            microscopic root canal therapy, and Dr. Hasan&rsquo;s consultation, each appointment is
+            private, calm, and tailored to your schedule.
           </p>
         </div>
       </section>

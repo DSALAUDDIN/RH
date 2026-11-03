@@ -57,7 +57,8 @@ export default function GuidesHubPage() {
           </div>
           <h1 className="guides-hub-title">Doctor-Reviewed Dental Guides</h1>
           <p className="guides-hub-subtitle">
-            Clear, clinically verified information on dental implant costs, microscopic root canals, clear aligners vs braces, zirconia restorations, and visit logistics in Dhaka.
+            Clear, clinically verified information on dental implant costs, microscopic root canals,
+            clear aligners vs braces, zirconia restorations, and visit logistics in Dhaka.
           </p>
         </div>
       </header>
@@ -72,7 +73,9 @@ export default function GuidesHubPage() {
             return (
               <a key={catKey} href={`#${catKey}`} className="guides-category-pill">
                 <span>{meta.label}</span>
-                <span style={{ opacity: 0.65, fontSize: '0.8em', marginLeft: '0.35rem' }}>({count})</span>
+                <span style={{ opacity: 0.65, fontSize: '0.8em', marginLeft: '0.35rem' }}>
+                  ({count})
+                </span>
               </a>
             );
           })}
@@ -108,7 +111,14 @@ export default function GuidesHubPage() {
                     <p className="guide-card-excerpt">{guide.quickAnswer}</p>
 
                     <div className="guide-card-footer">
-                      <span style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', color: '#2D6A4F' }}>
+                      <span
+                        style={{
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: '0.35rem',
+                          color: '#2D6A4F',
+                        }}
+                      >
                         <ShieldCheck size={14} />
                         <span>Doctor Reviewed</span>
                       </span>
@@ -126,9 +136,9 @@ export default function GuidesHubPage() {
 
         {/* Client QA & Progress System Notice */}
         <div className="guides-client-notice">
-          <strong>Internal Quality Assurance:</strong> The RH Dental content team is developing 40 total authority guides.
-          Review all active drafts, medical review statuses, and staged batches on the{' '}
-          <Link href="/seo-progress">SEO Progress Dashboard</Link>.
+          <strong>Internal Quality Assurance:</strong> The RH Dental content team is developing 40
+          total authority guides. Review all active drafts, medical review statuses, and staged
+          batches on the <Link href="/seo-progress">SEO Progress Dashboard</Link>.
         </div>
       </main>
     </div>

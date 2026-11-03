@@ -107,7 +107,9 @@ export default async function ReviewsPage() {
                 margin: '0 auto 2.5rem',
               }}
             >
-              Had a positive visit? Your feedback helps fellow patients find trusted, microscope-guided dental care in Dhaka. Choose your branch below to leave a 5-star Google review:
+              Had a positive visit? Your feedback helps fellow patients find trusted,
+              microscope-guided dental care in Dhaka. Choose your branch below to leave a 5-star
+              Google review:
             </p>
 
             <div

@@ -24,7 +24,7 @@ export default function TeamPage() {
       credentials: [...c.qualifications, ...(c.bmdc ? [`BMDC Reg. ${c.bmdc}`] : [])],
       knowsAbout: c.procedures.length ? c.procedures : undefined,
       worksAt: c.postings.map((p) => p.branch),
-    })
+    }),
   );
 
   return (
@@ -35,9 +35,8 @@ export default function TeamPage() {
         <div className="rh-container">
           <h1 className="team-h1">Specialist Dental Doctors &amp; Surgeons in Dhaka</h1>
           <p className="team-lede">
-            Fifteen clinicians across two addresses. Where someone works, on which
-            days, and what they are registered to do — set out so you can see who
-            you will actually be seen by.
+            Fifteen clinicians across two addresses. Where someone works, on which days, and what
+            they are registered to do — set out so you can see who you will actually be seen by.
           </p>
           <p className="team-trust">{SHARED_TRUST}</p>
         </div>
@@ -60,12 +59,11 @@ export default function TeamPage() {
           <EditorialNote>
             <div className="rh-niche team-note-inner">
               <p>
-                <strong>REQUIRES CLIENT CONFIRMATION:</strong> qualifications, BMDC registration and a
-                photograph are still missing for Dr. Tonima, Dr. Noton, Dr. Mim and
-                Dr. Nusrat, and Dr. Nabil&rsquo;s flyer carries no registration number.
-                They render with only what is confirmed rather than being padded out.
-                See the notes in <code>src/lib/doctors.ts</code> for the two roster
-                questions that need answering.
+                <strong>REQUIRES CLIENT CONFIRMATION:</strong> qualifications, BMDC registration and
+                a photograph are still missing for Dr. Tonima, Dr. Noton, Dr. Mim and Dr. Nusrat,
+                and Dr. Nabil&rsquo;s flyer carries no registration number. They render with only
+                what is confirmed rather than being padded out. See the notes in{' '}
+                <code>src/lib/doctors.ts</code> for the two roster questions that need answering.
               </p>
             </div>
           </EditorialNote>

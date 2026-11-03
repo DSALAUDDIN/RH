@@ -7,8 +7,14 @@ export const zirconiaGuides: AuthorityGuide[] = [
     shortTitle: 'Zirconia Smile Design Planning',
     category: 'zirconia',
     categoryLabel: 'Zirconia & Smile Design',
-    primaryIntent: 'Explain the aesthetic, structural, and digital workflows of comprehensive zirconia smile makeovers.',
-    secondaryTopics: ['Monolithic zirconia', 'Multilayer translucency', 'Facial symmetry', 'On-site CAD/CAM lab'],
+    primaryIntent:
+      'Explain the aesthetic, structural, and digital workflows of comprehensive zirconia smile makeovers.',
+    secondaryTopics: [
+      'Monolithic zirconia',
+      'Multilayer translucency',
+      'Facial symmetry',
+      'On-site CAD/CAM lab',
+    ],
     status: 'live',
     medicallyReviewed: true,
     reviewer: 'Dr. B.M. Rafiqul Hasan',
@@ -26,8 +32,10 @@ export const zirconiaGuides: AuthorityGuide[] = [
     relatedBranches: ['banani', 'banasree'],
     publishedAt: '2026-09-20',
     updatedAt: '2026-09-30',
-    metaDescription: 'Discover how multi-layered monolithic zirconia and digital facial analysis combine to create natural, durable smile redesigns at RH Dental Care.',
-    quickAnswer: 'Zirconia smile design combines intraoral 3D scanning, facial proportion analysis, and high-strength multi-layer zirconia ceramic to restore discolored, chipped, or misaligned teeth into a harmonious, lifelike smile.',
+    metaDescription:
+      'Discover how multi-layered monolithic zirconia and digital facial analysis combine to create natural, durable smile redesigns at RH Dental Care.',
+    quickAnswer:
+      'Zirconia smile design combines intraoral 3D scanning, facial proportion analysis, and high-strength multi-layer zirconia ceramic to restore discolored, chipped, or misaligned teeth into a harmonious, lifelike smile.',
     readingTimeMinutes: 7,
     sections: [
       {
@@ -53,12 +61,18 @@ export const zirconiaGuides: AuthorityGuide[] = [
   },
   {
     slug: 'zirconia-crown-vs-veneer',
-    title: 'Zirconia Crown vs Veneer: What\'s the Difference?',
+    title: "Zirconia Crown vs Veneer: What's the Difference?",
     shortTitle: 'Zirconia Crown vs Veneer Comparison',
     category: 'zirconia',
     categoryLabel: 'Zirconia & Smile Design',
-    primaryIntent: 'Help patients understand the structural, clinical, and aesthetic differences between a full crown and a conservative dental veneer.',
-    secondaryTopics: ['Tooth preparation depth', 'Structural compromise', 'Enamel bonding', 'Aesthetic indications'],
+    primaryIntent:
+      'Help patients understand the structural, clinical, and aesthetic differences between a full crown and a conservative dental veneer.',
+    secondaryTopics: [
+      'Tooth preparation depth',
+      'Structural compromise',
+      'Enamel bonding',
+      'Aesthetic indications',
+    ],
     status: 'live',
     medicallyReviewed: true,
     reviewer: 'Dr. B.M. Rafiqul Hasan',
@@ -75,8 +89,10 @@ export const zirconiaGuides: AuthorityGuide[] = [
     relatedBranches: ['banani', 'banasree'],
     publishedAt: '2026-09-20',
     updatedAt: '2026-09-30',
-    metaDescription: 'Compare zirconia crowns vs veneers: tooth preparation depth, structural strength, indications for front teeth, and how dentists select the right option.',
-    quickAnswer: 'A dental veneer is a thin, ultra-conservative ceramic shell (0.3 to 0.7 mm) bonded to the front surface of an intact tooth for cosmetic enhancement. A full crown completely encapsulates 360 degrees of the tooth, providing structural reinforcement for extensively decayed, cracked, or root-canal-treated teeth.',
+    metaDescription:
+      'Compare zirconia crowns vs veneers: tooth preparation depth, structural strength, indications for front teeth, and how dentists select the right option.',
+    quickAnswer:
+      'A dental veneer is a thin, ultra-conservative ceramic shell (0.3 to 0.7 mm) bonded to the front surface of an intact tooth for cosmetic enhancement. A full crown completely encapsulates 360 degrees of the tooth, providing structural reinforcement for extensively decayed, cracked, or root-canal-treated teeth.',
     readingTimeMinutes: 6,
     sections: [
       {
@@ -105,8 +121,14 @@ export const zirconiaGuides: AuthorityGuide[] = [
     shortTitle: 'Zirconia Crown Cost Factors',
     category: 'zirconia',
     categoryLabel: 'Zirconia & Smile Design',
-    primaryIntent: 'Explain the factors that determine zirconia crown pricing in Dhaka, including zirconia grade, digital milling precision, and warranty options.',
-    secondaryTopics: ['Monolithic vs layered zirconia', 'CAD/CAM milling', 'Shade matching', 'Ceramicist artistry'],
+    primaryIntent:
+      'Explain the factors that determine zirconia crown pricing in Dhaka, including zirconia grade, digital milling precision, and warranty options.',
+    secondaryTopics: [
+      'Monolithic vs layered zirconia',
+      'CAD/CAM milling',
+      'Shade matching',
+      'Ceramicist artistry',
+    ],
     status: 'live',
     medicallyReviewed: true,
     reviewer: 'Dr. B.M. Rafiqul Hasan',
@@ -123,8 +145,10 @@ export const zirconiaGuides: AuthorityGuide[] = [
     relatedBranches: ['banani', 'banasree'],
     publishedAt: '2026-09-20',
     updatedAt: '2026-09-30',
-    metaDescription: 'Understanding zirconia crown fees in Dhaka: monolithic vs multilayered aesthetic blanks, in-house CAD/CAM milling, and custom shade characterization.',
-    quickAnswer: 'Zirconia crown pricing in Dhaka is influenced by the quality and origin of the zirconia disc (multi-layer gradient vs. standard opaque), whether digital CAD/CAM milling is performed in an on-site lab, and the degree of custom individual shade staining.',
+    metaDescription:
+      'Understanding zirconia crown fees in Dhaka: monolithic vs multilayered aesthetic blanks, in-house CAD/CAM milling, and custom shade characterization.',
+    quickAnswer:
+      'Zirconia crown pricing in Dhaka is influenced by the quality and origin of the zirconia disc (multi-layer gradient vs. standard opaque), whether digital CAD/CAM milling is performed in an on-site lab, and the degree of custom individual shade staining.',
     readingTimeMinutes: 6,
     sections: [
       {
@@ -148,8 +172,14 @@ export const zirconiaGuides: AuthorityGuide[] = [
     shortTitle: 'Digital Smile Design Workflow',
     category: 'zirconia',
     categoryLabel: 'Zirconia & Smile Design',
-    primaryIntent: 'Educate patients on the step-by-step diagnostic and aesthetic planning stages of Digital Smile Design (DSD).',
-    secondaryTopics: ['Facial aesthetics', 'Diagnostic mock-up', 'Gingival contouring', 'Provisional trial smile'],
+    primaryIntent:
+      'Educate patients on the step-by-step diagnostic and aesthetic planning stages of Digital Smile Design (DSD).',
+    secondaryTopics: [
+      'Facial aesthetics',
+      'Diagnostic mock-up',
+      'Gingival contouring',
+      'Provisional trial smile',
+    ],
     status: 'live',
     medicallyReviewed: true,
     reviewer: 'Dr. B.M. Rafiqul Hasan',
@@ -167,8 +197,10 @@ export const zirconiaGuides: AuthorityGuide[] = [
     relatedBranches: ['banani', 'banasree'],
     publishedAt: '2026-09-20',
     updatedAt: '2026-09-30',
-    metaDescription: 'Step-by-step guide to Digital Smile Design in Dhaka: clinical photography, facial harmony analysis, 3D digital wax-ups, and the temporary trial smile.',
-    quickAnswer: 'Digital Smile Design evaluates your smile in relation to your overall facial features, lip curvature, and eye axis. Using high-resolution photography and 3D digital modeling, patients can preview their smile transformation with a temporary intraoral mock-up before treatment starts.',
+    metaDescription:
+      'Step-by-step guide to Digital Smile Design in Dhaka: clinical photography, facial harmony analysis, 3D digital wax-ups, and the temporary trial smile.',
+    quickAnswer:
+      'Digital Smile Design evaluates your smile in relation to your overall facial features, lip curvature, and eye axis. Using high-resolution photography and 3D digital modeling, patients can preview their smile transformation with a temporary intraoral mock-up before treatment starts.',
     readingTimeMinutes: 7,
     sections: [
       {
@@ -193,8 +225,14 @@ export const zirconiaGuides: AuthorityGuide[] = [
     shortTitle: 'Crown After Root Canal',
     category: 'zirconia',
     categoryLabel: 'Zirconia & Smile Design',
-    primaryIntent: 'Explain the mechanical and biological reasons why posterior teeth require full-coverage crowns following root canal treatment.',
-    secondaryTopics: ['Coronal leakage', 'Tooth brittleness', 'Fracture prevention', 'Masticatory forces'],
+    primaryIntent:
+      'Explain the mechanical and biological reasons why posterior teeth require full-coverage crowns following root canal treatment.',
+    secondaryTopics: [
+      'Coronal leakage',
+      'Tooth brittleness',
+      'Fracture prevention',
+      'Masticatory forces',
+    ],
     status: 'live',
     medicallyReviewed: true,
     reviewer: 'Dr. Shimia Binte Taher',
@@ -212,8 +250,10 @@ export const zirconiaGuides: AuthorityGuide[] = [
     relatedBranches: ['banani', 'banasree'],
     publishedAt: '2026-09-20',
     updatedAt: '2026-09-30',
-    metaDescription: 'Learn why molars and premolars need protective dental crowns after root canals to prevent catastrophic tooth fracture and coronal bacterial leakage.',
-    quickAnswer: 'A dental crown is recommended after a root canal because removing infected internal pulp and extensive decay leaves the tooth structurally hollow and dehydrated. A crown provides a 360-degree protective ferrule that prevents the tooth from splitting under chewing pressure.',
+    metaDescription:
+      'Learn why molars and premolars need protective dental crowns after root canals to prevent catastrophic tooth fracture and coronal bacterial leakage.',
+    quickAnswer:
+      'A dental crown is recommended after a root canal because removing infected internal pulp and extensive decay leaves the tooth structurally hollow and dehydrated. A crown provides a 360-degree protective ferrule that prevents the tooth from splitting under chewing pressure.',
     readingTimeMinutes: 6,
     sections: [
       {

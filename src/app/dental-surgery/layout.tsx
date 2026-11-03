@@ -2,7 +2,13 @@ import type { Metadata } from 'next';
 import FAQ from '@/components/FAQ';
 import JsonLd from '@/components/seo/JsonLd';
 import { pageMeta } from '@/lib/seo/metadata';
-import { breadcrumbs, faqSchema, ID, medicalProcedureSchema, medicalWebPageSchema } from '@/lib/seo/schema';
+import {
+  breadcrumbs,
+  faqSchema,
+  ID,
+  medicalProcedureSchema,
+  medicalWebPageSchema,
+} from '@/lib/seo/schema';
 import { generalFaq } from '@/lib/treatment-faq';
 
 const PATH = '/dental-surgery';

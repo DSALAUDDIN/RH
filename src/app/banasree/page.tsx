@@ -38,10 +38,7 @@ export default function BanasreePage() {
          * The branch entity is part of the site graph (root layout);
          * breadcrumbs and branch-specific FAQs are rendered here.
          */
-        nodes={[
-          breadcrumbs({ name: 'Banasree', path: '/banasree' }),
-          faqSchema(banasreeFaq),
-        ]}
+        nodes={[breadcrumbs({ name: 'Banasree', path: '/banasree' }), faqSchema(banasreeFaq)]}
       />
 
       {/* Hero */}
@@ -60,17 +57,24 @@ export default function BanasreePage() {
 
         <div className="bs-hero-text rh-rise">
           <p className="bs-kicker">RH Dental Care · Banasree, Rampura</p>
-          <h1 className="bs-h1">
-            Dental Clinic &amp; Hospital in Banasree, Dhaka
-          </h1>
-          <p className="bs-tagline" style={{ fontSize: '1.2rem', fontWeight: 600, color: 'var(--rh-navy-dark, #002347)', marginTop: '0.4rem', marginBottom: '0.85rem' }}>
+          <h1 className="bs-h1">Dental Clinic &amp; Hospital in Banasree, Dhaka</h1>
+          <p
+            className="bs-tagline"
+            style={{
+              fontSize: '1.2rem',
+              fontWeight: 600,
+              color: 'var(--rh-navy-dark, #002347)',
+              marginTop: '0.4rem',
+              marginBottom: '0.85rem',
+            }}
+          >
             Everything a treatment plan needs, <em>in one building</em>.
           </p>
           <p className="bs-lede">
             Banasree is the flagship: the bigger setup, with the in-house master digital lab, the
-            full specialist team on site. Cases that run across several
-            disciplines — surgery, endodontics, orthodontics, prosthetics — are handled here without
-            sending you between addresses.
+            full specialist team on site. Cases that run across several disciplines — surgery,
+            endodontics, orthodontics, prosthetics — are handled here without sending you between
+            addresses.
           </p>
 
           <div className="bs-actions">
@@ -154,7 +158,6 @@ export default function BanasreePage() {
                 {f}
               </li>
             ))}
-
           </ul>
         </div>
       </section>
@@ -187,10 +190,17 @@ export default function BanasreePage() {
             Serving Banasree &amp; Surrounding Communities in Dhaka
           </h2>
           <p className="bs-body">
-            Whether you are seeking an advanced <strong>dental chamber in Banasree</strong>, looking for the <strong>best dental chamber in Block C Banasree</strong>, or traveling from <strong>Rampura</strong>, <strong>Aftabnagar</strong>, <strong>Khilgaon</strong>, <strong>Malibagh</strong>, or <strong>Badda</strong>, RH Dental Care operates as the primary referral dental hospital and clinic in East Dhaka.
+            Whether you are seeking an advanced <strong>dental chamber in Banasree</strong>, looking
+            for the <strong>best dental chamber in Block C Banasree</strong>, or traveling from{' '}
+            <strong>Rampura</strong>, <strong>Aftabnagar</strong>, <strong>Khilgaon</strong>,{' '}
+            <strong>Malibagh</strong>, or <strong>Badda</strong>, RH Dental Care operates as the
+            primary referral dental hospital and clinic in East Dhaka.
           </p>
           <p className="bs-body">
-            For patients searching for the <strong>best dental chamber in Banasree Dhaka</strong> or across <strong>Rampura</strong>, our hospital houses an in-house CAD/CAM milling lab, microscopic endodontics, and senior dental surgeon consultations so your family receives complete care in one visit.
+            For patients searching for the <strong>best dental chamber in Banasree Dhaka</strong> or
+            across <strong>Rampura</strong>, our hospital houses an in-house CAD/CAM milling lab,
+            microscopic endodontics, and senior dental surgeon consultations so your family receives
+            complete care in one visit.
           </p>
         </div>
       </section>

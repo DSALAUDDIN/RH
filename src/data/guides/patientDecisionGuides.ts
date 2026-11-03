@@ -7,8 +7,14 @@ export const patientDecisionGuides: AuthorityGuide[] = [
     shortTitle: 'Your First Visit Guide',
     category: 'patient-guides',
     categoryLabel: 'Patient Guides',
-    primaryIntent: 'Familiarize new patients with the clinical consultation workflow, diagnostic imaging, and transparent treatment planning at RH Dental Care.',
-    secondaryTopics: ['New patient registration', 'Comprehensive oral examination', 'Digital diagnostics', 'Treatment plan explanation'],
+    primaryIntent:
+      'Familiarize new patients with the clinical consultation workflow, diagnostic imaging, and transparent treatment planning at RH Dental Care.',
+    secondaryTopics: [
+      'New patient registration',
+      'Comprehensive oral examination',
+      'Digital diagnostics',
+      'Treatment plan explanation',
+    ],
     status: 'live',
     medicallyReviewed: true,
     reviewer: 'Dr. B.M. Rafiqul Hasan',
@@ -27,8 +33,10 @@ export const patientDecisionGuides: AuthorityGuide[] = [
     relatedBranches: ['banani', 'banasree'],
     publishedAt: '2026-09-20',
     updatedAt: '2026-09-30',
-    metaDescription: 'Step-by-step overview of your first visit to RH Dental Care in Dhaka: medical history review, digital diagnostics, clinical consultation, and clear treatment options.',
-    quickAnswer: 'Your first visit to RH Dental Care includes a comprehensive review of your medical and dental history, an intraoral visual and periodontal exam, targeted low-dose digital x-rays, and an unhurried discussion with our senior clinicians detailing your diagnosis, treatment options, timelines, and costs.',
+    metaDescription:
+      'Step-by-step overview of your first visit to RH Dental Care in Dhaka: medical history review, digital diagnostics, clinical consultation, and clear treatment options.',
+    quickAnswer:
+      'Your first visit to RH Dental Care includes a comprehensive review of your medical and dental history, an intraoral visual and periodontal exam, targeted low-dose digital x-rays, and an unhurried discussion with our senior clinicians detailing your diagnosis, treatment options, timelines, and costs.',
     readingTimeMinutes: 6,
     sections: [
       {
@@ -65,8 +73,14 @@ export const patientDecisionGuides: AuthorityGuide[] = [
     shortTitle: 'Dental Emergency Guide',
     category: 'patient-guides',
     categoryLabel: 'Patient Guides',
-    primaryIntent: 'Help patients triage severe dental symptoms, distinguish true emergencies from urgent concerns, and know immediate first-aid protocols.',
-    secondaryTopics: ['Avulsed knocked-out tooth', 'Severe facial swelling', 'Uncontrolled oral bleeding', 'Cracked tooth first-aid'],
+    primaryIntent:
+      'Help patients triage severe dental symptoms, distinguish true emergencies from urgent concerns, and know immediate first-aid protocols.',
+    secondaryTopics: [
+      'Avulsed knocked-out tooth',
+      'Severe facial swelling',
+      'Uncontrolled oral bleeding',
+      'Cracked tooth first-aid',
+    ],
     status: 'live',
     medicallyReviewed: true,
     reviewer: 'Dr. B.M. Rafiqul Hasan',
@@ -84,8 +98,10 @@ export const patientDecisionGuides: AuthorityGuide[] = [
     relatedBranches: ['banani', 'banasree'],
     publishedAt: '2026-09-20',
     updatedAt: '2026-09-30',
-    metaDescription: 'Immediate action guide for dental emergencies in Dhaka: what to do for a knocked-out tooth, rapid facial swelling, severe trauma, and persistent bleeding.',
-    quickAnswer: 'True dental emergencies require immediate clinical intervention: an avulsed (knocked-out) permanent tooth within 60 minutes, rapidly progressing facial swelling that compromises breathing or swallowing, uncontrolled oral bleeding after trauma, or acute unbearable throbbing pain.',
+    metaDescription:
+      'Immediate action guide for dental emergencies in Dhaka: what to do for a knocked-out tooth, rapid facial swelling, severe trauma, and persistent bleeding.',
+    quickAnswer:
+      'True dental emergencies require immediate clinical intervention: an avulsed (knocked-out) permanent tooth within 60 minutes, rapidly progressing facial swelling that compromises breathing or swallowing, uncontrolled oral bleeding after trauma, or acute unbearable throbbing pain.',
     readingTimeMinutes: 7,
     sections: [
       {
@@ -102,7 +118,7 @@ export const patientDecisionGuides: AuthorityGuide[] = [
       {
         heading: 'Facial Swelling and Spreading Infections',
         paragraphs: [
-          'A swollen cheek accompanied by high fever or difficulty opening the mouth or swallowing indicates an acute dental abscess that may be spreading into deep fascial spaces (such as Ludwig\'s angina). This requires urgent clinical debridement and antibiotic therapy.',
+          "A swollen cheek accompanied by high fever or difficulty opening the mouth or swallowing indicates an acute dental abscess that may be spreading into deep fascial spaces (such as Ludwig's angina). This requires urgent clinical debridement and antibiotic therapy.",
         ],
         callout: {
           title: 'Emergency Contact Protocol',
@@ -118,8 +134,14 @@ export const patientDecisionGuides: AuthorityGuide[] = [
     shortTitle: 'Dental Care for NRB Patients',
     category: 'patient-guides',
     categoryLabel: 'Patient Guides',
-    primaryIntent: 'Provide Non-Resident Bangladeshi (NRB) patients with realistic advice on planning dental care during short holidays in Dhaka.',
-    secondaryTopics: ['Treatment timeline coordination', 'Remote pre-assessment', 'Implant healing schedules', 'Digital follow-up'],
+    primaryIntent:
+      'Provide Non-Resident Bangladeshi (NRB) patients with realistic advice on planning dental care during short holidays in Dhaka.',
+    secondaryTopics: [
+      'Treatment timeline coordination',
+      'Remote pre-assessment',
+      'Implant healing schedules',
+      'Digital follow-up',
+    ],
     status: 'live',
     medicallyReviewed: true,
     reviewer: 'Dr. B.M. Rafiqul Hasan',
@@ -137,8 +159,10 @@ export const patientDecisionGuides: AuthorityGuide[] = [
     relatedBranches: ['banani', 'banasree'],
     publishedAt: '2026-09-20',
     updatedAt: '2026-09-30',
-    metaDescription: 'Practical guide for NRBs visiting Dhaka: coordinating multi-stage implant or smile design treatments within limited vacation days with digital pre-planning.',
-    quickAnswer: 'Non-Resident Bangladeshis visiting Dhaka can successfully complete complex dental care by coordinating pre-travel digital consultations, scheduling initial diagnostic visits on day 1 or 2 of arrival, and structuring treatments (such as implants or crowns) within verified biological healing timelines.',
+    metaDescription:
+      'Practical guide for NRBs visiting Dhaka: coordinating multi-stage implant or smile design treatments within limited vacation days with digital pre-planning.',
+    quickAnswer:
+      'Non-Resident Bangladeshis visiting Dhaka can successfully complete complex dental care by coordinating pre-travel digital consultations, scheduling initial diagnostic visits on day 1 or 2 of arrival, and structuring treatments (such as implants or crowns) within verified biological healing timelines.',
     readingTimeMinutes: 7,
     sections: [
       {
@@ -169,8 +193,14 @@ export const patientDecisionGuides: AuthorityGuide[] = [
     shortTitle: 'Dental Treatment in Bangladesh',
     category: 'patient-guides',
     categoryLabel: 'Patient Guides',
-    primaryIntent: 'Educate international and diaspora patients on logistics, clinical standards, sterilization benchmarks, and continuity of care when planning dental travel.',
-    secondaryTopics: ['International sterilization standards', 'Digital dental workflow', 'Airport proximity', 'Documentation for home clinicians'],
+    primaryIntent:
+      'Educate international and diaspora patients on logistics, clinical standards, sterilization benchmarks, and continuity of care when planning dental travel.',
+    secondaryTopics: [
+      'International sterilization standards',
+      'Digital dental workflow',
+      'Airport proximity',
+      'Documentation for home clinicians',
+    ],
     status: 'live',
     medicallyReviewed: true,
     reviewer: 'Dr. B.M. Rafiqul Hasan',
@@ -188,8 +218,10 @@ export const patientDecisionGuides: AuthorityGuide[] = [
     relatedBranches: ['banani', 'banasree'],
     publishedAt: '2026-09-20',
     updatedAt: '2026-09-30',
-    metaDescription: 'Essential guide for travelers planning dental care in Dhaka: clinical standards, sterilization protocols, realistic timelines, and medical record continuity.',
-    quickAnswer: 'Planning dental treatment in Bangladesh requires verifying the clinician’s BMDC credentials, ensuring the facility adheres to international Class-B autoclave sterilization, coordinating realistic biological healing timelines, and obtaining comprehensive digital records for post-care continuity.',
+    metaDescription:
+      'Essential guide for travelers planning dental care in Dhaka: clinical standards, sterilization protocols, realistic timelines, and medical record continuity.',
+    quickAnswer:
+      'Planning dental treatment in Bangladesh requires verifying the clinician’s BMDC credentials, ensuring the facility adheres to international Class-B autoclave sterilization, coordinating realistic biological healing timelines, and obtaining comprehensive digital records for post-care continuity.',
     readingTimeMinutes: 7,
     sections: [
       {
@@ -216,8 +248,14 @@ export const patientDecisionGuides: AuthorityGuide[] = [
     shortTitle: 'Choosing a Dentist in Dhaka',
     category: 'patient-guides',
     categoryLabel: 'Patient Guides',
-    primaryIntent: 'Provide an objective, educational checklist for patients evaluating dental clinics and dental surgeons in Dhaka.',
-    secondaryTopics: ['BMDC registration', 'Sterilization standards', 'Clear communication', 'Specialist referrals'],
+    primaryIntent:
+      'Provide an objective, educational checklist for patients evaluating dental clinics and dental surgeons in Dhaka.',
+    secondaryTopics: [
+      'BMDC registration',
+      'Sterilization standards',
+      'Clear communication',
+      'Specialist referrals',
+    ],
     status: 'live',
     medicallyReviewed: true,
     reviewer: 'Dr. B.M. Rafiqul Hasan',
@@ -235,14 +273,16 @@ export const patientDecisionGuides: AuthorityGuide[] = [
     relatedBranches: ['banani', 'banasree'],
     publishedAt: '2026-09-20',
     updatedAt: '2026-09-30',
-    metaDescription: 'Objective checklist for selecting a qualified dental professional in Dhaka: BMDC verification, sterilization protocols, diagnostic technology, and transparent plans.',
-    quickAnswer: 'To choose a qualified dentist in Dhaka, verify their BMDC registration number and postgraduate credentials, inspect clinic sterilization protocols, ensure modern diagnostic imaging (such as digital x-rays) is used, and look for transparent, written treatment proposals.',
+    metaDescription:
+      'Objective checklist for selecting a qualified dental professional in Dhaka: BMDC verification, sterilization protocols, diagnostic technology, and transparent plans.',
+    quickAnswer:
+      'To choose a qualified dentist in Dhaka, verify their BMDC registration number and postgraduate credentials, inspect clinic sterilization protocols, ensure modern diagnostic imaging (such as digital x-rays) is used, and look for transparent, written treatment proposals.',
     readingTimeMinutes: 7,
     sections: [
       {
         heading: '1. Verify BMDC Professional Registration',
         paragraphs: [
-          'In Bangladesh, every legally qualified dentist must be registered with the Bangladesh Medical and Dental Council (BMDC) with a recognized Bachelor of Dental Surgery (BDS) degree. Reputable clinics openly publish their clinicians\' BMDC numbers on their website and prescription forms.',
+          "In Bangladesh, every legally qualified dentist must be registered with the Bangladesh Medical and Dental Council (BMDC) with a recognized Bachelor of Dental Surgery (BDS) degree. Reputable clinics openly publish their clinicians' BMDC numbers on their website and prescription forms.",
         ],
       },
       {

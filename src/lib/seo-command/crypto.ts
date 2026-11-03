@@ -7,7 +7,10 @@ const PREFIX = 'enc:v1:';
  * Returns a 32-byte encryption key derived from SEO_TOKEN_ENCRYPTION_KEY or JWT_SECRET.
  */
 function getEncryptionKey(): Buffer {
-  const secret = process.env.SEO_TOKEN_ENCRYPTION_KEY || process.env.JWT_SECRET || 'dev-fallback-key-do-not-use-in-production-12345';
+  const secret =
+    process.env.SEO_TOKEN_ENCRYPTION_KEY ||
+    process.env.JWT_SECRET ||
+    'dev-fallback-key-do-not-use-in-production-12345';
   return crypto.createHash('sha256').update(secret).digest();
 }
 
@@ -60,7 +63,9 @@ export function decryptToken(cipherText: string | null | undefined): string | nu
     const decrypted = Buffer.concat([decipher.update(encrypted), decipher.final()]);
     return decrypted.toString('utf8');
   } catch (error) {
-    console.error('[Token Decryption] Failed to decrypt stored token. Key mismatch or corrupted ciphertext.');
+    console.error(
+      '[Token Decryption] Failed to decrypt stored token. Key mismatch or corrupted ciphertext.',
+    );
     return null;
   }
 }
