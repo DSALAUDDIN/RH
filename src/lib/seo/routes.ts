@@ -49,6 +49,18 @@ export const ROUTES: RouteEntry[] = [
   // Treatments
   { path: '/implants', label: 'Dental implants', priority: 0.95, changeFrequency: 'monthly' },
   {
+    path: '/dental-implant-dhaka',
+    label: 'Dental implant in Dhaka',
+    priority: 0.85,
+    changeFrequency: 'monthly',
+  },
+  {
+    path: '/dental-implant-banani',
+    label: 'Dental implant in Banani',
+    priority: 0.85,
+    changeFrequency: 'monthly',
+  },
+  {
     path: '/orthodontics',
     label: 'Orthodontics (braces and aligners)',
     priority: 0.9,
@@ -61,11 +73,35 @@ export const ROUTES: RouteEntry[] = [
     changeFrequency: 'monthly',
   },
   { path: '/root-canal', label: 'Root canal treatment', priority: 0.9, changeFrequency: 'monthly' },
+  {
+    path: '/root-canal-treatment-dhaka',
+    label: 'Root canal treatment in Dhaka',
+    priority: 0.85,
+    changeFrequency: 'monthly',
+  },
   { path: '/zirconia-crown', label: 'Zirconia crowns', priority: 0.85, changeFrequency: 'monthly' },
   { path: '/zirconia-veneers', label: 'Veneers', priority: 0.85, changeFrequency: 'monthly' },
   {
+    path: '/smile-designing-bangladesh',
+    label: 'Smile designing in Bangladesh',
+    priority: 0.85,
+    changeFrequency: 'monthly',
+  },
+  {
+    path: '/full-mouth-rehabilitation-bangladesh',
+    label: 'Full mouth rehabilitation in Bangladesh',
+    priority: 0.85,
+    changeFrequency: 'monthly',
+  },
+  {
     path: '/dental-surgery',
     label: 'Oral and dental surgery',
+    priority: 0.85,
+    changeFrequency: 'monthly',
+  },
+  {
+    path: '/laser-dentistry-dhaka',
+    label: 'Laser dentistry in Dhaka',
     priority: 0.85,
     changeFrequency: 'monthly',
   },
@@ -76,6 +112,12 @@ export const ROUTES: RouteEntry[] = [
     changeFrequency: 'monthly',
   },
   { path: '/kids-care', label: "Children's dentistry", priority: 0.8, changeFrequency: 'monthly' },
+  {
+    path: '/pediatric-dentistry-dhaka',
+    label: 'Pediatric dentistry in Dhaka',
+    priority: 0.8,
+    changeFrequency: 'monthly',
+  },
   {
     path: '/special-child',
     label: 'Dentistry for children with special needs',

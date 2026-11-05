@@ -42,7 +42,7 @@ export const SERVICE_PAGES: Record<string, ServicePageData> = {
     url: '/dental-implant-dhaka',
     seoTitle: 'Dental Implant in Dhaka | RH Dental Care',
     metaDescription:
-      'Dental implant consultation and restoration in Dhaka at RH Dental Care. Learn about implant surgery, in-house CAD/CAM prosthetics, suitability, recovery and aftercare.',
+      'Dental implant consultation and restoration in Dhaka at RH Dental Care: implant surgery, in-house CAD/CAM prosthetics, suitability, recovery and aftercare.',
     h1: 'Dental Implant in Dhaka',
     badge: 'Advanced Implantology · Dhaka Flagship & Banani Suite',
     overview:
