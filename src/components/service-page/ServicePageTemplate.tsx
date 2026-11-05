@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Image, { type StaticImageData } from 'next/image';
 import {
   ArrowRight,
   CheckCircle2,
@@ -10,12 +11,29 @@ import {
   Phone,
   ShieldAlert,
   ShieldCheck,
+  Sparkles,
   Stethoscope,
 } from 'lucide-react';
 import './ServicePageTemplate.css';
 import type { ServicePageData } from '@/data/servicePagesContent';
 
-export default function ServicePageTemplate({ data }: { data: ServicePageData }) {
+export interface ServicePageTemplateProps {
+  data: ServicePageData;
+  heroImage?: StaticImageData | string;
+  heroImageAlt?: string;
+  secondaryImage?: StaticImageData | string;
+  secondaryImageAlt?: string;
+  secondaryImageCaption?: string;
+}
+
+export default function ServicePageTemplate({
+  data,
+  heroImage,
+  heroImageAlt,
+  secondaryImage,
+  secondaryImageAlt,
+  secondaryImageCaption,
+}: ServicePageTemplateProps) {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   const toggleFaq = (index: number) => {
@@ -35,22 +53,45 @@ export default function ServicePageTemplate({ data }: { data: ServicePageData })
         </nav>
 
         {/* Hero Section */}
-        <header className="spt-hero">
-          <div className="spt-badge">
-            <Stethoscope size={15} />
-            <span>{data.badge}</span>
-          </div>
-          <h1 className="spt-hero-title">{data.h1}</h1>
-          <p className="spt-hero-lead">{data.overview}</p>
-          <div className="spt-hero-actions">
-            <a href="#appointment" className="spt-btn-primary">
-              <Phone size={16} />
-              <span>Book Clinical Consultation</span>
-            </a>
-            <a href="#procedure" className="spt-btn-outline">
-              <span>View Treatment Process</span>
-              <ChevronRight size={16} />
-            </a>
+        <header className={`spt-hero ${heroImage ? 'spt-hero--has-image' : ''}`}>
+          <div className={heroImage ? 'spt-hero-grid' : ''}>
+            <div className="spt-hero-content">
+              <div className="spt-badge">
+                <Stethoscope size={15} />
+                <span>{data.badge}</span>
+              </div>
+              <h1 className="spt-hero-title">{data.h1}</h1>
+              <p className="spt-hero-lead">{data.overview}</p>
+              <div className="spt-hero-actions">
+                <a href="#appointment" className="spt-btn-primary">
+                  <Phone size={16} />
+                  <span>Book Clinical Consultation</span>
+                </a>
+                <a href="#procedure" className="spt-btn-outline">
+                  <span>View Treatment Process</span>
+                  <ChevronRight size={16} />
+                </a>
+              </div>
+            </div>
+            {heroImage && (
+              <div className="spt-hero-visual-col">
+                <div className="spt-hero-visual-card">
+                  <Image
+                    src={heroImage}
+                    alt={heroImageAlt || data.h1}
+                    priority
+                    className="spt-hero-img"
+                    sizes="(max-width: 991px) 100vw, 500px"
+                  />
+                  <div className="spt-hero-visual-overlay">
+                    <span className="spt-hero-visual-pill">
+                      <Sparkles size={14} className="spt-pill-icon" />
+                      <span>Digital 3D Intraoral Orthodontics</span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
         </header>
 
@@ -87,6 +128,23 @@ export default function ServicePageTemplate({ data }: { data: ServicePageData })
               </div>
             ))}
           </div>
+          {secondaryImage && (
+            <div className="spt-secondary-visual-wrap">
+              <div className="spt-secondary-visual-card">
+                <Image
+                  src={secondaryImage}
+                  alt={secondaryImageAlt || `${data.h1} Clinical Workflow`}
+                  className="spt-secondary-img"
+                  sizes="(max-width: 991px) 100vw, 880px"
+                />
+                {secondaryImageCaption && (
+                  <div className="spt-secondary-caption">
+                    <span>{secondaryImageCaption}</span>
+                  </div>
+                )}
+              </div>
+            </div>
+          )}
         </section>
 
         {/* In-House Digital CAD/CAM Laboratory */}

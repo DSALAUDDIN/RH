@@ -5,3 +5,4 @@ public
 prisma/*.db
 src/assets
 *.md
+next-env.d.ts

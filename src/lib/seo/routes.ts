@@ -54,6 +54,12 @@ export const ROUTES: RouteEntry[] = [
     priority: 0.9,
     changeFrequency: 'monthly',
   },
+  {
+    path: '/clear-aligner-treatment-dhaka',
+    label: 'Clear aligner treatment in Dhaka',
+    priority: 0.85,
+    changeFrequency: 'monthly',
+  },
   { path: '/root-canal', label: 'Root canal treatment', priority: 0.9, changeFrequency: 'monthly' },
   { path: '/zirconia-crown', label: 'Zirconia crowns', priority: 0.85, changeFrequency: 'monthly' },
   { path: '/zirconia-veneers', label: 'Veneers', priority: 0.85, changeFrequency: 'monthly' },
