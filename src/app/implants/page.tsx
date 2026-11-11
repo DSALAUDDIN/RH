@@ -218,6 +218,57 @@ const personalizedCare = [
   'Precision-crafted final restorations',
 ];
 
+const implantPackages = [
+  {
+    id: 'sa',
+    name: 'Osstem SA Package',
+    price: '৳45,000',
+    tag: 'Popular Choice',
+    color: '#10b981',
+    bg: '#d1fae5',
+    desc: 'Cost-effective, internationally proven titanium implant system with extensive published clinical survival data.',
+    features: [
+      'Genuine Osstem SA Titanium Fixture',
+      '3D CBCT-Guided Surgical Planning',
+      'Custom Abutment & Precision Crown',
+      'Manufacturer Component Warranty',
+      'Structured 2-Phase Staged Payment',
+    ],
+  },
+  {
+    id: 'soi',
+    name: 'Osstem SOI Package',
+    price: '৳60,000',
+    tag: 'Accelerated Healing',
+    color: '#6366f1',
+    bg: '#ede9fe',
+    desc: 'Advanced bio-absorbable SOI coating for enhanced bone-to-implant contact and faster osseointegration.',
+    features: [
+      'Osstem SOI Ultra-Hydrophilic Surface',
+      'Faster Bone Osseointegration Protocol',
+      'In-House CAD/CAM Milled Crown',
+      'Manufacturer Component Warranty',
+      'Ideal for Early Restorative Loading',
+    ],
+  },
+  {
+    id: 'nobel',
+    name: 'Nobel Biocare / Global Premium',
+    price: '৳80,000',
+    tag: 'Swiss Precision',
+    color: '#0ea5e9',
+    bg: '#e0f2fe',
+    desc: 'Worldwide benchmark in titanium implant engineering, chosen for demanding aesthetic zones and complex bone architecture.',
+    features: [
+      'Nobel Biocare International Fixture',
+      'Sub-millimeter Guided Surgical Stent',
+      'High Primary Stability & Preservation',
+      'Custom Master Lab CAD/CAM Crown',
+      'Global Traceability & Fixture Warranty',
+    ],
+  },
+];
+
 const pageFaqs = [
   {
     q: 'Is dental implant surgery painful?',
@@ -225,7 +276,7 @@ const pageFaqs = [
   },
   {
     q: 'How long does a dental implant last?',
-    a: 'With proper oral hygiene and regular check-ups, dental implants can last a lifetime. The crown may need replacement after 10-15 years due to normal wear.',
+    a: 'With proper oral hygiene and regular clinical check-ups, dental implants have documented long-term success rates exceeding 95–98%. Authentic implant fixtures come with manufacturer material warranties; however, biological longevity depends on individual bone maintenance, gum health, and hygiene, so no unconditional lifetime biological outcome is guaranteed.',
   },
   {
     q: 'Am I a good candidate for implants?',
@@ -693,6 +744,132 @@ export default function ImplantsPage() {
       </section>
 
       {/* Treatment packages */}
+      <section className="imp-section imp-section-white" id="packages">
+        <div className="container">
+          <FadeIn>
+            <div className="imp-section-header">
+              <span className="imp-label">
+                <Sparkles size={14} /> Transparent Clinical Packages
+              </span>
+              <h2 className="imp-title">
+                Specialized <span className="imp-accent">Implant Options</span>
+              </h2>
+              <p className="imp-subtitle">
+                Clear clinical pricing for recognized international implant systems. Every package
+                includes authentic fixtures, 3D CBCT planning, and custom CAD/CAM restorations.
+              </p>
+            </div>
+          </FadeIn>
+
+          <div className="imp-types-grid">
+            {implantPackages.map((pkg, i) => (
+              <FadeIn key={pkg.id} delay={i * 0.1}>
+                <div
+                  className={`imp-type-card card-${i + 1}`}
+                  style={{ borderTop: `6px solid ${pkg.color}` }}
+                >
+                  <div className="imp-type-tag" style={{ background: pkg.bg, color: pkg.color }}>
+                    {pkg.tag}
+                  </div>
+                  <h3 className="imp-type-title" style={{ marginTop: '0.5rem' }}>
+                    {pkg.name}
+                  </h3>
+                  <p className="imp-type-desc" style={{ minHeight: '4.5rem' }}>
+                    {pkg.desc}
+                  </p>
+
+                  <div className="imp-type-price">
+                    {pkg.price}
+                    <span>Complete Treatment Cost</span>
+                  </div>
+
+                  <div className="imp-type-features" style={{ marginTop: '1.5rem' }}>
+                    {pkg.features.map((f, j) => (
+                      <div key={j} className="imp-type-feature">
+                        <CheckCircle2 size={14} style={{ color: pkg.color }} /> {f}
+                      </div>
+                    ))}
+                  </div>
+
+                  <BranchCTA
+                    action="book"
+                    service={`Dental Implant (${pkg.name})`}
+                    className="imp-btn-primary"
+                    style={{
+                      width: '100%',
+                      justifyContent: 'center',
+                      marginTop: '2rem',
+                      background: pkg.color,
+                      boxShadow: 'none',
+                      padding: '0.9rem',
+                    }}
+                  >
+                    Consult for This Option
+                  </BranchCTA>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+
+          {/* Payment Structure & Longevity Note */}
+          <FadeIn delay={0.3}>
+            <div className="imp-payment-note">
+              <div className="imp-payment-icon">
+                <MessageCircle size={24} />
+              </div>
+              <div className="imp-payment-body">
+                <h4>Flexible 2-Phase Staged Payment & Longevity Terms</h4>
+                <p>
+                  To make world-class implant care predictable and manageable, treatment is split
+                  into two phases:
+                </p>
+                <div className="imp-payment-steps">
+                  <div className="imp-payment-step">
+                    <strong>60% Phase One (Surgical Phase)</strong>
+                    <span>
+                      3D CBCT diagnostic evaluation, surgical stent preparation, titanium fixture
+                      placement, and sterile surgical setup.
+                    </span>
+                  </div>
+                  <div className="imp-payment-step-arrow">
+                    <ChevronRight size={20} />
+                  </div>
+                  <div className="imp-payment-step">
+                    <strong>40% Phase Two (Prosthetic Phase)</strong>
+                    <span>
+                      Digital 3D intraoral scan, customized abutment connection, and in-house
+                      CAD/CAM milled permanent crown delivery.
+                    </span>
+                  </div>
+                </div>
+
+                <div
+                  style={{
+                    marginTop: '2rem',
+                    padding: '1.25rem 1.5rem',
+                    background: '#ffffff',
+                    borderRadius: '1rem',
+                    border: '1px solid #e2e8f0',
+                    fontSize: '0.85rem',
+                    color: '#64748b',
+                    lineHeight: 1.6,
+                  }}
+                >
+                  <strong style={{ color: '#0f172a' }}>
+                    Component Warranty & Biological Outcome Notice:
+                  </strong>{' '}
+                  Authentic titanium fixtures carry manufacturer material warranties against
+                  manufacturing defects. Biological integration and clinical longevity depend on
+                  individual jawbone density, oral hygiene maintenance, systemic factors (such as
+                  controlled blood sugar and non-smoking), and attending scheduled professional
+                  reviews. In accordance with Bangladesh Medical &amp; Dental Council (BMDC)
+                  regulations, no unconditional lifetime biological outcome can be guaranteed.
+                </div>
+              </div>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
 
       {/* Video section — highlighted */}
       <section className="imp-video-section">

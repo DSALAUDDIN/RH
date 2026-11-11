@@ -868,7 +868,7 @@ const posts: BlogPost[] = [
     categoryColor: '#8A3B2A',
     readTime: '7 min read',
     summary:
-      'Dental implants are titanium posts surgically placed in the jawbone to permanently replace missing teeth — the gold standard for tooth replacement, offering natural feel and lifetime durability.',
+      'Dental implants are titanium posts surgically placed in the jawbone to replace missing teeth — the gold standard for tooth replacement, offering a natural feel and exceptional long-term durability.',
     sections: [
       {
         type: 'paragraph',
@@ -880,7 +880,7 @@ const posts: BlogPost[] = [
         type: 'list',
         items: [
           'Natural Appearance: Implants look and feel like natural teeth, blending seamlessly with your smile.',
-          'Durability: With proper care, dental implants can last a lifetime.',
+          'High Longevity: With meticulous hygiene and routine check-ups, dental implants have documented long-term success rates exceeding 95%.',
           'Improved Functionality: They restore full chewing and speaking capabilities.',
           'Bone Preservation: Implants stimulate the jawbone, preventing bone loss.',
           'Enhanced Comfort: Unlike dentures, implants eliminate the discomfort of removable prosthetics.',

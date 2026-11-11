@@ -13,7 +13,7 @@ import { implantFaq } from '@/lib/treatment-faq';
 const PATH = '/implants';
 
 export const metadata: Metadata = pageMeta({
-  title: 'Dental Implants in Dhaka · Permanent Tooth Replacement',
+  title: 'Dental Implants in Dhaka · Precision Digital Implantology',
   description:
     'Implant treatment at RH Dental Care, Dhaka: planned from a 3D CBCT scan, placed under local anaesthetic, restored with a crown from our in-house lab.',
   path: PATH,

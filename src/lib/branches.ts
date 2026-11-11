@@ -48,6 +48,7 @@ export interface Branch {
 
   mapEmbed: string;
   mapLink: string;
+  reviewLink?: string;
   href: string;
 
   /** CSS custom property carrying this branch's accent (defined in tokens.css). */
@@ -113,8 +114,10 @@ export const BRANCHES: Record<BranchId, Branch> = {
     hoursDisplay: 'Morning 9:00 am – 2:00 pm · Evening 4:30 pm – 10:00 pm, by appointment',
 
     mapEmbed:
-      'https://maps.google.com/maps?q=B%26B%20Empire%2C%20Plot%20116%2C%20Road%2011%2C%20Banani%2C%20Dhaka&t=&z=16&ie=UTF8&iwloc=&output=embed',
-    mapLink: 'https://maps.google.com/?q=B%26B+Empire,+Plot+116,+Road+11,+Banani,+Dhaka+1213',
+      'https://maps.google.com/maps?q=RH%20Dental%20Care%2C%20Level%207%2C%20B%26B%20Empire%2C%20Plot%20116%2C%20Road%2011%2C%20Banani%2C%20Dhaka&t=&z=16&ie=UTF8&iwloc=&output=embed',
+    mapLink:
+      'https://www.google.com/maps/search/?api=1&query=RH+Dental+Care,+Level+7,+B%26B+Empire,+Plot+116,+Road+11,+Banani,+Dhaka+1213',
+    reviewLink: 'https://www.google.com/maps/search/?api=1&query=RH+Dental+Care+Banani+Dhaka',
     href: '/banani',
 
     accent: '--rh-brass',
@@ -223,6 +226,8 @@ export const BRANCHES: Record<BranchId, Branch> = {
       'https://maps.google.com/maps?q=RH%20Dental%20Care%20and%20Implant%20Center%2C%20House%2042%2C%20Road%208%2C%20Block%20C%2C%20Banasree%2C%20Dhaka&t=&z=16&ie=UTF8&iwloc=&output=embed',
     mapLink:
       'https://www.google.com/maps/place/RH+Dental+Care+and+Implant+Center/@23.7606878,90.4299624,17z',
+    reviewLink:
+      'https://www.google.com/maps/place/RH+Dental+Care+and+Implant+Center/@23.7606927,90.4273875,17z/data=!4m16!1m7!3m6!1s0x3755b8754cadaa87:0x9db1359510cadcfd!2sRH+Dental+Care+and+Implant+Center!8m2!3d23.7606878!4d90.4299624!16s%2Fg%2F11b5pjywjt!3m7!1s0x3755b8754cadaa87:0x9db1359510cadcfd!8m2!3d23.7606878!4d90.4299624!9m1!1b1!16s%2Fg%2F11b5pjywjt',
     href: '/banasree',
 
     accent: '--rh-sage-deep',

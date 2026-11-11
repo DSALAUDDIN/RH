@@ -55,7 +55,7 @@ export async function getBranchRating(branch: BranchId): Promise<BranchRating | 
             branch,
             rating: data.rating,
             count: data.userRatingCount,
-            url: data.googleMapsUri ?? b.mapLink,
+            url: data.googleMapsUri ?? b.reviewLink ?? b.mapLink,
             fetchedAt: new Date().toISOString(),
           };
         }
@@ -71,7 +71,7 @@ export async function getBranchRating(branch: BranchId): Promise<BranchRating | 
       branch,
       rating: b.googleRating.rating,
       count: b.googleRating.count,
-      url: b.mapLink,
+      url: b.reviewLink ?? b.mapLink,
       fetchedAt: new Date().toISOString(),
     };
   }

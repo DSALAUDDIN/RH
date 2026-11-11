@@ -138,7 +138,7 @@ export default function Footer() {
             <div className="location-map-wrap">
               <iframe
                 title="Banasree Branch Map"
-                src="https://maps.google.com/maps?q=RH%20Dental%20Care,%20House%2042,%20Road%208,%20Block%20C,%20Banasree,%20Dhaka&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                src={BRANCHES.banasree.mapEmbed}
                 allowFullScreen={false}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
@@ -191,7 +191,7 @@ export default function Footer() {
             <div className="location-map-wrap">
               <iframe
                 title="Banani Branch Map"
-                src="https://maps.google.com/maps?q=Plot%20116,%20Road%2011,%20Banani,%20Dhaka&t=&z=14&ie=UTF8&iwloc=&output=embed"
+                src={BRANCHES.banani.mapEmbed}
                 allowFullScreen={false}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"

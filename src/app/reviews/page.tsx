@@ -13,7 +13,7 @@ export const metadata: Metadata = pageMeta({
 import JsonLd from '@/components/seo/JsonLd';
 import ReviewBadge from '@/components/ReviewBadge';
 import { breadcrumbs } from '@/lib/seo/schema';
-import { BRANCH_LIST } from '@/lib/branches';
+import { BRANCH_LIST, BRANCHES } from '@/lib/branches';
 
 /*
  * aggregateRating is only emitted from a live Places response
@@ -121,7 +121,7 @@ export default async function ReviewsPage() {
               }}
             >
               <a
-                href="https://www.google.com/maps/place/RH+Dental+Care+and+Implant+Center/@23.7606927,90.4273875,17z/data=!4m16!1m7!3m6!1s0x3755b8754cadaa87:0x9db1359510cadcfd!2sRH+Dental+Care+and+Implant+Center!8m2!3d23.7606878!4d90.4299624!16s%2Fg%2F11b5pjywjt!3m7!1s0x3755b8754cadaa87:0x9db1359510cadcfd!8m2!3d23.7606878!4d90.4299624!9m1!1b1!16s%2Fg%2F11b5pjywjt"
+                href={BRANCHES.banasree.reviewLink ?? BRANCHES.banasree.mapLink}
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
@@ -143,7 +143,7 @@ export default async function ReviewsPage() {
               </a>
 
               <a
-                href="https://maps.google.com/?q=B%26B+Empire,+Plot+116,+Road+11,+Banani,+Dhaka+1213"
+                href={BRANCHES.banani.reviewLink ?? BRANCHES.banani.mapLink}
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{

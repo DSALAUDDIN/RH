@@ -3204,7 +3204,7 @@ export default function DentalTourism() {
 
           <div className="reviews-foot">
             <a
-              href="https://g.page/r/CRH-dental"
+              href="https://www.google.com/maps/place/RH+Dental+Care+and+Implant+Center/@23.7606878,90.4299624,17z"
               target="_blank"
               rel="noopener noreferrer"
               className="tm-btn tm-btn-secondary magnetic"
