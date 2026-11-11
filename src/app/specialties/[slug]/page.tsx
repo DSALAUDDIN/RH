@@ -20,16 +20,16 @@ import './detail.css';
 
 /* Banner images */
 import imagingBanner from '@/assets/specialties/3d-imaging.jpg';
-import bracesBanner from '@/assets/specialties/braces.jpg';
-import zirconiaBanner from '@/assets/specialties/Zirconia.jpeg';
 import rootCanalBanner from '@/assets/specialties/root-canal.jpg';
 import gumCareBanner from '@/assets/specialties/gum-care.jpg';
 import kidsCareBanner from '@/assets/specialties/kids-care.jpg';
-import implantImg from '@/assets/specialties/implant.png';
 import dentalTourismBanner from '@/assets/specialties/dental_tourism.png';
 
-/* Flyer images */
-import aestheticsFlyer from '@/assets/specialties/aesthetic.jpeg';
+/* Authentic Clinical Instrument Photos */
+import implantOsstemKit from '@/assets/specialties/instruments/implant-osstem-kit.jpg';
+import crownShadeGuide from '@/assets/specialties/instruments/crown-shofu-shade-guide.jpg';
+import bracesPliers from '@/assets/specialties/instruments/braces-orthodontic-pliers.jpg';
+import fillingCompositeKit from '@/assets/specialties/instruments/filling-composite-kit.jpg';
 
 interface SpecialtyDetail {
   title: string;
@@ -82,9 +82,9 @@ const specialtiesData: Record<string, SpecialtyDetail> = {
     title: 'Orthodontics & Clear Aligners',
     category: 'Orthodontics',
     tagline: 'Straighten your smile with braces or clear aligners',
-    bannerImg: bracesBanner,
-    flyerImg: bracesBanner,
-    flyerFileName: 'RH-Dental-Orthodontics.png',
+    bannerImg: bracesPliers,
+    flyerImg: bracesPliers,
+    flyerFileName: 'RH-Dental-Orthodontics.jpg',
     videoUrl: '/assets/videos/orthodontics.mp4',
     description:
       'Achieve the aligned smile you have always wanted. We offer both traditional precision braces and modern, nearly invisible clear aligners tailored to your lifestyle, delivering lasting results with maximum comfort.',
@@ -111,9 +111,9 @@ const specialtiesData: Record<string, SpecialtyDetail> = {
     title: 'Premium Zirconia Restoration',
     category: 'Prosthetics',
     tagline: 'Strong, natural-looking zirconia crowns',
-    bannerImg: zirconiaBanner,
-    flyerImg: zirconiaBanner,
-    flyerFileName: 'RH-Dental-Zirconia.png',
+    bannerImg: crownShadeGuide,
+    flyerImg: crownShadeGuide,
+    flyerFileName: 'RH-Dental-Zirconia-Shade-Guide.jpg',
     description:
       'Experience high-quality dental restoration with biocompatible zirconia crowns. These ultra-strong, natural-looking restorations combine exceptional durability with aesthetic precision, crafted in our on-site master digital lab.',
     benefits: [
@@ -139,9 +139,9 @@ const specialtiesData: Record<string, SpecialtyDetail> = {
     title: 'Advanced Dental Implantology',
     category: 'Surgical Care',
     tagline: 'Long-term tooth replacement with precision-guided implants',
-    bannerImg: implantImg,
-    flyerImg: implantImg,
-    flyerFileName: 'RH-Dental-Implants.png',
+    bannerImg: implantOsstemKit,
+    flyerImg: implantOsstemKit,
+    flyerFileName: 'RH-Dental-Implants-Osstem-Kit.jpg',
     videoUrl: '/assets/videos/implant.mp4',
     description:
       'Restore your smile with precision-guided dental implants. Our CBCT-planned surgical approach and premium materials support successful integration, providing a long-term solution that looks, feels and functions naturally.',
@@ -253,9 +253,9 @@ const specialtiesData: Record<string, SpecialtyDetail> = {
     title: 'Aesthetic Dentistry & Smile Design',
     category: 'Aesthetics',
     tagline: 'Crafting your confident, natural-looking smile',
-    bannerImg: aestheticsFlyer,
-    flyerImg: aestheticsFlyer,
-    flyerFileName: 'RH-Dental-Aesthetics.png',
+    bannerImg: fillingCompositeKit,
+    flyerImg: fillingCompositeKit,
+    flyerFileName: 'RH-Dental-Aesthetic-Composite-Kit.jpg',
     description:
       'Enhance your smile with our premium aesthetic treatments. From zirconia veneers to professional teeth whitening and full smile makeovers, we blend precision and artistry to create a natural-looking smile designed around your face.',
     benefits: [

@@ -6,28 +6,31 @@ import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import './Specialties.css';
 
-import bracesImg from '../assets/specialties/braces_new.png';
-import zirconiaImg from '../assets/specialties/zirconia_new.png';
-import implantImg from '../assets/specialties/implant_new.png';
 import rootCanalImg from '../assets/specialties/root-canal_new.png';
 import gumCareImg from '../assets/specialties/gum-care_new.png';
 import kidsCareImg from '../assets/specialties/kids-care.jpg';
-import aestheticsImg from '../assets/specialties/aesthetic_new.png';
 import dentalTourismImg from '../assets/specialties/dental_tourism.png';
+
+/* Authentic Clinical Instrument Photos */
+import alignerTrayClinic from '../assets/specialties/instruments/aligner-tray-clinic.jpg';
+import implantOsstemKit from '../assets/specialties/instruments/implant-osstem-kit.jpg';
+import crownShadeGuide from '../assets/specialties/instruments/crown-shofu-shade-guide.jpg';
+import bracesPliers from '../assets/specialties/instruments/braces-orthodontic-pliers.jpg';
+import fillingCompositeKit from '../assets/specialties/instruments/filling-composite-kit.jpg';
 
 const clinicsBanners = [
   {
     title: 'Clear Aligner Treatment',
     desc: 'Straighten your teeth with nearly invisible custom aligners. Modern clear aligner therapy for discreet, comfortable orthodontic correction.',
-    image: bracesImg,
+    image: alignerTrayClinic,
     category: 'Orthodontics',
     featured: true,
-    slug: '/orthodontics',
+    slug: '/clear-aligner-treatment-dhaka',
   },
   {
     title: 'Advanced Implantology',
     desc: 'Long-term tooth replacement with 3D CBCT-planned, precision-guided implant surgery and high-quality prosthetic integration.',
-    image: implantImg,
+    image: implantOsstemKit,
     category: 'Surgical Care',
     featured: false,
     slug: '/implants',
@@ -35,7 +38,7 @@ const clinicsBanners = [
   {
     title: 'Zirconia Smile Design',
     desc: 'Natural-looking zirconia crowns and veneers crafted in our on-site master digital lab — strong, biocompatible and aesthetically precise.',
-    image: zirconiaImg,
+    image: crownShadeGuide,
     category: 'Aesthetics',
     featured: false,
     slug: '/zirconia-crown',
@@ -51,7 +54,7 @@ const clinicsBanners = [
   {
     title: 'Orthodontic Braces',
     desc: 'Traditional and ceramic braces fitted and monitored by our consultant orthodontist. Precise, lasting correction for all ages.',
-    image: bracesImg,
+    image: bracesPliers,
     category: 'Orthodontics',
     featured: false,
     slug: '/orthodontics',
@@ -73,9 +76,9 @@ const clinicsBanners = [
     slug: '/kids-care',
   },
   {
-    title: 'Zirconia Veneers',
+    title: 'Zirconia Veneers & Bonding',
     desc: 'Achieve a naturally beautiful, long-lasting smile with ultra-thin premium zirconia veneers, designed and milled on site.',
-    image: aestheticsImg,
+    image: fillingCompositeKit,
     category: 'Aesthetics',
     featured: true,
     slug: '/zirconia-veneers',
