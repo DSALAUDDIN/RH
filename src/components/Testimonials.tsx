@@ -39,7 +39,6 @@ export default function Testimonials() {
               href={BRANCHES.banani.mapLink}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label={`5.0 Banani · ${BRANCHES.banani.googleRating?.count ?? 48} Google reviews (Rated 5.0 out of 5)`}
             >
               <span className="rh-review-stars" aria-hidden="true">
                 {[0, 1, 2, 3, 4].map((i) => (
@@ -57,7 +56,6 @@ export default function Testimonials() {
               href={BRANCHES.banasree.mapLink}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label={`5.0 Banasree · ${BRANCHES.banasree.googleRating?.count ?? 124} Google reviews (Rated 5.0 out of 5)`}
             >
               <span className="rh-review-stars" aria-hidden="true">
                 {[0, 1, 2, 3, 4].map((i) => (

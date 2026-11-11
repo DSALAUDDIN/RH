@@ -17,8 +17,6 @@ export default async function ReviewBadge({
   if (!data) return null;
 
   const rounded = data.rating.toFixed(1);
-  const reviewsCountText = `${data.count} Google ${data.count === 1 ? 'review' : 'reviews'}`;
-  const label = `${rounded} · ${reviewsCountText} (Rated ${rounded} out of 5 stars)`;
 
   return (
     <a
@@ -26,7 +24,6 @@ export default async function ReviewBadge({
       href={data.url}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label={`${label}. Opens the Google listing in a new tab.`}
     >
       <span className="rh-review-stars" aria-hidden="true">
         {[0, 1, 2, 3, 4].map((i) => (
