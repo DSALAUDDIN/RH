@@ -94,6 +94,7 @@ export function branchSchema(id: BranchId): JsonLdNode {
     ],
     areaServed: [
       { '@type': 'City', name: 'Dhaka' },
+      { '@type': 'Country', name: 'Bangladesh' },
       ...(b.geo
         ? [
             {
@@ -116,6 +117,10 @@ export function branchSchema(id: BranchId): JsonLdNode {
             { '@type': 'AdministrativeArea', name: 'Dhaka Cantonment (DOHS)' },
             { '@type': 'AdministrativeArea', name: 'Nikunja' },
             { '@type': 'AdministrativeArea', name: 'Uttara' },
+            { '@type': 'AdministrativeArea', name: 'Bashundhara R/A' },
+            { '@type': 'AdministrativeArea', name: 'Niketan' },
+            { '@type': 'AdministrativeArea', name: 'Tejgaon' },
+            { '@type': 'AdministrativeArea', name: 'Dhanmondi' },
           ]
         : [
             { '@type': 'AdministrativeArea', name: 'Banasree' },
@@ -125,6 +130,10 @@ export function branchSchema(id: BranchId): JsonLdNode {
             { '@type': 'AdministrativeArea', name: 'Malibagh' },
             { '@type': 'AdministrativeArea', name: 'Badda' },
             { '@type': 'AdministrativeArea', name: 'Motijheel' },
+            { '@type': 'AdministrativeArea', name: 'South Banasree' },
+            { '@type': 'AdministrativeArea', name: 'Moghbazar' },
+            { '@type': 'AdministrativeArea', name: 'Kakrail' },
+            { '@type': 'AdministrativeArea', name: 'Basabo' },
           ]),
     ],
     parentOrganization: { '@id': ID.organization },

@@ -1,3 +1,12 @@
+import {
+  ALL_IMPLANT_FAQS,
+  CLEAR_ALIGNERS_BRACES_FAQS,
+  SMILE_DESIGN_VENEERS_FAQS,
+  MICROSCOPE_ROOT_CANAL_FAQS,
+  SCALING_LASER_GUM_FAQS,
+  ALL_KIDS_CARE_FAQS,
+  FULL_MOUTH_REHAB_FAQS,
+} from './faqBank';
 export interface TreatmentStep {
   title: string;
   description: string;
@@ -95,48 +104,7 @@ export const SERVICE_PAGES: Record<string, ServicePageData> = {
     },
     aftercare:
       'Follow postoperative instructions, avoid smoking, maintain oral hygiene, and attend professional implant reviews. Seek urgent assessment for increasing swelling, fever, persistent bleeding, or implant mobility.',
-    faqs: [
-      {
-        q: 'What is a dental implant?',
-        a: 'A biocompatible fixture placed in jawbone to support a crown, bridge, or other dental prosthesis.',
-      },
-      {
-        q: 'Is surgery painful?',
-        a: 'Local anesthesia is used; temporary soreness or swelling can occur afterward.',
-      },
-      {
-        q: 'Can an implant be placed immediately after extraction?',
-        a: 'Sometimes, if bone, infection control, and primary stability are suitable.',
-      },
-      {
-        q: 'How long does treatment take?',
-        a: 'Surgery may take one visit, but healing and definitive restoration often require months.',
-      },
-      {
-        q: 'Do you use international implant systems?',
-        a: 'Yes. Implant products sourced from different countries are selected according to clinical needs and compatible restorative components.',
-      },
-      {
-        q: 'Can your laboratory make my implant crown quickly?',
-        a: 'For suitable cases, the in-house CAD/CAM workflow can shorten prosthetic turnaround; timing is case-dependent.',
-      },
-      {
-        q: 'Do I always need a bone graft?',
-        a: 'No. Grafting is considered only when clinically necessary.',
-      },
-      {
-        q: 'Can diabetes patients receive implants?',
-        a: 'Many patients with well-controlled diabetes can be considered after assessment.',
-      },
-      {
-        q: 'How long do implants last?',
-        a: 'Many function for years, but outcomes depend on health, hygiene, bite, and maintenance.',
-      },
-      {
-        q: 'What determines the price?',
-        a: 'Implant type, surgery, grafting, abutment, prosthetic material, and complexity. A written estimate follows consultation.',
-      },
-    ],
+    faqs: ALL_IMPLANT_FAQS,
     cta: {
       phoneBanani: '01721367622',
       phoneBanasree: '01775227902',
@@ -202,48 +170,7 @@ export const SERVICE_PAGES: Record<string, ServicePageData> = {
     },
     aftercare:
       'Regular maintenance, careful cleaning around implants, and follow-up appointments are essential. Treatment schedules for travelers should include contingency time.',
-    faqs: [
-      {
-        q: 'Where is the Banani branch?',
-        a: 'B&B Empire, Level 7, Plot 116, Road 11, Block E, Banani, Dhaka 1213.',
-      },
-      {
-        q: 'Can I book an implant consultation in Banani?',
-        a: 'Yes, subject to appointment availability.',
-      },
-      {
-        q: 'Do you replace a single tooth?',
-        a: 'Yes, if implant treatment is suitable.',
-      },
-      {
-        q: 'Can multiple teeth be replaced?',
-        a: 'Yes, through multiple implants or implant-supported bridges as indicated.',
-      },
-      {
-        q: 'Is immediate implant placement available?',
-        a: 'It may be offered in selected clinically suitable cases.',
-      },
-      {
-        q: 'Can I receive a zirconia implant crown?',
-        a: 'Zirconia-based restorations are available for appropriate designs.',
-      },
-      {
-        q: 'Is your dental lab in-house?',
-        a: 'Yes. RH Dental Care has its own CAD/CAM-supported zirconia laboratory.',
-      },
-      {
-        q: 'Can the lab support any implant brand?',
-        a: 'Compatibility must be verified for the implant platform, components, and restorative design.',
-      },
-      {
-        q: 'How many visits will I need?',
-        a: 'Consultation, surgery, healing checks, and restoration typically require multiple visits.',
-      },
-      {
-        q: 'How do I contact Banani?',
-        a: 'Call 01721367622 to request an appointment.',
-      },
-    ],
+    faqs: ALL_IMPLANT_FAQS,
     cta: {
       phoneBanani: '01721367622',
       phoneBanasree: '01775227902',
@@ -308,48 +235,7 @@ export const SERVICE_PAGES: Record<string, ServicePageData> = {
     },
     aftercare:
       'Clean aligners according to instructions, avoid hot water, brush before reinsertion, and use prescribed retainers after treatment.',
-    faqs: [
-      {
-        q: 'Are clear aligners effective?',
-        a: 'Yes for appropriately selected cases and with good wear-time compliance.',
-      },
-      {
-        q: 'How many hours daily?',
-        a: 'Usually about 20-22 hours, unless your clinician instructs otherwise.',
-      },
-      {
-        q: 'Can they close gaps?',
-        a: 'Many spacing problems can be treated; diagnosis determines suitability.',
-      },
-      {
-        q: 'Can they correct severe crowding?',
-        a: 'Some complex cases need fixed braces or additional procedures.',
-      },
-      {
-        q: 'Do aligners hurt?',
-        a: 'Mild pressure is common after tray changes.',
-      },
-      {
-        q: 'Can I eat with them?',
-        a: 'They are normally removed for eating.',
-      },
-      {
-        q: 'How long is treatment?',
-        a: 'From several months to more than a year depending on complexity.',
-      },
-      {
-        q: 'Do you use digital scans?',
-        a: 'Yes, digital intraoral scanning is available for suitable cases.',
-      },
-      {
-        q: 'Are retainers necessary?',
-        a: 'Yes, retention is important to reduce relapse.',
-      },
-      {
-        q: 'What is the cost?',
-        a: 'It depends on case complexity, aligner quantity, and refinements.',
-      },
-    ],
+    faqs: CLEAR_ALIGNERS_BRACES_FAQS,
     cta: {
       phoneBanani: '01721367622',
       phoneBanasree: '01775227902',
@@ -413,48 +299,7 @@ export const SERVICE_PAGES: Record<string, ServicePageData> = {
     },
     aftercare:
       'Maintain hygiene, avoid damaging habits, and attend review visits. Night guards may be advised for bruxism.',
-    faqs: [
-      {
-        q: 'What is smile designing?',
-        a: 'A personalized plan combining appropriate cosmetic, orthodontic, and restorative procedures.',
-      },
-      {
-        q: 'Does everyone need veneers?',
-        a: 'No; bonding, whitening, or alignment may be enough.',
-      },
-      {
-        q: 'Can gaps be closed?',
-        a: 'Often through bonding, orthodontics, or veneers depending on the case.',
-      },
-      {
-        q: 'Do you provide zirconia crowns?',
-        a: 'Yes, suitable zirconia prostheses can be coordinated with the in-house laboratory.',
-      },
-      {
-        q: 'Can veneers be made without drilling?',
-        a: 'Only selected cases are suitable for minimal- or no-preparation approaches.',
-      },
-      {
-        q: 'How is the final shade chosen?',
-        a: 'With patient input and assessment of adjacent teeth and facial harmony.',
-      },
-      {
-        q: 'Does smile designing hurt?',
-        a: 'It depends on the procedures; anesthesia may be used when indicated.',
-      },
-      {
-        q: 'How long does it take?',
-        a: 'Simple cases may need few visits; complex cases can take longer.',
-      },
-      {
-        q: 'Can digital scans help?',
-        a: 'Yes, for suitable restorative planning and laboratory communication.',
-      },
-      {
-        q: 'How much does it cost?',
-        a: 'It depends on procedures, materials, and the number of teeth.',
-      },
-    ],
+    faqs: SMILE_DESIGN_VENEERS_FAQS,
     cta: {
       phoneBanani: '01721367622',
       phoneBanasree: '01775227902',
@@ -518,48 +363,7 @@ export const SERVICE_PAGES: Record<string, ServicePageData> = {
     },
     aftercare:
       'Avoid heavy chewing until definitive restoration, maintain hygiene, and return for persistent pain, swelling, or bite problems.',
-    faqs: [
-      {
-        q: 'Is root canal treatment painful?',
-        a: 'Local anesthesia generally controls procedural pain; temporary soreness may follow.',
-      },
-      {
-        q: 'Can it be done in one visit?',
-        a: 'Selected cases can; others require staged treatment.',
-      },
-      {
-        q: 'What is microscopic endodontics?',
-        a: 'Treatment assisted by an operating microscope for improved visualization.',
-      },
-      {
-        q: 'Will I need a crown?',
-        a: 'It depends on tooth structure, location, and fracture risk.',
-      },
-      {
-        q: 'Can failed RCT be repeated?',
-        a: 'Some teeth are suitable for retreatment after assessment.',
-      },
-      {
-        q: 'Are antibiotics always needed?',
-        a: 'No, antibiotics are not routinely required for uncomplicated RCT.',
-      },
-      {
-        q: 'Why might a treated tooth still hurt?',
-        a: 'Possible infection, fracture, bite problems, or periodontal disease require assessment.',
-      },
-      {
-        q: 'Can a crown be made quickly?',
-        a: 'Selected crowns can have shortened laboratory turnaround through the RH CAD/CAM workflow.',
-      },
-      {
-        q: 'How long does a treated tooth last?',
-        a: 'Many function for years with good treatment, restoration, and maintenance.',
-      },
-      {
-        q: 'What affects cost?',
-        a: 'Tooth type, canal anatomy, retreatment complexity, and restoration.',
-      },
-    ],
+    faqs: MICROSCOPE_ROOT_CANAL_FAQS,
     cta: {
       phoneBanani: '01721367622',
       phoneBanasree: '01775227902',
@@ -615,48 +419,7 @@ export const SERVICE_PAGES: Record<string, ServicePageData> = {
     },
     aftercare:
       'Follow procedure-specific instructions, avoid irritating treated tissue, and report worsening pain, bleeding, or swelling.',
-    faqs: [
-      {
-        q: 'What kind of laser is available?',
-        a: 'Diode laser technology for selected dental applications.',
-      },
-      {
-        q: 'Can laser cure gum disease alone?',
-        a: 'No; periodontal care also requires mechanical therapy, plaque control, and maintenance.',
-      },
-      {
-        q: 'Is it painless?',
-        a: 'Not always; anesthesia may still be needed.',
-      },
-      {
-        q: 'Can it reduce bleeding?',
-        a: 'It may help with hemostasis in selected soft-tissue procedures.',
-      },
-      {
-        q: 'Can it cut enamel?',
-        a: 'The available diode laser is not a substitute for conventional hard-tissue preparation.',
-      },
-      {
-        q: 'Is it safe?',
-        a: 'It can be safe with trained operators, correct settings, and protective measures.',
-      },
-      {
-        q: 'Can it reshape gums?',
-        a: 'Selected gingival contour issues may be treated after assessment.',
-      },
-      {
-        q: 'Can suspicious lesions be lasered off?',
-        a: 'Suspicious lesions require appropriate diagnosis and often biopsy before definitive treatment.',
-      },
-      {
-        q: 'How long is healing?',
-        a: 'It depends on tissue, procedure, and patient factors.',
-      },
-      {
-        q: 'What is the cost?',
-        a: 'It varies by indication, area treated, and number of sessions.',
-      },
-    ],
+    faqs: SCALING_LASER_GUM_FAQS,
     cta: {
       phoneBanani: '01721367622',
       phoneBanasree: '01775227902',
@@ -720,48 +483,7 @@ export const SERVICE_PAGES: Record<string, ServicePageData> = {
     },
     aftercare:
       'Parents should supervise brushing, follow dietary guidance, attend recalls, and seek urgent care after dental trauma or spreading infection.',
-    faqs: [
-      {
-        q: 'When is the first dental visit?',
-        a: 'By the first birthday or within six months of the first tooth erupting.',
-      },
-      {
-        q: 'Do baby teeth need treatment?',
-        a: 'Yes; they support chewing, speech, comfort, and eruption guidance.',
-      },
-      {
-        q: 'Can baby teeth receive pulp treatment?',
-        a: 'Yes, pulpotomy or pulpectomy may be appropriate in selected cases.',
-      },
-      {
-        q: 'Do you offer preventive fluoride care?',
-        a: 'Yes, according to age and caries risk.',
-      },
-      {
-        q: 'Can children with special healthcare needs be treated?',
-        a: 'Care is individualized; some require additional support or anesthesia assessment.',
-      },
-      {
-        q: 'Is general anesthesia routine?',
-        a: 'No. It is reserved for appropriately selected cases.',
-      },
-      {
-        q: 'Can several teeth be treated under one anesthetic?',
-        a: 'Sometimes, when medically and dentally appropriate.',
-      },
-      {
-        q: 'Who manages anesthesia?',
-        a: 'Qualified anesthesia professionals should assess, administer, and monitor anesthesia.',
-      },
-      {
-        q: 'What if a permanent tooth is knocked out?',
-        a: 'Seek emergency care immediately; hold by crown and store in milk if not reinserted.',
-      },
-      {
-        q: 'How often are checkups needed?',
-        a: 'Based on risk, often about every six months or more frequently.',
-      },
-    ],
+    faqs: ALL_KIDS_CARE_FAQS,
     cta: {
       phoneBanani: '01721367622',
       phoneBanasree: '01775227902',
@@ -830,56 +552,7 @@ export const SERVICE_PAGES: Record<string, ServicePageData> = {
     },
     aftercare:
       'Clean under bridges and around implants daily using recommended tools, avoid damaging habits, and attend regular professional maintenance.',
-    faqs: [
-      {
-        q: 'What is full mouth rehabilitation?',
-        a: 'Comprehensive restoration of oral function and aesthetics involving several teeth or both arches.',
-      },
-      {
-        q: 'Must all teeth be extracted?',
-        a: 'No; restorable teeth should be preserved when appropriate.',
-      },
-      {
-        q: 'How many implants are needed?',
-        a: 'The number depends on anatomy, load, prosthetic design, and clinical planning.',
-      },
-      {
-        q: 'Can you provide fixed full-arch teeth?',
-        a: 'Yes for suitable patients after comprehensive assessment.',
-      },
-      {
-        q: 'Can treatment be completed in one day?',
-        a: 'Selected stages or provisional restorations may be rapid, but definitive rehabilitation commonly requires longer.',
-      },
-      {
-        q: 'How does your own lab help?',
-        a: 'It supports direct clinician-technician communication and faster fabrication of suitable zirconia prostheses.',
-      },
-      {
-        q: 'Can you work with any implant system?',
-        a: 'Only where appropriate compatible components and verified restorative workflows are available.',
-      },
-      {
-        q: 'Are zirconia prostheses available?',
-        a: 'Yes, zirconia-related prosthetic fabrication is a core capability of the RH laboratory.',
-      },
-      {
-        q: 'Can older adults receive treatment?',
-        a: 'Age alone is not a contraindication; medical and oral health factors matter.',
-      },
-      {
-        q: 'Can overseas patients plan treatment?',
-        a: 'Yes, but multiple visits and healing intervals may be required.',
-      },
-      {
-        q: 'Are dentures an alternative?',
-        a: 'Yes, removable options may be appropriate for some patients.',
-      },
-      {
-        q: 'What affects cost?',
-        a: 'The number of implants, surgery, restorations, materials, and overall complexity.',
-      },
-    ],
+    faqs: FULL_MOUTH_REHAB_FAQS,
     cta: {
       phoneBanani: '01721367622',
       phoneBanasree: '01775227902',

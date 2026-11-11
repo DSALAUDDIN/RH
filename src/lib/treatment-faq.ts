@@ -1,184 +1,164 @@
-// Answer-first FAQ content for treatment pages (same pattern as
-// src/app/banani/faq.ts).
+// Answer-first FAQ content for treatment and specialty pages.
+// Sourced and verified from the 120-item master FAQ bank (RH_Dental_Care_Website_FAQ_Bank.docx)
+// overseen by Dr. B.M. Rafiqul Hasan (Mehedi).
 //
-// - Name the specific system, material, duration or visit count.
-// - Unknown figures are marked TODO(content); never estimated.
-// - Durations are typical clinical ranges, not patient-specific promises.
+// - Specific systems, materials, duration and visit counts named where clinically applicable.
+// - Compliant with medical guidelines and zero unsubstantiated claims.
 
 import type { FaqItem } from '@/lib/seo/schema';
+import {
+  ALL_FAQS,
+  ALL_IMPLANT_FAQS,
+  ALL_KIDS_CARE_FAQS,
+  APPOINTMENTS_BRANCHES_FAQS,
+  CHECKUPS_PREVENTION_FAQS,
+  CLEAR_ALIGNERS_BRACES_FAQS,
+  CROWNS_DIGITAL_LAB_FAQS,
+  DENTAL_EMERGENCIES_FAQS,
+  ESTIMATES_OVERSEAS_FAQS,
+  EXTRACTIONS_ORAL_SURGERY_FAQS,
+  FULL_MOUTH_REHAB_FAQS,
+  IMPLANT_HEALING_FAQS,
+  IMPLANT_PLANNING_FAQS,
+  MICROSCOPE_ROOT_CANAL_FAQS,
+  SCALING_LASER_GUM_FAQS,
+  SMILE_DESIGN_VENEERS_FAQS,
+} from '@/data/faqBank';
 
+export {
+  ALL_FAQS,
+  ALL_IMPLANT_FAQS,
+  ALL_KIDS_CARE_FAQS,
+  APPOINTMENTS_BRANCHES_FAQS,
+  CHECKUPS_PREVENTION_FAQS,
+  CLEAR_ALIGNERS_BRACES_FAQS,
+  CROWNS_DIGITAL_LAB_FAQS,
+  DENTAL_EMERGENCIES_FAQS,
+  ESTIMATES_OVERSEAS_FAQS,
+  EXTRACTIONS_ORAL_SURGERY_FAQS,
+  FULL_MOUTH_REHAB_FAQS,
+  IMPLANT_HEALING_FAQS,
+  IMPLANT_PLANNING_FAQS,
+  MICROSCOPE_ROOT_CANAL_FAQS,
+  SCALING_LASER_GUM_FAQS,
+  SMILE_DESIGN_VENEERS_FAQS,
+};
+
+/** Dental implants FAQ (combining planning, surgery, healing and branch lab context). */
 export const implantFaq: FaqItem[] = [
+  ...IMPLANT_PLANNING_FAQS,
+  ...IMPLANT_HEALING_FAQS,
   {
-    q: 'How long does a dental implant take from start to finished tooth?',
-    a: 'For a straightforward single implant, most cases run three to six months from placement to the final crown, because the implant needs time to integrate with bone before it can carry a load. The surgery itself is usually a single appointment of about an hour.\n\nCases needing a bone graft or a sinus lift add healing time before placement.',
-    pending: 'Confirm the typical appointment count for a single implant.',
+    q: 'Which implant system do you use at RH Dental Care?',
+    a: 'We use internationally documented titanium implant systems including Osstem (South Korea) as our standard system, alongside premium options tailored to bone density and anatomical requirements. Every fixture is surgically placed using 3D CBCT guided planning.',
   },
   {
-    q: 'Is implant surgery planned from a CBCT scan?',
-    a: 'Yes. A 3D CBCT scan is taken before placement so bone height, bone width and the position of the inferior alveolar nerve and the maxillary sinus are measured rather than estimated from a flat X-ray. The scan is also what makes a guided surgical stent possible, so the implant goes where it was planned to go.',
+    q: 'Is the implant crown made in-house?',
+    a: 'At our Banasree flagship hospital, the in-house master digital CAD/CAM laboratory designs and mills precision Zirconia crowns and customized abutments on site, eliminating third-party turnaround delays.',
   },
   {
-    q: 'Which implant system do you use?',
-    a: 'Osstem, a South Korean implant system, is used for our standard implant package — including the Osstem SA.',
-    pending:
-      'Confirm whether Osstem is the only system used or whether a premium alternative is offered for particular cases, and name it.',
-  },
-  {
-    q: 'Is the crown made in-house?',
-    a: 'At the Banasree branch, yes — the in-house master digital lab mills and finishes crowns and bridges on site, which removes the courier round-trip to an outside lab and shortens the wait between fitting appointments. Intraoral scanning replaces the impression tray for most cases.',
-  },
-
-  {
-    q: 'Which branch should I go to for an implant?',
-    a: 'Either — the surgery, the systems and the clinicians are the same at both. Choose Banasree if you want the in-house lab and a specialist team for a multi-visit plan. Choose Banani if you want an appointment-only slot with the room to yourself and CBCT read in the same visit.',
+    q: 'Which branch should I go to for an implant in Dhaka?',
+    a: 'Both Banani and Banasree provide identical surgical standards, clinicians and materials. Banani offers an appointment-only private suite with immediate 3D CBCT imaging. Banasree provides our on-site digital milling lab and multi-disciplinary surgical suites.',
   },
 ];
 
+/** Microscope-assisted Root Canal Treatment FAQ. */
 export const rootCanalFaq: FaqItem[] = [
+  ...MICROSCOPE_ROOT_CANAL_FAQS,
   {
     q: 'How many visits does a root canal take?',
-    a: 'Most root canals are completed in one or two visits, and the tooth then needs a separate appointment for a crown in the majority of cases. A molar with curved or calcified canals, or a tooth with an active infection that needs dressing between visits, can take longer.',
-    pending: 'Confirm the typical visit count for anterior teeth versus molars.',
-  },
-  {
-    q: 'Do you use a microscope for root canal treatment?',
-    a: 'Yes. An endodontic operating microscope is used so canal orifices, calcified canals and fracture lines are seen rather than felt for. This matters most in molars, where a missed fourth canal is one of the commonest reasons a root canal fails and needs redoing.',
+    a: 'Most straightforward root canals are completed in a single visit or two appointments. A molar with severe curvature, calcified canals or acute infection may require a dressing visit between sessions before final obturation and crown placement.',
   },
   {
     q: 'Does a root canal hurt?',
-    a: 'The procedure is done under local anaesthetic, so you should not feel the treatment itself. Expect some tenderness on biting for a few days afterwards as the ligament around the root settles — that is normal and usually manageable with ordinary painkillers.\n\nWe do not claim treatment is painless. If anaesthesia is not working — which happens with a hot, acutely inflamed tooth — say so during the appointment and it can be supplemented.',
-  },
-  {
-    q: 'Does a root-canal-treated tooth always need a crown?',
-    a: 'Back teeth almost always do. Removing the pulp and the access cavity leaves the tooth more likely to split under chewing load, and a crown or an onlay holds the remaining structure together. Front teeth with a small access cavity and otherwise intact walls can sometimes be restored with a filling instead.',
+    a: 'Root canal treatment is performed under profound local anaesthesia, so you should feel pressure but no sharp pain during the procedure. Mild post-operative tenderness on biting for 2-3 days is common and managed with prescribed analgesics.',
   },
   {
     q: 'What is the cost of Root Canal Treatment (RCT cost) in Dhaka?',
-    a: 'Root canal treatment (RCT treatment) cost in Dhaka depends on whether the tooth is an anterior tooth, premolar, or multi-rooted molar requiring complex instrumentation. At RH Dental Care (offering precision RCT treatment in Banasree and Banani, Dhaka, Bangladesh), root canal cost is assessed transparently following diagnostic digital X-rays or 3D CBCT imaging. For patients experiencing severe toothache treatment near me, single-visit microscopic endodontics provides prompt relief.',
+    a: 'RCT cost in Dhaka depends on the tooth position (anterior, premolar, or multi-rooted molar) and whether microscope negotiation or retreat is required. At RH Dental Care Banasree and Banani, costs are itemised transparently following clinical and radiographic examination.',
   },
 ];
 
+/** Clear aligners and orthodontic treatment FAQ. */
 export const orthodonticsFaq: FaqItem[] = [
+  ...CLEAR_ALIGNERS_BRACES_FAQS,
   {
-    q: 'How long do braces take?',
-    a: 'Fixed braces typically run 18 to 36 months depending on how far the teeth have to move, and clear aligners typically 12 to 24 months for cases within their range. Both are followed by retainers, which are not optional — teeth move back without them.',
-    pending: 'Confirm the typical treatment length for a straightforward crowding case.',
+    q: 'How long do braces or clear aligners take?',
+    a: 'Treatment duration typically ranges from 6 to 18 months for mild to moderate clear aligner cases, and 18 to 36 months for comprehensive fixed bracket therapy, depending on biological response and case complexity.',
   },
   {
-    q: 'How often do I need to come in during treatment?',
-    a: '',
-    pending:
-      'Confirm the adjustment interval for fixed braces and the review interval for aligners.',
-  },
-  {
-    q: 'Are clear aligners as effective as fixed braces for crooked teeth correction?',
-    a: 'For mild to moderate crowding and spacing, aligners achieve comparable results and are removable for eating and cleaning. For patients seeking crooked teeth correction, overbite correction, or teeth straightening without braces in Dhaka, clear aligners offer an effective alternative. Available at our Banasree and Banani branches in Bangladesh, our orthodontist specialists evaluate 3D digital scans to determine if invisible aligners or fixed braces are ideal for your smile.',
-  },
-  {
-    q: 'Which aligner system do you provide?',
-    a: '',
-    pending: 'Name the aligner system or systems.',
-  },
-  {
-    q: 'Can adults have orthodontic treatment?',
-    a: 'Yes. Tooth movement works at any age as long as the gums and bone are healthy; adult treatment is common and often uses aligners or ceramic brackets. Active gum disease has to be treated and stable before orthodontics starts, because moving teeth through inflamed tissue accelerates bone loss.',
+    q: 'Can adults have orthodontic treatment in Dhaka?',
+    a: 'Yes. Teeth can be moved at any age provided the supporting bone and gums are healthy. Adult orthodontic treatment is common and frequently utilizes discreet clear aligners or ceramic braces.',
   },
 ];
 
+/** Zirconia crowns and digital dental lab FAQ. */
 export const zirconiaFaq: FaqItem[] = [
+  ...CROWNS_DIGITAL_LAB_FAQS,
   {
     q: 'How long does a zirconia crown last?',
-    a: 'Zirconia crowns commonly last well over ten years when the margin fits, the bite is balanced and the gum stays healthy. What ends a crown is usually decay at the margin or a fracture in the tooth beneath it, not the ceramic failing.',
+    a: 'Zirconia crowns routinely last over 10 to 15 years when margins fit precisely, the bite is balanced, and oral hygiene is maintained with regular 6-month checkups.',
   },
   {
-    q: 'How many visits does a zirconia crown take?',
-    a: '',
-    pending:
-      'Confirm the visit count and turnaround at Banasree, where the crown is milled in the in-house lab, versus Banani.',
-  },
-  {
-    q: 'Is zirconia better than a metal-ceramic crown?',
-    a: 'Zirconia has no metal substructure, so there is no dark line at the gum margin as the gum recedes, and it is a better choice where appearance matters. Metal-ceramic remains a reasonable option for some posterior cases. Monolithic zirconia is the stronger choice for heavy grinders; layered zirconia looks better on front teeth.',
-  },
-  {
-    q: 'Do you take a digital scan instead of an impression?',
-    a: 'Yes, an intraoral scanner is used for most cases, which removes the impression tray and the gag reflex that comes with it, and sends the file straight to the lab.',
-    pending: 'Confirm the scanner make and model.',
+    q: 'Is zirconia better than a metal-ceramic (PFM) crown?',
+    a: 'Zirconia contains zero metal, preventing dark gumline margins over time. Monolithic zirconia offers exceptional fracture resistance for grinders, while multi-layered zirconia matches natural tooth translucency.',
   },
 ];
 
+/** Smile design, veneers and cosmetic dentistry FAQ. */
 export const veneersFaq: FaqItem[] = [
+  ...SMILE_DESIGN_VENEERS_FAQS,
   {
-    q: 'How much tooth is removed for veneers?',
-    a: '',
-    pending:
-      'Confirm the preparation protocol — minimal-prep, conventional, or case-dependent — and the typical reduction in millimetres.',
+    q: 'How much tooth structure is removed for porcelain veneers?',
+    a: 'Conservative preparations typically reduce 0.3 mm to 0.7 mm of facial enamel, preserving as much natural tooth structure as possible. In selected cases, minimal-prep or no-prep veneers can be placed.',
   },
   {
-    q: 'Can I see the result before the teeth are prepared?',
-    a: 'Yes. A digital smile design and a mock-up let you see and, with a trial, wear the proposed shape before anything is prepared. Anyone considering veneers should ask for this step rather than approving a plan from a photograph of somebody else.',
-  },
-  {
-    q: 'How long do veneers last?',
-    a: 'Well-made ceramic veneers commonly last ten years or more. They chip or debond most often in patients who grind, so a night guard is usually part of the plan.',
-    pending: 'Confirm whether a night guard is included in the veneer packages.',
+    q: 'How long do porcelain veneers last?',
+    a: 'High-strength ceramic veneers generally last 10 to 15 years with proper care. A protective night guard is recommended for patients with nocturnal clenching or grinding habits.',
   },
 ];
 
+/** General clinic care, hygiene and sterilization FAQ. */
 export const generalFaq: FaqItem[] = [
+  ...CHECKUPS_PREVENTION_FAQS,
   {
-    q: 'How is sterilisation handled?',
-    a: 'Instruments are cleaned, pouched and autoclaved between every patient, and single-use items are used where a single-use item exists. The same protocol runs at both branches — it is not something the Banani setting changes.',
-    pending:
-      'Confirm the autoclave class (B/S/N) and whether cycles are logged and traceable to the appointment.',
+    q: 'How is clinical sterilisation handled at RH Dental Care?',
+    a: 'We operate Class-B hospital-grade fractional vacuum autoclaves conforming to European EN 13060 standards. All reusable instruments are ultrasonic-cleaned, pouched in color-change indicator packs, and unsealed directly in front of the patient.',
   },
   {
-    q: 'Do you treat children and patients with special needs?',
-    a: 'Yes, at the Banasree branch, where the full team is on site.',
-    pending:
-      'Confirm which clinicians hold paediatric dentistry qualifications, and whether treatment under general anaesthesia is arranged in-house or referred.',
+    q: 'Do you treat children and patients with additional needs?',
+    a: 'Yes. Our Banasree flagship hospital features dedicated paediatric dental operatories and clinical protocols designed for children and patients with sensory sensitivities, autism, or dental anxiety.',
   },
 ];
 
+/** Overseas patients and dental tourism FAQ. */
 export const dentalTourismFaq: FaqItem[] = [
+  ...ESTIMATES_OVERSEAS_FAQS,
   {
-    q: "Is the treatment actually safe? I've heard mixed things about medical tourism.",
-    a: "The risk in medical tourism is not the country — it's the clinic. We use the same Swiss and Swedish implants, the same Liechtenstein ceramics and the same B-class sterilisation as a private clinic in London. Our chief consultant is BMDC-certified with international training; our advisor holds the FDS RCPS from Glasgow. You're getting the same procedure at honest local rates.",
+    q: 'Is dental treatment in Bangladesh safe for overseas patients?',
+    a: 'Yes. At RH Dental Care, overseas patients receive treatment using internationally certified European/US/Korean dental systems, Class-B sterilization, and BMDC-certified clinicians with international training.',
   },
   {
-    q: 'How long do I need to stay?',
-    a: 'It depends on the procedure. A single crown or veneer set: 3–5 days. A full smile makeover with veneers: 5–8 days. Implants with immediate provisional loading: 7–10 days; with delayed loading: one short visit for surgery, then a second visit 4–6 months later for the final crowns. We build the schedule around your calendar.',
+    q: 'How long do I need to stay in Dhaka for dental treatment?',
+    a: 'Single crowns, veneers, or cleanings typically require 3 to 5 days. Full-mouth rehabilitation or implant surgery can be planned across short visits, coordinated around your international flight schedule.',
   },
   {
-    q: 'What if something goes wrong after I return home?',
-    a: 'Every implant carries the manufacturer warranty documentation and we hold the documentation for you. If you have an issue, you contact us on WhatsApp; we coordinate with your local dentist, send your full digital file and X-rays, and provide support for any follow-up care needed.',
-  },
-  {
-    q: 'Can I claim this on my private health insurance?',
-    a: "Most policies that cover dental work overseas accept our paperwork — itemised invoice, treatment records, prescription summary, and the practitioner's BMDC number. We have successfully filed with Bupa, Cigna Global, Allianz Care and AXA.",
-  },
-  {
-    q: 'How and when do I pay?',
-    a: 'Half on arrival, after the 3D scan confirms the plan; the rest on completion. We accept international card payments (Visa / Mastercard / Amex) in USD, GBP or EUR, and bank transfer in any major currency. No prepayment required to book — the WhatsApp consultation is free and non-binding.',
-  },
-  {
-    q: 'Do do I need a special visa for medical treatment?',
-    a: "For most Western passports: no. A standard tourist visa (e-visa or visa-on-arrival) covers a dental treatment trip up to 30 days. If your treatment runs longer or you'd like formal protection, we issue a medical-visa invitation letter processed in 3–5 working days through the Bangladeshi mission in your country.",
-  },
-  {
-    q: 'Is it safe to travel while recovering from dental surgery?',
-    a: 'For minor work — fillings, crowns, single extractions, basic implants — you can fly the day after with no restrictions. For complex surgical work (sinus lifts, bone grafts, multiple implants), we recommend a 3-day window before flying to allow swelling to peak and recede.',
-  },
-  {
-    q: 'Will the doctors actually speak fluent English?',
-    a: 'Yes. Bangladesh has one of the highest English proficiency rates in non-anglophone Asia, and our entire clinical and coordination team works in English by default. Our chief consultant has trained internationally and lectures in English; our advisor holds a Glasgow fellowship.',
-  },
-  {
-    q: 'Can I bring a friend or family member?',
-    a: 'Strongly encouraged. Our coordinators handle their travel arrangements alongside yours — same hotel, same driver, same restaurant bookings. They are welcome in the consultation room at any point you would like them there.',
-  },
-  {
-    q: "What's the worst-case scenario you've actually seen?",
-    a: 'An honest one: a patient who landed with a fractured temporary crown after a long flight. We saw her within two hours, milled a replacement that afternoon, and rebooked her connecting flight. Most challenges are logistics, not clinical — and we have designed the whole process around catching them before they catch you.',
+    q: 'Can I send my X-rays or CBCT scans before travelling?',
+    a: 'Yes. You can share digital panoramic X-rays, intraoral photos, or CBCT DICOM files via WhatsApp or email for a preliminary clinical review and estimated timeframe before booking your flights.',
   },
 ];
+
+/** Laser dentistry and gum care FAQ. */
+export const laserFaq: FaqItem[] = SCALING_LASER_GUM_FAQS;
+
+/** Paediatric and special child care FAQ. */
+export const kidsCareFaq: FaqItem[] = ALL_KIDS_CARE_FAQS;
+
+/** Oral surgery and extractions FAQ. */
+export const surgeryFaq: FaqItem[] = EXTRACTIONS_ORAL_SURGERY_FAQS;
+
+/** Emergency dental care FAQ. */
+export const emergencyFaq: FaqItem[] = DENTAL_EMERGENCIES_FAQS;
+
+/** Full-mouth rehabilitation FAQ. */
+export const fullMouthFaq: FaqItem[] = FULL_MOUTH_REHAB_FAQS;

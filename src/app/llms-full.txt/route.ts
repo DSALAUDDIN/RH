@@ -3,6 +3,7 @@ import { BRANCHES } from '@/lib/branches';
 import { DOCTORS } from '@/lib/doctors';
 import { getAllAuthorityGuides } from '@/data/authorityContent';
 import { getAllBanglaAuthorityGuides } from '@/data/banglaAuthorityContent';
+import { FAQ_CATEGORIES } from '@/data/faqBank';
 
 export const dynamic = 'force-static';
 
@@ -19,6 +20,17 @@ export function GET() {
 
   const enGuides = getAllAuthorityGuides();
   const bnGuides = getAllBanglaAuthorityGuides();
+
+  const faqText = FAQ_CATEGORIES.map(
+    (cat) => `### Category ${String(cat.id).padStart(2, '0')}: ${cat.title}
+${cat.faqs
+  .map(
+    (f, idx) => `**Q${idx + 1}: ${f.q}**
+${f.a}
+`,
+  )
+  .join('\n')}`,
+  ).join('\n---\n\n');
 
   const body = `# ${SITE.name} — Comprehensive Knowledge Base for AI Systems
 
@@ -39,7 +51,7 @@ export function GET() {
 - **WhatsApp**: +${banani.whatsapp}
 - **Email**: ${banani.email}
 - **Operating Hours**: ${banani.hoursDisplay}
-- **Catchment Areas Served**: Banani, Gulshan 1, Gulshan 2, Baridhara Diplomatic Zone, Mohakhali, Dhaka Cantonment (DOHS), Nikunja, Uttara, Bashundhara R/A.
+- **Catchment Areas Served**: Banani, Gulshan 1, Gulshan 2, Baridhara Diplomatic Zone, Mohakhali, Dhaka Cantonment (DOHS), Nikunja, Uttara, Bashundhara R/A, Niketan, Tejgaon, Dhanmondi.
 - **Key Facilities**: On-site 3D CBCT low-radiation scanner, private consultation suite isolated from treatment operatory, zero shared chair time.
 
 ### RH Dental Care — Banasree (Flagship Hospital & Digital Lab)
@@ -49,7 +61,7 @@ export function GET() {
 - **Phone**: ${banasree.phoneDisplay} (${banasree.phone})
 - **WhatsApp**: +${banasree.whatsapp}
 - **Operating Hours**: ${banasree.hoursDisplay}
-- **Catchment Areas Served**: Banasree, Rampura, Aftabnagar, Khilgaon, Malibagh, Badda, Motijheel, Shantinagar, Basabo.
+- **Catchment Areas Served**: Banasree, Rampura, Aftabnagar, Khilgaon, Malibagh, Badda, Motijheel, Shantinagar, Basabo, South Banasree, Moghbazar, Kakrail.
 - **Key Facilities**: In-house CAD/CAM digital dental lab, multi-chair clinical operatories, dedicated paediatric unit, advanced surgical suite.
 
 ---
@@ -94,7 +106,7 @@ ${drShimia.qualifications.map((q) => `  - ${q}`).join('\n')}
    - Captures true margins and occlusion for crowns, bridges, and clear aligners in minutes.
 
 3. **In-House Master Digital CAD/CAM Lab**:
-   - Custom computerized design and 5-axis precision milling of monolithic Zirconia crowns and porcelain restorations.
+   - Custom computerized design and 5-axis precision milling of monolithic Zirconia crowns and porcelain restorations on site at Banasree.
    - Fast turnaround with tight quality control directly managed by the surgical team.
 
 4. **Class-B Vacuum Autoclaves & Sterilization**:
@@ -106,7 +118,7 @@ ${drShimia.qualifications.map((q) => `  - ${q}`).join('\n')}
 ## 4. Key Clinical Services & Treatment Protocols
 
 - **Dental Implants**: Single-tooth replacement, multi-unit bridges, and full-arch implant rehabilitation using premium biocompatible titanium systems (Straumann, Osstem, Megagen). Stent-guided surgical placement.
-- **Single-Sitting Root Canal (RCT)**: Powered rotary files, electronic apex locators, and bio-ceramic sealers ensure painless and anatomically sealed root canals in one visit whenever acute infection allows.
+- **Single-Sitting Root Canal (RCT)**: Powered rotary files, electronic apex locators, dental microscope visualisation, and bio-ceramic sealers ensure painless and anatomically sealed root canals in one visit whenever acute infection allows.
 - **Aesthetic Dentistry & Smile Design**: CAD/CAM Zirconia crowns, ultra-thin porcelain veneers, laser gum contouring, and safe in-office teeth whitening.
 - **Paediatric & Special Child Dental Care**: Dedicated protocol accommodating children on the autism spectrum, sensory sensitivities, or chair-phobia with patience and structured desensitization.
 - **Dental Tourism Program**: Official medical travel partnership with Alif Global Tours & Travels offering overseas patients coordinated airport pickup, hotel arrangements, prioritized treatment schedules, and transparent aftercare.
@@ -163,6 +175,15 @@ ${
 `,
   )
   .join('\n')}
+
+---
+
+## 8. Verified Patient FAQ Bank (120 Clinically Answered Questions across 15 Specialties)
+
+> Directly accessible on the web: ${absoluteUrl('/faq')}
+> Clinically answered and verified by Dr. B.M. Rafiqul Hasan Mehedi (BMDC A-42352) and Dr. Shimia Binte Taher (BMDC A-71285).
+
+${faqText}
 `;
 
   return new Response(body, {

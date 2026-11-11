@@ -132,6 +132,7 @@ export const ROUTES: RouteEntry[] = [
   { path: '/team', label: 'Clinical team', priority: 0.85, changeFrequency: 'monthly' },
   { path: '/about', label: 'About', priority: 0.85, changeFrequency: 'monthly' },
   { path: '/contact', label: 'Contact and booking', priority: 0.85, changeFrequency: 'monthly' },
+  { path: '/faq', label: 'Patient dental FAQ bank', priority: 0.9, changeFrequency: 'weekly' },
   {
     path: '/dental-tourism',
     label: 'Treatment for overseas patients',

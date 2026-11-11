@@ -1,10 +1,8 @@
-// Answer-first FAQ: the first sentence answers the question; the rest is
-// supporting detail (snippet- and citation-friendly).
-//
+// src/app/banani/faq.ts — answer-first, patient-focused branch FAQ.
 // Editorial rules:
 // - Never position Banani as clinically superior to Banasree.
 // - No superlatives ("best", "luxury", "VIP").
-// - Unknown figures are marked TODO(content), never estimated.
+// - Verified from RH_Dental_Care_Website_FAQ_Bank.docx.
 
 import type { FaqItem } from '@/lib/seo/schema';
 import { BRANCHES } from '@/lib/branches';
@@ -12,38 +10,35 @@ import { BRANCHES } from '@/lib/branches';
 export const bananiFaq: FaqItem[] = [
   {
     q: 'What is the difference between the Banani and the Banasree branch?',
-    a: 'The setting and the pace, not the clinical care. Banani is appointment-only: your slot is booked so that the room and the clinician are yours for its whole length. Banasree is the flagship hospital — a bigger setup with an in-house master digital lab, the full specialist team on site, coordinated treatment planning.\n\nSame doctors, same materials, same sterilisation protocol at both. If your case needs the lab or a specialist who sits at Banasree, that is where it should be done, and we will say so.',
+    a: 'The setting and the pace, not the clinical care. Banani is appointment-only: your slot is booked so that the room and the clinician are yours for its whole length. Banasree is the flagship hospital — a bigger setup with an in-house master digital lab, the full specialist team on site, and coordinated multidisciplinary treatment planning.\n\nSame doctors, same materials, and same European Class-B sterilisation protocol at both. If your case needs the on-site lab or a specialist based at Banasree, that is where it should be done, and we will advise you accordingly.',
   },
-
   {
     q: 'Do I need an appointment to visit the Banani branch?',
-    a: `Yes. Banani does not take walk-ins. Call ${BRANCHES.banani.phoneDisplay} or send a WhatsApp message and someone will call back to confirm a time; you will get a reference number for the booking. If you need to be seen the same day, say so — Banasree runs a longer daily session and may be able to take you sooner.`,
+    a: `Yes. Banani is appointment-focused to ensure zero waiting time and dedicated one-on-one attention. Call ${BRANCHES.banani.phoneDisplay} or send a WhatsApp message to confirm a slot. If you need same-day emergency assessment, Banasree can accommodate you where clinical capacity allows.`,
   },
   {
     q: 'Is there 3D CBCT imaging at the Banani branch?',
-    a: 'Yes, CBCT is on site at Banani, so a scan is taken and read in the same visit rather than sending you elsewhere and booking a second appointment. CBCT is what makes implant placement, impacted third molars and complex root canal anatomy plannable in three dimensions instead of guessed at from a flat X-ray.',
+    a: 'Yes, 3D CBCT is available on site at Banani, allowing high-resolution volumetric scans to be taken and interpreted during the same visit without referral delays. CBCT imaging is essential for precision implant planning, impacted wisdom tooth surgery, and complex root canal anatomy.',
   },
   {
-    q: 'Where exactly is the Banani branch, and is there parking?',
-    a: 'RH Dental Care Banani is on Level 7 of B&B Empire, Plot 116, Road 11, Banani, Dhaka 1213.',
-    pending:
-      'Confirm parking arrangements at B&B Empire — whether the building has visitor parking, and roughly how many spaces.',
+    q: 'Where is RH Dental Care in Banani?',
+    a: 'Our Banani clinic is on Level 7, B&B Empire, Plot 116, Road 11, Banani, Dhaka 1213. It offers convenient access for patients traveling from Banani, Gulshan 1 and 2, Baridhara, Bashundhara, Mohakhali, and Uttara.',
   },
   {
     q: 'What are the Banani branch opening hours?',
-    a: `Banani runs two sessions: a morning from 9:00 am to 2:00 pm and an evening from 4:30 pm to 10:00 pm. Which clinician you see depends on which session you book — the team list on this page shows who sits when.\n\nBanani is appointment-only either way, so call ${BRANCHES.banani.phoneDisplay} or send a WhatsApp message and someone will confirm a time.`,
-    pending: `Confirm which days the suite opens.`,
+    a: 'Banani operates two sessions from Saturday to Thursday: morning from 9:00 AM to 2:00 PM and evening from 4:30 PM to 10:00 PM. Sessions are strictly by appointment.',
   },
   {
     q: 'Do the same doctors work at both branches?',
-    a: 'Yes. Dr. B.M. Rafiqul Hasan and Dr. Shimia Binte Taher see patients at both branches. The instruments, the implant systems, the ceramics and the sterilisation cycle are the same at both sites — there is no "Banani version" of a treatment.',
+    a: 'Yes. Our senior consultants, including Dr. B.M. Rafiqul Hasan and Dr. Shimia Binte Taher, schedule clinical sessions across both branches. The diagnostic protocols, implant systems, ceramics, and sterilization standards are identical at both locations.',
   },
-
+  {
+    q: 'What should I bring to my first appointment?',
+    a: 'Please bring any recent dental X-rays or CBCT scans (within the past 12 months), a list of medications you currently take, and relevant medical history details (including conditions such as diabetes, hypertension, or cardiac history).',
+  },
   {
     q: 'I am travelling from abroad — can treatment be planned before I arrive?',
-    a: 'Yes. Send existing X-rays or a CBCT by WhatsApp and a provisional treatment plan can be prepared before you fly, then confirmed against a fresh examination when you arrive.',
-    pending:
-      'Confirm the minimum number of days on the ground needed for a single implant case and for a full-arch case.',
+    a: 'Yes. Send your recent panoramic X-rays, intraoral photos, or CBCT scans via WhatsApp. Our consultants will evaluate your case and prepare a preliminary stage-by-stage plan before you fly, confirming details upon clinical examination in Dhaka.',
   },
 ];
 

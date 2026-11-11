@@ -89,6 +89,9 @@ export default function Footer() {
               <li>
                 <Link href="/contact">Contact Hub</Link>
               </li>
+              <li>
+                <Link href="/faq">Patient FAQ Bank (120)</Link>
+              </li>
             </ul>
           </div>
 

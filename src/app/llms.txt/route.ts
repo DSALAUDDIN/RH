@@ -3,13 +3,14 @@ import { BRANCH_LIST } from '@/lib/branches';
 import { ROUTES } from '@/lib/seo/routes';
 import { getAllAuthorityGuides } from '@/data/authorityContent';
 import { getAllBanglaAuthorityGuides } from '@/data/banglaAuthorityContent';
+import { FAQ_CATEGORIES } from '@/data/faqBank';
 
 export const dynamic = 'force-static';
 
 /**
  * /llms.txt: a plain-text site summary for AI assistants and answer engines
  * (https://llmstxt.org). Generated from the route manifest, branch registry,
- * and authority guides so it gives full topical knowledge to LLMs.
+ * authority guides, and clinical FAQ bank.
  */
 export function GET() {
   const branches = BRANCH_LIST.map(
@@ -22,6 +23,11 @@ export function GET() {
     .map((r) => `- [${r.label}](${absoluteUrl(r.path)})`)
     .join('\n');
 
+  const faqSections = FAQ_CATEGORIES.map(
+    (cat) =>
+      `- [${cat.title}](${absoluteUrl(`/faq#${cat.slug}`)}): ${cat.faqs.length} verified patient Q&As on ${cat.title.toLowerCase()}.`,
+  ).join('\n');
+
   const enGuides = getAllAuthorityGuides()
     .map((g) => `- [${g.title}](${absoluteUrl(`/guides/${g.slug}`)}): ${g.metaDescription}`)
     .join('\n');
@@ -33,7 +39,7 @@ export function GET() {
   const body = `# ${SITE.name}
 
 > ${SITE.description}
-> Full technical documentation & doctor credentials: ${absoluteUrl('/llms-full.txt')}
+> Full technical documentation, doctor credentials & 120-item FAQ bank: ${absoluteUrl('/llms-full.txt')}
 
 ## Clinics & Locations
 
@@ -42,6 +48,10 @@ ${branches}
 ## Core Pages & Specialties
 
 ${pages}
+
+## Verified Patient FAQ Bank (120 Questions across 15 Clinical Domains)
+
+${faqSections}
 
 ## Doctor-Reviewed Patient Dental Guides (English)
 
