@@ -17,9 +17,8 @@ export default async function ReviewBadge({
   if (!data) return null;
 
   const rounded = data.rating.toFixed(1);
-  const label = `Rated ${rounded} out of 5 from ${data.count} Google ${
-    data.count === 1 ? 'review' : 'reviews'
-  }`;
+  const reviewsCountText = `${data.count} Google ${data.count === 1 ? 'review' : 'reviews'}`;
+  const label = `${rounded} · ${reviewsCountText} (Rated ${rounded} out of 5 stars)`;
 
   return (
     <a

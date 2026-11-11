@@ -18,6 +18,7 @@ export interface BranchCTAProps {
   style?: React.CSSProperties;
   children?: React.ReactNode;
   onClick?: () => void;
+  'aria-label'?: string;
 }
 
 /**
@@ -37,6 +38,7 @@ export default function BranchCTA({
   style,
   children,
   onClick,
+  'aria-label': ariaLabel,
 }: BranchCTAProps) {
   const { branch: ctxBranch, openPicker } = useBranch();
   const activeBranch = propBranch ?? ctxBranch;
@@ -97,6 +99,7 @@ export default function BranchCTA({
         href={hrefFor(activeBranch)}
         className={cls}
         style={style}
+        aria-label={ariaLabel}
         {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
         onClick={(e) => {
           // WhatsApp: append a fresh per-click ref and open programmatically
@@ -156,6 +159,16 @@ export default function BranchCTA({
       className={cls}
       style={style}
       aria-haspopup="dialog"
+      aria-label={
+        ariaLabel ||
+        (typeof children === 'string'
+          ? children
+          : action === 'book'
+            ? 'Book Appointment'
+            : action === 'call'
+              ? 'Call Clinic'
+              : 'Contact Clinic')
+      }
       onClick={(e) => {
         e.preventDefault();
         onClick?.();

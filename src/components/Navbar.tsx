@@ -294,7 +294,7 @@ export default function Navbar() {
             <span className="lang-text">{pathname.startsWith('/bn') ? 'EN' : 'বাংলা'}</span>
           </Link>
 
-          <BranchCTA action="book" className="btn-book">
+          <BranchCTA action="book" className="btn-book" aria-label="Book Appointment">
             <Phone size={16} aria-hidden="true" />
             <span>Book</span>
           </BranchCTA>

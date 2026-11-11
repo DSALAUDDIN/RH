@@ -309,12 +309,12 @@
 }
 
 .btn-card-wa {
-  background: #25d366;
+  background: #075e54;
   color: #ffffff;
 }
 
 .btn-card-wa:hover {
-  background: #20bd5a;
+  background: #128c7e;
   transform: translateY(-1px);
 }
 

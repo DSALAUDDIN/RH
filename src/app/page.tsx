@@ -58,7 +58,7 @@ export default function Home() {
                 fontWeight: 700,
                 textTransform: 'uppercase',
                 letterSpacing: '0.08em',
-                color: '#8C7355',
+                color: '#e5b869',
                 marginBottom: '0.35rem',
               }}
             >
@@ -85,7 +85,7 @@ export default function Home() {
                 gap: '0.4rem',
                 fontWeight: 600,
                 fontSize: '0.9rem',
-                color: '#0073e6',
+                color: '#0055b3',
                 background: '#e0efff',
                 padding: '0.4rem 0.85rem',
                 borderRadius: '8px',
@@ -140,7 +140,7 @@ export default function Home() {
                 style={{
                   fontSize: '0.75rem',
                   fontWeight: 700,
-                  color: '#0284c7',
+                  color: '#0369a1',
                   textTransform: 'uppercase',
                 }}
               >
@@ -165,7 +165,7 @@ export default function Home() {
                 marginTop: '1rem',
                 fontSize: '0.85rem',
                 fontWeight: 600,
-                color: '#0073e6',
+                color: '#0055b3',
                 display: 'flex',
                 alignItems: 'center',
                 gap: '0.3rem',
@@ -196,7 +196,7 @@ export default function Home() {
                 style={{
                   fontSize: '0.75rem',
                   fontWeight: 700,
-                  color: '#0284c7',
+                  color: '#0369a1',
                   textTransform: 'uppercase',
                 }}
               >
@@ -222,7 +222,7 @@ export default function Home() {
                 marginTop: '1rem',
                 fontSize: '0.85rem',
                 fontWeight: 600,
-                color: '#0073e6',
+                color: '#0055b3',
                 display: 'flex',
                 alignItems: 'center',
                 gap: '0.3rem',
@@ -253,7 +253,7 @@ export default function Home() {
                 style={{
                   fontSize: '0.75rem',
                   fontWeight: 700,
-                  color: '#0284c7',
+                  color: '#0369a1',
                   textTransform: 'uppercase',
                 }}
               >
@@ -279,7 +279,7 @@ export default function Home() {
                 marginTop: '1rem',
                 fontSize: '0.85rem',
                 fontWeight: 600,
-                color: '#0073e6',
+                color: '#0055b3',
                 display: 'flex',
                 alignItems: 'center',
                 gap: '0.3rem',

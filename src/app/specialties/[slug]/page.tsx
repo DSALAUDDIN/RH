@@ -4,15 +4,7 @@ import { useParams } from 'next/navigation';
 import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
 import { useState, useEffect, useCallback } from 'react';
-import {
-  ArrowLeft,
-  CheckCircle2,
-  Sparkles,
-  X,
-  Download,
-  ZoomIn,
-  Camera,
-} from 'lucide-react';
+import { ArrowLeft, CheckCircle2, Sparkles, X, Download, ZoomIn, Camera } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import './detail.css';
 
