@@ -17,9 +17,9 @@ import BananiHeroVideo from '@/components/branch/BananiHeroVideo';
 const b = BRANCHES.banani;
 
 export const metadata: Metadata = pageMeta({
-  title: 'Dental Clinic in Banani, Dhaka · Road 11',
+  title: 'RH Dental Care · Dental Clinic in Banani, Dhaka | আরএইচ ডেন্টাল কেয়ার বনানী',
   description:
-    'Private appointment-only dental clinic on Road 11, Banani, Dhaka. 3D CBCT on site, executive consultation room, implants & cosmetic dentistry.',
+    'আরএইচ ডেন্টাল কেয়ার বনানী: Private appointment-only dental suite on Road 11, Banani, Dhaka. 3D CBCT on site, executive consultation room, implants & cosmetic dentistry.',
   path: '/banani',
   image: b.ogImage,
   imageAlt: b.photos[0]?.alt,

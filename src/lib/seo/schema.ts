@@ -70,6 +70,12 @@ export function branchSchema(id: BranchId): JsonLdNode {
     '@type': ['Dentist', 'MedicalClinic'],
     '@id': ID.branch(id),
     name: b.name,
+    alternateName: [
+      id === 'banasree' ? 'আরএইচ ডেন্টাল কেয়ার বনশ্রী' : 'আরএইচ ডেন্টাল কেয়ার বনানী',
+      id === 'banasree' ? 'RH Dental Care and Implant Center' : 'RH Dental Care Banani Suite',
+      id === 'banasree' ? 'বনশ্রী ডেন্টাল ক্লিনিক' : 'বনানী ডেন্টাল ক্লিনিক',
+      'RH Dental',
+    ],
     description: b.schemaDescription,
     url: absoluteUrl(b.href),
     telephone: b.phone,

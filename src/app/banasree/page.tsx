@@ -16,9 +16,9 @@ import EditorialNote from '@/components/EditorialNote';
 const b = BRANCHES.banasree;
 
 export const metadata: Metadata = pageMeta({
-  title: 'Dental Clinic & Hospital in Banasree, Dhaka',
+  title: 'RH Dental Care · Dental Clinic in Banasree, Dhaka | আরএইচ ডেন্টাল কেয়ার বনশ্রী',
   description:
-    'Specialist dental clinic & hospital on Block C, Banasree, Dhaka. In-house digital CAD/CAM lab, microscope root canal, implants & orthodontics.',
+    'আরএইচ ডেন্টাল কেয়ার বনশ্রী: 5.0★ rated specialist dental clinic & hospital on Block C, Banasree, Dhaka. In-house digital CAD/CAM lab, microscope root canal, implants & braces.',
   path: '/banasree',
   image: b.ogImage,
   imageAlt: b.photos[0]?.alt,
