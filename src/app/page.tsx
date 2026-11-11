@@ -1,6 +1,7 @@
 import Hero from '@/components/Hero';
 import BranchChooser from '@/components/branch/BranchChooser';
 import Specialties from '@/components/Specialties';
+import DhakaAuthoritySection from '@/components/DhakaAuthoritySection';
 import Testimonials from '@/components/Testimonials';
 import VideoSection from '@/components/VideoSection';
 import ClinicGallery from '@/components/ClinicGallery';
@@ -12,13 +13,13 @@ import type { Metadata } from 'next';
 import { pageMeta } from '@/lib/seo/metadata';
 
 export const metadata: Metadata = pageMeta({
-  title: 'RH Dental Care · Dental Clinics in Banani & Banasree, Dhaka',
+  title: 'RH Dental Care · Best Dental Clinic in Dhaka | Banani & Banasree',
   absoluteTitle: true,
   description:
-    'Two clinics in Dhaka: an appointment-only private suite in Banani and a full-service flagship hospital in Banasree. Same clinical team at both.',
+    '5.0★ top-rated best dental clinic in Dhaka with centers in Banani (Road 11) & Banasree (Block C). Specialized in dental implants, clear aligners, microscopic root canals & smile makeovers.',
   path: '/',
   image: '/assets/branches/banani/reception.webp',
-  imageAlt: 'Reception at RH Dental Care Banani.',
+  imageAlt: 'RH Dental Care - Top-Rated Best Dental Clinic in Dhaka (Banani & Banasree).',
 });
 
 export default function Home() {
@@ -27,6 +28,7 @@ export default function Home() {
       <Hero />
       <BranchChooser />
       <Specialties />
+      <DhakaAuthoritySection />
       <VideoSection />
       <ClinicGallery />
 

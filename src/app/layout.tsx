@@ -45,7 +45,7 @@ const bengaliFont = Hind_Siliguri({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: {
-    default: `${SITE.name}: Dental Clinics in Banani & Banasree, Dhaka`,
+    default: `${SITE.name} · Best Dental Clinic in Dhaka | Banani & Banasree`,
     template: `%s | ${SITE.name}`,
   },
   description: SITE.description,

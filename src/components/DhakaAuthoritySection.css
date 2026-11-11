@@ -1,0 +1,305 @@
+.dhaka-auth-section {
+  padding: 5rem 1.5rem;
+  background: radial-gradient(circle at 50% 0%, #0d1b33 0%, #050e1e 100%);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  color: #eaf2fb;
+  position: relative;
+  overflow: hidden;
+}
+
+.dhaka-auth-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.dhaka-auth-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 3.5rem;
+}
+
+.dhaka-auth-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.9rem;
+  background: rgba(229, 184, 105, 0.12);
+  border: 1px solid rgba(229, 184, 105, 0.3);
+  border-radius: 9999px;
+  color: #e5b869;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.dhaka-auth-badge-icon {
+  color: #e5b869;
+}
+
+.dhaka-auth-title {
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  font-weight: 800;
+  line-height: 1.25;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.dhaka-auth-highlight {
+  background: linear-gradient(135deg, #e5b869 0%, #ffd78a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.dhaka-auth-subtitle {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #94a3b8;
+  margin: 0 auto;
+}
+
+/* Grid */
+.dhaka-auth-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.dhaka-auth-card {
+  background: rgba(13, 27, 51, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+  backdrop-filter: blur(12px);
+  display: flex;
+  flex-direction: column;
+}
+
+.dhaka-auth-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(229, 184, 105, 0.35);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.35);
+}
+
+.dhaka-auth-card-icon-wrap {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+
+.icon-gold {
+  background: rgba(229, 184, 105, 0.15);
+  color: #e5b869;
+}
+
+.icon-blue {
+  background: rgba(56, 189, 248, 0.15);
+  color: #38bdf8;
+}
+
+.icon-amber {
+  background: rgba(245, 158, 11, 0.15);
+  color: #f59e0b;
+}
+
+.icon-green {
+  background: rgba(52, 211, 153, 0.15);
+  color: #34d399;
+}
+
+.dhaka-auth-card-rating {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #e5b869;
+  margin-bottom: 0.4rem;
+}
+
+.dhaka-auth-card-tag {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #94a3b8;
+  margin-bottom: 0.4rem;
+}
+
+.dhaka-auth-card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.75rem;
+  line-height: 1.35;
+}
+
+.dhaka-auth-card-desc {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: #cbd5e1;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.dhaka-auth-card-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #94a3b8;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Treatment Pills */
+.dhaka-auth-treatments {
+  background: rgba(13, 27, 51, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 14px;
+  padding: 1.25rem 1.75rem;
+  margin-bottom: 2.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+}
+
+.dhaka-auth-treatments-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #e2e8f0;
+}
+
+.dhaka-auth-treatments-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.dhaka-treatment-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #e2e8f0;
+  padding: 0.35rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.dhaka-treatment-pill:hover {
+  background: rgba(229, 184, 105, 0.15);
+  border-color: rgba(229, 184, 105, 0.4);
+  color: #ffd78a;
+  transform: translateY(-1px);
+}
+
+/* Footer CTA */
+.dhaka-auth-footer-cta {
+  background: linear-gradient(135deg, rgba(229, 184, 105, 0.12) 0%, rgba(13, 27, 51, 0.8) 100%);
+  border: 1px solid rgba(229, 184, 105, 0.25);
+  border-radius: 16px;
+  padding: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.dhaka-auth-cta-text h4 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 0.35rem;
+}
+
+.dhaka-auth-cta-text p {
+  font-size: 0.95rem;
+  color: #cbd5e1;
+  margin: 0;
+}
+
+.dhaka-auth-cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.dhaka-cta-guide-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #e5b869;
+  color: #050e1e;
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 0.65rem 1.25rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.dhaka-cta-guide-btn:hover {
+  background: #f5cf87;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(229, 184, 105, 0.3);
+}
+
+.dhaka-cta-phone-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  font-size: 0.88rem;
+  font-weight: 600;
+  padding: 0.65rem 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.dhaka-cta-phone-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+  .dhaka-auth-section {
+    padding: 3.5rem 1rem;
+  }
+  .dhaka-auth-footer-cta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .dhaka-auth-cta-actions {
+    width: 100%;
+    flex-direction: column;
+  }
+  .dhaka-cta-guide-btn,
+  .dhaka-cta-phone-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

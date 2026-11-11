@@ -6,7 +6,7 @@
 export const SITE = {
   name: 'RH Dental Care',
   shortName: 'RH Dental',
-  alternateNames: ['RH Dental Clinic', 'আরএইচ ডেন্টাল কেয়ার'],
+  alternateNames: ['RH Dental Clinic', 'Best Dental Clinic in Dhaka', 'আরএইচ ডেন্টাল কেয়ার'],
   /** Canonical origin. No trailing slash. */
   url: 'https://rhdentalcare.com',
   /** BCP 47 language tag of the published content. */
@@ -14,7 +14,7 @@ export const SITE = {
   /** Open Graph locale. */
   locale: 'en_BD',
   description:
-    'Two dental clinics in Dhaka: an appointment-only private suite in Banani and a full-service flagship hospital in Banasree. Same clinicians at both.',
+    '5.0★ top-rated best dental clinic in Dhaka with centers in Banani (Road 11) & Banasree (Block C). Specialized in dental implants, clear aligners, microscopic root canals & smile makeovers.',
   logo: { path: '/rhlogo.jpeg', width: 200, height: 200 },
   defaultOgImage: {
     path: '/assets/branches/banani/reception.webp',

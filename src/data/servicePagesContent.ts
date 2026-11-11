@@ -46,6 +46,95 @@ export interface ServicePageData {
 }
 
 export const SERVICE_PAGES: Record<string, ServicePageData> = {
+  'best-dental-clinic-in-dhaka': {
+    slug: 'best-dental-clinic-in-dhaka',
+    url: '/best-dental-clinic-in-dhaka',
+    seoTitle: 'Best Dental Clinic in Dhaka | RH Dental Care (Banani & Banasree)',
+    metaDescription:
+      'Recognized among the best dental clinics in Dhaka. Dual centers in Banani & Banasree, 5.0★ Google rating, Carl Zeiss surgical microscopes, Osstem implants & 3D digital scanners.',
+    h1: 'Best Dental Clinic in Dhaka',
+    badge: '5.0★ Rated Practice · Banani Road 11 & Banasree Block C',
+    overview:
+      'When choosing the best dental clinic in Dhaka, discerning patients prioritize verified clinical credentials, advanced technology, hospital-grade sterilization, and personalized care. Since 2014, RH Dental Care has established itself as Dhaka’s leading multi-specialty dental practice, operating an appointment-only private suite in Banani and a multi-chair flagship dental hospital in Banasree.',
+    suitability: [
+      'Patients seeking permanent tooth replacement with international-grade dental implants (Osstem / Hiossen).',
+      'Teens and adults desiring discreet, aesthetic tooth alignment with invisible clear aligners or braces.',
+      'Complex toothache or trauma cases requiring high-magnification surgical operating microscopes (Carl Zeiss / Labomed).',
+      'Patients seeking natural cosmetic smile makeovers with CAD/CAM Zirconia crowns, porcelain veneers, and laser dentistry.',
+      'Parents looking for gentle pediatric dentistry and dedicated special-needs child dental care.',
+      'Executives, expats, and NRB dental tourists requiring punctual, private appointments with zero wait time in Banani.',
+    ],
+    treatmentProcess: [
+      {
+        title: '1. Comprehensive 3D Digital Diagnostics',
+        description:
+          'High-resolution digital radiographs, intraoral camera photography, and 3D digital scanning for precise, radiation-minimized diagnostic evaluation.',
+      },
+      {
+        title: '2. Multi-Disciplinary Specialist Consultation',
+        description:
+          'Direct evaluation by BSMMU-trained senior consultants across oral surgery, orthodontics, microscopic endodontics, and prosthodontics under one clinical governance.',
+      },
+      {
+        title: '3. Minimally Invasive Precision Treatment',
+        description:
+          'Treatments conducted under surgical magnification, painless computer-controlled anesthesia protocols, and precision rotary instrumentation.',
+      },
+      {
+        title: '4. Hospital-Grade Class-B Sterilization',
+        description:
+          'Multi-stage sterilization following European EN 13060 Class-B vacuum autoclave standards, disposable surgical barriers, and strict infection control.',
+      },
+      {
+        title: '5. Transparent Pricing & Long-Term Warranty',
+        description:
+          'Clear itemized treatment plans with zero hidden fees, authentic manufacturer material certificates, and structured follow-up scheduling.',
+      },
+    ],
+    technology:
+      'RH Dental Care is equipped with Dhaka’s foremost clinical infrastructure: Carl Zeiss and Labomed surgical operating microscopes, 3D intraoral digital scanners, digital apex locators, Osstem implant surgical motor kits, Shofu clinical shade guides, and Class-B hospital vacuum autoclaves.',
+    clinicalTeam: {
+      lead: 'Dr. Mehedi Hasan & Senior University Faculty',
+      description:
+        'Led by Dr. Mehedi Hasan alongside consultants with post-graduate training from Bangabandhu Sheikh Mujib Medical University (BSMMU) and specialized certifications in Minimally Invasive Cosmetic Dentistry (MICD) from Nepal.',
+    },
+    benefitsAndRisks: {
+      benefits:
+        '5.0★ verified Google Maps rating across both branches, dual convenient locations (Banani Road 11 & Banasree Block C), complete in-house digital lab workflow, zero external referral delays, and anxiety-free patient care.',
+      risks:
+        'Banani appointments must be scheduled in advance as it operates exclusively by appointment for patient privacy. Urgent walk-in emergencies are promptly handled at our Banasree flagship hospital.',
+    },
+    aftercare:
+      'Structured post-treatment monitoring, direct doctor access for postoperative guidance, digital case record archiving, and scheduled routine preventive checkups.',
+    faqs: [
+      {
+        q: 'What makes RH Dental Care one of the best dental clinics in Dhaka?',
+        a: 'RH Dental Care stands out through its verified 5.0-star rating across 200+ patient reviews, dual prime centers in Banani and Banasree, advanced clinical technology including surgical operating microscopes and 3D scanners, and senior consultants holding BSMMU and international credentials.',
+      },
+      {
+        q: 'Where are RH Dental Care clinics located in Dhaka?',
+        a: 'We have two premier centers: (1) Banani Branch: Private Appointment Suite, Level 7, B&B Empire, Plot 116, Road 11, Banani; (2) Banasree Branch: Multi-chair Flagship Hospital, House 42, Road 8, Block C, Banasree, Rampura, Dhaka 1219.',
+      },
+      {
+        q: 'Which specialized dental treatments are performed at RH Dental Care?',
+        a: 'We specialize in Dental Implants (Osstem), Invisible Clear Aligners, Orthodontic Braces, Microscopic Single-Sitting Root Canal Treatments, CAD/CAM Zirconia Crowns & Bridges, Porcelain Veneers, and Pediatric Dentistry.',
+      },
+      {
+        q: 'Why is microscope-assisted dentistry superior for root canals and restorations?',
+        a: 'Surgical operating microscopes provide up to 20x magnification and direct coaxial illumination. This enables our specialists to see micro-canals, hairline fractures, and structural details invisible to the naked eye, drastically increasing treatment success rates.',
+      },
+      {
+        q: 'How do I book an appointment at RH Dental Care in Dhaka?',
+        a: 'You can book directly by calling 01721-367622 (Banani) or 01775-227902 (Banasree), or connect via WhatsApp for fast scheduling and digital consultations.',
+      },
+    ],
+    cta: {
+      phoneBanani: '01721-367622',
+      phoneBanasree: '01775-227902',
+      tagline:
+        'Experience Dhaka’s highest-rated dental care with dual centers in Banani & Banasree.',
+    },
+  },
   'dental-implant-dhaka': {
     slug: 'dental-implant-dhaka',
     url: '/dental-implant-dhaka',

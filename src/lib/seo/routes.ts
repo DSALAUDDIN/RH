@@ -47,6 +47,12 @@ export const ROUTES: RouteEntry[] = [
   },
 
   // Treatments
+  {
+    path: '/best-dental-clinic-in-dhaka',
+    label: 'Best dental clinic in Dhaka',
+    priority: 0.95,
+    changeFrequency: 'weekly',
+  },
   { path: '/implants', label: 'Dental implants', priority: 0.95, changeFrequency: 'monthly' },
   {
     path: '/dental-implant-dhaka',
