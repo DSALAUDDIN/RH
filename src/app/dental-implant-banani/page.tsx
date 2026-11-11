@@ -12,7 +12,7 @@ import {
 } from '@/lib/seo/schema';
 import { SERVICE_PAGES } from '@/data/servicePagesContent';
 import implantFacility from '@/assets/implants/implant_facility.png';
-import digitalImplantPlanning from '@/assets/digital/digital_implant_planning.png';
+import implantOsstemKit from '@/assets/specialties/instruments/implant-osstem-kit.jpg';
 
 const SLUG = 'dental-implant-banani';
 const data = SERVICE_PAGES[SLUG];
@@ -60,9 +60,9 @@ export default function Page() {
         data={data}
         heroImage={implantFacility}
         heroImageAlt="Banani private dental implant consultation and clinical suite at RH Dental Care"
-        secondaryImage={digitalImplantPlanning}
-        secondaryImageAlt="Digital 3D implant planning and surgical guide coordination"
-        secondaryImageCaption="Private dental suite consultation in Banani Road 11 with synchronized digital laboratory workflows."
+        secondaryImage={implantOsstemKit}
+        secondaryImageAlt="Authentic Osstem surgical implant kit and precision instrumentation at Banani private suite"
+        secondaryImageCaption="Private dental suite consultation in Banani Road 11 with genuine Osstem implant fixtures and 3D CBCT guided surgery."
       />
     </>
   );

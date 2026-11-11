@@ -7,36 +7,44 @@ import { useState, useEffect, useCallback } from 'react';
 import {
   ArrowLeft,
   CheckCircle2,
-  Clock,
-  Award,
-  Shield,
   Sparkles,
   X,
   Download,
   ZoomIn,
+  Camera,
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import './detail.css';
 
-/* Banner images */
+/* Banner & clinical images */
 import imagingBanner from '@/assets/specialties/3d-imaging.jpg';
 import rootCanalBanner from '@/assets/specialties/root-canal.jpg';
 import gumCareBanner from '@/assets/specialties/gum-care.jpg';
 import kidsCareBanner from '@/assets/specialties/kids-care.jpg';
 import dentalTourismBanner from '@/assets/specialties/dental_tourism.png';
 
-/* Authentic Clinical Instrument Photos */
+/* Authentic Clinical Instrument & Procedure Photos */
 import implantOsstemKit from '@/assets/specialties/instruments/implant-osstem-kit.jpg';
 import crownShadeGuide from '@/assets/specialties/instruments/crown-shofu-shade-guide.jpg';
+import crownShadeMatchingPatient from '@/assets/specialties/instruments/crown-shade-matching-patient.jpg';
 import bracesPliers from '@/assets/specialties/instruments/braces-orthodontic-pliers.jpg';
+import alignerTrayClinic from '@/assets/specialties/instruments/aligner-tray-clinic.jpg';
+import alignerTrayMirror from '@/assets/specialties/instruments/aligner-tray-mirror.jpg';
 import fillingCompositeKit from '@/assets/specialties/instruments/filling-composite-kit.jpg';
+import fillingPolishingHandpiece from '@/assets/specialties/instruments/filling-polishing-handpiece.jpg';
+
+export interface GalleryPhoto {
+  img: StaticImageData;
+  title: string;
+  caption: string;
+}
 
 interface SpecialtyDetail {
   title: string;
   category: string;
   tagline: string;
   bannerImg: StaticImageData;
-  flyerImg: StaticImageData;
+  gallery: GalleryPhoto[];
   flyerFileName: string;
   videoUrl?: string;
   description: string;
@@ -55,7 +63,13 @@ const specialtiesData: Record<string, SpecialtyDetail> = {
     category: 'Elite Diagnostics',
     tagline: 'Ultra-accurate 360° diagnostics — significantly lower dose than conventional CT',
     bannerImg: imagingBanner,
-    flyerImg: imagingBanner,
+    gallery: [
+      {
+        img: imagingBanner,
+        title: 'Low-Dose 3D CBCT Scanner',
+        caption: 'On-site cone beam CT scanning for 3D volumetric diagnosis at RH Dental Care.',
+      },
+    ],
     flyerFileName: 'RH-Dental-3D-Imaging.png',
     description:
       'Our state-of-the-art 3D imaging technology provides unparalleled diagnostic accuracy. With cone beam CT scanning, we can visualize your entire oral structure in stunning detail, enabling precise treatment planning and exceptional outcomes.',
@@ -82,8 +96,27 @@ const specialtiesData: Record<string, SpecialtyDetail> = {
     title: 'Orthodontics & Clear Aligners',
     category: 'Orthodontics',
     tagline: 'Straighten your smile with braces or clear aligners',
-    bannerImg: bracesPliers,
-    flyerImg: bracesPliers,
+    bannerImg: alignerTrayClinic,
+    gallery: [
+      {
+        img: alignerTrayClinic,
+        title: '3D Clear Aligner Dental Model',
+        caption:
+          'Precision-fabricated clear aligner tray seated on orthodontic dental stone model.',
+      },
+      {
+        img: alignerTrayMirror,
+        title: 'Transparent Aligner Presentation',
+        caption:
+          'Discreet, nearly invisible clear aligners custom engineered for patient aesthetics.',
+      },
+      {
+        img: bracesPliers,
+        title: 'German-Grade Orthodontic Pliers',
+        caption:
+          'Specialized stainless steel archwire, bracket placement and loop-forming instruments.',
+      },
+    ],
     flyerFileName: 'RH-Dental-Orthodontics.jpg',
     videoUrl: '/assets/videos/orthodontics.mp4',
     description:
@@ -112,7 +145,20 @@ const specialtiesData: Record<string, SpecialtyDetail> = {
     category: 'Prosthetics',
     tagline: 'Strong, natural-looking zirconia crowns',
     bannerImg: crownShadeGuide,
-    flyerImg: crownShadeGuide,
+    gallery: [
+      {
+        img: crownShadeGuide,
+        title: 'Shofu Vintage Shade Guide',
+        caption:
+          'Authentic porcelain shade guide for matching individual tooth translucency and hue.',
+      },
+      {
+        img: crownShadeMatchingPatient,
+        title: 'Chairside Shade Matching',
+        caption:
+          'Direct clinical shade selection under calibrated clinical lighting at the dental chair.',
+      },
+    ],
     flyerFileName: 'RH-Dental-Zirconia-Shade-Guide.jpg',
     description:
       'Experience high-quality dental restoration with biocompatible zirconia crowns. These ultra-strong, natural-looking restorations combine exceptional durability with aesthetic precision, crafted in our on-site master digital lab.',
@@ -140,7 +186,14 @@ const specialtiesData: Record<string, SpecialtyDetail> = {
     category: 'Surgical Care',
     tagline: 'Long-term tooth replacement with precision-guided implants',
     bannerImg: implantOsstemKit,
-    flyerImg: implantOsstemKit,
+    gallery: [
+      {
+        img: implantOsstemKit,
+        title: 'Osstem Dental Implant Surgical Kit',
+        caption:
+          'Genuine Osstem titanium fixture surgical instrumentation and guided drill system.',
+      },
+    ],
     flyerFileName: 'RH-Dental-Implants-Osstem-Kit.jpg',
     videoUrl: '/assets/videos/implant.mp4',
     description:
@@ -169,7 +222,13 @@ const specialtiesData: Record<string, SpecialtyDetail> = {
     category: 'Endodontics',
     tagline: 'Comfortable endodontic treatment using microscopic technology',
     bannerImg: rootCanalBanner,
-    flyerImg: rootCanalBanner,
+    gallery: [
+      {
+        img: rootCanalBanner,
+        title: 'Operating Microscope Endodontics',
+        caption: 'Direct visual magnification for negotiating curved, calcified root canals.',
+      },
+    ],
     flyerFileName: 'RH-Dental-RootCanal.png',
     videoUrl: '/assets/videos/rootcanal.mp4',
     description:
@@ -198,7 +257,13 @@ const specialtiesData: Record<string, SpecialtyDetail> = {
     category: 'Periodontics',
     tagline: 'Healthy gums for a healthy smile',
     bannerImg: gumCareBanner,
-    flyerImg: gumCareBanner,
+    gallery: [
+      {
+        img: gumCareBanner,
+        title: 'Ultrasonic & Laser Gum Therapy',
+        caption: 'Deep pocket decontamination and periodontal rehabilitation suite.',
+      },
+    ],
     flyerFileName: 'RH-Dental-GumCare.png',
     description:
       'Protect your oral health with expert periodontal treatment. From deep cleaning to advanced gum therapy, we treat gum disease at every stage, supporting the long-term health of your smile.',
@@ -226,7 +291,13 @@ const specialtiesData: Record<string, SpecialtyDetail> = {
     category: 'Pedodontics',
     tagline: 'Gentle, friendly dental care for children',
     bannerImg: kidsCareBanner,
-    flyerImg: kidsCareBanner,
+    gallery: [
+      {
+        img: kidsCareBanner,
+        title: 'Pediatric Dental Care Operatory',
+        caption: 'Child-friendly environment with gentle desensitization and comfort protocols.',
+      },
+    ],
     flyerFileName: 'RH-Dental-KidsCare.png',
     description:
       'Give your child a lifetime of healthy smiles. Our gentle, experienced team creates a positive dental experience that helps children feel comfortable while providing expert preventive and restorative care.',
@@ -254,7 +325,20 @@ const specialtiesData: Record<string, SpecialtyDetail> = {
     category: 'Aesthetics',
     tagline: 'Crafting your confident, natural-looking smile',
     bannerImg: fillingCompositeKit,
-    flyerImg: fillingCompositeKit,
+    gallery: [
+      {
+        img: fillingCompositeKit,
+        title: 'Composite Restorative Syringe Kit',
+        caption:
+          'Multi-layer composite resins with nanohybrid fillers for anterior cosmetic restorations.',
+      },
+      {
+        img: fillingPolishingHandpiece,
+        title: 'Finishing & High-Gloss Handpiece',
+        caption:
+          'Micro-polishing tools for creating natural tooth surface texture and enamel shine.',
+      },
+    ],
     flyerFileName: 'RH-Dental-Aesthetic-Composite-Kit.jpg',
     description:
       'Enhance your smile with our premium aesthetic treatments. From zirconia veneers to professional teeth whitening and full smile makeovers, we blend precision and artistry to create a natural-looking smile designed around your face.',
@@ -282,27 +366,34 @@ const specialtiesData: Record<string, SpecialtyDetail> = {
     category: 'Global Travel Care',
     tagline: 'Considered Dental Care & Beautiful Bangladesh',
     bannerImg: dentalTourismBanner,
-    flyerImg: dentalTourismBanner,
+    gallery: [
+      {
+        img: dentalTourismBanner,
+        title: 'Dental Tourism Concierge Service',
+        caption:
+          'Coordinated travel, airport pickup, and multi-visit appointments for overseas patients.',
+      },
+    ],
     flyerFileName: 'RH-Dental-Tourism.png',
     description:
       'Combine specialist dental care with a visit to Bangladesh. We provide complete travel assistance including airport pickups, lodging coordination, private local transit, and guided tours.',
     benefits: [
       'Coordinated implant and cosmetic care for overseas patients',
-      'Identical global materials and diagnostic standards',
-      'Fully managed visa, airport, and lodging coordination',
-      'Guided sightseeing tours of beautiful Bangladesh',
-      'BMDC-certified internationally-trained surgeons',
+      'Comprehensive treatment planned before arrival via digital scans',
+      'Substantial savings compared to UK, US, and Middle East private rates',
+      'Priority scheduling to fit your visit timeline',
+      'Concierge support for hotels, transport, and leisure excursions',
     ],
     process: [
-      { step: 'Consultation', desc: 'Free virtual plan based on X-rays/photos' },
-      { step: 'Travel Prep', desc: 'Visa coordination & schedule selection' },
-      { step: 'Arrival & Care', desc: 'Private airport pickup & treatment start' },
-      { step: 'Explore & Tour', desc: 'Beautiful guided excursions around recovery' },
-      { step: 'Return', desc: 'Comprehensive checkup & departure with records' },
+      { step: 'Virtual Consultation', desc: 'Case review and preliminary plan before flying' },
+      { step: 'Arrival & Welcome', desc: 'Airport pickup and check-in assistance' },
+      { step: 'Clinical Care', desc: 'Dedicated treatment sessions at our flagship facilities' },
+      { step: 'Explore & Tour', desc: 'Guided leisure activities arranged during recovery' },
+      { step: 'Departure & Aftercare', desc: 'Comprehensive handover and records provided' },
     ],
-    duration: 'Bespoke Schedules',
-    recovery: 'Varies by treatment',
-    warranty: 'Digital records & aftercare package',
+    duration: '5-14 days',
+    recovery: 'Varies by procedure',
+    warranty: 'Written records and international component codes provided',
     accentColor: '#14b8a6',
     accentLight: '#ccfbf1',
   },
@@ -311,20 +402,18 @@ const specialtiesData: Record<string, SpecialtyDetail> = {
 /* Lightbox Modal Component */
 function FlyerLightbox({
   isOpen,
-  flyerImg,
-  title,
+  photo,
   flyerFileName,
   onClose,
 }: {
   isOpen: boolean;
-  flyerImg: StaticImageData;
-  title: string;
+  photo: GalleryPhoto;
   flyerFileName: string;
   onClose: () => void;
 }) {
   const handleDownload = useCallback(async () => {
     try {
-      const response = await fetch(flyerImg.src);
+      const response = await fetch(photo.img.src);
       const blob = await response.blob();
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a');
@@ -335,10 +424,9 @@ function FlyerLightbox({
       document.body.removeChild(a);
       URL.revokeObjectURL(url);
     } catch {
-      // Fallback: open in new tab
-      window.open(flyerImg.src, '_blank');
+      window.open(photo.img.src, '_blank');
     }
-  }, [flyerImg.src, flyerFileName]);
+  }, [photo.img.src, flyerFileName]);
 
   useEffect(() => {
     if (isOpen) {
@@ -372,7 +460,7 @@ function FlyerLightbox({
             position: 'fixed',
             inset: 0,
             zIndex: 9999,
-            background: 'rgba(2,6,23,0.92)',
+            background: 'rgba(2,6,23,0.95)',
             backdropFilter: 'blur(16px)',
             display: 'flex',
             alignItems: 'center',
@@ -389,9 +477,9 @@ function FlyerLightbox({
             onClick={(e) => e.stopPropagation()}
             style={{
               position: 'relative',
-              maxWidth: '540px',
+              maxWidth: '680px',
               width: '100%',
-              maxHeight: '90vh',
+              maxHeight: '92vh',
               display: 'flex',
               flexDirection: 'column',
               gap: '1rem',
@@ -409,7 +497,7 @@ function FlyerLightbox({
               <div>
                 <p
                   style={{
-                    color: 'rgba(255,255,255,0.5)',
+                    color: 'rgba(255,255,255,0.6)',
                     fontSize: '0.75rem',
                     fontWeight: 600,
                     textTransform: 'uppercase',
@@ -417,10 +505,12 @@ function FlyerLightbox({
                     margin: 0,
                   }}
                 >
-                  Treatment Flyer
+                  Clinical Photography & Equipment
                 </p>
-                <p style={{ color: '#fff', fontSize: '1rem', fontWeight: 700, margin: 0 }}>
-                  {title}
+                <p
+                  style={{ color: '#fff', fontSize: '1.1rem', fontWeight: 700, margin: '2px 0 0' }}
+                >
+                  {photo.title}
                 </p>
               </div>
               <button
@@ -429,8 +519,8 @@ function FlyerLightbox({
                   width: '40px',
                   height: '40px',
                   borderRadius: '50%',
-                  background: 'rgba(255,255,255,0.1)',
-                  border: '1px solid rgba(255,255,255,0.15)',
+                  background: 'rgba(255,255,255,0.12)',
+                  border: '1px solid rgba(255,255,255,0.2)',
                   color: '#fff',
                   cursor: 'pointer',
                   display: 'flex',
@@ -440,72 +530,88 @@ function FlyerLightbox({
                   flexShrink: 0,
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.background = 'rgba(255,255,255,0.2)';
+                  e.currentTarget.style.background = 'rgba(255,255,255,0.25)';
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.background = 'rgba(255,255,255,0.1)';
+                  e.currentTarget.style.background = 'rgba(255,255,255,0.12)';
                 }}
+                aria-label="Close"
               >
                 <X size={18} />
               </button>
             </div>
 
-            {/* Flyer Image */}
+            {/* Image Container */}
             <div
               style={{
                 position: 'relative',
                 width: '100%',
-                flex: 1,
-                maxHeight: 'calc(90vh - 130px)',
-                borderRadius: '1rem',
+                maxHeight: '65vh',
+                borderRadius: '1.25rem',
                 overflow: 'hidden',
-                boxShadow: '0 30px 80px rgba(0,0,0,0.6)',
-                border: '1px solid rgba(255,255,255,0.08)',
+                boxShadow: '0 25px 70px rgba(0,0,0,0.5)',
+                border: '1px solid rgba(255,255,255,0.15)',
+                background: '#020617',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
               }}
             >
               <Image
-                src={flyerImg}
-                alt={`${title} Flyer`}
+                src={photo.img}
+                alt={photo.title}
                 style={{
                   width: '100%',
                   height: 'auto',
-                  display: 'block',
-                  maxHeight: 'calc(90vh - 130px)',
+                  maxHeight: '65vh',
                   objectFit: 'contain',
                 }}
-                width={flyerImg.width}
-                height={flyerImg.height}
                 priority
               />
             </div>
 
-            {/* Download Button */}
-            <motion.button
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              onClick={handleDownload}
+            {/* Caption & Download strip */}
+            <div
               style={{
-                width: '100%',
-                padding: '1rem',
-                background: 'linear-gradient(135deg, #0ea5e9, #0284c7)',
-                color: '#fff',
-                border: 'none',
-                borderRadius: '0.875rem',
-                fontWeight: 700,
-                fontSize: '1rem',
-                cursor: 'pointer',
                 display: 'flex',
                 alignItems: 'center',
-                justifyContent: 'center',
-                gap: '0.75rem',
-                boxShadow: '0 8px 30px rgba(14,165,233,0.4)',
-                transition: 'all 0.2s ease',
-                letterSpacing: '-0.01em',
+                justifyContent: 'space-between',
+                gap: '1rem',
+                padding: '0 0.25rem',
               }}
             >
-              <Download size={20} />
-              Download Flyer
-            </motion.button>
+              <p
+                style={{
+                  color: 'rgba(255,255,255,0.8)',
+                  fontSize: '0.85rem',
+                  lineHeight: 1.5,
+                  margin: 0,
+                }}
+              >
+                {photo.caption}
+              </p>
+              <button
+                onClick={handleDownload}
+                style={{
+                  padding: '0.6rem 1.2rem',
+                  background: '#0ea5e9',
+                  border: 'none',
+                  borderRadius: '9999px',
+                  color: '#fff',
+                  fontSize: '0.85rem',
+                  fontWeight: 600,
+                  cursor: 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '6px',
+                  flexShrink: 0,
+                  boxShadow: '0 4px 15px rgba(14,165,233,0.4)',
+                }}
+              >
+                <Download size={14} />
+                Download
+              </button>
+            </div>
           </motion.div>
         </motion.div>
       )}
@@ -515,9 +621,10 @@ function FlyerLightbox({
 
 export default function SpecialtyDetailPage() {
   const params = useParams();
-  const slug = params?.slug as string;
+  const slug = (params.slug as string) || '';
   const specialty = specialtiesData[slug];
   const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [activePhotoIdx, setActivePhotoIdx] = useState(0);
 
   if (!specialty) {
     return (
@@ -527,874 +634,529 @@ export default function SpecialtyDetailPage() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
+          flexDirection: 'column',
+          gap: '1.5rem',
           background: '#020617',
           color: '#fff',
-          fontSize: '2rem',
-          fontWeight: 800,
         }}
       >
-        <div>
-          <h1 style={{ marginBottom: '2rem' }}>Specialty Not Found</h1>
-          <Link href="/specialties" style={{ color: '#0ea5e9', fontSize: '1.2rem' }}>
-            ← Back to Specialties
-          </Link>
-        </div>
+        <h1 style={{ fontSize: '2rem', fontWeight: 800 }}>Specialty Not Found</h1>
+        <p style={{ color: '#94a3b8' }}>The requested clinical specialty page does not exist.</p>
+        <Link
+          href="/specialties"
+          style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '0.5rem',
+            padding: '0.875rem 1.75rem',
+            background: '#0ea5e9',
+            color: '#fff',
+            borderRadius: '9999px',
+            textDecoration: 'none',
+            fontWeight: 700,
+          }}
+        >
+          <ArrowLeft size={18} /> Back to Specialties
+        </Link>
       </div>
     );
   }
 
+  const activePhoto = specialty.gallery[activePhotoIdx] || specialty.gallery[0];
+
   return (
-    <>
-      {/* Flyer Lightbox */}
+    <div style={{ background: '#f8fafc', minHeight: '100vh', color: '#0f172a' }}>
       <FlyerLightbox
         isOpen={lightboxOpen}
-        flyerImg={specialty.flyerImg}
-        title={specialty.title}
+        photo={activePhoto}
         flyerFileName={specialty.flyerFileName}
         onClose={() => setLightboxOpen(false)}
       />
 
+      {/* Top Navigation Bar */}
       <div
-        style={{ background: '#f8fafc', minHeight: '100vh', paddingTop: 'var(--nav-height, 80px)' }}
+        style={{
+          position: 'sticky',
+          top: 0,
+          zIndex: 50,
+          background: 'rgba(255,255,255,0.85)',
+          backdropFilter: 'blur(20px)',
+          borderBottom: '1px solid #e2e8f0',
+          padding: '0.875rem 0',
+        }}
       >
-        {/* Sticky Top Nav Bar */}
         <div
-          style={{
-            background: 'rgba(255,255,255,0.95)',
-            backdropFilter: 'blur(12px)',
-            borderBottom: '1px solid rgba(0,0,0,0.07)',
-            position: 'sticky',
-            top: 0,
-            zIndex: 100,
-            padding: '0.875rem 2rem',
-          }}
+          className="container"
+          style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}
         >
-          <div
+          <Link
+            href="/specialties"
             style={{
-              maxWidth: '1400px',
-              margin: '0 auto',
-              display: 'flex',
+              display: 'inline-flex',
               alignItems: 'center',
-              justifyContent: 'space-between',
+              gap: '0.5rem',
+              color: '#64748b',
+              textDecoration: 'none',
+              fontWeight: 600,
+              fontSize: '0.9rem',
+              transition: 'color 0.2s',
             }}
           >
+            <ArrowLeft size={16} /> All Specialties
+          </Link>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+            <span
+              style={{
+                background: specialty.accentLight,
+                color: specialty.accentColor,
+                padding: '0.25rem 0.75rem',
+                borderRadius: '50px',
+                fontSize: '0.75rem',
+                fontWeight: 700,
+                textTransform: 'uppercase',
+                letterSpacing: '0.05em',
+              }}
+            >
+              {specialty.category}
+            </span>
             <Link
-              href="/specialties"
+              href="/contact"
+              style={{
+                background: specialty.accentColor,
+                color: '#fff',
+                padding: '0.5rem 1.25rem',
+                borderRadius: '50px',
+                textDecoration: 'none',
+                fontWeight: 700,
+                fontSize: '0.875rem',
+                boxShadow: `0 4px 15px ${specialty.accentColor}40`,
+              }}
+            >
+              Book Consultation
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      {/* Hero Section */}
+      <section
+        style={{
+          background: 'linear-gradient(135deg, #020617 0%, #0f172a 100%)',
+          color: '#fff',
+          padding: 'clamp(3rem, 6vw, 5rem) 0',
+          position: 'relative',
+          overflow: 'hidden',
+        }}
+      >
+        <div className="container" style={{ position: 'relative', zIndex: 1 }}>
+          <div style={{ maxWidth: '800px' }}>
+            <div
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '0.5rem',
-                color: '#64748b',
-                textDecoration: 'none',
-                fontSize: '0.9rem',
-                fontWeight: 600,
-                transition: 'color 0.3s ease',
-                padding: '0.4rem 0.75rem',
-                borderRadius: '0.5rem',
-                border: '1px solid rgba(0,0,0,0.08)',
-                background: '#f8fafc',
+                background: 'rgba(255,255,255,0.08)',
+                border: '1px solid rgba(255,255,255,0.15)',
+                padding: '0.4rem 1rem',
+                borderRadius: '50px',
+                color: '#38bdf8',
+                fontWeight: 700,
+                fontSize: '0.8rem',
+                marginBottom: '1.25rem',
+                backdropFilter: 'blur(10px)',
               }}
             >
-              <ArrowLeft size={16} />
-              All Treatments
-            </Link>
-
-            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-              <motion.span
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                style={{
-                  color: specialty.accentColor,
-                  fontSize: '0.75rem',
-                  fontWeight: 800,
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.12em',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '0.4rem',
-                  background: specialty.accentLight,
-                  padding: '0.35rem 0.875rem',
-                  borderRadius: '100px',
-                }}
-              >
-                <Sparkles size={12} />
-                {specialty.category}
-              </motion.span>
-
-              {/* Download Flyer quick action */}
-              <motion.button
-                initial={{ opacity: 0, x: 10 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.3 }}
-                onClick={() => setLightboxOpen(true)}
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '0.4rem',
-                  padding: '0.4rem 1rem',
-                  background: 'linear-gradient(135deg, #0ea5e9, #0284c7)',
-                  color: '#fff',
-                  border: 'none',
-                  borderRadius: '100px',
-                  fontSize: '0.8rem',
-                  fontWeight: 700,
-                  cursor: 'pointer',
-                  boxShadow: '0 4px 14px rgba(14,165,233,0.3)',
-                  transition: 'all 0.2s ease',
-                }}
-              >
-                <Download size={13} />
-                Get Flyer
-              </motion.button>
+              <Sparkles size={14} />
+              <span>{specialty.category}</span>
             </div>
+            <h1
+              style={{
+                fontSize: 'clamp(2rem, 5vw, 3.25rem)',
+                fontWeight: 900,
+                lineHeight: 1.15,
+                letterSpacing: '-0.02em',
+                marginBottom: '1rem',
+              }}
+            >
+              {specialty.title}
+            </h1>
+            <p
+              style={{
+                fontSize: 'clamp(1.05rem, 2vw, 1.25rem)',
+                color: '#94a3b8',
+                lineHeight: 1.6,
+                maxWidth: '650px',
+              }}
+            >
+              {specialty.tagline}
+            </p>
           </div>
         </div>
+      </section>
 
-        {/* Main Content Container */}
-        <div
-          style={{
-            maxWidth: '1400px',
-            margin: '0 auto',
-            padding: '3rem 2rem 5rem',
-          }}
-        >
-          {/* Two Column Layout: Flyer + Content */}
-          <div className="detail-grid" style={{ marginBottom: '5rem' }}>
-            {/* LEFT: Flyer Display (clickable) */}
-            <motion.div
-              className="flyer-container"
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.7 }}
-            >
-              {/* Flyer Card */}
+      {/* Main Content Layout */}
+      <section style={{ padding: 'clamp(2.5rem, 5vw, 4rem) 0' }}>
+        <div className="container">
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'minmax(0, 1fr) minmax(320px, 420px)',
+              gap: 'clamp(2rem, 4vw, 3.5rem)',
+              alignItems: 'start',
+            }}
+          >
+            {/* Left: Detailed Information */}
+            <div>
+              {/* Overview */}
+              <div
+                style={{
+                  background: '#fff',
+                  borderRadius: '1.5rem',
+                  padding: 'clamp(1.5rem, 3vw, 2.5rem)',
+                  border: '1px solid #e2e8f0',
+                  marginBottom: '2rem',
+                  boxShadow: '0 4px 6px -1px rgba(0,0,0,0.03)',
+                }}
+              >
+                <h2
+                  style={{
+                    fontSize: '1.5rem',
+                    fontWeight: 800,
+                    marginBottom: '1rem',
+                    letterSpacing: '-0.02em',
+                  }}
+                >
+                  Procedure Overview
+                </h2>
+                <p style={{ color: '#475569', lineHeight: 1.8, fontSize: '1.05rem' }}>
+                  {specialty.description}
+                </p>
+              </div>
+
+              {/* Clinical Benefits */}
+              <div
+                style={{
+                  background: '#fff',
+                  borderRadius: '1.5rem',
+                  padding: 'clamp(1.5rem, 3vw, 2.5rem)',
+                  border: '1px solid #e2e8f0',
+                  marginBottom: '2rem',
+                  boxShadow: '0 4px 6px -1px rgba(0,0,0,0.03)',
+                }}
+              >
+                <h2
+                  style={{
+                    fontSize: '1.5rem',
+                    fontWeight: 800,
+                    marginBottom: '1.5rem',
+                    letterSpacing: '-0.02em',
+                  }}
+                >
+                  Key Clinical Benefits
+                </h2>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                  {specialty.benefits.map((benefit, i) => (
+                    <div
+                      key={i}
+                      style={{
+                        display: 'flex',
+                        alignItems: 'flex-start',
+                        gap: '0.875rem',
+                      }}
+                    >
+                      <CheckCircle2
+                        size={20}
+                        color={specialty.accentColor}
+                        style={{ flexShrink: 0, marginTop: '2px' }}
+                      />
+                      <span style={{ color: '#334155', lineHeight: 1.6, fontWeight: 500 }}>
+                        {benefit}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Treatment Process */}
+              <div
+                style={{
+                  background: '#fff',
+                  borderRadius: '1.5rem',
+                  padding: 'clamp(1.5rem, 3vw, 2.5rem)',
+                  border: '1px solid #e2e8f0',
+                  marginBottom: '2rem',
+                  boxShadow: '0 4px 6px -1px rgba(0,0,0,0.03)',
+                }}
+              >
+                <h2
+                  style={{
+                    fontSize: '1.5rem',
+                    fontWeight: 800,
+                    marginBottom: '1.5rem',
+                    letterSpacing: '-0.02em',
+                  }}
+                >
+                  Step-by-Step Treatment Journey
+                </h2>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+                  {specialty.process.map((p, i) => (
+                    <div
+                      key={i}
+                      style={{
+                        display: 'flex',
+                        gap: '1.25rem',
+                        alignItems: 'flex-start',
+                      }}
+                    >
+                      <div
+                        style={{
+                          width: '36px',
+                          height: '36px',
+                          borderRadius: '10px',
+                          background: specialty.accentLight,
+                          color: specialty.accentColor,
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          fontWeight: 800,
+                          fontSize: '0.9rem',
+                          flexShrink: 0,
+                        }}
+                      >
+                        {i + 1}
+                      </div>
+                      <div>
+                        <h3 style={{ fontSize: '1.05rem', fontWeight: 700, margin: '0 0 0.25rem' }}>
+                          {p.step}
+                        </h3>
+                        <p
+                          style={{
+                            color: '#64748b',
+                            margin: 0,
+                            lineHeight: 1.6,
+                            fontSize: '0.95rem',
+                          }}
+                        >
+                          {p.desc}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Right: Authentic Clinical Photography & Equipment Card */}
+            <div>
               <div
                 style={{
                   background: '#fff',
                   borderRadius: '2rem',
-                  padding: '1.25rem',
-                  boxShadow: '0 25px 70px rgba(0,0,0,0.1)',
+                  padding: '1.5rem',
+                  boxShadow: '0 20px 50px rgba(0,0,0,0.08)',
                   border: `2px solid ${specialty.accentLight}`,
+                  position: 'sticky',
+                  top: '90px',
                 }}
               >
-                {/* Clickable image */}
+                {/* Header */}
+                <div
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    marginBottom: '1rem',
+                  }}
+                >
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                    <Camera size={16} color={specialty.accentColor} />
+                    <span
+                      style={{
+                        fontSize: '0.8rem',
+                        fontWeight: 700,
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.08em',
+                        color: specialty.accentColor,
+                      }}
+                    >
+                      Authentic Clinic Equipment
+                    </span>
+                  </div>
+                  <span
+                    style={{
+                      fontSize: '0.75rem',
+                      fontWeight: 600,
+                      color: '#64748b',
+                      background: '#f1f5f9',
+                      padding: '2px 8px',
+                      borderRadius: '9999px',
+                    }}
+                  >
+                    Photo {activePhotoIdx + 1} of {specialty.gallery.length}
+                  </span>
+                </div>
+
+                {/* Main Interactive Showcase Image */}
                 <motion.div
                   whileHover={{ scale: 1.01 }}
-                  transition={{ duration: 0.3 }}
+                  transition={{ duration: 0.2 }}
                   className="interactive-banner"
                   onClick={() => setLightboxOpen(true)}
                   style={{
                     position: 'relative',
                     width: '100%',
-                    aspectRatio: '16/9',
+                    aspectRatio: '4/3',
                     borderRadius: '1.25rem',
                     overflow: 'hidden',
                     cursor: 'zoom-in',
+                    background: '#091528',
+                    border: '1px solid #e2e8f0',
                   }}
                 >
                   <Image
-                    src={specialty.bannerImg}
-                    alt={specialty.title}
+                    src={activePhoto.img}
+                    alt={activePhoto.title}
                     fill
                     priority
-                    style={{ objectFit: 'cover' }}
+                    style={{ objectFit: 'contain' }}
                   />
                   <div className="banner-overlay">
                     <ZoomIn size={32} className="zoom-icon" />
-                    <span>View Flyer</span>
+                    <span>View High-Resolution</span>
                   </div>
                 </motion.div>
 
-                {/* Flyer action strip */}
-                <div
-                  style={{
-                    marginTop: '1rem',
-                    display: 'flex',
-                    gap: '0.75rem',
-                  }}
-                >
-                  <motion.button
-                    whileHover={{ scale: 1.02, y: -1 }}
-                    whileTap={{ scale: 0.98 }}
-                    onClick={() => setLightboxOpen(true)}
+                {/* Thumbnail Selector (if multiple photos exist) */}
+                {specialty.gallery.length > 1 && (
+                  <div
                     style={{
-                      flex: 1,
-                      padding: '0.85rem 1rem',
-                      background: `linear-gradient(135deg, ${specialty.accentColor}15 0%, ${specialty.accentColor}08 100%)`,
-                      border: `1.5px solid ${specialty.accentColor}30`,
-                      borderRadius: '0.875rem',
-                      color: specialty.accentColor,
-                      fontWeight: 700,
-                      fontSize: '0.85rem',
-                      cursor: 'pointer',
                       display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
                       gap: '0.5rem',
-                      transition: 'all 0.2s ease',
+                      marginTop: '0.875rem',
+                      overflowX: 'auto',
+                      paddingBottom: '4px',
                     }}
                   >
-                    <ZoomIn size={16} />
-                    View Flyer
-                  </motion.button>
-
-                  <motion.button
-                    whileHover={{ scale: 1.02, y: -1 }}
-                    whileTap={{ scale: 0.98 }}
-                    onClick={() => setLightboxOpen(true)}
-                    style={{
-                      flex: 1,
-                      padding: '0.85rem 1rem',
-                      background: 'linear-gradient(135deg, #0ea5e9, #0284c7)',
-                      border: 'none',
-                      borderRadius: '0.875rem',
-                      color: '#fff',
-                      fontWeight: 700,
-                      fontSize: '0.85rem',
-                      cursor: 'pointer',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      gap: '0.5rem',
-                      boxShadow: '0 6px 20px rgba(14,165,233,0.3)',
-                      transition: 'all 0.2s ease',
-                    }}
-                  >
-                    <Download size={16} />
-                    Download
-                  </motion.button>
-                </div>
-
-                {/* Caption */}
-                <p
-                  style={{
-                    textAlign: 'center',
-                    fontSize: '0.75rem',
-                    color: '#94a3b8',
-                    fontWeight: 500,
-                    marginTop: '0.75rem',
-                    marginBottom: 0,
-                    letterSpacing: '0.02em',
-                  }}
-                >
-                  Click image or buttons to view full-size flyer
-                </p>
-              </div>
-            </motion.div>
-
-            {/* RIGHT: Treatment Details */}
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.7, delay: 0.2 }}
-            >
-              {/* Category badge */}
-              <div
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '0.5rem',
-                  background: specialty.accentLight,
-                  color: specialty.accentColor,
-                  padding: '0.4rem 1rem',
-                  borderRadius: '100px',
-                  fontSize: '0.78rem',
-                  fontWeight: 800,
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.1em',
-                  marginBottom: '1.5rem',
-                }}
-              >
-                <Sparkles size={12} />
-                {specialty.category}
-              </div>
-
-              {/* Title Section */}
-              <div style={{ marginBottom: '2.5rem' }}>
-                <h1
-                  style={{
-                    fontSize: 'clamp(2rem, 4vw, 3.2rem)',
-                    fontWeight: 900,
-                    color: '#0f172a',
-                    marginBottom: '1rem',
-                    letterSpacing: '-0.04em',
-                    lineHeight: 1.1,
-                  }}
-                >
-                  {specialty.title}
-                </h1>
-
-                <p
-                  style={{
-                    fontSize: '1.15rem',
-                    color: specialty.accentColor,
-                    fontWeight: 600,
-                    marginBottom: '1.25rem',
-                    lineHeight: 1.6,
-                  }}
-                >
-                  {specialty.tagline}
-                </p>
-
-                {/* Divider */}
-                <div
-                  style={{
-                    width: '60px',
-                    height: '4px',
-                    background: `linear-gradient(90deg, ${specialty.accentColor}, ${specialty.accentColor}40)`,
-                    borderRadius: '100px',
-                    marginBottom: '1.5rem',
-                  }}
-                />
-
-                <p
-                  style={{
-                    fontSize: '1.05rem',
-                    color: '#475569',
-                    lineHeight: 1.9,
-                  }}
-                >
-                  {specialty.description}
-                </p>
-              </div>
-
-              {/* Quick Stats */}
-              <div
-                className="stats-grid"
-                style={{
-                  display: 'grid',
-                  gridTemplateColumns: 'repeat(3, 1fr)',
-                  gap: '1rem',
-                  marginBottom: '2.5rem',
-                }}
-              >
-                {[
-                  {
-                    icon: <Clock size={22} />,
-                    label: 'Duration',
-                    value: specialty.duration,
-                    bg: 'linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%)',
-                    color: '#0369a1',
-                    border: 'rgba(14,165,233,0.2)',
-                  },
-                  {
-                    icon: <Shield size={22} />,
-                    label: 'Recovery',
-                    value: specialty.recovery,
-                    bg: 'linear-gradient(135deg, #e9d5ff 0%, #d8b4fe 100%)',
-                    color: '#7e22ce',
-                    border: 'rgba(139,92,246,0.2)',
-                  },
-                  {
-                    icon: <Award size={22} />,
-                    label: 'Warranty',
-                    value: specialty.warranty,
-                    bg: 'linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%)',
-                    color: '#047857',
-                    border: 'rgba(16,185,129,0.2)',
-                  },
-                ].map(({ icon, label, value, bg, color, border }) => (
-                  <motion.div
-                    key={label}
-                    whileHover={{ y: -4, boxShadow: '0 12px 30px rgba(0,0,0,0.1)' }}
-                    style={{
-                      padding: '1.25rem',
-                      background: bg,
-                      borderRadius: '1.25rem',
-                      border: `2px solid ${border}`,
-                      transition: 'all 0.3s ease',
-                    }}
-                  >
-                    <div style={{ color, marginBottom: '0.6rem' }}>{icon}</div>
-                    <div
-                      style={{
-                        fontSize: '0.7rem',
-                        color,
-                        fontWeight: 700,
-                        marginBottom: '0.25rem',
-                        textTransform: 'uppercase',
-                        letterSpacing: '0.06em',
-                      }}
-                    >
-                      {label}
-                    </div>
-                    <div
-                      style={{
-                        fontSize: '1.05rem',
-                        fontWeight: 900,
-                        color: '#0f172a',
-                        lineHeight: 1.3,
-                      }}
-                    >
-                      {value}
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-
-              {/* Key Benefits */}
-              <div>
-                <h2
-                  style={{
-                    fontSize: '1.6rem',
-                    fontWeight: 900,
-                    color: '#0f172a',
-                    marginBottom: '1.25rem',
-                    letterSpacing: '-0.03em',
-                  }}
-                >
-                  Key Benefits
-                </h2>
-                <div style={{ display: 'grid', gap: '0.75rem' }}>
-                  {specialty.benefits.map((benefit, idx) => (
-                    <motion.div
-                      key={idx}
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: idx * 0.07 }}
-                      whileHover={{ x: 5 }}
-                      style={{
-                        display: 'flex',
-                        alignItems: 'flex-start',
-                        gap: '0.875rem',
-                        padding: '1rem 1.25rem',
-                        background: '#fff',
-                        borderRadius: '0.875rem',
-                        border: `1.5px solid ${specialty.accentColor}15`,
-                        boxShadow: '0 2px 8px rgba(0,0,0,0.03)',
-                        transition: 'all 0.25s ease',
-                      }}
-                    >
-                      <CheckCircle2
-                        size={20}
+                    {specialty.gallery.map((gPhoto, gIdx) => (
+                      <button
+                        key={gIdx}
+                        type="button"
+                        onClick={() => setActivePhotoIdx(gIdx)}
                         style={{
-                          color: specialty.accentColor,
+                          position: 'relative',
+                          width: '64px',
+                          height: '52px',
+                          borderRadius: '8px',
+                          overflow: 'hidden',
+                          border:
+                            activePhotoIdx === gIdx
+                              ? `2px solid ${specialty.accentColor}`
+                              : '1px solid #cbd5e1',
+                          background: '#091528',
+                          cursor: 'pointer',
+                          padding: 0,
                           flexShrink: 0,
-                          marginTop: '0.15rem',
-                        }}
-                      />
-                      <span
-                        style={{
-                          fontSize: '0.97rem',
-                          color: '#334155',
-                          lineHeight: 1.7,
-                          fontWeight: 500,
+                          opacity: activePhotoIdx === gIdx ? 1 : 0.65,
+                          transition: 'all 0.2s',
                         }}
                       >
-                        {benefit}
-                      </span>
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-            </motion.div>
-          </div>
-
-          {/* Treatment Process (Full Width) */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            style={{ marginBottom: '5rem' }}
-          >
-            {/* Section header */}
-            <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
-              <span
-                style={{
-                  display: 'inline-block',
-                  background: specialty.accentLight,
-                  color: specialty.accentColor,
-                  padding: '0.35rem 1rem',
-                  borderRadius: '100px',
-                  fontSize: '0.75rem',
-                  fontWeight: 800,
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.1em',
-                  marginBottom: '1rem',
-                }}
-              >
-                Step by Step
-              </span>
-              <h2
-                style={{
-                  fontSize: '2.25rem',
-                  fontWeight: 900,
-                  color: '#0f172a',
-                  letterSpacing: '-0.03em',
-                }}
-              >
-                Treatment Process
-              </h2>
-            </div>
-
-            <div
-              className="process-grid-responsive"
-              style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
-                gap: '1.5rem',
-              }}
-            >
-              {specialty.process.map((step, idx) => (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.1 }}
-                  whileHover={{ y: -6, boxShadow: '0 20px 50px rgba(0,0,0,0.1)' }}
-                  style={{
-                    padding: '2rem',
-                    background: '#fff',
-                    borderRadius: '1.5rem',
-                    border: `2px solid ${specialty.accentColor}15`,
-                    position: 'relative',
-                    boxShadow: '0 8px 24px rgba(0,0,0,0.05)',
-                    transition: 'all 0.35s ease',
-                    overflow: 'hidden',
-                  }}
-                >
-                  {/* Accent top bar */}
-                  <div
-                    style={{
-                      position: 'absolute',
-                      top: 0,
-                      left: 0,
-                      right: 0,
-                      height: '4px',
-                      background: `linear-gradient(90deg, ${specialty.accentColor}, ${specialty.accentColor}60)`,
-                      borderRadius: '0 0 0 0',
-                    }}
-                  />
-
-                  {/* Step number */}
-                  <div
-                    style={{
-                      width: '3rem',
-                      height: '3rem',
-                      borderRadius: '50%',
-                      background: `linear-gradient(135deg, ${specialty.accentColor}, ${specialty.accentColor}cc)`,
-                      color: '#fff',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      fontWeight: 900,
-                      fontSize: '1.15rem',
-                      boxShadow: `0 8px 24px ${specialty.accentColor}50`,
-                      marginBottom: '1.25rem',
-                      marginTop: '0.5rem',
-                    }}
-                  >
-                    {idx + 1}
+                        <Image
+                          src={gPhoto.img}
+                          alt={gPhoto.title}
+                          fill
+                          style={{ objectFit: 'cover' }}
+                        />
+                      </button>
+                    ))}
                   </div>
+                )}
 
-                  <h3
+                {/* Photo Title & Caption */}
+                <div style={{ marginTop: '1rem' }}>
+                  <h4
                     style={{
-                      fontSize: '1.2rem',
-                      fontWeight: 800,
+                      margin: '0 0 4px',
+                      fontSize: '1rem',
+                      fontWeight: 700,
                       color: '#0f172a',
-                      marginBottom: '0.75rem',
-                      letterSpacing: '-0.02em',
                     }}
                   >
-                    {step.step}
-                  </h3>
+                    {activePhoto.title}
+                  </h4>
                   <p
                     style={{
-                      color: '#64748b',
-                      fontSize: '0.97rem',
-                      lineHeight: 1.7,
                       margin: 0,
+                      fontSize: '0.85rem',
+                      color: '#64748b',
+                      lineHeight: 1.5,
                     }}
                   >
-                    {step.desc}
+                    {activePhoto.caption}
                   </p>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
+                </div>
 
-          {/* Flyer CTA Banner */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            style={{
-              background: `linear-gradient(135deg, ${specialty.accentColor}15 0%, ${specialty.accentColor}05 100%)`,
-              border: `2px solid ${specialty.accentColor}20`,
-              borderRadius: '2rem',
-              padding: '2.5rem 3rem',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              gap: '2rem',
-              marginBottom: '4rem',
-              flexWrap: 'wrap',
-            }}
-          >
-            <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', flexWrap: 'wrap' }}>
-              <div
-                style={{
-                  width: '64px',
-                  height: '64px',
-                  borderRadius: '1rem',
-                  overflow: 'hidden',
-                  position: 'relative',
-                  flexShrink: 0,
-                  boxShadow: '0 8px 24px rgba(0,0,0,0.15)',
-                }}
-              >
-                <Image
-                  src={specialty.bannerImg}
-                  alt={specialty.title}
-                  fill
-                  style={{ objectFit: 'cover' }}
-                />
-              </div>
-              <div>
-                <p style={{ margin: 0, fontWeight: 800, fontSize: '1.1rem', color: '#0f172a' }}>
-                  📋 Treatment Flyer Available
-                </p>
-                <p
-                  style={{ margin: 0, color: '#64748b', fontSize: '0.9rem', marginTop: '0.25rem' }}
-                >
-                  Download or view our complete {specialty.title.toLowerCase()} information sheet
-                </p>
-              </div>
-            </div>
-            <div style={{ display: 'flex', gap: '0.875rem', flexShrink: 0, flexWrap: 'wrap' }}>
-              <motion.button
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.97 }}
-                onClick={() => setLightboxOpen(true)}
-                style={{
-                  padding: '0.875rem 1.75rem',
-                  background: 'transparent',
-                  border: `2px solid ${specialty.accentColor}`,
-                  color: specialty.accentColor,
-                  borderRadius: '0.875rem',
-                  fontWeight: 700,
-                  fontSize: '0.9rem',
-                  cursor: 'pointer',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '0.5rem',
-                  whiteSpace: 'nowrap',
-                }}
-              >
-                <ZoomIn size={16} />
-                View Flyer
-              </motion.button>
-              <motion.button
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.97 }}
-                onClick={() => setLightboxOpen(true)}
-                style={{
-                  padding: '0.875rem 1.75rem',
-                  background: `linear-gradient(135deg, ${specialty.accentColor}, ${specialty.accentColor}cc)`,
-                  border: 'none',
-                  color: '#fff',
-                  borderRadius: '0.875rem',
-                  fontWeight: 700,
-                  fontSize: '0.9rem',
-                  cursor: 'pointer',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '0.5rem',
-                  boxShadow: `0 6px 20px ${specialty.accentColor}40`,
-                  whiteSpace: 'nowrap',
-                }}
-              >
-                <Download size={16} />
-                Download Flyer
-              </motion.button>
-            </div>
-          </motion.div>
-
-          {/* Highlighted Video Section (if available) */}
-          {specialty.videoUrl && (
-            <div
-              style={{
-                marginBottom: '6rem',
-              }}
-            >
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.7 }}
-                style={{
-                  borderRadius: '1.5rem',
-                  overflow: 'hidden',
-                  boxShadow: '0 30px 70px rgba(0,0,0,0.15)',
-                  border: `2px solid ${specialty.accentLight}`,
-                  background: '#000',
-                  position: 'relative',
-                  aspectRatio: '16/9',
-                }}
-              >
-                <video
-                  src={specialty.videoUrl}
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  controls
+                {/* Action button */}
+                <motion.button
+                  whileHover={{ scale: 1.02, y: -1 }}
+                  whileTap={{ scale: 0.98 }}
+                  onClick={() => setLightboxOpen(true)}
                   style={{
                     width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
-                    display: 'block',
+                    marginTop: '1.25rem',
+                    padding: '0.85rem 1rem',
+                    background: `linear-gradient(135deg, ${specialty.accentColor}18 0%, ${specialty.accentColor}08 100%)`,
+                    border: `1.5px solid ${specialty.accentColor}40`,
+                    borderRadius: '0.875rem',
+                    color: specialty.accentColor,
+                    fontWeight: 700,
+                    fontSize: '0.875rem',
+                    cursor: 'pointer',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: '0.5rem',
+                    transition: 'all 0.2s ease',
                   }}
-                />
-              </motion.div>
-            </div>
-          )}
+                >
+                  <ZoomIn size={16} />
+                  Enlarge High-Res Clinical Photo
+                </motion.button>
 
-          {/* CTA Section */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            style={{
-              background: 'linear-gradient(135deg, #020617 0%, #0f172a 100%)',
-              borderRadius: '2rem',
-              padding: '4rem 3rem',
-              textAlign: 'center',
-              boxShadow: '0 30px 70px rgba(2,6,23,0.3)',
-              position: 'relative',
-              overflow: 'hidden',
-            }}
-          >
-            {/* Glow blobs */}
-            <div
-              style={{
-                position: 'absolute',
-                top: '-10%',
-                left: '10%',
-                width: '300px',
-                height: '300px',
-                background: `radial-gradient(circle, ${specialty.accentColor}30 0%, transparent 70%)`,
-                borderRadius: '50%',
-                filter: 'blur(50px)',
-              }}
-            />
-            <div
-              style={{
-                position: 'absolute',
-                bottom: '-10%',
-                right: '10%',
-                width: '300px',
-                height: '300px',
-                background: 'radial-gradient(circle, rgba(56,189,248,0.2) 0%, transparent 70%)',
-                borderRadius: '50%',
-                filter: 'blur(50px)',
-              }}
-            />
-
-            <div style={{ position: 'relative', zIndex: 1 }}>
-              <div
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '0.5rem',
-                  background: `${specialty.accentColor}20`,
-                  color: specialty.accentColor,
-                  padding: '0.4rem 1rem',
-                  borderRadius: '100px',
-                  fontSize: '0.75rem',
-                  fontWeight: 800,
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.1em',
-                  marginBottom: '1.5rem',
-                }}
-              >
-                <Sparkles size={12} />
-                {specialty.category}
-              </div>
-
-              <h3
-                style={{
-                  fontSize: 'clamp(1.75rem, 3vw, 2.75rem)',
-                  fontWeight: 900,
-                  color: '#fff',
-                  marginBottom: '1.25rem',
-                  letterSpacing: '-0.03em',
-                }}
-              >
-                Ready to Transform Your Smile?
-              </h3>
-              <p
-                style={{
-                  fontSize: '1.1rem',
-                  color: 'rgba(255,255,255,0.7)',
-                  marginBottom: '2.5rem',
-                  maxWidth: '520px',
-                  margin: '0 auto 2.5rem',
-                  lineHeight: 1.7,
-                }}
-              >
-                Book your consultation today and experience careful dental care
-              </p>
-
-              <div
-                style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}
-              >
-                <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }}>
+                {/* Quick Consultation CTA */}
+                <div
+                  style={{
+                    marginTop: '1.5rem',
+                    paddingTop: '1.25rem',
+                    borderTop: '1px solid #f1f5f9',
+                    textAlign: 'center',
+                  }}
+                >
+                  <p style={{ fontSize: '0.85rem', color: '#64748b', margin: '0 0 0.75rem' }}>
+                    Need specialist evaluation for this procedure?
+                  </p>
                   <Link
                     href="/contact"
                     style={{
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      gap: '0.75rem',
-                      padding: '1.1rem 2.75rem',
-                      background: `linear-gradient(135deg, ${specialty.accentColor}, ${specialty.accentColor}cc)`,
+                      display: 'block',
+                      width: '100%',
+                      padding: '0.85rem 1rem',
+                      background: specialty.accentColor,
                       color: '#fff',
-                      borderRadius: '100px',
-                      fontWeight: 800,
-                      fontSize: '1rem',
+                      borderRadius: '0.875rem',
+                      fontWeight: 700,
+                      fontSize: '0.9rem',
                       textDecoration: 'none',
-                      boxShadow: `0 15px 40px ${specialty.accentColor}50`,
-                      transition: 'all 0.3s ease',
+                      boxShadow: `0 4px 15px ${specialty.accentColor}35`,
                     }}
                   >
-                    <Sparkles size={18} />
-                    Book Consultation
+                    Book Specialist Slot
                   </Link>
-                </motion.div>
-
-                <motion.button
-                  whileHover={{ scale: 1.04 }}
-                  whileTap={{ scale: 0.97 }}
-                  onClick={() => setLightboxOpen(true)}
-                  style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '0.75rem',
-                    padding: '1.1rem 2.25rem',
-                    background: 'rgba(255,255,255,0.1)',
-                    border: '1.5px solid rgba(255,255,255,0.2)',
-                    color: '#fff',
-                    borderRadius: '100px',
-                    fontWeight: 700,
-                    fontSize: '1rem',
-                    cursor: 'pointer',
-                    backdropFilter: 'blur(10px)',
-                    transition: 'all 0.3s ease',
-                  }}
-                >
-                  <Download size={18} />
-                  Get Flyer
-                </motion.button>
+                </div>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
-      </div>
-    </>
+      </section>
+    </div>
   );
 }

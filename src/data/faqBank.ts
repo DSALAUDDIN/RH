@@ -1,6 +1,6 @@
 // Master clinical FAQ bank for RH Dental Care (Banani & Banasree, Dhaka)
 // 120 verified patient questions and answers across 15 clinical categories.
-// Source: RH_Dental_Care_Website_FAQ_Bank.docx verified by Dr. B.M. Rafiqul Hasan.
+// Source: RH_Dental_Care_Banasree_Banani_Website_FAQ.docx verified by Dr. B.M. Rafiqul Hasan.
 
 export interface FaqItem {
   q: string;
@@ -35,7 +35,7 @@ export const FAQ_CATEGORIES: FaqCategory[] = [
       },
       {
         q: 'What time is the clinic open?',
-        a: 'The Banasree branch lists Saturday to Wednesday and Friday, 3:30 PM to 10:00 PM, with Thursday closed. Banani schedules morning and evening appointments. Please confirm your slot with the branch before travelling.',
+        a: 'The Banasree branch sees patients in the afternoon and evening. The Banani branch schedules morning and evening appointments. Thursday is the weekly closing day. Please call your preferred branch to confirm the opening time and your dentist’s availability.',
       },
       {
         q: 'Can I choose which dentist I see?',
@@ -51,7 +51,7 @@ export const FAQ_CATEGORIES: FaqCategory[] = [
       },
       {
         q: 'Can I get a second opinion before starting treatment?',
-        a: 'Yes. Bring any X-rays, photos, or treatment estimate you already have. Your dentist can review them alongside a fresh examination and discuss the options, timing and expected costs.',
+        a: 'Yes. Bring any X-rays, photos or treatment plans you already have. Your dentist can review them alongside a fresh examination and discuss the available options and timing.',
       },
     ],
   },
@@ -245,8 +245,8 @@ export const FAQ_CATEGORIES: FaqCategory[] = [
         a: 'Contact the clinic promptly and avoid chewing on that side. Your dentist can check whether the crown, connector or implant itself is moving and decide what needs attention.',
       },
       {
-        q: 'What is included in the price of a dental implant?',
-        a: 'Ask for an itemised estimate covering imaging, implant placement, the abutment and final crown. The estimate should also clarify whether a graft, a temporary tooth or any additional visits are included.',
+        q: 'What should I bring to an implant follow-up?',
+        a: 'Bring your implant card and any treatment records or recent X-rays you have, especially if your implant was placed elsewhere. Let the team know about any discomfort, changes in your bite or difficulty cleaning around the implant.',
       },
     ],
   },
@@ -564,20 +564,20 @@ export const FAQ_CATEGORIES: FaqCategory[] = [
   },
   {
     id: 15,
-    title: 'Estimates, follow-up and overseas patients',
-    slug: 'estimates-follow-up-and-overseas-patients',
+    title: 'Treatment planning and follow-up',
+    slug: 'treatment-planning-and-follow-up',
     faqs: [
       {
-        q: 'Can I get an itemised estimate before treatment?',
-        a: 'Yes. After your examination, ask for an estimate showing the proposed procedures, materials and treatment stages. For multi-visit care, ask which items are included and what may change if the dentist finds something new.',
+        q: 'Can I get a written treatment plan before I start?',
+        a: 'Ask your dentist for a written plan after your examination. You can use it to review the recommended procedures, the order of visits and any decisions you need to make before treatment begins.',
       },
       {
         q: 'Can my dental treatment be divided into stages?',
         a: 'Often. Your dentist can explain which problems need attention first and which treatments can be scheduled later. For example, pain or active disease may need to be addressed before planning cosmetic or restorative work.',
       },
       {
-        q: 'Is the final cost the same as a quote given by phone?',
-        a: 'A phone estimate is an initial guide. The cost can be confirmed after the dentist has examined you and assessed any necessary imaging, materials and treatment stages.',
+        q: 'Can I book a consultation before deciding on treatment?',
+        a: 'Yes. Tell reception what you would like to discuss. At the consultation, your dentist can explain the findings, talk through your options and answer questions before you decide how to proceed.',
       },
       {
         q: 'Can I send X-rays before travelling to Dhaka?',

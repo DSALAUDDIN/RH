@@ -12,7 +12,7 @@ import {
 } from '@/lib/seo/schema';
 import { SERVICE_PAGES } from '@/data/servicePagesContent';
 import aiVeneers from '@/assets/promotions/ai_veneers.png';
-import aestheticNew from '@/assets/specialties/aesthetic_new.png';
+import crownShadeMatchingPatient from '@/assets/specialties/instruments/crown-shade-matching-patient.jpg';
 
 const SLUG = 'smile-designing-bangladesh';
 const data = SERVICE_PAGES[SLUG];
@@ -60,9 +60,9 @@ export default function Page() {
         data={data}
         heroImage={aiVeneers}
         heroImageAlt="Smile Designing in Bangladesh with custom digital veneers and aesthetic smile harmony at RH Dental Care"
-        secondaryImage={aestheticNew}
-        secondaryImageAlt="Digital smile design mock-up, veneers and teeth transformation"
-        secondaryImageCaption="Personalized aesthetic smile planning with in-house digital CAD/CAM laboratory support at RH Dental Care."
+        secondaryImage={crownShadeMatchingPatient}
+        secondaryImageAlt="Chairside tooth shade matching for custom veneers and aesthetic restorations"
+        secondaryImageCaption="Direct clinical shade matching and high-translucency ceramic finishing at RH Dental Care Banani and Banasree branches."
       />
     </>
   );

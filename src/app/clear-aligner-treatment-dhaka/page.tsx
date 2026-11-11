@@ -11,8 +11,8 @@ import {
   medicalWebPageSchema,
 } from '@/lib/seo/schema';
 import { SERVICE_PAGES } from '@/data/servicePagesContent';
-import promoClearAligners from '@/assets/promotions/promo_clear_aligners.png';
-import invisalignFlyer from '@/assets/ortho/invisalign_flyer.png';
+import alignerTrayClinic from '@/assets/specialties/instruments/aligner-tray-clinic.jpg';
+import alignerTrayMirror from '@/assets/specialties/instruments/aligner-tray-mirror.jpg';
 
 const SLUG = 'clear-aligner-treatment-dhaka';
 const data = SERVICE_PAGES[SLUG];
@@ -58,11 +58,11 @@ export default function Page() {
       />
       <ServicePageTemplate
         data={data}
-        heroImage={promoClearAligners}
-        heroImageAlt="Clear aligner treatment and 3D intraoral digital planning at RH Dental Care Dhaka"
-        secondaryImage={invisalignFlyer}
-        secondaryImageAlt="Clear aligner treatment sequential stages and orthodontic consultation overview"
-        secondaryImageCaption="Sequential aligner wear, digital monitoring, and retention planning at RH Dental Care Banani and Banasree branches."
+        heroImage={alignerTrayClinic}
+        heroImageAlt="Clear aligner custom 3D dental stone model and sequential movement tray at RH Dental Care Dhaka"
+        secondaryImage={alignerTrayMirror}
+        secondaryImageAlt="Clear aligner transparent orthodontic tray clinical presentation"
+        secondaryImageCaption="Custom clear aligner digital scanning, 3D model fabrication, and discreet orthodontic realignment at RH Dental Care Banani and Banasree branches."
       />
     </>
   );

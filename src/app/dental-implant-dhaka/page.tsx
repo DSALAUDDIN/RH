@@ -11,7 +11,7 @@ import {
   medicalWebPageSchema,
 } from '@/lib/seo/schema';
 import { SERVICE_PAGES } from '@/data/servicePagesContent';
-import aiImplants from '@/assets/promotions/ai_implants.png';
+import implantOsstemKit from '@/assets/specialties/instruments/implant-osstem-kit.jpg';
 import implantTypes from '@/assets/implants/implant_types.png';
 
 const SLUG = 'dental-implant-dhaka';
@@ -58,8 +58,8 @@ export default function Page() {
       />
       <ServicePageTemplate
         data={data}
-        heroImage={aiImplants}
-        heroImageAlt="Dental implant consultation, surgical placement and CAD/CAM restoration in Dhaka at RH Dental Care"
+        heroImage={implantOsstemKit}
+        heroImageAlt="Authentic Osstem implant surgical kit and precision titanium fixtures at RH Dental Care Dhaka"
         secondaryImage={implantTypes}
         secondaryImageAlt="Dental implant fixture and restorative components overview"
         secondaryImageCaption="Biocompatible international implant fixtures and custom CAD/CAM zirconia crown restorations at RH Dental Care."
