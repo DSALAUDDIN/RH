@@ -27,9 +27,9 @@ export default function Home() {
     <>
       <Hero />
       <BranchChooser />
-      <BananiLuxuryShowcase />
       <Specialties />
       <DhakaAuthoritySection />
+      <BananiLuxuryShowcase />
       <ClinicGallery />
 
       <BeforeAfter />
