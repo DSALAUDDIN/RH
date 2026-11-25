@@ -33,7 +33,7 @@ import {
   Play,
 } from 'lucide-react';
 import './About.css';
-import heroBg from '../../assets/about_hero_light.png';
+import heroBg from '../../assets/about_hero_dark.png';
 import heroprofile from '../../assets/Hero/heroprofile.png';
 import clinicImg from '../../assets/about_clinic.png';
 import Testimonials from '@/components/Testimonials';
@@ -490,16 +490,16 @@ export default function AboutPage() {
                 <p className="ab-body-dark">
                   A distinguished Oral &amp; Dental Surgeon known for his precision, advanced
                   clinical expertise, and commitment to excellence. With over{' '}
-                  <strong style={{ color: '#0f172a' }}>12 years of clinical experience</strong>, Dr.
+                  <strong style={{ color: '#f6d289' }}>12 years of clinical experience</strong>, Dr.
                   Hasan combines professional expertise, modern technology, and patient-centred care
                   to deliver lasting, functional, and aesthetically pleasing results.
                 </p>
                 <p className="ab-body-dark">
                   He has undergone advanced international training in Dental Implantology from{' '}
-                  <strong style={{ color: '#0f172a' }}>China, Korea, and India</strong>, and
+                  <strong style={{ color: '#f6d289' }}>China, Korea, and India</strong>, and
                   completed specialised training in Minimally Invasive Cosmetic Dentistry (MICD) in
                   Nepal. Since 2015, he also serves as{' '}
-                  <strong style={{ color: '#0f172a' }}>
+                  <strong style={{ color: '#f6d289' }}>
                     Senior Lecturer at MH Samorita Medical College &amp; Hospital
                   </strong>
                   .
@@ -594,10 +594,10 @@ export default function AboutPage() {
                 <p className="ab-body-dark">
                   A highly accomplished dental professional who combines clinical excellence with
                   compassionate, patient-centred care. She completed her{' '}
-                  <strong style={{ color: '#0f172a' }}>BDS from Pioneer Dental College</strong> —
+                  <strong style={{ color: '#c084fc' }}>BDS from Pioneer Dental College</strong> —
                   one of the most prestigious dental institutions in Bangladesh — and furthered her
                   expertise through{' '}
-                  <strong style={{ color: '#0f172a' }}>
+                  <strong style={{ color: '#c084fc' }}>
                     Postgraduate Training in Oral &amp; Maxillofacial Surgery at Dhaka Medical
                     College
                   </strong>
@@ -605,10 +605,10 @@ export default function AboutPage() {
                 </p>
                 <p className="ab-body-dark">
                   At RH Dental Care, Dr. Shimia plays a vital{' '}
-                  <strong style={{ color: '#0f172a' }}>leadership role</strong>, guiding and
+                  <strong style={{ color: '#c084fc' }}>leadership role</strong>, guiding and
                   managing the clinical team with professionalism and vision. She is especially
                   dedicated to providing{' '}
-                  <strong style={{ color: '#0f172a' }}>female-oriented dental care</strong> in a
+                  <strong style={{ color: '#c084fc' }}>female-oriented dental care</strong> in a
                   safe, respectful environment.
                 </p>
 
@@ -788,7 +788,7 @@ export default function AboutPage() {
             <p
               style={{
                 fontSize: '1rem',
-                color: '#475569',
+                color: '#94a3b8',
                 maxWidth: '560px',
                 lineHeight: 1.75,
                 marginBottom: 0,
@@ -877,7 +877,7 @@ export default function AboutPage() {
               <p
                 style={{
                   fontSize: '1rem',
-                  color: '#475569',
+                  color: '#94a3b8',
                   maxWidth: '500px',
                   margin: '0 auto',
                   lineHeight: 1.75,
