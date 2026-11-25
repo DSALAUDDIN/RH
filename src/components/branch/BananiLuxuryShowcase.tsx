@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useRef, useEffect, useCallback } from 'react';
+import React, { useState, useRef, useCallback } from 'react';
 import {
   Play,
   Pause,
@@ -10,87 +10,14 @@ import {
   Phone,
   MessageCircle,
   Sparkles,
-  Building2,
-  CheckCircle2,
-  ChevronRight,
+  Car,
+  Scan,
+  ShieldCheck,
 } from 'lucide-react';
 import { BRANCHES } from '@/lib/branches';
 import './BananiLuxuryShowcase.css';
 
-export type BranchKey = 'banani' | 'banasree';
-
-interface BranchCinemaData {
-  key: BranchKey;
-  tabLabel: string;
-  tabSubtitle: string;
-  kicker: string;
-  title: string;
-  badgeText: string;
-  badgeType: 'gold' | 'blue';
-  videoSrc: string;
-  poster: string;
-  addressTitle: string;
-  addressSub: string;
-  phone: string;
-  phoneDisplay: string;
-  whatsapp: string;
-  whatsappGreeting: string;
-  features: string[];
-}
-
-const CINEMA_BRANCHES: Record<BranchKey, BranchCinemaData> = {
-  banani: {
-    key: 'banani',
-    tabLabel: 'Banani Road 11 Suite',
-    tabSubtitle: 'Private VIP Practice · 4K Tour',
-    kicker: 'Banani Road 11 · Appointment-Only Private Suite',
-    title: 'Executive VIP Suite & 3D CBCT Center',
-    badgeText: '27s 4K Video Tour · Banani Suite',
-    badgeType: 'gold',
-    videoSrc: '/assets/videos/banani-suite.mp4',
-    poster: '/assets/branches/banani/reception.webp',
-    addressTitle: 'House 82, Road 11, Block D, Banani',
-    addressSub:
-      'In-house 3D CBCT, computer-guided implants, apex locators & private VIP operatory suite.',
-    phone: BRANCHES.banani.phone,
-    phoneDisplay: BRANCHES.banani.phoneDisplay,
-    whatsapp: BRANCHES.banani.whatsapp,
-    whatsappGreeting:
-      'Hello RH Dental Care, I would like to book a private VIP appointment at your Banani Road 11 Suite.',
-    features: [
-      'In-House 3D CBCT Tomography',
-      'Dedicated Basement & Valet Parking',
-      '1 Patient at a Time · Zero Waiting',
-    ],
-  },
-  banasree: {
-    key: 'banasree',
-    tabLabel: 'Banasree Flagship Hospital',
-    tabSubtitle: 'Multidisciplinary Hospital · Full Tour',
-    kicker: 'Banasree Block C · Multidisciplinary Hospital',
-    title: 'Carl Zeiss Microscopic Center & 3 OTs',
-    badgeText: 'Hospital Walkthrough · Banasree Flagship',
-    badgeType: 'blue',
-    videoSrc: '/assets/videos/hero.mp4',
-    poster: '/assets/branches/banasree/reception.webp',
-    addressTitle: 'House 20, Road 2, Block C, Banasree, Rampura',
-    addressSub:
-      'Carl Zeiss dental operating microscopes, 3 sterile surgery OTs, Class-B autoclaves & family care.',
-    phone: BRANCHES.banasree.phone,
-    phoneDisplay: BRANCHES.banasree.phoneDisplay,
-    whatsapp: BRANCHES.banasree.whatsapp,
-    whatsappGreeting:
-      'Hello RH Dental Care, I would like to book an appointment at your Banasree Flagship Hospital.',
-    features: [
-      'Carl Zeiss Dental Operating Microscope',
-      '3 Sterile Surgical Operating Theatres',
-      'Class-B Autoclaves & Family Dental Wing',
-    ],
-  },
-};
-
 export default function BananiLuxuryShowcase() {
-  const [activeBranch, setActiveBranch] = useState<BranchKey>('banani');
   const [isPlaying, setIsPlaying] = useState(true);
   const [isMuted, setIsMuted] = useState(true);
   const [cardTilt, setCardTilt] = useState<React.CSSProperties>({});
@@ -98,17 +25,8 @@ export default function BananiLuxuryShowcase() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const theaterRef = useRef<HTMLDivElement>(null);
 
-  const current = CINEMA_BRANCHES[activeBranch];
-
-  // Switch video source when branch changes and restart autoplay
-  useEffect(() => {
-    const v = videoRef.current;
-    if (!v) return;
-    v.currentTime = 0;
-    v.play()
-      .then(() => setIsPlaying(true))
-      .catch(() => setIsPlaying(false));
-  }, [activeBranch]);
+  const videoSrc = '/assets/videos/banani-suite.mp4';
+  const poster = '/assets/branches/banani/reception.webp';
 
   const togglePlay = useCallback((e?: React.MouseEvent) => {
     e?.stopPropagation();
@@ -166,72 +84,36 @@ export default function BananiLuxuryShowcase() {
 
   return (
     <section
-      className="cinema-showcase-section"
-      id="clinic-video-showcase"
-      aria-labelledby="cinema-showcase-title"
+      className="cinema-showcase-section banani-vip-theater-section"
+      id="banani-vip-showcase"
+      aria-labelledby="banani-vip-title"
     >
-      {/* Dynamic ambient backlight aura */}
-      <div
-        className={`cinema-ambient-aura ${activeBranch === 'banani' ? 'aura-gold' : 'aura-blue'}`}
-      />
+      {/* Ambient glowing gold projection aura */}
+      <div className="cinema-ambient-aura aura-gold" />
 
       <div className="cinema-container">
         {/* Section Header */}
         <div className="cinema-header">
-          <div className="cinema-pill">
-            <Sparkles size={14} className="pill-icon" />
-            <span>Cinematic Clinic Showcase</span>
-            <span className="live-pulse" />
+          <div className="cinema-pill gold">
+            <Sparkles size={14} className="pill-icon gold" />
+            <span>Banani Road 11 · Private VIP Practice</span>
+            <span className="live-pulse gold" />
           </div>
 
-          <h2 id="cinema-showcase-title" className="cinema-title">
-            Step Inside Our <span className="gold-shimmer">Clinical Suites</span>
+          <h2 id="banani-vip-title" className="cinema-title">
+            Step Inside Our <span className="gold-shimmer">Banani VIP Suite</span>
           </h2>
 
           <p className="cinema-lead">
-            Experience Dhaka’s highest standard of dental care in motion. Switch seamlessly between
-            our appointment-only Banani VIP Suite and our comprehensive Banasree Flagship Hospital.
+            Dhaka’s premier appointment-only dental destination. Experience discrete 1-on-1
+            consultations with Dr. Hasan Mehedi (BMDC 5169), on-site 3D CBCT diagnostics, and zero
+            waiting time.
           </p>
-
-          {/* Interactive Branch Switcher Tabs */}
-          <div
-            className="cinema-switcher-wrapper"
-            role="tablist"
-            aria-label="Select Clinical Branch Video"
-          >
-            <button
-              type="button"
-              role="tab"
-              aria-selected={activeBranch === 'banani'}
-              className={`cinema-tab-btn banani ${activeBranch === 'banani' ? 'active' : ''}`}
-              onClick={() => setActiveBranch('banani')}
-            >
-              <Sparkles size={16} className="tab-icon" />
-              <div className="tab-meta">
-                <span className="tab-name">{CINEMA_BRANCHES.banani.tabLabel}</span>
-                <span className="tab-desc">{CINEMA_BRANCHES.banani.tabSubtitle}</span>
-              </div>
-            </button>
-
-            <button
-              type="button"
-              role="tab"
-              aria-selected={activeBranch === 'banasree'}
-              className={`cinema-tab-btn banasree ${activeBranch === 'banasree' ? 'active' : ''}`}
-              onClick={() => setActiveBranch('banasree')}
-            >
-              <Building2 size={16} className="tab-icon" />
-              <div className="tab-meta">
-                <span className="tab-name">{CINEMA_BRANCHES.banasree.tabLabel}</span>
-                <span className="tab-desc">{CINEMA_BRANCHES.banasree.tabSubtitle}</span>
-              </div>
-            </button>
-          </div>
         </div>
 
         {/* 3D Masterpiece Cinema Theater */}
         <div
-          className={`cinema-theater-frame ${activeBranch === 'banani' ? 'frame-gold' : 'frame-blue'}`}
+          className="cinema-theater-frame frame-gold"
           ref={theaterRef}
           style={cardTilt}
           onMouseMove={handleMouseMove}
@@ -244,30 +126,29 @@ export default function BananiLuxuryShowcase() {
           {/* Video Element */}
           <video
             ref={videoRef}
-            key={current.videoSrc}
             className="theater-video"
-            src={current.videoSrc}
-            poster={current.poster}
+            src={videoSrc}
+            poster={poster}
             autoPlay
             loop
             muted={isMuted}
             playsInline
             preload="metadata"
-            aria-label={`${current.title} video tour`}
+            aria-label="Banani Road 11 VIP Executive Suite 4K video tour"
           />
 
           {/* Top Info Badge */}
           <div className="theater-top-badge-bar" onClick={(e) => e.stopPropagation()}>
-            <div className={`theater-tour-badge ${current.badgeType}`}>
-              <span className={`radar-indicator ${current.badgeType}`} />
-              <span>{current.badgeText}</span>
+            <div className="theater-tour-badge gold">
+              <span className="radar-indicator gold" />
+              <span>27s 4K Video Tour · Banani Suite</span>
             </div>
           </div>
 
           {/* Center Play/Pause Overlay Cue */}
           {!isPlaying && (
             <div className="theater-play-cue" onClick={(e) => togglePlay(e)}>
-              <div className="play-circle-glow">
+              <div className="play-circle-glow gold">
                 <Play size={36} fill="#ffffff" color="#ffffff" style={{ marginLeft: 3 }} />
               </div>
             </div>
@@ -308,49 +189,56 @@ export default function BananiLuxuryShowcase() {
           {/* Bottom Luxury Overlay */}
           <div className="theater-bottom-scrim" onClick={(e) => e.stopPropagation()}>
             <div className="theater-scrim-info">
-              <span className={`theater-kicker ${current.badgeType}`}>{current.kicker}</span>
-              <h3 className="theater-location-title">{current.addressTitle}</h3>
-              <p className="theater-location-sub">{current.addressSub}</p>
+              <span className="theater-kicker gold">
+                Private Practice · House 82, Road 11, Banani
+              </span>
+              <h3 className="theater-location-title">Executive Operatory &amp; 3D CBCT Suite</h3>
+              <p className="theater-location-sub">
+                In-house 3D CBCT tomography, computer-guided implants, reserved basement parking,
+                and strict 1-patient-at-a-time scheduling.
+              </p>
             </div>
 
             <div className="theater-scrim-actions">
               <a
-                href={`https://wa.me/${current.whatsapp}?text=${encodeURIComponent(current.whatsappGreeting)}`}
+                href={`https://wa.me/${BRANCHES.banani.whatsapp}?text=${encodeURIComponent(
+                  'Hello RH Dental Care, I would like to book a private VIP appointment at your Banani Road 11 Suite.',
+                )}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`theater-action-btn primary ${current.badgeType}`}
-                aria-label={`Book appointment at ${current.tabLabel} via WhatsApp`}
+                className="theater-action-btn primary gold"
+                aria-label="Book VIP appointment at Banani via WhatsApp"
               >
                 <MessageCircle size={16} />
-                <span>Book Appointment</span>
+                <span>Book VIP Suite</span>
               </a>
 
               <a
-                href={`tel:${current.phone}`}
+                href={`tel:${BRANCHES.banani.phone}`}
                 className="theater-action-btn secondary"
-                aria-label={`Call ${current.tabLabel}`}
+                aria-label="Call Banani branch"
               >
                 <Phone size={14} />
-                <span>{current.phoneDisplay}</span>
+                <span>{BRANCHES.banani.phoneDisplay}</span>
               </a>
             </div>
           </div>
         </div>
 
-        {/* Dynamic Branch Features Pill Strip */}
+        {/* 3 Key Luxury Features Strip */}
         <div className="cinema-features-strip">
-          {current.features.map((feat) => (
-            <div key={feat} className="feature-pill-item">
-              <CheckCircle2 size={15} className={`feature-pill-icon ${current.badgeType}`} />
-              <span>{feat}</span>
-            </div>
-          ))}
-        </div>
-
-        {/* Transition Hint to Clinic Gallery */}
-        <div className="gallery-transition-hint">
-          <span>Explore our interior spaces &amp; clinical sterilization below</span>
-          <ChevronRight size={14} />
+          <div className="feature-pill-item">
+            <Scan size={15} className="feature-pill-icon gold" />
+            <span>In-House 3D CBCT Diagnostics</span>
+          </div>
+          <div className="feature-pill-item">
+            <Car size={15} className="feature-pill-icon gold" />
+            <span>Dedicated Basement &amp; Valet Parking</span>
+          </div>
+          <div className="feature-pill-item">
+            <ShieldCheck size={15} className="feature-pill-icon gold" />
+            <span>1 Patient at a Time · Zero Waiting</span>
+          </div>
         </div>
       </div>
     </section>

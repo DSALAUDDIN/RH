@@ -1,246 +1,247 @@
 'use client';
 
-import { useRef, useState, useEffect, useCallback } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Play, Pause, Volume2, VolumeX, Maximize, Cpu, Heart } from 'lucide-react';
+import React, { useState, useRef, useCallback } from 'react';
+import {
+  Play,
+  Pause,
+  Volume2,
+  VolumeX,
+  Maximize2,
+  Phone,
+  MessageCircle,
+  Building2,
+  CheckCircle2,
+  Stethoscope,
+  Microscope,
+} from 'lucide-react';
+import { BRANCHES } from '@/lib/branches';
 import './VideoSection.css';
 
 export default function VideoSection() {
-  const clinicVideoUrl = '/assets/videos/banani-suite.mp4';
+  const [isPlaying, setIsPlaying] = useState(true);
+  const [isMuted, setIsMuted] = useState(true);
+  const [cardTilt, setCardTilt] = useState<React.CSSProperties>({});
 
   const videoRef = useRef<HTMLVideoElement>(null);
-  const wrapperRef = useRef<HTMLDivElement>(null);
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [isMuted, setIsMuted] = useState(true);
-  const [showControls, setShowControls] = useState(false);
-  const hideTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const theaterRef = useRef<HTMLDivElement>(null);
 
-  /* autoplay on mount (muted for browser policy) */
-  useEffect(() => {
+  const videoSrc = '/assets/videos/hero.mp4';
+  const poster = '/assets/branches/banasree/reception.webp';
+
+  const togglePlay = useCallback((e?: React.MouseEvent) => {
+    e?.stopPropagation();
     const v = videoRef.current;
     if (!v) return;
-    v.muted = true;
-    v.play()
-      .then(() => setIsPlaying(true))
-      .catch(() => setIsPlaying(false));
-  }, []);
-
-  /* Show controls briefly, then hide */
-  const revealControls = useCallback(() => {
-    setShowControls(true);
-    if (hideTimer.current) clearTimeout(hideTimer.current);
-    hideTimer.current = setTimeout(() => setShowControls(false), 2500);
-  }, []);
-
-  const keepControls = useCallback(() => {
-    setShowControls(true);
-    if (hideTimer.current) clearTimeout(hideTimer.current);
-  }, []);
-
-  const hideControls = useCallback(() => {
-    if (hideTimer.current) clearTimeout(hideTimer.current);
-    hideTimer.current = setTimeout(() => setShowControls(false), 1200);
-  }, []);
-
-  /* play / pause */
-  const togglePlay = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    const v = videoRef.current;
-    if (!v) return;
-    if (isPlaying) {
+    if (v.paused) {
+      v.play()
+        .then(() => setIsPlaying(true))
+        .catch(() => {});
+    } else {
       v.pause();
       setIsPlaying(false);
-      setShowControls(true); // keep visible when paused
-    } else {
-      v.play();
-      setIsPlaying(true);
-      revealControls();
     }
-  };
-
-  /* mute / unmute */
-  const toggleMute = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    const v = videoRef.current;
-    if (!v) return;
-    const next = !isMuted;
-    v.muted = next;
-    setIsMuted(next);
-    revealControls();
-  };
-
-  /* fullscreen */
-  const toggleFullscreen = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    const el = wrapperRef.current;
-    if (!el) return;
-    if (!document.fullscreenElement) {
-      el.requestFullscreen();
-    } else {
-      document.exitFullscreen();
-    }
-  };
-
-  useEffect(() => {
-    // We don't need to track isFullscreen state if it's not used
-    const onChange = () => {};
-    document.addEventListener('fullscreenchange', onChange);
-    return () => document.removeEventListener('fullscreenchange', onChange);
   }, []);
 
-  /* click on the video body = toggle play */
-  const handleVideoClick = (e: React.MouseEvent) => {
-    // only if clicking directly on the video area (not buttons)
-    if ((e.target as HTMLElement).closest('button')) return;
-    togglePlay(e);
+  const toggleMute = useCallback((e?: React.MouseEvent) => {
+    e?.stopPropagation();
+    const v = videoRef.current;
+    if (!v) return;
+    v.muted = !v.muted;
+    setIsMuted(v.muted);
+  }, []);
+
+  const toggleFullscreen = useCallback((e?: React.MouseEvent) => {
+    e?.stopPropagation();
+    const el = theaterRef.current;
+    if (!el) return;
+    if (!document.fullscreenElement) {
+      el.requestFullscreen?.().catch(() => {});
+    } else {
+      document.exitFullscreen?.().catch(() => {});
+    }
+  }, []);
+
+  // 3D Parallax on mouse move
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!theaterRef.current || window.innerWidth < 1024) return;
+    const rect = theaterRef.current.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width - 0.5;
+    const y = (e.clientY - rect.top) / rect.height - 0.5;
+    const rotX = -y * 6;
+    const rotY = x * 6;
+    setCardTilt({
+      transform: `perspective(1400px) rotateX(${rotX.toFixed(2)}deg) rotateY(${rotY.toFixed(2)}deg) translateZ(6px)`,
+      transition: 'transform 0.1s ease-out',
+    });
+  };
+
+  const handleMouseLeave = () => {
+    setCardTilt({
+      transform: 'perspective(1400px) rotateX(0deg) rotateY(0deg) translateZ(0px)',
+      transition: 'transform 0.5s cubic-bezier(0.16, 1, 0.3, 1)',
+    });
   };
 
   return (
-    <section className="section video-highlight">
-      <div className="container">
-        {/* Section header */}
-        <div className="vs-header">
-          <motion.span
-            initial={{ opacity: 0, y: 8 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="vs-subtitle"
-          >
-            Inside Our Clinic
-          </motion.span>
-          <motion.h2
-            className="vs-title"
-            initial={{ opacity: 0, y: 14 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-          >
-            Experience Premium Care
-          </motion.h2>
+    <section
+      className="cinema-showcase-section banasree-hospital-theater-section"
+      id="banasree-hospital-showcase"
+      aria-labelledby="banasree-hospital-title"
+    >
+      {/* Ambient glowing blue projection aura */}
+      <div className="cinema-ambient-aura aura-blue" />
+
+      <div className="cinema-container">
+        {/* Section Header */}
+        <div className="cinema-header">
+          <div className="cinema-pill blue">
+            <Building2 size={14} className="pill-icon blue" />
+            <span>Banasree Block C · Main Flagship Hospital</span>
+            <span className="live-pulse green" />
+          </div>
+
+          <h2 id="banasree-hospital-title" className="cinema-title">
+            Tour Dhaka’s Advanced <span className="blue-shimmer">Dental Hospital</span>
+          </h2>
+
+          <p className="cinema-lead">
+            Explore our comprehensive multidisciplinary center in Banasree. Equipped with Carl Zeiss
+            dental operating microscopes, 3 sterile surgery operating theatres, and complete family
+            care.
+          </p>
         </div>
 
-        {/* Player shell */}
-        <motion.div
-          className="vs-player-shell"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
+        {/* 3D Masterpiece Cinema Theater */}
+        <div
+          className="cinema-theater-frame frame-blue"
+          ref={theaterRef}
+          style={cardTilt}
+          onMouseMove={handleMouseMove}
+          onMouseLeave={handleMouseLeave}
+          onClick={() => togglePlay()}
         >
-          {/* Video area */}
-          <div
-            ref={wrapperRef}
-            className="vs-video-area"
-            onMouseMove={revealControls}
-            onMouseEnter={keepControls}
-            onMouseLeave={hideControls}
-            onClick={handleVideoClick}
-          >
-            <video
-              ref={videoRef}
-              className="vs-video"
-              autoPlay
-              muted
-              loop
-              playsInline
-              aria-label="RH Dental Care clinic tour video"
+          {/* Top specular lens flare reflection */}
+          <div className="theater-lens-flare" />
+
+          {/* Video Element */}
+          <video
+            ref={videoRef}
+            className="theater-video"
+            src={videoSrc}
+            poster={poster}
+            autoPlay
+            loop
+            muted={isMuted}
+            playsInline
+            preload="metadata"
+            aria-label="Banasree Flagship Dental Hospital full video tour"
+          />
+
+          {/* Top Info Badge */}
+          <div className="theater-top-badge-bar" onClick={(e) => e.stopPropagation()}>
+            <div className="theater-tour-badge blue">
+              <span className="radar-indicator blue" />
+              <span>Hospital Walkthrough · Banasree Flagship</span>
+            </div>
+          </div>
+
+          {/* Center Play/Pause Overlay Cue */}
+          {!isPlaying && (
+            <div className="theater-play-cue" onClick={(e) => togglePlay(e)}>
+              <div className="play-circle-glow blue">
+                <Play size={36} fill="#ffffff" color="#ffffff" style={{ marginLeft: 3 }} />
+              </div>
+            </div>
+          )}
+
+          {/* Top Right Glass Controls */}
+          <div className="theater-controls-cluster" onClick={(e) => e.stopPropagation()}>
+            <button
+              type="button"
+              className="theater-ctrl-btn"
+              onClick={(e) => togglePlay(e)}
+              aria-label={isPlaying ? 'Pause video' : 'Play video'}
+              title={isPlaying ? 'Pause' : 'Play'}
             >
-              <source src={clinicVideoUrl} type="video/mp4" />
-            </video>
-
-            {/* Big centre play button (shows when paused OR hovered) */}
-            <AnimatePresence>
-              {(!isPlaying || showControls) && (
-                <motion.div
-                  className="vs-centre-overlay"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.25 }}
-                >
-                  {!isPlaying && (
-                    <motion.button
-                      className="vs-big-play"
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.92 }}
-                      onClick={togglePlay}
-                      aria-label="Play clinic tour video"
-                    >
-                      <Play size={40} fill="white" style={{ marginLeft: 4 }} />
-                    </motion.button>
-                  )}
-                </motion.div>
-              )}
-            </AnimatePresence>
-
-            {/* Bottom control bar */}
-            <AnimatePresence>
-              {(!isPlaying || showControls) && (
-                <motion.div
-                  className="vs-control-bar"
-                  initial={{ opacity: 0, y: 8 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: 8 }}
-                  transition={{ duration: 0.2 }}
-                  onClick={(e) => e.stopPropagation()}
-                >
-                  {/* Left: play + mute */}
-                  <div className="vs-ctrl-left">
-                    <button
-                      className="vs-ctrl-btn"
-                      onClick={togglePlay}
-                      title={isPlaying ? 'Pause' : 'Play'}
-                    >
-                      {isPlaying ? (
-                        <Pause size={18} fill="white" />
-                      ) : (
-                        <Play size={18} fill="white" style={{ marginLeft: 2 }} />
-                      )}
-                    </button>
-                    <button
-                      className="vs-ctrl-btn"
-                      onClick={toggleMute}
-                      title={isMuted ? 'Unmute' : 'Mute'}
-                    >
-                      {isMuted ? <VolumeX size={18} /> : <Volume2 size={18} />}
-                    </button>
-                    <span className="vs-ctrl-label">{isMuted ? 'Tap to unmute' : 'Sound on'}</span>
-                  </div>
-
-                  {/* Right: fullscreen */}
-                  <div className="vs-ctrl-right">
-                    <button className="vs-ctrl-btn" onClick={toggleFullscreen} title="Fullscreen">
-                      <Maximize size={18} />
-                    </button>
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
+              {isPlaying ? <Pause size={17} /> : <Play size={17} fill="white" />}
+            </button>
+            <button
+              type="button"
+              className={`theater-ctrl-btn sound-toggle ${!isMuted ? 'active' : ''}`}
+              onClick={(e) => toggleMute(e)}
+              aria-label={isMuted ? 'Unmute video sound' : 'Mute video sound'}
+              title={isMuted ? 'Click for Sound' : 'Mute'}
+            >
+              {isMuted ? <VolumeX size={17} /> : <Volume2 size={17} />}
+              <span className="ctrl-sound-text">{isMuted ? 'Sound Off' : 'Sound On'}</span>
+            </button>
+            <button
+              type="button"
+              className="theater-ctrl-btn"
+              onClick={(e) => toggleFullscreen(e)}
+              aria-label="Toggle Fullscreen"
+              title="Fullscreen"
+            >
+              <Maximize2 size={17} />
+            </button>
           </div>
 
-          {/* Stats row, never overlapping */}
-          <div className="vs-stats-row">
-            <div className="vs-stat">
-              <div className="vs-stat-icon">
-                <Cpu size={18} />
-              </div>
-              <div>
-                <div className="vs-stat-title">Advanced Tech</div>
-                <div className="vs-stat-desc">State-of-the-art facilities</div>
-              </div>
+          {/* Bottom Luxury Overlay */}
+          <div className="theater-bottom-scrim" onClick={(e) => e.stopPropagation()}>
+            <div className="theater-scrim-info">
+              <span className="theater-kicker blue">
+                Multidisciplinary Center · House 20, Road 2, Block C, Banasree
+              </span>
+              <h3 className="theater-location-title">
+                Carl Zeiss Microscopic Center &amp; 3 Surgery OTs
+              </h3>
+              <p className="theater-location-sub">
+                Single-visit microscopic root canal therapy, hospital-grade Class-B sterilization,
+                and dedicated oral surgery suites for complex treatments.
+              </p>
             </div>
-            <div className="vs-stat-divider" />
-            <div className="vs-stat">
-              <div className="vs-stat-icon">
-                <Heart size={18} />
-              </div>
-              <div>
-                <div className="vs-stat-title">Comfort First</div>
-                <div className="vs-stat-desc">Relaxing environment</div>
-              </div>
+
+            <div className="theater-scrim-actions">
+              <a
+                href={`https://wa.me/${BRANCHES.banasree.whatsapp}?text=${encodeURIComponent(
+                  'Hello RH Dental Care, I would like to book an appointment at your Banasree Flagship Hospital.',
+                )}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="theater-action-btn primary blue"
+                aria-label="Book appointment at Banasree Hospital via WhatsApp"
+              >
+                <MessageCircle size={16} />
+                <span>Book Hospital Visit</span>
+              </a>
+
+              <a
+                href={`tel:${BRANCHES.banasree.phone}`}
+                className="theater-action-btn secondary"
+                aria-label="Call Banasree branch"
+              >
+                <Phone size={14} />
+                <span>{BRANCHES.banasree.phoneDisplay}</span>
+              </a>
             </div>
           </div>
-        </motion.div>
+        </div>
+
+        {/* 3 Key Hospital Features Strip */}
+        <div className="cinema-features-strip">
+          <div className="feature-pill-item">
+            <Microscope size={15} className="feature-pill-icon blue" />
+            <span>Carl Zeiss Dental Operating Microscope</span>
+          </div>
+          <div className="feature-pill-item">
+            <Stethoscope size={15} className="feature-pill-icon blue" />
+            <span>3 Sterile Surgical Operating Theatres</span>
+          </div>
+          <div className="feature-pill-item">
+            <CheckCircle2 size={15} className="feature-pill-icon blue" />
+            <span>Class-B Vacuum Autoclaves &amp; Family Care</span>
+          </div>
+        </div>
       </div>
     </section>
   );

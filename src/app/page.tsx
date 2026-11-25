@@ -3,6 +3,7 @@ import BranchChooser from '@/components/branch/BranchChooser';
 import BananiLuxuryShowcase from '@/components/branch/BananiLuxuryShowcase';
 import Specialties from '@/components/Specialties';
 import DhakaAuthoritySection from '@/components/DhakaAuthoritySection';
+import VideoSection from '@/components/VideoSection';
 import Testimonials from '@/components/Testimonials';
 import ClinicGallery from '@/components/ClinicGallery';
 import BeforeAfter from '@/components/BeforeAfter';
@@ -27,9 +28,10 @@ export default function Home() {
     <>
       <Hero />
       <BranchChooser />
+      <BananiLuxuryShowcase />
       <Specialties />
       <DhakaAuthoritySection />
-      <BananiLuxuryShowcase />
+      <VideoSection />
       <ClinicGallery />
 
       <BeforeAfter />
