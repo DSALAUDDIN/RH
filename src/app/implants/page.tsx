@@ -906,8 +906,8 @@ export default function ImplantsPage() {
       <div className="container" style={{ position: 'relative', zIndex: 2 }}>
         <RelatedGuidesCluster
           category="implants"
-          title="Clinical Dental Implant Guides & Pricing Details"
-          subtitle="Explore in-depth clinical guides written by Dr. Hasan on implant systems, bone grafting requirements, recovery protocols, and cost determinants in Dhaka."
+          title="Clinical Dental Implant Guides & Protocols"
+          subtitle="Explore in-depth clinical guides written by Dr. Hasan on implant systems, bone grafting requirements, recovery protocols, and guided surgical planning in Dhaka."
         />
       </div>
 

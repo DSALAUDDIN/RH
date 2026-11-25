@@ -285,7 +285,7 @@ const categories: Category[] = [
       {
         name: 'Dental Implant (Osstem/Nobel)',
         description:
-          'Advanced long-term tooth replacement. Packages available for Osstem SA, SOI, and Nobel Biocare.',
+          'Advanced long-term tooth replacement using genuine Osstem and Nobel Biocare titanium systems.',
         highlight: true,
       },
     ],
