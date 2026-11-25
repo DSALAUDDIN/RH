@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import {
@@ -14,95 +14,111 @@ import {
   Clock,
   ShieldCheck,
   Sparkles,
-  Film,
   Compass,
   ArrowRight,
   Car,
   Scan,
+  ZoomIn,
+  X,
+  ChevronLeft,
+  ChevronRight,
+  Award,
+  Stethoscope,
+  CheckCircle,
 } from 'lucide-react';
 import { BRANCHES } from '@/lib/branches';
 import './BananiLuxuryShowcase.css';
 
-interface GallerySlide {
+interface ActionStep {
   id: string;
-  type: 'video' | 'image';
+  stepNumber: string;
+  badge: string;
   title: string;
   subtitle: string;
-  src: string;
-  tag: string;
+  image: string;
   alt: string;
+  features: string[];
+  actionLabel: string;
+  actionWaText: string;
 }
 
-const MEDIA_ITEMS: GallerySlide[] = [
+const ACTION_STEPS: ActionStep[] = [
   {
-    id: 'video-tour',
-    type: 'video',
-    title: 'Banani Private Suite Tour',
-    subtitle: '27-second executive walkthrough of our Road 11 dental suite',
-    src: '/assets/videos/banani-suite.mp4',
-    tag: 'Live Video Walkthrough',
-    alt: 'Banani private dental suite video walkthrough tour',
-  },
-  {
-    id: 'reception',
-    type: 'image',
-    title: 'Executive Reception & Lounge',
-    subtitle: 'Quiet, discrete reception area designed for executive patient privacy',
-    src: '/assets/branches/banani/reception.webp',
-    tag: 'Executive Reception',
-    alt: 'RH Dental Care Banani reception desk and waiting lounge',
-  },
-  {
-    id: 'operatory',
-    type: 'image',
-    title: 'Surgical Operatory & 3D CBCT',
-    subtitle: 'Equipped with on-site digital CBCT scanning and sterile surgical theatre',
-    src: '/assets/branches/banani/banani-treatment-ot.webp',
-    tag: 'Surgical Theatre',
-    alt: 'RH Dental Care Banani advanced surgical operatory theatre',
+    id: 'arrival',
+    stepNumber: '01',
+    badge: 'Discrete Arrival',
+    title: 'Executive Reception & Zero-Wait Lobby',
+    subtitle:
+      'Arrive discretely on Road 11 with secure basement parking and lift access straight into our uncrowded VIP lounge.',
+    image: '/assets/branches/banani/reception.webp',
+    alt: 'RH Dental Care Banani Road 11 executive reception lounge',
+    features: ['🚗 Reserved Basement Parking', '🛡️ 100% Patient Privacy', '⏱️ Zero Waiting Time'],
+    actionLabel: 'Book VIP Arrival',
+    actionWaText:
+      'Hello RH Dental Care, I would like to book a private VIP appointment at your Banani Road 11 Suite.',
   },
   {
     id: 'consultation',
-    type: 'image',
-    title: 'Private Consultation Chamber',
-    subtitle: 'Dedicated space for one-on-one digital diagnosis & treatment planning',
-    src: '/assets/branches/banani/consultation.webp',
-    tag: '1-on-1 Consultation',
-    alt: 'Private doctor consultation desk at Banani branch',
+    stepNumber: '02',
+    badge: '1-on-1 Discovery',
+    title: 'Private Specialist Consultation Chamber',
+    subtitle:
+      'Sit face-to-face with Chief Dental Surgeon Dr. B.M. Rafiqul Hasan Mehedi (BMDC 5169) for digital diagnostics & personalized treatment planning.',
+    image: '/assets/branches/banani/consultation.webp',
+    alt: 'Private consultation desk with Dr. Hasan at Banani branch',
+    features: [
+      '👨‍⚕️ Dr. Hasan Mehedi (BMDC 5169)',
+      '📊 Digital Smile Preview',
+      '🗣️ Unhurried Discussion',
+    ],
+    actionLabel: 'Schedule Consultation',
+    actionWaText:
+      'Hello RH Dental Care, I would like to schedule a 1-on-1 private consultation with Dr. Hasan at your Banani Suite.',
   },
   {
-    id: 'lounge',
-    type: 'image',
-    title: 'VIP Patient Recovery Lounge',
-    subtitle: 'Plush ambiance for relaxed pre-treatment and post-op care',
-    src: '/assets/branches/banani/lounge.webp',
-    tag: 'VIP Lounge',
-    alt: 'VIP waiting lounge at RH Dental Care Banani Road 11',
+    id: 'surgery',
+    stepNumber: '03',
+    badge: 'Surgical Precision',
+    title: 'On-Site 3D CBCT & Sterile Operatory Suite',
+    subtitle:
+      'Experience computer-guided dental implants and microscopic endodontics with low-dose 3D jawbone tomography on the same floor.',
+    image: '/assets/branches/banani/banani-treatment-ot.webp',
+    alt: 'Banani sterile surgical operatory theatre with 3D CBCT and modern dental chair',
+    features: [
+      '🔬 On-Site 3D CBCT Tomography',
+      '🦷 Computer-Guided Implants',
+      '🏥 Hospital-Grade Sterilization',
+    ],
+    actionLabel: 'Explore Surgical Tech',
+    actionWaText:
+      'Hello RH Dental Care, I am interested in dental implants/surgical treatment at your Banani Suite.',
+  },
+  {
+    id: 'recovery',
+    stepNumber: '04',
+    badge: 'VIP Recovery',
+    title: 'Post-Procedure Recovery & Concierge Care',
+    subtitle:
+      'Relax comfortably in our dedicated recovery suite post-treatment with direct surgeon follow-up and digital aftercare instructions.',
+    image: '/assets/branches/banani/lounge.webp',
+    alt: 'Banani VIP patient recovery and waiting lounge',
+    features: [
+      '☕ Relaxed Executive Ambiance',
+      '📱 24/7 Digital Aftercare',
+      '🚗 Hassle-Free Departure',
+    ],
+    actionLabel: 'Reserve Treatment Slot',
+    actionWaText:
+      'Hello RH Dental Care, I would like to reserve an appointment slot at your Banani private clinic.',
   },
 ];
 
 export default function BananiLuxuryShowcase() {
-  const [activeMediaIndex, setActiveMediaIndex] = useState(0);
-  const [isPlaying, setIsPlaying] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(true);
   const [isMuted, setIsMuted] = useState(true);
+  const [activeLightboxIndex, setActiveLightboxIndex] = useState<number | null>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  const currentMedia = MEDIA_ITEMS[activeMediaIndex];
-
-  // Sync video play/pause
-  useEffect(() => {
-    if (currentMedia.type === 'video' && videoRef.current) {
-      videoRef.current.muted = isMuted;
-      videoRef.current
-        .play()
-        .then(() => setIsPlaying(true))
-        .catch(() => setIsPlaying(false));
-    } else if (videoRef.current) {
-      videoRef.current.pause();
-      setIsPlaying(false);
-    }
-  }, [activeMediaIndex, isMuted, currentMedia.type]);
+  const videoWrapperRef = useRef<HTMLDivElement>(null);
 
   const togglePlay = () => {
     if (!videoRef.current) return;
@@ -122,291 +138,367 @@ export default function BananiLuxuryShowcase() {
     setIsMuted(next);
   };
 
-  const handleFullscreen = () => {
-    if (!containerRef.current) return;
+  const toggleFullscreen = () => {
+    if (!videoWrapperRef.current) return;
     if (!document.fullscreenElement) {
-      containerRef.current.requestFullscreen?.().catch(() => {});
+      videoWrapperRef.current.requestFullscreen?.().catch(() => {});
     } else {
       document.exitFullscreen?.().catch(() => {});
     }
   };
 
+  const openLightbox = (index: number) => {
+    setActiveLightboxIndex(index);
+  };
+
+  const closeLightbox = () => {
+    setActiveLightboxIndex(null);
+  };
+
+  const nextLightbox = () => {
+    if (activeLightboxIndex === null) return;
+    setActiveLightboxIndex((activeLightboxIndex + 1) % ACTION_STEPS.length);
+  };
+
+  const prevLightbox = () => {
+    if (activeLightboxIndex === null) return;
+    setActiveLightboxIndex((activeLightboxIndex - 1 + ACTION_STEPS.length) % ACTION_STEPS.length);
+  };
+
   return (
     <section
-      className="banani-showcase-section"
+      className="banani-action-section"
       id="banani-suite-showcase"
       aria-labelledby="banani-showcase-heading"
     >
-      <div className="banani-showcase-container">
-        {/* Section Heading */}
-        <div className="banani-showcase-header">
-          <div className="banani-header-pill">
-            <Sparkles size={14} className="pill-icon" />
-            <span>Banani Executive Dental Suite · Road 11</span>
+      <div className="banani-action-container">
+        {/* Section Header */}
+        <div className="banani-action-header">
+          <div className="banani-prestige-pill">
+            <Sparkles size={14} className="pill-sparkle" />
+            <span>Banani Road 11 · Private Dental Suite</span>
+            <span className="live-dot" />
           </div>
-          <h2 id="banani-showcase-heading" className="banani-showcase-title">
-            Take a Look Inside Our <span className="title-gradient">Banani Private Suite</span>
+
+          <h2 id="banani-showcase-heading" className="banani-action-title">
+            Take an Action Tour of Our <span className="gold-shimmer">Banani Executive Suite</span>
           </h2>
-          <p className="banani-showcase-subtitle">
-            An appointment-only dental retreat designed for diplomats, executives, and discerning
-            patients. Step inside our 3D CBCT diagnostic suite and private consultation chambers in
-            the heart of Dhaka.
+
+          <p className="banani-action-lead">
+            Dhaka’s premier appointment-only dental retreat. From discrete basement parking on Road
+            11 to in-house 3D CBCT surgical suites — explore what your private dental experience
+            looks like.
           </p>
+
+          {/* Quick Facts Strip */}
+          <div className="banani-quick-facts">
+            <div className="fact-item">
+              <Scan size={16} className="fact-icon" />
+              <span>In-House 3D CBCT</span>
+            </div>
+            <div className="fact-divider" />
+            <div className="fact-item">
+              <Car size={16} className="fact-icon" />
+              <span>Basement & Valet Parking</span>
+            </div>
+            <div className="fact-divider" />
+            <div className="fact-item">
+              <ShieldCheck size={16} className="fact-icon" />
+              <span>1 Patient at a Time</span>
+            </div>
+            <div className="fact-divider" />
+            <div className="fact-item">
+              <Clock size={16} className="fact-icon" />
+              <span>Sun–Thu: 3:00 PM – 10:00 PM</span>
+            </div>
+          </div>
         </div>
 
-        {/* Masterpiece Dual Grid: Visual Theatre on Left, VIP Details on Right */}
-        <div className="banani-stage-grid">
-          {/* Main Visual Screen */}
-          <div className="banani-screen-column">
-            <div className="banani-media-screen" ref={containerRef}>
-              {currentMedia.type === 'video' ? (
-                <div className="banani-video-wrapper">
-                  <video
-                    ref={videoRef}
-                    className="banani-main-video"
-                    src={currentMedia.src}
-                    poster="/assets/branches/banani/reception.webp"
-                    autoPlay
-                    loop
-                    muted={isMuted}
-                    playsInline
-                    preload="metadata"
-                    aria-label={currentMedia.alt}
-                  />
+        {/* Cinematic Video Walkthrough Hero */}
+        <div className="banani-cinema-card" ref={videoWrapperRef}>
+          <div className="cinema-media-frame">
+            <video
+              ref={videoRef}
+              className="cinema-video"
+              src="/assets/videos/banani-suite.mp4"
+              poster="/assets/branches/banani/reception.webp"
+              autoPlay
+              loop
+              muted={isMuted}
+              playsInline
+              preload="metadata"
+              aria-label="Banani Private Dental Suite 27-second executive video walkthrough"
+            />
 
-                  {/* Video Overlays & Controls */}
-                  <div className="banani-video-badge">
-                    <span className="live-pulse" />
-                    <span>Banani Suite Tour (HD)</span>
-                  </div>
-
-                  <div className="banani-video-controls">
-                    <button
-                      type="button"
-                      className="control-btn"
-                      onClick={togglePlay}
-                      aria-label={isPlaying ? 'Pause video' : 'Play video'}
-                    >
-                      {isPlaying ? <Pause size={18} /> : <Play size={18} />}
-                    </button>
-                    <button
-                      type="button"
-                      className="control-btn"
-                      onClick={toggleMute}
-                      aria-label={isMuted ? 'Unmute video' : 'Mute video'}
-                    >
-                      {isMuted ? <VolumeX size={18} /> : <Volume2 size={18} />}
-                    </button>
-                    <button
-                      type="button"
-                      className="control-btn control-btn-fullscreen"
-                      onClick={handleFullscreen}
-                      aria-label="Toggle fullscreen view"
-                    >
-                      <Maximize2 size={18} />
-                    </button>
-                  </div>
-                </div>
-              ) : (
-                <div className="banani-image-wrapper">
-                  <Image
-                    src={currentMedia.src}
-                    alt={currentMedia.alt}
-                    fill
-                    sizes="(max-width: 900px) 100vw, 55vw"
-                    className="banani-main-image"
-                    priority
-                  />
-                  <div className="banani-image-badge">{currentMedia.tag}</div>
-                </div>
-              )}
-
-              {/* Caption Bar */}
-              <div className="banani-caption-bar">
-                <div className="caption-text">
-                  <span className="caption-tag">{currentMedia.tag}</span>
-                  <h3 className="caption-title">{currentMedia.title}</h3>
-                  <p className="caption-desc">{currentMedia.subtitle}</p>
-                </div>
+            {/* Video Floating Overlays */}
+            <div className="cinema-top-badges">
+              <div className="cinema-live-badge">
+                <span className="cinema-radar" />
+                <span>27s Cinematic Tour · Banani Suite</span>
               </div>
             </div>
 
-            {/* Media Selector Thumbnails */}
-            <div
-              className="banani-thumbnails-strip"
-              role="tablist"
-              aria-label="Banani clinic tour media selector"
-            >
-              {MEDIA_ITEMS.map((item, idx) => {
-                const isSelected = activeMediaIndex === idx;
-                return (
-                  <button
-                    key={item.id}
-                    type="button"
-                    role="tab"
-                    aria-selected={isSelected}
-                    className={`thumb-button ${isSelected ? 'is-active' : ''}`}
-                    onClick={() => setActiveMediaIndex(idx)}
-                  >
-                    <div className="thumb-media-box">
-                      {item.type === 'video' ? (
-                        <div className="thumb-video-placeholder">
-                          <Film size={18} />
-                          <span className="thumb-video-label">Video</span>
-                        </div>
-                      ) : (
-                        <Image
-                          src={item.src}
-                          alt={item.title}
-                          fill
-                          sizes="120px"
-                          className="thumb-img"
-                        />
-                      )}
-                    </div>
-                    <span className="thumb-title">{item.tag}</span>
-                  </button>
-                );
-              })}
+            <div className="cinema-controls">
+              <button
+                type="button"
+                className="cinema-btn"
+                onClick={togglePlay}
+                aria-label={isPlaying ? 'Pause video' : 'Play video'}
+              >
+                {isPlaying ? <Pause size={18} /> : <Play size={18} fill="white" />}
+              </button>
+              <button
+                type="button"
+                className="cinema-btn"
+                onClick={toggleMute}
+                aria-label={isMuted ? 'Unmute video' : 'Mute video'}
+              >
+                {isMuted ? <VolumeX size={18} /> : <Volume2 size={18} />}
+              </button>
+              <button
+                type="button"
+                className="cinema-btn"
+                onClick={toggleFullscreen}
+                aria-label="Toggle full screen"
+              >
+                <Maximize2 size={18} />
+              </button>
             </div>
-          </div>
 
-          {/* Right Column: Executive Suite Details & Direct Booking */}
-          <div className="banani-details-column">
-            <div className="suite-specs-card">
-              <div className="suite-specs-top">
-                <span className="suite-branch-badge">Banani Road 11 · Suite #301</span>
-                <h3 className="suite-card-title">Exclusive Clinical Highlights</h3>
-                <p className="suite-card-intro">
-                  Designed exclusively for singular patient focus with complete confidentiality and
-                  zero waiting time.
+            {/* Bottom Caption Overlay */}
+            <div className="cinema-bottom-overlay">
+              <div className="cinema-info">
+                <span className="cinema-tag">Private Practice</span>
+                <h3 className="cinema-title">House 82, Road 11, Block D, Banani</h3>
+                <p className="cinema-sub">
+                  Equipped with digital dentistry, apex locators, intraoral scanners, and private
+                  surgical theatres.
                 </p>
               </div>
 
-              {/* Spec Items */}
-              <div className="suite-specs-list">
-                <div className="spec-item">
-                  <div className="spec-icon-box">
-                    <Scan size={20} />
-                  </div>
-                  <div className="spec-text">
-                    <h4>On-Site 3D CBCT Imaging</h4>
-                    <p>
-                      Low-dose 3D cross-sectional jawbone scanning performed right inside the clinic
-                      for immediate implant & bone diagnostics.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="spec-item">
-                  <div className="spec-icon-box">
-                    <ShieldCheck size={20} />
-                  </div>
-                  <div className="spec-text">
-                    <h4>One Patient at a Time</h4>
-                    <p>
-                      Strictly scheduled individual appointments ensuring absolute clinical focus,
-                      zero lobby crowding, and full privacy.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="spec-item">
-                  <div className="spec-icon-box">
-                    <Car size={20} />
-                  </div>
-                  <div className="spec-text">
-                    <h4>Basement & Valet Parking</h4>
-                    <p>
-                      Effortless arrival on Road 11 with secure building parking and elevator access
-                      straight to the dental suite floor.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="spec-item">
-                  <div className="spec-icon-box">
-                    <Clock size={20} />
-                  </div>
-                  <div className="spec-text">
-                    <h4>Doctor Session Hours</h4>
-                    <p>
-                      <strong>Sunday to Thursday: 3:00 PM – 10:00 PM</strong> (Friday & Saturday by
-                      prior VIP reservation).
-                    </p>
-                  </div>
-                </div>
+              <div className="cinema-action-pills">
+                <a
+                  href={`tel:${BRANCHES.banani.phone}`}
+                  className="cinema-pill-call"
+                  aria-label={`Call Banani suite at ${BRANCHES.banani.phoneDisplay}`}
+                >
+                  <Phone size={15} />
+                  <span>Call {BRANCHES.banani.phoneDisplay}</span>
+                </a>
+                <a
+                  href={`https://wa.me/${BRANCHES.banani.whatsapp}?text=${encodeURIComponent(
+                    'Hello RH Dental Care, I would like to book a private consultation at your Banani Road 11 Suite.',
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="cinema-pill-wa"
+                  aria-label="WhatsApp Banani Concierge"
+                >
+                  <MessageCircle size={16} />
+                  <span>WhatsApp Concierge</span>
+                </a>
               </div>
-
-              {/* Chief Doctor Attending */}
-              <div className="suite-doctor-bar">
-                <div className="doctor-avatar">
-                  <span>DR</span>
-                </div>
-                <div className="doctor-info">
-                  <span className="doctor-role">Consulting Dental Surgeon</span>
-                  <strong className="doctor-name">Dr. B.M. Rafiqul Hasan (Mehedi)</strong>
-                  <span className="doctor-reg">BMDC Reg. No: 5169 · Certified Implantologist</span>
-                </div>
-              </div>
-
-              {/* Direct Banani Booking Actions */}
-              <div className="suite-actions-block">
-                <div className="suite-buttons-row">
-                  <a
-                    href={`tel:${BRANCHES.banani.phone}`}
-                    className="suite-btn-primary"
-                    aria-label={`Call Banani branch at ${BRANCHES.banani.phoneDisplay}`}
-                  >
-                    <Phone size={17} />
-                    <span>Call {BRANCHES.banani.phoneDisplay}</span>
-                  </a>
-
-                  <a
-                    href={`https://wa.me/${BRANCHES.banani.whatsapp}?text=${encodeURIComponent(
-                      'Hello RH Dental Care, I would like to book a private consultation at your Banani Road 11 Suite.',
-                    )}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="suite-btn-whatsapp"
-                    aria-label="Message Banani Suite on WhatsApp"
-                  >
-                    <MessageCircle size={18} />
-                    <span>WhatsApp Suite</span>
-                  </a>
-                </div>
-
-                <div className="suite-directions-row">
-                  <a
-                    href={BRANCHES.banani.mapLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="suite-link-maps"
-                  >
-                    <Compass size={15} />
-                    <span>Get Directions: House 82, Road 11, Block D, Banani</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            {/* Sub-card: Looking for Banasree Hospital? */}
-            <div className="banasree-bridge-box">
-              <div className="bridge-text">
-                <strong>Need our Banasree Flagship Hospital?</strong>
-                <span>
-                  Multi-chair clinic for general dental treatments, root canals, and family dental
-                  care.
-                </span>
-              </div>
-              <Link href="/banasree" className="bridge-link">
-                <span>View Banasree</span>
-                <ArrowRight size={15} />
-              </Link>
             </div>
           </div>
         </div>
+
+        {/* Action-Based 4-Step Patient Journey Grid */}
+        <div className="banani-journey-header">
+          <div className="journey-title-wrap">
+            <span className="journey-eyebrow">Interactive Patient Journey</span>
+            <h3 className="journey-heading">Your 4-Step VIP Experience at Banani</h3>
+          </div>
+          <span className="journey-hint">
+            Click any step to inspect clinical facilities in high resolution
+          </span>
+        </div>
+
+        <div className="banani-action-grid">
+          {ACTION_STEPS.map((step, idx) => (
+            <div
+              key={step.id}
+              className="action-card"
+              onClick={() => openLightbox(idx)}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => e.key === 'Enter' && openLightbox(idx)}
+              aria-label={`View ${step.title}`}
+            >
+              <div className="action-card-media">
+                <Image
+                  src={step.image}
+                  alt={step.alt}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                  className="action-card-img"
+                />
+                <div className="action-card-gradient" />
+
+                {/* Floating Step Tag */}
+                <div className="action-step-badge">
+                  <span className="step-num">{step.stepNumber}</span>
+                  <span className="step-tag-text">{step.badge}</span>
+                </div>
+
+                {/* Zoom indicator on hover */}
+                <div className="action-zoom-cue">
+                  <ZoomIn size={18} />
+                  <span>View Details</span>
+                </div>
+              </div>
+
+              <div className="action-card-body">
+                <h4 className="action-card-title">{step.title}</h4>
+                <p className="action-card-desc">{step.subtitle}</p>
+
+                <ul className="action-features-list">
+                  {step.features.map((feat, fIdx) => (
+                    <li key={fIdx}>
+                      <CheckCircle size={14} className="feat-check" />
+                      <span>{feat}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="action-card-footer" onClick={(e) => e.stopPropagation()}>
+                  <a
+                    href={`https://wa.me/${BRANCHES.banani.whatsapp}?text=${encodeURIComponent(step.actionWaText)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="action-card-btn"
+                  >
+                    <span>{step.actionLabel}</span>
+                    <ArrowRight size={14} />
+                  </a>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Lead Doctor & Clinical Assurance Bar */}
+        <div className="banani-trust-ribbon">
+          <div className="trust-doctor-profile">
+            <div className="doctor-monogram">
+              <Award size={24} />
+            </div>
+            <div className="doctor-meta">
+              <span className="doctor-badge">Clinical Lead · Banani Private Suite</span>
+              <h4 className="doctor-title">Dr. B.M. Rafiqul Hasan Mehedi</h4>
+              <p className="doctor-creds">
+                Oral & Dental Surgeon (BSMMU PGT) · Certified Implantologist ·{' '}
+                <strong>BMDC Reg: 5169</strong>
+              </p>
+            </div>
+          </div>
+
+          <div className="trust-actions">
+            <a href={`tel:${BRANCHES.banani.phone}`} className="trust-btn-call">
+              <Phone size={16} />
+              <span>Direct Call: {BRANCHES.banani.phoneDisplay}</span>
+            </a>
+            <a
+              href={BRANCHES.banani.mapLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="trust-btn-maps"
+            >
+              <Compass size={16} />
+              <span>Directions on Maps</span>
+            </a>
+          </div>
+        </div>
+
+        {/* Banasree Flagship Hospital Bridge */}
+        <div className="banani-hospital-bridge">
+          <div className="bridge-icon-wrap">
+            <Stethoscope size={22} />
+          </div>
+          <div className="bridge-info">
+            <strong>Prefer our Banasree Flagship Hospital?</strong>
+            <p>
+              Full-service multi-chair clinic in Block C, Banasree. Specialized in family dental
+              care, pediatric dentistry, and affordable restorations.
+            </p>
+          </div>
+          <Link href="/banasree" className="bridge-cta-btn">
+            <span>Explore Banasree Hospital</span>
+            <ArrowRight size={16} />
+          </Link>
+        </div>
       </div>
+
+      {/* Interactive Lightbox Modal */}
+      {activeLightboxIndex !== null && (
+        <div className="lightbox-overlay" onClick={closeLightbox}>
+          <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
+            <button
+              type="button"
+              className="lightbox-close"
+              onClick={closeLightbox}
+              aria-label="Close modal"
+            >
+              <X size={24} />
+            </button>
+
+            <button
+              type="button"
+              className="lightbox-nav-btn lightbox-prev"
+              onClick={prevLightbox}
+              aria-label="Previous image"
+            >
+              <ChevronLeft size={28} />
+            </button>
+
+            <button
+              type="button"
+              className="lightbox-nav-btn lightbox-next"
+              onClick={nextLightbox}
+              aria-label="Next image"
+            >
+              <ChevronRight size={28} />
+            </button>
+
+            <div className="lightbox-media-box">
+              <Image
+                src={ACTION_STEPS[activeLightboxIndex].image}
+                alt={ACTION_STEPS[activeLightboxIndex].alt}
+                fill
+                sizes="(max-width: 1200px) 95vw, 1100px"
+                className="lightbox-img"
+                priority
+              />
+            </div>
+
+            <div className="lightbox-details">
+              <div className="lightbox-step-pill">
+                Step {ACTION_STEPS[activeLightboxIndex].stepNumber} ·{' '}
+                {ACTION_STEPS[activeLightboxIndex].badge}
+              </div>
+              <h3 className="lightbox-title">{ACTION_STEPS[activeLightboxIndex].title}</h3>
+              <p className="lightbox-desc">{ACTION_STEPS[activeLightboxIndex].subtitle}</p>
+
+              <div className="lightbox-actions-row">
+                <a
+                  href={`https://wa.me/${BRANCHES.banani.whatsapp}?text=${encodeURIComponent(
+                    ACTION_STEPS[activeLightboxIndex].actionWaText,
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="lightbox-btn-wa"
+                >
+                  <MessageCircle size={18} />
+                  <span>Book for This Procedure via WhatsApp</span>
+                </a>
+                <a href={`tel:${BRANCHES.banani.phone}`} className="lightbox-btn-call">
+                  <Phone size={17} />
+                  <span>Call {BRANCHES.banani.phoneDisplay}</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
