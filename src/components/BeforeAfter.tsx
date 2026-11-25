@@ -118,7 +118,8 @@ export default function BeforeAfter() {
                 }}
               >
                 Complete restoration of missing teeth using advanced All-on-6 implants. The patient
-                regained 100% chewing function and a natural aesthetic smile.
+                substantially restored chewing function, bite comfort, and a natural aesthetic
+                smile.
               </p>
               <Link
                 href="/implants"

@@ -6,7 +6,7 @@ import { Play, Pause, Volume2, VolumeX, Maximize, Cpu, Heart } from 'lucide-reac
 import './VideoSection.css';
 
 export default function VideoSection() {
-  const clinicVideoUrl = '/assets/videos/hero.mp4';
+  const clinicVideoUrl = '/assets/videos/banani-suite.mp4';
 
   const videoRef = useRef<HTMLVideoElement>(null);
   const wrapperRef = useRef<HTMLDivElement>(null);

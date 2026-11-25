@@ -192,7 +192,7 @@ ${
 ## 8. Verified Patient FAQ Bank (120 Clinically Answered Questions across 15 Specialties)
 
 > Directly accessible on the web: ${absoluteUrl('/faq')}
-> Clinically answered and verified by Dr. B.M. Rafiqul Hasan Mehedi (BMDC A-42352) and Dr. Shimia Binte Taher (BMDC A-71285).
+> Clinically answered and verified by Dr. B.M. Rafiqul Hasan Mehedi (BMDC 5169) and Dr. Shimia Binte Taher (BMDC A-71285).
 
 ${faqText}
 `;

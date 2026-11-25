@@ -64,9 +64,7 @@ export default function FaqPage() {
               <div className="rh-faq-authority-bar">
                 <div className="rh-faq-authority-item">
                   <span className="rh-faq-authority-label">Reviewed By:</span>
-                  <span className="rh-faq-authority-value">
-                    Dr. B.M. Rafiqul Hasan (BMDC A-42352)
-                  </span>
+                  <span className="rh-faq-authority-value">Dr. B.M. Rafiqul Hasan (BMDC 5169)</span>
                 </div>
                 <div className="rh-faq-authority-divider" aria-hidden="true" />
                 <div className="rh-faq-authority-item">

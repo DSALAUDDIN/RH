@@ -1,9 +1,9 @@
 import Hero from '@/components/Hero';
 import BranchChooser from '@/components/branch/BranchChooser';
+import BananiLuxuryShowcase from '@/components/branch/BananiLuxuryShowcase';
 import Specialties from '@/components/Specialties';
 import DhakaAuthoritySection from '@/components/DhakaAuthoritySection';
 import Testimonials from '@/components/Testimonials';
-import VideoSection from '@/components/VideoSection';
 import ClinicGallery from '@/components/ClinicGallery';
 import BeforeAfter from '@/components/BeforeAfter';
 import { ShieldCheck, Sparkles, ArrowRight } from 'lucide-react';
@@ -27,9 +27,9 @@ export default function Home() {
     <>
       <Hero />
       <BranchChooser />
+      <BananiLuxuryShowcase />
       <Specialties />
       <DhakaAuthoritySection />
-      <VideoSection />
       <ClinicGallery />
 
       <BeforeAfter />

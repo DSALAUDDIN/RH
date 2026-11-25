@@ -167,7 +167,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <Clock size={16} className="contact-icon" />
-                  <span>3:00 PM – 10:00 PM (Thu: Closed)</span>
+                  <span>3:30 PM – 10:00 PM (Thu: Closed)</span>
                 </li>
               </ul>
               <div style={{ marginTop: '10px' }}>
